@@ -10,7 +10,7 @@ import {
 
 import CodeTokenContents from './parts/CodeTokenContents'
 
-interface CodeProps
+export interface CodeProps
   extends ColumnStyleProps,
     FontProps,
     FontSizeProps,

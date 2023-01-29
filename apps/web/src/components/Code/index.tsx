@@ -1,7 +1,10 @@
 import { FunctionComponent } from 'react'
-import { Code as PrismCode } from '@shallot-ui/prismjs'
+import {
+  Code as PrismCode,
+  CodeProps as PrismCodeProps,
+} from '@shallot-ui/prismjs'
 
-interface CodeProps {
+interface CodeProps extends PrismCodeProps {
   language: string
   children: string
 }

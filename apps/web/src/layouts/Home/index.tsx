@@ -216,8 +216,12 @@ const defaultTheme = makeTheme({
 export const HomeLayout: FunctionComponent = () => {
   const [theme, setTheme] = useState<DefaultTheme>(defaultTheme)
 
-  const [paletteName, setPaletteName] = useState<string>('tailwindBlue')
-  const [shadingName, setShadingName] = useState<string>('tailwindGray')
+  const [paletteName, setPaletteName] =
+    useState<keyof typeof colorPalettes>('tailwindBlue')
+
+  const [shadingName, setShadingName] =
+    useState<keyof typeof shadingPalettes>('tailwindGray')
+
   const [darkMode, setDarkMode] = useState<boolean>(false)
 
   useEffect(() => {
@@ -300,7 +304,9 @@ export const HomeLayout: FunctionComponent = () => {
                   label="Shading Palette"
                   helperText='Try "Material Gray" or "Tailwind Slate"'
                   value={shadingName}
-                  onChangeValue={setShadingName}
+                  onChangeValue={(value) =>
+                    setShadingName(value as keyof typeof shadingPalettes)
+                  }
                   options={[
                     { label: 'Material Gray', value: 'materialGray' },
                     { label: 'Material Blue Gray', value: 'materialBlueGray' },
@@ -330,7 +336,9 @@ export const HomeLayout: FunctionComponent = () => {
                   instanceId="palette"
                   label="Palette"
                   value={paletteName}
-                  onChangeValue={setPaletteName}
+                  onChangeValue={(value) =>
+                    setPaletteName(value as keyof typeof colorPalettes)
+                  }
                   options={[
                     { label: 'Tailwind Emerald', value: 'tailwindEmerald' },
                     { label: 'Tailwind Blue', value: 'tailwindBlue' },
