@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Column } from '../Column'
+import { Column } from '../primitives/Column'
 import { getTextStyle, TextStyleProps } from '../Text'
 
 export interface RichTextVariant {

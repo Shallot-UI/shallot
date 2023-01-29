@@ -10,15 +10,15 @@ export const getAnimation =
   () => {
     if (animation === 'fadeIn') {
       return css`
-        animation: ${fadeInKeyframes} 0.4s ease-in-out;
+        animation: ${fadeInKeyframes} 350ms ease-in-out;
       `
     } else if (animation === 'fadeInUp') {
       return css`
-        animation: ${fadeInUpKeyframes} 0.4s ease-in-out;
+        animation: ${fadeInUpKeyframes} 350ms ease-in-out;
       `
     } else if (animation === 'fadeInDown') {
       return css`
-        animation: ${fadeInDownKeyframes} 0.4s ease-in-out;
+        animation: ${fadeInDownKeyframes} 350ms ease-in-out;
       `
     }
 

@@ -87,6 +87,7 @@ export const GlobalStyle = createGlobalStyle`
   time,
   mark,
   audio,
+  svg,
   video {
     margin: 0;
     padding: 0;

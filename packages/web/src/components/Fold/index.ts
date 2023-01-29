@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Column } from '../Column'
+import { Column } from '../primitives/Column'
 
 export const Fold = styled(Column)`
   min-height: 100vh;

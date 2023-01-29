@@ -1,12 +1,22 @@
-import { InputProps } from '../../Input'
-import { FormControlProps } from '../FormControl'
-import { FormInputStyleProps } from './style/types'
+import { InputStyleProps } from '../../primitives'
+import { InputProps } from '../../primitives/Input/base'
+import {
+  FormControlColumnComponentStyles,
+  FormControlColumnProps,
+} from '../FormControlColumn'
 
-export type FormInputState = 'disabled' | 'focused' | 'populated' | 'error'
+export interface FormInputComponentStyles
+  extends FormControlColumnComponentStyles {
+  input?: InputStyleProps
+}
+
+export interface FormInputStyleProps {
+  styles?: FormInputComponentStyles & {
+    states?: Record<string, FormInputComponentStyles | undefined>
+  }
+}
 
 export interface FormInputProps
-  extends Omit<FormControlProps, 'states'>,
+  extends Omit<FormControlColumnProps, 'styles' | 'children'>,
     FormInputStyleProps,
-    InputProps {
-  initialValue?: string
-}
+    InputProps {}

@@ -1,6 +1,6 @@
 import styled, { css, DefaultTheme, ThemeProps } from 'styled-components'
 
-import { getBoxStyle } from '../../Box'
+import { getBoxStyle } from '../../primitives/Box'
 import { getTextStyle } from '../../Text'
 import { ButtonStyleProps } from './types'
 

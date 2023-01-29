@@ -1,3 +1,3 @@
 export * from './base'
-export * from './default'
+export * from './getStyle'
 export * from './types'

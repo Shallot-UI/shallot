@@ -140,3 +140,7 @@ export interface UnitPaddingProps {
   unitPaddingLeft?: number
   unitPaddingRight?: number
 }
+
+export interface DisplayProps {
+  display?: boolean | 'hidden' | 'inline' | 'block' | 'flex' | 'inline-flex'
+}

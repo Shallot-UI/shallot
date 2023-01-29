@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useLockBodyScroll } from '../../hooks/useLockBodyScroll'
 import { getColors, getRadius } from '../../props'
 import { getAnimation } from '../../props/Animation'
-import { ColumnStyleProps, getColumnStyle } from '../Column'
+import { ColumnStyleProps, getColumnStyle } from '../primitives/Column'
 import { Fold } from '../Fold'
 
 const Curtain = styled.div`
