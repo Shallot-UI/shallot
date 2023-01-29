@@ -1,9 +1,13 @@
 {
   "name": "@shallot-ui/prismjs",
-  "version": "0.0.0",
+  "version": "0.18.0",
   "main": "./index.ts",
   "types": "./index.ts",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\""
   },
