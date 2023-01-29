@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 import { FormInputState } from '../../types'
 import { FormInputStyleProps } from '../types'
-
-import subcomponents from './subcomponents'
 import getStyles from '../get'
 
 const Container = styled.div<
@@ -14,4 +12,4 @@ const Container = styled.div<
   ${getStyles}
 `
 
-export default { ...subcomponents, Container }
+export default Container

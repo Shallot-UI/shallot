@@ -9,6 +9,7 @@ import chroma from 'chroma-js'
 import { makeTheme } from '@shallot-ui/theme'
 import { FormSelect } from '@shallot-ui/react-select'
 import {
+  BaseFormInput,
   Column,
   Fold,
   FormInput,
@@ -311,6 +312,13 @@ export const HomeLayout: FunctionComponent = () => {
                   ]}
                 />
               </Column>
+              <FormInput
+                label="Testing Input"
+                helperText="This is a test"
+                initialValue="Hello"
+                unitsAbove={2}
+                errorText="This is an error"
+              />
               <Column unitsAbove={2}>
                 <FormSelect
                   instanceId="palette"

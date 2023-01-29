@@ -3,8 +3,12 @@ import { css } from 'styled-components'
 import { getBoxStyle } from '../../Box'
 import { getInputStyle } from '../../Input'
 import { getTextStyle } from '../../Text'
-import S from './components/subcomponents'
 import { FormInputProps } from '..'
+
+import Input from './components/Input'
+import Label from './components/Label'
+import HelperText from './components/HelperText'
+import ErrorText from './components/ErrorText'
 
 const getStateStyles = (state?: string) => (props: FormInputProps) =>
   css`
@@ -12,25 +16,25 @@ const getStateStyles = (state?: string) => (props: FormInputProps) =>
       ...props?.containerProps,
       ...(state ? props.states?.[state]?.containerProps : {}),
     })}
-    ${S.Input} {
+    ${Input} {
       ${getInputStyle({
         ...props?.inputProps,
         ...(state ? props.states?.[state]?.inputProps : {}),
       })}
     }
-    ${S.Label} {
+    ${Label} {
       ${getTextStyle({
         ...props?.labelProps,
         ...(state ? props.states?.[state]?.labelProps : {}),
       })}
     }
-    ${S.HelperText} {
+    ${HelperText} {
       ${getTextStyle({
         ...props?.helperTextProps,
         ...(state ? props.states?.[state]?.helperTextProps : {}),
       })}
     }
-    ${S.ErrorText} {
+    ${ErrorText} {
       ${getTextStyle({
         ...props?.errorTextProps,
         ...(state ? props.states?.[state]?.errorTextProps : {}),

@@ -1,7 +1,13 @@
 import { FunctionComponent, useCallback, useState } from 'react'
 import { FormInputProps } from '..'
 
-import S from '../style/components'
+import Container from '../style/components/Container'
+import ErrorText from '../style/components/ErrorText'
+import HelperText from '../style/components/HelperText'
+import Input from '../style/components/Input'
+import Label from '../style/components/Label'
+import RequiredStar from '../style/components/RequiredStar'
+
 import { pullFormInputStyleProps } from '../style/pull'
 
 export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
@@ -36,18 +42,18 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
   }, [])
 
   return (
-    <S.Container
+    <Container
       focused={focused}
       disabled={disabled}
       populated={isPopulated}
       error={hasError}
       {...styleProps}
     >
-      <S.Label>
+      <Label>
         {label}
-        {required && <S.RequiredStar />}
-      </S.Label>
-      <S.Input
+        {required && <RequiredStar />}
+      </Label>
+      <Input
         {...rest}
         value={value}
         onFocus={handleFocus}
@@ -55,8 +61,8 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
         disabled={disabled}
         required={required}
       />
-      {errorText && <S.ErrorText>{errorText}</S.ErrorText>}
-      {!errorText && helperText && <S.HelperText>{helperText}</S.HelperText>}
-    </S.Container>
+      {errorText && <ErrorText>{errorText}</ErrorText>}
+      {!errorText && helperText && <HelperText>{helperText}</HelperText>}
+    </Container>
   )
 }
