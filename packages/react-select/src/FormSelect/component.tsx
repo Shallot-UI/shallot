@@ -94,7 +94,7 @@ export const RawFormSelect: FunctionComponent<
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
       }}
-      {...innerProps}
+      {...(innerProps as any)}
     >
       {children}
     </Text>
@@ -132,7 +132,7 @@ export const RawFormSelect: FunctionComponent<
     innerProps,
   }) => (
     <Column
-      ref={innerRef}
+      ref={innerRef as any}
       {...innerProps}
       backgroundColor="Shading.100"
       borderColor="Shading.225"
@@ -158,7 +158,7 @@ export const RawFormSelect: FunctionComponent<
     menuIsOpen,
   }) => (
     <Row
-      ref={innerRef}
+      ref={innerRef as any}
       backgroundColor="Shading.100"
       borderColor="Shading.225"
       radius="sm"

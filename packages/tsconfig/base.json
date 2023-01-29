@@ -16,5 +16,6 @@
     "skipLibCheck": true,
     "strict": true
   },
+  "include": [".", "styled.d.ts"],
   "exclude": ["node_modules"]
 }

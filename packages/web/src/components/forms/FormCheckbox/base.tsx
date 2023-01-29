@@ -55,7 +55,7 @@ export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = (
     error: Boolean(errorText),
   }
 
-  const inputStyles = useStyleProps('input', styles, state, inputStyleProps)
+  const inputStyles = useStyleProps('input', styles, state)
 
   return (
     <BaseFormControlRow

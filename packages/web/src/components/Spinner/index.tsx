@@ -1,7 +1,5 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import styled, { DefaultTheme, keyframes } from 'styled-components'
-
-import { color as getColor } from '../../props'
 
 const spinAnimation = keyframes`
   0% { transform: rotate(0deg); }
@@ -34,11 +32,11 @@ const SpinnerRing = styled.div<{
     height: ${({ size = 'md' }) => Math.floor(sizes[size] * 0.8)}px;
     margin: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px;
     border: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px solid
-      ${({ color }) => getColor(color ?? DEFAULT_COLOR)};
+      ${({ theme, color }) => theme.colors[color ?? DEFAULT_COLOR]};
     border-radius: 50%;
     animation: ${spinAnimation} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: ${({ color }) => getColor(color ?? DEFAULT_COLOR)} transparent
-      transparent transparent;
+    border-color: ${({ theme, color }) => theme.colors[color ?? DEFAULT_COLOR]}
+      transparent transparent transparent;
   }
   & div:nth-child(1) {
     animation-delay: -0.45s;
