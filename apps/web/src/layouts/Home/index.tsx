@@ -9,8 +9,6 @@ import chroma from 'chroma-js'
 import { makeTheme } from '@shallot-ui/theme'
 import { FormSelect } from '@shallot-ui/react-select'
 import {
-  BaseFormInput,
-  Checkbox,
   Column,
   Fold,
   FormCheckbox,

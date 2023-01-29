@@ -11,7 +11,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = (props) => (
         unitHeight: 2,
         unitWidth: 2,
         backgroundColor: 'Shading.100',
-        borderColor: 'Primary.300',
+        borderColor: 'Shading.250',
         transition: 'background-color 0.2s ease-in-out',
         alignCenter: true,
         alignMiddle: true,
@@ -44,6 +44,9 @@ export const Checkbox: FunctionComponent<CheckboxProps> = (props) => (
           },
         },
         checked: {
+          container: {
+            borderColor: 'Primary.300',
+          },
           fill: {
             backgroundColor: 'Primary.300',
           },

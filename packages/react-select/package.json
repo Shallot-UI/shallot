@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/react-select",
-  "version": "0.0.0",
+  "version": "0.17.3",
   "main": "./index.ts",
   "types": "./index.ts",
   "license": "MIT",

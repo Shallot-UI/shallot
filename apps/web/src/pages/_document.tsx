@@ -2,7 +2,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { getServerStylesheetInitialProps } from '@shallot-ui/next'
 
 export default class NextDocument extends Document {
-  static getInitialProps = getServerStylesheetInitialProps
+  static getInitialProps = getServerStylesheetInitialProps(Document)
 
   render(): JSX.Element {
     return (
