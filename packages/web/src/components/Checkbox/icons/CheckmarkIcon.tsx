@@ -9,7 +9,7 @@ const CheckmarkIcon: FunctionComponent<SVGProps<SVGSVGElement>> = (props) => (
     {...props}
   >
     <path
-      fill-rule="nonzero"
+      fillRule="nonzero"
       d="m2.235 3.822 1.51 1.635L7.712.384a1 1 0 0 1 1.576 1.232l-4.693 6a1 1 0 0 1-1.522.062l-2.308-2.5a1 1 0 1 1 1.47-1.356Z"
     />
   </svg>
