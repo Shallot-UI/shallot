@@ -1,0 +1,26 @@
+{
+  "name": "@shallot-ui/web-formik",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "MIT",
+  "scripts": {
+    "lint": "TIMING=1 eslint \"**/*.ts*\""
+  },
+  "peerDependencies": {
+    "formik": "^2.2.9",
+    "styled-components": ">=5"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/styled-components": "^5.1.26",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "formik": "^2.2.9",
+    "react": "^18.2.0",
+    "styled-components": "*",
+    "tsconfig": "*",
+    "typescript": "^4.5.2"
+  }
+}

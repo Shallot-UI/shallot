@@ -1,0 +1,21 @@
+{
+  "name": "@shallot-ui/theme",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "MIT",
+  "scripts": {
+    "lint": "TIMING=1 eslint \"**/*.ts*\""
+  },
+  "peerDependencies": {
+    "styled-components": ">=5"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.26",
+    "styled-components": "*",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "tsconfig": "*",
+    "typescript": "^4.5.2"
+  }
+}
