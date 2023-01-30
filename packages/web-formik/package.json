@@ -1,19 +1,25 @@
 {
   "name": "@shallot-ui/web-formik",
-  "version": "0.18.0",
-  "main": "./index.ts",
-  "types": "./index.ts",
+  "version": "0.18.2",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "lint": "TIMING=1 eslint \"**/*.ts*\""
+    "lint": "TIMING=1 eslint \"**/*.ts*\"",
+    "build": "tsup index.ts --format cjs --dts"
   },
   "peerDependencies": {
-    "formik": "^2.2.9",
-    "styled-components": ">=5"
+    "formik": ">=2",
+    "styled-components": ">=5",
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "devDependencies": {
     "@types/react": "^17.0.37",
@@ -22,9 +28,11 @@
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
     "formik": "^2.2.9",
-    "react": "^18.2.0",
+    "react": "*",
+    "react-dom": "*",
     "styled-components": "*",
     "tsconfig": "*",
+    "tsup": "^6.5.0",
     "typescript": "^4.5.2"
   }
 }
