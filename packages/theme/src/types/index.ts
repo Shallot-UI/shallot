@@ -46,6 +46,7 @@ export interface FlexProps {
   grow?: number | true
   flex?: number | true
   shrink?: number | true
+  wrap?: boolean | 'reverse'
 }
 
 export interface HorizontalAlignmentProps {

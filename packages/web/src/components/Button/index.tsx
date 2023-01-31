@@ -6,7 +6,7 @@ import { TextProps } from '../Text'
 
 export interface ButtonProps
   extends Omit<TextProps, 'as'>,
-    Omit<HTMLProps<HTMLButtonElement>, 'style' | 'height' | 'width'>,
+    Omit<HTMLProps<HTMLButtonElement>, 'style' | 'height' | 'width' | 'wrap'>,
     ButtonStyleProps {
   title: string
   type?: 'button' | 'submit' | 'reset' | undefined

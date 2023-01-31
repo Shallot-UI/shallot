@@ -8,6 +8,6 @@ import { FlexProps } from '@shallot-ui/theme'
 export const pullFlexProps = <T extends FlexProps>(
   props: T,
 ): [FlexProps, Omit<T, keyof FlexProps>] => {
-  const { grow, flex, shrink, ...rest } = props
-  return [{ grow, flex, shrink }, rest]
+  const { grow, flex, shrink, wrap, ...rest } = props
+  return [{ grow, flex, shrink, wrap }, rest]
 }
