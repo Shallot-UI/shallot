@@ -5,7 +5,7 @@ import { pullProps } from '../../../utils/pullProps'
 import { FormCheckboxProps } from './types'
 import { useStyleProps } from '../../../hooks'
 import { BaseFormControlRow } from '../FormControlRow'
-import { Checkbox } from '../../Checkbox'
+import { BaseCheckbox } from '../../Checkbox'
 
 export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = (
   props,
@@ -60,11 +60,12 @@ export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = (
       styles={styles}
       {...controlStyleProps}
     >
-      <Checkbox
+      <BaseCheckbox
         value={value}
         setValue={setValue}
         onBlur={handleBlur}
         onFocus={handleFocus}
+        styles={styles?.checkbox}
         {...inputStyles}
         {...rest}
       />

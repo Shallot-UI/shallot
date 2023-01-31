@@ -1,3 +1,4 @@
+import { CheckboxStyleProps } from '../../Checkbox'
 import { InputProps } from '../../primitives/Input/base'
 import {
   FormControlRowComponentStyles,
@@ -11,6 +12,7 @@ export interface FormCheckboxComponentStyles
 
 export interface FormCheckboxStyleProps {
   styles?: FormCheckboxComponentStyles & {
+    checkbox?: CheckboxStyleProps['styles']
     states?: Record<string, FormCheckboxComponentStyles | undefined>
   }
 }
