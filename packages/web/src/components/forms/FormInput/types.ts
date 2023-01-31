@@ -1,3 +1,4 @@
+import { HTMLProps } from 'react'
 import { InputStyleProps } from '../../primitives'
 import { InputProps } from '../../primitives/Input/base'
 import {
@@ -19,4 +20,5 @@ export interface FormInputStyleProps {
 export interface FormInputProps
   extends Omit<FormControlColumnProps, 'styles' | 'children'>,
     FormInputStyleProps,
-    InputProps {}
+    Omit<InputProps, 'as'>,
+    Omit<HTMLProps<HTMLInputElement>, 'wrap'> {}
