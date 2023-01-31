@@ -15,6 +15,7 @@ export const FormikInput: FunctionComponent<FormikInputProps> = ({
     <FormInput
       {...field}
       errorText={meta.touched && meta.error ? meta.error : undefined}
+      valid={meta.touched && !meta.error}
       name={name}
       {...rest}
     />

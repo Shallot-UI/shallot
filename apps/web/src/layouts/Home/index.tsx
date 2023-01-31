@@ -8,7 +8,14 @@ import chroma from 'chroma-js'
 
 import { makeTheme } from '@shallot-ui/theme'
 import { FormSelect } from '@shallot-ui/react-select'
-import { Column, Fold, GlobalStyle, Row, Text } from '@shallot-ui/web'
+import {
+  Column,
+  Fold,
+  FormCheckbox,
+  GlobalStyle,
+  Row,
+  Text,
+} from '@shallot-ui/web'
 
 import { ThemeCode } from './parts/ThemeCode'
 import { ComponentsCode } from './parts/ComponentsCode'

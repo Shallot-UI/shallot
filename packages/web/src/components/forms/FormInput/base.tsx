@@ -30,6 +30,7 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
     disabled,
     value,
     styles,
+    valid,
     ...rest
   } = nonStyleProps
 
@@ -52,6 +53,7 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
     disabled,
     focused,
     populated,
+    valid,
     error: Boolean(errorText),
   }
 
