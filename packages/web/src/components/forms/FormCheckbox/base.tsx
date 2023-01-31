@@ -11,24 +11,22 @@ export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = (
   props,
 ) => {
   const [focused, setFocused] = useState(false)
-  const [populated, setPopulated] = useState(false)
 
-  const [controlStyleProps, nonControlStyleProps] = pullProps(props, [
+  const [controlStyleProps, nonStyleProps] = pullProps(props, [
     pullUnitsAroundProps,
   ])
 
-  const [inputStyleProps, nonStyleProps] = pullProps(nonControlStyleProps, [])
-
   const {
+    value,
+    setValue,
+
     onFocus,
     onBlur,
-    onChange,
     label,
     required,
     errorText,
     helperText,
     disabled,
-    value,
     styles,
     ...rest
   } = nonStyleProps
@@ -43,15 +41,9 @@ export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = (
     onBlur?.(e)
   }, [])
 
-  const handleChange = useCallback((e: any) => {
-    setPopulated(Boolean(e.target.value))
-    onChange?.(e)
-  }, [])
-
   const state = {
     disabled,
     focused,
-    populated,
     error: Boolean(errorText),
   }
 
@@ -69,9 +61,10 @@ export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = (
       {...controlStyleProps}
     >
       <Checkbox
+        value={value}
+        setValue={setValue}
         onBlur={handleBlur}
         onFocus={handleFocus}
-        onChange={handleChange}
         {...inputStyles}
         {...rest}
       />

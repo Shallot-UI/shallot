@@ -8,13 +8,13 @@ export const BaseCheckbox: FunctionComponent<CheckboxProps> = ({
   disabled,
   onFocus,
   onBlur,
-  onChange,
   Icon = CheckmarkIcon,
   error,
   styles,
+  value,
+  setValue,
   ...rest
 }) => {
-  const [checked, setChecked] = useState(false)
   const [focused, setFocused] = useState(false)
 
   const handleFocus = useCallback((e: any) => {
@@ -28,15 +28,14 @@ export const BaseCheckbox: FunctionComponent<CheckboxProps> = ({
   }, [])
 
   const handleChange = useCallback((e: any) => {
-    setChecked(e.target.checked)
-    onChange?.(e)
+    setValue(e.target.checked)
   }, [])
 
   const state = {
     disabled,
     focused,
     error,
-    checked,
+    checked: value,
   }
 
   const containerStyles = useStyleProps('container', styles, state, rest)
@@ -44,14 +43,11 @@ export const BaseCheckbox: FunctionComponent<CheckboxProps> = ({
   const iconStyles = useStyleProps('icon', styles, state)
 
   return (
-    <Column
-      {...containerStyles}
-      onClick={() => setChecked((current) => !current)}
-    >
+    <Column {...containerStyles} onClick={() => setValue(!value)}>
       <Box
         as="input"
         type="checkbox"
-        checked={checked}
+        checked={value}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onChange={handleChange}

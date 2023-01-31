@@ -299,7 +299,7 @@ export const HomeLayout: FunctionComponent = () => {
                 make it simple to adapt common components to your theme.
               </Text>
               <Column unitsAbove={2}>
-                {/* <FormSelect
+                <FormSelect
                   instanceId="shading"
                   label="Shading Palette"
                   helperText='Try "Material Gray" or "Tailwind Slate"'
@@ -316,21 +316,8 @@ export const HomeLayout: FunctionComponent = () => {
                     { label: 'Tailwind Neutral', value: 'tailwindNeutral' },
                     { label: 'Tailwind Stone', value: 'tailwindStone' },
                   ]}
-                /> */}
+                />
               </Column>
-              <FormInput
-                label="Testing Input"
-                helperText="This is a test"
-                initialValue="Hello"
-                unitsAbove={2}
-                typeface="RobotoMono"
-              />
-              <FormCheckbox
-                label="Testing Input"
-                helperText="This is a test"
-                initialValue="Hello"
-                unitsAbove={2}
-              />
               <Column unitsAbove={2}>
                 <FormSelect
                   instanceId="palette"

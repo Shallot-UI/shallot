@@ -1,4 +1,4 @@
-import React, { CSSProperties, FunctionComponent, ReactNode } from 'react'
+import { CSSProperties, FunctionComponent, ReactNode } from 'react'
 import styled from 'styled-components'
 
 import { useLockBodyScroll } from '../../hooks/useLockBodyScroll'

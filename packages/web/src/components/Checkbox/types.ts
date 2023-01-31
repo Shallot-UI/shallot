@@ -14,10 +14,12 @@ export interface CheckboxStyleProps {
 }
 
 export interface CheckboxProps extends CheckboxStyleProps, ColumnStyleProps {
+  value: boolean
+  setValue: (value: boolean) => void
+
   disabled?: boolean
   onFocus?: (e: any) => void
   onBlur?: (e: any) => void
-  onChange?: (e: any) => void
   error?: boolean
   children?: ReactNode
   Icon?: FunctionComponent<SVGProps<SVGSVGElement>>

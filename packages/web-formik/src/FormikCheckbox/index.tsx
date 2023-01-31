@@ -18,9 +18,15 @@ export const FormikCheckbox: FunctionComponent<FormikCheckboxProps> = ({
 }) => {
   const [field, meta] = useField(name)
 
+  const setValue = (value: boolean) => {
+    field.onChange({ target: { name: field.name, value } })
+  }
+
   return (
     <FormCheckbox
       {...field}
+      value={field.value}
+      setValue={setValue}
       errorText={meta.touched && meta.error ? meta.error : undefined}
       name={name}
       {...rest}
