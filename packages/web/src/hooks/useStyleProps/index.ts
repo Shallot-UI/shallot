@@ -5,7 +5,7 @@ export const useStyleProps = <
 >(
   componentName: N,
   stylesProp: T | undefined,
-  state: Record<string, boolean | undefined>,
+  state: Record<string, boolean | undefined> = {},
   overrides?: O,
 ) => {
   const baseStyles = stylesProp?.[componentName]
