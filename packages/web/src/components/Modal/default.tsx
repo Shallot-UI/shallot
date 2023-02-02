@@ -7,8 +7,6 @@ export const Modal: FunctionComponent<ModalProps> = (props) => (
     styles={{
       curtain: {
         animation: 'fadeIn',
-        fullHeight: true,
-        fullWidth: true,
         style: {
           backgroundColor: 'rgba(0,0,0,0.6)',
           position: 'absolute',
@@ -18,10 +16,11 @@ export const Modal: FunctionComponent<ModalProps> = (props) => (
       },
       container: {
         animation: 'fadeInUp',
-        backgroundColor: 'Shading.100',
-        radius: 'md',
+        fullWidth: true,
       },
       wrapper: {
+        alignCenter: true,
+        alignMiddle: true,
         style: {
           position: 'fixed',
           zIndex: 9999,
