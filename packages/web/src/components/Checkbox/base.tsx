@@ -1,5 +1,5 @@
 import { FunctionComponent, useCallback, useState } from 'react'
-import { useStyleProps } from '../../hooks'
+import { useStyleProps } from '@shallot-ui/core'
 import { Box, Column } from '../primitives'
 import CheckmarkIcon from './icons/CheckmarkIcon'
 import { CheckboxProps } from './types'

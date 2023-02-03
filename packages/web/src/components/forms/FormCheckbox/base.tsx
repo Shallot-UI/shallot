@@ -1,9 +1,11 @@
 import { FunctionComponent, useCallback, useState } from 'react'
+import {
+  useStyleProps,
+  pullUnitsAroundProps,
+  pullProps,
+} from '@shallot-ui/core'
 
-import { pullUnitsAroundProps } from '../../../props'
-import { pullProps } from '../../../utils/pullProps'
 import { FormCheckboxProps } from './types'
-import { useStyleProps } from '../../../hooks'
 import { BaseFormControlRow } from '../FormControlRow'
 import { BaseCheckbox } from '../../Checkbox'
 

@@ -14,14 +14,13 @@ export const makeTheme = <
   ProjectDefaults = Record<string, string | number>,
   ProjectTypefaces = Record<string, Typeface>,
   ProjectColors = Record<string, string>,
-  ProjectFontSizes = Record<string, number | number[]>,
+  ProjectFontSizes = Record<string, number>,
   ProjectLineHeights = Record<string, number>,
   ProjectRadii = Record<string, number>,
   ProjectElevations = Record<string, any>,
-  ProjectLetterSpacings = Record<string, number>
+  ProjectLetterSpacings = Record<string, number>,
 >({
   defaults = {} as ProjectDefaults,
-  breakpoints = null as number[] | null,
   gridUnits = null as number[] | null,
   typefaces = {} as ProjectTypefaces,
   colors = {} as ProjectColors,
@@ -30,6 +29,18 @@ export const makeTheme = <
   radii = {} as ProjectRadii,
   elevations = {} as ProjectElevations,
   letterSpacings = {} as ProjectLetterSpacings,
+  breakpoints = {} as {
+    [minWidth: number]: {
+      gridUnits: number[] | null
+      typefaces: ProjectTypefaces
+      colors: ProjectColors
+      fontSizes: ProjectFontSizes
+      lineHeights: ProjectLineHeights
+      radii: ProjectRadii
+      elevations: ProjectElevations
+      letterSpacings: ProjectLetterSpacings
+    }
+  } | null,
 } = {}) =>
   Object.freeze({
     defaults: { ...DEFAULT_THEME_DEFAULTS, ...defaults },
