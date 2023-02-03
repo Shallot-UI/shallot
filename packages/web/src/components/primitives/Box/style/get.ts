@@ -9,10 +9,10 @@ import {
   getElevation,
   getCursor,
   getDisplay,
-  getAnimation,
 } from '@shallot-ui/core'
 
 import { BoxStyleProps } from './types'
+import { getAnimation } from '../../../../props'
 
 export const getBoxStyle = (props: BoxStyleProps = {}) => css<BoxStyleProps>`
   display: flex;

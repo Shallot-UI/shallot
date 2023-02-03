@@ -1,6 +1,5 @@
 import { css } from 'styled-components'
 import {
-  getAnimation,
   getCasing,
   getColors,
   getFont,
@@ -16,6 +15,7 @@ import {
 } from '@shallot-ui/core'
 
 import { TextStyleProps } from './types'
+import { getAnimation } from '../../../props'
 
 export const getTextStyle = (props: TextStyleProps = {}) => css`
   ${getFlex(props)}

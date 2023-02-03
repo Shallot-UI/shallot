@@ -7,9 +7,9 @@ import {
   pullElevationProps,
   pullCursorProps,
   pullTransitionProps,
-  pullAnimationProps,
 } from '@shallot-ui/core'
 
+import { pullAnimationProps } from '../../../../props'
 import { BoxStyleProps } from './types'
 
 export const pullBoxStyleProps = <T extends BoxStyleProps>(
