@@ -60,12 +60,12 @@ export interface RadiusProps {
 }
 
 export interface SizingProps {
-  unitWidth?: number | number[]
-  minUnitWidth?: number | number[]
-  maxUnitWidth?: number | number[]
-  unitHeight?: number | number[]
-  minUnitHeight?: number | number[]
-  maxUnitHeight?: number | number[]
+  unitWidth?: number
+  minUnitWidth?: number
+  maxUnitWidth?: number
+  unitHeight?: number
+  minUnitHeight?: number
+  maxUnitHeight?: number
 }
 
 export interface TransitionProps {

@@ -1,11 +1,14 @@
 import { FunctionComponent, useCallback, useState } from 'react'
-import { pullFontProps, pullUnitsAroundProps } from '../../../props'
-import { Input } from '../../primitives/Input/base'
+import {
+  useStyleProps,
+  pullProps,
+  pullFontProps,
+  pullUnitsAroundProps,
+} from '@shallot-ui/core'
 
+import { Input } from '../../primitives/Input/base'
 import { BaseFormControlColumn } from '../FormControlColumn'
-import { pullProps } from '../../../utils/pullProps'
 import { FormInputProps } from './types'
-import { useStyleProps } from '../../../hooks'
 
 export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
   const [focused, setFocused] = useState(false)

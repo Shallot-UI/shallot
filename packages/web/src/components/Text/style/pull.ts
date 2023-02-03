@@ -12,7 +12,8 @@ import {
   pullFlexProps,
   pullLetterSpacingProps,
   pullTransitionProps,
-} from '../../../props'
+} from '@shallot-ui/core'
+
 import { TextStyleProps } from './types'
 
 export const pullTextStyleProps = <T extends TextStyleProps>(props: T) => {

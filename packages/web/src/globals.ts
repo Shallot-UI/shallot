@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { getFont } from './props'
+import { getFont } from '@shallot-ui/core'
 
 export const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 

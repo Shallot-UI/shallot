@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react'
+import { useStyleProps } from '@shallot-ui/core'
 
 import { FormControlRowProps } from './types'
 import { Column } from '../../primitives/Column'
 import { Text } from '../../Text'
-import { useStyleProps } from '../../../hooks'
 import { Row } from '../../primitives'
 
 export const BaseFormControlRow: FunctionComponent<FormControlRowProps> = ({
