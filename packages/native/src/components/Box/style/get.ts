@@ -2,14 +2,11 @@ import { css } from 'styled-components/native'
 import {
   getColors,
   getUnitsAround,
-  getTransition,
   getRadius,
   getSizing,
   getFlex,
   getElevation,
-  getCursor,
   getDisplay,
-  getAnimation,
 } from '@shallot-ui/core'
 
 import { BoxStyleProps } from './types'

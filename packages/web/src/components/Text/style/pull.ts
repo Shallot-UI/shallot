@@ -1,5 +1,4 @@
 import {
-  pullAnimationProps,
   pullCasingProps,
   pullColorProps,
   pullFontProps,
@@ -14,6 +13,7 @@ import {
   pullTransitionProps,
 } from '@shallot-ui/core'
 
+import { pullAnimationProps } from '../../../props'
 import { TextStyleProps } from './types'
 
 export const pullTextStyleProps = <T extends TextStyleProps>(props: T) => {

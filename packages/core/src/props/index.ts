@@ -1,5 +1,4 @@
 export * from './Underline'
-export * from './Animation'
 export * from './Border'
 export * from './Casing'
 export * from './Color'
