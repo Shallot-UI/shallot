@@ -1,5 +1,4 @@
 import { css } from 'styled-components'
-
 import {
   getColors,
   getUnitsAround,
@@ -10,8 +9,9 @@ import {
   getElevation,
   getCursor,
   getDisplay,
-} from '../../../../props'
-import { getAnimation } from '../../../../props/Animation'
+  getAnimation,
+} from '@shallot-ui/core'
+
 import { BoxStyleProps } from './types'
 
 export const getBoxStyle = (props: BoxStyleProps = {}) => css<BoxStyleProps>`

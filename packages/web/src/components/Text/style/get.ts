@@ -1,5 +1,4 @@
 import { css } from 'styled-components'
-
 import {
   getAnimation,
   getCasing,
@@ -14,7 +13,8 @@ import {
   getFlex,
   getLetterSpacing,
   getTransition,
-} from '../../../props'
+} from '@shallot-ui/core'
+
 import { TextStyleProps } from './types'
 
 export const getTextStyle = (props: TextStyleProps = {}) => css`

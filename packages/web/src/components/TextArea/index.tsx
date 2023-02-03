@@ -8,7 +8,6 @@ import {
   LineHeightProps,
   RadiusProps,
 } from '@shallot-ui/theme'
-
 import {
   getCasing,
   getColors,
@@ -17,7 +16,8 @@ import {
   getLineHeight,
   getUnitsAround,
   getRadius,
-} from '../../props'
+} from '@shallot-ui/core'
+
 import { CSSProperties } from 'react'
 
 interface BaseTextAreaProps

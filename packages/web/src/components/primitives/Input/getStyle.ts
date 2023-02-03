@@ -1,5 +1,4 @@
 import { css } from 'styled-components'
-
 import {
   getCasing,
   getColors,
@@ -11,7 +10,8 @@ import {
   getRadius,
   getBorder,
   getTransition,
-} from '../../../props'
+} from '@shallot-ui/core'
+
 import { InputStyleProps } from './types'
 
 export const getInputStyle = (props: InputStyleProps) => css`

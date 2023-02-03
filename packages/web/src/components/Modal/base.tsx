@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react'
+import { useStyleProps } from '@shallot-ui/core'
 
 import { useLockBodyScroll } from '../../hooks/useLockBodyScroll'
 import { Column } from '../primitives/Column'
-import { useStyleProps } from '../../hooks'
 import { Fold } from '../Fold'
 import { ModalProps } from './types'
 
