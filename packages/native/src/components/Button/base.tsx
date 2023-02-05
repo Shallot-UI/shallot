@@ -26,6 +26,7 @@ export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
     pullLineHeightProps,
     pullCasingProps,
   ])
+
   const [containerOverrides, nonStyleProps] =
     pullColumnStyleProps(nonLabelStyleProps)
 
