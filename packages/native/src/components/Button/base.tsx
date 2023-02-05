@@ -43,9 +43,7 @@ export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <Column {...containerStyles}>
-        <Text {...labelStyles} style={{ position: 'absolute' }}>
-          {title}
-        </Text>
+        <Text {...labelStyles}>{title}</Text>
       </Column>
     </TouchableOpacity>
   )
