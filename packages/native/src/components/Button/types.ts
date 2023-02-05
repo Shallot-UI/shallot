@@ -1,4 +1,3 @@
-import { HTMLProps } from 'react'
 import { ColumnStyleProps } from '../Column'
 import { TextStyleProps } from '../Text'
 
@@ -16,8 +15,8 @@ export interface ButtonStyleProps {
 export interface ButtonProps
   extends ButtonStyleProps,
     ColumnStyleProps,
-    TextStyleProps,
-    Omit<HTMLProps<HTMLButtonElement>, 'wrap'> {
+    TextStyleProps {
+  onPress?: () => void | Promise<void>
   disabled?: boolean
   title?: string
 }

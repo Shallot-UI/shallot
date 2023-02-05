@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react'
+import { TouchableOpacity } from 'react-native'
 import {
   pullCasingProps,
   pullFontProps,
@@ -28,11 +29,8 @@ export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
   const [containerOverrides, nonStyleProps] =
     pullColumnStyleProps(nonLabelStyleProps)
 
-  const { disabled, title, styles, onClick, ...rest } = nonStyleProps
-
-  const state = {
-    disabled,
-  }
+  const { disabled, title, styles, onPress } = nonStyleProps
+  const state = { disabled }
 
   const labelStyles = useStyleProps('label', styles, state, labelOverrides)
   const containerStyles = useStyleProps(
@@ -43,13 +41,12 @@ export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
   )
 
   return (
-    <Column
-      as="button"
-      {...containerStyles}
-      {...(rest as any)}
-      onClick={onClick}
-    >
-      <Text {...labelStyles} style={{ position: 'absolute' }} />
-    </Column>
+    <TouchableOpacity onPress={onPress}>
+      <Column {...containerStyles}>
+        <Text {...labelStyles} style={{ position: 'absolute' }}>
+          {title}
+        </Text>
+      </Column>
+    </TouchableOpacity>
   )
 }
