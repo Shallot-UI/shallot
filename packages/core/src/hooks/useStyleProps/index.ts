@@ -20,5 +20,11 @@ export const useStyleProps = <
     }
   })
 
-  return { ...baseStyles, ...activeStateStyles, ...overrides }
+  const definedOverrides = { ...overrides }
+  Object.keys(definedOverrides).forEach(
+    (key) =>
+      definedOverrides[key] === undefined && delete definedOverrides[key],
+  )
+
+  return { ...baseStyles, ...activeStateStyles, ...definedOverrides }
 }
