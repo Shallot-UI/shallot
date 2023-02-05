@@ -12,9 +12,9 @@ import {
   useStyleProps,
 } from '@shallot-ui/core'
 
-import { Column, pullColumnStyleProps } from '../Column'
 import { ButtonProps } from './types'
 import { Text } from '../Text'
+import { Row, pullRowStyleProps } from '../Row'
 
 export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
   const [labelOverrides, nonLabelStyleProps] = pullProps(props, [
@@ -28,7 +28,7 @@ export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
   ])
 
   const [containerOverrides, nonStyleProps] =
-    pullColumnStyleProps(nonLabelStyleProps)
+    pullRowStyleProps(nonLabelStyleProps)
 
   const { disabled, title, styles, onPress } = nonStyleProps
   const state = { disabled }
@@ -43,9 +43,9 @@ export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
 
   return (
     <TouchableOpacity onPress={onPress}>
-      <Column {...containerStyles}>
+      <Row {...containerStyles}>
         <Text {...labelStyles}>{title}</Text>
-      </Column>
+      </Row>
     </TouchableOpacity>
   )
 }

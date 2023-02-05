@@ -1,4 +1,6 @@
+import { ReactNode } from 'react'
 import { ColumnStyleProps } from '../Column'
+import { RowStyleProps } from '../Row'
 import { TextStyleProps } from '../Text'
 
 export interface ButtonComponentStyles {
@@ -14,9 +16,11 @@ export interface ButtonStyleProps {
 
 export interface ButtonProps
   extends ButtonStyleProps,
-    ColumnStyleProps,
+    RowStyleProps,
     TextStyleProps {
   onPress?: () => void | Promise<void>
   disabled?: boolean
   title?: string
+  startAdornment?: ReactNode
+  endAdornment?: ReactNode
 }
