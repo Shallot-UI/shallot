@@ -1,10 +1,10 @@
 import { ReactNode } from 'react'
-import { ColumnStyleProps } from '../Column'
+
 import { RowStyleProps } from '../Row'
 import { TextStyleProps } from '../Text'
 
 export interface ButtonComponentStyles {
-  container?: ColumnStyleProps
+  container?: RowStyleProps
   label?: TextStyleProps
 }
 

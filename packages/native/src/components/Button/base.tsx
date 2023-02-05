@@ -30,7 +30,8 @@ export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
   const [containerOverrides, nonStyleProps] =
     pullRowStyleProps(nonLabelStyleProps)
 
-  const { disabled, title, styles, onPress } = nonStyleProps
+  const { disabled, title, styles, onPress, startAdornment, endAdornment } =
+    nonStyleProps
   const state = { disabled }
 
   const labelStyles = useStyleProps('label', styles, state, labelOverrides)
@@ -44,7 +45,9 @@ export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <Row {...containerStyles}>
+        {startAdornment}
         <Text {...labelStyles}>{title}</Text>
+        {endAdornment}
       </Row>
     </TouchableOpacity>
   )
