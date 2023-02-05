@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import { useField } from 'formik'
+import { useFormikContext } from 'formik'
 import {
   FormInput,
   FormInputProps,
@@ -13,15 +13,20 @@ export const FormikInput: FunctionComponent<FormikInputProps> = ({
   name,
   ...rest
 }) => {
-  const [field, meta] = useField(name)
+  const { setFieldValue, setFieldTouched, touched, errors } =
+    useFormikContext<any>()
+
+  const fieldTouched = touched[name]
+  const fieldError = errors[name]
 
   return (
     <FormInput
-      {...field}
-      errorText={meta.touched && meta.error ? meta.error : undefined}
-      valid={meta.touched && !meta.error}
-      onChange={field.onChange(name)}
-      onBlur={field.onBlur(name)}
+      onChangeText={(value: string) => setFieldValue(name, value)}
+      onFocus={() => setFieldTouched(name, true)}
+      errorText={
+        fieldTouched && typeof fieldError === 'string' ? fieldError : undefined
+      }
+      valid={fieldTouched && !fieldError}
       name={name}
       {...rest}
     />
