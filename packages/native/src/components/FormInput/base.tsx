@@ -1,4 +1,5 @@
 import { FunctionComponent, useCallback, useState } from 'react'
+import { useTheme } from 'styled-components/native'
 import {
   useStyleProps,
   pullProps,
@@ -11,6 +12,7 @@ import { BaseFormControlColumn } from '../FormControlColumn'
 import { FormInputProps } from './types'
 
 export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
+  const theme = useTheme()
   const [focused, setFocused] = useState(false)
   const [populated, setPopulated] = useState(false)
 
@@ -34,6 +36,7 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
     value,
     styles,
     valid,
+    placeholderColor,
     ...rest
   } = nonStyleProps
 
@@ -79,6 +82,9 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
         onBlur={handleBlur}
         onChange={handleChange}
         editable={disabled}
+        placeholderTextColor={
+          placeholderColor && theme.colors[placeholderColor]
+        }
         {...inputStyles}
         {...rest}
       />
