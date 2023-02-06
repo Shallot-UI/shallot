@@ -5,5 +5,5 @@ export const getLetterSpacing =
   ({ letterSpacing }: LetterSpacingProps = {}) =>
   ({ theme }: { theme: DefaultTheme }) =>
     letterSpacing
-      ? `letter-spacing: ${theme.letterSpacings[letterSpacing]}em;`
+      ? `letter-spacing: ${theme.letterSpacings[letterSpacing]};`
       : ''
