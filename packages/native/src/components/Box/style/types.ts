@@ -1,4 +1,5 @@
 import {
+  BorderProps,
   ColorProps,
   DisplayProps,
   ElevationProps,
@@ -15,4 +16,5 @@ export interface BoxStyleProps
     FlexProps,
     RadiusProps,
     SizingProps,
-    UnitsAroundProps {}
+    UnitsAroundProps,
+    BorderProps {}

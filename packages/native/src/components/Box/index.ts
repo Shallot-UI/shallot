@@ -8,6 +8,7 @@ import {
   getFlex,
   getElevation,
   getDisplay,
+  getBorder,
 } from '@shallot-ui/core'
 
 import { BoxStyleProps } from './style/types'
@@ -16,6 +17,7 @@ export const Box = styled.View<BoxStyleProps>`
   display: flex;
   position: relative;
   border-style: solid;
+  ${getBorder}
   ${getColors}
   ${getDisplay}
   ${getElevation}

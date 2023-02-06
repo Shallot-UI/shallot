@@ -5,6 +5,7 @@ import {
   pullUnitsAroundProps,
   pullRadiusProps,
   pullElevationProps,
+  pullBorderProps,
 } from '@shallot-ui/core'
 
 import { BoxStyleProps } from './types'
@@ -22,6 +23,7 @@ export const pullBoxStyleProps = <T extends BoxStyleProps>(
     pullRadiusProps<T>,
     pullSizingProps<T>,
     pullUnitsAroundProps<T>,
+    pullBorderProps<T>,
   ]
 
   actions.forEach((pullAction) => {
