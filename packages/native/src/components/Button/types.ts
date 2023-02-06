@@ -17,7 +17,7 @@ export interface ButtonStyleProps {
 export interface ButtonProps
   extends ButtonStyleProps,
     RowStyleProps,
-    TextStyleProps {
+    Omit<TextStyleProps, 'style'> {
   onPress?: () => void | Promise<void>
   disabled?: boolean
   title?: string

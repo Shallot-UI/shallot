@@ -11,6 +11,7 @@ import {
   BorderProps,
   TransitionProps,
 } from '@shallot-ui/theme'
+import { StyleProp, ViewStyle } from 'react-native'
 
 export interface InputStyleProps
   extends UnitsAroundProps,
@@ -23,4 +24,6 @@ export interface InputStyleProps
     SizingProps,
     UnitPaddingProps,
     BorderProps,
-    TransitionProps {}
+    TransitionProps {
+  style?: StyleProp<ViewStyle>
+}
