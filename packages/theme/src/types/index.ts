@@ -28,6 +28,7 @@ export interface AnimationProps {
 }
 
 export interface ColorProps {
+  placeholderColor?: keyof DefaultTheme['colors']
   backgroundColor?: keyof DefaultTheme['colors']
   textColor?: keyof DefaultTheme['colors']
   borderColor?: keyof DefaultTheme['colors']
