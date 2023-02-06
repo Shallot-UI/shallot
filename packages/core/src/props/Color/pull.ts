@@ -8,6 +8,16 @@ import { ColorProps } from '@shallot-ui/theme'
 export const pullColorProps = <T extends ColorProps>(
   props: T,
 ): [ColorProps, Omit<T, keyof ColorProps>] => {
-  const { textColor, backgroundColor, borderColor, fillColor, ...rest } = props
-  return [{ textColor, backgroundColor, borderColor, fillColor }, rest]
+  const {
+    textColor,
+    backgroundColor,
+    borderColor,
+    fillColor,
+    placeholderColor,
+    ...rest
+  } = props
+  return [
+    { textColor, backgroundColor, borderColor, fillColor, placeholderColor },
+    rest,
+  ]
 }
