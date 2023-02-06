@@ -4,7 +4,6 @@ import { FormInputProps } from './types'
 
 export const FormInput: FunctionComponent<FormInputProps> = (props) => (
   <BaseFormInput
-    fullWidth
     styles={{
       label: {
         textColor: 'Shading.400',

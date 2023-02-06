@@ -3,7 +3,6 @@ import {
   FormControlColumnComponentStyles,
   FormControlColumnProps,
 } from '../FormControlColumn'
-import { DefaultTheme } from 'styled-components/native'
 
 export interface FormInputComponentStyles
   extends FormControlColumnComponentStyles {
@@ -19,6 +18,4 @@ export interface FormInputStyleProps {
 export interface FormInputProps
   extends Omit<FormControlColumnProps, 'styles' | 'children'>,
     FormInputStyleProps,
-    Omit<InputProps, 'as'> {
-  placeholderColor?: keyof DefaultTheme['colors']
-}
+    Omit<InputProps, 'as'> {}
