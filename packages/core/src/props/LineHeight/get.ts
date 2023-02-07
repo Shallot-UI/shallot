@@ -29,8 +29,10 @@ export const getLineHeight =
       const sizeModifier = modifiers.fontSizes?.[fontSize]
       if (sizeModifier) {
         style += `@media (min-width: ${width}px) {
-          font-size: ${snapToGrid(sizeModifier * ratio, gridUnits)}px;
+          line-height: ${snapToGrid(sizeModifier * ratio, gridUnits)}px;
         }`
       }
     })
+
+    return style
   }

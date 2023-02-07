@@ -16,7 +16,6 @@ import { getAnimation } from '../../../../props'
 
 export const getBoxStyle = (props: BoxStyleProps = {}) => css<BoxStyleProps>`
   display: flex;
-  position: relative;
   border-style: solid;
   ${getFlex(props)}
   ${getSizing(props)}

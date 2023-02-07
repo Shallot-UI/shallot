@@ -1,4 +1,3 @@
-import { StyleProp, ViewStyle } from 'react-native'
 import {
   BorderProps,
   ColorProps,
@@ -18,6 +17,4 @@ export interface BoxStyleProps
     RadiusProps,
     SizingProps,
     UnitsAroundProps,
-    BorderProps {
-  style?: StyleProp<ViewStyle>
-}
+    BorderProps {}

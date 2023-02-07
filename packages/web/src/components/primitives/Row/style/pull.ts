@@ -6,7 +6,9 @@ import {
 import { pullBoxStyleProps } from '../../Box'
 import { RowStyleProps } from './types'
 
-export const pullRowStyleProps = <T extends RowStyleProps>(props: T) => {
+export const pullRowStyleProps = <T extends RowStyleProps>(
+  props: T,
+): [RowStyleProps, Omit<T, keyof RowStyleProps>] => {
   let boxStyleProps: RowStyleProps = {}
   let restProps = { ...props }
 

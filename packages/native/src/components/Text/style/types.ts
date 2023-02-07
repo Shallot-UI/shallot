@@ -11,7 +11,6 @@ import {
   FlexProps,
   LetterSpacingProps,
 } from '@shallot-ui/theme'
-import { StyleProp, TextStyle } from 'react-native'
 
 export interface TextStyleProps
   extends CasingProps,
@@ -24,6 +23,4 @@ export interface TextStyleProps
     SizingProps,
     TextAlignProps,
     UnderlineProps,
-    UnitsAroundProps {
-  style?: StyleProp<TextStyle>
-}
+    UnitsAroundProps {}

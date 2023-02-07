@@ -19,6 +19,7 @@ export interface FieldImageProps
 
   // Unit width must be provided. It's optional in `columnStyleProps`.
   unitWidth: number
+  style?: StyleProp<any>
 }
 
 const getTransformation = (
@@ -54,15 +55,20 @@ const getTransformedHeight = (
 
 export const Image: FunctionComponent<FieldImageProps> = (props) => {
   const theme = useTheme()
-  const [columnStyle, { image, transformation = 'native', params, ...rest }] =
-    pullColumnStyleProps(props)
+  const [columnStyle, nonStyleProps] = pullColumnStyleProps(props)
+  const {
+    image,
+    transformation = 'native',
+    params,
+    style,
+    ...rest
+  } = nonStyleProps
 
   if (!columnStyle.unitWidth) {
     throw new Error('Image component requires a unitWidth prop')
   }
 
-  const { unitWidth, unitHeight, style, ...columnStyleWithoutDimensions } =
-    columnStyle
+  const { unitWidth, unitHeight, ...columnStyleWithoutDimensions } = columnStyle
 
   const width = unitWidth * theme.gridUnits[0]
   const height = unitHeight && unitHeight * theme.gridUnits[0]
@@ -78,7 +84,7 @@ export const Image: FunctionComponent<FieldImageProps> = (props) => {
         height: height ?? transformedHeight,
         width,
         overflow: 'hidden',
-        ...(style as StyleProp<any>),
+        ...style,
       }}
     >
       <FastImage

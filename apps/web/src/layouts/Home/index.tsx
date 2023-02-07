@@ -9,6 +9,7 @@ import chroma from 'chroma-js'
 import { makeTheme } from '@shallot-ui/theme'
 import { FormSelect } from '@shallot-ui/react-select'
 import {
+  Button,
   Column,
   Fold,
   FormCheckbox,
@@ -262,6 +263,7 @@ export const HomeLayout: FunctionComponent = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <GlobalAnimations />
+        <Button title="Test" onClick={() => {}} />
         <Fold>
           <Row>
             <Column unitsAround={4} maxUnitWidth={48}>
