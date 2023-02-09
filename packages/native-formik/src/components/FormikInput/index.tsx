@@ -13,7 +13,7 @@ export const FormikInput: FunctionComponent<FormikInputProps> = ({
   name,
   ...rest
 }) => {
-  const { setFieldValue, setFieldTouched, touched, errors } =
+  const { setFieldValue, setFieldTouched, touched, errors, values } =
     useFormikContext<any>()
 
   const fieldTouched = touched[name]
@@ -21,6 +21,7 @@ export const FormikInput: FunctionComponent<FormikInputProps> = ({
 
   return (
     <FormInput
+      value={values[name]}
       onChangeText={(value: string) => setFieldValue(name, value)}
       onFocus={() => setFieldTouched(name, true)}
       errorText={

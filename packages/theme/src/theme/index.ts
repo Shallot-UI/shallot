@@ -31,14 +31,14 @@ export const makeTheme = <
   letterSpacings = {} as ProjectLetterSpacings,
   breakpoints = {} as {
     [minWidth: number]: {
-      gridUnits: number[] | null
-      typefaces: ProjectTypefaces
-      colors: ProjectColors
-      fontSizes: ProjectFontSizes
-      lineHeights: ProjectLineHeights
-      radii: ProjectRadii
-      elevations: ProjectElevations
-      letterSpacings: ProjectLetterSpacings
+      gridUnits?: number[] | null
+      typefaces?: ProjectTypefaces
+      colors?: ProjectColors
+      fontSizes?: ProjectFontSizes
+      lineHeights?: ProjectLineHeights
+      radii?: ProjectRadii
+      elevations?: ProjectElevations
+      letterSpacings?: ProjectLetterSpacings
     }
   } | null,
 } = {}) =>

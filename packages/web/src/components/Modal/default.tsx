@@ -14,6 +14,7 @@ export const Modal: FunctionComponent<ModalProps> = (props) => (
           position: 'absolute',
           top: 0,
           left: 0,
+          zIndex: -1,
         },
       },
       container: {
