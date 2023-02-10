@@ -9,6 +9,7 @@ import {
   getElevation,
   getCursor,
   getDisplay,
+  getBorder,
 } from '@shallot-ui/core'
 
 import { BoxStyleProps } from './types'
@@ -17,14 +18,15 @@ import { getAnimation } from '../../../../props'
 export const getBoxStyle = (props: BoxStyleProps = {}) => css<BoxStyleProps>`
   display: flex;
   border-style: solid;
-  ${getFlex(props)}
-  ${getSizing(props)}
-  ${getColors(props)}
-  ${getUnitsAround(props)}
-  ${getRadius(props)}
-  ${getElevation(props)}
-  ${getCursor(props)}
-  ${getTransition(props)}
   ${getAnimation(props)}
+  ${getBorder(props)}
+  ${getColors(props)}
+  ${getCursor(props)}
   ${getDisplay(props)}
+  ${getElevation(props)}
+  ${getFlex(props)}
+  ${getRadius(props)}
+  ${getSizing(props)}
+  ${getTransition(props)}
+  ${getUnitsAround(props)}
 `

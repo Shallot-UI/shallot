@@ -8,6 +8,7 @@ import {
   pullCursorProps,
   pullTransitionProps,
   pullDisplayProps,
+  pullBorderProps,
 } from '@shallot-ui/core'
 
 import { pullAnimationProps } from '../../../../props'
@@ -20,16 +21,17 @@ export const pullBoxStyleProps = <T extends BoxStyleProps>(
   let restProps = { ...props }
 
   const actions = [
-    pullFlexProps<T>,
-    pullSizingProps<T>,
-    pullColorProps<T>,
-    pullUnitsAroundProps<T>,
-    pullRadiusProps<T>,
-    pullElevationProps<T>,
-    pullCursorProps<T>,
-    pullTransitionProps<T>,
     pullAnimationProps<T>,
+    pullBorderProps<T>,
+    pullColorProps<T>,
+    pullCursorProps<T>,
     pullDisplayProps<T>,
+    pullElevationProps<T>,
+    pullFlexProps<T>,
+    pullRadiusProps<T>,
+    pullSizingProps<T>,
+    pullTransitionProps<T>,
+    pullUnitsAroundProps<T>,
   ]
 
   actions.forEach((pullAction) => {

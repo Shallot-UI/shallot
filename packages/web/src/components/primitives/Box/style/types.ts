@@ -1,27 +1,29 @@
 import { CSSProperties } from 'react'
 import {
-  UnitsAroundProps,
-  ColorProps,
-  RadiusProps,
-  ElevationProps,
-  SizingProps,
-  FlexProps,
-  CursorProps,
-  TransitionProps,
   AnimationProps,
+  BorderProps,
+  ColorProps,
+  CursorProps,
   DisplayProps,
+  ElevationProps,
+  FlexProps,
+  RadiusProps,
+  SizingProps,
+  TransitionProps,
+  UnitsAroundProps,
 } from '@shallot-ui/theme'
 
 export interface BoxStyleProps
-  extends UnitsAroundProps,
+  extends AnimationProps,
+    BorderProps,
     ColorProps,
-    RadiusProps,
-    ElevationProps,
-    SizingProps,
-    FlexProps,
     CursorProps,
+    DisplayProps,
+    ElevationProps,
+    FlexProps,
+    RadiusProps,
+    SizingProps,
     TransitionProps,
-    AnimationProps,
-    DisplayProps {
+    UnitsAroundProps {
   style?: Partial<CSSProperties>
 }
