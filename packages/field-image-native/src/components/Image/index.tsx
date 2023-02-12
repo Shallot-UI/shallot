@@ -89,7 +89,7 @@ export const Image: FunctionComponent<FieldImageProps> = (props) => {
     >
       <FastImage
         source={{ uri }}
-        style={{ height: height ?? transformedHeight, width }}
+        style={{ height: '100%', width: '100%' }}
         {...rest}
       />
     </Column>

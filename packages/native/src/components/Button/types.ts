@@ -1,11 +1,12 @@
 import { ReactNode } from 'react'
+import { TextStyle, ViewStyle } from 'react-native'
 
 import { RowStyleProps } from '../Row'
 import { TextStyleProps } from '../Text'
 
 export interface ButtonComponentStyles {
-  container?: RowStyleProps
-  label?: TextStyleProps
+  container?: RowStyleProps & { style?: ViewStyle }
+  label?: TextStyleProps & { style?: TextStyle }
 }
 
 export interface ButtonStyleProps {

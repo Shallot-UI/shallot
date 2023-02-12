@@ -13,7 +13,9 @@ import {
 
 import { BoxStyleProps } from './style/types'
 
-export const Box = styled.View<BoxStyleProps>`
+export const Box = styled.View.withConfig({
+  shouldForwardProp: (prop) => !['elevation', 'radius'].includes(prop),
+})<BoxStyleProps>`
   display: flex;
   position: relative;
   border-style: solid;
