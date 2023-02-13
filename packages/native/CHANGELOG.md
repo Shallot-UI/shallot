@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.19.22
+
+### Patch Changes
+
+- Simplyfing imports with dependencies instead of peers.
+- Updated dependencies
+  - @shallot-ui/theme@0.19.4
+  - @shallot-ui/core@0.19.9
+
 ## 0.19.21
 
 ### Patch Changes
