@@ -1,13 +1,14 @@
 import { ReactNode } from 'react'
 import { TextStyleProps } from '../Text'
 import { ColumnStyleProps } from '../Column'
+import { TextStyle, ViewStyle } from 'react-native'
 
 export interface FormControlColumnComponentStyles {
-  container?: ColumnStyleProps
-  label?: TextStyleProps
-  helperText?: TextStyleProps
-  errorText?: TextStyleProps
-  requiredStar?: TextStyleProps
+  container?: ColumnStyleProps & { style?: ViewStyle }
+  label?: TextStyleProps & { style?: TextStyle }
+  helperText?: TextStyleProps & { style?: TextStyle }
+  errorText?: TextStyleProps & { style?: TextStyle }
+  requiredStar?: TextStyleProps & { style?: TextStyle }
 }
 
 export interface FormControlColumnStyleProps {

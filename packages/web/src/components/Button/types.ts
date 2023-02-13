@@ -22,4 +22,5 @@ export interface ButtonProps
   title?: string
   startAdornment?: ReactNode
   endAdornment?: ReactNode
+  type?: 'button' | 'submit' | 'reset'
 }

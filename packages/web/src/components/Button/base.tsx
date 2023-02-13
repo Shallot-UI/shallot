@@ -66,8 +66,20 @@ export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
   const [containerOverrides, nonStyleProps] =
     pullRowStyleProps(nonLabelStyleProps)
 
-  const { disabled, title, styles, onClick, startAdornment, endAdornment } =
-    nonStyleProps
+  const {
+    disabled,
+    title,
+    styles,
+    onClick,
+    startAdornment,
+    endAdornment,
+
+    // Pull some props that we don't want to pass down to the DOM element.
+    as,
+    ref,
+
+    ...rest
+  } = nonStyleProps
 
   const state = { disabled }
 
@@ -90,6 +102,7 @@ export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
       {...containerStyles}
       onClick={onClick}
       pseudoClasses={pseudoClasses}
+      {...rest}
     >
       {startAdornment}
       <Title {...labelStyles}>{title}</Title>

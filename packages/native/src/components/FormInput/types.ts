@@ -1,3 +1,5 @@
+import { StyleProp } from 'react-native'
+
 import { InputProps, InputStyleProps } from '../Input'
 import {
   FormControlColumnComponentStyles,
@@ -6,7 +8,7 @@ import {
 
 export interface FormInputComponentStyles
   extends FormControlColumnComponentStyles {
-  input?: InputStyleProps
+  input?: InputStyleProps & { style?: StyleProp<any> }
 }
 
 export interface FormInputStyleProps {
