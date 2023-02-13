@@ -1,8 +1,6 @@
 import { ThemeProvider } from 'styled-components'
 import Head from 'next/head'
-import { GlobalStyle } from '@shallot-ui/web'
-
-import { makeTheme } from '@shallot-ui/theme'
+import { GlobalStyle, makeTheme } from '@shallot-ui/next'
 
 const NextApp = ({ Component, pageProps }: any) => {
   return (

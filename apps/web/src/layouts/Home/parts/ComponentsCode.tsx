@@ -1,5 +1,5 @@
 import { Code } from '@/components'
-import { Row } from '@shallot-ui/web'
+import { Row } from '@shallot-ui/next'
 
 export const ComponentsCode = () => (
   <Row unitsAround={2}>

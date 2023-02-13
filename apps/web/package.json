@@ -12,8 +12,6 @@
     "@shallot-ui/next": "*",
     "@shallot-ui/prismjs": "*",
     "@shallot-ui/react-select": "*",
-    "@shallot-ui/theme": "*",
-    "@shallot-ui/web": "*",
     "chroma-js": "^2.4.2",
     "lodash": "^4.17.21",
     "next": "^13.1.1",

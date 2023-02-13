@@ -6,17 +6,15 @@ import {
 } from 'styled-components'
 import chroma from 'chroma-js'
 
-import { makeTheme } from '@shallot-ui/theme'
 import { FormSelect } from '@shallot-ui/react-select'
 import {
-  Button,
+  makeTheme,
   Column,
   Fold,
-  FormCheckbox,
   GlobalStyle,
   Row,
   Text,
-} from '@shallot-ui/web'
+} from '@shallot-ui/next'
 
 import { ThemeCode } from './parts/ThemeCode'
 import { ComponentsCode } from './parts/ComponentsCode'
@@ -263,7 +261,6 @@ export const HomeLayout: FunctionComponent = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <GlobalAnimations />
-        <Button title="Test" onClick={() => {}} />
         <Fold>
           <Row>
             <Column unitsAround={4} maxUnitWidth={48}>
@@ -381,8 +378,6 @@ export const HomeLayout: FunctionComponent = () => {
             </Column>
             <ThemeCode />
           </Row>
-        </Fold>
-        <Fold>
           <Column>
             <Column unitsLeft={4} unitsRight={4}>
               <Text fontSize="lg">Share conventions on web & native.</Text>

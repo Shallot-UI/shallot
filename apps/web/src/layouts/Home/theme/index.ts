@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import chroma from 'chroma-js'
 
-import { makeTheme } from '@shallot-ui/theme'
+import { makeTheme } from '@shallot-ui/next'
 
 export const invertColor = (color: any) => {
   const [palette, shade] = color.split('.')

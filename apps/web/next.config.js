@@ -13,9 +13,7 @@ module.exports = {
 
   transpilePackages: [
     '@shallot-ui/next',
-    '@shallot-ui/theme',
     '@shallot-ui/prismjs',
-    '@shallot-ui/web',
     '@shallot-ui/react-select',
   ],
 }

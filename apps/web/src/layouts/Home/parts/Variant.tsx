@@ -1,4 +1,4 @@
-import { Column } from '@shallot-ui/web'
+import { Column } from '@shallot-ui/next'
 import { Code } from '@/components'
 
 export const VariantCode = () => (
