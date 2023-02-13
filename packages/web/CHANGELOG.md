@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.19.11
+
+### Patch Changes
+
+- Adds export forwarding from core and theme
+
 ## 0.19.10
 
 ### Patch Changes
