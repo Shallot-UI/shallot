@@ -1,5 +1,13 @@
 # @shallot-ui/native
 
+## 0.19.23
+
+### Patch Changes
+
+- Updates to latest react types
+- Updated dependencies
+  - @shallot-ui/core@0.19.10
+
 ## 0.19.22
 
 ### Patch Changes

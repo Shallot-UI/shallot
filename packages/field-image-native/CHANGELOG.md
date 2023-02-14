@@ -1,5 +1,13 @@
 # @shallot-ui/field-image-native
 
+## 0.19.9
+
+### Patch Changes
+
+- Updates to latest react types
+- Updated dependencies
+  - @shallot-ui/core@0.19.10
+
 ## 0.19.8
 
 ### Patch Changes

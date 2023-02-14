@@ -1,5 +1,13 @@
 # @shallot-ui/web
 
+## 0.19.12
+
+### Patch Changes
+
+- Updates to latest react types
+- Updated dependencies
+  - @shallot-ui/core@0.19.10
+
 ## 0.19.11
 
 ### Patch Changes

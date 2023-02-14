@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 0.19.10
+
+### Patch Changes
+
+- Updates to latest react types
+
 ## 0.19.9
 
 ### Patch Changes
