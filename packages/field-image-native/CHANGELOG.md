@@ -1,5 +1,13 @@
 # @shallot-ui/field-image-native
 
+## 0.19.10
+
+### Patch Changes
+
+- Fixes text prop type
+- Updated dependencies
+  - @shallot-ui/core@0.19.11
+
 ## 0.19.9
 
 ### Patch Changes

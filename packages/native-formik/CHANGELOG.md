@@ -1,5 +1,14 @@
 # @shallot-ui/native-formik
 
+## 0.19.12
+
+### Patch Changes
+
+- Fixes text prop type
+- Updated dependencies
+  - @shallot-ui/native@0.19.24
+  - @shallot-ui/core@0.19.11
+
 ## 0.19.11
 
 ### Patch Changes

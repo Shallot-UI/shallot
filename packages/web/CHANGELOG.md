@@ -1,5 +1,13 @@
 # @shallot-ui/web
 
+## 0.19.13
+
+### Patch Changes
+
+- Fixes text prop type
+- Updated dependencies
+  - @shallot-ui/core@0.19.11
+
 ## 0.19.12
 
 ### Patch Changes
