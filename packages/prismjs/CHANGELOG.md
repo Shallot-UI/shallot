@@ -1,5 +1,11 @@
 # @shallot-ui/prismjs
 
+## 0.18.12
+
+### Patch Changes
+
+- Updates Field Image height forwarding
+
 ## 0.18.11
 
 ### Patch Changes

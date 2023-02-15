@@ -27,18 +27,17 @@ const getTransformedHeight = (
 
 export const Image: FunctionComponent<ImageProps> = (props) => {
   const theme = useTheme()
+  const baseUnit = theme.gridUnits[0]
 
-  const { unitWidth, unitHeight, image, transformation } = props
-
-  const width = unitWidth * theme.gridUnits[0]
-  const height = unitHeight ? unitHeight * theme.gridUnits[0] : undefined
-  const transformedHeight = getTransformedHeight(image, width, transformation)
+  const { unitWidth, image, transformation } = props
+  const pixelWidth = unitWidth * baseUnit
+  const pixelHeight = getTransformedHeight(image, pixelWidth, transformation)
 
   return (
     <ShallotImage
       src={image?.src}
-      sizes={`${width}px`}
-      style={{ width, height: height ?? transformedHeight, ...props.style }}
+      sizes={`${pixelWidth}px`}
+      unitHeight={pixelHeight / baseUnit}
       {...props}
     />
   )

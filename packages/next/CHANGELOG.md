@@ -1,5 +1,11 @@
 # @shallot-ui/next
 
+## 0.18.14
+
+### Patch Changes
+
+- Updates Field Image height forwarding
+
 ## 0.18.13
 
 ### Patch Changes

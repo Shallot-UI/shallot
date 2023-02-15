@@ -1,5 +1,13 @@
 # @shallot-ui/web-formik
 
+## 0.18.13
+
+### Patch Changes
+
+- Updates Field Image height forwarding
+- Updated dependencies
+  - @shallot-ui/next@0.18.14
+
 ## 0.18.12
 
 ### Patch Changes
