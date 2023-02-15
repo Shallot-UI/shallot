@@ -1,5 +1,29 @@
 # @shallot-ui/react-select
 
+## 0.18.9
+
+### Patch Changes
+
+- Reframes image as a more direct implementation of next/image
+
+## 0.18.8
+
+### Patch Changes
+
+- Updates image
+
+## 0.18.7
+
+### Patch Changes
+
+- :q
+
+## 0.18.6
+
+### Patch Changes
+
+- Adds image to next package
+
 ## 0.18.5
 
 ### Patch Changes

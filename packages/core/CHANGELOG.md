@@ -1,5 +1,29 @@
 # @shallot-ui/core
 
+## 0.19.15
+
+### Patch Changes
+
+- Reframes image as a more direct implementation of next/image
+
+## 0.19.14
+
+### Patch Changes
+
+- Updates image
+
+## 0.19.13
+
+### Patch Changes
+
+- :q
+
+## 0.19.12
+
+### Patch Changes
+
+- Adds image to next package
+
 ## 0.19.11
 
 ### Patch Changes
