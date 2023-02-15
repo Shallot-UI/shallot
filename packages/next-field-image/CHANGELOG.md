@@ -1,5 +1,13 @@
 # @shallot-ui/web-formik
 
+## 0.18.12
+
+### Patch Changes
+
+- Fixes type pattern for images
+- Updated dependencies
+  - @shallot-ui/next@0.18.13
+
 ## 0.18.11
 
 ### Patch Changes

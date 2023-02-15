@@ -1,5 +1,11 @@
 # @shallot-ui/next
 
+## 0.18.13
+
+### Patch Changes
+
+- Fixes type pattern for images
+
 ## 0.18.12
 
 ### Patch Changes

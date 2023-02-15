@@ -4,10 +4,12 @@ import {
   Image as ShallotImage,
   ImageProps as ShallotImageProps,
 } from '@shallot-ui/next'
+
 import { FieldImage } from '../../types'
 
 interface ImageProps extends Omit<ShallotImageProps, 'src'> {
   image: FieldImage
+  unitWidth: number
   transformation?: string
 }
 
@@ -23,16 +25,10 @@ const getTransformedHeight = (
   return width / aspectRatio
 }
 
-export const Image: FunctionComponent<ImageProps> = ({
-  image,
-  alt,
-  unitWidth = 10,
-  unitHeight,
-  transformation = 'native',
-  style,
-  ...rest
-}) => {
+export const Image: FunctionComponent<ImageProps> = (props) => {
   const theme = useTheme()
+
+  const { unitWidth, unitHeight, image, transformation } = props
 
   const width = unitWidth * theme.gridUnits[0]
   const height = unitHeight ? unitHeight * theme.gridUnits[0] : undefined
@@ -41,10 +37,9 @@ export const Image: FunctionComponent<ImageProps> = ({
   return (
     <ShallotImage
       src={image?.src}
-      alt={alt}
       sizes={`${width}px`}
-      style={{ width, height: height ?? transformedHeight, ...style }}
-      {...rest}
+      style={{ width, height: height ?? transformedHeight, ...props.style }}
+      {...props}
     />
   )
 }
