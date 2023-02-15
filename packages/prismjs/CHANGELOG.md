@@ -1,5 +1,11 @@
 # @shallot-ui/prismjs
 
+## 0.18.10
+
+### Patch Changes
+
+- Removes reference to styled components native
+
 ## 0.18.9
 
 ### Patch Changes

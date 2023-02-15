@@ -1,5 +1,18 @@
 # @shallot-ui/next
 
+## 0.18.12
+
+### Patch Changes
+
+- Passes width and height to next image
+- Removes reference to styled components native
+
+## 0.18.11
+
+### Patch Changes
+
+- Exports next image props
+
 ## 0.18.10
 
 ### Patch Changes
