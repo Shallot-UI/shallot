@@ -1,5 +1,13 @@
 # @shallot-ui/web-formik
 
+## 0.18.14
+
+### Patch Changes
+
+- Fixes placeholder color in native
+- Updated dependencies
+  - @shallot-ui/next@0.18.15
+
 ## 0.18.13
 
 ### Patch Changes

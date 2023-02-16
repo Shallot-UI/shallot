@@ -1,5 +1,11 @@
 # @shallot-ui/prismjs
 
+## 0.18.13
+
+### Patch Changes
+
+- Fixes placeholder color in native
+
 ## 0.18.12
 
 ### Patch Changes

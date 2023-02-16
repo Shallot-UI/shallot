@@ -1,5 +1,11 @@
 # @shallot-ui/next
 
+## 0.18.15
+
+### Patch Changes
+
+- Fixes placeholder color in native
+
 ## 0.18.14
 
 ### Patch Changes

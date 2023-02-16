@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.19.29
+
+### Patch Changes
+
+- Fixes placeholder color in native
+
 ## 0.19.28
 
 ### Patch Changes
