@@ -5,7 +5,11 @@ import styled from 'styled-components'
 import { getInputStyle } from './getStyle'
 import { InputStyleProps } from './types'
 
-export const Input = styled(TextInput)<InputStyleProps>`
+export const Input = styled(TextInput).attrs<InputStyleProps>(
+  ({ placeholderColor, theme }) => ({
+    placeholderTextColor: placeholderColor && theme.colors[placeholderColor],
+  }),
+)`
   display: flex;
   border-style: solid;
   outline: none;

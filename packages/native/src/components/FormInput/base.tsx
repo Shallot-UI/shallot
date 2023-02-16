@@ -82,11 +82,6 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
         onBlur={handleBlur}
         onChange={handleChange}
         editable={!disabled}
-        placeholderTextColor={
-          (placeholderColor && theme.colors[placeholderColor]) ||
-          (styles.input.placeholderColor &&
-            theme.colors[styles.input.placeholderColor])
-        }
         {...inputStyles}
         {...rest}
       />
