@@ -1,5 +1,12 @@
 # @shallot-ui/native
 
+## 0.19.30
+
+### Patch Changes
+
+- aa4b43e: Forwards placeholder color directly in Input
+- Exports core and theme from native
+
 ## 0.19.29
 
 ### Patch Changes

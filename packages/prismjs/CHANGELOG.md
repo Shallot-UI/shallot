@@ -1,5 +1,12 @@
 # @shallot-ui/prismjs
 
+## 0.18.14
+
+### Patch Changes
+
+- aa4b43e: Forwards placeholder color directly in Input
+- Exports core and theme from native
+
 ## 0.18.13
 
 ### Patch Changes

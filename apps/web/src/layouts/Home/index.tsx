@@ -88,6 +88,18 @@ const colorPalettes = {
     '#065f46',
     '#064e3b',
   ]),
+  tailwindAmber: convertPalette('Primary', [
+    '#fffbeb',
+    '#fef3c7',
+    '#fde68a',
+    '#fcd34d',
+    '#fbbf24',
+    '#f59e0b',
+    '#d97706',
+    '#b45309',
+    '#92400e',
+    '#78350f',
+  ]),
 }
 
 const shadingPalettes = {

@@ -1,5 +1,15 @@
 # web
 
+## 0.0.7
+
+### Patch Changes
+
+- Exports core and theme from native
+- Updated dependencies [aa4b43e]
+- Updated dependencies
+  - @shallot-ui/prismjs@0.18.14
+  - @shallot-ui/next@0.18.16
+
 ## 0.0.6
 
 ### Patch Changes

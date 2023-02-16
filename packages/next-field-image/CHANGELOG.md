@@ -1,5 +1,15 @@
 # @shallot-ui/web-formik
 
+## 0.18.15
+
+### Patch Changes
+
+- aa4b43e: Forwards placeholder color directly in Input
+- Exports core and theme from native
+- Updated dependencies [aa4b43e]
+- Updated dependencies
+  - @shallot-ui/next@0.18.16
+
 ## 0.18.14
 
 ### Patch Changes
