@@ -48,7 +48,8 @@ const Container = styled.button.withConfig<
     children: ReactNode | ReactNode[]
   }
 >({
-  shouldForwardProp: INTERNAL_shouldForwardProp,
+  shouldForwardProp: (propName) =>
+    INTERNAL_shouldForwardProp(propName) && propName !== 'pseudoClasses',
 })`
   ${getRowStyle}
 

@@ -1,5 +1,13 @@
 # @shallot-ui/web-formik
 
+## 0.18.18
+
+### Patch Changes
+
+- Removing more forwarded props
+- Updated dependencies
+  - @shallot-ui/next@0.18.19
+
 ## 0.18.17
 
 ### Patch Changes

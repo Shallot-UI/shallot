@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.19.6
+
+### Patch Changes
+
+- Removing more forwarded props
+
 ## 0.19.5
 
 ### Patch Changes

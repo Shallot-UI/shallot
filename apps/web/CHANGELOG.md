@@ -1,5 +1,14 @@
 # web
 
+## 0.0.10
+
+### Patch Changes
+
+- Removing more forwarded props
+- Updated dependencies
+  - @shallot-ui/prismjs@0.18.17
+  - @shallot-ui/next@0.18.19
+
 ## 0.0.9
 
 ### Patch Changes

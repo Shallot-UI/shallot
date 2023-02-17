@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.18.19
+
+### Patch Changes
+
+- Removing more forwarded props
+- Updated dependencies
+  - @shallot-ui/web@0.19.19
+
 ## 0.18.18
 
 ### Patch Changes

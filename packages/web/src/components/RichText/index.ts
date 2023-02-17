@@ -1,5 +1,6 @@
+import { INTERNAL_shouldForwardProp } from '@shallot-ui/theme'
 import styled from 'styled-components'
-import { Column } from '../primitives/Column'
+import { Column, ColumnStyleProps } from '../primitives/Column'
 import { getTextStyle, TextStyleProps } from '../Text'
 
 export interface RichTextVariant {
@@ -14,11 +15,13 @@ export interface RichTextVariant {
   orderedList?: TextStyleProps
 }
 
-export interface RichTextProps {
+export interface RichTextProps extends ColumnStyleProps {
   variant?: RichTextVariant
 }
 
-export const RichText = styled(Column)<RichTextProps>`
+export const RichText = styled(Column).withConfig<RichTextProps>({
+  shouldForwardProp: INTERNAL_shouldForwardProp,
+})`
   h1 {
     ${({ variant = {} }) => getTextStyle(variant.heading1)};
   }

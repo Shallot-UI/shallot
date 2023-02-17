@@ -1,5 +1,13 @@
 # @shallot-ui/native
 
+## 0.19.33
+
+### Patch Changes
+
+- Removing more forwarded props
+- Updated dependencies
+  - @shallot-ui/theme@0.19.6
+
 ## 0.19.32
 
 ### Patch Changes
