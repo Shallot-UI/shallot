@@ -1,5 +1,13 @@
 # @shallot-ui/web-formik
 
+## 0.18.19
+
+### Patch Changes
+
+- Cleaner use of pullProps
+- Updated dependencies
+  - @shallot-ui/next@0.18.20
+
 ## 0.18.18
 
 ### Patch Changes

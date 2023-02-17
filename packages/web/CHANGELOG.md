@@ -1,5 +1,14 @@
 # @shallot-ui/web
 
+## 0.19.20
+
+### Patch Changes
+
+- Cleaner use of pullProps
+- Updated dependencies
+  - @shallot-ui/theme@0.19.7
+  - @shallot-ui/core@0.19.16
+
 ## 0.19.19
 
 ### Patch Changes

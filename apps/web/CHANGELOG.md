@@ -1,5 +1,14 @@
 # web
 
+## 0.0.11
+
+### Patch Changes
+
+- Cleaner use of pullProps
+- Updated dependencies
+  - @shallot-ui/prismjs@0.18.18
+  - @shallot-ui/next@0.18.20
+
 ## 0.0.10
 
 ### Patch Changes

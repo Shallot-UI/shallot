@@ -1,5 +1,13 @@
 # @shallot-ui/prismjs
 
+## 0.18.18
+
+### Patch Changes
+
+- Cleaner use of pullProps
+- Updated dependencies
+  - @shallot-ui/web@0.19.20
+
 ## 0.18.17
 
 ### Patch Changes

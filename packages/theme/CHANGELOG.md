@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.19.7
+
+### Patch Changes
+
+- Cleaner use of pullProps
+
 ## 0.19.6
 
 ### Patch Changes

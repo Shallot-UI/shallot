@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 0.19.16
+
+### Patch Changes
+
+- Cleaner use of pullProps
+
 ## 0.19.15
 
 ### Patch Changes

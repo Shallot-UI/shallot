@@ -1,28 +1,15 @@
 import {
   pullVerticalAlignmentProps,
   pullHorizontalAlignmentProps,
+  pullProps,
 } from '@shallot-ui/core'
 
 import { pullBoxStyleProps } from '../../Box'
 import { RowStyleProps } from './types'
 
-export const pullRowStyleProps = <T extends RowStyleProps>(
-  props: T,
-): [RowStyleProps, Omit<T, keyof RowStyleProps>] => {
-  let boxStyleProps: RowStyleProps = {}
-  let restProps = { ...props }
-
-  const actions = [
-    pullBoxStyleProps<T>,
-    pullVerticalAlignmentProps<T>,
-    pullHorizontalAlignmentProps<T>,
-  ]
-
-  actions.forEach((pullAction) => {
-    const [styleProps, otherProps] = pullAction(restProps)
-    boxStyleProps = { ...boxStyleProps, ...styleProps }
-    restProps = { ...restProps, ...otherProps }
-  })
-
-  return [boxStyleProps, restProps]
-}
+export const pullRowStyleProps = <T extends RowStyleProps>(props: T) =>
+  pullProps(props, [
+    pullBoxStyleProps,
+    pullVerticalAlignmentProps,
+    pullHorizontalAlignmentProps,
+  ])

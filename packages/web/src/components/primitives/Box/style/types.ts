@@ -25,5 +25,6 @@ export interface BoxStyleProps
     SizingProps,
     TransitionProps,
     UnitsAroundProps {
+  display?: boolean | 'hidden' | 'inline' | 'block' | 'flex' | 'inline-flex'
   style?: Partial<CSSProperties>
 }

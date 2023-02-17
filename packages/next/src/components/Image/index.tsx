@@ -21,10 +21,12 @@ export const Image: FunctionComponent<ImageProps> = (props) => {
   const height =
     columnStyle?.unitHeight && columnStyle.unitHeight * theme.gridUnits[0]
 
+  const { style } = rest
+
   return (
     <Column
       {...columnStyle}
-      style={{ position: 'relative', overflow: 'hidden', ...columnStyle.style }}
+      style={{ position: 'relative', overflow: 'hidden', ...style }}
     >
       {/* We need to pass the width and height props to the NextImage component
       so that it can calculate the aspect ratio of the image. Note that these
