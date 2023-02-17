@@ -15,6 +15,7 @@ import {
 import { ButtonComponentStyles, ButtonProps } from './types'
 import { Text, getTextStyle } from '../Text'
 import { pullRowStyleProps, getRowStyle, RowStyleProps } from '../primitives'
+import { INTERNAL_shouldForwardProp } from '@shallot-ui/theme'
 
 const Title = styled(Text)``
 
@@ -41,12 +42,14 @@ const buildPseudoClass = (name: string) =>
       `}
   `
 
-const Container = styled.button<
+const Container = styled.button.withConfig<
   RowStyleProps & {
     pseudoClasses: Record<string, ButtonComponentStyles | undefined>
-    children: ReactNode
+    children: ReactNode | ReactNode[]
   }
->`
+>({
+  shouldForwardProp: INTERNAL_shouldForwardProp,
+})`
   ${getRowStyle}
 
   ${buildPseudoClass(':hover')}
@@ -105,7 +108,7 @@ export const BaseButton: FunctionComponent<ButtonProps> = (props) => {
       {...rest}
     >
       {startAdornment}
-      <Title {...labelStyles}>{title}</Title>
+      <Title {...labelStyles}>{title ?? ''}</Title>
       {endAdornment}
     </Container>
   )

@@ -37,7 +37,7 @@ export const BaseFormControlColumn: FunctionComponent<
     <Column {...containerStyles}>
       <Text {...labelStyles}>
         {label}
-        {required && <Text {...requiredStarStyles} />}
+        {required && <Text {...requiredStarStyles}>*</Text>}
       </Text>
       {children}
       {errorText && <Text {...errorTextStyles}>{errorText}</Text>}

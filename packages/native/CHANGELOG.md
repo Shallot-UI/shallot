@@ -1,5 +1,13 @@
 # @shallot-ui/native
 
+## 0.19.32
+
+### Patch Changes
+
+- Pulls props before they make it to the dom.
+- Updated dependencies
+  - @shallot-ui/theme@0.19.5
+
 ## 0.19.31
 
 ### Patch Changes

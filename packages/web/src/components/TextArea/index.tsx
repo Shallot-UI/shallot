@@ -7,6 +7,7 @@ import {
   FontSizeProps,
   LineHeightProps,
   RadiusProps,
+  INTERNAL_shouldForwardProp,
 } from '@shallot-ui/theme'
 import {
   getCasing,
@@ -31,7 +32,9 @@ interface BaseTextAreaProps
   style?: Partial<CSSProperties>
 }
 
-export const TextArea = styled.textarea<BaseTextAreaProps>`
+export const TextArea = styled.textarea.withConfig<BaseTextAreaProps>({
+  shouldForwardProp: INTERNAL_shouldForwardProp,
+})`
   display: flex;
   width: 100%;
   border: 1px solid transparent;

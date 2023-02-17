@@ -1,5 +1,14 @@
 # web
 
+## 0.0.9
+
+### Patch Changes
+
+- Pulls props before they make it to the dom.
+- Updated dependencies
+  - @shallot-ui/prismjs@0.18.16
+  - @shallot-ui/next@0.18.18
+
 ## 0.0.8
 
 ### Patch Changes

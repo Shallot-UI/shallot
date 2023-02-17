@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
-export const Space = styled.div`
+import { Box } from '../primitives'
+
+export const Space = styled(Box)`
   flex: 1;
 `

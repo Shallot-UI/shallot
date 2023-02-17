@@ -1,5 +1,13 @@
 # @shallot-ui/web
 
+## 0.19.18
+
+### Patch Changes
+
+- Pulls props before they make it to the dom.
+- Updated dependencies
+  - @shallot-ui/theme@0.19.5
+
 ## 0.19.17
 
 ### Patch Changes

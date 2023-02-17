@@ -1,10 +1,13 @@
 import { ComponentProps } from 'react'
 import styled from 'styled-components'
+import { INTERNAL_shouldForwardProp } from '@shallot-ui/theme'
 
 import { BoxStyleProps } from './style/types'
 import { getBoxStyle } from './style/get'
 
-export const Box = styled.div<BoxStyleProps>`
+export const Box = styled.div.withConfig<BoxStyleProps>({
+  shouldForwardProp: INTERNAL_shouldForwardProp,
+})`
   ${getBoxStyle}
 `
 

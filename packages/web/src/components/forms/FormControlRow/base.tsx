@@ -39,7 +39,7 @@ export const BaseFormControlRow: FunctionComponent<FormControlRowProps> = ({
       <Column {...detailsStyles}>
         <Text {...labelStyles}>
           {label}
-          {required && <Text {...requiredStarStyles} />}
+          {required && <Text {...requiredStarStyles}>*</Text>}
         </Text>
         {errorText && <Text {...errorTextStyles}>{errorText}</Text>}
         {!errorText && helperText && (

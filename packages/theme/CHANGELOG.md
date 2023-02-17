@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.19.5
+
+### Patch Changes
+
+- Pulls props before they make it to the dom.
+
 ## 0.19.4
 
 ### Patch Changes

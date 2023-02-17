@@ -1,5 +1,13 @@
 # @shallot-ui/web-formik
 
+## 0.18.17
+
+### Patch Changes
+
+- Pulls props before they make it to the dom.
+- Updated dependencies
+  - @shallot-ui/next@0.18.18
+
 ## 0.18.16
 
 ### Patch Changes
