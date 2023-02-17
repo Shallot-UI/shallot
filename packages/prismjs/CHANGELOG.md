@@ -1,5 +1,11 @@
 # @shallot-ui/prismjs
 
+## 0.18.15
+
+### Patch Changes
+
+- Removes wrapped <a> in Link to pass DOM validation.
+
 ## 0.18.14
 
 ### Patch Changes

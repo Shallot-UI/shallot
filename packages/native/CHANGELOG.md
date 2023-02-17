@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.19.31
+
+### Patch Changes
+
+- Removes wrapped <a> in Link to pass DOM validation.
+
 ## 0.19.30
 
 ### Patch Changes

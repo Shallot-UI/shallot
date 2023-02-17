@@ -1,5 +1,13 @@
 # @shallot-ui/web-formik
 
+## 0.18.16
+
+### Patch Changes
+
+- Removes wrapped <a> in Link to pass DOM validation.
+- Updated dependencies
+  - @shallot-ui/next@0.18.17
+
 ## 0.18.15
 
 ### Patch Changes

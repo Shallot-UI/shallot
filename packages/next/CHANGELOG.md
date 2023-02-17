@@ -1,5 +1,11 @@
 # @shallot-ui/next
 
+## 0.18.17
+
+### Patch Changes
+
+- Removes wrapped <a> in Link to pass DOM validation.
+
 ## 0.18.16
 
 ### Patch Changes
