@@ -1,4 +1,4 @@
-type PullAction<T, P> = (props: T) => [T, Omit<T, keyof P>]
+export type PullAction<T, P> = (props: T) => [T, Omit<T, keyof P>]
 
 export const pullProps = <T, P>(
   props: T,

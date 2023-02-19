@@ -9,12 +9,11 @@ export const getBorder =
         ${renderBorder(borderWidth, borderPosition)}
         border-color: ${borderColor ?? 'transparent'};
       `
-    } else if (borderColor) {
+    }
+    if (borderColor) {
       return `
         ${renderBorder(1, borderPosition)}
         border-color: ${borderColor};
       `
     }
-
-    return ''
   }
