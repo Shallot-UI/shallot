@@ -1,1 +1,6 @@
+export * from './minifyCss'
+export * from './makePropGetter'
+export * from './makePropPuller'
+export * from './omit'
+export * from './pick'
 export * from './pullProps'

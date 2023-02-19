@@ -1,4 +1,4 @@
-import { minifyCss } from './minifyCss'
+import { minifyCss } from '.'
 
 describe('minifyCss', () => {
   test('removes leading and trailing whitespace', () => {

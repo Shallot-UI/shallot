@@ -1,4 +1,4 @@
-import { pullProps, PullAction } from './pullProps'
+import { pullProps, PullAction } from '.'
 
 describe('pullProps', () => {
   type TestProps = {
