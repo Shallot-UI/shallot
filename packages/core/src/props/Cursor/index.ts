@@ -1,13 +1,13 @@
 import { CursorProps } from '@shallot-ui/theme'
 
-import { PropConfigs } from '../../types'
-import { makePropPuller, makePropGetter } from '../../utils'
+import { PropsConfig } from '../../types'
+import { makePropPuller, makeStyleGetter } from '../../utils'
 
-const cursor: PropConfigs<CursorProps> = {
+export const cursorProps: PropsConfig<CursorProps> = {
   cursor: {
     get: ({ cursor }) => (cursor ? `cursor: ${cursor};` : ''),
   },
 }
 
-export const pullCursorProps = makePropPuller(cursor)
-export const getCursorProps = makePropGetter(cursor)
+export const pullCursorProps = makePropPuller(cursorProps)
+export const getCursorStyle = makeStyleGetter(cursorProps)

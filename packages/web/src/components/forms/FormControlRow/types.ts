@@ -1,25 +1,18 @@
 import { ReactNode } from 'react'
-import { TextStyleProps } from '../../Text'
-import { ColumnStyleProps } from '../../primitives/Column'
+
+import { TextProps } from '../../content'
+import { ColumnProps } from '../../containers'
 
 export interface FormControlRowComponentStyles {
-  container?: ColumnStyleProps
-  details?: ColumnStyleProps
-  label?: TextStyleProps
-  helperText?: TextStyleProps
-  errorText?: TextStyleProps
-  requiredStar?: TextStyleProps
+  container?: ColumnProps
+  details?: ColumnProps
+  label?: TextProps
+  helperText?: TextProps
+  errorText?: TextProps
+  requiredStar?: TextProps
 }
 
-export interface FormControlRowStyleProps {
-  styles?: FormControlRowComponentStyles & {
-    states?: Record<string, FormControlRowComponentStyles | undefined>
-  }
-}
-
-export interface FormControlRowProps
-  extends FormControlRowStyleProps,
-    ColumnStyleProps {
+export interface FormControlRowProps extends ColumnProps {
   focused?: boolean
   disabled?: boolean
   populated?: boolean
@@ -29,4 +22,8 @@ export interface FormControlRowProps
   label?: string
   required?: boolean
   children?: ReactNode
+
+  styles?: FormControlRowComponentStyles & {
+    states?: Record<string, FormControlRowComponentStyles | undefined>
+  }
 }

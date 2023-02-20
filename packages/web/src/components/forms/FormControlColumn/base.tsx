@@ -2,8 +2,8 @@ import { FunctionComponent } from 'react'
 import { useStyleProps } from '@shallot-ui/core'
 
 import { FormControlColumnProps } from './types'
-import { Column } from '../../primitives/Column'
-import { Text } from '../../Text'
+import { Column } from '../../containers'
+import { Text } from '../../content'
 
 export const BaseFormControlColumn: FunctionComponent<
   FormControlColumnProps

@@ -1,9 +1,9 @@
 import { DisplayProps } from '@shallot-ui/theme'
 
-import { PropConfigs } from '../../types'
-import { makePropPuller, makePropGetter } from '../../utils'
+import { PropsConfig } from '../../types'
+import { makePropPuller, makeStyleGetter } from '../../utils'
 
-const display: PropConfigs<DisplayProps> = {
+export const displayProps: PropsConfig<DisplayProps> = {
   display: {
     get: ({ display }) => {
       if (display === 'hidden') {
@@ -17,5 +17,5 @@ const display: PropConfigs<DisplayProps> = {
   },
 }
 
-export const pullDisplayProps = makePropPuller(display)
-export const getDisplayProps = makePropGetter(display)
+export const pullDisplayProps = makePropPuller(displayProps)
+export const getDisplayStyle = makeStyleGetter(displayProps)

@@ -1,5 +1,6 @@
+export * from './getMediaQueries'
 export * from './minifyCss'
-export * from './makePropGetter'
+export * from './makeStyleGetter'
 export * from './makePropPuller'
 export * from './omit'
 export * from './pick'

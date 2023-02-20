@@ -1,7 +1,7 @@
 import { DefaultTheme } from 'styled-components'
 
 import { makePropPuller } from '.'
-import { PropConfigs } from '../../types'
+import { PropsConfig } from '../../types'
 
 describe('makePropPuller', () => {
   interface ButtonProps {
@@ -11,7 +11,7 @@ describe('makePropPuller', () => {
     animated?: boolean
   }
 
-  const propsConfig: PropConfigs<ButtonProps> = {
+  const propsConfig: PropsConfig<ButtonProps> = {
     textColor: {
       get: ({ textColor }) =>
         textColor ? ({ theme }) => `color: ${theme.colors[textColor]};` : '',

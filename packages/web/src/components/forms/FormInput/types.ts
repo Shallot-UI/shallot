@@ -1,6 +1,5 @@
 import { HTMLProps } from 'react'
-import { InputStyleProps } from '../../primitives'
-import { InputProps } from '../../primitives/Input/base'
+import { InputProps } from '../../controls'
 import {
   FormControlColumnComponentStyles,
   FormControlColumnProps,
@@ -8,17 +7,14 @@ import {
 
 export interface FormInputComponentStyles
   extends FormControlColumnComponentStyles {
-  input?: InputStyleProps
-}
-
-export interface FormInputStyleProps {
-  styles?: FormInputComponentStyles & {
-    states?: Record<string, FormInputComponentStyles | undefined>
-  }
+  input?: InputProps
 }
 
 export interface FormInputProps
   extends Omit<FormControlColumnProps, 'styles' | 'children'>,
-    FormInputStyleProps,
     Omit<InputProps, 'as'>,
-    Omit<HTMLProps<HTMLInputElement>, 'wrap'> {}
+    Omit<HTMLProps<HTMLInputElement>, 'wrap'> {
+  styles?: FormInputComponentStyles & {
+    states?: Record<string, FormInputComponentStyles | undefined>
+  }
+}

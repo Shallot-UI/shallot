@@ -7,7 +7,7 @@ import {
 
 import { FormCheckboxProps } from './types'
 import { BaseFormControlRow } from '../FormControlRow'
-import { BaseCheckbox } from '../../Checkbox'
+import { BaseCheckbox } from '../../controls/Checkbox'
 
 export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = (
   props,

@@ -6,7 +6,7 @@ import {
   pullUnitsAroundProps,
 } from '@shallot-ui/core'
 
-import { Input } from '../../primitives/Input/base'
+import { Input } from '../../controls'
 import { BaseFormControlColumn } from '../FormControlColumn'
 import { FormInputProps } from './types'
 
@@ -33,7 +33,10 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
     disabled,
     value,
     styles,
-    valid,
+
+    as,
+    ref,
+
     ...rest
   } = nonStyleProps
 
@@ -56,7 +59,6 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = (props) => {
     disabled,
     focused,
     populated,
-    valid,
     error: Boolean(errorText),
   }
 

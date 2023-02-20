@@ -1,9 +1,9 @@
 import { CasingProps } from '@shallot-ui/theme'
 
-import { PropConfigs } from '../../types'
-import { makePropPuller, makePropGetter } from '../../utils'
+import { PropsConfig } from '../../types'
+import { makePropPuller, makeStyleGetter } from '../../utils'
 
-const casing: PropConfigs<CasingProps> = {
+export const casingProps: PropsConfig<CasingProps> = {
   uppercase: {
     get: ({ uppercase }) => (uppercase ? 'text-transform: uppercase;' : ''),
   },
@@ -15,5 +15,5 @@ const casing: PropConfigs<CasingProps> = {
   },
 }
 
-export const pullCasingProps = makePropPuller(casing)
-export const getCasingProps = makePropGetter(casing)
+export const pullCasingProps = makePropPuller(casingProps)
+export const getCasingStyle = makeStyleGetter(casingProps)

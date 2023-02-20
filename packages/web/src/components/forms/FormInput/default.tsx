@@ -18,7 +18,7 @@ export const FormInput: FunctionComponent<FormInputProps> = (props) => (
         textColor: 'Shading.500',
         backgroundColor: 'Shading.100',
         borderColor: 'Shading.250',
-        unitPadding: 3 / 4,
+        unitsPadding: 3 / 4,
         borderWidth: 2,
         radius: 'sm',
         transition: 'border-color 350ms ease-in-out',

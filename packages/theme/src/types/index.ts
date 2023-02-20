@@ -136,11 +136,11 @@ export interface TextAlignProps {
 }
 
 export interface UnitPaddingProps {
-  unitPadding?: number
-  unitPaddingAbove?: number
-  unitPaddingBelow?: number
-  unitPaddingLeft?: number
-  unitPaddingRight?: number
+  unitsPadding?: number
+  unitsPaddingAbove?: number
+  unitsPaddingBelow?: number
+  unitsPaddingLeft?: number
+  unitsPaddingRight?: number
 }
 
 export interface DisplayProps {

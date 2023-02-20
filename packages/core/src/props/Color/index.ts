@@ -1,9 +1,9 @@
 import { ColorProps } from '@shallot-ui/theme'
 
-import { PropConfigs } from '../../types'
-import { makePropPuller, makePropGetter } from '../../utils'
+import { PropsConfig } from '../../types'
+import { makePropPuller, makeStyleGetter } from '../../utils'
 
-const color: PropConfigs<ColorProps> = {
+export const colorProps: PropsConfig<ColorProps> = {
   textColor: {
     get: ({ textColor }) =>
       textColor ? ({ theme }) => `color: ${theme.colors[textColor]};` : '',
@@ -22,5 +22,5 @@ const color: PropConfigs<ColorProps> = {
   },
 }
 
-export const pullColorProps = makePropPuller(color)
-export const getColorProps = makePropGetter(color)
+export const pullColorProps = makePropPuller(colorProps)
+export const getColorStyle = makeStyleGetter(colorProps)

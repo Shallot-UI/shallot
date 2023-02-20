@@ -1,13 +1,14 @@
 import { ReactNode } from 'react'
-import { TextStyleProps } from '../../Text'
-import { ColumnStyleProps } from '../../primitives/Column'
+
+import { TextProps } from '../../content'
+import { ColumnProps } from '../../containers'
 
 export interface FormControlColumnComponentStyles {
-  container?: ColumnStyleProps
-  label?: TextStyleProps
-  helperText?: TextStyleProps
-  errorText?: TextStyleProps
-  requiredStar?: TextStyleProps
+  container?: ColumnProps
+  label?: TextProps
+  helperText?: TextProps
+  errorText?: TextProps
+  requiredStar?: TextProps
 }
 
 export interface FormControlColumnStyleProps {
@@ -16,9 +17,7 @@ export interface FormControlColumnStyleProps {
   }
 }
 
-export interface FormControlColumnProps
-  extends FormControlColumnStyleProps,
-    ColumnStyleProps {
+export interface FormControlColumnProps extends FormControlColumnStyleProps {
   focused?: boolean
   disabled?: boolean
   populated?: boolean
