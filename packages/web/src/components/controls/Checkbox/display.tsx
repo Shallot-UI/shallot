@@ -1,9 +1,9 @@
 import { forwardRef } from 'react'
 
+import { makeComponent } from '../../../utils'
 import { columnConfig } from '../../containers'
 import { DisplayCheckboxProps } from './types'
 import CheckmarkIcon from './icons/CheckmarkIcon'
-import { makeComponent } from '../../../utils'
 
 const Container = makeComponent(
   'label',

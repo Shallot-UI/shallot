@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { Checkbox, Column, Row } from '../components'
 import { DisplayCheckbox } from '../components/controls/Checkbox/display'
-import { getCheckboxStyleProps } from '../components/controls/Checkbox/getStyleProps'
+import { getCheckboxStyles } from '../components/controls/Checkbox/getStyles'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -26,29 +26,29 @@ const Template: ComponentStory<typeof DisplayCheckbox> = () => {
         <Column unitsAround={1}>
           <DisplayCheckbox
             value={value}
-            setValue={setValue}
-            styles={getCheckboxStyleProps()}
+            onClick={() => setValue(!value)}
+            styles={getCheckboxStyles()}
           />
         </Column>
         <Column unitsAround={1}>
           <DisplayCheckbox
             value={value}
-            setValue={setValue}
-            styles={getCheckboxStyleProps({ state: { focused: true } })}
+            onClick={() => setValue(!value)}
+            styles={getCheckboxStyles({ state: { focused: true } })}
           />
         </Column>
         <Column unitsAround={1}>
           <DisplayCheckbox
             value={value}
-            setValue={setValue}
-            styles={getCheckboxStyleProps({ state: { hovered: true } })}
+            onClick={() => setValue(!value)}
+            styles={getCheckboxStyles({ state: { hovered: true } })}
           />
         </Column>
         <Column unitsAround={1}>
           <DisplayCheckbox
             value={value}
-            setValue={setValue}
-            styles={getCheckboxStyleProps({
+            onClick={() => setValue(!value)}
+            styles={getCheckboxStyles({
               state: { focused: true, hovered: true },
             })}
           />
@@ -58,15 +58,15 @@ const Template: ComponentStory<typeof DisplayCheckbox> = () => {
         <Column unitsAround={1}>
           <DisplayCheckbox
             value={value}
-            setValue={setValue}
-            styles={getCheckboxStyleProps({ state: { checked: true } })}
+            onClick={() => setValue(!value)}
+            styles={getCheckboxStyles({ state: { checked: true } })}
           />
         </Column>
         <Column unitsAround={1}>
           <DisplayCheckbox
             value={value}
-            setValue={setValue}
-            styles={getCheckboxStyleProps({
+            onClick={() => setValue(!value)}
+            styles={getCheckboxStyles({
               state: { checked: true, focused: true },
             })}
           />
@@ -74,8 +74,8 @@ const Template: ComponentStory<typeof DisplayCheckbox> = () => {
         <Column unitsAround={1}>
           <DisplayCheckbox
             value={value}
-            setValue={setValue}
-            styles={getCheckboxStyleProps({
+            onClick={() => setValue(!value)}
+            styles={getCheckboxStyles({
               state: { checked: true, hovered: true },
             })}
           />
@@ -83,8 +83,8 @@ const Template: ComponentStory<typeof DisplayCheckbox> = () => {
         <Column unitsAround={1}>
           <DisplayCheckbox
             value={value}
-            setValue={setValue}
-            styles={getCheckboxStyleProps({
+            onClick={() => setValue(!value)}
+            styles={getCheckboxStyles({
               state: { checked: true, hovered: true, focused: true },
             })}
           />

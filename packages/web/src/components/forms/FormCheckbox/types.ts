@@ -1,40 +1,32 @@
-import { HTMLProps } from 'react'
+import { FunctionComponent, HTMLAttributes, SVGProps } from 'react'
+import { CheckboxComponentStyles } from '../../controls'
 import {
-  CheckboxComponentStyles,
-  CheckboxProps,
-  DisplayCheckboxProps,
-} from '../../controls'
-import {
+  DisplayFormControlRowProps,
   FormControlRowComponentStyles,
-  FormControlRowProps,
-} from '../FormControlRow'
+} from '../FormControlRow/types'
 
-export interface FormCheckboxComponentStyles
-  extends FormControlRowComponentStyles {
-  input?: CheckboxProps
+export interface FormCheckboxComponentStyles {
+  checkbox?: CheckboxComponentStyles
+  control?: FormControlRowComponentStyles
 }
 
-export interface FormCheckboxProps
-  extends Omit<
-      HTMLProps<HTMLInputElement>,
-      | 'ref'
-      | 'children'
-      | 'wrap'
-      | 'as'
-      | 'value'
-      | 'onChange'
-      | 'onFocus'
-      | 'onBlur'
-    >,
-    Omit<FormControlRowProps, 'styles' | 'children'>,
-    Omit<CheckboxProps, 'styles'> {
+export interface DisplayCheckboxProps extends HTMLAttributes<HTMLLabelElement> {
+  Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
+  styles?: FormCheckboxComponentStyles
+}
+
+export interface FormCheckboxState {
+  disabled?: boolean
+  focused?: boolean
+  hovered?: boolean
+  checked?: boolean
+}
+
+export interface FormCheckboxProps extends DisplayFormControlRowProps {
   value: boolean
   setValue: (value: boolean) => void
-  styles?: Record<
-    string,
-    {
-      formControlRow?: FormControlRowComponentStyles
-      checkbox?: DisplayCheckboxProps['styles']
-    }
-  >
+  Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
+  getStyles?: (props: {
+    state?: FormCheckboxState
+  }) => FormCheckboxComponentStyles
 }

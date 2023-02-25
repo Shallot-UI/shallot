@@ -2,11 +2,15 @@ import { FunctionComponent, useRef } from 'react'
 import { pullUnitsAroundProps, pullProps } from '@shallot-ui/core'
 
 import { FormCheckboxProps } from './types'
+import { getFormCheckboxStyles } from './getStyles'
 import { FormControlRow } from '../FormControlRow'
 import { useFocus, useHover } from '../../../hooks'
-import { DisplayCheckbox } from '../../controls/Checkbox/display'
+import { DisplayCheckbox } from '../../controls/Checkbox'
 
-export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = ({
+export * from './types'
+export * from './getStyles'
+
+export const FormCheckbox: FunctionComponent<FormCheckboxProps> = ({
   value,
   setValue,
   label,
@@ -14,23 +18,15 @@ export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = ({
   errorText,
   helperText,
   disabled,
-  styles,
+  getStyles = getFormCheckboxStyles,
   ...props
 }) => {
   const checkboxRef = useRef<HTMLLabelElement>(null)
-
   const focused = useFocus(checkboxRef)
   const hovered = useHover(checkboxRef)
 
-  const checkboxStateSelector = [
-    value ? 'checked' : 'default',
-    hovered ? 'hovered' : undefined,
-    focused ? 'focused' : undefined,
-  ]
-    .filter(Boolean)
-    .join(':')
-
-  const [controlStyleProps, rest] = pullProps(props, [pullUnitsAroundProps])
+  const styles = getStyles({ state: { focused, hovered, checked: value } })
+  const [controlOverrides, rest] = pullProps(props, [pullUnitsAroundProps])
 
   return (
     <FormControlRow
@@ -38,15 +34,13 @@ export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = ({
       helperText={helperText}
       label={label}
       required={required}
-      // styles={styles?.[stateSelector]?.formControlRow}
-      {...controlStyleProps}
+      styles={styles.control}
+      {...controlOverrides}
     >
       <DisplayCheckbox
         ref={checkboxRef}
-        value={value}
-        setValue={setValue}
-        // styles={styles?.[stateSelector]?.checkbox}
-        // {...inputStyles}
+        onClick={() => setValue(!value)}
+        styles={styles.checkbox}
         {...rest}
       />
     </FormControlRow>

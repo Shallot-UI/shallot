@@ -7,18 +7,20 @@ import CheckmarkIcon from './icons/CheckmarkIcon'
 // Hooks
 import { useHover } from '../../../hooks/useHover'
 import { useFocus } from '../../../hooks/useFocus'
-import { getCheckboxStyleProps } from './getStyleProps'
+import { getCheckboxStyles } from './getStyles'
 
-export const BaseCheckbox: FunctionComponent<CheckboxProps> = ({
-  disabled,
+export * from './types'
+export * from './getStyles'
+export * from './display'
+
+export const Checkbox: FunctionComponent<CheckboxProps> = ({
   Icon = CheckmarkIcon,
-  error,
   value,
   setValue,
+  getStyles = getCheckboxStyles,
   ...rest
 }) => {
   const displayRef = useRef<HTMLLabelElement>(null)
-
   const focused = useFocus(displayRef)
   const hovered = useHover(displayRef)
 
@@ -27,14 +29,10 @@ export const BaseCheckbox: FunctionComponent<CheckboxProps> = ({
       ref={displayRef}
       Icon={Icon}
       onClick={() => setValue(!value)}
-      styles={getCheckboxStyleProps({
-        state: {
-          hovered,
-          focused,
-          disabled: false,
-          checked: value,
-        },
+      styles={getStyles({
+        state: { hovered, focused, disabled: false, checked: value },
       })}
+      {...rest}
     />
   )
 }

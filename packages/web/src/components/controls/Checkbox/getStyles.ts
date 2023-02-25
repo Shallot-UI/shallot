@@ -15,7 +15,7 @@ const formControlSurface: BoxProps = {
   `,
 }
 
-export const getCheckboxStyleProps = ({
+export const getCheckboxStyles = ({
   color = 'Primary',
   size = 4 / 3,
   iconSize = 1,

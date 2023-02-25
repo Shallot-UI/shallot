@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes } from 'react'
 
-import { TextProps } from '../../content'
 import { ColumnProps } from '../../containers'
+import { TextProps } from '../../content'
 
 export interface FormControlRowComponentStyles {
   container?: ColumnProps
@@ -12,18 +12,31 @@ export interface FormControlRowComponentStyles {
   requiredStar?: TextProps
 }
 
-export interface FormControlRowProps extends ColumnProps {
-  focused?: boolean
-  disabled?: boolean
-  populated?: boolean
-  error?: boolean
+export interface DisplayFormControlRowProps
+  extends HTMLAttributes<HTMLInputElement | HTMLLabelElement> {
   errorText?: string
   helperText?: string
   label?: string
   required?: boolean
-  children?: ReactNode
+  disabled?: boolean
+  styles?: FormControlRowComponentStyles
+}
 
-  styles?: FormControlRowComponentStyles & {
-    states?: Record<string, FormControlRowComponentStyles | undefined>
-  }
+export interface FormControlRowState {
+  disabled?: boolean
+  focused?: boolean
+  hovered?: boolean
+  checked?: boolean
+  populated?: boolean
+  error?: boolean
+}
+
+export interface FormControlRowProps extends DisplayFormControlRowProps {
+  disabled?: boolean
+  focused?: boolean
+  populated?: boolean
+  error?: boolean
+  getStyles?: (props: {
+    state?: FormControlRowState
+  }) => FormControlRowComponentStyles
 }

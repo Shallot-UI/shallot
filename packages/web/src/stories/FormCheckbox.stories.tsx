@@ -24,6 +24,16 @@ const Template: ComponentStory<typeof FormCheckbox> = () => {
         label="My test checkbox."
         helperText="This is a helper text for the checkbox."
       />
+      <FormCheckbox
+        unitsAbove={2}
+        fullWidth
+        maxUnitWidth={35}
+        required
+        value={value}
+        setValue={setValue}
+        label="My test checkbox."
+        helperText="This is a helper text for the checkbox."
+      />
     </ThemeProvider>
   )
 }

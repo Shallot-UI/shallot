@@ -1,22 +1,12 @@
 import { FunctionComponent } from 'react'
 
-import { FormControlRowProps } from './types'
+import { DisplayFormControlRowProps } from './types'
 import { Row, Column } from '../../containers'
 import { Text } from '../../content'
 
-export const FormControlRow: FunctionComponent<FormControlRowProps> = ({
-  errorText,
-  helperText,
-  label,
-  required,
-  children,
-  disabled,
-  focused,
-  populated,
-  error,
-  styles,
-  ...rest
-}) => (
+export const DisplayFormControlRow: FunctionComponent<
+  DisplayFormControlRowProps
+> = ({ errorText, helperText, label, required, children, styles }) => (
   <Row {...styles?.container}>
     {children}
     <Column {...styles?.details}>
