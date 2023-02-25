@@ -1,4 +1,9 @@
-import { CheckboxProps } from '../../controls'
+import { HTMLProps } from 'react'
+import {
+  CheckboxComponentStyles,
+  CheckboxProps,
+  DisplayCheckboxProps,
+} from '../../controls'
 import {
   FormControlRowComponentStyles,
   FormControlRowProps,
@@ -10,10 +15,26 @@ export interface FormCheckboxComponentStyles
 }
 
 export interface FormCheckboxProps
-  extends Omit<FormControlRowProps, 'styles' | 'children'>,
-    CheckboxProps {
-  styles?: FormCheckboxComponentStyles & {
-    checkbox?: CheckboxProps['styles']
-    states?: Record<string, FormCheckboxComponentStyles | undefined>
-  }
+  extends Omit<
+      HTMLProps<HTMLInputElement>,
+      | 'ref'
+      | 'children'
+      | 'wrap'
+      | 'as'
+      | 'value'
+      | 'onChange'
+      | 'onFocus'
+      | 'onBlur'
+    >,
+    Omit<FormControlRowProps, 'styles' | 'children'>,
+    Omit<CheckboxProps, 'styles'> {
+  value: boolean
+  setValue: (value: boolean) => void
+  styles?: Record<
+    string,
+    {
+      formControlRow?: FormControlRowComponentStyles
+      checkbox?: DisplayCheckboxProps['styles']
+    }
+  >
 }

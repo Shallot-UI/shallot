@@ -1,3 +1,12 @@
+// Remove undefined values from an object
+const removeUndefined = <T extends Record<string, any>>(obj: T) => {
+  const defined = { ...obj }
+  Object.keys(defined).forEach(
+    (key) => defined[key] === undefined && delete defined[key],
+  )
+  return defined
+}
+
 export const useStyleProps = <N extends string, T extends Record<string, any>>(
   componentName: N,
   stylesProp: T | undefined,
@@ -22,5 +31,9 @@ export const useStyleProps = <N extends string, T extends Record<string, any>>(
   //     definedOverrides[key] === undefined && delete definedOverrides[key],
   // )
 
-  return { ...baseStyles, ...activeStateStyles, ...overrides }
+  return {
+    ...removeUndefined(baseStyles ?? {}),
+    ...removeUndefined(activeStateStyles),
+    ...removeUndefined(overrides ?? {}),
+  }
 }

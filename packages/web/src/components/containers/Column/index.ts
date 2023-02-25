@@ -6,7 +6,12 @@ import { columnConfig } from './config'
 export const Column = makeComponent(
   'div',
   columnConfig,
-  `display: flex; flex-direction: column;`,
+  `
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 0;
+  `,
 )
 
 export const pullColumnProps = makePropPuller(columnConfig)

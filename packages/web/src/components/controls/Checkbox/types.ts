@@ -8,6 +8,14 @@ export interface CheckboxComponentStyles {
   icon?: BoxProps
 }
 
+export interface DisplayCheckboxProps {
+  value: boolean
+  setValue: (value: boolean) => void
+  Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
+  styles?: CheckboxComponentStyles
+  children?: ReactNode | ReactNode[]
+}
+
 export interface CheckboxProps extends ColumnProps {
   value: boolean
   setValue: (value: boolean) => void
@@ -19,7 +27,5 @@ export interface CheckboxProps extends ColumnProps {
   children?: ReactNode
   Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
 
-  styles?: CheckboxComponentStyles & {
-    states?: Record<string, CheckboxComponentStyles | undefined>
-  }
+  styles?: Record<string, CheckboxComponentStyles>
 }

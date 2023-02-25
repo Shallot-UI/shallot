@@ -8,6 +8,19 @@ export interface ButtonComponentStyles {
   label?: TextProps
 }
 
+export interface DisplayButtonProps
+  extends Omit<
+    HTMLProps<HTMLButtonElement>,
+    'ref' | 'children' | 'wrap' | 'as' | 'type'
+  > {
+  styles?: ButtonComponentStyles
+  children?: ReactNode | ReactNode[]
+
+  title?: string
+  startAdornment?: ReactNode
+  endAdornment?: ReactNode
+}
+
 export interface ButtonProps
   extends RowProps,
     Omit<TextProps, 'style'>,
@@ -17,8 +30,5 @@ export interface ButtonProps
   startAdornment?: ReactNode
   endAdornment?: ReactNode
   type?: 'button' | 'submit' | 'reset'
-
-  styles?: ButtonComponentStyles & {
-    states?: Record<string, ButtonComponentStyles | undefined>
-  }
+  styles?: Record<string, ButtonComponentStyles>
 }

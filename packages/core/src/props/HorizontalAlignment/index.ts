@@ -26,13 +26,13 @@ export const getRowHorizontalAligmentStyle = makeStyleGetter(
 
 export const columnHorizontalAlignmentProps: PropsConfig<HorizontalAlignmentProps> =
   {
-    alignTop: {
+    alignLeft: {
       get: ({ alignLeft }) => (alignLeft ? 'align-items: flex-start;' : ''),
     },
-    alignMiddle: {
+    alignCenter: {
       get: ({ alignCenter }) => (alignCenter ? 'align-items: center;' : ''),
     },
-    alignBottom: {
+    alignRight: {
       get: ({ alignRight }) => (alignRight ? 'align-items: flex-end;' : ''),
     },
   }

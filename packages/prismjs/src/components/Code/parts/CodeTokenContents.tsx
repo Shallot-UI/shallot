@@ -1,5 +1,5 @@
 import { TokenStream } from 'prismjs'
-import { TextStyleProps } from '@shallot-ui/web'
+import { TextProps } from '@shallot-ui/web'
 import CodeToken from './CodeToken'
 
 const CodeTokenContents = ({
@@ -9,9 +9,9 @@ const CodeTokenContents = ({
   aliasStyles,
 }: {
   content: TokenStream
-  tokenStyle?: TextStyleProps
-  typeStyles?: Record<string, TextStyleProps>
-  aliasStyles?: Record<string, TextStyleProps>
+  tokenStyle?: TextProps
+  typeStyles?: Record<string, TextProps>
+  aliasStyles?: Record<string, TextProps>
 }) => {
   const tokenContentsList = !Array.isArray(content) ? [content] : content
   return (

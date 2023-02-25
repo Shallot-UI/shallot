@@ -1,62 +1,40 @@
-import { FunctionComponent, useCallback, useState } from 'react'
-import { useStyleProps } from '@shallot-ui/core'
+import { FunctionComponent, useRef } from 'react'
 
-import { Box, Column } from '../../containers'
-import CheckmarkIcon from './icons/CheckmarkIcon'
 import { CheckboxProps } from './types'
+import { DisplayCheckbox } from './display'
+import CheckmarkIcon from './icons/CheckmarkIcon'
+
+// Hooks
+import { useHover } from '../../../hooks/useHover'
+import { useFocus } from '../../../hooks/useFocus'
+import { getCheckboxStyleProps } from './getStyleProps'
 
 export const BaseCheckbox: FunctionComponent<CheckboxProps> = ({
   disabled,
-  onFocus,
-  onBlur,
   Icon = CheckmarkIcon,
   error,
-  styles,
   value,
   setValue,
   ...rest
 }) => {
-  const [focused, setFocused] = useState(false)
+  const displayRef = useRef<HTMLLabelElement>(null)
 
-  const handleFocus = useCallback((e: any) => {
-    setFocused(true)
-    onFocus?.(e)
-  }, [])
-
-  const handleBlur = useCallback((e: any) => {
-    setFocused(false)
-    onBlur?.(e)
-  }, [])
-
-  const handleChange = useCallback((e: any) => {
-    setValue(e.target.checked)
-  }, [])
-
-  const state = {
-    disabled,
-    focused,
-    error,
-    checked: value,
-  }
-
-  const containerStyles = useStyleProps('container', styles, state, rest)
-  const fillStyles = useStyleProps('fill', styles, state)
-  const iconStyles = useStyleProps('icon', styles, state)
+  const focused = useFocus(displayRef)
+  const hovered = useHover(displayRef)
 
   return (
-    <Column {...containerStyles} onClick={() => setValue(!value)}>
-      <Box
-        as="input"
-        type="checkbox"
-        checked={value}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        onChange={handleChange}
-        display="hidden"
-        {...rest}
-      />
-      <Column {...fillStyles} style={{ position: 'absolute' }} />
-      <Box as={Icon} {...iconStyles} style={{ position: 'absolute' }} />
-    </Column>
+    <DisplayCheckbox
+      ref={displayRef}
+      Icon={Icon}
+      onClick={() => setValue(!value)}
+      styles={getCheckboxStyleProps({
+        state: {
+          hovered,
+          focused,
+          disabled: false,
+          checked: value,
+        },
+      })}
+    />
   )
 }

@@ -1,6 +1,6 @@
 import { FunctionComponent, useEffect, useState } from 'react'
 import Prism from 'prismjs'
-import { Column, ColumnStyleProps, Text, TextStyleProps } from '@shallot-ui/web'
+import { Column, ColumnProps, Text, TextProps } from '@shallot-ui/web'
 import {
   FontProps,
   FontSizeProps,
@@ -11,16 +11,16 @@ import {
 import CodeTokenContents from './parts/CodeTokenContents'
 
 export interface CodeProps
-  extends ColumnStyleProps,
+  extends ColumnProps,
     FontProps,
     FontSizeProps,
     LineHeightProps,
     LetterSpacingProps {
   language: string
   children: string
-  tokenStyle?: TextStyleProps
-  typeStyles?: Record<string, TextStyleProps>
-  aliasStyles?: Record<string, TextStyleProps>
+  tokenStyle?: TextProps
+  typeStyles?: Record<string, TextProps>
+  aliasStyles?: Record<string, TextProps>
 }
 
 export const Code: FunctionComponent<CodeProps> = ({

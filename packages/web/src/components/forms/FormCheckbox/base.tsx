@@ -1,76 +1,54 @@
-import { FunctionComponent, useCallback, useState } from 'react'
-import {
-  useStyleProps,
-  pullUnitsAroundProps,
-  pullProps,
-} from '@shallot-ui/core'
+import { FunctionComponent, useRef } from 'react'
+import { pullUnitsAroundProps, pullProps } from '@shallot-ui/core'
 
 import { FormCheckboxProps } from './types'
-import { BaseFormControlRow } from '../FormControlRow'
-import { BaseCheckbox } from '../../controls/Checkbox'
+import { FormControlRow } from '../FormControlRow'
+import { useFocus, useHover } from '../../../hooks'
+import { DisplayCheckbox } from '../../controls/Checkbox/display'
 
-export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = (
-  props,
-) => {
-  const [focused, setFocused] = useState(false)
+export const BaseFormCheckbox: FunctionComponent<FormCheckboxProps> = ({
+  value,
+  setValue,
+  label,
+  required,
+  errorText,
+  helperText,
+  disabled,
+  styles,
+  ...props
+}) => {
+  const checkboxRef = useRef<HTMLLabelElement>(null)
 
-  const [controlStyleProps, nonStyleProps] = pullProps(props, [
-    pullUnitsAroundProps,
-  ])
+  const focused = useFocus(checkboxRef)
+  const hovered = useHover(checkboxRef)
 
-  const {
-    value,
-    setValue,
+  const checkboxStateSelector = [
+    value ? 'checked' : 'default',
+    hovered ? 'hovered' : undefined,
+    focused ? 'focused' : undefined,
+  ]
+    .filter(Boolean)
+    .join(':')
 
-    onFocus,
-    onBlur,
-    label,
-    required,
-    errorText,
-    helperText,
-    disabled,
-    styles,
-    ...rest
-  } = nonStyleProps
-
-  const handleFocus = useCallback((e: any) => {
-    setFocused(true)
-    onFocus?.(e)
-  }, [])
-
-  const handleBlur = useCallback((e: any) => {
-    setFocused(false)
-    onBlur?.(e)
-  }, [])
-
-  const state = {
-    disabled,
-    focused,
-    error: Boolean(errorText),
-  }
-
-  const inputStyles = useStyleProps('input', styles, state)
+  const [controlStyleProps, rest] = pullProps(props, [pullUnitsAroundProps])
 
   return (
-    <BaseFormControlRow
-      focused={focused}
-      disabled={disabled}
+    <FormControlRow
       errorText={errorText}
       helperText={helperText}
       label={label}
       required={required}
-      styles={styles}
+      // styles={styles?.[stateSelector]?.formControlRow}
       {...controlStyleProps}
     >
-      <BaseCheckbox
+      <DisplayCheckbox
+        ref={checkboxRef}
         value={value}
         setValue={setValue}
-        onBlur={handleBlur}
-        onFocus={handleFocus}
-        styles={styles?.checkbox}
-        {...inputStyles}
+        // styles={styles?.[stateSelector]?.checkbox}
+        // {...inputStyles}
         {...rest}
       />
-    </BaseFormControlRow>
+    </FormControlRow>
   )
 }
