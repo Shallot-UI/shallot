@@ -1,5 +1,6 @@
 import {
   borderProps,
+  casingProps,
   colorProps,
   cursorProps,
   displayProps,
@@ -12,6 +13,7 @@ import {
   radiusProps,
   sizingProps,
   transitionProps,
+  underlineProps,
   unitsAroundProps,
 } from '@shallot-ui/core'
 
@@ -30,5 +32,7 @@ export const textConfig: PropsConfig<TextProps> = {
   ...radiusProps,
   ...sizingProps,
   ...transitionProps,
+  ...underlineProps,
+  ...casingProps,
   ...unitsAroundProps,
 }

@@ -1,22 +1,29 @@
 import { ColorName } from '@shallot-ui/theme'
-import { DefaultTheme } from 'styled-components'
+import { pullRowProps } from '../../containers'
+import { pullTextProps } from '../../content'
 
 import { ButtonState, DisplayButtonProps } from './types'
 
+interface GetButtonStylesProps extends DisplayButtonProps {
+  color?: ColorName
+  outline?: boolean
+  state?: ButtonState
+}
+
 export const getButtonStyles = ({
   color = 'Primary',
-  radius = 'sm',
+  outline = false,
   state = {},
-}: {
-  color?: ColorName
-  radius?: keyof DefaultTheme['radii']
-  state?: ButtonState
-} = {}) => {
+  ...rest
+}: GetButtonStylesProps = {}) => {
+  const [containerOverrides, otherProps] = pullRowProps({ ...rest })
+  const [labelOverrides] = pullTextProps({ ...otherProps })
+
   let styles: DisplayButtonProps['styles'] = {
     container: {
       backgroundColor: `${color}.300`,
       borderColor: `${color}.300`,
-      radius: 'md',
+      borderWidth: 2,
       elevation: 'pressable',
       cursor: 'pointer',
       transition:
@@ -67,6 +74,26 @@ export const getButtonStyles = ({
       ...styles,
       container: { ...styles.container, elevation: 'focused' },
     }
+  }
+
+  if (outline) {
+    styles = {
+      ...styles,
+      container: {
+        ...styles.container,
+        backgroundColor: 'Shading.100',
+      },
+      label: {
+        ...styles.label,
+        textColor: `${color}.300`,
+      },
+    }
+  }
+
+  styles = {
+    ...styles,
+    container: { ...styles.container, ...containerOverrides },
+    label: { ...styles.label, ...labelOverrides },
   }
 
   return styles

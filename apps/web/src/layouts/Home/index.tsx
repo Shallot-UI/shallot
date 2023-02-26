@@ -102,8 +102,6 @@ const colorPalettes = {
   ]),
 }
 
-console.log(JSON.stringify(colorPalettes))
-
 const shadingPalettes = {
   materialGray: convertPalette('Shading', [
     '#FAFAFA',

@@ -10,7 +10,9 @@ export interface ButtonComponentStyles {
 }
 
 export interface DisplayButtonProps
-  extends Omit<HTMLProps<HTMLButtonElement>, 'ref' | 'wrap' | 'as' | 'type'> {
+  extends Omit<HTMLProps<HTMLButtonElement>, 'ref' | 'wrap' | 'as' | 'type'>,
+    RowProps,
+    TextProps {
   styles?: ButtonComponentStyles
   title?: string
   startAdornment?: ReactNode
@@ -31,6 +33,6 @@ export interface ButtonProps extends DisplayButtonProps {
   endAdornment?: ReactNode
   type?: 'button' | 'submit' | 'reset'
   getStyles?: (props: { state?: ButtonState }) => ButtonComponentStyles
-
-  color: ColorName
+  color?: ColorName
+  outline?: boolean
 }

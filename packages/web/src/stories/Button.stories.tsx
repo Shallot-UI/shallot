@@ -2,7 +2,7 @@ import { makeTheme } from '@shallot-ui/theme'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 
-import { Button, ButtonProps } from '../components'
+import { Button, ButtonProps, Column, Row } from '../components'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,7 +17,164 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
   <ThemeProvider theme={makeTheme()}>
-    <Button {...args} />
+    <Row>
+      <Column>
+        <Button {...args} unitsAround={1} radius="sm" />
+        <Button {...args} unitsAround={1} radius="md" />
+        <Button {...args} unitsAround={1} radius="lg" />
+        <Button {...args} unitsAround={1} radius="pill" />
+      </Column>
+      <Column>
+        <Button {...args} unitsAround={1} typeface="Monospace" radius="sm" />
+        <Button {...args} unitsAround={1} typeface="Monospace" radius="md" />
+        <Button {...args} unitsAround={1} typeface="Monospace" radius="lg" />
+        <Button {...args} unitsAround={1} typeface="Monospace" radius="pill" />
+      </Column>
+      <Column>
+        <Button
+          {...args}
+          unitsAround={1}
+          typeface="Monospace"
+          radius="sm"
+          alignMiddle
+          startAdornment={
+            <Column
+              unitsLeft={1 / 2}
+              unitHeight={3 / 2}
+              unitWidth={3 / 2}
+              backgroundColor="Shading.100"
+              radius="pill"
+            />
+          }
+        />
+        <Button
+          {...args}
+          unitsAround={1}
+          typeface="Monospace"
+          radius="md"
+          alignMiddle
+          startAdornment={
+            <Column
+              unitsLeft={1 / 2}
+              unitHeight={3 / 2}
+              unitWidth={3 / 2}
+              backgroundColor="Shading.100"
+              radius="pill"
+            />
+          }
+        />
+        <Button
+          {...args}
+          unitsAround={1}
+          typeface="Monospace"
+          radius="lg"
+          alignMiddle
+          startAdornment={
+            <Column
+              unitsLeft={1 / 2}
+              unitHeight={3 / 2}
+              unitWidth={3 / 2}
+              backgroundColor="Shading.100"
+              radius="pill"
+            />
+          }
+        />
+        <Button
+          {...args}
+          unitsAround={1}
+          typeface="Monospace"
+          radius="pill"
+          alignMiddle
+          startAdornment={
+            <Column
+              unitsLeft={1 / 2}
+              unitHeight={3 / 2}
+              unitWidth={3 / 2}
+              backgroundColor="Shading.100"
+              radius="pill"
+            />
+          }
+        />
+      </Column>
+      <Column>
+        <Button
+          {...args}
+          unitsAround={1}
+          typeface="Monospace"
+          radius="sm"
+          alignMiddle
+          endAdornment={
+            <Column
+              unitsRight={1 / 2}
+              unitHeight={3 / 2}
+              unitWidth={3 / 2}
+              backgroundColor="Shading.100"
+              radius="pill"
+            />
+          }
+        />
+        <Button
+          {...args}
+          unitsAround={1}
+          typeface="Monospace"
+          radius="md"
+          alignMiddle
+          endAdornment={
+            <Column
+              unitsRight={1 / 2}
+              unitHeight={3 / 2}
+              unitWidth={3 / 2}
+              backgroundColor="Shading.100"
+              radius="pill"
+            />
+          }
+        />
+        <Button
+          {...args}
+          unitsAround={1}
+          typeface="Monospace"
+          radius="lg"
+          alignMiddle
+          endAdornment={
+            <Column
+              unitsRight={1 / 2}
+              unitHeight={3 / 2}
+              unitWidth={3 / 2}
+              backgroundColor="Shading.100"
+              radius="pill"
+            />
+          }
+        />
+        <Button
+          {...args}
+          unitsAround={1}
+          typeface="Monospace"
+          radius="pill"
+          alignMiddle
+          endAdornment={
+            <Column
+              unitsRight={1 / 2}
+              unitHeight={3 / 2}
+              unitWidth={3 / 2}
+              backgroundColor="Shading.100"
+              radius="pill"
+            />
+          }
+        />
+      </Column>
+      <Column>
+        <Button {...args} unitsAround={1} outline radius="sm" />
+        <Button {...args} unitsAround={1} outline radius="md" />
+        <Button {...args} unitsAround={1} outline radius="lg" />
+        <Button {...args} unitsAround={1} outline radius="pill" />
+      </Column>
+      <Column>
+        <Button {...args} unitsAround={1} underline uppercase radius="sm" />
+        <Button {...args} unitsAround={1} underline uppercase radius="md" />
+        <Button {...args} unitsAround={1} underline uppercase radius="lg" />
+        <Button {...args} unitsAround={1} underline uppercase radius="pill" />
+      </Column>
+    </Row>
   </ThemeProvider>
 )
 

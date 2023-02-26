@@ -2,11 +2,11 @@ import { FunctionComponent, useRef } from 'react'
 
 import { ButtonProps } from './types'
 import { DisplayButton } from './display'
+import { getButtonStyles } from './getStyles'
 
 // Hooks
 import { useHover } from '../../../hooks/useHover'
 import { useFocus } from '../../../hooks/useFocus'
-import { getButtonStyles } from './getStyles'
 import { usePressed } from '../../../hooks'
 
 export * from './types'
@@ -15,7 +15,6 @@ export * from './display'
 
 export const Button: FunctionComponent<ButtonProps> = ({
   getStyles = getButtonStyles,
-  color,
   ...rest
 }) => {
   const displayRef = useRef<HTMLButtonElement>(null)
@@ -24,7 +23,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
   const pressed = usePressed(displayRef)
 
   const styles = getStyles({
-    color,
+    ...rest,
     state: { hovered, focused, pressed, disabled: false },
   })
 

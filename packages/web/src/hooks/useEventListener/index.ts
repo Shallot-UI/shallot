@@ -12,7 +12,6 @@ export const useEventListener = (
   }, [handler])
 
   useEffect(() => {
-    console.log('useEventListener', eventName, ref.current)
     const element = ref.current
     if (!element) return
 

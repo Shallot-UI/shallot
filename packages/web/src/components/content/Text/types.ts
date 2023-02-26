@@ -36,7 +36,4 @@ export interface TextProps
     TextAlignProps,
     TransitionProps,
     UnderlineProps,
-    UnitsAroundProps {
-  style?: Partial<CSSProperties>
-  children?: ReactNode | ReactNode[]
-}
+    UnitsAroundProps {}

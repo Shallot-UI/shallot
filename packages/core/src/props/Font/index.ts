@@ -4,6 +4,20 @@ import { PropsConfig } from '../../types'
 import { makePropPuller, makeStyleGetter } from '../../utils'
 
 export const fontProps: PropsConfig<FontProps> = {
+  typeface: {
+    get: ({ font, typeface }) =>
+      font || typeface
+        ? ({ theme }) => {
+            const typefaceDef =
+              (typeface && theme.typefaces[typeface]) ||
+              theme.typefaces[theme.defaults.typeface]
+
+            return font && typefaceDef.fonts[font]
+              ? typefaceDef.fonts[font]
+              : typefaceDef.fonts[typefaceDef.defaults.font]
+          }
+        : '',
+  },
   font: {
     get: ({ font, typeface }) =>
       font || typeface

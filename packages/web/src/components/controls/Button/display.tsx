@@ -8,7 +8,7 @@ import { textConfig } from '../../content'
 const Container = makeComponent(
   'button',
   rowConfig,
-  `display: flex; flex-direction: row;`,
+  `display: flex; flex-direction: row; border-style: solid;`,
 )
 
 const Label = makeComponent('label', textConfig)
