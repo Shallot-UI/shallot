@@ -12,7 +12,6 @@ export interface ModalComponentStyles {
 export interface ModalProps extends ColumnProps {
   onClose?: () => void
   children: ReactNode
-
   style?: CSSObject
   styles?: ModalComponentStyles & {
     states?: Record<string, ModalComponentStyles | undefined>

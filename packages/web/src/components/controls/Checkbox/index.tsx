@@ -24,14 +24,16 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
   const focused = useFocus(displayRef)
   const hovered = useHover(displayRef)
 
+  const styles = getStyles({
+    state: { hovered, focused, disabled: false, checked: value },
+  })
+
   return (
     <DisplayCheckbox
       ref={displayRef}
       Icon={Icon}
       onClick={() => setValue(!value)}
-      styles={getStyles({
-        state: { hovered, focused, disabled: false, checked: value },
-      })}
+      styles={styles}
       {...rest}
     />
   )

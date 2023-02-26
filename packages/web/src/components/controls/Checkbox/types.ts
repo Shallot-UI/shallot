@@ -1,4 +1,4 @@
-import { FunctionComponent, HTMLAttributes, ReactNode, SVGProps } from 'react'
+import { FunctionComponent, HTMLAttributes, SVGProps } from 'react'
 
 import { BoxProps, ColumnProps } from '../../containers'
 
@@ -12,7 +12,7 @@ export interface DisplayCheckboxProps extends HTMLAttributes<HTMLLabelElement> {
   styles?: CheckboxComponentStyles
 }
 
-interface CheckboxState {
+export interface CheckboxState {
   disabled?: boolean
   focused?: boolean
   hovered?: boolean

@@ -3,8 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 import { Column, DisplayButtonProps, Row } from '../components'
 
-import { DisplayButton } from '../components/controls/Button/display'
-import { buttonStyles } from '../components/controls/Button/styles'
+import { DisplayButton, getButtonStyles } from '../components/controls/Button'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -23,24 +22,24 @@ const Template: ComponentStory<typeof DisplayButton> = (
   <ThemeProvider theme={makeTheme()}>
     <Row>
       <Column unitsAround={1}>
-        <DisplayButton title="Hello Button" styles={buttonStyles.default} />
+        <DisplayButton title="Hello Button" styles={getButtonStyles()} />
       </Column>
       <Column unitsAround={1}>
         <DisplayButton
           title="Hello Button"
-          styles={buttonStyles['default:focused']}
+          styles={getButtonStyles({ state: { focused: true } })}
         />
       </Column>
       <Column unitsAround={1}>
         <DisplayButton
           title="Hello Button"
-          styles={buttonStyles['default:hovered']}
+          styles={getButtonStyles({ state: { hovered: true } })}
         />
       </Column>
       <Column unitsAround={1}>
         <DisplayButton
           title="Hello Button"
-          styles={buttonStyles['default:hovered:pressed']}
+          styles={getButtonStyles({ state: { hovered: true, focused: true } })}
         />
       </Column>
     </Row>
