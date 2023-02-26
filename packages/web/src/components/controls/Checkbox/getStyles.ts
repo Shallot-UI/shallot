@@ -1,8 +1,8 @@
 import { ColorName } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
-import { BoxProps } from '../../containers'
+import { BoxProps, ColumnProps, pullColumnProps } from '../../containers'
 
-import { DisplayCheckboxProps } from './types'
+import { CheckboxState, DisplayCheckboxProps } from './types'
 
 const formControlSurface: BoxProps = {
   cursor: 'pointer',
@@ -16,29 +16,28 @@ const formControlSurface: BoxProps = {
   `,
 }
 
+interface GetCheckboxStylesProps extends ColumnProps {
+  color?: ColorName
+  size?: number
+  iconSize?: number
+  outline?: boolean
+  state?: CheckboxState
+}
+
 export const getCheckboxStyles = ({
   color = 'Primary',
   size = 4 / 3,
   iconSize = 1,
   radius = 'sm',
   state = {},
-}: {
-  color?: ColorName
-  size?: number
-  iconSize?: number
-  radius?: keyof DefaultTheme['radii']
-  state?: {
-    disabled?: boolean
-    focused?: boolean
-    hovered?: boolean
-    checked?: boolean
-  }
-} = {}) => {
+  ...rest
+}: GetCheckboxStylesProps = {}) => {
+  const [containerOverrides] = pullColumnProps({ radius, ...rest })
+
   let styles: DisplayCheckboxProps['styles'] = {
     container: {
       ...formControlSurface,
       // Configurable
-      radius,
       unitHeight: size,
       unitWidth: size,
       // Layout
@@ -87,6 +86,11 @@ export const getCheckboxStyles = ({
       ...styles,
       container: { ...styles.container, elevation: 'focused' },
     }
+  }
+
+  styles = {
+    ...styles,
+    container: { ...styles.container, ...containerOverrides },
   }
 
   return styles

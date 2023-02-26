@@ -21,8 +21,18 @@ const Template: ComponentStory<typeof Checkbox> = (args: CheckboxProps) => {
   return (
     <ThemeProvider theme={makeTheme()}>
       <Row>
-        <Checkbox {...args} value={value} setValue={setValue} />
-        <Checkbox {...args} value={!value} setValue={(v) => setValue(!v)} />
+        <Checkbox
+          unitsAround={1 / 2}
+          {...args}
+          value={value}
+          setValue={setValue}
+        />
+        <Checkbox
+          unitsAround={1 / 2}
+          {...args}
+          value={!value}
+          setValue={(v) => setValue(!v)}
+        />
       </Row>
     </ThemeProvider>
   )
