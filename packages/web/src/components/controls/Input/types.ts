@@ -1,29 +1,34 @@
-import { HTMLProps, ReactNode } from 'react'
+import { ColorName, UnitPaddingProps } from '@shallot-ui/theme'
+import { FunctionComponent, HTMLProps, ReactNode, SVGProps } from 'react'
 
-import { ColumnProps, RowProps } from '../../containers'
-import { InputProps as BareInputProps } from '../../containers/Input'
+import { ColumnProps } from '../../containers'
+import { TextProps } from '../../content'
 
 export interface InputComponentStyles {
   container?: ColumnProps
-  input?: BareInputProps
+  input?: ColumnProps & TextProps & UnitPaddingProps
 }
 
 export interface DisplayInputProps
-  extends Omit<
-    HTMLProps<HTMLInputElement>,
-    'ref' | 'children' | 'wrap' | 'as' | 'type' | 'onCopy'
-  > {
+  extends Omit<HTMLProps<HTMLInputElement>, 'ref' | 'wrap' | 'as' | 'type'> {
+  Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
   styles?: InputComponentStyles
-  children?: ReactNode | ReactNode[]
   startAdornment?: ReactNode
   endAdornment?: ReactNode
 }
 
-export interface InputProps
-  extends RowProps,
-    Omit<HTMLProps<HTMLInputElement>, 'ref' | 'wrap' | 'style' | 'children'> {
+export interface InputState {
   disabled?: boolean
-  startAdornment?: ReactNode
-  endAdornment?: ReactNode
-  styles?: Record<string, InputComponentStyles>
+  focused?: boolean
+  hovered?: boolean
+  checked?: boolean
+}
+
+export interface InputProps extends ColumnProps {
+  value: string
+  setValue: (value: string) => void
+  Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
+  getStyles?: (props: { state?: InputState }) => InputComponentStyles
+
+  color?: ColorName
 }

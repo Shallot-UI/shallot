@@ -3,8 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 
 import { Input, Column } from '../components'
-import { DisplayInput } from '../components/controls/Input/display'
-import { inputStyles } from '../components/controls/Input/styles'
+import { DisplayInput, getInputStyles } from '../components/controls/Input'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -21,27 +20,24 @@ const Template: ComponentStory<typeof DisplayInput> = () => (
   <ThemeProvider theme={makeTheme()}>
     <Column>
       <Column unitsAround={1}>
+        <DisplayInput placeholder="Display Input" styles={getInputStyles()} />
+      </Column>
+      <Column unitsAround={1}>
         <DisplayInput
           placeholder="Display Input"
-          styles={inputStyles.default}
+          styles={getInputStyles({ state: { focused: true } })}
         />
       </Column>
       <Column unitsAround={1}>
         <DisplayInput
           placeholder="Display Input"
-          styles={inputStyles['default:focused']}
+          styles={getInputStyles({ state: { hovered: true } })}
         />
       </Column>
       <Column unitsAround={1}>
         <DisplayInput
           placeholder="Display Input"
-          styles={inputStyles['default:hovered']}
-        />
-      </Column>
-      <Column unitsAround={1}>
-        <DisplayInput
-          placeholder="Display Input"
-          styles={inputStyles['default:hovered:focused']}
+          styles={getInputStyles({ state: { hovered: true, focused: true } })}
         />
       </Column>
     </Column>
