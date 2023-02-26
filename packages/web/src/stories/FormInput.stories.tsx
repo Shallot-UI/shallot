@@ -3,36 +3,27 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { FormCheckbox } from '../components'
+import { FormInput } from '../components'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Form Checkbox',
-  component: FormCheckbox,
-} as ComponentMeta<typeof FormCheckbox>
+  title: 'Example/Form Input',
+  component: FormInput,
+} as ComponentMeta<typeof FormInput>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof FormCheckbox> = () => {
-  const [value, setValue] = useState(false)
+const Template: ComponentStory<typeof FormInput> = () => {
+  const [value, setValue] = useState('')
   return (
     <ThemeProvider theme={makeTheme()}>
-      <FormCheckbox
+      <FormInput
         fullWidth
         maxUnitWidth={35}
         value={value}
         setValue={setValue}
-        label="My test checkbox."
-        helperText="This is a helper text for the checkbox."
-      />
-      <FormCheckbox
-        unitsAbove={2}
-        fullWidth
-        maxUnitWidth={35}
-        required
-        value={!value}
-        setValue={(v) => setValue(!v)}
-        label="My test checkbox."
-        helperText="This is a helper text for the checkbox."
+        label="My test input."
+        placeholder="Type something here..."
+        helperText="This is a helper text for the input."
       />
     </ThemeProvider>
   )

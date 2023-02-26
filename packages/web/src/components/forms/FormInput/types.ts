@@ -1,20 +1,28 @@
-import { HTMLProps } from 'react'
-import { InputProps } from '../../controls'
-import {
-  FormControlColumnComponentStyles,
-  FormControlColumnProps,
-} from '../FormControlColumn'
+import { HTMLAttributes } from 'react'
 
-export interface FormInputComponentStyles
-  extends FormControlColumnComponentStyles {
-  input?: InputProps
+import { InputComponentStyles } from '../../controls'
+import {
+  DisplayFormControlRowProps,
+  FormControlRowComponentStyles,
+} from '../FormControlRow/types'
+
+export interface FormInputComponentStyles {
+  input?: InputComponentStyles
+  control?: FormControlRowComponentStyles
 }
 
-export interface FormInputProps
-  extends Omit<FormControlColumnProps, 'styles' | 'children'>,
-    Omit<InputProps, 'as'>,
-    Omit<HTMLProps<HTMLInputElement>, 'wrap'> {
-  styles?: FormInputComponentStyles & {
-    states?: Record<string, FormInputComponentStyles | undefined>
-  }
+export interface DisplayInputProps extends HTMLAttributes<HTMLLabelElement> {
+  styles?: FormInputComponentStyles
+}
+
+export interface FormInputState {
+  disabled?: boolean
+  focused?: boolean
+  hovered?: boolean
+}
+
+export interface FormInputProps extends DisplayFormControlRowProps {
+  value: string
+  setValue: (value: string) => void
+  getStyles?: (props: { state?: FormInputState }) => FormInputComponentStyles
 }

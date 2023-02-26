@@ -16,27 +16,20 @@ const formControlSurface: BoxProps = {
 }
 
 interface GetInputStylesProps extends ColumnProps {
-  color?: ColorName
-  size?: number
-  iconSize?: number
-  outline?: boolean
   state?: InputState
 }
 
 export const getInputStyles = ({
-  color = 'Primary',
-  size = 4 / 3,
-  iconSize = 1,
-  radius = 'sm',
   state = {},
   ...rest
 }: GetInputStylesProps = {}) => {
-  const [containerOverrides] = pullColumnProps({ radius, ...rest })
+  const [containerOverrides] = pullColumnProps({ ...rest })
 
   let styles: DisplayInputProps['styles'] = {
     container: {
       ...formControlSurface,
       radius: 'sm',
+      backgroundColor: 'Shading.100',
       transition: `
         border-color 0.2s ease-in-out,
         background-color 0.2s ease-in-out,
@@ -44,12 +37,13 @@ export const getInputStyles = ({
       `,
     },
     input: {
-      unitHeight: 4 / 3,
-      unitWidth: 4 / 3,
+      unitHeight: 1,
+      unitWidth: 1,
       backgroundColor: 'transparent',
       fontSize: 'md',
       unitsPadding: 1,
       grow: true,
+      letterSpacing: 'md',
     },
   }
 
@@ -58,7 +52,6 @@ export const getInputStyles = ({
       ...styles,
       container: {
         ...styles.container,
-        backgroundColor: 'Shading.100',
       },
     }
   }
@@ -70,6 +63,7 @@ export const getInputStyles = ({
         ...styles.container,
         elevation: 'focused',
         backgroundColor: 'Shading.100',
+        borderColor: 'Primary.300',
       },
     }
   }
