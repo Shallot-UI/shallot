@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { Checkbox, CheckboxProps } from '../components'
+import { Checkbox, CheckboxProps, Row } from '../components'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -20,31 +20,29 @@ const Template: ComponentStory<typeof Checkbox> = (args: CheckboxProps) => {
   const [value, setValue] = useState(false)
   return (
     <ThemeProvider theme={makeTheme()}>
-      <Checkbox {...args} value={value} setValue={setValue} />
+      <Row>
+        <Checkbox {...args} value={value} setValue={setValue} />
+        <Checkbox {...args} value={!value} setValue={(v) => setValue(!v)} />
+      </Row>
     </ThemeProvider>
   )
 }
 
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  // backgroundColor: 'Shading.100',
+Primary.args = {}
+
+export const Success = Template.bind({})
+Success.args = {
+  color: 'Success',
 }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-  // backgroundColor: 'Shading.200',
+export const Danger = Template.bind({})
+Danger.args = {
+  color: 'Danger',
 }
 
-export const Large = Template.bind({})
-Large.args = {
-  // backgroundColor: 'Danger.300',
-  // textColor: 'Shading.500',
-}
-
-export const Small = Template.bind({})
-Small.args = {
-  // backgroundColor: 'Shading.400',
-  // borderColor: 'Shading.500',
-  // borderWidth: 2,
+export const Warning = Template.bind({})
+Warning.args = {
+  color: 'Warning',
 }

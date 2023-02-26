@@ -13,7 +13,7 @@ import { Typeface } from '../types'
 export const makeTheme = <
   ProjectDefaults = Record<string, string | number>,
   ProjectTypefaces = Record<string, Typeface>,
-  ProjectColors = Record<string, string>,
+  ProjectColors = typeof DEFAULT_COLORS,
   ProjectFontSizes = Record<string, number>,
   ProjectLineHeights = Record<string, number>,
   ProjectRadii = Record<string, number>,

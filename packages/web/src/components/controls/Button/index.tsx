@@ -15,6 +15,7 @@ export * from './display'
 
 export const Button: FunctionComponent<ButtonProps> = ({
   getStyles = getButtonStyles,
+  color,
   ...rest
 }) => {
   const displayRef = useRef<HTMLButtonElement>(null)
@@ -23,6 +24,7 @@ export const Button: FunctionComponent<ButtonProps> = ({
   const pressed = usePressed(displayRef)
 
   const styles = getStyles({
+    color,
     state: { hovered, focused, pressed, disabled: false },
   })
 

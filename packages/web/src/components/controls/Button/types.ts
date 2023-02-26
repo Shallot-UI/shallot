@@ -1,3 +1,4 @@
+import { ColorName } from '@shallot-ui/theme'
 import { HTMLProps, ReactNode } from 'react'
 
 import { RowProps } from '../../containers'
@@ -30,4 +31,6 @@ export interface ButtonProps extends DisplayButtonProps {
   endAdornment?: ReactNode
   type?: 'button' | 'submit' | 'reset'
   getStyles?: (props: { state?: ButtonState }) => ButtonComponentStyles
+
+  color: ColorName
 }

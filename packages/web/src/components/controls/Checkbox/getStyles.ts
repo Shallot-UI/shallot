@@ -1,3 +1,4 @@
+import { ColorName } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
 import { BoxProps } from '../../containers'
 
@@ -22,7 +23,7 @@ export const getCheckboxStyles = ({
   radius = 'sm',
   state = {},
 }: {
-  color?: 'Primary' | 'Success' | 'Danger' | 'Warning'
+  color?: ColorName
   size?: number
   iconSize?: number
   radius?: keyof DefaultTheme['radii']
@@ -53,25 +54,23 @@ export const getCheckboxStyles = ({
   }
 
   if (state.checked) {
-    const fillColor = `${color}.300`
     styles = {
       container: {
         ...styles.container,
-        borderColor: fillColor,
-        backgroundColor: fillColor,
+        borderColor: `${color}.300`,
+        backgroundColor: `${color}.300`,
       },
       icon: { ...styles.icon, display: 'block' },
     }
   }
 
   if (state.hovered && state.checked) {
-    const fillColor = `${color}.250`
     styles = {
       ...styles,
       container: {
         ...styles.container,
-        backgroundColor: fillColor,
-        borderColor: fillColor,
+        backgroundColor: `${color}.250`,
+        borderColor: `${color}.250`,
       },
     }
   }

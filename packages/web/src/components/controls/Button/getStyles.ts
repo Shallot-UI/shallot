@@ -1,3 +1,4 @@
+import { ColorName } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
 
 import { ButtonState, DisplayButtonProps } from './types'
@@ -7,14 +8,14 @@ export const getButtonStyles = ({
   radius = 'sm',
   state = {},
 }: {
-  color?: 'Primary' | 'Success' | 'Danger' | 'Warning'
+  color?: ColorName
   radius?: keyof DefaultTheme['radii']
   state?: ButtonState
 } = {}) => {
   let styles: DisplayButtonProps['styles'] = {
     container: {
-      backgroundColor: 'Primary.300',
-      borderColor: 'Primary.300',
+      backgroundColor: `${color}.300`,
+      borderColor: `${color}.300`,
       radius: 'md',
       elevation: 'pressable',
       cursor: 'pointer',
@@ -42,8 +43,8 @@ export const getButtonStyles = ({
       ...styles,
       container: {
         ...styles.container,
-        backgroundColor: 'Primary.250',
-        borderColor: 'Primary.250',
+        backgroundColor: `${color}.250`,
+        borderColor: `${color}.250`,
         elevation: 'hover',
       },
     }
@@ -54,8 +55,8 @@ export const getButtonStyles = ({
       ...styles,
       container: {
         ...styles.container,
-        backgroundColor: 'Primary.350',
-        borderColor: 'Primary.350',
+        backgroundColor: `${color}.350`,
+        borderColor: `${color}.350`,
         elevation: 'pressed',
       },
     }

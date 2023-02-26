@@ -1,3 +1,4 @@
+import { ColorName } from '@shallot-ui/theme'
 import { FunctionComponent, HTMLAttributes, SVGProps } from 'react'
 
 import { BoxProps, ColumnProps } from '../../containers'
@@ -24,4 +25,6 @@ export interface CheckboxProps extends ColumnProps {
   setValue: (value: boolean) => void
   Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
   getStyles?: (props: { state?: CheckboxState }) => CheckboxComponentStyles
+
+  color?: ColorName
 }

@@ -18,6 +18,9 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
   value,
   setValue,
   getStyles = getCheckboxStyles,
+
+  color,
+
   ...rest
 }) => {
   const displayRef = useRef<HTMLLabelElement>(null)
@@ -25,6 +28,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({
   const hovered = useHover(displayRef)
 
   const styles = getStyles({
+    color,
     state: { hovered, focused, disabled: false, checked: value },
   })
 

@@ -28,23 +28,20 @@ Primary.args = {
   title: 'Button',
 }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-  // backgroundColor: 'Shading.200',
+export const Success = Template.bind({})
+Success.args = {
+  color: 'Success',
   title: 'Button',
 }
 
-export const Large = Template.bind({})
-Large.args = {
-  backgroundColor: 'Danger.300',
-  textColor: 'Shading.500',
+export const Danger = Template.bind({})
+Danger.args = {
+  color: 'Danger',
   title: 'Button',
 }
 
-export const Small = Template.bind({})
-Small.args = {
-  // backgroundColor: 'Shading.400',
-  // borderColor: 'Shading.500',
-  // borderWidth: 2,
+export const Warning = Template.bind({})
+Warning.args = {
+  color: 'Warning',
   title: 'Button',
 }
