@@ -1,13 +1,18 @@
+import { RowProps } from '../../containers'
 import { FormControlRowComponentStyles, FormControlRowState } from './types'
 
 export const getFormControlRowStyles = ({
   state = {},
-}: { state?: FormControlRowState } = {}): FormControlRowComponentStyles => ({
-  container: { alignMiddle: true },
+  ...props
+}: {
+  state?: FormControlRowState
+} & RowProps = {}): FormControlRowComponentStyles => ({
+  container: { alignMiddle: true, ...props },
   label: {
     textColor: 'Shading.400',
-    letterSpacing: 'sm',
-    font: 'Medium',
+    letterSpacing: 'md',
+    typeface: 'Body',
+    font: 'Bold',
     fontSize: 'md',
   },
   details: { unitsLeft: 1 },

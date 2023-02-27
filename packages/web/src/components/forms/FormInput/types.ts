@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react'
+import { RowProps } from '../../containers'
 
 import { InputComponentStyles } from '../../controls'
 import {
@@ -11,7 +12,9 @@ export interface FormInputComponentStyles {
   control?: FormControlRowComponentStyles
 }
 
-export interface DisplayInputProps extends HTMLAttributes<HTMLLabelElement> {
+export interface DisplayInputProps
+  extends HTMLAttributes<HTMLLabelElement>,
+    RowProps {
   styles?: FormInputComponentStyles
 }
 

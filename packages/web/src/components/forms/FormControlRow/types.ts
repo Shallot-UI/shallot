@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react'
 
-import { ColumnProps } from '../../containers'
+import { ColumnProps, RowProps } from '../../containers'
 import { TextProps } from '../../content'
 
 export interface FormControlRowComponentStyles {
@@ -13,7 +13,8 @@ export interface FormControlRowComponentStyles {
 }
 
 export interface DisplayFormControlRowProps
-  extends HTMLAttributes<HTMLInputElement | HTMLLabelElement> {
+  extends HTMLAttributes<HTMLInputElement | HTMLLabelElement>,
+    RowProps {
   errorText?: string
   helperText?: string
   label?: string

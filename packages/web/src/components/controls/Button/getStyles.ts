@@ -26,12 +26,12 @@ export const getButtonStyles = ({
       borderWidth: 2,
       elevation: 'pressable',
       cursor: 'pointer',
-      transition:
-        'background-color 200ms ease-in-out,\
-          border-color 300ms ease-in-out,\
-          transform 300ms ease-in-out,\
-          box-shadow 300ms ease-in-out\
-        ',
+      transition: `
+        background-color 200ms ease-in-out,
+        border-color 300ms ease-in-out,
+        transform 300ms ease-in-out,
+        box-shadow 300ms ease-in-out
+      `,
     },
     label: {
       font: 'Bold',
@@ -39,6 +39,8 @@ export const getButtonStyles = ({
       letterSpacing: 'md',
       transition: 'color 300ms ease-in-out',
       unitsAround: 1,
+      unitsAbove: 3 / 4,
+      unitsBelow: 3 / 4,
       centerText: true,
       flex: 1,
       cursor: 'pointer',

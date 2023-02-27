@@ -6,7 +6,7 @@ import { InputState, DisplayInputProps } from './types'
 const formControlSurface: BoxProps = {
   cursor: 'pointer',
   backgroundColor: 'Shading.125',
-  borderColor: 'Shading.250',
+  borderColor: 'Shading.200',
   borderWidth: 1,
   transition: `
     border-color 0.2s ease-in-out,
@@ -29,7 +29,6 @@ export const getInputStyles = ({
     container: {
       ...formControlSurface,
       radius: 'sm',
-      backgroundColor: 'Shading.100',
       transition: `
         border-color 0.2s ease-in-out,
         background-color 0.2s ease-in-out,

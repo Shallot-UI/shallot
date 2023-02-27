@@ -18,6 +18,7 @@ export const FormControlRow: FunctionComponent<FormControlRowProps> = ({
   populated,
   error,
   children,
+  ...rest
 }) => (
   <DisplayFormControlRow
     errorText={errorText}
@@ -25,6 +26,7 @@ export const FormControlRow: FunctionComponent<FormControlRowProps> = ({
     label={label}
     required={required}
     styles={getFormControlRowStyles({
+      ...rest,
       state: { disabled, focused, populated, error },
     })}
   >
