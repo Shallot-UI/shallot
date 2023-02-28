@@ -1,13 +1,14 @@
-import { FunctionComponent } from 'react'
+import { forwardRef, FunctionComponent } from 'react'
 
 import { DisplayFormControlRowProps } from './types'
 import { Row, Column } from '../../containers'
 import { Text } from '../../content'
 
-export const DisplayFormControlRow: FunctionComponent<
+export const DisplayFormControlRow = forwardRef<
+  HTMLDivElement,
   DisplayFormControlRowProps
-> = ({ errorText, helperText, label, required, children, styles }) => (
-  <Row {...styles?.container}>
+>(({ errorText, helperText, label, required, children, styles }, ref) => (
+  <Row {...styles?.container} ref={ref}>
     {children}
     <Column {...styles?.details}>
       <Text {...styles?.label}>
@@ -20,4 +21,4 @@ export const DisplayFormControlRow: FunctionComponent<
       )}
     </Column>
   </Row>
-)
+))

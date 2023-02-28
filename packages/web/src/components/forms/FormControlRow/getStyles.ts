@@ -14,6 +14,8 @@ export const getFormControlRowStyles = ({
     typeface: 'Body',
     font: 'Bold',
     fontSize: 'md',
+    cursor: 'pointer',
+    userSelect: 'none',
   },
   details: { unitsLeft: 1 },
   requiredStar: { textColor: 'Danger.300' },

@@ -14,6 +14,7 @@ import {
   FontProps,
   FontSizeProps,
   LineHeightProps,
+  LetterSpacingProps,
 } from '@shallot-ui/theme'
 
 export interface InputProps
@@ -25,6 +26,7 @@ export interface InputProps
     FlexProps,
     FontProps,
     FontSizeProps,
+    LetterSpacingProps,
     LineHeightProps,
     RadiusProps,
     SizingProps,

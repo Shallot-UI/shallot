@@ -8,18 +8,22 @@ import {
   flexProps,
   fontProps,
   fontSizeProps,
+  letterSpacingProps,
   lineHeightProps,
   PropsConfig,
   radiusProps,
   sizingProps,
+  textAlignProps,
   transitionProps,
   underlineProps,
   unitsAroundProps,
 } from '@shallot-ui/core'
+import { userSelectProps } from '../../../props'
 
 import { TextProps } from './types'
 
 export const textConfig: PropsConfig<TextProps> = {
+  ...textAlignProps,
   ...borderProps,
   ...colorProps,
   ...cursorProps,
@@ -28,6 +32,7 @@ export const textConfig: PropsConfig<TextProps> = {
   ...flexProps,
   ...fontProps,
   ...fontSizeProps,
+  ...letterSpacingProps,
   ...lineHeightProps,
   ...radiusProps,
   ...sizingProps,
@@ -35,4 +40,5 @@ export const textConfig: PropsConfig<TextProps> = {
   ...underlineProps,
   ...casingProps,
   ...unitsAroundProps,
+  ...userSelectProps,
 }

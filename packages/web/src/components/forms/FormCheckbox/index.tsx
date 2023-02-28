@@ -1,4 +1,4 @@
-import { FunctionComponent, useRef } from 'react'
+import { FunctionComponent, useRef, useState } from 'react'
 import { pullUnitsAroundProps, pullProps } from '@shallot-ui/core'
 
 import { FormCheckboxProps } from './types'
@@ -22,6 +22,7 @@ export const FormCheckbox: FunctionComponent<FormCheckboxProps> = ({
   ...props
 }) => {
   const checkboxRef = useRef<HTMLLabelElement>(null)
+  const controlRef = useRef<HTMLDivElement>(null)
   const focused = useFocus(checkboxRef)
   const hovered = useHover(checkboxRef)
 
@@ -30,6 +31,7 @@ export const FormCheckbox: FunctionComponent<FormCheckboxProps> = ({
 
   return (
     <FormControlRow
+      onClick={() => setValue(!value)}
       errorText={errorText}
       helperText={helperText}
       label={label}
@@ -37,12 +39,7 @@ export const FormCheckbox: FunctionComponent<FormCheckboxProps> = ({
       styles={styles.control}
       {...controlOverrides}
     >
-      <DisplayCheckbox
-        ref={checkboxRef}
-        onClick={() => setValue(!value)}
-        styles={styles.checkbox}
-        {...rest}
-      />
+      <DisplayCheckbox ref={checkboxRef} styles={styles.checkbox} {...rest} />
     </FormControlRow>
   )
 }

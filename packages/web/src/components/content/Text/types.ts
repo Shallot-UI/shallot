@@ -1,4 +1,3 @@
-import { CSSProperties, ReactNode } from 'react'
 import {
   AnimationProps,
   CasingProps,
@@ -18,6 +17,7 @@ import {
   UnderlineProps,
   UnitsAroundProps,
 } from '@shallot-ui/theme'
+import { UserSelectProps } from '../../../props'
 
 export interface TextProps
   extends AnimationProps,
@@ -36,4 +36,5 @@ export interface TextProps
     TextAlignProps,
     TransitionProps,
     UnderlineProps,
-    UnitsAroundProps {}
+    UnitsAroundProps,
+    UserSelectProps {}
