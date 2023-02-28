@@ -8,7 +8,7 @@ import {
 
 export interface FormInputComponentStyles
   extends FormControlColumnComponentStyles {
-  input?: InputStyleProps & { style?: StyleProp<any> }
+  input?: InputStyleProps & {}
 }
 
 export interface FormInputStyleProps {

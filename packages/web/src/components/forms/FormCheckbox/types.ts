@@ -10,11 +10,6 @@ export interface FormCheckboxComponentStyles {
   control?: FormControlRowComponentStyles
 }
 
-export interface DisplayCheckboxProps extends HTMLAttributes<HTMLLabelElement> {
-  Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
-  styles?: FormCheckboxComponentStyles
-}
-
 export interface FormCheckboxState {
   disabled?: boolean
   focused?: boolean

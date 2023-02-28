@@ -1,12 +1,14 @@
 import { FunctionComponent } from 'react'
-import styled, { DefaultTheme, keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { getColor } from '@shallot-ui/core'
+import { AllColorShades } from '@shallot-ui/theme'
 
 const spinAnimation = keyframes`
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 `
 
-const DEFAULT_COLOR: keyof DefaultTheme['colors'] = 'Shading.200'
+const DEFAULT_COLOR: AllColorShades = 'Shading.200'
 const sizes = {
   xs: 12,
   sm: 24,
@@ -17,7 +19,7 @@ const sizes = {
 type SizeName = keyof typeof sizes
 
 const SpinnerRing = styled.div<{
-  color?: keyof DefaultTheme['colors']
+  color?: AllColorShades
   size?: SizeName
 }>`
   display: inline-block;
@@ -32,11 +34,11 @@ const SpinnerRing = styled.div<{
     height: ${({ size = 'md' }) => Math.floor(sizes[size] * 0.8)}px;
     margin: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px;
     border: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px solid
-      ${({ theme, color }) => theme.colors[color ?? DEFAULT_COLOR]};
+      ${({ color }) => getColor(color ?? DEFAULT_COLOR)};
     border-radius: 50%;
     animation: ${spinAnimation} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: ${({ theme, color }) => theme.colors[color ?? DEFAULT_COLOR]}
-      transparent transparent transparent;
+    border-color: ${({ color }) => getColor(color ?? DEFAULT_COLOR)} transparent
+      transparent transparent;
   }
   & div:nth-child(1) {
     animation-delay: -0.45s;
@@ -50,7 +52,7 @@ const SpinnerRing = styled.div<{
 `
 
 interface SpinnerProps {
-  color?: keyof DefaultTheme['colors']
+  color?: AllColorShades
   size?: SizeName
 }
 

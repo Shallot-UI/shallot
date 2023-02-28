@@ -1,16 +1,11 @@
 import { FunctionComponent } from 'react'
 import { useField } from 'formik'
-import {
-  FormCheckbox,
-  FormCheckboxProps,
-  FormCheckboxStyleProps,
-} from '@shallot-ui/web'
+import { FormCheckbox, FormCheckboxProps } from '@shallot-ui/web'
 
-export type FormikCheckboxProps = Omit<
-  FormCheckboxProps,
-  'value' | 'setValue'
-> &
-  FormCheckboxStyleProps & { name: string }
+export interface FormikCheckboxProps
+  extends Omit<FormCheckboxProps, 'value' | 'setValue'> {
+  name: string
+}
 
 export const FormikCheckbox: FunctionComponent<FormikCheckboxProps> = ({
   name,
@@ -28,7 +23,6 @@ export const FormikCheckbox: FunctionComponent<FormikCheckboxProps> = ({
       value={field.value}
       setValue={setValue}
       errorText={meta.touched && meta.error ? meta.error : undefined}
-      name={name}
       {...rest}
     />
   )

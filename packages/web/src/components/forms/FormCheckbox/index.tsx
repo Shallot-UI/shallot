@@ -22,7 +22,6 @@ export const FormCheckbox: FunctionComponent<FormCheckboxProps> = ({
   ...props
 }) => {
   const checkboxRef = useRef<HTMLLabelElement>(null)
-  const controlRef = useRef<HTMLDivElement>(null)
   const focused = useFocus(checkboxRef)
   const hovered = useHover(checkboxRef)
 

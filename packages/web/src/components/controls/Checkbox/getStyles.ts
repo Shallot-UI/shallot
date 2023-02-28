@@ -1,5 +1,4 @@
 import { ColorName } from '@shallot-ui/theme'
-import { DefaultTheme } from 'styled-components'
 import { BoxProps, ColumnProps, pullColumnProps } from '../../containers'
 
 import { CheckboxState, DisplayCheckboxProps } from './types'

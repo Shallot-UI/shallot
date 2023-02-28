@@ -1,20 +1,22 @@
 import { CSSProperties, FunctionComponent } from 'react'
-import styled, { useTheme } from 'styled-components'
+import { useTheme } from 'styled-components'
 import {
+  colorProps,
   ColorProps,
   CursorProps,
   ElevationProps,
+  flexProps,
   FlexProps,
-  getColors,
-  getCursor,
-  getElevation,
-  getFlex,
-  getRadius,
-  getTransition,
-  getUnitsAround,
+  makeComponent,
   RadiusProps,
   TransitionProps,
   UnitsAroundProps,
+  unitsAroundProps,
+  radiusProps,
+  elevationProps,
+  cursorProps,
+  transitionProps,
+  PropsConfig,
 } from '@shallot-ui/web'
 
 import { FieldImage } from '../../types'
@@ -77,15 +79,17 @@ export interface FieldImageProps {
   unitHeight?: number
 }
 
-const BaseImage = styled.img<FieldImageStyleProps>`
-  ${getFlex}
-  ${getColors}
-  ${getUnitsAround}
-  ${getRadius}
-  ${getElevation}
-  ${getCursor}
-  ${getTransition}
-`
+const baseImageConfig: PropsConfig<FieldImageStyleProps> = {
+  ...flexProps,
+  ...colorProps,
+  ...unitsAroundProps,
+  ...radiusProps,
+  ...elevationProps,
+  ...cursorProps,
+  ...transitionProps,
+}
+
+const BaseImage = makeComponent('img', baseImageConfig)
 
 export const Image: FunctionComponent<
   FieldImageProps & FieldImageStyleProps

@@ -8,9 +8,9 @@ import {
   PropsConfig,
   radiusProps,
   sizingProps,
-  transitionProps,
   unitsAroundProps,
 } from '@shallot-ui/core'
+import { transitionProps } from '../../../props'
 
 import { TextAreaProps } from './types'
 

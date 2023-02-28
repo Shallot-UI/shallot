@@ -5,7 +5,7 @@ import { PropsConfig } from '../../types'
 import { makePropPuller, makeStyleGetter } from '../../utils'
 
 // Get a color from the theme using its dot notation address.
-const getColor = (address: string | undefined) => {
+export const getColor = (address: string | undefined) => {
   // if the color is falsy, return an empty string.
   if (!address) return
   // If the color is transparent, return the transparent keyword.

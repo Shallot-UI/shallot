@@ -12,19 +12,15 @@ export interface FormInputComponentStyles {
   control?: FormControlRowComponentStyles
 }
 
-export interface DisplayInputProps
-  extends HTMLAttributes<HTMLLabelElement>,
-    RowProps {
-  styles?: FormInputComponentStyles
-}
-
 export interface FormInputState {
   disabled?: boolean
   focused?: boolean
   hovered?: boolean
 }
 
-export interface FormInputProps extends DisplayFormControlRowProps {
+export interface FormInputProps
+  extends DisplayFormControlRowProps,
+    HTMLAttributes<HTMLInputElement> {
   value: string
   setValue: (value: string) => void
   getStyles?: (props: { state?: FormInputState }) => FormInputComponentStyles

@@ -1,9 +1,6 @@
-export * from './Column'
-export * from './Box'
-export * from './Button'
+export * from './containers'
+export * from './content'
+export * from './controls'
+
 export * from './FormControlColumn'
 export * from './FormInput'
-export * from './Input'
-export * from './Row'
-export * from './Space'
-export * from './Text'

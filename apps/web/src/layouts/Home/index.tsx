@@ -20,22 +20,16 @@ import { ThemeCode } from './parts/ThemeCode'
 import { ComponentsCode } from './parts/ComponentsCode'
 import { VariantCode } from './parts/Variant'
 
-export const invertColor = (color: any) => {
-  const [palette, shade] = color.split('.')
-  const shadeValue = parseInt(shade)
-  const reversedShade = Math.abs(500 - shadeValue) + 100
-  return `${palette}.${reversedShade}` as any
-}
-
 export const invertPalette = (palette: any) => {
   const reversedPalette: any = {}
-  Object.keys(palette).forEach((color) => {
-    reversedPalette[invertColor(color)] = palette[color]
+  Object.keys(palette).forEach((shadeValue) => {
+    reversedPalette[Math.abs(500 - Number(shadeValue)) + 100] =
+      palette[shadeValue]
   })
   return reversedPalette as any
 }
 
-const convertPalette = (key: string, original: string[]) => {
+const convertPalette = (original: string[]) => {
   const shadeValues = [
     100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450,
     475, 500,
@@ -45,14 +39,14 @@ const convertPalette = (key: string, original: string[]) => {
 
   const palette: Record<string, string> = {}
   shadeValues.forEach((shade, index) => {
-    palette[`${key}.${shade}`] = shades[index]
+    palette[shade] = shades[index]
   })
 
   return palette
 }
 
 const colorPalettes = {
-  tailwindBlue: convertPalette('Primary', [
+  tailwindBlue: convertPalette([
     '#eff6ff',
     '#dbeafe',
     '#bfdbfe',
@@ -64,7 +58,7 @@ const colorPalettes = {
     '#1e40af',
     '#1e3a8a',
   ]),
-  tailwindRed: convertPalette('Primary', [
+  tailwindRed: convertPalette([
     '#fef2f2',
     '#fee2e2',
     '#fecaca',
@@ -76,7 +70,7 @@ const colorPalettes = {
     '#991b1b',
     '#7f1d1d',
   ]),
-  tailwindEmerald: convertPalette('Primary', [
+  tailwindEmerald: convertPalette([
     '#ecfdf5',
     '#d1fae5',
     '#a7f3d0',
@@ -88,7 +82,7 @@ const colorPalettes = {
     '#065f46',
     '#064e3b',
   ]),
-  tailwindAmber: convertPalette('Primary', [
+  tailwindAmber: convertPalette([
     '#fffbeb',
     '#fef3c7',
     '#fde68a',
@@ -103,7 +97,7 @@ const colorPalettes = {
 }
 
 const shadingPalettes = {
-  materialGray: convertPalette('Shading', [
+  materialGray: convertPalette([
     '#FAFAFA',
     '#F5F5F5',
     '#EEEEEE',
@@ -115,7 +109,7 @@ const shadingPalettes = {
     '#424242',
     '#212121',
   ]),
-  materialBlueGray: convertPalette('Shading', [
+  materialBlueGray: convertPalette([
     '#ECEFF1',
     '#CFD8DC',
     '#B0BEC5',
@@ -127,7 +121,7 @@ const shadingPalettes = {
     '#37474F',
     '#263238',
   ]),
-  tailwindSlate: convertPalette('Shading', [
+  tailwindSlate: convertPalette([
     '#f8fafc',
     '#f1f5f9',
     '#e2e8f0',
@@ -139,7 +133,7 @@ const shadingPalettes = {
     '#1e293b',
     '#0f172a',
   ]),
-  tailwindGray: convertPalette('Shading', [
+  tailwindGray: convertPalette([
     '#f9fafb',
     '#f3f4f6',
     '#e5e7eb',
@@ -151,7 +145,7 @@ const shadingPalettes = {
     '#1f2937',
     '#111827',
   ]),
-  tailwindZinc: convertPalette('Shading', [
+  tailwindZinc: convertPalette([
     '#fafafa',
     '#f4f4f5',
     '#e4e4e7',
@@ -163,7 +157,7 @@ const shadingPalettes = {
     '#27272a',
     '#18181b',
   ]),
-  tailwindNeutral: convertPalette('Shading', [
+  tailwindNeutral: convertPalette([
     '#fafafa',
     '#f5f5f5',
     '#e5e5e5',
@@ -175,7 +169,7 @@ const shadingPalettes = {
     '#262626',
     '#171717',
   ]),
-  tailwindStone: convertPalette('Shading', [
+  tailwindStone: convertPalette([
     '#fafaf9',
     '#f5f5f4',
     '#e7e5e4',
@@ -197,8 +191,8 @@ const GlobalAnimations = createGlobalStyle`
 
 const defaultTheme = makeTheme({
   colors: {
-    ...colorPalettes.tailwindBlue,
-    ...shadingPalettes.tailwindGray,
+    Primary: colorPalettes.tailwindBlue,
+    Shading: shadingPalettes.tailwindGray,
   },
   typefaces: {
     RobotoMono: {
@@ -240,8 +234,8 @@ export const HomeLayout: FunctionComponent = () => {
     setTheme(
       makeTheme({
         colors: {
-          ...(darkMode ? invertPalette(colorPalette) : colorPalette),
-          ...(darkMode ? invertPalette(shadingPalette) : shadingPalette),
+          Primary: darkMode ? invertPalette(colorPalette) : colorPalette,
+          Shading: darkMode ? invertPalette(shadingPalette) : shadingPalette,
         },
         typefaces: {
           RobotoMono: {

@@ -14,11 +14,10 @@ import {
   radiusProps,
   sizingProps,
   textAlignProps,
-  transitionProps,
   underlineProps,
   unitsAroundProps,
 } from '@shallot-ui/core'
-import { userSelectProps } from '../../../props'
+import { transitionProps, userSelectProps } from '../../../props'
 
 import { TextProps } from './types'
 

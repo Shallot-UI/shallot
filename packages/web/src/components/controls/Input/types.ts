@@ -25,8 +25,8 @@ export interface InputState {
 }
 
 export interface InputProps extends ColumnProps {
-  value: string
-  setValue: (value: string) => void
+  value: boolean
+  setValue: (value: boolean) => void
   Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
   getStyles?: (props: { state?: InputState }) => InputComponentStyles
 

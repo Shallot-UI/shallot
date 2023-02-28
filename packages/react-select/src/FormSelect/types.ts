@@ -1,46 +1,33 @@
-import { ComponentProps, CSSProperties } from 'react'
+import { ComponentProps } from 'react'
 import ReactSelect from 'react-select'
-import { TextStyleProps } from '@shallot-ui/web'
 import {
-  UnitsAroundProps,
-  ColorProps,
-  RadiusProps,
-  ElevationProps,
-  SizingProps,
-  FlexProps,
-  TransitionProps,
-  CursorProps,
-} from '@shallot-ui/theme'
+  DisplayFormControlColumnProps,
+  FormControlRowComponentStyles,
+} from '@shallot-ui/web'
 
-interface WrapperStyleProps
-  extends UnitsAroundProps,
-    ColorProps,
-    RadiusProps,
-    ElevationProps,
-    SizingProps,
-    FlexProps,
-    TransitionProps,
-    CursorProps {
-  style?: Partial<CSSProperties>
+export interface FormSelectComponentStyles {
+  // input?: InputComponentStyles
+  control?: FormControlRowComponentStyles
 }
 
-interface FormSelectStateProps {
-  wrapperProps?: WrapperStyleProps
-  labelProps?: TextStyleProps
-  helperTextProps?: TextStyleProps
-  errorTextProps?: TextStyleProps
+export interface FormSelectState {
+  disabled?: boolean
+  focused?: boolean
+  hovered?: boolean
 }
 
-export interface FormSelectStyleProps
-  extends FormSelectStateProps,
-    WrapperStyleProps {
-  states?: { [stateName: string]: FormSelectStateProps }
-  style?: Partial<CSSProperties>
-}
-
-export interface FormSelectProps extends ComponentProps<typeof ReactSelect> {
-  label?: string
-
+export interface FormSelectProps
+  extends Omit<ComponentProps<typeof ReactSelect>, 'styles'>,
+    Omit<
+      DisplayFormControlColumnProps,
+      | 'onFocus'
+      | 'onBlur'
+      | 'defaultValue'
+      | 'onChange'
+      | 'onKeyDown'
+      | 'placeholder'
+      | 'styles'
+    > {
   value?: string | string[]
   options?: { label: string; value: string }[]
   onChangeValue: (value: string | string[]) => void
@@ -48,30 +35,5 @@ export interface FormSelectProps extends ComponentProps<typeof ReactSelect> {
   multiple?: boolean
   disabled?: boolean
 
-  errorText?: string
-  helperText?: string
+  getStyles?: (props: { state?: FormSelectState }) => FormSelectComponentStyles
 }
-
-export type ReactSelectClassNames =
-  | 'clearIndicator'
-  | 'container'
-  | 'control'
-  | 'dropdownIndicator'
-  | 'group'
-  | 'groupHeading'
-  | 'indicatorsContainer'
-  | 'indicatorSeparator'
-  | 'input'
-  | 'loadingIndicator'
-  | 'loadingMessage'
-  | 'menu'
-  | 'menuList'
-  | 'menuPortal'
-  | 'multiValue'
-  | 'multiValueLabel'
-  | 'multiValueRemove'
-  | 'noOptionsMessage'
-  | 'option'
-  | 'placeholder'
-  | 'singleValue'
-  | 'valueContainer'
