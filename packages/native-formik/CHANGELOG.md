@@ -1,5 +1,18 @@
 # @shallot-ui/native-formik
 
+## 1.0.0-next.0
+
+### Minor Changes
+
+- Moving to props as config objects
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/native@0.20.0-next.0
+  - @shallot-ui/theme@0.20.0-next.0
+  - @shallot-ui/core@0.20.0-next.0
+
 ## 0.19.16
 
 ### Patch Changes

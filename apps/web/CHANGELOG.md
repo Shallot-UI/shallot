@@ -1,5 +1,18 @@
 # web
 
+## 0.1.0-next.0
+
+### Minor Changes
+
+- Moving to props as config objects
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/react-select@0.19.0-next.0
+  - @shallot-ui/prismjs@1.0.0-next.0
+  - @shallot-ui/next@0.19.0-next.0
+
 ## 0.0.11
 
 ### Patch Changes

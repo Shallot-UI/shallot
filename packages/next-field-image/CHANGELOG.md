@@ -1,5 +1,16 @@
 # @shallot-ui/web-formik
 
+## 1.0.0-next.0
+
+### Minor Changes
+
+- Moving to props as config objects
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/next@0.19.0-next.0
+
 ## 0.18.19
 
 ### Patch Changes

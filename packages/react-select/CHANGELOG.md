@@ -1,5 +1,11 @@
 # @shallot-ui/react-select
 
+## 0.19.0-next.0
+
+### Minor Changes
+
+- Moving to props as config objects
+
 ## 0.18.9
 
 ### Patch Changes

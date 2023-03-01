@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 0.19.0-next.0
+
+### Minor Changes
+
+- Moving to props as config objects
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.20.0-next.0
+
 ## 0.18.20
 
 ### Patch Changes

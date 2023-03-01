@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.20.0-next.0
+
+### Minor Changes
+
+- Moving to props as config objects
+
 ## 0.19.7
 
 ### Patch Changes
