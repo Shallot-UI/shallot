@@ -24,11 +24,8 @@ export interface InputState {
   checked?: boolean
 }
 
-export interface InputProps extends ColumnProps {
-  value: boolean
-  setValue: (value: boolean) => void
+export interface InputProps extends DisplayInputProps, ColumnProps {
   Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
   getStyles?: (props: { state?: InputState }) => InputComponentStyles
-
   color?: ColorName
 }

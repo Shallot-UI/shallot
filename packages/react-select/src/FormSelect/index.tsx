@@ -3,8 +3,13 @@ import { FormControlColumn } from '@shallot-ui/web'
 
 import { FormSelectProps } from './types'
 import { optionForValue } from './utils'
-import DisplayFormSelect from './display'
+import { DisplayFormSelect } from './display'
 import { getFormSelectStyles } from './getStyles'
+
+export * from './utils'
+export * from './display'
+export * from './types'
+export * from './getStyles'
 
 export const FormSelect: FunctionComponent<FormSelectProps> = ({
   ref,

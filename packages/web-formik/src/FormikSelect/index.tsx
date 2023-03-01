@@ -1,16 +1,11 @@
 import { FunctionComponent } from 'react'
 import { useFormikContext } from 'formik'
-import {
-  FormSelect,
-  FormSelectProps,
-  FormSelectStyleProps,
-} from '@shallot-ui/react-select'
+import { FormSelect, FormSelectProps } from '@shallot-ui/react-select'
 
-export type FormikSelectProps = Omit<
-  FormSelectProps,
-  'value' | 'onChangeValue'
-> &
-  FormSelectStyleProps & { name: string }
+export interface FormikSelectProps
+  extends Omit<FormSelectProps, 'value' | 'onChangeValue'> {
+  name: string
+}
 
 export const FormikSelect: FunctionComponent<FormikSelectProps> = ({
   name,

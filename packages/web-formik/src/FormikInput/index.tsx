@@ -3,7 +3,7 @@ import { useField } from 'formik'
 import { FormInput, FormInputProps } from '@shallot-ui/web'
 
 export interface FormikInputProps
-  extends Omit<FormInputProps, 'value' | 'setValue'> {
+  extends Omit<FormInputProps, 'value' | 'onChange'> {
   name: string
 }
 
@@ -17,7 +17,6 @@ export const FormikInput: FunctionComponent<FormikInputProps> = ({
     <FormInput
       {...field}
       errorText={meta.touched && meta.error ? meta.error : undefined}
-      name={name}
       {...rest}
     />
   )

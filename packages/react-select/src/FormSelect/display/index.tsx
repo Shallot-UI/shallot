@@ -6,7 +6,7 @@ import Menu from './components/Menu'
 import Option from './components/Option'
 import SingleValue from './components/SingleValue'
 
-const DisplayFormSelect = forwardRef<
+export const DisplayFormSelect = forwardRef<
   Select<unknown, boolean, GroupBase<unknown>>,
   ComponentProps<ReactSelect>
 >((props, ref) => (
@@ -22,5 +22,3 @@ const DisplayFormSelect = forwardRef<
     }}
   />
 ))
-
-export default DisplayFormSelect

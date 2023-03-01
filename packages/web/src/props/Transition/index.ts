@@ -1,7 +1,6 @@
 import { TransitionProps } from '@shallot-ui/theme'
 
-import { PropsConfig } from '@shallot-ui/core/src/types'
-import { makePropPuller, makeStyleGetter } from '@shallot-ui/core/src/utils'
+import { PropsConfig, makePropPuller, makeStyleGetter } from '@shallot-ui/core'
 
 export const transitionProps: PropsConfig<TransitionProps> = {
   transition: {

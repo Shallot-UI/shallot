@@ -14,7 +14,7 @@ export * from './display'
 
 export const Input: FunctionComponent<InputProps> = ({
   value,
-  setValue,
+  onChange,
   getStyles = getInputStyles,
   ...rest
 }) => {
@@ -23,16 +23,9 @@ export const Input: FunctionComponent<InputProps> = ({
   const hovered = useHover(displayRef)
 
   const styles = getStyles({
-    state: { hovered, focused, disabled: false, checked: value },
+    state: { hovered, focused, disabled: false },
     ...rest,
   })
 
-  return (
-    <DisplayInput
-      ref={displayRef}
-      onClick={() => setValue(!value)}
-      styles={styles}
-      {...rest}
-    />
-  )
+  return <DisplayInput ref={displayRef} styles={styles} {...rest} />
 }
