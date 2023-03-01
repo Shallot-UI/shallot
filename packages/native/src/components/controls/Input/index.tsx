@@ -18,6 +18,11 @@ export const Input: FunctionComponent<InputProps> = ({
   const styles = getStyles({ state: { disabled: false }, ...rest })
 
   return (
-    <DisplayInput onClick={() => setValue(!value)} styles={styles} {...rest} />
+    <DisplayInput
+      value={value}
+      onChangeText={setValue}
+      styles={styles}
+      {...rest}
+    />
   )
 }
