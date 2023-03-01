@@ -1,17 +1,10 @@
-import { DefaultTheme } from 'styled-components'
 import { Palette } from '../types'
-
-const invertColorKey = (color: keyof DefaultTheme['colors']) => {
-  const [palette, shade] = color.split('.')
-  const shadeValue = parseInt(shade)
-  const reversedShade = Math.abs(500 - shadeValue) + 100
-  return `${palette}.${reversedShade}` as keyof DefaultTheme['colors']
-}
 
 export const invertPalette = (palette: Palette) => {
   const reversedPalette: Palette = {}
-  Object.keys(palette).forEach((color) => {
-    reversedPalette[invertColorKey(color)] = palette[color]
+  Object.keys(palette).forEach((shade) => {
+    const shadeValue = Number(shade)
+    reversedPalette[Math.abs(500 - shadeValue) + 100] = palette[shadeValue]
   })
   return reversedPalette as Palette
 }

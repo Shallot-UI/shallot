@@ -13,12 +13,17 @@ import { Typeface } from '../types'
 export const makeTheme = <
   ProjectDefaults = Record<string, string | number>,
   ProjectTypefaces = Record<string, Typeface>,
-  ProjectColors = Record<string, string>,
+  ProjectColors = typeof DEFAULT_COLORS,
   ProjectFontSizes = Record<string, number>,
   ProjectLineHeights = Record<string, number>,
   ProjectRadii = Record<string, number>,
   ProjectElevations = Record<string, any>,
   ProjectLetterSpacings = Record<string, number>,
+  ProjectBreakpoints = {
+    [minWidth: number]: {
+      fontSizes?: ProjectFontSizes
+    }
+  },
 >({
   defaults = {} as ProjectDefaults,
   gridUnits = null as number[] | null,
@@ -29,18 +34,7 @@ export const makeTheme = <
   radii = {} as ProjectRadii,
   elevations = {} as ProjectElevations,
   letterSpacings = {} as ProjectLetterSpacings,
-  breakpoints = {} as {
-    [minWidth: number]: {
-      gridUnits?: number[] | null
-      typefaces?: ProjectTypefaces
-      colors?: ProjectColors
-      fontSizes?: ProjectFontSizes
-      lineHeights?: ProjectLineHeights
-      radii?: ProjectRadii
-      elevations?: ProjectElevations
-      letterSpacings?: ProjectLetterSpacings
-    }
-  } | null,
+  breakpoints = {} as ProjectBreakpoints,
 } = {}) =>
   Object.freeze({
     defaults: { ...DEFAULT_THEME_DEFAULTS, ...defaults },

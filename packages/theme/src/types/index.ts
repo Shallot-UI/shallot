@@ -1,6 +1,6 @@
 import { CSSObject, DefaultTheme } from 'styled-components'
 
-export type Palette = Record<keyof DefaultTheme['colors'], string>
+export type Palette = Record<number, string>
 
 export type Typeface = {
   name: string
@@ -13,7 +13,7 @@ export type Typeface = {
 
 export interface BorderProps {
   borderWidth?: number
-  borderColor?: keyof DefaultTheme['colors']
+  borderColor?: AllColorShades
   borderPosition?: 'all' | 'top' | 'right' | 'bottom' | 'left'
 }
 
@@ -27,12 +27,24 @@ export interface AnimationProps {
     | 'fadeInRight'
 }
 
+export type ColorName = keyof DefaultTheme['colors']
+
+// Combines a color name with each of its shade values.
+// E.g., if ColorName is 'Primary' and the DefaultTheme defines a set of shade
+// values for the 'Primary' color, the ShadesForColor type would be a union of
+// string literal types that represent the different shades of the 'Primary'
+// color like 'Primary.100', 'Primary.200', and so on.
+export type ShadesForColor<Name extends ColorName> = `${Name}.${number &
+  keyof DefaultTheme['colors'][Name]}`
+
+export type AllColorShades = ShadesForColor<ColorName> | 'transparent'
+
 export interface ColorProps {
-  placeholderColor?: keyof DefaultTheme['colors']
-  backgroundColor?: keyof DefaultTheme['colors']
-  textColor?: keyof DefaultTheme['colors']
-  borderColor?: keyof DefaultTheme['colors']
-  fillColor?: keyof DefaultTheme['colors']
+  placeholderColor?: AllColorShades
+  backgroundColor?: AllColorShades
+  textColor?: AllColorShades
+  borderColor?: AllColorShades
+  fillColor?: AllColorShades
 }
 
 export interface CursorProps {
@@ -136,11 +148,11 @@ export interface TextAlignProps {
 }
 
 export interface UnitPaddingProps {
-  unitPadding?: number
-  unitPaddingAbove?: number
-  unitPaddingBelow?: number
-  unitPaddingLeft?: number
-  unitPaddingRight?: number
+  unitsPadding?: number
+  unitsPaddingAbove?: number
+  unitsPaddingBelow?: number
+  unitsPaddingLeft?: number
+  unitsPaddingRight?: number
 }
 
 export interface DisplayProps {

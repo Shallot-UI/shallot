@@ -1,13 +1,11 @@
 import { FunctionComponent } from 'react'
 import { useFormikContext } from 'formik'
-import {
-  FormInput,
-  FormInputProps,
-  FormInputStyleProps,
-} from '@shallot-ui/native'
+import { FormInput, FormInputProps } from '@shallot-ui/native'
 
-export type FormikInputProps = Omit<FormInputProps, 'value' | 'setValue'> &
-  FormInputStyleProps & { name: string }
+export interface FormikInputProps
+  extends Omit<FormInputProps, 'value' | 'setValue'> {
+  name: string
+}
 
 export const FormikInput: FunctionComponent<FormikInputProps> = ({
   name,
@@ -22,13 +20,11 @@ export const FormikInput: FunctionComponent<FormikInputProps> = ({
   return (
     <FormInput
       value={values[name]}
-      onChangeText={(value: string) => setFieldValue(name, value)}
+      setValue={(value: string) => setFieldValue(name, value)}
       onFocus={() => setFieldTouched(name, true)}
       errorText={
         fieldTouched && typeof fieldError === 'string' ? fieldError : undefined
       }
-      valid={fieldTouched && !fieldError}
-      name={name}
       {...rest}
     />
   )

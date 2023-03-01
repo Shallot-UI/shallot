@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { getFont } from '@shallot-ui/core'
+import { fontProps } from '@shallot-ui/core'
 
 export const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -138,9 +138,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    ${({ theme }) => getFont({ typeface: theme.defaults.typeface })}
-    color: ${({ theme }) => theme.colors['Shading.500']};
-    background-color: ${({ theme }) => theme.colors['Shading.100']};
+    ${fontProps.font.get({ font: 'Body' })};
+    color: ${({ theme }) => theme.colors.Shading[500]};
+    background-color: ${({ theme }) => theme.colors.Shading[100]};
   }
 
   // SYSTEM FONT

@@ -1,23 +1,27 @@
-import { CheckboxStyleProps } from '../../Checkbox'
-import { InputProps } from '../../primitives/Input/base'
+import { FunctionComponent, HTMLAttributes, SVGProps } from 'react'
+import { CheckboxComponentStyles } from '../../controls'
 import {
+  DisplayFormControlRowProps,
   FormControlRowComponentStyles,
-  FormControlRowProps,
-} from '../FormControlRow'
+} from '../FormControlRow/types'
 
-export interface FormCheckboxComponentStyles
-  extends FormControlRowComponentStyles {
-  input?: FormCheckboxStyleProps
+export interface FormCheckboxComponentStyles {
+  checkbox?: CheckboxComponentStyles
+  control?: FormControlRowComponentStyles
 }
 
-export interface FormCheckboxStyleProps {
-  styles?: FormCheckboxComponentStyles & {
-    checkbox?: CheckboxStyleProps['styles']
-    states?: Record<string, FormCheckboxComponentStyles | undefined>
-  }
+export interface FormCheckboxState {
+  disabled?: boolean
+  focused?: boolean
+  hovered?: boolean
+  checked?: boolean
 }
 
-export interface FormCheckboxProps
-  extends Omit<FormControlRowProps, 'styles' | 'children'>,
-    FormCheckboxStyleProps,
-    InputProps {}
+export interface FormCheckboxProps extends DisplayFormControlRowProps {
+  value: boolean
+  setValue: (value: boolean) => void
+  Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
+  getStyles?: (props: {
+    state?: FormCheckboxState
+  }) => FormCheckboxComponentStyles
+}

@@ -2,17 +2,13 @@ import { FunctionComponent } from 'react'
 import FastImage, { FastImageProps } from 'react-native-fast-image'
 import { PixelRatio, StyleProp } from 'react-native'
 import { useTheme } from 'styled-components/native'
-import {
-  Column,
-  ColumnStyleProps,
-  pullColumnStyleProps,
-} from '@shallot-ui/native'
+import { Column, ColumnProps, pullColumnProps } from '@shallot-ui/native'
 
 import { FieldImage } from './type'
 
 export interface FieldImageProps
   extends Omit<FastImageProps, 'source' | 'height' | 'width' | 'style'>,
-    ColumnStyleProps {
+    ColumnProps {
   image?: FieldImage
   params?: any
   transformation?: 'native' | 'square' | string
@@ -55,7 +51,7 @@ const getTransformedHeight = (
 
 export const Image: FunctionComponent<FieldImageProps> = (props) => {
   const theme = useTheme()
-  const [columnStyle, nonStyleProps] = pullColumnStyleProps(props)
+  const [columnStyle, nonStyleProps] = pullColumnProps(props)
   const {
     image,
     transformation = 'native',
