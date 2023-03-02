@@ -1,7 +1,7 @@
 import { ColorName } from '@shallot-ui/theme'
+
 import { pullRowProps } from '../../containers'
 import { pullTextProps } from '../../content'
-
 import { ButtonState, DisplayButtonProps } from './types'
 
 interface GetButtonStylesProps extends DisplayButtonProps {

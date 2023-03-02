@@ -1,53 +1,11 @@
-import { DEFAULT_BREAKPOINTS } from './breakpoints'
-import { DEFAULT_COLORS, DEFAULT_DARK_COLORS } from './colors'
-import { DEFAULT_FONT_SIZES } from './fontSizes'
-import { DEFAULT_TYPEFACES } from './typefaces'
-import { DEFAULT_LINE_HEIGHTS } from './lineHeights'
-import { DEFAULT_THEME_DEFAULTS } from './defaults'
-import { DEFAULT_RADII } from './radii'
-import { DEFAULT_ELEVATIONS } from './elevations'
-import { DEFAULT_LETTER_SPACINGS } from './letterSpacings'
-import { DEFAULT_GRID_UNITS } from './gridUnits'
-import { Typeface } from '../types'
+import merge from 'ts-deepmerge'
 
-export const makeTheme = <
-  ProjectDefaults = Record<string, string | number>,
-  ProjectTypefaces = Record<string, Typeface>,
-  ProjectColors = typeof DEFAULT_COLORS,
-  ProjectFontSizes = Record<string, number>,
-  ProjectLineHeights = Record<string, number>,
-  ProjectRadii = Record<string, number>,
-  ProjectElevations = Record<string, any>,
-  ProjectLetterSpacings = Record<string, number>,
-  ProjectBreakpoints = {
-    [minWidth: number]: {
-      fontSizes?: ProjectFontSizes
-    }
-  },
->({
-  defaults = {} as ProjectDefaults,
-  gridUnits = null as number[] | null,
-  typefaces = {} as ProjectTypefaces,
-  colors = {} as ProjectColors,
-  fontSizes = {} as ProjectFontSizes,
-  lineHeights = {} as ProjectLineHeights,
-  radii = {} as ProjectRadii,
-  elevations = {} as ProjectElevations,
-  letterSpacings = {} as ProjectLetterSpacings,
-  breakpoints = {} as ProjectBreakpoints,
-} = {}) =>
-  Object.freeze({
-    defaults: { ...DEFAULT_THEME_DEFAULTS, ...defaults },
-    breakpoints: breakpoints ?? DEFAULT_BREAKPOINTS,
-    gridUnits: gridUnits ?? DEFAULT_GRID_UNITS,
-    typefaces: { ...DEFAULT_TYPEFACES, ...typefaces },
-    colors: { ...DEFAULT_COLORS, ...colors },
-    fontSizes: { ...DEFAULT_FONT_SIZES, ...fontSizes },
-    lineHeights: { ...DEFAULT_LINE_HEIGHTS, ...lineHeights },
-    radii: { ...DEFAULT_RADII, ...radii },
-    elevations: { ...DEFAULT_ELEVATIONS, ...elevations },
-    letterSpacings: { ...DEFAULT_LETTER_SPACINGS, ...letterSpacings },
-  })
+import { ThemeShape } from '../types'
+import { DEFAULT_DARK_COLORS } from './colors'
+import DEFAULT_THEME_OPTIONS from './defaultTheme'
+
+export const makeTheme = (options: ThemeShape = {}) =>
+  merge(DEFAULT_THEME_OPTIONS, options)
 
 export const DEFAULT_THEME = makeTheme()
 export const DEFAULT_DARK_THEME = makeTheme({ colors: DEFAULT_DARK_COLORS })

@@ -1,6 +1,6 @@
 {
   "extends": "tsconfig/react-library.json",
-  "include": [".", "../web/src/utils/makeComponent.ts"],
+  "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": { "lib": ["ES6", "DOM" ]},
 }

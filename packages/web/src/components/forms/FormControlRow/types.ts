@@ -1,4 +1,4 @@
-import { HTMLAttributes, MouseEvent, ReactNode } from 'react'
+import { MouseEvent, ReactNode } from 'react'
 
 import { ColumnProps, RowProps } from '../../containers'
 import { TextProps } from '../../content'
