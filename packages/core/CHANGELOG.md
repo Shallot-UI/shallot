@@ -1,5 +1,17 @@
 # @shallot-ui/core
 
+## 0.20.0
+
+### Minor Changes
+
+- Improves types for some packages
+- 6341dfd: Moving to props as config objects
+
+### Patch Changes
+
+- Fixes types for formik
+- 629b2ba: Fixes types for formik
+
 ## 0.20.0-next.0
 
 ### Minor Changes

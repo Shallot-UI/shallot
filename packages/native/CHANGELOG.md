@@ -1,5 +1,23 @@
 # @shallot-ui/native
 
+## 0.20.0
+
+### Minor Changes
+
+- Improves types for some packages
+- 6341dfd: Moving to props as config objects
+
+### Patch Changes
+
+- Fixes types for formik
+- 629b2ba: Fixes types for formik
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies [629b2ba]
+- Updated dependencies [6341dfd]
+  - @shallot-ui/theme@0.20.0
+  - @shallot-ui/core@0.20.0
+
 ## 0.20.0-next.0
 
 ### Minor Changes
