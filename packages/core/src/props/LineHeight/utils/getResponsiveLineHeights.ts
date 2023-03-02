@@ -1,4 +1,5 @@
 import { LineHeightProps } from '@shallot-ui/theme'
+import { DefaultTheme } from 'styled-components/native'
 
 import { Getter } from '../../../types'
 import { getMediaQueries } from '../../../utils'
@@ -19,7 +20,11 @@ const getResponsiveLineHeights: Getter<LineHeightProps> = ({
         // e.g., breakpoints: { 960: { fontSizes: { md: 16 }}}
         const mediaQueries = getMediaQueries(
           (subtheme) =>
-            getStaticLineHeight({ fontSize, lineHeight, theme: subtheme }),
+            getStaticLineHeight({
+              fontSize,
+              lineHeight,
+              theme: subtheme as DefaultTheme,
+            }),
           theme?.breakpoints,
         )
 

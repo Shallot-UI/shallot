@@ -1,5 +1,18 @@
 # @shallot-ui/native-formik
 
+## 2.0.0
+
+### Minor Changes
+
+- Cleans up types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/native@0.21.0
+  - @shallot-ui/theme@0.21.0
+  - @shallot-ui/core@0.21.0
+
 ## 1.0.0
 
 ### Minor Changes

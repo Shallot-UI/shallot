@@ -1,5 +1,16 @@
 # @shallot-ui/web-formik
 
+## 2.0.0
+
+### Minor Changes
+
+- Cleans up types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/next@0.20.0
+
 ## 1.0.0
 
 ### Minor Changes

@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 0.20.0
+
+### Minor Changes
+
+- Cleans up types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.21.0
+
 ## 0.19.0
 
 ### Minor Changes

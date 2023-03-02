@@ -1,9 +1,10 @@
-import { CSSObject, DefaultTheme } from 'styled-components'
+import { DefaultTheme } from 'styled-components'
+import { ThemeGetterValue } from '../../types'
 
 export const getMediaQueries = (
   getStyle: (
     theme: DefaultTheme['breakpoints'][keyof DefaultTheme['breakpoints']],
-  ) => string | false | undefined | CSSObject,
+  ) => ThemeGetterValue,
   breakpoints: DefaultTheme['breakpoints'],
 ): string =>
   Object.entries(breakpoints)

@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 0.21.0
+
+### Minor Changes
+
+- Cleans up types
+
 ## 0.20.0
 
 ### Minor Changes

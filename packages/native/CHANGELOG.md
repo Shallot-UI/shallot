@@ -1,5 +1,17 @@
 # @shallot-ui/native
 
+## 0.21.0
+
+### Minor Changes
+
+- Cleans up types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.21.0
+  - @shallot-ui/core@0.21.0
+
 ## 0.20.0
 
 ### Minor Changes

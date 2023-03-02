@@ -1,5 +1,16 @@
 # @shallot-ui/prismjs
 
+## 2.0.0
+
+### Minor Changes
+
+- Cleans up types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.21.0
+
 ## 1.0.0
 
 ### Minor Changes

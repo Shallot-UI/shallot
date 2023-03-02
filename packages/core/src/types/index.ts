@@ -6,7 +6,7 @@ import {
   FlattenSimpleInterpolation,
 } from 'styled-components'
 
-type ThemeGetterValue =
+export type ThemeGetterValue =
   | string
   | false
   | undefined
