@@ -1,5 +1,21 @@
 # @shallot-ui/web-formik
 
+## 3.0.3
+
+### Patch Changes
+
+- Adds color options to get input styles
+- Updated dependencies
+  - @shallot-ui/next@0.21.3
+
+## 3.0.2
+
+### Patch Changes
+
+- Fixes input sizing
+- Updated dependencies
+  - @shallot-ui/next@0.21.2
+
 ## 3.0.1
 
 ### Patch Changes

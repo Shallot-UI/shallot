@@ -1,5 +1,25 @@
 # web
 
+## 0.3.3
+
+### Patch Changes
+
+- Adds color options to get input styles
+- Updated dependencies
+  - @shallot-ui/react-select@0.21.3
+  - @shallot-ui/prismjs@3.0.3
+  - @shallot-ui/next@0.21.3
+
+## 0.3.2
+
+### Patch Changes
+
+- Fixes input sizing
+- Updated dependencies
+  - @shallot-ui/react-select@0.21.2
+  - @shallot-ui/prismjs@3.0.2
+  - @shallot-ui/next@0.21.2
+
 ## 0.3.1
 
 ### Patch Changes

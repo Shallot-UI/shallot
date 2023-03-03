@@ -1,5 +1,21 @@
 # @shallot-ui/next
 
+## 0.21.3
+
+### Patch Changes
+
+- Adds color options to get input styles
+- Updated dependencies
+  - @shallot-ui/web@0.22.3
+
+## 0.21.2
+
+### Patch Changes
+
+- Fixes input sizing
+- Updated dependencies
+  - @shallot-ui/web@0.22.2
+
 ## 0.21.1
 
 ### Patch Changes

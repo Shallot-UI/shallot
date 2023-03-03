@@ -1,32 +1,32 @@
-import { BoxProps, ColumnProps, pullColumnProps } from '../../containers'
+import { AllColorShades } from '@shallot-ui/theme'
+import { ColumnProps, pullColumnProps } from '../../containers'
 import { InputState, DisplayInputProps } from './types'
-
-const formControlSurface: BoxProps = {
-  cursor: 'pointer',
-  backgroundColor: 'Shading.125',
-  borderColor: 'Shading.200',
-  borderWidth: 1,
-  transition: `
-    border-color 0.2s ease-in-out,
-    background-color 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out
-  `,
-}
 
 interface GetInputStylesProps extends ColumnProps {
   state?: InputState
+  backgroundColor?: AllColorShades
+  borderColor?: AllColorShades
+  focusedBackgroundColor?: AllColorShades
+  focusedBorderColor?: AllColorShades
 }
 
 export const getInputStyles = ({
   state = {},
+  backgroundColor = 'Shading.125',
+  borderColor = 'Shading.200',
+  focusedBackgroundColor = 'Shading.100',
+  focusedBorderColor = 'Primary.300',
   ...rest
 }: GetInputStylesProps = {}) => {
   const [containerOverrides] = pullColumnProps({ ...rest })
 
   let styles: DisplayInputProps['styles'] = {
     container: {
-      ...formControlSurface,
+      backgroundColor,
+      borderColor,
       radius: 'sm',
+      cursor: 'pointer',
+      borderWidth: 1,
       transition: `
         border-color 0.2s ease-in-out,
         background-color 0.2s ease-in-out,
@@ -44,12 +44,7 @@ export const getInputStyles = ({
   }
 
   if (state.hovered) {
-    styles = {
-      ...styles,
-      container: {
-        ...styles.container,
-      },
-    }
+    styles = { ...styles, container: { ...styles.container } }
   }
 
   if (state.focused) {
@@ -58,8 +53,8 @@ export const getInputStyles = ({
       container: {
         ...styles.container,
         elevation: 'focused',
-        backgroundColor: 'Shading.100',
-        borderColor: 'Primary.300',
+        backgroundColor: focusedBackgroundColor,
+        borderColor: focusedBorderColor,
       },
     }
   }

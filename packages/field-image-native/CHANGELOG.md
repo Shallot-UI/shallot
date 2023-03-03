@@ -1,5 +1,23 @@
 # @shallot-ui/field-image-native
 
+## 3.0.3
+
+### Patch Changes
+
+- Adds color options to get input styles
+- Updated dependencies
+  - @shallot-ui/theme@0.22.3
+  - @shallot-ui/core@0.22.3
+
+## 3.0.2
+
+### Patch Changes
+
+- Fixes input sizing
+- Updated dependencies
+  - @shallot-ui/theme@0.22.2
+  - @shallot-ui/core@0.22.2
+
 ## 3.0.1
 
 ### Patch Changes

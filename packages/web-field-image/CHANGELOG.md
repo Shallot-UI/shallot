@@ -1,5 +1,17 @@
 # @shallot-ui/web-formik
 
+## 0.21.3
+
+### Patch Changes
+
+- Adds color options to get input styles
+
+## 0.21.2
+
+### Patch Changes
+
+- Fixes input sizing
+
 ## 0.21.1
 
 ### Patch Changes
