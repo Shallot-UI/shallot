@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.22.1
+
+### Patch Changes
+
+- Fixes fold direction on web
+
 ## 0.22.0
 
 ### Minor Changes

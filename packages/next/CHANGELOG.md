@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.21.1
+
+### Patch Changes
+
+- Fixes fold direction on web
+- Updated dependencies
+  - @shallot-ui/web@0.22.1
+
 ## 0.21.0
 
 ### Minor Changes

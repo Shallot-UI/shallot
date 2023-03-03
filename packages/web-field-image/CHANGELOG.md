@@ -1,5 +1,11 @@
 # @shallot-ui/web-formik
 
+## 0.21.1
+
+### Patch Changes
+
+- Fixes fold direction on web
+
 ## 0.21.0
 
 ### Minor Changes

@@ -1,5 +1,15 @@
 # web
 
+## 0.3.1
+
+### Patch Changes
+
+- Fixes fold direction on web
+- Updated dependencies
+  - @shallot-ui/react-select@0.21.1
+  - @shallot-ui/prismjs@3.0.1
+  - @shallot-ui/next@0.21.1
+
 ## 0.3.0
 
 ### Minor Changes

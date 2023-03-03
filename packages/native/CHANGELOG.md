@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.22.1
+
+### Patch Changes
+
+- Fixes fold direction on web
+- Updated dependencies
+  - @shallot-ui/theme@0.22.1
+  - @shallot-ui/core@0.22.1
+
 ## 0.22.0
 
 ### Minor Changes

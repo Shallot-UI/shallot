@@ -1,5 +1,13 @@
 # @shallot-ui/prismjs
 
+## 3.0.1
+
+### Patch Changes
+
+- Fixes fold direction on web
+- Updated dependencies
+  - @shallot-ui/web@0.22.1
+
 ## 3.0.0
 
 ### Minor Changes

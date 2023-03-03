@@ -12,10 +12,10 @@ import {
   PropsConfig,
   radiusProps,
   sizingProps,
-  transitionProps,
   unitsAroundProps,
   unitsPaddingProps,
 } from '@shallot-ui/core'
+import { transitionProps } from '../../../props'
 
 import { InputProps } from './types'
 
