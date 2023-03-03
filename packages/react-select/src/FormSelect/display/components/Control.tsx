@@ -15,9 +15,7 @@ const FormSelectControl: FunctionComponent<ControlProps> = ({
     backgroundColor="Shading.100"
     borderColor="Shading.225"
     radius="sm"
-    style={{
-      borderWidth: 1,
-    }}
+    style={{ borderWidth: 1 }}
     {...innerProps}
   >
     {children}

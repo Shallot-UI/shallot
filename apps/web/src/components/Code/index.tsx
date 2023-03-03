@@ -12,7 +12,7 @@ interface CodeProps extends PrismCodeProps {
 export const Code: FunctionComponent<CodeProps> = (props) => (
   <PrismCode
     textColor="Shading.350"
-    typeface="RobotoMono"
+    typeface="Monospace"
     fontSize="md"
     lineHeight="lg"
     typeStyles={{
@@ -22,8 +22,8 @@ export const Code: FunctionComponent<CodeProps> = (props) => (
       string: { textColor: 'Success.400' },
       number: { textColor: 'Danger.400' },
       comment: {
-        typeface: 'RobotoMono',
-        font: 'RegularItalic',
+        typeface: 'Monospace',
+        font: 'Italic',
         textColor: 'Shading.275',
       },
     }}

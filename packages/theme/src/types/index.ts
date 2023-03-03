@@ -1,4 +1,4 @@
-import { CSSObject, DefaultTheme } from 'styled-components'
+import { CSSObject, CSSProp, DefaultTheme } from 'styled-components'
 
 export type Palette = Record<number, string>
 
@@ -159,15 +159,15 @@ export interface DisplayProps {
   display?: boolean | 'hidden' | 'inline' | 'block' | 'flex' | 'inline-flex'
 }
 
-export interface ThemeShape {
-  defaults?: Record<string, string | number>
-  typefaces?: Record<string, Record<number, Typeface>>
+export interface ThemeOptions {
+  defaults?: { typeface?: string }
   gridUnits?: number[]
-  colors?: Record<string, Record<number, string>>
-  fontSizes?: Record<string, number>
-  lineHeights?: Record<string, number>
-  radii?: Record<string, number>
-  elevations?: Record<string, any>
-  letterSpacings?: Record<string, number>
-  breakpoints?: Record<number, Pick<ThemeShape, 'fontSizes'>>
+  colors?: { [name: string]: { [shade: string]: string } }
+  fontSizes?: { [name: string]: number }
+  lineHeights?: { [name: string]: number }
+  radii?: { [name: string]: number }
+  letterSpacings?: { [name: string]: number }
+  breakpoints?: { [point: number]: { fontSizes?: { [name: string]: number } } }
+  typefaces?: { [name: string]: Typeface }
+  elevations?: { [name: string]: CSSProp }
 }

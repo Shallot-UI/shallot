@@ -6,7 +6,6 @@ export const DEFAULT_BREAKPOINTS = {
       md: 16,
       sm: 14,
       xs: 12,
-      xxs: 10,
     },
   },
 }

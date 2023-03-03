@@ -8,7 +8,9 @@ export const letterSpacingProps: PropsConfig<LetterSpacingProps> = {
     get: ({ letterSpacing }) =>
       letterSpacing
         ? ({ theme }) =>
-            `letter-spacing: ${theme.letterSpacings[letterSpacing]};`
+            theme.letterSpacings?.[letterSpacing]
+              ? `letter-spacing: ${theme.letterSpacings[letterSpacing]};`
+              : ''
         : '',
   },
 }

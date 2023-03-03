@@ -15,7 +15,7 @@ export const getColor = (address: string | undefined) => {
   const shadeValue = Number(shade) as keyof DefaultTheme['colors'][ColorName]
   // Return a function that returns the color from the theme.
   return css`
-    ${({ theme }: { theme: DefaultTheme }) => theme.colors[color][shadeValue]}
+    ${({ theme }: { theme: DefaultTheme }) => theme.colors?.[color][shadeValue]}
   `
 }
 

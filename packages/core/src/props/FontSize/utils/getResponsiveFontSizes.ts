@@ -14,9 +14,8 @@ const getResponsiveFontSizes: Getter<FontSizeProps> = ({ fontSize }) =>
 
         // Loop through the breakpoints and add any modifiers to the font sizes.
         // e.g., breakpoints: { 960: { fontSizes: { md: 16 }}}
-        const mediaQueries = getMediaQueries(
-          (subtheme) => getStaticFontSize({ fontSize, theme: subtheme }),
-          theme?.breakpoints,
+        const mediaQueries = getMediaQueries(theme, (subtheme) =>
+          getStaticFontSize({ fontSize, theme: subtheme }),
         )
 
         return [baseStyle, mediaQueries].join('')

@@ -1,6 +1,4 @@
-import { ColorName } from '@shallot-ui/theme'
 import { BoxProps, ColumnProps, pullColumnProps } from '../../containers'
-
 import { InputState, DisplayInputProps } from './types'
 
 const formControlSurface: BoxProps = {

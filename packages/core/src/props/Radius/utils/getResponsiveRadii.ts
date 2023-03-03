@@ -14,9 +14,8 @@ const getResponsiveRadii: Getter<RadiusProps> = ({ radius }) =>
 
         // Loop through the breakpoints and add any modifiers to the font sizes.
         // e.g., breakpoints: { 960: { radii: { md: 16 }}}
-        const mediaQueries = getMediaQueries(
-          (subtheme) => getStaticRadius({ radius, theme: subtheme }),
-          theme?.breakpoints,
+        const mediaQueries = getMediaQueries(theme, (subtheme) =>
+          getStaticRadius({ radius, theme: subtheme }),
         )
 
         return [baseStyle, mediaQueries].join('')

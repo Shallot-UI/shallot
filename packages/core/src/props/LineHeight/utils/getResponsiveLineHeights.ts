@@ -18,14 +18,12 @@ const getResponsiveLineHeights: Getter<LineHeightProps> = ({
 
         // Loop through the breakpoints and add any modifiers to the font sizes.
         // e.g., breakpoints: { 960: { fontSizes: { md: 16 }}}
-        const mediaQueries = getMediaQueries(
-          (subtheme) =>
-            getStaticLineHeight({
-              fontSize,
-              lineHeight,
-              theme: subtheme as DefaultTheme,
-            }),
-          theme?.breakpoints,
+        const mediaQueries = getMediaQueries(theme, (subtheme) =>
+          getStaticLineHeight({
+            fontSize,
+            lineHeight,
+            theme: subtheme as DefaultTheme,
+          }),
         )
 
         return [baseStyle, mediaQueries].join('')

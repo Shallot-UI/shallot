@@ -5,7 +5,7 @@ import { GlobalStyle, makeTheme } from '@shallot-ui/next'
 const NextApp = ({ Component, pageProps }: any) => {
   return (
     <>
-      <ThemeProvider theme={makeTheme()}>
+      <ThemeProvider theme={makeTheme({})}>
         <GlobalStyle />
         <Head>
           <link rel="icon" href="/favicon.ico" />
