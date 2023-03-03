@@ -1,5 +1,11 @@
 # @shallot-ui/react-select
 
+## 0.21.0
+
+### Minor Changes
+
+- Fixing types
+
 ## 0.20.0
 
 ### Minor Changes

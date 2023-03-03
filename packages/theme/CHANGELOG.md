@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.22.0
+
+### Minor Changes
+
+- Fixing types
+
 ## 0.21.0
 
 ### Minor Changes

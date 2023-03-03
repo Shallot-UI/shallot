@@ -1,5 +1,18 @@
 # web
 
+## 0.3.0
+
+### Minor Changes
+
+- Fixing types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/react-select@0.21.0
+  - @shallot-ui/prismjs@3.0.0
+  - @shallot-ui/next@0.21.0
+
 ## 0.2.0
 
 ### Minor Changes
