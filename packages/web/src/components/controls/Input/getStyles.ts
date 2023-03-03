@@ -34,11 +34,10 @@ export const getInputStyles = ({
       `,
     },
     input: {
-      unitHeight: 1,
       unitWidth: 1,
       backgroundColor: 'transparent',
       fontSize: 'md',
-      unitsPadding: 1,
+      unitsAround: 3 / 4,
       grow: true,
       letterSpacing: 'md',
     },
