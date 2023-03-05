@@ -15,7 +15,7 @@ export default {
 const Template: ComponentStory<typeof FormInput> = () => {
   const [value, setValue] = useState('')
   return (
-    <ThemeProvider theme={makeTheme()}>
+    <ThemeProvider theme={makeTheme({})}>
       <FormInput
         fullWidth
         maxUnitWidth={35}

@@ -15,22 +15,23 @@ const formControlSurface: BoxProps = {
   `,
 }
 
-interface GetCheckboxStylesProps extends ColumnProps {
+export interface CheckboxStyleProps extends ColumnProps {
   color?: ColorName
   size?: number
   iconSize?: number
   outline?: boolean
-  state?: CheckboxState
 }
 
-export const getCheckboxStyles = ({
-  color = 'Primary',
-  size = 4 / 3,
-  iconSize = 1,
-  radius = 'sm',
-  state = {},
-  ...rest
-}: GetCheckboxStylesProps = {}) => {
+export const getCheckboxStyles = (
+  state: CheckboxState = {},
+  {
+    color = 'Primary',
+    size = 4 / 3,
+    iconSize = 1,
+    radius = 'sm',
+    ...rest
+  }: CheckboxStyleProps = {},
+) => {
   const [containerOverrides] = pullColumnProps({ radius, ...rest })
 
   let styles: DisplayCheckboxProps['styles'] = {

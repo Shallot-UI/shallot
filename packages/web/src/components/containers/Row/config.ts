@@ -1,7 +1,7 @@
 import {
+  PropsConfig,
   rowHorizontalAlignmentProps,
   rowVerticalAlignmentProps,
-  PropsConfig,
 } from '@shallot-ui/core'
 
 import { boxConfig } from '../Box'

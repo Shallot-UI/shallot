@@ -1,14 +1,18 @@
 import { forwardRef } from 'react'
 
-import { rowConfig } from '../../containers'
-import { DisplayButtonProps } from './types'
-import { makeComponent } from '../../../utils'
-import { textConfig } from '../../content'
+import { rowConfig } from '../../../containers'
+import { DisplayButtonProps } from '../types'
+import { makeComponent } from '../../../../utils'
+import { textConfig } from '../../../content'
 
 const Container = makeComponent(
   'button',
   rowConfig,
-  `display: flex; flex-direction: row; border-style: solid;`,
+  `
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+  `,
 )
 
 const Label = makeComponent('label', textConfig)

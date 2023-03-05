@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { Checkbox, CheckboxProps, Row } from '../components'
+import { Checkbox, Row } from '../components'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -16,10 +16,10 @@ export default {
 } as ComponentMeta<typeof Checkbox>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Checkbox> = (args: CheckboxProps) => {
+const Template: ComponentStory<typeof Checkbox> = (args) => {
   const [value, setValue] = useState(false)
   return (
-    <ThemeProvider theme={makeTheme()}>
+    <ThemeProvider theme={makeTheme({})}>
       <Row>
         <Checkbox
           unitsAround={1 / 2}

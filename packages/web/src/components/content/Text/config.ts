@@ -17,13 +17,13 @@ import {
   underlineProps,
   unitsAroundProps,
 } from '@shallot-ui/core'
-import { transitionProps, userSelectProps } from '../../../props'
 
+import { transitionProps, userSelectProps } from '../../../props'
 import { TextProps } from './types'
 
 export const textConfig: PropsConfig<TextProps> = {
-  ...textAlignProps,
   ...borderProps,
+  ...casingProps,
   ...colorProps,
   ...cursorProps,
   ...displayProps,
@@ -35,9 +35,9 @@ export const textConfig: PropsConfig<TextProps> = {
   ...lineHeightProps,
   ...radiusProps,
   ...sizingProps,
+  ...textAlignProps,
   ...transitionProps,
   ...underlineProps,
-  ...casingProps,
   ...unitsAroundProps,
   ...userSelectProps,
 }

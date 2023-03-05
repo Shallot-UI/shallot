@@ -31,7 +31,7 @@ const Template: ComponentStory<typeof Input> = () => {
   const [password, setPassword] = useState('')
   const [remember, setRemember] = useState(false)
   return (
-    <ThemeProvider theme={makeTheme()}>
+    <ThemeProvider theme={makeTheme({})}>
       <Fold alignCenter alignMiddle backgroundColor="Shading.125">
         <Column maxUnitWidth={32} unitsAround={2} fullWidth>
           <Column

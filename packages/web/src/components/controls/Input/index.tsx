@@ -1,31 +1,13 @@
-import { FunctionComponent, useRef } from 'react'
+import { FunctionComponent } from 'react'
 
+import { InputStyleProps, getInputStyles } from './getStyles'
 import { InputProps } from './types'
-import { DisplayInput } from './display'
-
-// Hooks
-import { useHover } from '../../../hooks/useHover'
-import { useFocus } from '../../../hooks/useFocus'
-import { getInputStyles } from './getStyles'
+import { BaseInput } from './Base'
 
 export * from './types'
-export * from './getStyles'
-export * from './display'
 
-export const Input: FunctionComponent<InputProps> = ({
-  value,
-  onChange,
-  getStyles = getInputStyles,
-  ...rest
-}) => {
-  const displayRef = useRef<HTMLInputElement>(null)
-  const focused = useFocus(displayRef)
-  const hovered = useHover(displayRef)
-
-  const styles = getStyles({
-    state: { hovered, focused, disabled: false },
-    ...rest,
-  })
-
-  return <DisplayInput ref={displayRef} styles={styles} {...rest} />
-}
+export const Input: FunctionComponent<
+  Omit<InputProps, 'getStyles'> & InputStyleProps
+> = (props) => (
+  <BaseInput getStyles={(state) => getInputStyles(state, props)} {...props} />
+)

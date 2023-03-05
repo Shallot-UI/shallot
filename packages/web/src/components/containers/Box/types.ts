@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react'
 import {
   AnimationProps,
   BorderProps,
@@ -24,6 +23,4 @@ export interface BoxProps
     RadiusProps,
     SizingProps,
     TransitionProps,
-    UnitsAroundProps {
-  style?: CSSProperties
-}
+    UnitsAroundProps {}

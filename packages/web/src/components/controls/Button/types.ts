@@ -32,7 +32,6 @@ export interface ButtonProps extends DisplayButtonProps {
   startAdornment?: ReactNode
   endAdornment?: ReactNode
   type?: 'button' | 'submit' | 'reset'
-  getStyles?: (props: { state?: ButtonState }) => ButtonComponentStyles
-  color?: ColorName
   outline?: boolean
+  getStyles: (state?: ButtonState) => ButtonComponentStyles
 }

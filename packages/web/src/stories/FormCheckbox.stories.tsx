@@ -15,7 +15,7 @@ export default {
 const Template: ComponentStory<typeof FormCheckbox> = () => {
   const [value, setValue] = useState(false)
   return (
-    <ThemeProvider theme={makeTheme()}>
+    <ThemeProvider theme={makeTheme({})}>
       <FormCheckbox
         fullWidth
         maxUnitWidth={35}

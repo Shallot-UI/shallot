@@ -15,8 +15,13 @@ export default {
 const Template: ComponentStory<typeof Input> = () => {
   const [value, setValue] = useState('')
   return (
-    <ThemeProvider theme={makeTheme()}>
-      <Input value={value} setValue={setValue} fullWidth maxUnitWidth={35} />
+    <ThemeProvider theme={makeTheme({})}>
+      <Input
+        value={value}
+        onChange={(e) => setValue(e.currentTarget.value)}
+        fullWidth
+        maxUnitWidth={35}
+      />
     </ThemeProvider>
   )
 }

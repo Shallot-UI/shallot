@@ -1,8 +1,9 @@
 import { makeTheme } from '@shallot-ui/theme'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { FunctionComponent } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { Button, ButtonProps, Column, Row } from '../components'
+import { Button, Column, ColumnProps, Row } from '../components'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -14,9 +15,19 @@ export default {
   },
 } as ComponentMeta<typeof Button>
 
+const MockIcon: FunctionComponent<ColumnProps> = (props) => (
+  <Column
+    unitHeight={3 / 2}
+    unitWidth={3 / 2}
+    backgroundColor="Shading.100"
+    radius="pill"
+    {...props}
+  />
+)
+
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
-  <ThemeProvider theme={makeTheme()}>
+const Template: ComponentStory<typeof Button> = (args) => (
+  <ThemeProvider theme={makeTheme({})}>
     <Row>
       <Column>
         <Button {...args} unitsAround={1} radius="sm" />
@@ -37,15 +48,7 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
           typeface="Monospace"
           radius="sm"
           alignMiddle
-          startAdornment={
-            <Column
-              unitsLeft={1 / 2}
-              unitHeight={3 / 2}
-              unitWidth={3 / 2}
-              backgroundColor="Shading.100"
-              radius="pill"
-            />
-          }
+          startAdornment={<MockIcon unitsLeft={1 / 2} />}
         />
         <Button
           {...args}
@@ -53,15 +56,7 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
           typeface="Monospace"
           radius="md"
           alignMiddle
-          startAdornment={
-            <Column
-              unitsLeft={1 / 2}
-              unitHeight={3 / 2}
-              unitWidth={3 / 2}
-              backgroundColor="Shading.100"
-              radius="pill"
-            />
-          }
+          startAdornment={<MockIcon unitsLeft={1 / 2} />}
         />
         <Button
           {...args}
@@ -69,15 +64,7 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
           typeface="Monospace"
           radius="lg"
           alignMiddle
-          startAdornment={
-            <Column
-              unitsLeft={1 / 2}
-              unitHeight={3 / 2}
-              unitWidth={3 / 2}
-              backgroundColor="Shading.100"
-              radius="pill"
-            />
-          }
+          startAdornment={<MockIcon unitsLeft={1 / 2} />}
         />
         <Button
           {...args}
@@ -85,15 +72,7 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
           typeface="Monospace"
           radius="pill"
           alignMiddle
-          startAdornment={
-            <Column
-              unitsLeft={1 / 2}
-              unitHeight={3 / 2}
-              unitWidth={3 / 2}
-              backgroundColor="Shading.100"
-              radius="pill"
-            />
-          }
+          startAdornment={<MockIcon unitsLeft={1 / 2} />}
         />
       </Column>
       <Column>
@@ -103,15 +82,7 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
           typeface="Monospace"
           radius="sm"
           alignMiddle
-          endAdornment={
-            <Column
-              unitsRight={1 / 2}
-              unitHeight={3 / 2}
-              unitWidth={3 / 2}
-              backgroundColor="Shading.100"
-              radius="pill"
-            />
-          }
+          endAdornment={<MockIcon unitsRight={1 / 2} />}
         />
         <Button
           {...args}
@@ -119,15 +90,7 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
           typeface="Monospace"
           radius="md"
           alignMiddle
-          endAdornment={
-            <Column
-              unitsRight={1 / 2}
-              unitHeight={3 / 2}
-              unitWidth={3 / 2}
-              backgroundColor="Shading.100"
-              radius="pill"
-            />
-          }
+          endAdornment={<MockIcon unitsRight={1 / 2} />}
         />
         <Button
           {...args}
@@ -135,15 +98,7 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
           typeface="Monospace"
           radius="lg"
           alignMiddle
-          endAdornment={
-            <Column
-              unitsRight={1 / 2}
-              unitHeight={3 / 2}
-              unitWidth={3 / 2}
-              backgroundColor="Shading.100"
-              radius="pill"
-            />
-          }
+          endAdornment={<MockIcon unitsRight={1 / 2} />}
         />
         <Button
           {...args}
@@ -151,15 +106,7 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
           typeface="Monospace"
           radius="pill"
           alignMiddle
-          endAdornment={
-            <Column
-              unitsRight={1 / 2}
-              unitHeight={3 / 2}
-              unitWidth={3 / 2}
-              backgroundColor="Shading.100"
-              radius="pill"
-            />
-          }
+          endAdornment={<MockIcon unitsRight={1 / 2} />}
         />
       </Column>
       <Column>

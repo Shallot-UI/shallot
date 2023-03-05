@@ -1,15 +1,16 @@
 import { forwardRef } from 'react'
 
-import { makeComponent } from '../../../utils'
-import { columnConfig } from '../../containers'
-import { DisplayCheckboxProps } from './types'
-import CheckmarkIcon from './icons/CheckmarkIcon'
+import { makeComponent } from '../../../../utils'
+import { columnConfig } from '../../../containers'
+import { DisplayCheckboxProps } from '../types'
+import CheckmarkIcon from '../icons/CheckmarkIcon'
 
 const Container = makeComponent(
   'label',
   columnConfig,
   `
     display: flex;
+    width: auto;
     flex-direction: column;
     border-style: solid;
     border-width: 0;

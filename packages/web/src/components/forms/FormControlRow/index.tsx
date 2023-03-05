@@ -11,16 +11,15 @@ export * from './types'
 export const FormControlRow = forwardRef<HTMLDivElement, FormControlRowProps>(
   (
     {
+      children,
+      disabled,
+      error,
       errorText,
+      focused,
       helperText,
       label,
-      required,
-      disabled,
-      focused,
       populated,
-      error,
-      children,
-
+      required,
       ...rest
     },
     ref,
@@ -31,10 +30,10 @@ export const FormControlRow = forwardRef<HTMLDivElement, FormControlRowProps>(
       helperText={helperText}
       label={label}
       required={required}
-      styles={getFormControlRowStyles({
-        ...rest,
-        state: { disabled, focused, populated, error },
-      })}
+      styles={getFormControlRowStyles(
+        { disabled, focused, populated, error },
+        rest,
+      )}
     >
       {children}
     </DisplayFormControlRow>

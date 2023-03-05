@@ -6,6 +6,6 @@ import {
 import { BoxProps } from '../Box'
 
 export interface RowProps
-  extends VerticalAlignmentProps,
+  extends BoxProps,
     HorizontalAlignmentProps,
-    BoxProps {}
+    VerticalAlignmentProps {}

@@ -2,22 +2,23 @@ import { AllColorShades } from '@shallot-ui/theme'
 import { ColumnProps, pullColumnProps } from '../../containers'
 import { InputState, DisplayInputProps } from './types'
 
-interface GetInputStylesProps extends ColumnProps {
-  state?: InputState
+export interface InputStyleProps extends ColumnProps {
   backgroundColor?: AllColorShades
   borderColor?: AllColorShades
   focusedBackgroundColor?: AllColorShades
   focusedBorderColor?: AllColorShades
 }
 
-export const getInputStyles = ({
-  state = {},
-  backgroundColor = 'Shading.125',
-  borderColor = 'Shading.200',
-  focusedBackgroundColor = 'Shading.100',
-  focusedBorderColor = 'Primary.300',
-  ...rest
-}: GetInputStylesProps = {}) => {
+export const getInputStyles = (
+  state: InputState = {},
+  {
+    backgroundColor = 'Shading.125',
+    borderColor = 'Shading.200',
+    focusedBackgroundColor = 'Shading.100',
+    focusedBorderColor = 'Primary.300',
+    ...rest
+  }: InputStyleProps = {},
+) => {
   const [containerOverrides] = pullColumnProps({ ...rest })
 
   let styles: DisplayInputProps['styles'] = {

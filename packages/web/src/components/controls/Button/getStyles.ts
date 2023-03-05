@@ -4,18 +4,15 @@ import { pullRowProps } from '../../containers'
 import { pullTextProps } from '../../content'
 import { ButtonState, DisplayButtonProps } from './types'
 
-interface GetButtonStylesProps extends DisplayButtonProps {
+export interface ButtonStyleProps extends DisplayButtonProps {
   color?: ColorName
   outline?: boolean
-  state?: ButtonState
 }
 
-export const getButtonStyles = ({
-  color = 'Primary',
-  outline = false,
-  state = {},
-  ...rest
-}: GetButtonStylesProps = {}) => {
+export const getButtonStyles = (
+  state: ButtonState = {},
+  { color = 'Primary', outline = false, ...rest }: ButtonStyleProps = {},
+) => {
   const [containerOverrides, otherProps] = pullRowProps({ ...rest })
   const [labelOverrides] = pullTextProps({ ...otherProps })
 
@@ -81,14 +78,8 @@ export const getButtonStyles = ({
   if (outline) {
     styles = {
       ...styles,
-      container: {
-        ...styles.container,
-        backgroundColor: 'Shading.100',
-      },
-      label: {
-        ...styles.label,
-        textColor: `${color}.300`,
-      },
+      container: { ...styles.container, backgroundColor: 'Shading.100' },
+      label: { ...styles.label, textColor: `${color}.300` },
     }
   }
 

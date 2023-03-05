@@ -15,8 +15,8 @@ import {
   unitsAroundProps,
   unitsPaddingProps,
 } from '@shallot-ui/core'
-import { transitionProps } from '../../../props'
 
+import { transitionProps } from '../../../props'
 import { InputProps } from './types'
 
 export const inputConfig: PropsConfig<InputProps> = {

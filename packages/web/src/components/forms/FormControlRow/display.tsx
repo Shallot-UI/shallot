@@ -1,4 +1,4 @@
-import { forwardRef, FunctionComponent } from 'react'
+import { forwardRef } from 'react'
 
 import { DisplayFormControlRowProps } from './types'
 import { Row, Column } from '../../containers'

@@ -1,14 +1,11 @@
-import { FunctionComponent, useRef, useState } from 'react'
-import { pullUnitsAroundProps, pullProps } from '@shallot-ui/core'
+import { FunctionComponent } from 'react'
 
-import { FormCheckboxProps } from './types'
-import { getFormCheckboxStyles } from './getStyles'
 import { FormControlRow } from '../FormControlRow'
-import { useFocus, useHover } from '../../../hooks'
-import { DisplayCheckbox } from '../../controls/Checkbox'
+import { Checkbox } from '../../controls/Checkbox'
+import { FormCheckboxProps } from './types'
+import { pullRowProps } from '../../containers'
 
 export * from './types'
-export * from './getStyles'
 
 export const FormCheckbox: FunctionComponent<FormCheckboxProps> = ({
   value,
@@ -18,16 +15,10 @@ export const FormCheckbox: FunctionComponent<FormCheckboxProps> = ({
   errorText,
   helperText,
   disabled,
-  getStyles = getFormCheckboxStyles,
+  color,
   ...props
 }) => {
-  const checkboxRef = useRef<HTMLLabelElement>(null)
-  const focused = useFocus(checkboxRef)
-  const hovered = useHover(checkboxRef)
-
-  const styles = getStyles({ state: { focused, hovered, checked: value } })
-  const [controlOverrides, rest] = pullProps(props, [pullUnitsAroundProps])
-
+  const [rowProps, rest] = pullRowProps(props)
   return (
     <FormControlRow
       onClick={() => setValue(!value)}
@@ -35,10 +26,9 @@ export const FormCheckbox: FunctionComponent<FormCheckboxProps> = ({
       helperText={helperText}
       label={label}
       required={required}
-      styles={styles.control}
-      {...controlOverrides}
+      {...rowProps}
     >
-      <DisplayCheckbox ref={checkboxRef} styles={styles.checkbox} {...rest} />
+      <Checkbox value={value} setValue={setValue} color={color} {...rest} />
     </FormControlRow>
   )
 }

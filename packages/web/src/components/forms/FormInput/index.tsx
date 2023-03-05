@@ -4,7 +4,7 @@ import { FormInputProps } from './types'
 import { getFormInputStyles } from './getStyles'
 import { DisplayFormControlColumn } from '../FormControlColumn'
 import { useFocus, useHover } from '../../../hooks'
-import { DisplayInput } from '../../controls/Input'
+import { DisplayInput } from '../../controls/Input/Base'
 import { pullRowProps } from '../../containers'
 
 export * from './types'

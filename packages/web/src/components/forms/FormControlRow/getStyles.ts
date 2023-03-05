@@ -1,37 +1,35 @@
 import { RowProps } from '../../containers'
 import { FormControlRowComponentStyles, FormControlRowState } from './types'
 
-export const getFormControlRowStyles = ({
-  state = {},
-  ...props
-}: {
-  state?: FormControlRowState
-} & RowProps = {}): FormControlRowComponentStyles => ({
+export const getFormControlRowStyles = (
+  state: FormControlRowState = {},
+  props: RowProps = {},
+): FormControlRowComponentStyles => ({
   container: { alignMiddle: true, ...props },
   label: {
-    textColor: 'Shading.400',
-    letterSpacing: 'md',
-    typeface: 'Body',
+    cursor: 'pointer',
     font: 'Bold',
     fontSize: 'md',
-    cursor: 'pointer',
+    letterSpacing: 'md',
+    textColor: 'Shading.400',
+    typeface: 'Body',
     userSelect: 'none',
   },
   details: { unitsLeft: 1 },
-  requiredStar: { textColor: 'Danger.300' },
+  requiredStar: { typeface: 'Body', textColor: 'Danger.300' },
   helperText: {
+    animation: 'fadeInDown',
     fontSize: 'sm',
     textColor: 'Shading.275',
-    unitsAbove: 1 / 4,
     transition: 'color 350ms ease-in-out',
-    animation: 'fadeInDown',
     typeface: 'Body',
+    unitsAbove: 1 / 4,
   },
   errorText: {
+    animation: 'fadeInDown',
     fontSize: 'sm',
     textColor: 'Danger.300',
-    unitsAbove: 1 / 4,
-    animation: 'fadeInDown',
     typeface: 'Body',
+    unitsAbove: 1 / 4,
   },
 })

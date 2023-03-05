@@ -9,12 +9,13 @@ import {
   RadiusProps,
   SizingProps,
   TransitionProps,
-  UnitsAroundProps,
   UnitPaddingProps,
+  UnitsAroundProps,
 } from '@shallot-ui/theme'
 
 export interface TextAreaProps
-  extends BorderProps,
+  extends AnimationProps,
+    BorderProps,
     ColorProps,
     CursorProps,
     DisplayProps,
@@ -24,5 +25,4 @@ export interface TextAreaProps
     SizingProps,
     TransitionProps,
     UnitPaddingProps,
-    UnitsAroundProps,
-    AnimationProps {}
+    UnitsAroundProps {}
