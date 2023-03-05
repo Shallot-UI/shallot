@@ -1,19 +1,47 @@
-import { ColorName } from '@shallot-ui/theme'
+import {
+  AnimationProps,
+  CasingProps,
+  ColorName,
+  FontProps,
+  FontSizeProps,
+  LetterSpacingProps,
+  RadiusProps,
+  UnderlineProps,
+  UnitsAroundProps,
+} from '@shallot-ui/theme'
 
 import { pullRowProps } from '../../containers'
 import { pullTextProps } from '../../content'
 import { ButtonState, DisplayButtonProps } from './types'
 
-export interface ButtonStyleProps extends DisplayButtonProps {
+export interface ButtonStyleProps
+  extends AnimationProps,
+    UnitsAroundProps,
+    RadiusProps,
+    FontProps,
+    CasingProps,
+    UnderlineProps,
+    LetterSpacingProps,
+    FontSizeProps {
   color?: ColorName
   outline?: boolean
 }
 
 export const getButtonStyles = (
   state: ButtonState = {},
-  { color = 'Primary', outline = false, ...rest }: ButtonStyleProps = {},
+  {
+    color = 'Primary',
+    outline = false,
+    radius = 'md',
+    typeface = 'Monospace',
+    ...rest
+  }: ButtonStyleProps = {},
 ) => {
-  const [containerOverrides, otherProps] = pullRowProps({ ...rest })
+  const [containerOverrides, otherProps] = pullRowProps({
+    radius,
+    typeface,
+    ...rest,
+  })
   const [labelOverrides] = pullTextProps({ ...otherProps })
 
   let styles: DisplayButtonProps['styles'] = {

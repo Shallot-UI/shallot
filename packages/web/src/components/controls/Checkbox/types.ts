@@ -19,9 +19,8 @@ export interface CheckboxState {
   checked?: boolean
 }
 
-export interface CheckboxProps extends ColumnProps {
+export interface CheckboxProps extends Omit<DisplayCheckboxProps, 'styles'> {
   value: boolean
   setValue: (value: boolean) => void
-  Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
   getStyles?: (state?: CheckboxState) => CheckboxComponentStyles
 }

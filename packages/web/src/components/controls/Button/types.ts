@@ -1,4 +1,3 @@
-import { ColorName } from '@shallot-ui/theme'
 import { HTMLProps, ReactNode } from 'react'
 
 import { RowProps } from '../../containers'
@@ -10,11 +9,10 @@ export interface ButtonComponentStyles {
 }
 
 export interface DisplayButtonProps
-  extends Omit<HTMLProps<HTMLButtonElement>, 'ref' | 'wrap' | 'as' | 'type'>,
-    RowProps,
-    TextProps {
+  extends Omit<HTMLProps<HTMLButtonElement>, 'ref' | 'as' | 'type' | 'wrap'> {
   styles?: ButtonComponentStyles
   title?: string
+  type?: 'button' | 'submit' | 'reset'
   startAdornment?: ReactNode
   endAdornment?: ReactNode
 }
@@ -26,12 +24,11 @@ export interface ButtonState {
   pressed?: boolean
 }
 
-export interface ButtonProps extends DisplayButtonProps {
+export interface ButtonProps extends Omit<DisplayButtonProps, 'styles'> {
   disabled?: boolean
   title?: string
   startAdornment?: ReactNode
   endAdornment?: ReactNode
-  type?: 'button' | 'submit' | 'reset'
   outline?: boolean
   getStyles: (state?: ButtonState) => ButtonComponentStyles
 }

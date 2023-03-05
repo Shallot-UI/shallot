@@ -1,19 +1,7 @@
 import { ColorName } from '@shallot-ui/theme'
-import { BoxProps, ColumnProps, pullColumnProps } from '../../containers'
+import { ColumnProps, pullColumnProps } from '../../containers'
 
 import { CheckboxState, DisplayCheckboxProps } from './types'
-
-const formControlSurface: BoxProps = {
-  cursor: 'pointer',
-  backgroundColor: 'Shading.125',
-  borderColor: 'Shading.250',
-  borderWidth: 1,
-  transition: `
-    border-color 0.2s ease-in-out,
-    background-color 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out
-  `,
-}
 
 export interface CheckboxStyleProps extends ColumnProps {
   color?: ColorName
@@ -36,7 +24,15 @@ export const getCheckboxStyles = (
 
   let styles: DisplayCheckboxProps['styles'] = {
     container: {
-      ...formControlSurface,
+      cursor: 'pointer',
+      backgroundColor: 'Shading.125',
+      borderColor: 'Shading.250',
+      borderWidth: 1,
+      transition: `
+        border-color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out
+      `,
       // Configurable
       unitHeight: size,
       unitWidth: size,

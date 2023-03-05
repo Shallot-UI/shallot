@@ -9,9 +9,21 @@ import { Checkbox, Row } from '../components'
 export default {
   title: 'Example/Checkbox',
   component: Checkbox,
+  parameters: {
+    layout: 'centered',
+    controls: {
+      sort: 'requiredFirst',
+    },
+  },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    color: {
+      control: 'select',
+      options: ['Primary', 'Success', 'Danger', 'Warning'],
+    },
+    radius: { control: 'select', options: ['sm', 'md', 'lg', 'pill'] },
+    value: { table: { disable: true } },
+    setValue: { table: { disable: true } },
   },
 } as ComponentMeta<typeof Checkbox>
 
@@ -38,21 +50,6 @@ const Template: ComponentStory<typeof Checkbox> = (args) => {
   )
 }
 
-export const Primary = Template.bind({})
+export const Default = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {}
-
-export const Success = Template.bind({})
-Success.args = {
-  color: 'Success',
-}
-
-export const Danger = Template.bind({})
-Danger.args = {
-  color: 'Danger',
-}
-
-export const Warning = Template.bind({})
-Warning.args = {
-  color: 'Warning',
-}
+Default.args = {}
