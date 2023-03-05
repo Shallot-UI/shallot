@@ -5,9 +5,6 @@ import { useFocus, useHover } from '../../../../hooks'
 import { DisplayFormControlColumn } from '../../FormControlColumn/Base/display'
 import { DisplayInput } from '../../../controls/Input/Base/display'
 
-export * from '../types'
-export * from '../getStyles'
-
 export const BaseFormInput: FunctionComponent<FormInputProps> = ({
   value,
   setValue,

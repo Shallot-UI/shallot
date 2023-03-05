@@ -1,5 +1,15 @@
 # @shallot-ui/native-formik
 
+## 3.0.4
+
+### Patch Changes
+
+- Updates stories and patterns
+- Updated dependencies
+  - @shallot-ui/native@0.22.4
+  - @shallot-ui/theme@0.22.4
+  - @shallot-ui/core@0.22.4
+
 ## 3.0.3
 
 ### Patch Changes

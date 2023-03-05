@@ -6,6 +6,7 @@ import { BaseFormInput } from './Base'
 import { pullRowProps } from '../../containers'
 
 export * from './types'
+export * from './getStyles'
 
 export const FormInput: FunctionComponent<
   Omit<FormInputProps, 'getStyles'> & FormInputStyleProps

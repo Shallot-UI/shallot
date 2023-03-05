@@ -1,5 +1,13 @@
 # @shallot-ui/web-formik
 
+## 3.0.4
+
+### Patch Changes
+
+- Updates stories and patterns
+- Updated dependencies
+  - @shallot-ui/next@0.21.4
+
 ## 3.0.3
 
 ### Patch Changes

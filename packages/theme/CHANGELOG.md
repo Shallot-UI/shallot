@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.22.4
+
+### Patch Changes
+
+- Updates stories and patterns
+
 ## 0.22.3
 
 ### Patch Changes

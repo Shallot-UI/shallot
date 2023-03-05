@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.22.4
+
+### Patch Changes
+
+- Updates stories and patterns
+- Updated dependencies
+  - @shallot-ui/theme@0.22.4
+  - @shallot-ui/core@0.22.4
+
 ## 0.22.3
 
 ### Patch Changes
