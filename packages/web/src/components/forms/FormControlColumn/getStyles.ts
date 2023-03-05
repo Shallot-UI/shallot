@@ -1,14 +1,11 @@
-import { DefaultTheme } from 'styled-components'
 import {
   FormControlColumnComponentStyles,
   FormControlColumnState,
 } from './types'
 
-export const getFormControlColumnStyles = ({
-  state = {},
-}: {
-  state?: FormControlColumnState
-} = {}): FormControlColumnComponentStyles => ({
+export const getFormControlColumnStyles = (
+  state: FormControlColumnState = {},
+): FormControlColumnComponentStyles => ({
   container: { alignMiddle: true },
   label: {
     textColor: 'Shading.400',

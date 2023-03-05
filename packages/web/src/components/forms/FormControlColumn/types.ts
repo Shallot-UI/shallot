@@ -13,7 +13,7 @@ export interface FormControlColumnComponentStyles {
 }
 
 export interface DisplayFormControlColumnProps
-  extends HTMLAttributes<HTMLInputElement | HTMLLabelElement> {
+  extends HTMLAttributes<HTMLDivElement> {
   errorText?: string
   helperText?: string
   label?: string
@@ -36,7 +36,7 @@ export interface FormControlColumnProps extends DisplayFormControlColumnProps {
   focused?: boolean
   populated?: boolean
   error?: boolean
-  getStyles?: (props: {
-    state?: FormControlColumnState
-  }) => FormControlColumnComponentStyles
+  getStyles: (
+    state?: FormControlColumnState,
+  ) => FormControlColumnComponentStyles
 }

@@ -21,7 +21,10 @@ export default {
   title: 'Example/Login Form',
   component: Input,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
+    controls: {
+      sort: 'requiredFirst',
+    },
   },
 } as ComponentMeta<typeof Input>
 
@@ -54,6 +57,7 @@ const Template: ComponentStory<typeof Input> = () => {
               <FormInput
                 label="Email"
                 placeholder="you@email.com"
+                type="email"
                 value={email}
                 setValue={setEmail}
                 typeface="Monospace"
@@ -63,6 +67,7 @@ const Template: ComponentStory<typeof Input> = () => {
               <FormInput
                 label="Password"
                 placeholder="••••••••"
+                type="password"
                 value={password}
                 setValue={setPassword}
                 typeface="Monospace"
@@ -98,15 +103,6 @@ const Template: ComponentStory<typeof Input> = () => {
   )
 }
 
-export const Primary = Template.bind({})
+export const Default = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {}
-
-export const Secondary = Template.bind({})
-Secondary.args = {}
-
-export const Large = Template.bind({})
-Large.args = {}
-
-export const Small = Template.bind({})
-Small.args = {}
+Default.args = {}

@@ -1,6 +1,6 @@
 import { MouseEvent, ReactNode } from 'react'
 
-import { ColumnProps, RowProps } from '../../containers'
+import { ColumnProps } from '../../containers'
 import { TextProps } from '../../content'
 
 export interface FormControlRowComponentStyles {
@@ -12,7 +12,7 @@ export interface FormControlRowComponentStyles {
   requiredStar?: TextProps
 }
 
-export interface DisplayFormControlRowProps extends RowProps {
+export interface DisplayFormControlRowProps {
   errorText?: string
   helperText?: string
   label?: string
@@ -20,7 +20,7 @@ export interface DisplayFormControlRowProps extends RowProps {
   disabled?: boolean
   styles?: FormControlRowComponentStyles
   children?: ReactNode
-  onclick?: (event: MouseEvent<HTMLDivElement>) => void
+  onClick?: (event: MouseEvent<HTMLDivElement>) => void
 }
 
 export interface FormControlRowState {
@@ -32,14 +32,10 @@ export interface FormControlRowState {
   error?: boolean
 }
 
-export interface FormControlRowProps extends DisplayFormControlRowProps {
-  disabled?: boolean
+export interface FormControlRowProps
+  extends Omit<DisplayFormControlRowProps, 'styles'> {
   focused?: boolean
   populated?: boolean
   error?: boolean
-  getStyles?: (props: {
-    state?: FormControlRowState
-  }) => FormControlRowComponentStyles
-  children?: ReactNode
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void
+  getStyles?: (state?: FormControlRowState) => FormControlRowComponentStyles
 }

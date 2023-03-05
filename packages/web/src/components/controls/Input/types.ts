@@ -1,5 +1,5 @@
-import { ColorName, UnitPaddingProps } from '@shallot-ui/theme'
 import { FunctionComponent, HTMLProps, ReactNode, SVGProps } from 'react'
+import { UnitPaddingProps } from '@shallot-ui/theme'
 
 import { ColumnProps } from '../../containers'
 import { TextProps } from '../../content'
@@ -10,7 +10,7 @@ export interface InputComponentStyles {
 }
 
 export interface DisplayInputProps
-  extends Omit<HTMLProps<HTMLInputElement>, 'ref' | 'wrap' | 'as' | 'type'> {
+  extends Omit<HTMLProps<HTMLInputElement>, 'ref' | 'wrap' | 'as'> {
   Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
   styles?: InputComponentStyles
   startAdornment?: ReactNode
@@ -24,8 +24,7 @@ export interface InputState {
   checked?: boolean
 }
 
-export interface InputProps extends DisplayInputProps, ColumnProps {
+export interface InputProps extends Omit<DisplayInputProps, 'styles'> {
   Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
-  getStyles?: (state?: InputState) => InputComponentStyles
-  color?: ColorName
+  getStyles: (state?: InputState) => InputComponentStyles
 }

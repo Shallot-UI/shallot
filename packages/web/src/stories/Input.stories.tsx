@@ -9,6 +9,23 @@ import { Input } from '../components'
 export default {
   title: 'Example/Input',
   component: Input,
+  parameters: {
+    layout: 'centered',
+    controls: {
+      sort: 'requiredFirst',
+    },
+  },
+  argTypes: {
+    color: {
+      control: 'select',
+      options: ['Primary', 'Success', 'Danger', 'Warning'],
+    },
+    radius: { control: 'select', options: ['sm', 'md', 'lg', 'pill'] },
+    value: { table: { disable: true } },
+    setValue: { table: { disable: true } },
+    startAdornment: { table: { disable: true } },
+    endAdornment: { table: { disable: true } },
+  },
 } as ComponentMeta<typeof Input>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -26,15 +43,6 @@ const Template: ComponentStory<typeof Input> = () => {
   )
 }
 
-export const Primary = Template.bind({})
+export const Default = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {}
-
-export const Secondary = Template.bind({})
-Secondary.args = {}
-
-export const Large = Template.bind({})
-Large.args = {}
-
-export const Small = Template.bind({})
-Small.args = {}
+Default.args = {}

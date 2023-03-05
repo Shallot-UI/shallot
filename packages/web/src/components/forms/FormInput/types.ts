@@ -18,9 +18,10 @@ export interface FormInputState {
 }
 
 export interface FormInputProps
-  extends DisplayFormControlRowProps,
+  extends Omit<DisplayFormControlRowProps, 'styles' | 'children' | 'onClick'>,
     HTMLAttributes<HTMLInputElement> {
   value: string
   setValue: (value: string) => void
-  getStyles?: (props: { state?: FormInputState }) => FormInputComponentStyles
+  getStyles: (state?: FormInputState) => FormInputComponentStyles
+  type?: 'password' | 'text' | 'email' | 'number' | 'tel' | 'url'
 }

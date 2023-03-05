@@ -19,7 +19,7 @@ export const getInputStyles = (
     ...rest
   }: InputStyleProps = {},
 ) => {
-  const [containerOverrides] = pullColumnProps({ ...rest })
+  const [containerOverrides] = pullColumnProps(rest)
 
   let styles: DisplayInputProps['styles'] = {
     container: {

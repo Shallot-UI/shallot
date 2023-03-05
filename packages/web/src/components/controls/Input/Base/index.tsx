@@ -6,16 +6,11 @@ import { DisplayInput } from './display'
 // Hooks
 import { useHover } from '../../../../hooks/useHover'
 import { useFocus } from '../../../../hooks/useFocus'
-import { getInputStyles } from '../getStyles'
-
-export * from '../types'
-export * from '../getStyles'
-export * from './display'
 
 export const BaseInput: FunctionComponent<InputProps> = ({
   value,
   onChange,
-  getStyles = getInputStyles,
+  getStyles,
   ...rest
 }) => {
   const displayRef = useRef<HTMLInputElement>(null)

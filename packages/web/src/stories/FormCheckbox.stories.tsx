@@ -1,7 +1,7 @@
-import { makeTheme } from '@shallot-ui/theme'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
+import { makeTheme } from '@shallot-ui/theme'
 import { ThemeProvider } from 'styled-components'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { FormCheckbox } from '../components'
 
@@ -9,6 +9,21 @@ import { FormCheckbox } from '../components'
 export default {
   title: 'Example/Form Checkbox',
   component: FormCheckbox,
+  parameters: {
+    layout: 'centered',
+    controls: {
+      sort: 'requiredFirst',
+    },
+  },
+  argTypes: {
+    color: {
+      control: 'select',
+      options: ['Primary', 'Success', 'Danger', 'Warning'],
+    },
+    radius: { control: 'select', options: ['sm', 'md', 'lg', 'pill'] },
+    value: { table: { disable: true } },
+    setValue: { table: { disable: true } },
+  },
 } as ComponentMeta<typeof FormCheckbox>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -38,15 +53,6 @@ const Template: ComponentStory<typeof FormCheckbox> = () => {
   )
 }
 
-export const Primary = Template.bind({})
+export const Default = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {}
-
-export const Secondary = Template.bind({})
-Secondary.args = {}
-
-export const Large = Template.bind({})
-Large.args = {}
-
-export const Small = Template.bind({})
-Small.args = {}
+Default.args = {}

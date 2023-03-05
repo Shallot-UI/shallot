@@ -1,9 +1,9 @@
-import { ColorName } from '@shallot-ui/theme'
-import { ColumnProps, pullColumnProps } from '../../containers'
+import { ColorName, RadiusProps, UnitsAroundProps } from '@shallot-ui/theme'
+import { pullColumnProps } from '../../containers'
 
 import { CheckboxState, DisplayCheckboxProps } from './types'
 
-export interface CheckboxStyleProps extends ColumnProps {
+export interface CheckboxStyleProps extends UnitsAroundProps, RadiusProps {
   color?: ColorName
   size?: number
   iconSize?: number

@@ -11,8 +11,8 @@ import {
   sizingProps,
   unitsAroundProps,
 } from '@shallot-ui/core'
-import { transitionProps } from '../../../props'
 
+import { transitionProps } from '../../../props'
 import { AnchorLinkProps } from './types'
 
 export const anchorLinkConfig: PropsConfig<AnchorLinkProps> = {

@@ -1,4 +1,3 @@
-import { ColorName } from '@shallot-ui/theme'
 import { FunctionComponent, SVGProps } from 'react'
 
 import { CheckboxComponentStyles } from '../../controls'
@@ -19,15 +18,10 @@ export interface FormCheckboxState {
   checked?: boolean
 }
 
-export interface FormCheckboxStyleProps {
-  color?: ColorName
-}
-
 export interface FormCheckboxProps
-  extends DisplayFormControlRowProps,
-    FormCheckboxStyleProps {
+  extends Omit<DisplayFormControlRowProps, 'styles' | 'children' | 'onClick'> {
   value: boolean
   setValue: (value: boolean) => void
   Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
-  getStyles?: (state?: FormCheckboxState) => FormCheckboxComponentStyles
+  getStyles: (state?: FormCheckboxState) => FormCheckboxComponentStyles
 }
