@@ -1,5 +1,13 @@
 # @shallot-ui/prismjs
 
+## 3.0.9
+
+### Patch Changes
+
+- organizing more web components
+- Updated dependencies
+  - @shallot-ui/web@0.22.9
+
 ## 3.0.8
 
 ### Patch Changes

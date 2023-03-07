@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.21.6
+
+### Patch Changes
+
+- organizing more web components
+- Updated dependencies
+  - @shallot-ui/web@0.22.9
+
 ## 0.21.5
 
 ### Patch Changes

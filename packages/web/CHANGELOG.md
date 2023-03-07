@@ -1,5 +1,14 @@
 # @shallot-ui/web
 
+## 0.22.9
+
+### Patch Changes
+
+- organizing more web components
+- Updated dependencies
+  - @shallot-ui/core@0.22.6
+  - @shallot-ui/theme@0.22.6
+
 ## 0.22.8
 
 ### Patch Changes

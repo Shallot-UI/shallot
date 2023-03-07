@@ -1,5 +1,11 @@
 # @shallot-ui/web-formik
 
+## 0.21.6
+
+### Patch Changes
+
+- organizing more web components
+
 ## 0.21.5
 
 ### Patch Changes

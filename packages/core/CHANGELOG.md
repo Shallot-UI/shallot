@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 0.22.6
+
+### Patch Changes
+
+- organizing more web components
+
 ## 0.22.5
 
 ### Patch Changes
