@@ -15,13 +15,13 @@ export interface FormInputState {
   disabled?: boolean
   focused?: boolean
   hovered?: boolean
+  error?: boolean
 }
 
 export interface FormInputProps
   extends Omit<DisplayFormControlRowProps, 'styles' | 'children' | 'onClick'>,
     HTMLAttributes<HTMLInputElement> {
   value: string
-  setValue: (value: string) => void
   getStyles: (state?: FormInputState) => FormInputComponentStyles
   type?: 'password' | 'text' | 'email' | 'number' | 'tel' | 'url'
 }

@@ -21,7 +21,7 @@ export interface InputState {
   disabled?: boolean
   focused?: boolean
   hovered?: boolean
-  checked?: boolean
+  error?: boolean
 }
 
 export interface InputProps extends Omit<DisplayInputProps, 'styles'> {

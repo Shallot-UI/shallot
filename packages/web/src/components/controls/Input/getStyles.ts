@@ -1,6 +1,4 @@
 import { AllColorShades } from '@shallot-ui/theme'
-import { pullColumnProps } from '../../containers'
-import { InputState, DisplayInputProps } from './types'
 import {
   AnimationProps,
   BorderProps,
@@ -19,6 +17,9 @@ import {
   LineHeightProps,
   LetterSpacingProps,
 } from '@shallot-ui/theme'
+
+import { pullColumnProps } from '../../containers'
+import { InputState, DisplayInputProps } from './types'
 
 export interface InputStyleProps
   extends BorderProps,
@@ -78,10 +79,6 @@ export const getInputStyles = (
     },
   }
 
-  if (state.hovered) {
-    styles = { ...styles, container: { ...styles.container } }
-  }
-
   if (state.focused) {
     styles = {
       ...styles,
@@ -90,6 +87,17 @@ export const getInputStyles = (
         elevation: 'focused',
         backgroundColor: focusedBackgroundColor,
         borderColor: focusedBorderColor,
+      },
+    }
+  }
+
+  if (state.error) {
+    styles = {
+      ...styles,
+      container: {
+        ...styles.container,
+        borderColor: 'Danger.300',
+        backgroundColor: 'Danger.100',
       },
     }
   }
