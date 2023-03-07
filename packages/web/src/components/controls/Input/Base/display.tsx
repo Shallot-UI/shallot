@@ -1,9 +1,9 @@
 import { forwardRef, MutableRefObject } from 'react'
 
 import { DisplayInputProps } from '../types'
-import { inputConfig } from '../../../containers/Input/config'
 import { makeComponent } from '../../../../utils'
 import { rowConfig } from '../../../containers'
+import { inputConfig } from '../config'
 
 const Container = makeComponent(
   'div',

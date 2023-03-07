@@ -5,6 +5,7 @@ import { InputProps } from './types'
 import { BaseInput } from './Base'
 
 export * from './types'
+export * from './getStyles'
 
 export const Input: FunctionComponent<
   Omit<InputProps, 'getStyles'> & InputStyleProps

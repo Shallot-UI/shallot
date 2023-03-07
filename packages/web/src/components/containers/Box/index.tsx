@@ -14,7 +14,7 @@ export const Box = makeComponent(
 )
 
 export const pullBoxProps = makePropPuller(boxConfig)
-export const getBoxStyle = makeStyleGetter(boxConfig)
+export const getBoxStyles = makeStyleGetter(boxConfig)
 
 export * from './types'
 export * from './config'

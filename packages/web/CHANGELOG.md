@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.22.6
+
+### Patch Changes
+
+- Fixes input exports
+
 ## 0.22.5
 
 ### Patch Changes

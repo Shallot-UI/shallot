@@ -17,9 +17,9 @@ import {
 } from '@shallot-ui/core'
 
 import { transitionProps } from '../../../props'
-import { InputProps } from './types'
+import { InputStyleProps } from './getStyles'
 
-export const inputConfig: PropsConfig<InputProps> = {
+export const inputConfig: PropsConfig<InputStyleProps> = {
   ...borderProps,
   ...colorProps,
   ...cursorProps,

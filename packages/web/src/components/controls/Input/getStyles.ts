@@ -1,8 +1,42 @@
 import { AllColorShades } from '@shallot-ui/theme'
-import { ColumnProps, pullColumnProps } from '../../containers'
+import { pullColumnProps } from '../../containers'
 import { InputState, DisplayInputProps } from './types'
+import {
+  AnimationProps,
+  BorderProps,
+  ColorProps,
+  CursorProps,
+  DisplayProps,
+  ElevationProps,
+  FlexProps,
+  RadiusProps,
+  SizingProps,
+  TransitionProps,
+  UnitsAroundProps,
+  UnitPaddingProps,
+  FontProps,
+  FontSizeProps,
+  LineHeightProps,
+  LetterSpacingProps,
+} from '@shallot-ui/theme'
 
-export interface InputStyleProps extends ColumnProps {
+export interface InputStyleProps
+  extends BorderProps,
+    ColorProps,
+    CursorProps,
+    DisplayProps,
+    ElevationProps,
+    FlexProps,
+    FontProps,
+    FontSizeProps,
+    LetterSpacingProps,
+    LineHeightProps,
+    RadiusProps,
+    SizingProps,
+    TransitionProps,
+    UnitPaddingProps,
+    UnitsAroundProps,
+    AnimationProps {
   backgroundColor?: AllColorShades
   borderColor?: AllColorShades
   focusedBackgroundColor?: AllColorShades

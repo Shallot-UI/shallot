@@ -16,7 +16,7 @@ export const Row = makeComponent(
 )
 
 export const pullRowProps = makePropPuller(rowConfig)
-export const getRowStyle = makeStyleGetter(rowConfig)
+export const getRowStyles = makeStyleGetter(rowConfig)
 
 export * from './types'
 export * from './config'

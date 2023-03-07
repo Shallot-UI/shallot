@@ -16,7 +16,7 @@ export const Column = makeComponent(
 )
 
 export const pullColumnProps = makePropPuller(columnConfig)
-export const getColumnStyle = makeStyleGetter(columnConfig)
+export const getColumnStyles = makeStyleGetter(columnConfig)
 
 export * from './types'
 export * from './config'
