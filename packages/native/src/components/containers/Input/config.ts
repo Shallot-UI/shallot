@@ -12,7 +12,6 @@ import {
   PropsConfig,
   radiusProps,
   sizingProps,
-  transitionProps,
   unitsAroundProps,
   unitsPaddingProps,
 } from '@shallot-ui/core'
@@ -32,7 +31,6 @@ export const inputConfig: PropsConfig<InputProps> = {
   ...lineHeightProps,
   ...radiusProps,
   ...sizingProps,
-  ...transitionProps,
   ...unitsAroundProps,
   ...unitsPaddingProps,
 }

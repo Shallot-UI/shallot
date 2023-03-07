@@ -16,10 +16,10 @@ import {
   unitsPaddingProps,
 } from '@shallot-ui/core'
 
-import { transitionProps } from '../../../props'
-import { InputProps } from './types'
+import { transitionProps } from '../../../../props'
+import { InputStyleProps } from '../styles/types'
 
-export const inputConfig: PropsConfig<InputProps> = {
+const inputConfig: PropsConfig<InputStyleProps> = {
   ...borderProps,
   ...colorProps,
   ...cursorProps,
@@ -36,3 +36,5 @@ export const inputConfig: PropsConfig<InputProps> = {
   ...unitsAroundProps,
   ...unitsPaddingProps,
 }
+
+export default inputConfig

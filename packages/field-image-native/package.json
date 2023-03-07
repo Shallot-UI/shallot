@@ -26,7 +26,7 @@
   "devDependencies": {
     "@shallot-ui/core": "0.22.5",
     "@shallot-ui/theme": "0.22.5",
-    "@shallot-ui/native": "0.22.5",
+    "@shallot-ui/native": "0.22.6",
     "@types/react": "^18.0.28",
     "@types/react-native": "~0.70.6",
     "@types/styled-components": ">=5",

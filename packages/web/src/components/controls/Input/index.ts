@@ -3,9 +3,9 @@ import { withStyleProps } from '../../../utils'
 // Core
 import StatefulInput from './core/Stateful'
 import DisplayInput from './core/Display'
+import inputConfig from './core/config'
 
 // Styles
-import { inputConfig } from './styles/config'
 import { getInputStyles } from './styles/getStyles'
 import { splitInputProps } from './styles/splitProps'
 

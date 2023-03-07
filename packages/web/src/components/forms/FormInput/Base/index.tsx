@@ -7,7 +7,6 @@ import { CoreInput } from '../../../controls/Input'
 
 export const BaseFormInput: FunctionComponent<FormInputProps> = ({
   value,
-  setValue,
   label,
   required,
   errorText,
@@ -20,7 +19,7 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = ({
   const focused = useFocus(inputRef)
   const hovered = useHover(inputRef)
 
-  const styles = getStyles({ focused, hovered })
+  const styles = getStyles({ focused, hovered, error: !!errorText, disabled })
 
   return (
     <DisplayFormControlColumn
@@ -34,7 +33,6 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = ({
       <CoreInput.Presentation
         ref={inputRef}
         value={value}
-        onChange={(e) => setValue(e.currentTarget.value)}
         styles={styles.input}
         {...rest}
       />

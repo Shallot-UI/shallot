@@ -1,7 +1,7 @@
 import { makePropPuller } from '@shallot-ui/core'
 
 import { InputProps } from '../core/types'
-import { inputConfig } from './config'
+import inputConfig from '../core/config'
 import { InputStyleProps } from './types'
 
 export const splitInputProps = (

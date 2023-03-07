@@ -1,5 +1,17 @@
 # @shallot-ui/web
 
+## 0.22.7
+
+### Patch Changes
+
+- Fixes treatment of input error styles
+
+## 0.22.6
+
+### Patch Changes
+
+- Fixes input exports
+
 ## 0.22.5
 
 ### Patch Changes
