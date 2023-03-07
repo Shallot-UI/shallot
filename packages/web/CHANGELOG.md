@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.22.8
+
+### Patch Changes
+
+- Improves organization of input component
+
 ## 0.22.7
 
 ### Patch Changes

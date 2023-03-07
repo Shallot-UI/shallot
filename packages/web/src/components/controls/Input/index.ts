@@ -3,7 +3,6 @@ import { withStyleProps } from '../../../utils'
 // Core
 import StatefulInput from './core/Stateful'
 import DisplayInput from './core/Display'
-import inputConfig from './core/config'
 
 // Styles
 import { getInputStyles } from './styles/getStyles'
@@ -20,7 +19,6 @@ export const CoreInput = {
   Presentation: DisplayInput,
   getStyles: getInputStyles,
   splitProps: splitInputProps,
-  config: inputConfig,
 }
 
 // We export a styled version of the Input component using the withStyleProps
