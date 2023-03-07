@@ -4,14 +4,10 @@ import { withStyleProps } from '../../../utils'
 import StatefulInput from './core/Stateful'
 import DisplayInput from './core/Display'
 
-<<<<<<< Updated upstream
-export * from './types'
-=======
 // Styles
 import { inputConfig } from './styles/config'
 import { getInputStyles } from './styles/getStyles'
 import { splitInputProps } from './styles/splitProps'
->>>>>>> Stashed changes
 
 // Types
 export * from './core/types'
