@@ -5,6 +5,7 @@ import { FormCheckboxProps } from './types'
 import { BaseFormCheckbox } from './Base'
 
 export * from './types'
+export * from './getStyles'
 
 export const FormCheckbox: FunctionComponent<
   Omit<FormCheckboxProps, 'getStyles'> & FormCheckboxStyleProps

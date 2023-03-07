@@ -5,6 +5,7 @@ import { FormControlColumnProps } from './types'
 import { BaseFormControlColumn } from './Base'
 
 export * from './types'
+export * from './getStyles'
 
 export const FormControlColumn: FunctionComponent<
   Omit<FormControlColumnProps, 'getStyles'>

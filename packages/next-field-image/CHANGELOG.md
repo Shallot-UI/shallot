@@ -1,5 +1,13 @@
 # @shallot-ui/web-formik
 
+## 3.0.5
+
+### Patch Changes
+
+- Exports style getters from form elements
+- Updated dependencies
+  - @shallot-ui/next@0.21.5
+
 ## 3.0.4
 
 ### Patch Changes

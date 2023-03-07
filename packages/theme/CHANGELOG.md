@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.22.5
+
+### Patch Changes
+
+- Exports style getters from form elements
+
 ## 0.22.4
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.22.5
+
+### Patch Changes
+
+- Exports style getters from form elements
+- Updated dependencies
+  - @shallot-ui/theme@0.22.5
+  - @shallot-ui/core@0.22.5
+
 ## 0.22.4
 
 ### Patch Changes

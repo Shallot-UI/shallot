@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.21.5
+
+### Patch Changes
+
+- Exports style getters from form elements
+- Updated dependencies
+  - @shallot-ui/web@0.22.5
+
 ## 0.21.4
 
 ### Patch Changes

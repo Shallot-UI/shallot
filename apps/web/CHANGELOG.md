@@ -1,5 +1,15 @@
 # web
 
+## 0.3.5
+
+### Patch Changes
+
+- Exports style getters from form elements
+- Updated dependencies
+  - @shallot-ui/react-select@0.21.5
+  - @shallot-ui/prismjs@3.0.5
+  - @shallot-ui/next@0.21.5
+
 ## 0.3.4
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @shallot-ui/native-formik
 
+## 3.0.5
+
+### Patch Changes
+
+- Exports style getters from form elements
+- Updated dependencies
+  - @shallot-ui/native@0.22.5
+  - @shallot-ui/theme@0.22.5
+  - @shallot-ui/core@0.22.5
+
 ## 3.0.4
 
 ### Patch Changes

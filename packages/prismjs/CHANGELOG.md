@@ -1,5 +1,13 @@
 # @shallot-ui/prismjs
 
+## 3.0.5
+
+### Patch Changes
+
+- Exports style getters from form elements
+- Updated dependencies
+  - @shallot-ui/web@0.22.5
+
 ## 3.0.4
 
 ### Patch Changes
