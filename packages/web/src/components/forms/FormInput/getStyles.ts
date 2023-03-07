@@ -1,7 +1,7 @@
 import { FontProps } from '@shallot-ui/theme'
 
 import { RowProps } from '../../containers'
-import { getInputStyles } from '../../controls/Input/getStyles'
+import { getInputStyles } from '../../controls/Input/styles/getStyles'
 import { getFormControlRowStyles } from '../FormControlRow/getStyles'
 import { FormInputComponentStyles, FormInputState } from './types'
 

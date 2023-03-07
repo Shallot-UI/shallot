@@ -1,15 +1,14 @@
 import { FunctionComponent, useRef } from 'react'
 
-import { InputProps } from '../types'
-import { DisplayInput } from './display'
+import DisplayInput from './Display'
+import { InputProps } from './types'
 
 // Hooks
 import { useHover } from '../../../../hooks/useHover'
 import { useFocus } from '../../../../hooks/useFocus'
 
-export const BaseInput: FunctionComponent<InputProps> = ({
+const StatefulInput: FunctionComponent<InputProps> = ({
   value,
-  onChange,
   getStyles,
   ...rest
 }) => {
@@ -21,3 +20,5 @@ export const BaseInput: FunctionComponent<InputProps> = ({
 
   return <DisplayInput ref={displayRef} styles={styles} {...rest} />
 }
+
+export default StatefulInput

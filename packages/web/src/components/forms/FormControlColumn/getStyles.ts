@@ -4,7 +4,7 @@ import {
 } from './types'
 
 export const getFormControlColumnStyles = (
-  state: FormControlColumnState = {},
+  _state: FormControlColumnState = {},
 ): FormControlColumnComponentStyles => ({
   container: { alignMiddle: true },
   label: {

@@ -3,7 +3,7 @@ import { FunctionComponent, useRef } from 'react'
 import { FormInputProps } from '../types'
 import { useFocus, useHover } from '../../../../hooks'
 import { DisplayFormControlColumn } from '../../FormControlColumn/Base/display'
-import { DisplayInput } from '../../../controls/Input/Base/display'
+import { CoreInput } from '../../../controls/Input'
 
 export const BaseFormInput: FunctionComponent<FormInputProps> = ({
   value,
@@ -31,7 +31,7 @@ export const BaseFormInput: FunctionComponent<FormInputProps> = ({
       required={required}
       styles={styles.control}
     >
-      <DisplayInput
+      <CoreInput.Presentation
         ref={inputRef}
         value={value}
         onChange={(e) => setValue(e.currentTarget.value)}
