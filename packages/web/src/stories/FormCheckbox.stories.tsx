@@ -45,7 +45,7 @@ const Template: ComponentStory<typeof FormCheckbox> = () => {
         maxUnitWidth={35}
         required
         value={!value}
-        setValue={(v) => setValue(!v)}
+        setValue={(v: boolean) => setValue(!v)}
         label="My test checkbox."
         helperText="This is a helper text for the checkbox."
       />

@@ -4,7 +4,7 @@ import { InputProps } from '../core/types'
 import inputConfig from '../core/config'
 import { InputStyleProps } from './types'
 
-export const splitInputProps = (
+const splitInputProps = (
   props: Omit<InputProps, 'getStyles'> & InputStyleProps,
 ): [Omit<InputProps, 'getStyles'>, InputStyleProps] => {
   const {
@@ -28,3 +28,5 @@ export const splitInputProps = (
     },
   ]
 }
+
+export default splitInputProps

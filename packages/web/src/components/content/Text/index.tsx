@@ -1,4 +1,5 @@
 import { makePropPuller, makeStyleGetter } from '@shallot-ui/core'
+
 import { makeComponent } from '../../../utils/makeComponent'
 import { textConfig } from './config'
 

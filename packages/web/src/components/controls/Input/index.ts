@@ -5,8 +5,8 @@ import StatefulInput from './core/Stateful'
 import DisplayInput from './core/Display'
 
 // Styles
-import { getInputStyles } from './styles/getStyles'
-import { splitInputProps } from './styles/splitProps'
+import getInputStyles from './styles/getStyles'
+import splitInputProps from './styles/splitProps'
 
 // Types
 export * from './core/types'
@@ -25,6 +25,6 @@ export const CoreInput = {
 // HOC and some default styling logic.
 export const Input = withStyleProps(
   CoreInput.Stateful,
-  getInputStyles,
-  splitInputProps,
+  CoreInput.getStyles,
+  CoreInput.splitProps,
 )

@@ -2,7 +2,7 @@ import { pullColumnProps } from '../../../containers'
 import { InputState, DisplayInputProps } from '../core/types'
 import { InputStyleProps } from './types'
 
-export const getInputStyles = (
+const getInputStyles = (
   state: InputState = {},
   {
     backgroundColor = 'Shading.125',
@@ -67,3 +67,5 @@ export const getInputStyles = (
 
   return styles
 }
+
+export default getInputStyles

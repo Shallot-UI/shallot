@@ -17,6 +17,7 @@ import {
   UnderlineProps,
   UnitsAroundProps,
 } from '@shallot-ui/theme'
+
 import { UserSelectProps } from '../../../props'
 
 export interface TextProps
