@@ -33,8 +33,8 @@ const Template: ComponentStory<typeof FormInput> = (args) => {
     <ThemeProvider theme={makeTheme({})}>
       <Column unitWidth={40}>
         <FormInput
-          // fullWidth
-          // maxUnitWidth={35}
+          fullWidth
+          maxUnitWidth={35}
           label="My test input."
           placeholder="Type something here..."
           helperText="This is a helper text for the input."

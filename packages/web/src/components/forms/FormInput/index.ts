@@ -6,6 +6,7 @@ import DisplayFormInput from './core/Display'
 
 // Styles
 import getFormInputStyles from './styles/getStyles'
+import splitFormInputProps from './styles/splitProps'
 
 // Types
 export * from './core/types'
@@ -17,7 +18,7 @@ export const CoreFormInput = {
   Stateful: StatefulFormInput,
   Presentation: DisplayFormInput,
   getStyles: getFormInputStyles,
-  splitProps: (props: any) => props,
+  splitProps: splitFormInputProps,
 }
 
 // We export a styled version of the FormInput component using the
