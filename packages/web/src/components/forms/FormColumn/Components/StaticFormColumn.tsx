@@ -12,19 +12,16 @@ export const StaticFormColumn: FunctionComponent<StaticFormColumnProps> = ({
   children,
   styles,
   onClick,
-}) => {
-  console.log({ styles })
-  return (
-    <Column {...styles?.container} onClick={onClick}>
-      <Text {...styles?.label}>
-        {label}
-        {required && <Text {...styles?.requiredStar}>*</Text>}
-      </Text>
-      {children}
-      {errorText && <Text {...styles?.errorText}>{errorText}</Text>}
-      {!errorText && helperText && (
-        <Text {...styles?.helperText}>{helperText}</Text>
-      )}
-    </Column>
-  )
-}
+}) => (
+  <Column {...styles?.container} onClick={onClick}>
+    <Text {...styles?.label}>
+      {label}
+      {required && <Text {...styles?.requiredStar}>*</Text>}
+    </Text>
+    {children}
+    {errorText && <Text {...styles?.errorText}>{errorText}</Text>}
+    {!errorText && helperText && (
+      <Text {...styles?.helperText}>{helperText}</Text>
+    )}
+  </Column>
+)

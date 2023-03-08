@@ -1,13 +1,10 @@
 import { ComponentProps } from 'react'
 import ReactSelect from 'react-select'
-import {
-  DisplayFormControlColumnProps,
-  FormControlRowComponentStyles,
-} from '@shallot-ui/web'
+import { StaticFormColumnProps, FormRowComponentStyles } from '@shallot-ui/web'
 
 export interface FormSelectComponentStyles {
   // input?: InputComponentStyles
-  control?: FormControlRowComponentStyles
+  control?: FormRowComponentStyles
 }
 
 export interface FormSelectState {
@@ -19,7 +16,7 @@ export interface FormSelectState {
 export interface FormSelectProps
   extends Omit<ComponentProps<typeof ReactSelect>, 'styles'>,
     Omit<
-      DisplayFormControlColumnProps,
+      StaticFormColumnProps,
       | 'onFocus'
       | 'onBlur'
       | 'defaultValue'
@@ -31,9 +28,7 @@ export interface FormSelectProps
   value?: string | string[]
   options?: { label: string; value: string }[]
   onChangeValue: (value: string | string[]) => void
-
   multiple?: boolean
   disabled?: boolean
-
   getStyles?: (props: { state?: FormSelectState }) => FormSelectComponentStyles
 }

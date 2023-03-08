@@ -1,5 +1,11 @@
 # @shallot-ui/react-select
 
+## 0.22.0
+
+### Minor Changes
+
+- Updates component styles
+
 ## 0.21.6
 
 ### Patch Changes

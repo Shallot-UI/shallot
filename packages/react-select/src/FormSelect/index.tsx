@@ -1,5 +1,5 @@
 import { FunctionComponent, useCallback } from 'react'
-import { FormControlColumn } from '@shallot-ui/web'
+import { FormColumn } from '@shallot-ui/web'
 
 import { FormSelectProps } from './types'
 import { optionForValue } from './utils'
@@ -37,7 +37,7 @@ export const FormSelect: FunctionComponent<FormSelectProps> = ({
   const styles = getStyles({ state: { disabled } })
 
   return (
-    <FormControlColumn
+    <FormColumn
       errorText={errorText}
       helperText={helperText}
       label={label}
@@ -54,6 +54,6 @@ export const FormSelect: FunctionComponent<FormSelectProps> = ({
         isDisabled={disabled}
         required={required}
       />
-    </FormControlColumn>
+    </FormColumn>
   )
 }

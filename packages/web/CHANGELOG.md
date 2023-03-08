@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.23.0
+
+### Minor Changes
+
+- Updates component styles
+
 ## 0.22.9
 
 ### Patch Changes

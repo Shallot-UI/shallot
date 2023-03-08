@@ -1,6 +1,6 @@
-import { Text } from '@shallot-ui/web'
 import { FunctionComponent } from 'react'
 import { SingleValueProps } from 'react-select'
+import { Text } from '@shallot-ui/web'
 
 const FormSelectSingleValue: FunctionComponent<SingleValueProps> = ({
   children,
