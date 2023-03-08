@@ -6,10 +6,11 @@ import { ThemeProvider } from 'styled-components'
 import {
   AnchorLink,
   Button,
+  Checkbox,
   Column,
   Fold,
-  FormCheckbox,
-  FormInput,
+  FormColumn,
+  FormRow,
   Input,
   Row,
   Space,
@@ -54,33 +55,30 @@ const Template: ComponentStory<typeof Input> = () => {
               >
                 Sign In
               </Text>
-              <FormInput
-                label="Email"
-                placeholder="you@email.com"
-                type="email"
-                value={email}
-                setValue={setEmail}
-                typeface="Monospace"
-                unitsBelow={2}
-                fullWidth
-              />
-              <FormInput
-                label="Password"
-                placeholder="••••••••"
-                type="password"
-                value={password}
-                setValue={setPassword}
-                typeface="Monospace"
-                unitsBelow={2}
-                fullWidth
-              />
-              <Row>
-                <FormCheckbox
-                  label="Remember me"
-                  value={remember}
-                  setValue={setRemember}
-                  unitsBelow={2}
+              <FormColumn label="Email" unitsBelow={2}>
+                <Input
+                  placeholder="you@email.com"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.currentTarget.value)}
+                  typeface="Monospace"
+                  fullWidth
                 />
+              </FormColumn>
+              <FormColumn label="Password" unitsBelow={2}>
+                <Input
+                  placeholder="••••••••"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.currentTarget.value)}
+                  typeface="Monospace"
+                  fullWidth
+                />
+              </FormColumn>
+              <Row>
+                <FormRow label="Remember me" unitsBelow={2}>
+                  <Checkbox value={remember} setValue={setRemember} />
+                </FormRow>
                 <Space />
                 <AnchorLink href="#" typeface="Body">
                   Forgot password?

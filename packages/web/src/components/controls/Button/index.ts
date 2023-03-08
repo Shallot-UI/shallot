@@ -67,6 +67,7 @@ export const Button = withStyleProps<ButtonStyleProps, ButtonProps>(
             centerText: true,
             flex: 1,
             cursor: 'pointer',
+            userSelect: 'none',
           },
         }
 
