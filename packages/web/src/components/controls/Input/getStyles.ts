@@ -88,6 +88,8 @@ export const getInputStyles = (
         input: {
           unitWidth: 1,
           backgroundColor: 'transparent',
+          textColor: 'Shading.500',
+          placeholderColor: 'Shading.300',
           fontSize: 'md',
           unitsAround: 3 / 4,
           grow: true,

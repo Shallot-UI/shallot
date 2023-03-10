@@ -63,6 +63,4 @@ export interface InputStyleProps
     UnitsAroundProps {
   backgroundColor?: AllColorShades
   borderColor?: AllColorShades
-  focusedBackgroundColor?: AllColorShades
-  focusedBorderColor?: AllColorShades
 }

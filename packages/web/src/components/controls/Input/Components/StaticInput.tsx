@@ -1,7 +1,7 @@
 import { forwardRef, MutableRefObject } from 'react'
 
 import { makeComponent } from '../../../../utils'
-import { Column } from '../../../containers'
+import { Row } from '../../../containers'
 import { StaticInputProps } from '../types'
 import inputConfig from '../config'
 
@@ -17,7 +17,7 @@ const Input = makeComponent(
 
 export const StaticInput = forwardRef<HTMLInputElement, StaticInputProps>(
   ({ styles, children, startAdornment, endAdornment, title, ...rest }, ref) => (
-    <Column
+    <Row
       {...styles?.container}
       onClick={() =>
         (ref as MutableRefObject<HTMLInputElement>)?.current?.focus()
@@ -26,6 +26,6 @@ export const StaticInput = forwardRef<HTMLInputElement, StaticInputProps>(
       {startAdornment}
       <Input ref={ref} {...styles?.input} {...rest} />
       {endAdornment}
-    </Column>
+    </Row>
   ),
 )

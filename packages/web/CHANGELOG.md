@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.23.1
+
+### Patch Changes
+
+- Improves standard input variant
+
 ## 0.23.0
 
 ### Minor Changes
