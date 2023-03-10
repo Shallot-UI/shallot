@@ -1,4 +1,4 @@
-import { UnitsAroundProps } from '@shallot-ui/theme'
+import { FontProps, UnitsAroundProps } from '@shallot-ui/theme'
 import { HTMLAttributes } from 'react'
 
 import { ColumnProps } from '../../containers'
@@ -39,4 +39,4 @@ export interface FormColumnProps extends StaticFormColumnProps {
   getStyles: (state?: FormColumnState) => FormColumnComponentStyles
 }
 
-export interface FormColumnStyleProps extends UnitsAroundProps {}
+export interface FormColumnStyleProps extends UnitsAroundProps, FontProps {}

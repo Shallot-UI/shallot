@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.23.3
+
+### Patch Changes
+
+- Adds the ability to set typefaces and fonts on form controls
+
 ## 0.23.2
 
 ### Patch Changes

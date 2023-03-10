@@ -9,6 +9,10 @@ export const getFormColumnStyles = (
   props: FormColumnStyleProps & Omit<FormColumnProps, 'getStyles'>,
 ) => {
   const {
+    // Typography
+    typeface,
+    font,
+
     // Units Around
     unitsAround,
     unitsAbove,
@@ -60,6 +64,10 @@ export const getFormColumnStyles = (
           unitsLeft,
           unitsRight,
         },
+        label: { typeface, font },
+        requiredStar: { typeface, font },
+        helperText: { typeface, font },
+        errorText: { typeface, font },
       })
 
       return styles

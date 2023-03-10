@@ -1,4 +1,4 @@
-import { UnitsAroundProps } from '@shallot-ui/theme'
+import { FontProps, UnitsAroundProps } from '@shallot-ui/theme'
 import { MouseEvent, ReactNode } from 'react'
 
 import { ColumnProps } from '../../containers'
@@ -40,4 +40,4 @@ export interface FormRowProps extends Omit<StaticFormRowProps, 'styles'> {
   getStyles: (state?: FormRowState) => FormRowComponentStyles
 }
 
-export interface FormRowStyleProps extends UnitsAroundProps {}
+export interface FormRowStyleProps extends UnitsAroundProps, FontProps {}

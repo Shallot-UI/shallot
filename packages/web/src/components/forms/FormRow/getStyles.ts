@@ -9,6 +9,10 @@ export const getFormRowStyles = (
   props: FormRowStyleProps & Omit<FormRowProps, 'getStyles'>,
 ) => {
   const {
+    // Typography
+    typeface,
+    font,
+
     // Units Around
     unitsAround,
     unitsAbove,
@@ -61,6 +65,10 @@ export const getFormRowStyles = (
           unitsLeft,
           unitsRight,
         },
+        label: { typeface, font },
+        requiredStar: { typeface, font },
+        helperText: { typeface, font },
+        errorText: { typeface, font },
       })
 
       return styles
