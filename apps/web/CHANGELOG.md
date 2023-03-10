@@ -1,5 +1,11 @@
 # web
 
+## 0.3.14
+
+### Patch Changes
+
+- @shallot-ui/prismjs@4.0.4
+
 ## 0.3.13
 
 ### Patch Changes

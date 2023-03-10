@@ -8,7 +8,6 @@ import { useHover } from '../../../../hooks/useHover'
 import { useFocus } from '../../../../hooks/useFocus'
 
 export const StatefulInput: FunctionComponent<InputProps> = ({
-  value,
   getStyles,
   ...rest
 }) => {

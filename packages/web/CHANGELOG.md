@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.23.4
+
+### Patch Changes
+
+- Fixes input value setting
+
 ## 0.23.3
 
 ### Patch Changes
