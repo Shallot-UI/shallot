@@ -16,12 +16,7 @@ export const StatefulButton: FunctionComponent<ButtonProps> = ({
   const focused = useFocus(displayRef)
   const pressed = usePressed(displayRef)
 
-  const styles = getStyles({
-    hovered,
-    focused,
-    pressed,
-    disabled,
-  })
+  const styles = getStyles({ hovered, focused, pressed, disabled })
 
   return (
     <StaticButton

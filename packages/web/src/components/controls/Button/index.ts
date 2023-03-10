@@ -21,6 +21,10 @@ export const Button = withStyleProps<ButtonStyleProps, ButtonProps>(
       letterSpacing = 'md',
       fontSize = 'md',
 
+      backgroundColor,
+      borderColor,
+      textColor,
+
       // Units Around
       unitsAround,
       unitsAbove,
@@ -109,6 +113,8 @@ export const Button = withStyleProps<ButtonStyleProps, ButtonProps>(
             unitsBelow,
             unitsLeft,
             unitsRight,
+            backgroundColor,
+            borderColor,
           },
           label: {
             typeface,
@@ -119,6 +125,7 @@ export const Button = withStyleProps<ButtonStyleProps, ButtonProps>(
             capitalize,
             letterSpacing,
             fontSize,
+            textColor,
           },
         })
 

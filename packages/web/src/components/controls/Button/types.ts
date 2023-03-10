@@ -3,6 +3,7 @@ import {
   AnimationProps,
   CasingProps,
   ColorName,
+  ColorProps,
   FontProps,
   FontSizeProps,
   LetterSpacingProps,
@@ -43,6 +44,7 @@ export interface ButtonProps extends Omit<StaticButtonProps, 'styles'> {
 
 export interface ButtonStyleProps
   extends AnimationProps,
+    ColorProps,
     RadiusProps,
     FontProps,
     UnitsAroundProps,

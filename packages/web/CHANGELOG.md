@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.23.2
+
+### Patch Changes
+
+- Allows color overrides on buttons
+
 ## 0.23.1
 
 ### Patch Changes
