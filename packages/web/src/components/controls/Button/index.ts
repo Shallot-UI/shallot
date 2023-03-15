@@ -64,6 +64,7 @@ export const Button = withStyleProps<ButtonStyleProps, ButtonProps>(
           label: {
             fontSize: 'md',
             textColor: 'Shading.100',
+            lineHeight: 'md',
             transition: 'color 300ms ease-in-out',
             unitsAround: 2,
             unitsAbove: 1,

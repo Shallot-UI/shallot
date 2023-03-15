@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.23.5
+
+### Patch Changes
+
+- Adds Switch control component
+
 ## 0.23.4
 
 ### Patch Changes
