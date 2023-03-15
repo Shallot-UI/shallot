@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.23.6
+
+### Patch Changes
+
+- Uses the inverted pro in the storybook
+
 ## 0.23.5
 
 ### Patch Changes
