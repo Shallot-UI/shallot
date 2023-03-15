@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.23.11
+
+### Patch Changes
+
+- Cleans up default tag style
+
 ## 0.23.10
 
 ### Patch Changes

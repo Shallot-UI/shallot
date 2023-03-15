@@ -16,7 +16,7 @@ export const Tag = withStyleProps<TagStyleProps, TagProps>(
       outline,
 
       // Typography
-      typeface = 'Monospace',
+      typeface,
       font = 'Bold',
       letterSpacing = 'md',
       fontSize = 'md',
@@ -49,7 +49,7 @@ export const Tag = withStyleProps<TagStyleProps, TagProps>(
       getStyles: () => {
         let styles: TagComponentStyles = {
           container: {
-            backgroundColor: `${color}.200`,
+            backgroundColor: `${color}.125`,
             transition: `
               background-color 200ms ease-in-out,
               border-color 300ms ease-in-out,
