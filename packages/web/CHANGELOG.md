@@ -1,5 +1,23 @@
 # @shallot-ui/web
 
+## 0.23.9
+
+### Patch Changes
+
+- Ability to set styles on modal
+
+## 0.23.8
+
+### Patch Changes
+
+- Fixes modal position
+
+## 0.23.7
+
+### Patch Changes
+
+- Sets modal position to fixed
+
 ## 0.23.6
 
 ### Patch Changes

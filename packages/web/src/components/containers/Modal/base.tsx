@@ -22,7 +22,11 @@ export const BaseModal: FunctionComponent<ModalProps> = ({
   return (
     <Fold {...wrapperStyles}>
       <Fold {...curtainStyles} onClick={onClose} />
-      <Column {...containerStyles} {...rest}>
+      <Column
+        {...containerStyles}
+        {...rest}
+        style={{ ...containerStyles?.style, ...style }}
+      >
         {children}
       </Column>
     </Fold>

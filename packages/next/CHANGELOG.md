@@ -1,5 +1,21 @@
 # @shallot-ui/next
 
+## 0.21.9
+
+### Patch Changes
+
+- Ability to set styles on modal
+- Updated dependencies
+  - @shallot-ui/web@0.23.9
+
+## 0.21.8
+
+### Patch Changes
+
+- Fixes modal position
+- Updated dependencies
+  - @shallot-ui/web@0.23.8
+
 ## 0.21.7
 
 ### Patch Changes

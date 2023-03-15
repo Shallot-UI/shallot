@@ -1,5 +1,13 @@
 # @shallot-ui/web-formik
 
+## 3.0.7
+
+### Patch Changes
+
+- Ability to set styles on modal
+- Updated dependencies
+  - @shallot-ui/next@0.21.9
+
 ## 3.0.6
 
 ### Patch Changes

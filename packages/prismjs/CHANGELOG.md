@@ -1,5 +1,28 @@
 # @shallot-ui/prismjs
 
+## 4.0.9
+
+### Patch Changes
+
+- Ability to set styles on modal
+- Updated dependencies
+  - @shallot-ui/web@0.23.9
+
+## 4.0.8
+
+### Patch Changes
+
+- Fixes modal position
+- Updated dependencies
+  - @shallot-ui/web@0.23.8
+
+## 4.0.7
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.23.7
+
 ## 4.0.6
 
 ### Patch Changes
