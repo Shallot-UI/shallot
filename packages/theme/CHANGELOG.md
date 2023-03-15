@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.22.7
+
+### Patch Changes
+
+- Ability to set style props on form labels
+
 ## 0.22.6
 
 ### Patch Changes

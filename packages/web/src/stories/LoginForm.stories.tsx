@@ -55,23 +55,29 @@ const Template: ComponentStory<typeof Input> = () => {
               >
                 Sign In
               </Text>
-              <FormColumn label="Email" unitsBelow={2}>
+              <FormColumn label="Email" unitsBelow={2} labelColor="Shading.300">
                 <Input
                   placeholder="you@email.com"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.currentTarget.value)}
                   typeface="Monospace"
+                  unitsAbove={1 / 2}
                   fullWidth
                 />
               </FormColumn>
-              <FormColumn label="Password" unitsBelow={2}>
+              <FormColumn
+                label="Password"
+                unitsBelow={2}
+                labelColor="Shading.300"
+              >
                 <Input
                   placeholder="••••••••"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.currentTarget.value)}
                   typeface="Monospace"
+                  unitsAbove={1 / 2}
                   fullWidth
                 />
               </FormColumn>

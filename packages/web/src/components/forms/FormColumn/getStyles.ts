@@ -13,6 +13,9 @@ export const getFormColumnStyles = (
     typeface,
     font,
 
+    labelColor,
+    labelFontSize,
+
     // Units Around
     unitsAround,
     unitsAbove,
@@ -30,10 +33,11 @@ export const getFormColumnStyles = (
       let styles: FormColumnComponentStyles = {
         container: { alignMiddle: true },
         label: {
-          textColor: 'Shading.400',
+          typeface: 'Body',
+          lineHeight: 'md',
           letterSpacing: 'md',
-          font: 'Medium',
-          fontSize: 'md',
+          fontSize: labelFontSize || 'md',
+          textColor: labelColor || 'Shading.400',
         },
         details: { unitsLeft: 1 },
         requiredStar: { textColor: 'Danger.300' },

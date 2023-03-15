@@ -1,5 +1,6 @@
-import { FontProps, UnitsAroundProps } from '@shallot-ui/theme'
 import { HTMLAttributes } from 'react'
+import { DefaultTheme } from 'styled-components'
+import { AllColorShades, FontProps, UnitsAroundProps } from '@shallot-ui/theme'
 
 import { ColumnProps } from '../../containers'
 import { TextProps } from '../../content'
@@ -39,4 +40,7 @@ export interface FormColumnProps extends StaticFormColumnProps {
   getStyles: (state?: FormColumnState) => FormColumnComponentStyles
 }
 
-export interface FormColumnStyleProps extends UnitsAroundProps, FontProps {}
+export interface FormColumnStyleProps extends UnitsAroundProps, FontProps {
+  labelColor?: AllColorShades
+  labelFontSize?: keyof DefaultTheme['fontSizes']
+}

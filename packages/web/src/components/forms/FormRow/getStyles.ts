@@ -13,6 +13,9 @@ export const getFormRowStyles = (
     typeface,
     font,
 
+    labelColor,
+    labelFontSize,
+
     // Units Around
     unitsAround,
     unitsAbove,
@@ -30,13 +33,13 @@ export const getFormRowStyles = (
       let styles: FormRowComponentStyles = {
         container: { alignMiddle: true, ...props },
         label: {
-          cursor: 'pointer',
-          font: 'Bold',
-          fontSize: 'md',
-          letterSpacing: 'md',
-          textColor: 'Shading.400',
           typeface: 'Body',
+          lineHeight: 'md',
+          cursor: 'pointer',
+          letterSpacing: 'md',
           userSelect: 'none',
+          fontSize: labelFontSize || 'md',
+          textColor: labelColor || 'Shading.400',
         },
         details: { unitsLeft: 1 },
         requiredStar: { typeface: 'Body', textColor: 'Danger.300' },

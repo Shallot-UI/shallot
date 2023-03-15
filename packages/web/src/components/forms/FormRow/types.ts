@@ -1,5 +1,6 @@
-import { FontProps, UnitsAroundProps } from '@shallot-ui/theme'
 import { MouseEvent, ReactNode } from 'react'
+import { DefaultTheme } from 'styled-components'
+import { AllColorShades, FontProps, UnitsAroundProps } from '@shallot-ui/theme'
 
 import { ColumnProps } from '../../containers'
 import { TextProps } from '../../content'
@@ -40,4 +41,7 @@ export interface FormRowProps extends Omit<StaticFormRowProps, 'styles'> {
   getStyles: (state?: FormRowState) => FormRowComponentStyles
 }
 
-export interface FormRowStyleProps extends UnitsAroundProps, FontProps {}
+export interface FormRowStyleProps extends UnitsAroundProps, FontProps {
+  labelColor?: AllColorShades
+  labelFontSize?: keyof DefaultTheme['fontSizes']
+}
