@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.23.10
+
+### Patch Changes
+
+- Adds tag component
+
 ## 0.23.9
 
 ### Patch Changes
