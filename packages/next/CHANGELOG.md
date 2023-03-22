@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.21.10
+
+### Patch Changes
+
+- 284d25f: Improves react select support
+- Updated dependencies [284d25f]
+  - @shallot-ui/web@0.23.14
+
 ## 0.21.9
 
 ### Patch Changes

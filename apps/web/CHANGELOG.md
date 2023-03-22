@@ -1,5 +1,15 @@
 # web
 
+## 0.3.24
+
+### Patch Changes
+
+- 284d25f: Improves react select support
+- Updated dependencies [284d25f]
+  - @shallot-ui/react-select@0.22.1
+  - @shallot-ui/prismjs@4.0.14
+  - @shallot-ui/next@0.21.10
+
 ## 0.3.23
 
 ### Patch Changes

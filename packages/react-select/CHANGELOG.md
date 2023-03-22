@@ -1,5 +1,13 @@
 # @shallot-ui/react-select
 
+## 0.22.1
+
+### Patch Changes
+
+- 284d25f: Improves react select support
+- Updated dependencies [284d25f]
+  - @shallot-ui/web@0.23.14
+
 ## 0.22.0
 
 ### Minor Changes

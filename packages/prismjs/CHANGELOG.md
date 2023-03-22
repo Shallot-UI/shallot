@@ -1,5 +1,13 @@
 # @shallot-ui/prismjs
 
+## 4.0.14
+
+### Patch Changes
+
+- 284d25f: Improves react select support
+- Updated dependencies [284d25f]
+  - @shallot-ui/web@0.23.14
+
 ## 4.0.13
 
 ### Patch Changes
