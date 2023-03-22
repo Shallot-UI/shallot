@@ -1,4 +1,5 @@
 import { HTMLProps, ReactNode } from 'react'
+import { CSSObject } from 'styled-components'
 import {
   AnimationProps,
   CasingProps,
@@ -16,8 +17,8 @@ import { RowProps } from '../../containers'
 import { TextProps } from '../../content'
 
 export interface ButtonComponentStyles {
-  container?: RowProps
-  label?: TextProps
+  container?: RowProps & { style?: CSSObject }
+  label?: TextProps & { style?: CSSObject }
 }
 
 export interface StaticButtonProps

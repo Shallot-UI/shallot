@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.23.13
+
+### Patch Changes
+
+- Allows `style` prop styles on button container
+
 ## 0.23.12
 
 ### Patch Changes

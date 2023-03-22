@@ -11,7 +11,11 @@ const getStaticLineHeight: ThemeGetter<LineHeightProps> = ({
   if (!lineHeight) {
     return ''
   }
-  if (!fontSize) {
+  if (!lineHeights?.[lineHeight]) {
+    console.warn('the requested line-height is not defined in the theme')
+    return ''
+  }
+  if (!fontSize || !fontSizes?.[fontSize]) {
     console.warn('a fontSize is required to calculate line-height')
     return ''
   }

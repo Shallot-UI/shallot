@@ -14,12 +14,9 @@ const FormSelectMenu: FunctionComponent<MenuProps> = ({
     borderColor="Shading.225"
     radius="sm"
     unitsAbove={1 / 2}
-    style={{
-      borderWidth: 1,
-      position: 'absolute',
-      width: '100%',
-      zIndex: 999,
-    }}
+    borderWidth={1}
+    fullWidth
+    style={{ position: 'absolute', zIndex: 999 }}
   >
     {children}
   </Column>

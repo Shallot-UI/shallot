@@ -13,13 +13,13 @@
   ],
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup index.ts --format cjs --dts"
+    "build": "tsup index.ts --format cjs --dts --minify"
   },
   "peerDependencies": {
-    "react-select": ">=5",
-    "styled-components": ">=5",
     "react": ">=18",
-    "react-dom": ">=18"
+    "react-dom": ">=18",
+    "react-select": ">=5",
+    "styled-components": ">=5"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
@@ -34,5 +34,8 @@
     "tsconfig": "*",
     "tsup": "^6.5.0",
     "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@shallot-ui/web": "^0.23.13"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "version": "0.3.22",
+  "version": "0.3.23",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@shallot-ui/next": "0.21.9",
-    "@shallot-ui/prismjs": "4.0.12",
+    "@shallot-ui/prismjs": "4.0.13",
     "@shallot-ui/react-select": "0.22.0",
     "chroma-js": "^2.4.2",
     "lodash": "^4.17.21",

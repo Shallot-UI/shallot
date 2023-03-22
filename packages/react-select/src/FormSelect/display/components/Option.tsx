@@ -5,7 +5,7 @@ import { Column, Text } from '@shallot-ui/web'
 const FormSelectOption: FunctionComponent<OptionProps> = ({
   children,
   isDisabled,
-  // isFocused,
+  isFocused,
   // isSelected,
   innerRef,
   innerProps,
@@ -15,6 +15,8 @@ const FormSelectOption: FunctionComponent<OptionProps> = ({
     cursor="pointer"
     ref={innerRef}
     aria-disabled={isDisabled}
+    backgroundColor={isFocused ? 'Shading.150' : 'Shading.100'}
+    transition="background-color 0.2s ease-in-out"
   >
     <Text
       unitsAround={2 / 3}
