@@ -1,0 +1,156 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { ThemeProvider } from 'styled-components'
+import { makeTheme, Button, Row } from '@shallot-ui/web'
+
+<Meta title="Style Props" />
+
+# Style Props
+
+Shallot components come out of the box with a set of style props that can be used to customize the look and feel of the component. These props all take advantage of the tokens defined in your theme.
+
+```tsx
+<Button
+  title="Hello World!"
+  // Uses the "Monospace" typeface from the theme for the button label.
+  typeface="Monospace"
+  // Uses the "Warning" color palette from the theme to color the different
+  // parts and and states of the botton.
+  color="Warning"
+  // Uses the "xl" border radius from the theme to round the corners of the
+  // button's container.
+  radius="xl"
+  // Sets the button's label to uppercase.
+  uppercase
+  // Sets the button's label to have a letter spacing of "lg" from the theme.
+  letterSpacing="lg"
+  // Causes the button to grow to fill the available space in a flexbox.
+  grow
+/>
+```
+
+See for example the `<Button />` component which makes use of our theme tokens to make customization easy.
+
+<Canvas withSource="open">
+  <ThemeProvider theme={makeTheme()}>
+    <Row>
+      <Button title="Hello World!" color="Primary" grow unitsAround={1 / 2} />
+      <Button title="Hello World!" color="Success" grow unitsAround={1 / 2} />
+      <Button title="Hello World!" color="Warning" grow unitsAround={1 / 2} />
+      <Button title="Hello World!" color="Danger" grow unitsAround={1 / 2} />
+    </Row>
+    <Row>
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Primary"
+        radius="xl"
+        uppercase
+        letterSpacing="lg"
+        grow
+        unitsAround={1 / 2}
+      />
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Success"
+        radius="xl"
+        uppercase
+        letterSpacing="lg"
+        grow
+        unitsAround={1 / 2}
+      />
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Warning"
+        radius="xl"
+        uppercase
+        letterSpacing="lg"
+        grow
+        unitsAround={1 / 2}
+      />
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Danger"
+        radius="xl"
+        uppercase
+        letterSpacing="lg"
+        grow
+        unitsAround={1 / 2}
+      />
+    </Row>
+    <Row>
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Primary"
+        radius="pill"
+        grow
+        unitsAround={1 / 2}
+      />
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Success"
+        radius="pill"
+        grow
+        unitsAround={1 / 2}
+      />
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Warning"
+        radius="pill"
+        grow
+        unitsAround={1 / 2}
+      />
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Danger"
+        radius="pill"
+        grow
+        unitsAround={1 / 2}
+      />
+    </Row>
+    <Row>
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Primary"
+        radius="pill"
+        outline
+        grow
+        unitsAround={1 / 2}
+      />
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Success"
+        radius="pill"
+        outline
+        grow
+        unitsAround={1 / 2}
+      />
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Warning"
+        radius="pill"
+        outline
+        grow
+        unitsAround={1 / 2}
+      />
+      <Button
+        title="Hello World!"
+        typeface="Body"
+        color="Danger"
+        radius="pill"
+        outline
+        grow
+        unitsAround={1 / 2}
+      />
+    </Row>
+  </ThemeProvider>
+</Canvas>

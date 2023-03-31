@@ -15,11 +15,11 @@ import {
   Row,
   Space,
   Text,
-} from '../components'
+} from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Primitives/Login Form',
+  title: 'Forms/Login Form',
   component: Input,
   parameters: {
     layout: 'centered',

@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { ThemeProvider } from 'styled-components'
+import { useState } from 'react'
+import {
+  StatefulInput,
+  StatefulInputProps,
+  getInputStyles,
+  InputState,
+  applyStyles,
+  makeTheme,
+} from '@shallot-ui/web'
+
+<Meta title="👩‍🔧 Building Components / Introduction" />
+
+#### 🚨 This is an advanced topic! You don't need it to use our core components in your project.
+
+<hr />
+
+# Building Components
+
+The true power of Shallot is unlocked when you learn to create entirely new components that provide the same great developer experience as our out-of-the-box options. This walkthrough will cover the core topics required to build and extend your own components with Shallot.
+
+## Style Functions
+
+A style function is a pure function that accepts a mix of style props and component state, and returns a style object. Forget about CSS specificity, and overrides. Simply write a function to build the styles you want based on states of arbitrary complexity, or extend existing style functions with new style props.

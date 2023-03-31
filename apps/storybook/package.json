@@ -19,7 +19,8 @@
     "react-dom": "^18.2.0",
     "react-select": "^5.7.0",
     "react-simple-code-editor": "^0.13.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "ts-dedent": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

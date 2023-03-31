@@ -2,7 +2,7 @@ import { makeTheme } from '@shallot-ui/theme'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 
-import { Tag } from '../components'
+import { Tag } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

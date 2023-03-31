@@ -6,7 +6,7 @@ import { Button } from '../components'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: 'Primitives/Button',
   component: Button,
   parameters: {
     layout: 'centered',

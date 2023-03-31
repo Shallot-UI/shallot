@@ -6,7 +6,7 @@ import { FormSelect } from '@shallot-ui/react-select'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/FormSelect',
+  title: 'Forms/FormSelect',
   component: FormSelect,
   parameters: {
     layout: 'centered',
@@ -29,7 +29,7 @@ const Template: ComponentStory<typeof FormSelect> = () => {
           helperText="This is a test"
           errorText="This is an error"
           name="test"
-          value={'test'}
+          value={value}
           options={[
             { value: 'test', label: 'Test' },
             { value: 'test2', label: 'Test 2' },

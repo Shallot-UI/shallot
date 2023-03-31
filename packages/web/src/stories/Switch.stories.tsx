@@ -7,7 +7,7 @@ import { Switch, Row } from '../components'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Switch',
+  title: 'Primitives/Switch',
   component: Switch,
   parameters: {
     layout: 'centered',

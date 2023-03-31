@@ -1,7 +1,7 @@
 import { LetterSpacingProps } from '@shallot-ui/theme'
 
-import { PropsConfig } from '../../types'
-import { makePropPuller, makeStyleGetter } from '../../utils'
+import { PropsConfig } from '@shallot-ui/core/src/types'
+import { makePropPuller, makeStyleGetter } from '@shallot-ui/core/src/utils'
 
 export const letterSpacingProps: PropsConfig<LetterSpacingProps> = {
   letterSpacing: {
@@ -9,7 +9,7 @@ export const letterSpacingProps: PropsConfig<LetterSpacingProps> = {
       letterSpacing
         ? ({ theme }) =>
             theme.letterSpacings?.[letterSpacing]
-              ? `letter-spacing: ${theme.letterSpacings[letterSpacing]};`
+              ? `letter-spacing: ${theme.letterSpacings[letterSpacing]}em;`
               : ''
         : '',
   },

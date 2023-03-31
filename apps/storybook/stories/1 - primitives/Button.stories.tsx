@@ -2,12 +2,12 @@ import { makeTheme } from '@shallot-ui/theme'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 
-import { Tag } from '../components'
+import { Button } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Primitives/Tag',
-  component: Tag,
+  title: 'Primitives/Button',
+  component: Button,
   parameters: {
     layout: 'centered',
     controls: {
@@ -35,12 +35,12 @@ export default {
     startAdornment: { table: { disable: true } },
     endAdornment: { table: { disable: true } },
   },
-} as ComponentMeta<typeof Tag>
+} as ComponentMeta<typeof Button>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Tag> = (args) => (
+const Template: ComponentStory<typeof Button> = (args) => (
   <ThemeProvider theme={makeTheme({})}>
-    <Tag label="Hello World" {...args} />
+    <Button title="Hello World" {...args} />
   </ThemeProvider>
 )
 

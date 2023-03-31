@@ -7,7 +7,7 @@ import { Checkbox, Row } from '../components'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Checkbox',
+  title: 'Primitives/Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',
