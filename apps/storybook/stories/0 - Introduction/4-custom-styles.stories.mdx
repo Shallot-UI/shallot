@@ -12,31 +12,31 @@ import {
   StatefulInputProps,
 } from '@shallot-ui/web'
 
-<Meta title="👩‍🔧 Building Components / Custom Styling" />
+<Meta title="🔌 Extending / Custom Styles" />
 
 #### 🚨 This is an advanced topic! You don't need it to use our core components in your project.
 
 <hr />
 
-# Custom Styling
+# 💅 Writing Custom Styles
 
-Shallot makes it easy to create entirely new styling logic without having to constantly re-write markup and state management for standard components. In this guide, we'll explore how to create new styles for existing components.
+Shallot makes it easy to create new styling logic without having to re-write markup or state management for standard components. In this guide, we'll explore how the core concepts for creating new styles using existing components.
 
 First, it's important to understand the types of components we use in Shallot. **Most components in Shallot come in two parts:**
 
 1. A **static** component which accepts the core props for the component and a special prop called `styles` which is an object of shallot theme tokens. This component is responsible for the presentation of the component, and is not aware of any state.
-2. A **stateful** component which manages a static component, and adds stateful behaviour to it. This component is responsible for managing the state of the static component, and is not aware of any presentation.
+2. A **stateful** component which manages a static component, and adds stateful behaviour to it. Stateful components have a special prop called `getStyles` which provides a single argument containing their state, and expects a `styles` object in return.
 
 ## Static Components
 
-Let's start by looking at how a static component is styled using the `styles` object. As an example, we'll look at the `<StaticButton />` component. This component is responsible for the presentation of a simple button.
+Let's start by exploring how a static component is styled using the `styles` object.
 
-The `StaticButton` consists of a Container and a Label. The Container is a Shallot `<Row />` component, and the Label is a Shallot `<Text />` component. The `styles` property looks like this:
+As an example, we'll look at the `<StaticButton />` component. This component is responsible for the presentation of a simple button. The `StaticButton` consists of a Container and a Label. The Container is a Shallot `<Row />` component, and the Label is a Shallot `<Text />` component. The `styles` property looks like this:
 
 ```ts
-export interface ButtonComponentStyles {
-  container?: RowProps & { style?: CSSObject }
-  label?: TextProps & { style?: CSSObject }
+interface ButtonComponentStyles {
+  container?: RowProps
+  label?: TextProps
 }
 ```
 

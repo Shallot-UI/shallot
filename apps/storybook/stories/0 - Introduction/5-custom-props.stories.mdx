@@ -1,0 +1,76 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { ThemeProvider } from 'styled-components'
+import { useState } from 'react'
+import { makeTheme, Button, Row } from '@shallot-ui/web'
+
+<Meta title="🔌 Extending / Custom Props" />
+
+#### 🚨 This is an advanced topic! You don't need it to use our core components in your project.
+
+<hr />
+
+# 🦚 Adding Style Props
+
+We've seen in the previous guide how we can customize component styling using the `getStyles` prop. If you've been using our core components, you may have noticed that many of them also offer custom style props that are pulled from your theme and are influenced by the component's state. _This_ is where component creation gets really fun!
+
+If you've been exploring Shallot, you've likely already seen the `<Button />` component. You might have noticed that the `Button` accepts a `color` prop which accepts values like `'Primary'` or `'Danger'` and adjusts the button styles accordingly &mdash; even when you interact by hovering or clicking!
+
+<Canvas>
+  <ThemeProvider theme={makeTheme()}>
+    <Row alignCenter>
+      <Button title="Hello World!" color="Primary" unitsAround={1 / 2} />
+      <Button title="I'm in Danger" color="Danger" unitsAround={1 / 2} />
+    </Row>
+  </ThemeProvider>
+</Canvas>
+
+Behind the scenes, this is accomplished by making a wrapper component that accepts a `color` prop and uses it to generate the `getStyles` prop for the button. Here's a simplified example of how this might work:
+
+```tsx
+import {
+  StatefulButton,
+  StatefulButtonProps,
+  ButtonState,
+  AllColorNames,
+} from '@shallot-ui/web'
+
+const ColoredButton = ({
+  color,
+  ...props
+}: StatefulButtonProps & { color: AllColorNames }) => {
+  // Generate a getStyles function that uses the color prop to generate styles
+  // based on the component's state.
+  const getStyles = (state: ButtonState) => ({
+    backgroundColor: state.hovered ? `${color}.250` : `${color}.300`,
+    textColor: `${color}.100`,
+  })
+
+  return <StatefulButton getStyles={getStyles} {...props} />
+}
+```
+
+## Using `withStyleProps`
+
+Components that use this pattern tend to get complex. To make the convention clearer, we've created a helper function called `withStyleProps` that makes it easier to create components that accept custom style props.
+
+```tsx
+import { StatefulButton, ButtonState, AllColorNames } from '@shallot-ui/web'
+
+interface ButtonStyleProps {
+  color: AllColorNames
+}
+
+// Instead of a `getStyles` function directly, we pass a function that accepts
+// the component's style props and returns a `getStyles` function.
+const applyButtonStyleProps =
+  ({ color }: ButtonStyleProps) =>
+  (state: ButtonState) => ({
+    backgroundColor: state.hovered ? `${color}.250` : `${color}.300`,
+    textColor: `${color}.100`,
+  })
+
+export const ColoredButton = withStyleProps<ButtonStyleProps, ButtonProps>(
+  StatefulButton,
+  applyStyleProps,
+)
+```
