@@ -1,0 +1,68 @@
+import { Canvas, Meta } from '@storybook/addon-docs'
+import { Column, Row, Text, makeTheme } from '@shallot-ui/web'
+import { ThemeProvider } from 'styled-components'
+
+<Meta title="🎨 Theme / Elevations" />
+
+# Elevations
+
+Elevations are used to give depth and shadow to components such as `Row`, `Column`, and `Box`. They are defined in the theme as an object of keys and values, where each key corresponds to a specific elevation state and the value is an object that defines the `boxShadow` and `transform` properties.
+
+## Default Values
+
+Below are the default values for the elevations in the Shallot theme.
+
+<Canvas>
+  <ThemeProvider theme={makeTheme()}>
+    <Row backgroundColor="Shading.125" alignCenter>
+      {['pressable', 'hover', 'pressed', 'focused', 'none'].map((elevation) => (
+        <Column
+          key={elevation}
+          elevation={elevation}
+          backgroundColor="Shading.100"
+          radius="lg"
+          unitHeight={8}
+          unitWidth={8}
+          unitsAround={1}
+          alignCenter
+          alignMiddle
+        >
+          <Text fontSize="sm" typeface="Monospace" textColor="Shading.350">
+            {elevation}
+          </Text>
+        </Column>
+      ))}
+    </Row>
+  </ThemeProvider>
+</Canvas>
+
+- `pressable`: The default elevation state for a pressable component.
+- `hover`: The elevation state when the component is being hovered over.
+- `pressed`: The elevation state when the component is being pressed.
+- `focused`: The elevation state when the component is being focused.
+- `none`: The elevation state when the component has no elevation.
+
+## Customizing Elevations
+
+You can customize the default elevations by passing an object to the `elevations` key of the theme object passed to `makeTheme()`. You don't have to define all of the keys, only the ones you want to override.
+
+```ts
+const myTheme = makeTheme({
+  elevations: {
+    pressable: {
+      transform: 'translateY(0)',
+      boxShadow: '0 4px 6px -4px rgba(0,0,0,0.4)',
+    },
+    hover: {
+      boxShadow: '0 4px 12px -4px rgba(0,0,0,0.4)',
+      transform: 'translateY(-4px)',
+    },
+  },
+})
+```
+
+To apply an elevation to a component, use the `elevation` prop.
+
+```jsx
+<Box elevation="pressable">This box has the "pressable" elevation.</Box>
+```

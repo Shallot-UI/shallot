@@ -1,8 +1,8 @@
-import { Meta } from '@storybook/addon-docs'
+import { Meta, Canvas } from '@storybook/addon-docs'
 import { Row, Column, Text, makeTheme } from '@shallot-ui/web'
 import { ThemeProvider } from 'styled-components'
 
-<Meta title="Theme / Radii" />
+<Meta title="🎨 Theme / Radii" />
 
 # Radii
 
@@ -14,7 +14,7 @@ Below are the default values for the radii in the Shallot theme.
 
 <Canvas>
   <ThemeProvider theme={makeTheme()}>
-    <Row backgroundColor="Shading.125">
+    <Row backgroundColor="Shading.125" alignCenter>
       {['sm', 'md', 'lg', 'xl', 'pill'].map((radius) => (
         <Column
           key={radius}
@@ -22,13 +22,13 @@ Below are the default values for the radii in the Shallot theme.
           backgroundColor="Shading.100"
           borderColor="Shading.250"
           borderWidth={1}
-          unitHeight={4}
-          unitWidth={4}
+          unitHeight={5}
+          unitWidth={5}
           unitsAround={1}
           alignCenter
           alignMiddle
         >
-          <Text fontSize="xs" typeface="Monospace" textColor="Shading.350">
+          <Text fontSize="sm" typeface="Monospace" textColor="Shading.350">
             {radius}
           </Text>
         </Column>
