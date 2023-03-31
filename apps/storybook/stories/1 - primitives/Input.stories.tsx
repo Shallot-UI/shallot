@@ -36,6 +36,7 @@ const Template: ComponentStory<typeof Input> = () => {
       <Input
         value={value}
         onChange={(e) => setValue(e.currentTarget.value)}
+        placeholder="Your Text Here"
         fullWidth
         maxUnitWidth={35}
       />

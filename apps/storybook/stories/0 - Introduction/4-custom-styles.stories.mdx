@@ -80,6 +80,7 @@ Notice that many of these styles are references to theme tokens. You can see an 
 
 <Canvas>
   <ThemeProvider theme={makeTheme({})}>
+    {console.log(JSON.stringify(makeTheme({})))}
     <StaticButton
       title="Hello World!"
       styles={{
