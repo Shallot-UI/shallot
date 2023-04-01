@@ -6,7 +6,7 @@ import { Tag } from '../components'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Primitives/Tag',
+  title: 'Controls / Tag',
   component: Tag,
   parameters: {
     layout: 'centered',

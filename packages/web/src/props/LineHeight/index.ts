@@ -1,7 +1,6 @@
+import { makePropPuller, makeStyleGetter, PropsConfig } from '@shallot-ui/core'
 import { LineHeightProps } from '@shallot-ui/theme'
 
-import { PropsConfig } from '../../types'
-import { makePropPuller, makeStyleGetter } from '../../utils'
 import getResponsiveLineHeights from './utils/getResponsiveLineHeights'
 
 export const lineHeightProps: PropsConfig<LineHeightProps> = {

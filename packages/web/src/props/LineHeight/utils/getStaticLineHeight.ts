@@ -1,6 +1,5 @@
+import { snapToGrid, ThemeGetter } from '@shallot-ui/core'
 import { LineHeightProps } from '@shallot-ui/theme'
-import { ThemeGetter } from '../../../types'
-import { snapToGrid } from '../../../utils/snapToGrid'
 
 const getStaticLineHeight: ThemeGetter<LineHeightProps> = ({
   fontSize,
@@ -8,6 +7,7 @@ const getStaticLineHeight: ThemeGetter<LineHeightProps> = ({
   theme,
 }) => {
   const { fontSizes, lineHeights, gridUnits } = theme
+  console.log('getStaticLineHeight', { fontSize, lineHeight, theme })
   if (!lineHeight) {
     return ''
   }

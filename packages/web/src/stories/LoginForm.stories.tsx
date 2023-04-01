@@ -19,7 +19,7 @@ import {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Primitives/Login Form',
+  title: 'Controls / Login Form',
   component: Input,
   parameters: {
     layout: 'centered',
