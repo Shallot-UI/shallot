@@ -7,7 +7,7 @@ import { Checkbox, Row } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Primitives/Checkbox',
+  title: 'Controls / Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',
@@ -53,5 +53,22 @@ const Template: ComponentStory<typeof Checkbox> = (args) => {
 }
 
 export const Default = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {}
+
+export const Success = Template.bind({})
+Success.args = { color: 'Success' }
+
+export const Warning = Template.bind({})
+Warning.args = { color: 'Warning' }
+
+export const Danger = Template.bind({})
+Danger.args = { color: 'Danger' }
+
+export const Larger = Template.bind({})
+Larger.args = { size: 3, iconSize: 2, radius: 'lg' }
+
+export const Circular = Template.bind({})
+Circular.args = { radius: 'pill', iconSize: 1 }
+
+export const Square = Template.bind({})
+Square.args = { radius: 'none' }

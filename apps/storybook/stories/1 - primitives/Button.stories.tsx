@@ -6,7 +6,7 @@ import { Button } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Primitives/Button',
+  title: 'Controls / Button',
   component: Button,
   parameters: {
     layout: 'centered',
@@ -45,5 +45,28 @@ const Template: ComponentStory<typeof Button> = (args) => (
 )
 
 export const Default = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {}
+
+export const Success = Template.bind({})
+Success.args = { color: 'Success' }
+
+export const Warning = Template.bind({})
+Warning.args = { color: 'Warning' }
+
+export const Danger = Template.bind({})
+Danger.args = { color: 'Danger' }
+
+export const Pill = Template.bind({})
+Pill.args = { radius: 'pill' }
+
+export const Square = Template.bind({})
+Square.args = { radius: 'none' }
+
+export const Outline = Template.bind({})
+Outline.args = { outline: true }
+
+export const Typeface = Template.bind({})
+Typeface.args = {
+  typeface: 'Body',
+  letterSpacing: 'lg',
+}

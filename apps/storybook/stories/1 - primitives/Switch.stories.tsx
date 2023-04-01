@@ -7,7 +7,7 @@ import { Switch, Row } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Primitives/Switch',
+  title: 'Controls / Switch',
   component: Switch,
   parameters: {
     layout: 'centered',
@@ -52,5 +52,16 @@ const Template: ComponentStory<typeof Switch> = (args) => {
 }
 
 export const Default = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {}
+
+export const Success = Template.bind({})
+Success.args = { color: 'Success' }
+
+export const Warning = Template.bind({})
+Warning.args = { color: 'Warning' }
+
+export const Danger = Template.bind({})
+Danger.args = { color: 'Danger' }
+
+export const Larger = Template.bind({})
+Larger.args = { size: 3 }

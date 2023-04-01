@@ -14,26 +14,28 @@ Below are the default values for the radii in the Shallot theme.
 
 <Canvas>
   <ThemeProvider theme={makeTheme()}>
-    <Row backgroundColor="Shading.125" alignCenter>
-      {['sm', 'md', 'lg', 'xl', 'pill'].map((radius) => (
-        <Column
-          key={radius}
-          radius={radius}
-          backgroundColor="Shading.100"
-          borderColor="Shading.250"
-          borderWidth={1}
-          unitHeight={5}
-          unitWidth={5}
-          unitsAround={1}
-          alignCenter
-          alignMiddle
-        >
-          <Text fontSize="sm" typeface="Monospace" textColor="Shading.350">
-            {radius}
-          </Text>
-        </Column>
-      ))}
-    </Row>
+    <Column backgroundColor="Shading.125" radius="xl">
+      <Row alignCenter unitsAround={2}>
+        {['sm', 'md', 'lg', 'xl', 'pill'].map((radius) => (
+          <Column
+            key={radius}
+            radius={radius}
+            backgroundColor="Shading.100"
+            borderColor="Shading.250"
+            borderWidth={1}
+            unitHeight={5}
+            unitWidth={5}
+            unitsAround={1}
+            alignCenter
+            alignMiddle
+          >
+            <Text fontSize="sm" typeface="Monospace" textColor="Shading.350">
+              {radius}
+            </Text>
+          </Column>
+        ))}
+      </Row>
+    </Column>
   </ThemeProvider>
 </Canvas>
 

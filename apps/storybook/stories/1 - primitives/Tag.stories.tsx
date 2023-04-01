@@ -6,7 +6,7 @@ import { Tag } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Primitives/Tag',
+  title: 'Controls / Tag',
   component: Tag,
   parameters: {
     layout: 'centered',
@@ -45,5 +45,22 @@ const Template: ComponentStory<typeof Tag> = (args) => (
 )
 
 export const Default = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {}
+
+export const Primary = Template.bind({})
+Primary.args = { color: 'Primary' }
+
+export const Success = Template.bind({})
+Success.args = { color: 'Success' }
+
+export const Warning = Template.bind({})
+Warning.args = { color: 'Warning' }
+
+export const Danger = Template.bind({})
+Danger.args = { color: 'Danger' }
+
+export const Pill = Template.bind({})
+Pill.args = { radius: 'pill' }
+
+export const Square = Template.bind({})
+Square.args = { radius: 'none' }

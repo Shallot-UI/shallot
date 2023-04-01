@@ -14,25 +14,29 @@ Below are the default values for the elevations in the Shallot theme.
 
 <Canvas>
   <ThemeProvider theme={makeTheme()}>
-    <Row backgroundColor="Shading.125" alignCenter>
-      {['pressable', 'hover', 'pressed', 'focused', 'none'].map((elevation) => (
-        <Column
-          key={elevation}
-          elevation={elevation}
-          backgroundColor="Shading.100"
-          radius="lg"
-          unitHeight={8}
-          unitWidth={8}
-          unitsAround={1}
-          alignCenter
-          alignMiddle
-        >
-          <Text fontSize="sm" typeface="Monospace" textColor="Shading.350">
-            {elevation}
-          </Text>
-        </Column>
-      ))}
-    </Row>
+    <Column backgroundColor="Shading.125" radius="xl">
+      <Row alignCenter unitsAround={4}>
+        {['pressable', 'hover', 'pressed', 'focused', 'none'].map(
+          (elevation) => (
+            <Column
+              key={elevation}
+              elevation={elevation}
+              backgroundColor="Shading.100"
+              radius="lg"
+              unitHeight={8}
+              unitWidth={8}
+              unitsAround={1}
+              alignCenter
+              alignMiddle
+            >
+              <Text fontSize="sm" typeface="Monospace" textColor="Shading.350">
+                {elevation}
+              </Text>
+            </Column>
+          ),
+        )}
+      </Row>
+    </Column>
   </ThemeProvider>
 </Canvas>
 
