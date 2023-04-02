@@ -1,4 +1,4 @@
-import { withStyleProps } from '../../../utils'
+import { withStyleProps } from '../../../web/src/utils'
 import { StatefulFormRow } from './Components'
 import { getFormRowStyles } from './getStyles'
 

@@ -11,14 +11,11 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@shallot-ui/react-select": "*",
-    "@shallot-ui/web": "*",
+    "@shallot-ui/web": "^0.23.14",
     "next": "^13.1.1",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-select": "^5.7.0",
-    "react-simple-code-editor": "^0.13.1",
     "styled-components": "^5.3.6",
     "ts-dedent": "^2.2.0"
   },

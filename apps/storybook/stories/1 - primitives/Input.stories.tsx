@@ -1,9 +1,8 @@
-import { makeTheme } from '@shallot-ui/theme'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { Input } from '@shallot-ui/web'
+import { makeTheme, Input } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -14,7 +14,7 @@
   "scripts": {
     "test": "jest",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup index.ts --format cjs --dts"
+    "build": "tsup"
   },
   "peerDependencies": {
     "react": ">=18",

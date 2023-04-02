@@ -12,7 +12,11 @@ import {
   unitsAroundProps,
 } from '@shallot-ui/core'
 
-import { transitionProps } from '../../../props'
+import {
+  letterSpacingProps,
+  lineHeightProps,
+  transitionProps,
+} from '../../../props'
 import { AnchorLinkProps } from './types'
 
 export const anchorLinkConfig: PropsConfig<AnchorLinkProps> = {
@@ -27,4 +31,6 @@ export const anchorLinkConfig: PropsConfig<AnchorLinkProps> = {
   ...sizingProps,
   ...transitionProps,
   ...unitsAroundProps,
+  ...letterSpacingProps,
+  ...lineHeightProps,
 }

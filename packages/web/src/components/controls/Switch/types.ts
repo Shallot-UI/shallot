@@ -1,10 +1,6 @@
 import { HTMLAttributes, StyleHTMLAttributes } from 'react'
-import {
-  UnitsAroundProps,
-  RadiusProps,
-  ColorName,
-  ColumnProps,
-} from '@shallot-ui/next'
+import { ColorName, RadiusProps, UnitsAroundProps } from '@shallot-ui/theme'
+import { ColumnProps } from '../../containers'
 
 export interface SwitchConfig {
   label?: string

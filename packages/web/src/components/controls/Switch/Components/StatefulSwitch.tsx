@@ -1,8 +1,8 @@
 import { FunctionComponent, useRef } from 'react'
-import { useHover, useFocus } from '@shallot-ui/next'
 
 import { SwitchProps } from '../types'
 import { StaticSwitch } from './StaticSwitch'
+import { useFocus, useHover } from '../../../../hooks'
 
 export const StatefulSwitch: FunctionComponent<SwitchProps> = ({
   value,

@@ -1,5 +1,4 @@
-import { applyStyles } from '@shallot-ui/next'
-
+import { applyStyles } from '../../../utils'
 import {
   SwitchComponentStyles,
   SwitchProps,

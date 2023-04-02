@@ -1,8 +1,7 @@
-import { DEFAULT_THEME, makeTheme } from '@shallot-ui/theme'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 
-import { Box, Fold } from '@shallot-ui/web'
+import { DEFAULT_THEME, makeTheme, Box, Fold } from '@shallot-ui/web'
 
 const allColorNames = Object.keys(DEFAULT_THEME.colors)
   .map((color) => {

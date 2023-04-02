@@ -6,8 +6,6 @@ import {
   flexProps,
   fontProps,
   fontSizeProps,
-  letterSpacingProps,
-  lineHeightProps,
   PropsConfig,
   radiusProps,
   sizingProps,
@@ -15,7 +13,11 @@ import {
   unitsPaddingProps,
 } from '@shallot-ui/core'
 
-import { transitionProps } from '../../../props'
+import {
+  letterSpacingProps,
+  lineHeightProps,
+  transitionProps,
+} from '../../../props'
 import { InputStyleProps } from './types'
 
 const inputConfig: PropsConfig<InputStyleProps> = {

@@ -39,7 +39,7 @@ const Template: ComponentStory<typeof Text> = (args) => (
           This is {`<Text />`} component. Lorem ipsum dolor sit amet,
           consectetur adipiscing elit. Praesent convallis enim vitae tempus
           mollis. Quisque fringilla tortor risus, in elementum neque convallis
-          sit amet.
+          sit amet. {JSON.stringify(args)}
         </Text>
       </Column>
     </Fold>

@@ -167,7 +167,12 @@ export interface ThemeOptions {
   lineHeights?: { [name: string]: number }
   radii?: { [name: string]: number }
   letterSpacings?: { [name: string]: number }
-  breakpoints?: { [point: number]: { fontSizes?: { [name: string]: number } } }
+  breakpoints?: {
+    [point: number]: {
+      fontSizes?: { [name: string]: number }
+      radii?: { [name: string]: number }
+    }
+  }
   typefaces?: { [name: string]: Typeface }
   elevations?: { [name: string]: CSSProp }
 }

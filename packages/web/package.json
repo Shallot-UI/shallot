@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup index.ts --format cjs --dts",
+    "build": "tsup",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -24,8 +24,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
-    "@shallot-ui/core": "0.22.7",
-    "@shallot-ui/theme": "0.22.7",
+    "@shallot-ui/core": "^0.22.7",
+    "@shallot-ui/theme": "^0.22.7",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -45,7 +45,7 @@
     "react-dom": "*",
     "styled-components": "*",
     "tsconfig": "*",
-    "tsup": "^6.5.0",
+    "tsup": "^6.7.0",
     "typescript": "^4.5.2"
   },
   "dependencies": {

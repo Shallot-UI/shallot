@@ -2,8 +2,8 @@ import { HTMLAttributes } from 'react'
 import { DefaultTheme } from 'styled-components'
 import { AllColorShades, FontProps, UnitsAroundProps } from '@shallot-ui/theme'
 
-import { ColumnProps } from '../../containers'
-import { TextProps } from '../../content'
+import { ColumnProps } from '../../../web/src/components/containers'
+import { TextProps } from '../../../web/src/components/content'
 
 export interface FormColumnComponentStyles {
   container?: ColumnProps

@@ -1,8 +1,8 @@
 import { forwardRef } from 'react'
 
 import { StaticFormRowProps } from '../types'
-import { Row, Column } from '../../../containers'
-import { Text } from '../../../content'
+import { Row, Column } from '../../../../web/src/components/containers'
+import { Text } from '../../../../web/src/components/content'
 
 export const StaticFormRow = forwardRef<HTMLDivElement, StaticFormRowProps>(
   (

@@ -1,5 +1,6 @@
 {
   "extends": "tsconfig/react-library.json",
+  "transpileOnly": true,
   "include": [".", "styled.d.ts"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": { "lib": ["ES6", "DOM" ]},

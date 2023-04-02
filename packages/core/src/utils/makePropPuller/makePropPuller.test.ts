@@ -1,12 +1,13 @@
 import { DefaultTheme } from 'styled-components'
+import { AllColorShades, ColorName } from '@shallot-ui/theme'
 
 import { makePropPuller } from '.'
 import { PropsConfig } from '../../types'
 
 describe('makePropPuller', () => {
   interface ButtonProps {
-    textColor?: keyof DefaultTheme['colors']
-    backgroundColor?: keyof DefaultTheme['colors']
+    textColor?: AllColorShades
+    backgroundColor?: AllColorShades
     borderWidth?: number
     animated?: boolean
   }
@@ -14,12 +15,28 @@ describe('makePropPuller', () => {
   const propsConfig: PropsConfig<ButtonProps> = {
     textColor: {
       get: ({ textColor }) =>
-        textColor ? ({ theme }) => `color: ${theme.colors[textColor]};` : '',
+        textColor
+          ? ({ theme }) => {
+              const [colorName, shade] = textColor.split('.')
+              return `color: ${
+                theme.colors[colorName as ColorName][
+                  shade as unknown as keyof DefaultTheme['colors'][ColorName]
+                ]
+              };`
+            }
+          : '',
     },
     backgroundColor: {
       get: ({ backgroundColor }) =>
         backgroundColor
-          ? ({ theme }) => `background-color: ${theme.colors[backgroundColor]};`
+          ? ({ theme }) => {
+              const [colorName, shade] = backgroundColor.split('.')
+              return `background-color: ${
+                theme.colors[colorName as ColorName][
+                  shade as unknown as keyof DefaultTheme['colors'][ColorName]
+                ]
+              };`
+            }
           : '',
     },
     borderWidth: {
@@ -34,8 +51,8 @@ describe('makePropPuller', () => {
   it('picks the specified props and returns the remaining props', () => {
     const pullProps = makePropPuller(propsConfig)
     const [pickedProps, restProps] = pullProps({
-      textColor: 'Shading.100',
-      backgroundColor: 'Shading.900',
+      textColor: 'Shading.100' as AllColorShades,
+      backgroundColor: 'Shading.900' as AllColorShades,
       borderWidth: 1,
       animated: true,
       foo: 'bar',

@@ -14,7 +14,7 @@ describe('getSingleFontSize', () => {
   })
 
   it('should return undefined when given an invalid font size', () => {
-    const fontSize = 'invalid'
+    const fontSize = 'invalid' as any
     const result = getSingleFontSize({ fontSize, theme })
     expect(result).toBeUndefined()
   })

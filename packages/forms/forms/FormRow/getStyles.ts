@@ -1,4 +1,4 @@
-import { applyStyles } from '../../../utils'
+import { applyStyles } from '../../../web/src/utils'
 import {
   FormRowComponentStyles,
   FormRowProps,

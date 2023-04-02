@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react'
 
 import { StaticFormColumnProps } from '../types'
-import { Column } from '../../../containers'
-import { Text } from '../../../content'
+import { Column } from '../../../../web/src/components/containers'
+import { Text } from '../../../../web/src/components/content'
 
 export const StaticFormColumn: FunctionComponent<StaticFormColumnProps> = ({
   errorText,

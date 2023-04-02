@@ -7,7 +7,6 @@ const getStaticLineHeight: ThemeGetter<LineHeightProps> = ({
   theme,
 }) => {
   const { fontSizes, lineHeights, gridUnits } = theme
-  console.log('getStaticLineHeight', { fontSize, lineHeight, theme })
   if (!lineHeight) {
     return ''
   }

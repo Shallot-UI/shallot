@@ -1,5 +1,4 @@
-import { withStyleProps } from '@shallot-ui/next'
-
+import { withStyleProps } from '../../../utils'
 import { StatefulSwitch } from './Components'
 import { getSwitchStyles } from './getStyles'
 
