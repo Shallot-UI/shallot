@@ -8,8 +8,6 @@ import {
   flexProps,
   fontProps,
   fontSizeProps,
-  letterSpacingProps,
-  lineHeightProps,
   PropsConfig,
   radiusProps,
   sizingProps,
@@ -21,8 +19,8 @@ import {
 import { TextProps } from './types'
 
 export const textConfig: PropsConfig<TextProps> = {
-  ...textAlignProps,
   ...borderProps,
+  ...casingProps,
   ...colorProps,
   ...cursorProps,
   ...displayProps,
@@ -30,11 +28,9 @@ export const textConfig: PropsConfig<TextProps> = {
   ...flexProps,
   ...fontProps,
   ...fontSizeProps,
-  ...letterSpacingProps,
-  ...lineHeightProps,
   ...radiusProps,
   ...sizingProps,
+  ...textAlignProps,
   ...underlineProps,
-  ...casingProps,
   ...unitsAroundProps,
 }

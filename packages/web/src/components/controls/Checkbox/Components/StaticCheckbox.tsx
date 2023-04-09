@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 
 import { makeComponent } from '../../../../utils'
 import { columnConfig } from '../../../containers'
-import { DisplayCheckboxProps } from '../types'
+import { StaticCheckboxProps } from '../types'
 import CheckmarkIcon from './icons/CheckmarkIcon'
 
 const Container = makeComponent(
@@ -32,23 +32,21 @@ const IconBox = makeComponent(
   `,
 )
 
-export const StaticCheckbox = forwardRef<
-  HTMLLabelElement,
-  DisplayCheckboxProps
->(({ Icon = CheckmarkIcon, styles, children, ...rest }, ref) => (
-  <Container
-    // forwarded ref
-    ref={ref}
-    // a11y props
-    role="checkbox"
-    tabIndex={0}
-    aria-checked={false}
-    // styles
-    {...styles?.container}
-    // label props
-    {...rest}
-  >
-    <IconBox as={Icon} style={{ fill: 'white' }} {...styles?.icon} />
-    {children}
-  </Container>
-))
+export const StaticCheckbox = forwardRef<HTMLLabelElement, StaticCheckboxProps>(
+  ({ Icon = CheckmarkIcon, styles, ...rest }, ref) => (
+    <Container
+      // forwarded ref
+      ref={ref}
+      // a11y props
+      role="checkbox"
+      tabIndex={0}
+      aria-checked={false}
+      // styles
+      {...styles?.container}
+      // label props
+      {...rest}
+    >
+      <IconBox as={Icon} style={{ fill: 'white' }} {...styles?.icon} />
+    </Container>
+  ),
+)

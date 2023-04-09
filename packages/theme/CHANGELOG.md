@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.23.0
+
+### Minor Changes
+
+- Updates build process and improves types
+
 ## 0.22.7
 
 ### Patch Changes

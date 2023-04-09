@@ -20,7 +20,7 @@ export const StatefulButton: FunctionComponent<ButtonProps> = ({
 
   return (
     <StaticButton
-      ref={displayRef}
+      ref={displayRef as any}
       styles={styles}
       disabled={disabled}
       {...rest}

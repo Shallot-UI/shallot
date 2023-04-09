@@ -7,7 +7,11 @@ import { boxConfig } from './config'
 export const Box = makeComponent(
   View,
   boxConfig,
-  `display: flex; border-style: solid; border-width: 0;`,
+  `
+    display: flex;
+    border-style: solid;
+    border-width: 0;
+  `,
 )
 
 export const pullBoxProps = makePropPuller(boxConfig)

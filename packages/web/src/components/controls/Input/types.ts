@@ -1,4 +1,4 @@
-import { FunctionComponent, HTMLProps, ReactNode, SVGProps } from 'react'
+import { FunctionComponent, ReactNode, SVGProps } from 'react'
 import { AllColorShades } from '@shallot-ui/theme'
 import {
   AnimationProps,
@@ -20,30 +20,36 @@ import {
 
 import { ColumnProps } from '../../containers'
 import { TextProps } from '../../content'
+import { StatefulProps, StaticProps } from '../../../types/component'
 
 export interface InputComponentStyles {
   container?: ColumnProps
   input?: ColumnProps & TextProps & UnitPaddingProps
 }
 
-export interface StaticInputProps
-  extends Omit<HTMLProps<HTMLInputElement>, 'ref' | 'wrap' | 'as'> {
+type SharedInputProps = {
   Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
-  styles?: InputComponentStyles
   startAdornment?: ReactNode
   endAdornment?: ReactNode
 }
 
-export interface InputState {
+export type StaticInputProps = StaticProps<
+  SharedInputProps,
+  InputComponentStyles
+>
+
+export type InputState = {
   disabled?: boolean
   focused?: boolean
   hovered?: boolean
   error?: boolean
 }
 
-export interface InputProps extends Omit<StaticInputProps, 'styles'> {
-  getStyles: (state: InputState) => InputComponentStyles
-}
+export type InputProps = StatefulProps<
+  SharedInputProps,
+  InputComponentStyles,
+  InputState
+>
 
 export interface InputStyleProps
   extends AnimationProps,

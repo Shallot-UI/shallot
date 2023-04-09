@@ -10,7 +10,6 @@ export const getFormControlRowStyles = ({
   container: { alignMiddle: true, ...props },
   label: {
     textColor: 'Shading.400',
-    letterSpacing: 'md',
     typeface: 'Body',
     font: 'Bold',
     fontSize: 'md',

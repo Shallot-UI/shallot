@@ -1,6 +1,7 @@
-import { HTMLAttributes, StyleHTMLAttributes } from 'react'
+import { StyleHTMLAttributes } from 'react'
 import { ColorName, RadiusProps, UnitsAroundProps } from '@shallot-ui/theme'
 import { ColumnProps } from '../../containers'
+import { StatefulProps, StaticProps } from '../../../types/component'
 
 export interface SwitchConfig {
   label?: string
@@ -12,24 +13,31 @@ export interface SwitchComponentStyles {
   handle?: ColumnProps & StyleHTMLAttributes<HTMLDivElement>
 }
 
-export interface StaticSwitchProps extends HTMLAttributes<HTMLLabelElement> {
-  styles?: SwitchComponentStyles
+type SharedSwitchProps = {
+  onClick?: () => void
 }
 
-export interface SwitchState {
+export type StaticSwitchProps = StaticProps<
+  SharedSwitchProps,
+  SwitchComponentStyles
+>
+
+export type SwitchState = {
   disabled?: boolean
   focused?: boolean
   hovered?: boolean
   checked?: boolean
 }
 
-export interface SwitchProps
-  extends Omit<StaticSwitchProps, 'styles'>,
-    SwitchConfig {
-  value: boolean
-  onChangeValue: (value: boolean) => void | Promise<void>
-  getStyles: (state: SwitchState) => SwitchComponentStyles
-}
+export type SwitchProps = StatefulProps<
+  SharedSwitchProps &
+    SwitchConfig & {
+      value: boolean
+      onChangeValue: (value: boolean) => void | Promise<void>
+    },
+  SwitchComponentStyles,
+  SwitchState
+>
 
 export interface SwitchStyleProps extends UnitsAroundProps, RadiusProps {
   color?: ColorName

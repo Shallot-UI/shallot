@@ -1,15 +1,26 @@
 import { forwardRef } from 'react'
 import PropTypes, { InferProps } from 'prop-types'
 
-import { Row } from '../../../containers'
+import { rowConfig } from '../../../containers'
 import { Text } from '../../../content'
 import { StaticButtonProps } from '../types'
+import { makeComponent } from '../../../../utils'
+
+const Container = makeComponent(
+  'button',
+  rowConfig,
+  `
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-width: 0;
+  `,
+)
 
 export const StaticButton = forwardRef<HTMLButtonElement, StaticButtonProps>(
   (
     {
       styles,
-      children,
       startAdornment,
       endAdornment,
       title,
@@ -19,12 +30,11 @@ export const StaticButton = forwardRef<HTMLButtonElement, StaticButtonProps>(
       // We fallback to `button` if `type` is not provided.
       // This is to prevent the default behavior of submitting a form.
       type = 'button',
-      ...rest
+      onClick,
     },
     ref,
   ) => (
-    <Row
-      as="button"
+    <Container
       // forwarded ref
       ref={ref}
       // The `aria-label` prop is set to `title` by default
@@ -32,14 +42,14 @@ export const StaticButton = forwardRef<HTMLButtonElement, StaticButtonProps>(
       // The `type` prop is set to `button` by default
       type={type}
       {...styles?.container}
-      {...rest}
       // Merge `style` prop styles
       style={{ ...styles?.container?.style, ...style }}
+      onClick={onClick}
     >
       {startAdornment}
       <Text {...styles?.label}>{title ?? ''}</Text>
       {endAdornment}
-    </Row>
+    </Container>
   ),
 )
 

@@ -1,30 +1,39 @@
-import { FunctionComponent, HTMLAttributes, SVGProps } from 'react'
+import { FunctionComponent, SVGProps } from 'react'
 import { UnitsAroundProps, RadiusProps, ColorName } from '@shallot-ui/theme'
 
 import { BoxProps, ColumnProps } from '../../containers'
+import { StatefulProps, StaticProps } from '../../../types/component'
 
 export interface CheckboxComponentStyles {
   container?: ColumnProps
   icon?: BoxProps
 }
 
-export interface DisplayCheckboxProps extends HTMLAttributes<HTMLLabelElement> {
+type SharedCheckboxProps = {
   Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
-  styles?: CheckboxComponentStyles
+  onClick?: () => void
 }
 
-export interface CheckboxState {
+export type StaticCheckboxProps = StaticProps<
+  SharedCheckboxProps,
+  CheckboxComponentStyles
+>
+
+export type CheckboxState = {
   disabled?: boolean
   focused?: boolean
   hovered?: boolean
   checked?: boolean
 }
 
-export interface CheckboxProps extends Omit<DisplayCheckboxProps, 'styles'> {
-  value: boolean
-  setValue: (value: boolean) => void
-  getStyles: (state: CheckboxState) => CheckboxComponentStyles
-}
+export type CheckboxProps = StatefulProps<
+  SharedCheckboxProps & {
+    value: boolean
+    setValue: (value: boolean) => void
+  },
+  CheckboxComponentStyles,
+  CheckboxState
+>
 
 export interface CheckboxStyleProps extends UnitsAroundProps, RadiusProps {
   color?: ColorName

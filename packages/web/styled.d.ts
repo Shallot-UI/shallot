@@ -1,4 +1,3 @@
-// styled.d.ts
 import { DEFAULT_THEME } from '@shallot-ui/theme'
 import 'styled-components'
 

@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/theme",
-  "version": "0.22.7",
+  "version": "0.23.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup"
+    "build": "tsup ./index.ts --dts --format esm,cjs --minify"
   },
   "peerDependencies": {
     "styled-components": ">=5"

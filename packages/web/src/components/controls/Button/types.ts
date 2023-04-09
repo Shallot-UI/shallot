@@ -1,4 +1,4 @@
-import { HTMLProps, ReactNode } from 'react'
+import { ComponentProps, HTMLProps, ReactNode } from 'react'
 import { CSSObject } from 'styled-components'
 import {
   AnimationProps,
@@ -15,33 +15,39 @@ import {
 
 import { RowProps } from '../../containers'
 import { TextProps } from '../../content'
+import { StatefulProps, StaticProps } from '../../../types/component'
 
 export interface ButtonComponentStyles {
   container?: RowProps & { style?: CSSObject }
   label?: TextProps & { style?: CSSObject }
 }
 
-export interface StaticButtonProps
-  extends Omit<HTMLProps<HTMLButtonElement>, 'ref' | 'as' | 'type' | 'wrap'> {
-  styles: ButtonComponentStyles
+type SharedButtonProps = {
   title?: string
   type?: 'button' | 'submit' | 'reset'
   startAdornment?: ReactNode
   endAdornment?: ReactNode
   outline?: boolean
   disabled?: boolean
-}
+} & HTMLProps<HTMLButtonElement>
 
-export interface ButtonState {
+export type StaticButtonProps = StaticProps<
+  SharedButtonProps,
+  ButtonComponentStyles
+>
+
+export type ButtonState = {
   disabled?: boolean
   focused?: boolean
   hovered?: boolean
   pressed?: boolean
 }
 
-export interface ButtonProps extends Omit<StaticButtonProps, 'styles'> {
-  getStyles: (state: ButtonState) => ButtonComponentStyles
-}
+export type ButtonProps = StatefulProps<
+  SharedButtonProps,
+  ButtonComponentStyles,
+  ButtonState
+>
 
 export interface ButtonStyleProps
   extends AnimationProps,

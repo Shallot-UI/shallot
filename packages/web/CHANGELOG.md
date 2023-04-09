@@ -1,5 +1,17 @@
 # @shallot-ui/web
 
+## 0.24.0
+
+### Minor Changes
+
+- Updates build process and improves types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.23.0
+  - @shallot-ui/core@1.0.0
+
 ## 0.23.14
 
 ### Patch Changes

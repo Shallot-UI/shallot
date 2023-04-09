@@ -1,6 +1,4 @@
-import { CSSProperties } from 'react'
 import {
-  AnimationProps,
   BorderProps,
   ColorProps,
   CursorProps,
@@ -14,8 +12,7 @@ import {
 } from '@shallot-ui/theme'
 
 export interface BoxProps
-  extends AnimationProps,
-    BorderProps,
+  extends BorderProps,
     ColorProps,
     CursorProps,
     DisplayProps,

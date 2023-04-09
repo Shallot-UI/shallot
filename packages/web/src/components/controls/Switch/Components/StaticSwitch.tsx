@@ -4,7 +4,7 @@ import { StaticSwitchProps } from '../types'
 import { Column } from '../../../containers'
 
 export const StaticSwitch = forwardRef<HTMLLabelElement, StaticSwitchProps>(
-  ({ styles, children, ...rest }, ref) => (
+  ({ styles, ...rest }, ref) => (
     <Column
       as="label"
       // forwarded ref

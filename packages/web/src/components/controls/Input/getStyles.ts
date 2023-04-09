@@ -6,9 +6,7 @@ import {
   InputStyleProps,
 } from './types'
 
-export const getInputStyles = (
-  props: InputStyleProps & Omit<InputProps, 'getStyles'>,
-) => {
+export const getInputStyles = (props: InputStyleProps & InputProps) => {
   const {
     // General
     backgroundColor = 'Shading.125',

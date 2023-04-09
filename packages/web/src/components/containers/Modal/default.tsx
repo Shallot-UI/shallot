@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react'
+
 import { BaseModal } from './base'
 import { ModalProps } from './types'
 

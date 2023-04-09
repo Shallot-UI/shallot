@@ -1,5 +1,5 @@
-import { Text as RNText } from 'react-native'
 import { makePropPuller, makeStyleGetter } from '@shallot-ui/core'
+import { Text as RNText } from 'react-native'
 
 import { makeComponent } from '../../../utils/makeComponent'
 import { textConfig } from './config'

@@ -16,7 +16,7 @@ const Input = makeComponent(
 )
 
 export const StaticInput = forwardRef<HTMLInputElement, StaticInputProps>(
-  ({ styles, children, startAdornment, endAdornment, title, ...rest }, ref) => (
+  ({ styles, startAdornment, endAdornment, ...rest }, ref) => (
     <Row
       {...styles?.container}
       onClick={() =>

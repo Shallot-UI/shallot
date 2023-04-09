@@ -1,5 +1,14 @@
 # web
 
+## 0.3.25
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/next@0.22.0
+  - @shallot-ui/prismjs@5.0.0
+  - @shallot-ui/react-select@0.22.2
+
 ## 0.3.24
 
 ### Patch Changes
