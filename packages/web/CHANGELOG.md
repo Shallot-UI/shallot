@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.26.0
+
+### Minor Changes
+
+- Optional getStyles without omit
+
 ## 0.25.0
 
 ### Minor Changes
