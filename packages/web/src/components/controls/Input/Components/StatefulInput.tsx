@@ -14,7 +14,7 @@ export const StatefulInput: FunctionComponent<InputProps> = ({
   const displayRef = useRef<HTMLInputElement>(null)
   const focused = useFocus(displayRef)
   const hovered = useHover(displayRef)
-  const styles = getStyles({ hovered, focused, disabled: false })
+  const styles = getStyles?.({ hovered, focused, disabled: false })
 
   return <StaticInput ref={displayRef} styles={styles} {...rest} />
 }

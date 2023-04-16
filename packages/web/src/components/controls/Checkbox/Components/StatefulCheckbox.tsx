@@ -19,7 +19,7 @@ export const StatefulCheckbox: FunctionComponent<CheckboxProps> = ({
   const focused = useFocus(displayRef)
   const hovered = useHover(displayRef)
 
-  const styles = getStyles({
+  const styles = getStyles?.({
     hovered,
     focused,
     disabled: false,

@@ -15,7 +15,7 @@ export const StatefulSwitch: FunctionComponent<SwitchProps> = ({
   const focused = useFocus(displayRef)
   const hovered = useHover(displayRef)
 
-  const styles = getStyles({
+  const styles = getStyles?.({
     hovered,
     focused,
     disabled: false,

@@ -20,7 +20,7 @@ export const StatefulFormColumn: FunctionComponent<FormColumnProps> = ({
     helperText={helperText}
     label={label}
     required={required}
-    styles={getStyles({ disabled, focused, populated, error })}
+    styles={getStyles?.({ disabled, focused, populated, error })}
   >
     {children}
   </StaticFormColumn>

@@ -10,7 +10,7 @@ export const StatefulButton: FunctionComponent<ButtonProps> = ({
   ...rest
 }) => {
   const displayRef = useRef<View>(null)
-  const styles = getStyles({ disabled })
+  const styles = getStyles?.({ disabled })
 
   return (
     <StaticButton

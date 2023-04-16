@@ -9,6 +9,6 @@ export const StatefulInput: FunctionComponent<InputProps> = ({
   ...rest
 }) => {
   const displayRef = useRef<TextInput>(null)
-  const styles = getStyles({ disabled: false })
+  const styles = getStyles?.({ disabled: false })
   return <StaticInput ref={displayRef} styles={styles} {...rest} />
 }

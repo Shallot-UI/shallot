@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.24.0
+
+### Minor Changes
+
+- Optionally allows getStyles overridse
+
 ## 0.23.0
 
 ### Minor Changes

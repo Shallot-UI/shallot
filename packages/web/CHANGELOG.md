@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.25.0
+
+### Minor Changes
+
+- Optionally allows getStyles overridse
+
 ## 0.24.0
 
 ### Minor Changes

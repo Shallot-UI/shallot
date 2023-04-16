@@ -16,7 +16,7 @@ export const StatefulTag: FunctionComponent<TagProps> = ({
   const focused = useFocus(displayRef)
   const pressed = usePressed(displayRef)
 
-  const styles = getStyles({ hovered, focused, pressed, disabled })
+  const styles = getStyles?.({ hovered, focused, pressed, disabled })
 
   return (
     <StaticTag ref={displayRef} styles={styles} disabled={disabled} {...rest} />

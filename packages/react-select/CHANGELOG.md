@@ -1,5 +1,16 @@
 # @shallot-ui/react-select
 
+## 0.23.0
+
+### Minor Changes
+
+- Optionally allows getStyles overridse
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.25.0
+
 ## 0.22.2
 
 ### Patch Changes

@@ -34,7 +34,7 @@ export const FormSelect: FunctionComponent<FormSelectProps> = ({
   )
 
   const selectedOption = optionForValue(value, options, multiple)
-  const styles = getStyles({ state: { disabled } })
+  const styles = getStyles?.({ state: { disabled } })
 
   return (
     <FormColumn

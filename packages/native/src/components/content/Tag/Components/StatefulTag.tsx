@@ -10,7 +10,7 @@ export const StatefulTag: FunctionComponent<TagProps> = ({
   ...rest
 }) => {
   const displayRef = useRef<View>(null)
-  const styles = getStyles({ disabled })
+  const styles = getStyles?.({ disabled })
 
   return (
     <StaticTag ref={displayRef} styles={styles} disabled={disabled} {...rest} />

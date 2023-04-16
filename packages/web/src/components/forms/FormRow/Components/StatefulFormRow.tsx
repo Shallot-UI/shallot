@@ -20,7 +20,7 @@ export const StatefulFormRow: FunctionComponent<FormRowProps> = ({
     helperText={helperText}
     label={label}
     required={required}
-    styles={getStyles({ disabled, focused, populated, error })}
+    styles={getStyles?.({ disabled, focused, populated, error })}
   >
     {children}
   </StaticFormRow>
