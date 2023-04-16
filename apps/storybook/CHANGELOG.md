@@ -1,5 +1,12 @@
 # stories
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.27.0
+
 ## 0.0.3
 
 ### Patch Changes

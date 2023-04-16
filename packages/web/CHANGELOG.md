@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.27.0
+
+### Minor Changes
+
+- Supports input types
+
 ## 0.26.0
 
 ### Minor Changes
