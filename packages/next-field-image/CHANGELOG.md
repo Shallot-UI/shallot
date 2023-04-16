@@ -1,5 +1,27 @@
 # @shallot-ui/web-formik
 
+## 6.0.0
+
+### Minor Changes
+
+- Improves typing for web packages
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/next@0.24.0
+
+## 5.0.0
+
+### Minor Changes
+
+- Updating input types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/next@0.23.0
+
 ## 4.0.0
 
 ### Patch Changes

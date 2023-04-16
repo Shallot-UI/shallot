@@ -1,4 +1,10 @@
-import { FunctionComponent, HTMLAttributes, ReactNode, SVGProps } from 'react'
+import {
+  FunctionComponent,
+  HTMLAttributes,
+  HTMLInputTypeAttribute,
+  ReactNode,
+  SVGProps,
+} from 'react'
 import { AllColorShades } from '@shallot-ui/theme'
 import {
   AnimationProps,
@@ -31,7 +37,8 @@ type SharedInputProps = {
   Icon?: FunctionComponent<SVGProps<SVGSVGElement>>
   startAdornment?: ReactNode
   endAdornment?: ReactNode
-} & HTMLAttributes<HTMLInputElement>
+  type?: HTMLInputTypeAttribute
+}
 
 export type StaticInputProps = StaticProps<
   SharedInputProps,

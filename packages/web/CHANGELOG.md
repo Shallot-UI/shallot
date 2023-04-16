@@ -1,5 +1,23 @@
 # @shallot-ui/web
 
+## 0.30.0
+
+### Minor Changes
+
+- Improves typing for web packages
+
+## 0.29.0
+
+### Minor Changes
+
+- Updating input types
+
+## 0.28.0
+
+### Minor Changes
+
+- Supports input type through direct typing
+
 ## 0.27.0
 
 ### Minor Changes
