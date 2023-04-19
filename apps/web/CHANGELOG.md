@@ -1,5 +1,34 @@
 # web
 
+## 0.6.1
+
+### Patch Changes
+
+- Improves typing for native package
+- Updated dependencies
+  - @shallot-ui/react-select@0.25.2
+  - @shallot-ui/prismjs@12.0.1
+  - @shallot-ui/next@0.24.2
+
+## 0.6.0
+
+### Minor Changes
+
+- Expands input types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/prismjs@12.0.0
+  - @shallot-ui/next@0.24.1
+  - @shallot-ui/react-select@0.25.1
+
+## 0.5.1
+
+### Patch Changes
+
+- @shallot-ui/prismjs@11.0.1
+
 ## 0.5.0
 
 ### Minor Changes

@@ -3,5 +3,5 @@ export type StaticProps<SharedProps, ComponentStyles> = SharedProps & {
 }
 
 export type StatefulProps<SharedProps, ComponentStyles, State> = SharedProps & {
-  getStyles: (state: State) => ComponentStyles
+  getStyles?: (state: State) => ComponentStyles
 }

@@ -1,5 +1,20 @@
 # stories
 
+## 0.2.2
+
+### Patch Changes
+
+- Improves typing for native package
+- Updated dependencies
+  - @shallot-ui/web@0.31.1
+
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.31.0
+
 ## 0.2.0
 
 ### Minor Changes

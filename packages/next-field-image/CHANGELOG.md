@@ -1,5 +1,13 @@
 # @shallot-ui/web-formik
 
+## 6.0.1
+
+### Patch Changes
+
+- Improves typing for native package
+- Updated dependencies
+  - @shallot-ui/next@0.24.2
+
 ## 6.0.0
 
 ### Minor Changes

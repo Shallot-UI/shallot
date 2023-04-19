@@ -1,5 +1,20 @@
 # @shallot-ui/next
 
+## 0.24.2
+
+### Patch Changes
+
+- Improves typing for native package
+- Updated dependencies
+  - @shallot-ui/web@0.31.1
+
+## 0.24.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.31.0
+
 ## 0.24.0
 
 ### Minor Changes

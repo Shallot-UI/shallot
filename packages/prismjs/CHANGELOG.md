@@ -1,5 +1,31 @@
 # @shallot-ui/prismjs
 
+## 12.0.1
+
+### Patch Changes
+
+- Improves typing for native package
+- Updated dependencies
+  - @shallot-ui/web@0.31.1
+
+## 12.0.0
+
+### Minor Changes
+
+- Expands input types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.31.0
+
+## 11.0.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.30.1
+
 ## 11.0.0
 
 ### Minor Changes

@@ -1,6 +1,5 @@
 import {
   FunctionComponent,
-  HTMLAttributes,
   HTMLInputTypeAttribute,
   ReactNode,
   SVGProps,
@@ -38,6 +37,8 @@ type SharedInputProps = {
   startAdornment?: ReactNode
   endAdornment?: ReactNode
   type?: HTMLInputTypeAttribute
+  placeholder?: string
+  disabled?: boolean
 }
 
 export type StaticInputProps = StaticProps<

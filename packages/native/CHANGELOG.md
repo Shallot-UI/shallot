@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.24.1
+
+### Patch Changes
+
+- Improves typing for native package
+
 ## 0.24.0
 
 ### Minor Changes

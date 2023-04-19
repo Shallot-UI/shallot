@@ -1,5 +1,20 @@
 # @shallot-ui/react-select
 
+## 0.25.2
+
+### Patch Changes
+
+- Improves typing for native package
+- Updated dependencies
+  - @shallot-ui/web@0.31.1
+
+## 0.25.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.31.0
+
 ## 0.25.0
 
 ### Minor Changes

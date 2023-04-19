@@ -1,5 +1,23 @@
 # @shallot-ui/web
 
+## 0.31.1
+
+### Patch Changes
+
+- Improves typing for native package
+
+## 0.31.0
+
+### Minor Changes
+
+- Expands input types
+
+## 0.30.1
+
+### Patch Changes
+
+- Adds some missing input props
+
 ## 0.30.0
 
 ### Minor Changes
