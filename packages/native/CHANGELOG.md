@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.24.2
+
+### Patch Changes
+
+- Improves shading option on native button
+
 ## 0.24.1
 
 ### Patch Changes

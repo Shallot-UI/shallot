@@ -6,6 +6,7 @@ import {
   ColorName,
   ColorProps,
   ElevationProps,
+  FlexProps,
   FontProps,
   FontSizeProps,
   LetterSpacingProps,
@@ -61,7 +62,8 @@ export interface ButtonStyleProps
     UnderlineProps,
     LetterSpacingProps,
     FontSizeProps,
-    ElevationProps {
+    ElevationProps,
+    FlexProps {
   color?: ColorName
   outline?: boolean
 }

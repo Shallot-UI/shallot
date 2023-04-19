@@ -44,13 +44,18 @@ export const Button = withStyleProps<ButtonStyleProps, ButtonProps>(
       ...buttonProps
     } = props
 
+    // If the button uses the Shading color, we switch to the shading
+    // foreground color rather than the mid-range color. This is because other
+    // palette colors extend to shades darker and lighter than their foreground.
+    const defaultShade = color === 'Shading' ? 500 : 300
+
     return {
       ...buttonProps,
-      getStyles: (state) => {
+      getStyles: () => {
         let styles: ButtonComponentStyles = {
           container: {
-            backgroundColor: `${color}.300`,
-            borderColor: `${color}.300`,
+            backgroundColor: `${color}.${defaultShade}`,
+            borderColor: `${color}.${defaultShade}`,
             borderWidth: 2,
             elevation: 'pressable',
             cursor: 'pointer',
@@ -74,33 +79,10 @@ export const Button = withStyleProps<ButtonStyleProps, ButtonProps>(
           },
         }
 
-        if (state.hovered)
-          styles = applyStyles(styles, {
-            container: {
-              backgroundColor: `${color}.250`,
-              borderColor: `${color}.250`,
-              elevation: 'hover',
-            },
-          })
-
-        if (state.pressed)
-          styles = applyStyles(styles, {
-            container: {
-              backgroundColor: `${color}.350`,
-              borderColor: `${color}.350`,
-              elevation: 'pressed',
-            },
-          })
-
-        if (state.focused)
-          styles = applyStyles(styles, {
-            container: { elevation: 'focused' },
-          })
-
         if (outline)
           styles = applyStyles(styles, {
             container: { backgroundColor: 'Shading.100' },
-            label: { textColor: `${color}.300` },
+            label: { textColor: `${color}.${defaultShade}` },
           })
 
         styles = applyStyles(styles, {
