@@ -1,2 +1,2 @@
-export * from './FormControlRow'
-export * from './FormControlColumn'
+export * from './FormColumn'
+export * from './FormRow'

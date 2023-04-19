@@ -1,12 +1,17 @@
 import { FunctionComponent } from 'react'
 
-import { DisplayFormControlColumnProps } from './types'
-import { Column } from '../../containers'
-import { Text } from '../../content'
+import { StaticFormColumnProps } from '../types'
+import { Column } from '../../../containers'
+import { Text } from '../../../content'
 
-export const DisplayFormControlColumn: FunctionComponent<
-  DisplayFormControlColumnProps
-> = ({ errorText, helperText, label, required, children, styles }) => (
+export const StaticFormColumn: FunctionComponent<StaticFormColumnProps> = ({
+  errorText,
+  helperText,
+  label,
+  required,
+  children,
+  styles,
+}) => (
   <Column {...styles?.container}>
     <Text {...styles?.label}>
       {label}

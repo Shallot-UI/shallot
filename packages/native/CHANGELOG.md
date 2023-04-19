@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.25.0
+
+### Minor Changes
+
+- Updating form row and column conventions
+
 ## 0.24.2
 
 ### Patch Changes

@@ -1,12 +1,17 @@
 import { FunctionComponent } from 'react'
 
-import { DisplayFormControlRowProps } from './types'
-import { Row, Column } from '../../containers'
-import { Text } from '../../content'
+import { StaticFormRowProps } from '../types'
+import { Row, Column } from '../../../containers'
+import { Text } from '../../../content'
 
-export const DisplayFormControlRow: FunctionComponent<
-  DisplayFormControlRowProps
-> = ({ errorText, helperText, label, required, children, styles }) => (
+export const StaticFormRow: FunctionComponent<StaticFormRowProps> = ({
+  errorText,
+  helperText,
+  label,
+  required,
+  children,
+  styles,
+}) => (
   <Row {...styles?.container}>
     {children}
     <Column {...styles?.details}>
