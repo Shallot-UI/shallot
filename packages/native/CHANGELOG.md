@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.26.0
+
+### Minor Changes
+
+- Allows styleProps optionally to be overridden
+
 ## 0.25.0
 
 ### Minor Changes

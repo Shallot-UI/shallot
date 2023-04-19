@@ -25,7 +25,6 @@ type SharedFormColumnProps = {
   populated?: boolean
   error?: boolean
   children?: ReactNode
-  onClick?: () => void
 }
 
 export type StaticFormColumnProps = StaticProps<
