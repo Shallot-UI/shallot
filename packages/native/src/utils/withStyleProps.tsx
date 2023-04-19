@@ -1,9 +1,11 @@
 import { FunctionComponent } from 'react'
 
 export const withStyleProps =
-  <StyleProps extends {}, Props extends {}>(
-    Component: FunctionComponent<Props>,
-    transformer: (props: Props & StyleProps) => Props,
+  <StyleProps extends {}, Props extends {}, NativeProps extends {} = {}>(
+    Component: FunctionComponent<Props & NativeProps>,
+    transformer: (
+      props: Props & StyleProps & NativeProps,
+    ) => Props & NativeProps,
   ) =>
-  (props: Props & StyleProps) =>
+  (props: Props & StyleProps & NativeProps) =>
     <Component {...transformer(props)} />

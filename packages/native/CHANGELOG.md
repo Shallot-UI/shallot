@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.27.0
+
+### Minor Changes
+
+- Allows native component props passthrough
+
 ## 0.26.0
 
 ### Minor Changes
