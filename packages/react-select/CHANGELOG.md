@@ -1,5 +1,16 @@
 # @shallot-ui/react-select
 
+## 0.26.0
+
+### Minor Changes
+
+- Removes default breakpoints
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.34.0
+
 ## 0.25.4
 
 ### Patch Changes

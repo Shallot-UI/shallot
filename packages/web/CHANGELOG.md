@@ -1,5 +1,17 @@
 # @shallot-ui/web
 
+## 0.34.0
+
+### Minor Changes
+
+- Removes default breakpoints
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.24.0
+  - @shallot-ui/core@2.0.0
+
 ## 0.33.0
 
 ### Minor Changes

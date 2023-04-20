@@ -9,6 +9,7 @@ export const getMediaQueries = (
   theme.breakpoints
     ? Object.entries(theme.breakpoints)
         .map(([width, subtheme]) => {
+          console.log('getMediaQueries', width, subtheme)
           const style = getStyle(makeTheme(subtheme))
           if (style) return `@media (min-width: ${width}px) { ${style} }`
         })

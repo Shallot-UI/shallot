@@ -1,5 +1,16 @@
 # stories
 
+## 0.3.0
+
+### Minor Changes
+
+- Removes default breakpoints
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.34.0
+
 ## 0.2.4
 
 ### Patch Changes

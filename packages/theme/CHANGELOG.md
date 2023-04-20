@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.24.0
+
+### Minor Changes
+
+- Removes default breakpoints
+
 ## 0.23.0
 
 ### Minor Changes

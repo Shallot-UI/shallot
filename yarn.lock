@@ -2413,14 +2413,6 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz#8be36a1f66f3265389e90b5f9c9962146758f728"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
 
-"@shallot-ui/web@*", "@shallot-ui/web@^0.23.14":
-  version "0.23.14"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/web/-/web-0.23.14.tgz#05df01966e77b2b79203b8d2518294aea2a25ece"
-  integrity sha512-9l8N9UNWo+ee72h89GOY7m7jQmk4E+plraro2Q9plkaxg4wq40L+URx0vP29RKCzjjPzJBTtRdOTyC4ClZ/k8g==
-  dependencies:
-    "@shallot-ui/core" "^0.22.7"
-    "@shallot-ui/theme" "^0.22.7"
-
 "@sideway/address@^4.1.3":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.4.tgz#03dccebc6ea47fdc226f7d3d1ad512955d4783f0"
@@ -13786,6 +13778,11 @@ typescript@^4.5.2, typescript@^4.5.3, typescript@^4.7.4:
   version "4.9.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
   integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
+
+typescript@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.0.4.tgz#b217fd20119bd61a94d4011274e0ab369058da3b"
+  integrity sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==
 
 uglify-es@^3.1.9:
   version "3.3.9"

@@ -33,7 +33,7 @@ const Template: ComponentStory<typeof Input> = () => {
   return (
     <ThemeProvider theme={makeTheme({})}>
       <Input
-        value={value}
+        defaultValue={value}
         onChange={(e) => setValue(e.currentTarget.value)}
         placeholder="Your Text Here"
         fullWidth
