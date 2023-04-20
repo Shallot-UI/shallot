@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.33.0
+
+### Minor Changes
+
+- Fixes a missing import
+
 ## 0.32.0
 
 ### Minor Changes

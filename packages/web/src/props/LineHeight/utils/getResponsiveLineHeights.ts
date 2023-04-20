@@ -1,8 +1,9 @@
-import { getMediaQueries, Getter } from '@shallot-ui/core'
+import { Getter } from '@shallot-ui/core'
 import { LineHeightProps } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components/native'
 
 import getStaticLineHeight from './getStaticLineHeight'
+import { getMediaQueries } from '../../../utils/getMediaQueries'
 
 const getResponsiveLineHeights: Getter<LineHeightProps> = ({
   fontSize,
