@@ -1,5 +1,16 @@
 # @shallot-ui/web
 
+## 0.32.0
+
+### Minor Changes
+
+- Resolves use of media queries on native
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@1.1.0
+
 ## 0.31.1
 
 ### Patch Changes

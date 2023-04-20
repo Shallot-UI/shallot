@@ -6,11 +6,11 @@ import {
   elevationProps,
   flexProps,
   PropsConfig,
-  radiusProps,
   sizingProps,
   unitsAroundProps,
 } from '@shallot-ui/core'
 
+import { radiusProps } from '../../../props'
 import { BoxProps } from './types'
 
 export const boxConfig: PropsConfig<BoxProps> = {

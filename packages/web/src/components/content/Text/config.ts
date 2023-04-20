@@ -7,9 +7,7 @@ import {
   elevationProps,
   flexProps,
   fontProps,
-  fontSizeProps,
   PropsConfig,
-  radiusProps,
   sizingProps,
   textAlignProps,
   underlineProps,
@@ -17,10 +15,12 @@ import {
 } from '@shallot-ui/core'
 
 import {
-  transitionProps,
-  userSelectProps,
+  fontSizeProps,
   letterSpacingProps,
   lineHeightProps,
+  transitionProps,
+  userSelectProps,
+  radiusProps,
 } from '../../../props'
 import { TextProps } from './types'
 

@@ -1,4 +1,3 @@
-export * from './getMediaQueries'
 export * from './makePropPuller'
 export * from './makeStyleGetter'
 export * from './minifyCss'

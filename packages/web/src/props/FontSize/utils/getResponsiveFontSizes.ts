@@ -1,7 +1,7 @@
 import { FontSizeProps } from '@shallot-ui/theme'
+import { Getter } from '@shallot-ui/core'
 
-import { Getter } from '../../../types'
-import { getMediaQueries } from '../../../utils'
+import { getMediaQueries } from '../../../utils/getMediaQueries'
 import getStaticFontSize from './getStaticFontSize'
 
 const getResponsiveFontSizes: Getter<FontSizeProps> = ({ fontSize }) =>

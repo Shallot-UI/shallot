@@ -7,15 +7,14 @@ import {
   elevationProps,
   flexProps,
   fontProps,
-  fontSizeProps,
   PropsConfig,
-  radiusProps,
   sizingProps,
   textAlignProps,
   underlineProps,
   unitsAroundProps,
 } from '@shallot-ui/core'
 
+import { fontSizeProps, radiusProps } from '../../../props'
 import { TextProps } from './types'
 
 export const textConfig: PropsConfig<TextProps> = {

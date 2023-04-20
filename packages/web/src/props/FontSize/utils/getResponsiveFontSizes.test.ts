@@ -1,8 +1,7 @@
 import { FontSizeProps, makeTheme } from '@shallot-ui/theme'
 
-import { minifyCss } from '../../../utils'
-import { ThemeGetter } from '../../../types'
 import getResponsiveFontSizes from './getResponsiveFontSizes'
+import { ThemeGetter, minifyCss } from '@shallot-ui/core'
 
 describe('getResponsiveFontSizes', () => {
   const theme = makeTheme({

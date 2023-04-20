@@ -1,5 +1,5 @@
+import { ThemeGetter } from '@shallot-ui/core'
 import { RadiusProps } from '@shallot-ui/theme'
-import { ThemeGetter } from '../../../types'
 import { DefaultTheme } from 'styled-components'
 
 const getStaticRadius: ThemeGetter<RadiusProps> = ({ radius, theme }) => {

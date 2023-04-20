@@ -6,12 +6,11 @@ import {
   elevationProps,
   flexProps,
   PropsConfig,
-  radiusProps,
   sizingProps,
   unitsAroundProps,
 } from '@shallot-ui/core'
 
-import { transitionProps } from '../../../props'
+import { transitionProps, radiusProps } from '../../../props'
 import { TextAreaProps } from './types'
 
 export const textAreaConfig: PropsConfig<TextAreaProps> = {

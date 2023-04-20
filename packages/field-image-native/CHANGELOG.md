@@ -1,5 +1,12 @@
 # @shallot-ui/field-image-native
 
+## 5.0.0
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@1.1.0
+
 ## 4.0.0
 
 ### Patch Changes

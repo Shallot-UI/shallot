@@ -1,5 +1,5 @@
+import { ThemeGetter } from '@shallot-ui/core'
 import { FontSizeProps } from '@shallot-ui/theme'
-import { ThemeGetter } from '../../../types'
 
 const getStaticFontSize: ThemeGetter<FontSizeProps> = ({ fontSize, theme }) =>
   fontSize && typeof theme?.fontSizes?.[fontSize] === 'number'

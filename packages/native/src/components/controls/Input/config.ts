@@ -5,14 +5,13 @@ import {
   elevationProps,
   flexProps,
   fontProps,
-  fontSizeProps,
   PropsConfig,
-  radiusProps,
   sizingProps,
   unitsAroundProps,
   unitsPaddingProps,
 } from '@shallot-ui/core'
 
+import { fontSizeProps, radiusProps } from '../../../props'
 import { InputStyleProps } from './types'
 
 const inputConfig: PropsConfig<InputStyleProps> = {

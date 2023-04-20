@@ -7,14 +7,15 @@ import {
   flexProps,
   fontProps,
   PropsConfig,
-  radiusProps,
   sizingProps,
   unitsAroundProps,
 } from '@shallot-ui/core'
 
 import {
+  fontSizeProps,
   letterSpacingProps,
   lineHeightProps,
+  radiusProps,
   transitionProps,
 } from '../../../props'
 import { AnchorLinkProps } from './types'
@@ -27,10 +28,11 @@ export const anchorLinkConfig: PropsConfig<AnchorLinkProps> = {
   ...elevationProps,
   ...flexProps,
   ...fontProps,
+  ...fontSizeProps,
+  ...letterSpacingProps,
+  ...lineHeightProps,
   ...radiusProps,
   ...sizingProps,
   ...transitionProps,
   ...unitsAroundProps,
-  ...letterSpacingProps,
-  ...lineHeightProps,
 }

@@ -1,7 +1,6 @@
 import { FontSizeProps } from '@shallot-ui/theme'
+import { PropsConfig, makePropPuller, makeStyleGetter } from '@shallot-ui/core'
 
-import { PropsConfig } from '../../types'
-import { makePropPuller, makeStyleGetter } from '../../utils'
 import getResponsiveFontSizes from './utils/getResponsiveFontSizes'
 
 export const fontSizeProps: PropsConfig<FontSizeProps> = {

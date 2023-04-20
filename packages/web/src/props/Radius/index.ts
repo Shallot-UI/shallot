@@ -1,7 +1,6 @@
 import { RadiusProps } from '@shallot-ui/theme'
+import { PropsConfig, makePropPuller, makeStyleGetter } from '@shallot-ui/core'
 
-import { PropsConfig } from '../../types'
-import { makePropPuller, makeStyleGetter } from '../../utils'
 import getResponsiveRadii from './utils/getResponsiveRadii'
 
 export const radiusProps: PropsConfig<RadiusProps> = {

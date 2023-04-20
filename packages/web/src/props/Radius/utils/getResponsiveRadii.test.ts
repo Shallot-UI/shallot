@@ -1,7 +1,6 @@
 import { FontSizeProps, makeTheme } from '@shallot-ui/theme'
+import { ThemeGetter, minifyCss } from '@shallot-ui/core'
 
-import { minifyCss } from '../../../utils'
-import { ThemeGetter } from '../../../types'
 import getResponsiveRadii from './getResponsiveRadii'
 
 describe('getResponsiveRadii', () => {
