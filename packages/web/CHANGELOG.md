@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.35.0
+
+### Minor Changes
+
+- Adds options to GlobalStyle
+
 ## 0.34.1
 
 ### Patch Changes

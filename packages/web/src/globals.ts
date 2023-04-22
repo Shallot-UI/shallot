@@ -1,7 +1,22 @@
-import { createGlobalStyle } from 'styled-components'
+import { DefaultTheme, createGlobalStyle } from 'styled-components'
+import { AllColorShades, ColorName } from '@shallot-ui/theme'
 import { fontProps } from '@shallot-ui/core'
 
-export const GlobalStyle = createGlobalStyle`
+interface GlobalStyleProps {
+  backgroundColor?: AllColorShades
+  textColor?: AllColorShades
+}
+
+const getColorShade = (colorShade: AllColorShades, theme: DefaultTheme) => {
+  const [color, shade] = colorShade.split('.')
+  const colorName = color as ColorName
+  const colorShadeNumber = Number(
+    shade,
+  ) as keyof DefaultTheme['colors'][ColorName]
+  return theme.colors[colorName][colorShadeNumber]
+}
+
+export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
     License: none (public domain)
@@ -42,8 +57,10 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     ${fontProps.font.get({ font: 'Body' })};
-    color: ${({ theme }) => theme.colors.Shading[500]};
-    background-color: ${({ theme }) => theme.colors.Shading[100]};
+    color: ${({ theme, textColor }) =>
+      getColorShade(textColor ?? 'Shading.500', theme)};
+    background-color: ${({ theme, backgroundColor }) =>
+      getColorShade(backgroundColor ?? 'Shading.500', theme)};
   }
 
   // SYSTEM FONT
