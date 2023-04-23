@@ -1,5 +1,13 @@
 # @shallot-ui/web
 
+## 0.35.2
+
+### Patch Changes
+
+- Hide button title if it doesn't exist
+- Updated dependencies
+  - @shallot-ui/theme@0.24.1
+
 ## 0.35.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.24.1
+
+### Patch Changes
+
+- Hide button title if it doesn't exist
+
 ## 0.24.0
 
 ### Minor Changes

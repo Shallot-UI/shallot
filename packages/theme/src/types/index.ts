@@ -156,7 +156,14 @@ export interface UnitPaddingProps {
 }
 
 export interface DisplayProps {
-  display?: boolean | 'hidden' | 'inline' | 'block' | 'flex' | 'inline-flex'
+  display?:
+    | boolean
+    | 'hidden'
+    | 'inline'
+    | 'block'
+    | 'flex'
+    | 'inline-flex'
+    | 'none'
 }
 
 export interface ThemeOptions {

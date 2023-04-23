@@ -79,6 +79,9 @@ export const Button = withStyleProps<
             `,
         },
         label: {
+          // Hide the label if there is no title
+          display: buttonProps.title ? 'flex' : 'none',
+
           fontSize: 'md',
           textColor: 'Shading.100',
           transition: 'color 300ms ease-in-out',
