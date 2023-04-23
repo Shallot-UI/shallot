@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.28.2
+
+### Patch Changes
+
+- Allows button text alignment
+
 ## 0.28.1
 
 ### Patch Changes
