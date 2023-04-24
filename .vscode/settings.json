@@ -1,11 +1,11 @@
-// {
-//   "files.exclude": {
-//     "**/.storybook": true,
-//     "**/.turbo": true,
-//     "**/dist": true,
-//     "**/node_modules": true,
-//     "**/.gitignore": true,
-//     "**/styled.d.ts": true,
-//     "**/tsconfig.json": true,
-//   }
-// }
+{
+  "files.exclude": {
+    "**/.storybook": true,
+    "**/.turbo": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/.gitignore": true,
+    "**/styled.d.ts": true,
+    "**/tsconfig.json": true,
+  }
+}

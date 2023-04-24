@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.28.4
+
+### Patch Changes
+
+- Adds image on native
+
 ## 0.28.3
 
 ### Patch Changes
