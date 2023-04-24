@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.28.7
+
+### Patch Changes
+
+- Fixes letter spacing units for native
+
 ## 0.28.6
 
 ### Patch Changes
