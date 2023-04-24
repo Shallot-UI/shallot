@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.28.5
+
+### Patch Changes
+
+- Allows unit padding options on buttons
+
 ## 0.28.4
 
 ### Patch Changes

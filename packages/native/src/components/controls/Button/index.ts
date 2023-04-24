@@ -11,7 +11,10 @@ export * from './types'
 export const Button = withStyleProps<
   ButtonStyleProps,
   ButtonProps,
-  TextAlignProps
+  TextAlignProps & {
+    verticalUnitPadding?: number
+    horizontalUnitPadding?: number
+  }
 >(StatefulButton, (props) => {
   const {
     // General
@@ -36,6 +39,9 @@ export const Button = withStyleProps<
     unitsBelow,
     unitsLeft,
     unitsRight,
+
+    verticalUnitPadding = 1,
+    horizontalUnitPadding = 2,
 
     // Casing
     uppercase,
@@ -85,9 +91,10 @@ export const Button = withStyleProps<
           fontSize: 'md',
           textColor: 'Shading.100',
           transition: 'color 300ms ease-in-out',
-          unitsAround: 2,
-          unitsAbove: 1,
-          unitsBelow: 1,
+          unitsLeft: horizontalUnitPadding,
+          unitsRight: horizontalUnitPadding,
+          unitsAbove: verticalUnitPadding,
+          unitsBelow: verticalUnitPadding,
           flex: 1,
           cursor: 'pointer',
           leftText,
