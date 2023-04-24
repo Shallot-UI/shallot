@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.28.6
+
+### Patch Changes
+
+- Adds line height and letter spacing options to native
+
 ## 0.28.5
 
 ### Patch Changes

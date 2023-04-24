@@ -7,6 +7,8 @@ import {
   FlexProps,
   FontProps,
   FontSizeProps,
+  LetterSpacingProps,
+  LineHeightProps,
   RadiusProps,
   SizingProps,
   TextAlignProps,
@@ -16,17 +18,19 @@ import {
 } from '@shallot-ui/theme'
 
 export interface TextProps
-  extends CasingProps,
-    ColorProps,
+  extends ColorProps,
     CursorProps,
     DisplayProps,
     ElevationProps,
     FlexProps,
     FontProps,
     FontSizeProps,
+    LetterSpacingProps,
+    LineHeightProps,
     RadiusProps,
     SizingProps,
     TextAlignProps,
     TransitionProps,
     UnderlineProps,
-    UnitsAroundProps {}
+    UnitsAroundProps,
+    CasingProps {}
