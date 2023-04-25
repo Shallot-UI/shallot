@@ -1,5 +1,16 @@
 # stories
 
+## 0.5.0
+
+### Minor Changes
+
+- padding options on web button
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.37.0
+
 ## 0.4.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.37.0
+
+### Minor Changes
+
+- padding options on web button
+
 ## 0.36.0
 
 ### Minor Changes

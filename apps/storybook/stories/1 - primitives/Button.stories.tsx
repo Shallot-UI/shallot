@@ -33,6 +33,12 @@ export default {
     fontSize: { control: 'select', options: ['sm', 'md', 'lg'] },
     startAdornment: { table: { disable: true } },
     endAdornment: { table: { disable: true } },
+    verticalUnitPadding: {
+      control: { type: 'number', min: 1, max: 4, step: 1 },
+    },
+    horizontalUnitPadding: {
+      control: { type: 'number', min: 1, max: 4, step: 1 },
+    },
   },
 } as ComponentMeta<typeof Button>
 

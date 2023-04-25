@@ -20,10 +20,10 @@
     "styled-components": ">=5",
     "react": ">=18",
     "react-dom": ">=18",
-    "@shallot-ui/next": "^0.24.7"
+    "@shallot-ui/next": "^0.24.8"
   },
   "devDependencies": {
-    "@shallot-ui/next": "0.24.7",
+    "@shallot-ui/next": "0.24.8",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.10",
     "@types/styled-components": ">=5",
