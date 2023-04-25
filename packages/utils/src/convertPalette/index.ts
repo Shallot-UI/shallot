@@ -8,10 +8,8 @@ export const convertPalette = (original: string[]) => {
 
   const shades = chroma.scale(original).colors(shadeValues.length)
 
-  const palette: Record<string, string> = {}
-  shadeValues.forEach((shade, index) => {
-    palette[shade] = shades[index]
-  })
+  const palette = {} as Record<(typeof shadeValues)[number], string>
+  shadeValues.forEach((shade, index) => (palette[shade] = shades[index]))
 
   return palette
 }
