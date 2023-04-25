@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.36.0
+
+### Minor Changes
+
+- Improves default shading button
+
 ## 0.35.2
 
 ### Patch Changes

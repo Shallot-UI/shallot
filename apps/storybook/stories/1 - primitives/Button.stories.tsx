@@ -17,7 +17,7 @@ export default {
   argTypes: {
     color: {
       control: 'select',
-      options: ['Primary', 'Success', 'Danger', 'Warning'],
+      options: ['Shading', 'Primary', 'Success', 'Danger', 'Warning'],
     },
     typeface: {
       control: 'select',

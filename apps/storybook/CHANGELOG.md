@@ -1,5 +1,16 @@
 # stories
 
+## 0.4.0
+
+### Minor Changes
+
+- Improves default shading button
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.36.0
+
 ## 0.3.0
 
 ### Minor Changes

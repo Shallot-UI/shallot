@@ -14,7 +14,7 @@ export const Button = withStyleProps<
 >(StatefulButton, (props) => {
   const {
     // General
-    color = 'Primary',
+    color = 'Shading',
     radius = 'md',
     animation,
     outline,
@@ -56,26 +56,27 @@ export const Button = withStyleProps<
   // If the button uses the Shading color, we switch to the shading
   // foreground color rather than the mid-range color. This is because other
   // palette colors extend to shades darker and lighter than their foreground.
-  const defaultShade = (
-    color === 'Shading' ? 500 : 300
-  ) as keyof DefaultTheme['colors']['Shading']
+  const shades: Record<string, keyof DefaultTheme['colors']['Shading']> =
+    color === 'Shading'
+      ? { default: 500, hovered: 450, pressed: 500, focused: 450 }
+      : { default: 300, hovered: 250, pressed: 350, focused: 300 }
 
   return {
     ...buttonProps,
     getStyles: (state) => {
       let styles: ButtonComponentStyles = {
         container: {
-          backgroundColor: `${color}.${defaultShade}`,
-          borderColor: `${color}.${defaultShade}`,
+          backgroundColor: `${color}.${shades.default}`,
+          borderColor: `${color}.${shades.default}`,
           borderWidth: 2,
           elevation: 'pressable',
           cursor: 'pointer',
           transition: `
-              background-color 200ms ease-in-out,
-              border-color 300ms ease-in-out,
-              transform 300ms ease-in-out,
-              box-shadow 300ms ease-in-out
-            `,
+            background-color 200ms ease-in-out,
+            border-color 200ms ease-in-out,
+            transform 300ms ease-in-out,
+            box-shadow 300ms ease-in-out
+          `,
         },
         label: {
           // Hide the label if there is no title
@@ -100,8 +101,8 @@ export const Button = withStyleProps<
       if (state.hovered)
         styles = applyStyles(styles, {
           container: {
-            backgroundColor: `${color}.250`,
-            borderColor: `${color}.250`,
+            backgroundColor: `${color}.${shades.hovered}`,
+            borderColor: `${color}.${shades.hovered}`,
             elevation: 'hover',
           },
         })
@@ -109,8 +110,8 @@ export const Button = withStyleProps<
       if (state.pressed)
         styles = applyStyles(styles, {
           container: {
-            backgroundColor: `${color}.350`,
-            borderColor: `${color}.350`,
+            backgroundColor: `${color}.${shades.pressed}`,
+            borderColor: `${color}.${shades.pressed}`,
             elevation: 'pressed',
           },
         })
@@ -123,7 +124,7 @@ export const Button = withStyleProps<
       if (outline)
         styles = applyStyles(styles, {
           container: { backgroundColor: 'Shading.100' },
-          label: { textColor: `${color}.300` },
+          label: { textColor: `${color}.${shades.default}` },
         })
 
       styles = applyStyles(styles, {
