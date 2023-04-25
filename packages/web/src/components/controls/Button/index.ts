@@ -86,7 +86,7 @@ export const Button = withStyleProps<
         },
         label: {
           // Hide the label if there is no title
-          display: buttonProps.title ? 'flex' : 'none',
+          display: buttonProps.title ? 'block' : 'none',
 
           fontSize: 'md',
           textColor: 'Shading.100',
@@ -96,7 +96,7 @@ export const Button = withStyleProps<
           unitsRight: horizontalUnitPadding,
           unitsAbove: verticalUnitPadding,
           unitsBelow: verticalUnitPadding,
-          flex: 1,
+          grow: true,
           cursor: 'pointer',
           userSelect: 'none',
           leftText,

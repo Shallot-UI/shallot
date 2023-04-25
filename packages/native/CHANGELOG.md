@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.28.8
+
+### Patch Changes
+
+- allows button title text positions
+
 ## 0.28.7
 
 ### Patch Changes

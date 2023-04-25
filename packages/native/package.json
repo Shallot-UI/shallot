@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/native",
-  "version": "0.28.7",
+  "version": "0.28.8",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",

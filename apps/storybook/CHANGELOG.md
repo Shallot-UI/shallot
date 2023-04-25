@@ -1,5 +1,13 @@
 # stories
 
+## 0.5.1
+
+### Patch Changes
+
+- allows button title text positions
+- Updated dependencies
+  - @shallot-ui/web@0.37.1
+
 ## 0.5.0
 
 ### Minor Changes

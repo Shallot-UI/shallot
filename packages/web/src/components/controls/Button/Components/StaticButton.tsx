@@ -14,6 +14,8 @@ const Container = makeComponent(
     flex-direction: row;
     border-style: solid;
     border-width: 0;
+    margin: 0;
+    padding: 0;
   `,
 )
 

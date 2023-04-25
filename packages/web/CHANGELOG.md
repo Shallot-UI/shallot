@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.37.1
+
+### Patch Changes
+
+- allows button title text positions
+
 ## 0.37.0
 
 ### Minor Changes
