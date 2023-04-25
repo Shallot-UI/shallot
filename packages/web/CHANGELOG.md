@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.37.2
+
+### Patch Changes
+
+- More intuitive text alignment on buttons
+
 ## 0.37.1
 
 ### Patch Changes

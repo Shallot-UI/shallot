@@ -19,6 +19,10 @@ export default {
       control: 'select',
       options: ['Shading', 'Primary', 'Success', 'Danger', 'Warning'],
     },
+    alignText: {
+      control: 'select',
+      options: ['left', 'center', 'right', 'justify'],
+    },
     typeface: {
       control: 'select',
       options: ['Body', 'Monospace', 'Display'],
@@ -39,9 +43,6 @@ export default {
     horizontalUnitPadding: {
       control: { type: 'number', min: 1, max: 4, step: 1 },
     },
-    leftText: { control: 'boolean' },
-    centerText: { control: 'boolean' },
-    rightText: { control: 'boolean' },
     fullWidth: { control: 'boolean' },
   },
 } as ComponentMeta<typeof Button>

@@ -1,5 +1,13 @@
 # stories
 
+## 0.5.2
+
+### Patch Changes
+
+- More intuitive text alignment on buttons
+- Updated dependencies
+  - @shallot-ui/web@0.37.2
+
 ## 0.5.1
 
 ### Patch Changes

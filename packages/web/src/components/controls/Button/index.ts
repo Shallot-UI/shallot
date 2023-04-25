@@ -10,9 +10,10 @@ export * from './types'
 export const Button = withStyleProps<
   ButtonStyleProps,
   ButtonProps,
-  TextAlignProps & {
+  {
     verticalUnitPadding?: number
     horizontalUnitPadding?: number
+    alignText?: 'left' | 'center' | 'right' | 'justify'
   }
 >(StatefulButton, (props) => {
   const {
@@ -45,9 +46,7 @@ export const Button = withStyleProps<
     capitalize,
 
     // Text Alignment
-    leftText,
-    rightText,
-    centerText,
+    alignText = 'center',
 
     verticalUnitPadding = 1,
     horizontalUnitPadding = 2,
@@ -99,9 +98,10 @@ export const Button = withStyleProps<
           grow: true,
           cursor: 'pointer',
           userSelect: 'none',
-          leftText,
-          rightText,
-          centerText: !leftText && !rightText,
+          leftText: alignText === 'left',
+          rightText: alignText === 'right',
+          centerText: alignText === 'center',
+          justifyText: alignText === 'justify',
         },
       }
 
