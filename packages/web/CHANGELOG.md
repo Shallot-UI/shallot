@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.38.0
+
+### Minor Changes
+
+- Fixes default background color
+
 ## 0.37.2
 
 ### Patch Changes

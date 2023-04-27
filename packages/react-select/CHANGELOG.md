@@ -1,5 +1,12 @@
 # @shallot-ui/react-select
 
+## 0.26.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.38.0
+
 ## 0.26.3
 
 ### Patch Changes
