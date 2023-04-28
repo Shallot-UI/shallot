@@ -78,7 +78,4 @@ export const Outline = Template.bind({})
 Outline.args = { outline: true }
 
 export const Typeface = Template.bind({})
-Typeface.args = {
-  typeface: 'Body',
-  letterSpacing: 'lg',
-}
+Typeface.args = { typeface: 'Monospace' }

@@ -1,8 +1,8 @@
-import { TextAlignProps } from '@shallot-ui/theme'
+import { DefaultTheme } from 'styled-components'
+
 import { applyStyles, withStyleProps } from '../../../utils'
 import { StatefulButton } from './Components'
 import { ButtonProps, ButtonStyleProps, ButtonComponentStyles } from './types'
-import { DefaultTheme } from 'styled-components'
 
 export * from './Components'
 export * from './types'
@@ -24,7 +24,7 @@ export const Button = withStyleProps<
     outline,
 
     // Typography
-    typeface = 'Monospace',
+    typeface = 'Body',
     font = 'Bold',
     letterSpacing = 'md',
     fontSize = 'md',
