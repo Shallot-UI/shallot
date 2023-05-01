@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
 import { TextInput } from 'react-native'
+import { makeComponent } from '@shallot-ui/core'
 
-import { makeComponent } from '../../../../utils'
 import { Row } from '../../../containers'
 import { StaticInputProps } from '../types'
 import inputConfig from '../config'

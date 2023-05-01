@@ -1,11 +1,17 @@
 import {
+  AnimationProps,
   HorizontalAlignmentProps,
+  RadiusProps,
+  TransitionProps,
   VerticalAlignmentProps,
 } from '@shallot-ui/theme'
 
-import { BoxProps } from '../Box'
+import { BoxStyleProps } from '../Box'
 
-export interface RowProps
-  extends BoxProps,
+export interface RowStyleProps
+  extends BoxStyleProps,
     HorizontalAlignmentProps,
-    VerticalAlignmentProps {}
+    VerticalAlignmentProps,
+    AnimationProps,
+    RadiusProps,
+    TransitionProps {}

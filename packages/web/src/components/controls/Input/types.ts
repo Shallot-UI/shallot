@@ -23,13 +23,13 @@ import {
   LetterSpacingProps,
 } from '@shallot-ui/theme'
 
-import { ColumnProps } from '../../containers'
+import { ColumnStyleProps } from '../../containers'
 import { TextProps } from '../../content'
 import { StatefulProps, StaticProps } from '../../../types/component'
 
 export interface InputComponentStyles {
-  container?: ColumnProps
-  input?: ColumnProps & TextProps & UnitPaddingProps
+  container?: ColumnStyleProps
+  input?: ColumnStyleProps & TextProps & UnitPaddingProps
 }
 
 type SharedInputProps = {

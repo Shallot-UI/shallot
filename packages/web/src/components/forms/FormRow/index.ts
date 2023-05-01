@@ -1,4 +1,5 @@
-import { withStyleProps } from '../../../utils'
+import { withStyleProps } from '@shallot-ui/core'
+
 import { StatefulFormRow } from './Components'
 import { getFormRowStyles } from './getStyles'
 import { FormRowProps, FormRowStyleProps } from './types'

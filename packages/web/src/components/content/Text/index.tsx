@@ -1,6 +1,9 @@
-import { makePropPuller, makeStyleGetter } from '@shallot-ui/core'
+import {
+  makePropPuller,
+  makeStyleGetter,
+  makeComponent,
+} from '@shallot-ui/core'
 
-import { makeComponent } from '../../../utils/makeComponent'
 import { textConfig } from './config'
 
 export const Text = makeComponent('span', textConfig)

@@ -1,4 +1,4 @@
-import { ComponentProps, HTMLProps, ReactNode } from 'react'
+import { HTMLProps, ReactNode } from 'react'
 import { CSSObject } from 'styled-components'
 import {
   AnimationProps,
@@ -13,12 +13,12 @@ import {
   UnitsAroundProps,
 } from '@shallot-ui/theme'
 
-import { RowProps } from '../../containers'
+import { RowStyleProps } from '../../containers'
 import { TextProps } from '../../content'
 import { StatefulProps, StaticProps } from '../../../types/component'
 
 export interface ButtonComponentStyles {
-  container?: RowProps & { style?: CSSObject }
+  container?: RowStyleProps & { style?: CSSObject }
   label?: TextProps & { style?: CSSObject }
 }
 

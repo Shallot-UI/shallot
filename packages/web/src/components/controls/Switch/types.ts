@@ -1,6 +1,6 @@
 import { StyleHTMLAttributes } from 'react'
 import { ColorName, RadiusProps, UnitsAroundProps } from '@shallot-ui/theme'
-import { ColumnProps } from '../../containers'
+import { ColumnStyleProps } from '../../containers'
 import { StatefulProps, StaticProps } from '../../../types/component'
 
 export interface SwitchConfig {
@@ -9,8 +9,8 @@ export interface SwitchConfig {
 }
 
 export interface SwitchComponentStyles {
-  container?: ColumnProps & StyleHTMLAttributes<HTMLLabelElement>
-  handle?: ColumnProps & StyleHTMLAttributes<HTMLDivElement>
+  container?: ColumnStyleProps & StyleHTMLAttributes<HTMLLabelElement>
+  handle?: ColumnStyleProps & StyleHTMLAttributes<HTMLDivElement>
 }
 
 type SharedSwitchProps = {

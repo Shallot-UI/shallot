@@ -1,26 +1,8 @@
-import {
-  AnimationProps,
-  BorderProps,
-  ColorProps,
-  CursorProps,
-  DisplayProps,
-  ElevationProps,
-  FlexProps,
-  RadiusProps,
-  SizingProps,
-  TransitionProps,
-  UnitsAroundProps,
-} from '@shallot-ui/theme'
+import { BoxStyleProps as BaseBoxStyleProps } from '@shallot-ui/box'
+import { AnimationProps, RadiusProps, TransitionProps } from '@shallot-ui/theme'
 
-export interface BoxProps
-  extends AnimationProps,
-    BorderProps,
-    ColorProps,
-    CursorProps,
-    DisplayProps,
-    ElevationProps,
-    FlexProps,
+export interface BoxStyleProps
+  extends BaseBoxStyleProps,
+    AnimationProps,
     RadiusProps,
-    SizingProps,
-    TransitionProps,
-    UnitsAroundProps {}
+    TransitionProps {}

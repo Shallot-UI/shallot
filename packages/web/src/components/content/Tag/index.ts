@@ -1,4 +1,5 @@
-import { applyStyles, withStyleProps } from '../../../utils'
+import { applyStyles, withStyleProps } from '@shallot-ui/core'
+
 import { StatefulTag } from './Components'
 import { TagProps, TagStyleProps, TagComponentStyles } from './types'
 

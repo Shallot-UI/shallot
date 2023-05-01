@@ -2,13 +2,13 @@ import { ReactNode } from 'react'
 import { DefaultTheme } from 'styled-components'
 import { AllColorShades, FontProps, UnitsAroundProps } from '@shallot-ui/theme'
 
-import { ColumnProps } from '../../containers'
+import { ColumnStyleProps } from '../../containers'
 import { TextProps } from '../../content'
 import { StatefulProps, StaticProps } from '../../../types/component'
 
 export type FormColumnComponentStyles = {
-  container?: ColumnProps
-  details?: ColumnProps
+  container?: ColumnStyleProps
+  details?: ColumnStyleProps
   label?: TextProps
   helperText?: TextProps
   errorText?: TextProps

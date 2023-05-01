@@ -1,6 +1,6 @@
 import { View } from 'react-native'
+import { makeComponent } from '@shallot-ui/core'
 
-import { makeComponent } from '../../../utils/makeComponent'
 import { columnConfig } from '../Column'
 
 export const Fold = makeComponent(

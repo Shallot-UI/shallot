@@ -1,6 +1,6 @@
 import { TextInputProps } from 'react-native'
+import { withStyleProps } from '@shallot-ui/core'
 
-import { withStyleProps } from '../../../utils'
 import { StatefulInput } from './Components'
 import { getInputStyles } from './getStyles'
 import { InputProps, InputStyleProps } from './types'

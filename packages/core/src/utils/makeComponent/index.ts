@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { makeStyleGetter, PropsConfig } from '@shallot-ui/core'
+import { makeStyleGetter } from '@shallot-ui/core'
 import styled, {
   FlattenInterpolation,
   IntrinsicElementsKeys,
@@ -12,7 +12,7 @@ export const makeComponent = <
   C extends IntrinsicElementsKeys | ComponentType<any>,
 >(
   component: C,
-  config: PropsConfig<T>,
+  config: T,
   baseStyles?:
     | string
     | FlattenInterpolation<ThemedStyledProps<T, DefaultTheme>>,

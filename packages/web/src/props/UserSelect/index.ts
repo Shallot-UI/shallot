@@ -1,6 +1,3 @@
-import { css } from 'styled-components'
-import { makePropPuller, makeStyleGetter, PropsConfig } from '@shallot-ui/core'
-
 export interface UserSelectProps {
   userSelect?:
     | 'auto'
@@ -13,16 +10,7 @@ export interface UserSelectProps {
     | 'unset'
 }
 
-export const userSelectProps: PropsConfig<UserSelectProps> = {
-  userSelect: {
-    get: ({ userSelect }: UserSelectProps) =>
-      userSelect
-        ? css`
-            user-select: ${userSelect};
-          `
-        : '',
-  },
+export const userSelectProps = {
+  userSelect: ({ userSelect }: UserSelectProps) =>
+    userSelect ? { userSelect } : '',
 }
-
-export const pullUserSelectProps = makePropPuller(userSelectProps)
-export const getUserSelectStyle = makeStyleGetter(userSelectProps)

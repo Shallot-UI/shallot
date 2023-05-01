@@ -6,7 +6,6 @@ import {
   elevationProps,
   flexProps,
   fontProps,
-  PropsConfig,
   sizingProps,
   unitsAroundProps,
 } from '@shallot-ui/core'
@@ -18,9 +17,8 @@ import {
   radiusProps,
   transitionProps,
 } from '../../../props'
-import { AnchorLinkProps } from './types'
 
-export const anchorLinkConfig: PropsConfig<AnchorLinkProps> = {
+export const anchorLinkConfig = {
   ...borderProps,
   ...colorProps,
   ...cursorProps,

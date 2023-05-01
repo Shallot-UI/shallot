@@ -1,5 +1,6 @@
 import { HTMLAttributes } from 'react'
-import { withStyleProps } from '../../../utils'
+import { withStyleProps } from '@shallot-ui/core'
+
 import { StatefulInput } from './Components'
 import { getInputStyles } from './getStyles'
 import { InputProps, InputStyleProps } from './types'

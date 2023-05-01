@@ -1,7 +1,10 @@
 import { View } from 'react-native'
-import { makePropPuller, makeStyleGetter } from '@shallot-ui/core'
+import {
+  makePropPuller,
+  makeStyleGetter,
+  makeComponent,
+} from '@shallot-ui/core'
 
-import { makeComponent } from '../../../utils/makeComponent'
 import { columnConfig } from './config'
 
 export const Column = makeComponent(

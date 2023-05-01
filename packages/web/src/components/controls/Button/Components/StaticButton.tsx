@@ -1,10 +1,10 @@
 import { forwardRef } from 'react'
 import PropTypes, { InferProps } from 'prop-types'
+import { makeComponent } from '@shallot-ui/core'
 
 import { rowConfig } from '../../../containers'
 import { Text } from '../../../content'
 import { StaticButtonProps } from '../types'
-import { makeComponent } from '../../../../utils'
 
 const Container = makeComponent(
   'button',

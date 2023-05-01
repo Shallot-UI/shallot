@@ -1,12 +1,12 @@
 import { FunctionComponent, SVGProps } from 'react'
 import { UnitsAroundProps, RadiusProps, ColorName } from '@shallot-ui/theme'
 
-import { BoxProps, ColumnProps } from '../../containers'
+import { BoxStyleProps, ColumnStyleProps } from '../../containers'
 import { StatefulProps, StaticProps } from '../../../types/component'
 
 export interface CheckboxComponentStyles {
-  container?: ColumnProps
-  icon?: BoxProps
+  container?: ColumnStyleProps
+  icon?: BoxStyleProps
 }
 
 type SharedCheckboxProps = {

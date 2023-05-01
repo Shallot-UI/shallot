@@ -1,4 +1,5 @@
-import { applyStyles } from '../../../utils'
+import { applyStyles } from '@shallot-ui/core'
+
 import {
   CheckboxComponentStyles,
   CheckboxProps,

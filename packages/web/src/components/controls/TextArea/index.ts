@@ -1,4 +1,5 @@
-import { makeComponent } from '../../../utils/makeComponent'
+import { makeComponent } from '@shallot-ui/core'
+
 import { textAreaConfig } from './config'
 
 export const TextArea = makeComponent(

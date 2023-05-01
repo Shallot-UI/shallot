@@ -1,30 +1,18 @@
 import { FlexProps } from '@shallot-ui/theme'
 
-import { PropsConfig } from '../../types'
-import { makePropPuller, makeStyleGetter } from '../../utils'
+export const direction = ({ direction }: FlexProps) =>
+  direction ? `flex-direction: ${direction};` : ''
 
-export const flexProps: PropsConfig<FlexProps> = {
-  flex: {
-    get: ({ flex }) => (flex ? `flex: ${flex === true ? 1 : flex};` : ''),
-  },
-  grow: {
-    get: ({ grow }) => (grow ? `flex-grow: ${grow === true ? 1 : grow};` : ''),
-  },
-  shrink: {
-    get: ({ shrink }) =>
-      shrink ? `flex-shrink: ${shrink === true ? 1 : shrink};` : '',
-  },
-  wrap: {
-    get: ({ wrap }) => `
-      ${wrap === 'reverse' ? `flex-wrap: wrap-reverse;` : ''}
-      ${
-        typeof wrap === 'boolean'
-          ? `flex-wrap: ${wrap ? 'wrap' : 'no-wrap'};`
-          : ''
-      }
-    `,
-  },
-}
+export const flex = ({ flex }: FlexProps) =>
+  flex ? `flex: ${flex === true ? 1 : flex};` : ''
 
-export const pullFlexProps = makePropPuller(flexProps)
-export const getFlexStyle = makeStyleGetter(flexProps)
+export const grow = ({ grow }: FlexProps) =>
+  grow ? `flex-grow: ${grow === true ? 1 : grow};` : ''
+
+export const shrink = ({ shrink }: FlexProps) =>
+  shrink ? `flex-shrink: ${shrink === true ? 1 : shrink};` : ''
+
+export const wrap = ({ wrap }: FlexProps) => `
+  ${wrap === 'reverse' ? `flex-wrap: wrap-reverse;` : ''}
+  ${typeof wrap === 'boolean' ? `flex-wrap: ${wrap ? 'wrap' : 'no-wrap'};` : ''}
+`

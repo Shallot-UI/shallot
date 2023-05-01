@@ -1,14 +1,10 @@
-import {
-  PropsConfig,
-  rowHorizontalAlignmentProps,
-  rowVerticalAlignmentProps,
-} from '@shallot-ui/core'
+import { rowConfig as baseRowConfig } from '@shallot-ui/row'
 
-import { boxConfig } from '../Box'
-import { RowProps } from './types'
+import { animationProps, radiusProps, transitionProps } from '../../../props'
 
-export const rowConfig: PropsConfig<RowProps> = {
-  ...boxConfig,
-  ...rowVerticalAlignmentProps,
-  ...rowHorizontalAlignmentProps,
+export const rowConfig = {
+  ...baseRowConfig,
+  ...animationProps,
+  ...radiusProps,
+  ...transitionProps,
 }

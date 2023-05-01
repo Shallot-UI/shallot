@@ -1,28 +1,10 @@
-import {
-  borderProps,
-  colorProps,
-  cursorProps,
-  displayProps,
-  elevationProps,
-  flexProps,
-  PropsConfig,
-  sizingProps,
-  unitsAroundProps,
-} from '@shallot-ui/core'
+import { boxConfig as baseBoxConfig } from '@shallot-ui/box'
 
 import { animationProps, transitionProps, radiusProps } from '../../../props'
-import { BoxProps } from './types'
 
-export const boxConfig: PropsConfig<BoxProps> = {
+export const boxConfig = {
+  ...baseBoxConfig,
   ...animationProps,
-  ...borderProps,
-  ...colorProps,
-  ...cursorProps,
-  ...displayProps,
-  ...elevationProps,
-  ...flexProps,
   ...radiusProps,
-  ...sizingProps,
   ...transitionProps,
-  ...unitsAroundProps,
 }

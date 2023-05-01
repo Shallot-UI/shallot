@@ -12,11 +12,11 @@ import {
   UnitsAroundProps,
 } from '@shallot-ui/theme'
 
-import { RowProps } from '../../containers'
+import { RowStyleProps } from '../../containers'
 import { TextProps } from '..'
 
 export interface TagComponentStyles {
-  container?: RowProps
+  container?: RowStyleProps
   label?: TextProps
 }
 

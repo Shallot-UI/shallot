@@ -1,4 +1,4 @@
-import { makeComponent } from '../../../utils/makeComponent'
+import { makeComponent } from '@shallot-ui/core'
 import { anchorLinkConfig } from './config'
 
 export const AnchorLink = makeComponent('a', anchorLinkConfig)

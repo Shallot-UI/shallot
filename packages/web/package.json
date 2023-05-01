@@ -37,6 +37,9 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@shallot-ui/box": "^0.1.0",
+    "@shallot-ui/row": "^0.1.0",
+    "@shallot-ui/column": "^0.1.0",
     "@shallot-ui/core": "^2.0.0",
     "@shallot-ui/theme": "^0.24.1",
     "prop-types": "^15.8.1"

@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
+import { makeComponent } from '@shallot-ui/core'
 
-import { makeComponent } from '../../../../utils'
 import { columnConfig } from '../../../containers'
 import { StaticCheckboxProps } from '../types'
 import CheckmarkIcon from './icons/CheckmarkIcon'

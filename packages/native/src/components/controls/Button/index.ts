@@ -1,7 +1,7 @@
 import { DefaultTheme } from 'styled-components'
 import { TextAlignProps } from '@shallot-ui/theme'
+import { applyStyles, withStyleProps } from '@shallot-ui/core'
 
-import { applyStyles, withStyleProps } from '../../../utils'
 import { StatefulButton } from './Components'
 import { ButtonProps, ButtonStyleProps, ButtonComponentStyles } from './types'
 

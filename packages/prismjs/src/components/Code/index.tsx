@@ -1,6 +1,6 @@
 import { FunctionComponent, useEffect, useState } from 'react'
 import Prism from 'prismjs'
-import { Column, ColumnProps, Text, TextProps } from '@shallot-ui/web'
+import { Column, ColumnStyleProps, Text, TextProps } from '@shallot-ui/web'
 import {
   FontProps,
   FontSizeProps,
@@ -11,7 +11,7 @@ import {
 import CodeTokenContents from './parts/CodeTokenContents'
 
 export interface CodeProps
-  extends ColumnProps,
+  extends ColumnStyleProps,
     FontProps,
     FontSizeProps,
     LineHeightProps,

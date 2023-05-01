@@ -1,84 +1,44 @@
-import { UnitsAroundProps } from '@shallot-ui/theme'
+import { MarginProps } from '@shallot-ui/theme'
+import { getProportion } from '../../utils'
 
-import { PropsConfig } from '../../types'
-import { makePropPuller, makeStyleGetter } from '../../utils'
-
-export const unitsAroundProps: PropsConfig<UnitsAroundProps> = {
-  fullWidth: {
-    get: ({ fullWidth, unitsLeft, unitsRight, unitsAround }) =>
-      fullWidth
-        ? ({ theme }) => {
-            const baseUnit = theme.gridUnits?.[0]
-            if (typeof baseUnit !== 'number') return ''
-            const leftMargin = baseUnit * (unitsLeft ?? unitsAround ?? 0)
-            const rightMargin = baseUnit * (unitsRight ?? unitsAround ?? 0)
-            return `width: calc(100% - ${leftMargin + rightMargin}px);`
-          }
-        : '',
-  },
-  fullHeight: {
-    get: ({ fullHeight, unitsAbove, unitsBelow, unitsAround }) =>
-      fullHeight
-        ? ({ theme }) => {
-            const baseUnit = theme.gridUnits?.[0]
-            if (typeof baseUnit !== 'number') return ''
-            const topMargin = baseUnit * (unitsAbove ?? unitsAround ?? 0)
-            const bottomMargin = baseUnit * (unitsBelow ?? unitsAround ?? 0)
-            return `height: calc(100% - ${topMargin + bottomMargin}px);`
-          }
-        : '',
-  },
-  unitsAround: {
-    get: ({ unitsAround }) =>
-      unitsAround
-        ? ({ theme }) => {
-            const baseUnit = theme.gridUnits?.[0]
-            if (typeof baseUnit !== 'number') return ''
-            return `margin: ${baseUnit * unitsAround}px;`
-          }
-        : '',
-  },
-  unitsAbove: {
-    get: ({ unitsAbove }) =>
-      unitsAbove
-        ? ({ theme }) => {
-            const baseUnit = theme.gridUnits?.[0]
-            if (typeof baseUnit !== 'number') return ''
-            return `margin-top: ${baseUnit * unitsAbove}px;`
-          }
-        : '',
-  },
-  unitsBelow: {
-    get: ({ unitsBelow }) =>
-      unitsBelow
-        ? ({ theme }) => {
-            const baseUnit = theme.gridUnits?.[0]
-            if (typeof baseUnit !== 'number') return ''
-            return `margin-bottom: ${baseUnit * unitsBelow}px;`
-          }
-        : '',
-  },
-  unitsLeft: {
-    get: ({ unitsLeft }) =>
-      unitsLeft
-        ? ({ theme }) => {
-            const baseUnit = theme.gridUnits?.[0]
-            if (typeof baseUnit !== 'number') return ''
-            return `margin-left: ${baseUnit * unitsLeft}px;`
-          }
-        : '',
-  },
-  unitsRight: {
-    get: ({ unitsRight }) =>
-      unitsRight
-        ? ({ theme }) => {
-            const baseUnit = theme.gridUnits?.[0]
-            if (typeof baseUnit !== 'number') return ''
-            return `margin-right: ${baseUnit * unitsRight}px;`
-          }
-        : '',
-  },
+export const fullWidth = ({
+  fullWidth,
+  marginLeft,
+  marginRight,
+  margin,
+}: MarginProps) => {
+  if (!fullWidth) return {}
+  if (
+    typeof marginLeft !== 'number' ||
+    typeof marginRight !== 'number' ||
+    typeof margin !== 'number'
+  )
+    return {}
+  const left = marginLeft ?? margin ?? 0
+  const right = marginRight ?? margin ?? 0
+  return `width: calc(100% - ${left + right}px);`
 }
 
-export const pullUnitsAroundProps = makePropPuller(unitsAroundProps)
-export const getUnitsAroundStyle = makeStyleGetter(unitsAroundProps)
+export const fullHeight = ({
+  fullHeight,
+  marginTop,
+  marginBottom,
+  margin,
+}: MarginProps) => {
+  if (!fullHeight) return {}
+  if (
+    typeof marginTop !== 'number' ||
+    typeof marginBottom !== 'number' ||
+    typeof margin !== 'number'
+  )
+    return {}
+  const top = marginTop ?? margin ?? 0
+  const bottom = marginBottom ?? margin ?? 0
+  return `width: calc(100% - ${top + bottom}px);`
+}
+
+export const margin = getProportion<MarginProps>('margin')
+export const marginRight = getProportion<MarginProps>('marginRight')
+export const marginLeft = getProportion<MarginProps>('marginLeft')
+export const marginTop = getProportion<MarginProps>('marginTop')
+export const marginBottom = getProportion<MarginProps>('marginBottom')

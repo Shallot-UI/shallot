@@ -4,6 +4,7 @@ import {
   DefaultTheme,
   FlattenInterpolation,
   FlattenSimpleInterpolation,
+  SimpleInterpolation,
 } from 'styled-components'
 
 export type ThemeGetterValue =
@@ -21,8 +22,14 @@ export type ThemeGetter<T> = (
   propsWithTheme: T & { theme: DefaultTheme },
 ) => ThemeGetterValue
 
-export type Getter<T> = (
-  props: T,
-) => ThemeGetter<T> | ThemeGetterValue | (ThemeGetter<T> | ThemeGetterValue)[]
+export type Getter<T> = (props: T) => SimpleInterpolation
 
 export type PropsConfig<T> = { [key: string]: { get: Getter<T> } }
+
+export type StaticProps<SharedProps, ComponentStyles> = SharedProps & {
+  styles?: ComponentStyles
+}
+
+export type StatefulProps<SharedProps, ComponentStyles, State> = SharedProps & {
+  getStyles?: (state: State) => ComponentStyles
+}

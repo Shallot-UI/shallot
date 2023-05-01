@@ -1,4 +1,5 @@
-import { withStyleProps } from '../../../utils'
+import { withStyleProps } from '@shallot-ui/core'
+
 import { StatefulCheckbox } from './Components'
 import { getCheckboxStyles } from './getStyles'
 import { CheckboxProps, CheckboxStyleProps } from './types'

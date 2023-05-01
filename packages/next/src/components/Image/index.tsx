@@ -1,11 +1,11 @@
 import { ComponentProps, FunctionComponent } from 'react'
 import NextImage from 'next/image'
-import { Column, ColumnProps, pullColumnProps } from '@shallot-ui/web'
+import { Column, ColumnStyleProps, pullColumnProps } from '@shallot-ui/web'
 import { CSSObject, useTheme } from 'styled-components'
 
 type NextImageProps = ComponentProps<typeof NextImage>
 
-export interface ImageProps extends NextImageProps, ColumnProps {
+export interface ImageProps extends NextImageProps, ColumnStyleProps {
   style?: CSSObject
 }
 

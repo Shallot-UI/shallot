@@ -1,15 +1,15 @@
 import { ReactNode } from 'react'
 import { CSSObject } from 'styled-components'
 
-import { ColumnProps } from '../Column'
+import { ColumnStyleProps } from '../Column'
 
 export interface ModalComponentStyles {
-  wrapper?: ColumnProps & { style?: CSSObject }
-  curtain?: ColumnProps & { style?: CSSObject }
-  container?: ColumnProps & { style?: CSSObject }
+  wrapper?: ColumnStyleProps & { style?: CSSObject }
+  curtain?: ColumnStyleProps & { style?: CSSObject }
+  container?: ColumnStyleProps & { style?: CSSObject }
 }
 
-export interface ModalProps extends ColumnProps {
+export interface ModalProps extends ColumnStyleProps {
   onClose?: () => void
   children: ReactNode
   style?: CSSObject

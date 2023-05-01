@@ -1,14 +1,10 @@
-import {
-  columnHorizontalAlignmentProps,
-  columnVerticalAlignmentProps,
-  PropsConfig,
-} from '@shallot-ui/core'
+import { columnConfig as baseColumnConfig } from '@shallot-ui/column'
 
-import { boxConfig } from '../Box'
-import { ColumnProps } from './types'
+import { animationProps, radiusProps, transitionProps } from '../../../props'
 
-export const columnConfig: PropsConfig<ColumnProps> = {
-  ...boxConfig,
-  ...columnVerticalAlignmentProps,
-  ...columnHorizontalAlignmentProps,
+export const columnConfig = {
+  ...baseColumnConfig,
+  ...animationProps,
+  ...radiusProps,
+  ...transitionProps,
 }

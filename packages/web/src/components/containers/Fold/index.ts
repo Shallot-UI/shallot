@@ -1,4 +1,5 @@
-import { makeComponent } from '../../../utils/makeComponent'
+import { makeComponent } from '@shallot-ui/core'
+
 import { columnConfig } from '../Column'
 
 export const Fold = makeComponent(

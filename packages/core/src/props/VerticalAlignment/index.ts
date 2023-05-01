@@ -1,45 +1,31 @@
-import { VerticalAlignmentProps } from '@shallot-ui/theme'
+import { FlexProps, VerticalAlignmentProps } from '@shallot-ui/theme'
 
-import { PropsConfig } from '../../types'
-import { makePropPuller, makeStyleGetter } from '../../utils'
+const isRow = (direction: FlexProps['direction']) =>
+  direction === 'row' || direction === 'row-reverse'
 
-export const rowVerticalAlignmentProps: PropsConfig<VerticalAlignmentProps> = {
-  alignTop: {
-    get: ({ alignTop }) => (alignTop ? 'align-items: flex-start;' : ''),
-  },
-  alignMiddle: {
-    get: ({ alignMiddle }) => (alignMiddle ? 'align-items: center;' : ''),
-  },
-  alignBottom: {
-    get: ({ alignBottom }) => (alignBottom ? 'align-items: flex-end;' : ''),
-  },
+export const alignTop = ({
+  alignTop,
+  direction,
+}: VerticalAlignmentProps & FlexProps) => {
+  if (!alignTop) return
+  const key = isRow(direction) ? 'justifyContent' : 'alignItems'
+  return { [key]: 'flex-start' }
 }
 
-export const pullRowVerticalAlignmentProps = makePropPuller(
-  rowVerticalAlignmentProps,
-)
+export const alignMiddle = ({
+  alignTop,
+  direction,
+}: VerticalAlignmentProps & FlexProps) => {
+  if (!alignTop) return
+  const key = isRow(direction) ? 'justifyContent' : 'alignItems'
+  return { [key]: 'center' }
+}
 
-export const getRowVerticalAligmentStyle = makeStyleGetter(
-  rowVerticalAlignmentProps,
-)
-
-export const columnVerticalAlignmentProps: PropsConfig<VerticalAlignmentProps> =
-  {
-    alignTop: {
-      get: ({ alignTop }) => (alignTop ? 'justify-content: flex-start;' : ''),
-    },
-    alignMiddle: {
-      get: ({ alignMiddle }) => (alignMiddle ? 'justify-content: center;' : ''),
-    },
-    alignBottom: {
-      get: ({ alignBottom }) =>
-        alignBottom ? 'justify-content: flex-end;' : '',
-    },
-  }
-
-export const pullColumnVerticalAlignmentProps = makePropPuller(
-  columnVerticalAlignmentProps,
-)
-export const getColumnVerticalAligmentStyle = makeStyleGetter(
-  columnVerticalAlignmentProps,
-)
+export const alignBottom = ({
+  alignTop,
+  direction,
+}: VerticalAlignmentProps & FlexProps) => {
+  if (!alignTop) return
+  const key = isRow(direction) ? 'justifyContent' : 'alignItems'
+  return { [key]: 'flex-end' }
+}

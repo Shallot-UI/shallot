@@ -1,4 +1,28 @@
-import { CSSObject, CSSProp, DefaultTheme } from 'styled-components'
+import {
+  CSSObject,
+  CSSProp,
+  DefaultTheme,
+  ThemedCssFunction,
+} from 'styled-components'
+
+export type ColorShadingValue =
+  | 100
+  | 125
+  | 150
+  | 175
+  | 200
+  | 225
+  | 250
+  | 275
+  | 300
+  | 325
+  | 350
+  | 375
+  | 400
+  | 425
+  | 450
+  | 475
+  | 500
 
 export type Palette = Record<number, string>
 
@@ -30,14 +54,7 @@ export interface AnimationProps {
 export type ColorName = keyof DefaultTheme['colors']
 
 // Combines a color name with each of its shade values.
-// E.g., if ColorName is 'Primary' and the DefaultTheme defines a set of shade
-// values for the 'Primary' color, the ShadesForColor type would be a union of
-// string literal types that represent the different shades of the 'Primary'
-// color like 'Primary.100', 'Primary.200', and so on.
-export type ShadesForColor<Name extends ColorName> = `${Name}.${number &
-  keyof DefaultTheme['colors'][Name]}`
-
-export type AllColorShades = ShadesForColor<ColorName> | 'transparent'
+export type AllColorShades = `${ColorName}.${ColorShadingValue}` | 'transparent'
 
 export interface ColorProps {
   placeholderColor?: AllColorShades
@@ -48,7 +65,7 @@ export interface ColorProps {
 }
 
 export interface CursorProps {
-  cursor?: string
+  cursor?: CSSObject['cursor']
 }
 
 export interface ElevationProps {
@@ -56,29 +73,15 @@ export interface ElevationProps {
 }
 
 export interface FlexProps {
-  grow?: number | true
-  flex?: number | true
-  shrink?: number | true
-  wrap?: boolean | 'reverse'
-}
-
-export interface HorizontalAlignmentProps {
-  alignLeft?: true
-  alignRight?: true
-  alignCenter?: true
+  direction?: CSSObject['flexDirection']
+  flex?: boolean | CSSObject['flex']
+  grow?: boolean | CSSObject['flexGrow']
+  shrink?: boolean | CSSObject['shrink']
+  wrap?: boolean | 'reverse' | CSSObject['flexWrap']
 }
 
 export interface RadiusProps {
-  radius?: string
-}
-
-export interface SizingProps {
-  unitWidth?: number
-  minUnitWidth?: number
-  maxUnitWidth?: number
-  unitHeight?: number
-  minUnitHeight?: number
-  maxUnitHeight?: number
+  radius?: keyof DefaultTheme['radii']
 }
 
 export interface TransitionProps {
@@ -88,28 +91,6 @@ export interface TransitionProps {
 export interface FontProps {
   font?: string
   typeface?: keyof DefaultTheme['typefaces']
-}
-
-export interface UnitsAroundProps {
-  fullHeight?: boolean
-  fullWidth?: boolean
-  unitsAround?: number
-  unitsAbove?: number
-  unitsBelow?: number
-  unitsLeft?: number
-  unitsRight?: number
-}
-
-export interface VerticalAlignmentProps {
-  alignTop?: true
-  alignBottom?: true
-  alignMiddle?: true
-}
-
-export interface CasingProps {
-  uppercase?: boolean
-  lowercase?: boolean
-  capitalize?: boolean
 }
 
 export interface FontSizeProps {
@@ -125,34 +106,56 @@ export interface UnderlineProps {
 }
 
 export interface HorizontalAlignmentProps {
-  alignLeft?: true
-  alignRight?: true
-  alignCenter?: true
+  alignLeft?: boolean
+  alignRight?: boolean
+  alignCenter?: boolean
 }
 
 export interface VerticalAlignmentProps {
-  alignTop?: true
-  alignBottom?: true
-  alignMiddle?: true
+  alignTop?: boolean
+  alignBottom?: boolean
+  alignMiddle?: boolean
 }
 
 export interface LetterSpacingProps {
   letterSpacing?: keyof DefaultTheme['letterSpacings']
 }
 
-export interface TextAlignProps {
-  leftText?: boolean
-  centerText?: boolean
-  rightText?: boolean
-  justifyText?: boolean
+type ValueOrGetter<T> = T | ThemedCssFunction<DefaultTheme>
+
+export interface CasingProps {
+  casing?: CSSObject['textTransform']
 }
 
-export interface UnitPaddingProps {
-  unitsPadding?: number
-  unitsPaddingAbove?: number
-  unitsPaddingBelow?: number
-  unitsPaddingLeft?: number
-  unitsPaddingRight?: number
+export interface TextAlignProps {
+  textAlign?: CSSObject['textAlign']
+}
+
+export interface SizingProps {
+  width?: ValueOrGetter<CSSObject['width']>
+  minWidth?: ValueOrGetter<CSSObject['minWidth']>
+  maxWidth?: ValueOrGetter<CSSObject['maxWidth']>
+  height?: ValueOrGetter<CSSObject['height']>
+  minHeight?: ValueOrGetter<CSSObject['minHeight']>
+  maxHeight?: ValueOrGetter<CSSObject['maxHeight']>
+}
+
+export interface MarginProps {
+  fullHeight?: boolean
+  fullWidth?: boolean
+  margin?: ValueOrGetter<CSSObject['margin']>
+  marginTop?: ValueOrGetter<CSSObject['marginTop']>
+  marginBottom?: ValueOrGetter<CSSObject['marginBottom']>
+  marginLeft?: ValueOrGetter<CSSObject['marginLeft']>
+  marginRight?: ValueOrGetter<CSSObject['marginRight']>
+}
+
+export interface PaddingProps {
+  padding?: ValueOrGetter<CSSObject['padding']>
+  paddingTop?: ValueOrGetter<CSSObject['paddingTop']>
+  paddingBottom?: ValueOrGetter<CSSObject['paddingBottom']>
+  paddingLeft?: ValueOrGetter<CSSObject['paddingLeft']>
+  paddingRight?: ValueOrGetter<CSSObject['paddingRight']>
 }
 
 export interface DisplayProps {
