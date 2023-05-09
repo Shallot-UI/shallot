@@ -1,14 +1,20 @@
 import { FunctionComponent } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { getColor } from '@shallot-ui/core'
-import { AllColorShades } from '@shallot-ui/theme'
+import { ColorShadingValue } from '@shallot-ui/theme'
+import { ColorName } from '@shallot-ui/theme'
 
 const spinAnimation = keyframes`
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 `
 
-const DEFAULT_COLOR: AllColorShades = 'Shading.200'
+interface SpinnerProps {
+  color?: ColorName
+  shade?: ColorShadingValue
+  size?: SizeName
+}
+
 const sizes = {
   xs: 12,
   sm: 24,
@@ -16,12 +22,10 @@ const sizes = {
   lg: 60,
   xl: 80,
 } as const
+
 type SizeName = keyof typeof sizes
 
-const SpinnerRing = styled.div<{
-  color?: AllColorShades
-  size?: SizeName
-}>`
+const SpinnerRing = styled.div<SpinnerProps>`
   display: inline-block;
   position: relative;
   width: ${({ size = 'md' }) => sizes[size]}px;
@@ -34,11 +38,12 @@ const SpinnerRing = styled.div<{
     height: ${({ size = 'md' }) => Math.floor(sizes[size] * 0.8)}px;
     margin: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px;
     border: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px solid
-      ${({ color }) => getColor(color ?? DEFAULT_COLOR)};
+      ${({ color, shade }) => getColor(color ?? 'Shading', shade ?? 200)};
     border-radius: 50%;
     animation: ${spinAnimation} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: ${({ color }) => getColor(color ?? DEFAULT_COLOR)} transparent
-      transparent transparent;
+    border-color: ${({ color, shade }) =>
+        getColor(color ?? 'Shading', shade ?? 200)}
+      transparent transparent transparent;
   }
   & div:nth-child(1) {
     animation-delay: -0.45s;
@@ -51,13 +56,12 @@ const SpinnerRing = styled.div<{
   }
 `
 
-interface SpinnerProps {
-  color?: AllColorShades
-  size?: SizeName
-}
-
-export const Spinner: FunctionComponent<SpinnerProps> = ({ color, size }) => (
-  <SpinnerRing color={color} size={size}>
+export const Spinner: FunctionComponent<SpinnerProps> = ({
+  color,
+  shade,
+  size,
+}) => (
+  <SpinnerRing color={color} shade={shade} size={size}>
     <div></div>
     <div></div>
     <div></div>

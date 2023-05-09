@@ -1,8 +1,6 @@
-import { makeComponent } from '@shallot-ui/core'
+import styled, { CSSObject } from 'styled-components'
+import { ShallotProp, getStyle } from '@shallot-ui/core'
+import { withBoxStyleProps } from '@shallot-ui/box'
 
-import { boxConfig } from './config'
-
-export const Box = makeComponent('div', boxConfig)
-
-export * from './config'
-export * from './types'
+const RawBox = styled.div<{ shallot: ShallotProp<CSSObject> }>(getStyle)
+export const Box = withBoxStyleProps(RawBox)

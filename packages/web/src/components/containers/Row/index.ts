@@ -1,15 +1,14 @@
-import { makeComponent } from '@shallot-ui/core'
+import { ShallotProp, getStyle } from '@shallot-ui/core'
+import styled, { CSSObject } from 'styled-components'
 
-import { rowConfig } from './config'
-
-export const Row = makeComponent(
-  'div',
-  rowConfig,
-  `
-    display: flex;
-    flex-direction: row;
-  `,
+export const Row = styled('div')<{ shallot: ShallotProp<CSSObject> }>(
+  ({ shallot, ...rest }) =>
+    getStyle({
+      shallot: {
+        display: 'flex',
+        flexDirection: 'row',
+        ...shallot,
+      },
+      ...rest,
+    }),
 )
-
-export * from './types'
-export * from './config'

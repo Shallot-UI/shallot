@@ -1,5 +1,12 @@
 import { Meta, Canvas } from '@storybook/addon-docs'
-import { Row, Column, Text, makeTheme } from '@shallot-ui/web'
+import {
+  Row,
+  Column,
+  Text,
+  makeTheme,
+  getUnits,
+  getFontSize,
+} from '@shallot-ui/web'
 import { ThemeProvider } from 'styled-components'
 
 <Meta title="🎨 Theme / Font Sizes" />
@@ -18,9 +25,11 @@ Below are the default values for the font sizes in the Shallot theme.
       {['xs', 'sm', 'md', 'lg', 'xl'].map((fontSize) => (
         <Text
           key={fontSize}
-          unitsAround={1}
-          fontSize={fontSize}
-          typeface="Body"
+          shallot={{
+            // typeface: "Body",
+            margin: getUnits(1),
+            fontSize: getFontSize(fontSize),
+          }}
         >
           Default size for "{fontSize}".
         </Text>

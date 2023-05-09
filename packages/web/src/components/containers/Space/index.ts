@@ -1,5 +1,15 @@
-import { makeComponent } from '@shallot-ui/core'
+import { ShallotProp, getStyle } from '@shallot-ui/core'
+import styled, { CSSObject } from 'styled-components'
 
-import { columnConfig } from '../Column'
-
-export const Space = makeComponent('div', columnConfig, `flex: 1;`)
+export const Space = styled('div')<{ shallot: ShallotProp<CSSObject> }>(
+  ({ shallot, ...rest }) =>
+    getStyle({
+      shallot: {
+        display: 'flex',
+        flexDirection: 'column',
+        flex: 1,
+        ...shallot,
+      },
+      ...rest,
+    }),
+)

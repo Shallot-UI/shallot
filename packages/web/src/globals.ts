@@ -1,6 +1,5 @@
 import { DefaultTheme, createGlobalStyle } from 'styled-components'
 import { AllColorShades, ColorName } from '@shallot-ui/theme'
-import { fontProps } from '@shallot-ui/core'
 
 interface GlobalStyleProps {
   backgroundColor?: AllColorShades
@@ -15,6 +14,8 @@ const getColorShade = (colorShade: AllColorShades, theme: DefaultTheme) => {
   ) as keyof DefaultTheme['colors'][ColorName]
   return theme.colors[colorName][colorShadeNumber]
 }
+
+/* ${fontProps.font.get({ font: 'Body' })}; */
 
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -56,7 +57,6 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   * { box-sizing: border-box; }
 
   body {
-    ${fontProps.font.get({ font: 'Body' })};
     color: ${({ theme, textColor }) =>
       getColorShade(textColor ?? 'Shading.500', theme)};
     background-color: ${({ theme, backgroundColor }) =>

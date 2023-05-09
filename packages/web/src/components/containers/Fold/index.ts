@@ -1,14 +1,16 @@
-import { makeComponent } from '@shallot-ui/core'
+import { ShallotProp, getStyle } from '@shallot-ui/core'
+import styled, { CSSObject } from 'styled-components'
 
-import { columnConfig } from '../Column'
-
-export const Fold = makeComponent(
-  'div',
-  columnConfig,
-  `
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100vw;
-  `,
+export const Fold = styled('div')<{ shallot: ShallotProp<CSSObject> }>(
+  ({ shallot, ...rest }) =>
+    getStyle({
+      shallot: {
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        width: '100vw',
+        ...shallot,
+      },
+      ...rest,
+    }),
 )

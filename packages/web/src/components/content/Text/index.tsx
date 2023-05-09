@@ -1,15 +1,6 @@
-import {
-  makePropPuller,
-  makeStyleGetter,
-  makeComponent,
-} from '@shallot-ui/core'
+import { ShallotProp, getStyle } from '@shallot-ui/core'
+import styled, { CSSObject } from 'styled-components'
 
-import { textConfig } from './config'
-
-export const Text = makeComponent('span', textConfig)
-
-export const pullTextProps = makePropPuller(textConfig)
-export const getTextStyles = makeStyleGetter(textConfig)
-
-export * from './types'
-export * from './config'
+export const Text = styled('span')<{ shallot: ShallotProp<CSSObject> }>(
+  getStyle,
+)

@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 
-import { makeTheme, Button, Column } from '@shallot-ui/web'
+import { makeTheme, Button, Column, getUnits } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -50,7 +50,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => (
   <ThemeProvider theme={makeTheme({})}>
-    <Column unitWidth={40}>
+    <Column shallot={{ width: getUnits(20) }}>
       <Button title="Hello World" {...args} />
     </Column>
   </ThemeProvider>

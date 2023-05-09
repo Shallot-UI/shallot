@@ -1,7 +1,6 @@
-import { makeComponent } from '@shallot-ui/core'
-import { anchorLinkConfig } from './config'
+import { ShallotProp, getStyle } from '@shallot-ui/core'
+import styled, { CSSObject } from 'styled-components'
 
-export const AnchorLink = makeComponent('a', anchorLinkConfig)
-
-export * from './types'
-export * from './config'
+export const AnchorLink = styled('a')<{ shallot: ShallotProp<CSSObject> }>(
+  getStyle,
+)
