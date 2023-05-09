@@ -1,3 +1,4 @@
+import { ComponentType } from 'react'
 import { CSSObject, DefaultTheme } from 'styled-components'
 import { ColorName } from '@shallot-ui/theme'
 import {
@@ -9,6 +10,7 @@ import {
   getFontSize,
   getUnits,
   ShallotProp,
+  getElevation,
 } from '@shallot-ui/core'
 
 export type ButtonStyleProps = {
@@ -26,7 +28,7 @@ export type ButtonStyleProps = {
 
 export type ButtonShallot = {
   container: ShallotProp<CSSObject>
-  label: ShallotProp<CSSObject>
+  title: ShallotProp<CSSObject>
 }
 
 export type ButtonState = {
@@ -38,112 +40,110 @@ export type ButtonState = {
 
 export type ButtonProps<T> = T &
   ButtonStyleProps & {
-    shallot: ButtonShallot
+    shallot?: ButtonShallot
     state?: ButtonState
   }
 
-// TODO: Update this so that getButtonStyles returns both the styles and the
-// props that should be passed to the button as separate objects.
+export const withButtonStyleProps =
+  <T,>(ButtonComponent: ComponentType<T>) =>
+  (props: ButtonProps<T>) => {
+    const {
+      // General
+      color = 'Shading',
+      radius = 'md',
+      outline,
 
-export const getButtonStyles = <T,>(
-  props: ButtonProps<T>,
-): [ButtonShallot, Omit<T, 'shallot' | 'state' | keyof ButtonStyleProps>] => {
-  const {
-    // General
-    color = 'Shading',
-    radius = 'md',
-    outline,
+      // Typography
+      // typeface = 'Body',
+      // font = 'Bold',
+      letterSpacing = 'md',
+      fontSize = 'md',
 
-    // Typography
-    // typeface = 'Body',
-    // font = 'Bold',
-    letterSpacing = 'md',
-    fontSize = 'md',
+      // Casing
+      uppercase,
 
-    // Casing
-    uppercase,
+      // Text Alignment
+      textAlign = 'center',
 
-    // Text Alignment
-    textAlign = 'center',
+      verticalUnitPadding = 1,
+      horizontalUnitPadding = 2,
 
-    verticalUnitPadding = 1,
-    horizontalUnitPadding = 2,
+      // Underline
+      underline,
 
-    // Underline
-    underline,
+      shallot,
+      state = {},
 
-    shallot,
-    state = {},
+      ...buttonProps
+    } = props
 
-    ...buttonProps
-  } = props
+    // If the button uses the Shading color, we switch to the shading
+    // foreground color rather than the mid-range color. This is because other
+    // palette colors extend to shades darker and lighter than their foreground.
+    const shades: Record<string, keyof DefaultTheme['colors']['Shading']> =
+      color === 'Shading'
+        ? { default: 500, hovered: 450, pressed: 500, focused: 450 }
+        : { default: 300, hovered: 250, pressed: 350, focused: 300 }
 
-  // If the button uses the Shading color, we switch to the shading
-  // foreground color rather than the mid-range color. This is because other
-  // palette colors extend to shades darker and lighter than their foreground.
-  const shades: Record<string, keyof DefaultTheme['colors']['Shading']> =
-    color === 'Shading'
-      ? { default: 500, hovered: 450, pressed: 500, focused: 450 }
-      : { default: 300, hovered: 250, pressed: 350, focused: 300 }
+    let buttonShallot: ButtonShallot = {
+      container: {
+        ...getElevation('pressable'),
+        borderRadius: getRadius(radius),
+        backgroundColor: getColor(color, shades.default),
+        borderColor: getColor(color, shades.default),
+        borderWidth: 2,
+        cursor: 'pointer',
+      },
+      title: {
+        display: 'block',
+        textAlign,
+        typeface: 'Body',
+        flex: 1,
+        fontSize: getFontSize(fontSize),
+        marginLeft: getUnits(horizontalUnitPadding),
+        marginRight: getUnits(horizontalUnitPadding),
+        marginTop: getUnits(verticalUnitPadding),
+        marginBottom: getUnits(verticalUnitPadding),
+        textDecoration: underline ? 'underline' : 'none',
+        textTransform: uppercase ? 'uppercase' : 'none',
+        letterSpacing: getLetterSpacing(letterSpacing),
+        lineHeight: getLineHeight(fontSize),
+      },
+    }
 
-  let styles: ButtonShallot = {
-    container: {
-      radius: getRadius(radius),
-      backgroundColor: getColor(color, shades.default),
-      borderColor: getColor(color, shades.default),
-      borderWidth: 2,
-      elevation: 'pressable',
-      cursor: 'pointer',
-    },
-    label: {
-      textAlign,
-      typeface: 'Body',
-      fontSize: getFontSize(fontSize),
-      marginLeft: getUnits(horizontalUnitPadding),
-      marginRight: getUnits(horizontalUnitPadding),
-      marginTop: getUnits(verticalUnitPadding),
-      marginBottom: getUnits(verticalUnitPadding),
-      flexGrow: 1,
-      textDecoration: underline ? 'underline' : 'none',
-      textTransform: uppercase ? 'uppercase' : 'none',
-      letterSpacing: getLetterSpacing(letterSpacing),
-      lineHeight: getLineHeight(fontSize),
-    },
+    if (state.hovered)
+      buttonShallot = applyStyles(buttonShallot, {
+        container: {
+          ...getElevation('hover'),
+          backgroundColor: getColor(color, shades.hovered),
+          borderColor: getColor(color, shades.hovered),
+        },
+      })
+
+    if (state.pressed)
+      buttonShallot = applyStyles(buttonShallot, {
+        container: {
+          ...getElevation('pressed'),
+          backgroundColor: getColor(color, shades.pressed),
+          borderColor: getColor(color, shades.pressed),
+        },
+      })
+
+    if (state.focused)
+      buttonShallot = applyStyles(buttonShallot, {
+        container: { ...getElevation('focused') },
+      })
+
+    if (outline)
+      buttonShallot = applyStyles(buttonShallot, {
+        container: { backgroundColor: getColor('Shading', 100) },
+        title: { textColor: getColor(color, shades.default) },
+      })
+
+    buttonShallot = applyStyles(buttonShallot, {
+      container: shallot?.container,
+      title: shallot?.title,
+    })
+
+    return <ButtonComponent {...(buttonProps as T)} shallot={buttonShallot} />
   }
-
-  if (state.hovered)
-    styles = applyStyles(styles, {
-      container: {
-        backgroundColor: getColor(color, shades.hovered),
-        borderColor: getColor(color, shades.hovered),
-        elevation: 'hover',
-      },
-    })
-
-  if (state.pressed)
-    styles = applyStyles(styles, {
-      container: {
-        backgroundColor: getColor(color, shades.pressed),
-        borderColor: getColor(color, shades.pressed),
-        elevation: 'pressed',
-      },
-    })
-
-  if (state.focused)
-    styles = applyStyles(styles, {
-      container: { elevation: 'focused' },
-    })
-
-  if (outline)
-    styles = applyStyles(styles, {
-      container: { backgroundColor: getColor('Shading', 100) },
-      label: { textColor: getColor(color, shades.default) },
-    })
-
-  styles = applyStyles(styles, {
-    container: shallot?.container,
-    label: shallot?.label,
-  })
-
-  return [styles, buttonProps]
-}

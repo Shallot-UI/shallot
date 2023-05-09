@@ -6,7 +6,7 @@ export type ShallotProp<T> = Omit<CSSProperties, keyof T> &
   }
 
 export const getStyle =
-  <T extends { shallot: {} }>({ shallot = {} }: T) =>
+  <T extends { shallot?: {} }>({ shallot = {} }: T) =>
   ({ theme }: { theme: DefaultTheme }) =>
     Object.entries(shallot).map(([key, value]) => ({
       [key]: typeof value === 'function' ? value({ theme }) : value,

@@ -1,3 +1,4 @@
+import { ComponentType } from 'react'
 import { CSSObject, DefaultTheme } from 'styled-components'
 import { AllColorShades } from '@shallot-ui/theme'
 import {
@@ -7,7 +8,6 @@ import {
   getRadius,
   getUnits,
 } from '@shallot-ui/core'
-import { ComponentType } from 'react'
 
 type BoxShallot = ShallotProp<CSSObject>
 
@@ -27,10 +27,10 @@ export type BoxStyleProps = {
   minUnitWidth?: number
 }
 
-export type BoxProps<T = {}> = T & BoxStyleProps & { shallot: BoxShallot }
+export type BoxProps<T = {}> = T & BoxStyleProps & { shallot?: BoxShallot }
 
 export const withBoxStyleProps =
-  <T extends { shallot: BoxShallot }>(BoxComponent: ComponentType<T>) =>
+  <T,>(BoxComponent: ComponentType<T & { shallot?: BoxShallot }>) =>
   (props: BoxProps<T>) => {
     const {
       backgroundColor,
@@ -51,6 +51,7 @@ export const withBoxStyleProps =
     } = props
 
     let boxShallot: BoxShallot = {
+      display: 'flex',
       ...(radius && { radius: getRadius(radius) }),
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
