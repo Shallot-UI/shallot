@@ -87,18 +87,25 @@ export const withButtonStyleProps =
 
     let buttonShallot: ButtonShallot = {
       container: {
-        ...getElevation('pressable'),
+        elevation: getElevation('pressable'),
         borderRadius: getRadius(radius),
         backgroundColor: getColor(color, shades.default),
         borderColor: getColor(color, shades.default),
         borderWidth: 2,
         cursor: 'pointer',
+        transition: `
+          background-color 0.2s ease-in-out,
+          border-color 0.2s ease-in-out,
+          box-shadow 0.2s ease-in-out,
+          transform 0.2s ease-in-out
+        `,
       },
       title: {
         display: 'block',
         textAlign,
         typeface: 'Body',
         flex: 1,
+        color: getColor('Shading', 100),
         fontSize: getFontSize(fontSize),
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),
@@ -114,7 +121,7 @@ export const withButtonStyleProps =
     if (state.hovered)
       buttonShallot = applyStyles(buttonShallot, {
         container: {
-          ...getElevation('hover'),
+          elevation: getElevation('hover'),
           backgroundColor: getColor(color, shades.hovered),
           borderColor: getColor(color, shades.hovered),
         },
@@ -123,7 +130,7 @@ export const withButtonStyleProps =
     if (state.pressed)
       buttonShallot = applyStyles(buttonShallot, {
         container: {
-          ...getElevation('pressed'),
+          elevation: getElevation('pressed'),
           backgroundColor: getColor(color, shades.pressed),
           borderColor: getColor(color, shades.pressed),
         },
@@ -131,7 +138,7 @@ export const withButtonStyleProps =
 
     if (state.focused)
       buttonShallot = applyStyles(buttonShallot, {
-        container: { ...getElevation('focused') },
+        container: { elevation: getElevation('focused') },
       })
 
     if (outline)
