@@ -36,7 +36,7 @@ const StaticButton = (
   )
 }
 
-export const withButtonState =
+const withButtonState =
   <T,>(ButtonComponent: ComponentType<T>) =>
   (props: ButtonProps<T>) => {
     const ref = useRef<HTMLButtonElement>(null)
