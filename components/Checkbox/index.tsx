@@ -65,9 +65,10 @@ export const withCheckboxStyleProps =
     let styles: CheckboxShallot = {
       container: {
         backgroundColor: getColor('Shading', 125),
-        borderColor: getColor('Shading', 250),
+        borderColor: getColor('Shading', 200),
         borderRadius: getRadius(radius),
         borderWidth: 1,
+        borderStyle: 'solid',
         transition: `
           border-color 0.2s ease-in-out,
           background-color 0.2s ease-in-out,
@@ -114,7 +115,7 @@ export const withCheckboxStyleProps =
       styles = applyStyles(styles, {
         container: {
           backgroundColor: getColor(color, 300),
-          borderColor: getColor(color, 300),
+          borderColor: getColor(color, 325),
         },
         icon: { display: 'block' },
       })

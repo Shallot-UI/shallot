@@ -9,6 +9,7 @@ import {
   getElevation,
   getFontSize,
   getColorShade,
+  getColor,
 } from '@shallot-ui/web'
 import { ThemeProvider } from 'styled-components'
 
@@ -24,15 +25,20 @@ Below are the default values for the elevations in the Shallot theme.
 
 <Canvas>
   <ThemeProvider theme={makeTheme()}>
-    <Column backgroundColor="Shading.125" radius="xl">
+    <Column
+      shallot={{
+        backgroundColor: getColor('Shading', 125),
+        borderRadius: getRadius('xl'),
+      }}
+    >
       <Row alignCenter unitsAround={4}>
         {['pressable', 'hover', 'pressed', 'focused', 'none'].map(
           (elevation) => (
             <Column
               key={elevation}
-              elevation={elevation}
               shallot={{
-                backgroundColor: 'Shading.100',
+                elevation: getElevation(elevation),
+                backgroundColor: getColor('Shading', 100),
                 borderRadius: getRadius('lg'),
                 height: getUnits(8),
                 width: getUnits(8),
@@ -41,7 +47,6 @@ Below are the default values for the elevations in the Shallot theme.
                 justifyContent: 'center',
               }}
             >
-              {console.log(getElevation(elevation))}
               <Text
                 shallot={{
                   // typeface: "Monospace",

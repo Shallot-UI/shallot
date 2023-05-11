@@ -1,14 +1,23 @@
 import { HTMLAttributes } from 'react'
-import { getTagStyles, TagProps } from '@shallot-ui/tag'
+import styled from 'styled-components'
+import { TagShallot, withTagStyleProps } from '@shallot-ui/tag'
+import { getStyle } from '@shallot-ui/core'
 
-import { Box } from '../../containers'
-import { Text } from '../Text'
+const Container = styled.div(getStyle)
+const Title = styled.div(getStyle)
 
-export const Tag = (props: TagProps<HTMLAttributes<HTMLDivElement>>) => {
-  const [styles, nonStyleProps] = getTagStyles(props)
+const StaticTag = (
+  props: HTMLAttributes<HTMLDivElement> & {
+    shallot?: TagShallot
+  },
+) => {
+  const { title, shallot, ...rest } = props
+
   return (
-    <Box shallot={styles?.container} {...nonStyleProps}>
-      <Text shallot={styles?.label}>{props.title}</Text>
-    </Box>
+    <Container shallot={shallot?.container} {...rest}>
+      {title && <Title shallot={shallot?.title}>{title}</Title>}
+    </Container>
   )
 }
+
+export const Tag = withTagStyleProps(StaticTag)

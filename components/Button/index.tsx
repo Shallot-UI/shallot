@@ -24,6 +24,12 @@ export type ButtonStyleProps = {
   verticalUnitPadding?: number
   horizontalUnitPadding?: number
   textAlign?: CSSObject['textAlign']
+
+  unitsAround?: number
+  unitsAbove?: number
+  unitsBelow?: number
+  unitsLeft?: number
+  unitsRight?: number
 }
 
 export type ButtonShallot = {
@@ -52,6 +58,12 @@ export const withButtonStyleProps =
       color = 'Shading',
       radius = 'md',
       outline,
+
+      unitsAround,
+      unitsAbove,
+      unitsBelow,
+      unitsLeft,
+      unitsRight,
 
       // Typography
       // typeface = 'Body',
@@ -99,6 +111,13 @@ export const withButtonStyleProps =
           box-shadow 0.2s ease-in-out,
           transform 0.2s ease-in-out
         `,
+
+        // Units
+        ...(unitsAround && { margin: getUnits(unitsAround) }),
+        ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
+        ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
+        ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
+        ...(unitsRight && { marginRight: getUnits(unitsRight) }),
       },
       title: {
         display: 'block',
