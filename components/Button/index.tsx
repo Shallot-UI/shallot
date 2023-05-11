@@ -11,6 +11,7 @@ import {
   getUnits,
   ShallotProp,
   getElevation,
+  getTypeface,
 } from '@shallot-ui/core'
 
 export type ButtonStyleProps = {
@@ -24,12 +25,13 @@ export type ButtonStyleProps = {
   verticalUnitPadding?: number
   horizontalUnitPadding?: number
   textAlign?: CSSObject['textAlign']
-
   unitsAround?: number
   unitsAbove?: number
   unitsBelow?: number
   unitsLeft?: number
   unitsRight?: number
+  typeface?: keyof DefaultTheme['typefaces']
+  font?: string
 }
 
 export type ButtonShallot = {
@@ -66,8 +68,8 @@ export const withButtonStyleProps =
       unitsRight,
 
       // Typography
-      // typeface = 'Body',
-      // font = 'Bold',
+      typeface = 'Body',
+      font = 'Bold',
       letterSpacing = 'md',
       fontSize = 'md',
 
@@ -104,6 +106,7 @@ export const withButtonStyleProps =
         backgroundColor: getColor(color, shades.default),
         borderColor: getColor(color, shades.default),
         borderWidth: 2,
+        borderStyle: 'solid',
         cursor: 'pointer',
         transition: `
           background-color 0.2s ease-in-out,
@@ -111,7 +114,6 @@ export const withButtonStyleProps =
           box-shadow 0.2s ease-in-out,
           transform 0.2s ease-in-out
         `,
-
         // Units
         ...(unitsAround && { margin: getUnits(unitsAround) }),
         ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
@@ -122,8 +124,8 @@ export const withButtonStyleProps =
       title: {
         display: 'block',
         textAlign,
-        typeface: 'Body',
         flex: 1,
+        typeface: getTypeface(typeface, font),
         color: getColor('Shading', 100),
         fontSize: getFontSize(fontSize),
         marginLeft: getUnits(horizontalUnitPadding),
@@ -163,7 +165,7 @@ export const withButtonStyleProps =
     if (outline)
       buttonShallot = applyStyles(buttonShallot, {
         container: { backgroundColor: getColor('Shading', 100) },
-        title: { textColor: getColor(color, shades.default) },
+        title: { color: getColor(color, shades.default) },
       })
 
     buttonShallot = applyStyles(buttonShallot, {

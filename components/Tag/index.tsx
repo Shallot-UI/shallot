@@ -7,6 +7,7 @@ import {
   getFontSize,
   getLineHeight,
   getRadius,
+  getTypeface,
   getUnits,
   ShallotProp,
 } from '@shallot-ui/core'
@@ -18,6 +19,8 @@ export type TagStyleProps = {
   uppercase?: boolean
   verticalUnitPadding?: number
   horizontalUnitPadding?: number
+  typeface?: keyof DefaultTheme['typefaces']
+  font?: string
 }
 
 export type TagShallot = {
@@ -39,6 +42,8 @@ export const withTagStyleProps =
       radius = 'md',
       // animation,
       outline,
+      typeface = 'Body',
+      font = 'Bold',
 
       // Casing
       uppercase,
@@ -68,6 +73,7 @@ export const withTagStyleProps =
         fontSize: getFontSize('md'),
         color: getColor(color, 400),
         lineHeight: getLineHeight('md'),
+        typeface: getTypeface(typeface, font),
         transition: 'color 300ms ease-in-out',
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),
