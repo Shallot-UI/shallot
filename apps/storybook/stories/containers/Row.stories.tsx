@@ -1,7 +1,16 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 
-import { Row, Fold, Column, DEFAULT_THEME, makeTheme } from '@shallot-ui/web'
+import {
+  Row,
+  Fold,
+  Column,
+  DEFAULT_THEME,
+  makeTheme,
+  getColor,
+  getUnits,
+  getRadius,
+} from '@shallot-ui/web'
 
 const allColorNames = Object.keys(DEFAULT_THEME.colors)
   .map((color) => {
@@ -35,40 +44,55 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Row> = (args) => (
   <ThemeProvider theme={makeTheme({})}>
-    <Fold backgroundColor="Shading.150" alignCenter alignMiddle>
+    <Column
+      shallot={{
+        backgroundColor: getColor('Shading', 150),
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        width: '100vw',
+      }}
+    >
       <Row
         {...args}
-        unitHeight={10}
-        unitWidth={40}
-        transition="all 0.2s ease-in-out;"
+        shallot={{
+          height: getUnits(20),
+          width: getUnits(40),
+          transition: 'all 0.2s ease-in-out;',
+        }}
       >
         <Column
-          backgroundColor="Shading.150"
-          radius={args.radius}
-          unitsAround={1}
-          unitsRight={1 / 2}
-          fullHeight
-          fullWidth
+          shallot={{
+            backgroundColor: getColor('Shading', 100),
+            borderRadius: getRadius(args.radius),
+            margin: getUnits(1),
+            marginBottom: getUnits(1 / 2),
+            height: '100%',
+            width: '100%',
+          }}
         />
         <Column
-          backgroundColor="Shading.150"
-          radius={args.radius}
-          unitsAround={1}
-          unitsLeft={1 / 2}
-          unitsRight={1 / 2}
-          fullHeight
-          fullWidth
+          shallot={{
+            backgroundColor: getColor('Shading', 100),
+            borderRadius: getRadius(args.radius),
+            margin: getUnits(1),
+            marginBottom: getUnits(1 / 2),
+            height: '100%',
+            width: '100%',
+          }}
         />
         <Column
-          backgroundColor="Shading.150"
-          radius={args.radius}
-          unitsAround={1}
-          unitsLeft={1 / 2}
-          fullHeight
-          fullWidth
+          shallot={{
+            backgroundColor: getColor('Shading', 100),
+            borderRadius: getRadius(args.radius),
+            margin: getUnits(1),
+            marginBottom: getUnits(1 / 2),
+            height: '100%',
+            width: '100%',
+          }}
         />
       </Row>
-    </Fold>
+    </Column>
   </ThemeProvider>
 )
 

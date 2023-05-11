@@ -1,12 +1,27 @@
-import { CSSObject, DefaultTheme } from 'styled-components'
+import { ComponentType } from 'react'
+import { CSSObject } from 'styled-components'
 import { ColorName } from '@shallot-ui/theme'
-import { applyStyles, ShallotProp } from '@shallot-ui/core'
+import {
+  applyStyles,
+  getColor,
+  getElevation,
+  getRadius,
+  getUnits,
+  ShallotProp,
+} from '@shallot-ui/core'
 
 export type SwitchStyleProps = {
   color?: ColorName
   size?: number
   iconSize?: number
-  radius?: keyof DefaultTheme['radii']
+  unitsAround?: number
+  unitsAbove?: number
+  unitsBelow?: number
+  unitsLeft?: number
+  unitsRight?: number
+  unitHeight?: number
+  unitWidth?: number
+  inverted?: boolean
 }
 
 export type SwitchShallot = {
@@ -23,102 +38,114 @@ export type SwitchState = {
 
 export type SwitchProps<T> = T &
   SwitchStyleProps & {
-    shallot: SwitchShallot
+    shallot?: SwitchShallot
     state?: SwitchState
   }
 
-// TODO: Update this so that getSwitchStyles returns both the styles and the
-// props that should be passed to the Switch as separate objects.
+export const withSwitchStyleProps =
+  <T,>(SwitchComponent: ComponentType<T>) =>
+  (props: SwitchProps<T>) => {
+    const {
+      color = 'Primary',
+      size = 4 / 3,
+      iconSize = 1,
 
-export const getSwitchStyles = <T,>(
-  props: SwitchProps<T>,
-): [SwitchShallot, Omit<T, 'shallot' | 'state' | keyof SwitchStyleProps>] => {
-  const {
-    color = 'Primary',
-    size = 4 / 3,
-    iconSize = 1,
-    radius = 'sm',
+      unitsAround,
+      unitsAbove,
+      unitsBelow,
+      unitsLeft,
+      unitsRight,
 
-    shallot,
-    state = {},
+      inverted,
 
-    ...nonStyleProps
-  } = props
+      shallot,
+      state = {},
 
-  let styles: SwitchShallot = {
-    container: {
-      cursor: 'pointer',
-      backgroundColor: 'Shading.125',
-      borderColor: 'Shading.200',
-      borderWidth: 1,
-      radius: 'pill',
-      transition: `
-        background-color 500ms ease-in-out,
-        border-color 500ms ease-in-out
-      `,
-      style: { position: 'relative' },
-      // Configurable
-      unitWidth: 2 * size - 1 / 3,
-      unitHeight: size,
-    },
-    handle: {
-      unitHeight: size - 1 / 3,
-      unitWidth: size - 1 / 3,
-      backgroundColor: 'Shading.100',
-      borderColor: 'Shading.200',
-      borderWidth: 1,
-      radius: 'pill',
-      transition: `
-        left 200ms ease-in-out,
-        border-color 500ms ease-in-out
-      `,
-      style: {
-        position: 'absolute',
-        left: 1,
-        top: 1,
-      },
-    },
-  }
+      ...nonStyleProps
+    } = props
 
-  // Focused
-  if (state.focused)
-    styles = applyStyles(styles, {
-      container: { elevation: 'focused' },
-    })
-
-  // Hovered
-  if (state.hovered)
-    styles = applyStyles(styles, {
-      container: { backgroundColor: 'Shading.100' },
-    })
-
-  // Checked
-  if (state.checked)
-    styles = applyStyles(styles, {
+    let styles: SwitchShallot = {
       container: {
-        backgroundColor: `${color}.300`,
-        borderColor: `${color}.300`,
+        cursor: 'pointer',
+        backgroundColor: getColor('Shading', 125),
+        borderColor: getColor('Shading', 200),
+        borderWidth: 1,
+        borderStyle: 'solid',
+        borderRadius: getRadius('pill'),
+        transition: `
+          background-color 500ms ease-in-out,
+          border-color 500ms ease-in-out
+        `,
+        position: 'relative',
+        // Configurable
+        width: getUnits(2 * size - 1 / 3),
+        height: getUnits(size),
+
+        ...(unitsAround && { margin: getUnits(unitsAround) }),
+        ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
+        ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
+        ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
+        ...(unitsRight && { marginRight: getUnits(unitsRight) }),
       },
       handle: {
-        backgroundColor: 'Shading.100',
-        borderColor: 'Shading.100',
-        style: { left: size * 12 - 3 },
+        height: getUnits(size - 1 / 3),
+        width: getUnits(size - 1 / 3),
+        backgroundColor: getColor('Shading', 100),
+        borderColor: getColor('Shading', 200),
+        borderWidth: 1,
+        borderStyle: 'solid',
+        borderRadius: getRadius('pill'),
+        transition: `
+          left 200ms ease-in-out,
+          border-color 500ms ease-in-out
+        `,
+        style: {
+          position: 'absolute',
+          left: 1,
+          top: 1,
+        },
       },
-    })
+    }
 
-  // Hovered and Checked
-  if (state.hovered && state.checked)
+    // Focused
+    if (state.focused)
+      styles = applyStyles(styles, {
+        container: { elevation: getElevation('focused') },
+      })
+
+    // Hovered
+    if (state.hovered)
+      styles = applyStyles(styles, {
+        container: { backgroundColor: getColor('Shading', 100) },
+      })
+
+    // Checked
+    if ((inverted && !state.checked) || (!inverted && state.checked))
+      styles = applyStyles(styles, {
+        container: {
+          backgroundColor: getColor(color, 300),
+          borderColor: getColor(color, 300),
+        },
+        handle: {
+          backgroundColor: getColor('Shading', 100),
+          borderColor: getColor('Shading', 100),
+          style: { left: size * 12 - 3 },
+        },
+      })
+
+    // Hovered and Checked
+    if (state.hovered && state.checked)
+      styles = applyStyles(styles, {
+        container: {
+          backgroundColor: getColor(color, 250),
+          borderColor: getColor(color, 250),
+        },
+      })
+
     styles = applyStyles(styles, {
-      container: {
-        backgroundColor: `${color}.250`,
-        borderColor: `${color}.250`,
-      },
+      container: shallot?.container,
+      handle: shallot?.handle,
     })
 
-  styles = applyStyles(styles, {
-    container: shallot?.container,
-    handle: shallot?.handle,
-  })
-
-  return [styles, nonStyleProps]
-}
+    return <SwitchComponent {...(nonStyleProps as T)} shallot={styles} />
+  }

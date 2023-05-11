@@ -5,6 +5,7 @@ import {
   applyStyles,
   getColor,
   getFontSize,
+  getLetterSpacing,
   getLineHeight,
   getRadius,
   getTypeface,
@@ -21,6 +22,7 @@ export type TagStyleProps = {
   horizontalUnitPadding?: number
   typeface?: keyof DefaultTheme['typefaces']
   font?: string
+  letterSpacing?: keyof DefaultTheme['letterSpacings']
 }
 
 export type TagShallot = {
@@ -51,6 +53,8 @@ export const withTagStyleProps =
       verticalUnitPadding = 1 / 2,
       horizontalUnitPadding = 1,
 
+      letterSpacing,
+
       shallot,
 
       // Non-Style Props
@@ -79,6 +83,9 @@ export const withTagStyleProps =
         marginRight: getUnits(horizontalUnitPadding),
         marginTop: getUnits(verticalUnitPadding),
         marginBottom: getUnits(verticalUnitPadding),
+        ...(letterSpacing && {
+          letterSpacing: getLetterSpacing(letterSpacing),
+        }),
         textAlign: 'center',
         flex: 1,
       },

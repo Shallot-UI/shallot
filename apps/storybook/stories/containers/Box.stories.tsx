@@ -1,7 +1,14 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 
-import { DEFAULT_THEME, makeTheme, Box, Fold } from '@shallot-ui/web'
+import {
+  DEFAULT_THEME,
+  makeTheme,
+  Box,
+  Fold,
+  Column,
+  getColor,
+} from '@shallot-ui/web'
 
 const allColorNames = Object.keys(DEFAULT_THEME.colors)
   .map((color) => {
@@ -35,14 +42,22 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Box> = (args) => (
   <ThemeProvider theme={makeTheme({})}>
-    <Fold backgroundColor="Shading.150" alignCenter alignMiddle>
+    <Box
+      shallot={{
+        backgroundColor: getColor('Shading', 150),
+        height: '100vh',
+        width: '100vw',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <Box
         {...args}
         unitHeight={10}
         unitWidth={10}
         transition="all 0.2s ease-in-out;"
       />
-    </Fold>
+    </Box>
   </ThemeProvider>
 )
 

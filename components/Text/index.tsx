@@ -5,17 +5,14 @@ import {
   ShallotProp,
   applyStyles,
   getColorShade,
-  getRadius,
+  getTypeface,
   getUnits,
 } from '@shallot-ui/core'
 
-type BoxShallot = ShallotProp<CSSObject>
+type TextShallot = ShallotProp<CSSObject>
 
-export type BoxStyleProps = {
-  backgroundColor?: AllColorShades
-  borderColor?: AllColorShades
-  radius?: keyof DefaultTheme['radii']
-  unitsAround?: number
+export type TextStyleProps = {
+  textColor?: AllColorShades
   unitsAbove?: number
   unitsBelow?: number
   unitsLeft?: number
@@ -26,18 +23,17 @@ export type BoxStyleProps = {
   maxUnitWidth?: number
   minUnitHeight?: number
   minUnitWidth?: number
+  typeface?: keyof DefaultTheme['typefaces']
+  font?: string
 }
 
-export type BoxProps<T = {}> = T & BoxStyleProps & { shallot?: BoxShallot }
+export type TextProps<T = {}> = T & TextStyleProps & { shallot?: TextShallot }
 
-export const withBoxStyleProps =
-  <T,>(BoxComponent: ComponentType<T & { shallot?: BoxShallot }>) =>
-  (props: BoxProps<T>) => {
+export const withTextStyleProps =
+  <T,>(TextComponent: ComponentType<T & { shallot?: TextShallot }>) =>
+  (props: TextProps<T>) => {
     const {
-      backgroundColor,
-      borderColor,
-      radius,
-      unitsAround,
+      textColor,
       unitsAbove,
       unitsBelow,
       unitsLeft,
@@ -49,17 +45,15 @@ export const withBoxStyleProps =
       maxUnitWidth,
       minUnitHeight,
       minUnitWidth,
+      typeface = 'Body',
+      font,
       ...boxProps
     } = props
 
-    let boxShallot: BoxShallot = {
+    let boxShallot: TextShallot = {
       display: 'flex',
-      ...(radius && { radius: getRadius(radius) }),
-      ...(backgroundColor && {
-        backgroundColor: getColorShade(backgroundColor),
-      }),
-      ...(borderColor && { borderColor: getColorShade(borderColor) }),
-      ...(unitsAround && { margin: getUnits(unitsAround) }),
+      typeface: getTypeface(typeface, font),
+      ...(textColor && { color: getColorShade(textColor) }),
       ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
       ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
       ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
@@ -74,5 +68,5 @@ export const withBoxStyleProps =
 
     boxShallot = applyStyles(boxShallot, shallot)
 
-    return <BoxComponent {...(boxProps as T)} shallot={boxShallot} />
+    return <TextComponent {...(boxProps as T)} shallot={boxShallot} />
   }

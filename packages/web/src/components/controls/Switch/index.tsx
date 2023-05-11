@@ -1,25 +1,60 @@
-import { HTMLAttributes, useRef } from 'react'
-import { getSwitchStyles, SwitchProps } from '@shallot-ui/switch'
+import {
+  ComponentType,
+  Dispatch,
+  HTMLAttributes,
+  RefObject,
+  SetStateAction,
+  useRef,
+} from 'react'
+import styled from 'styled-components'
+import { getStyle } from '@shallot-ui/core'
+import {
+  SwitchProps,
+  SwitchShallot,
+  withSwitchStyleProps,
+} from '@shallot-ui/switch'
 
 import { useFocus, useHover, usePressed } from '../../../hooks'
-import { Box } from '../../containers'
 
-export const Switch = (
-  props: SwitchProps<HTMLAttributes<HTMLLabelElement>>,
+const Container = styled.div(getStyle)
+const Handle = styled.div(getStyle)
+
+const StaticSwitch = (
+  props: HTMLAttributes<HTMLDivElement> & {
+    shallot?: SwitchShallot
+    inputRef?: RefObject<HTMLDivElement>
+  },
 ) => {
-  const ref = useRef<HTMLLabelElement>(null)
-  const focused = useFocus(ref)
-  const hovered = useHover(ref)
-  const pressed = usePressed(ref)
-
-  const [styles, switchProps] = getSwitchStyles({
-    ...props,
-    state: { hovered, focused, pressed, checked: false },
-  })
+  const { shallot, inputRef, ...rest } = props
 
   return (
-    <Box as="label" shallot={styles?.container} {...switchProps}>
-      <Box shallot={styles?.handle} />
-    </Box>
+    <Container ref={inputRef} shallot={shallot?.container} {...rest}>
+      <Handle shallot={shallot?.handle} />
+    </Container>
   )
 }
+
+const withSwitchState =
+  <T,>(SwitchComponent: ComponentType<T>) =>
+  (
+    props: SwitchProps<T> & {
+      value?: boolean
+      setValue?: Dispatch<SetStateAction<boolean>>
+    },
+  ) => {
+    const ref = useRef<HTMLDivElement>(null)
+    const focused = useFocus(ref)
+    const hovered = useHover(ref)
+    const pressed = usePressed(ref)
+
+    return (
+      <SwitchComponent
+        inputRef={ref}
+        state={{ hovered, focused, pressed, checked: props.value }}
+        onClick={() => props.setValue?.(!props.value)}
+        {...props}
+      />
+    )
+  }
+
+export const Switch = withSwitchState(withSwitchStyleProps(StaticSwitch))

@@ -1,5 +1,5 @@
 export const DEFAULT_LETTER_SPACINGS = {
-  sm: 0.02,
-  md: 0.03,
-  lg: 0.075,
+  sm: 0.2,
+  md: 0.3,
+  lg: 0.75,
 }

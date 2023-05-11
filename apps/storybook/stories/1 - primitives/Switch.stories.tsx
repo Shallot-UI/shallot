@@ -36,14 +36,14 @@ const Template: ComponentStory<typeof Switch> = (args) => {
           unitsAround={1 / 2}
           {...args}
           value={value}
-          onChangeValue={setValue}
+          setValue={setValue}
         />
         <Switch
           inverted
           unitsAround={1 / 2}
           {...args}
           value={value}
-          onChangeValue={setValue}
+          setValue={setValue}
         />
       </Row>
     </ThemeProvider>
