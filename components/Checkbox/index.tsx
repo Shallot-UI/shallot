@@ -24,8 +24,8 @@ export type CheckboxStyleProps = {
 }
 
 export type CheckboxShallot = {
-  container: ShallotProp<CSSObject>
-  icon: ShallotProp<CSSObject>
+  container: ShallotProp
+  icon: ShallotProp
 }
 
 export type CheckboxState = {

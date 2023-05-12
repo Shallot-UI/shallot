@@ -40,8 +40,8 @@ export type InputStyleProps = {
 }
 
 export type InputShallot = {
-  container: ShallotProp<CSSObject>
-  input: ShallotProp<CSSObject>
+  container: ShallotProp
+  input: ShallotProp
 }
 
 export type InputState = {

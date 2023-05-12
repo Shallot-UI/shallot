@@ -1,7 +1,7 @@
+import styled from 'styled-components'
 import { ShallotProp, getStyle } from '@shallot-ui/core'
-import styled, { CSSObject } from 'styled-components'
 
-export const Row = styled('div')<{ shallot?: ShallotProp<CSSObject> }>(
+export const Row = styled.div<{ shallot?: ShallotProp }>(
   ({ shallot, ...rest }) =>
     getStyle({
       shallot: {

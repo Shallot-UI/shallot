@@ -26,8 +26,8 @@ export type TagStyleProps = {
 }
 
 export type TagShallot = {
-  container: ShallotProp<CSSObject>
-  title: ShallotProp<CSSObject>
+  container: ShallotProp
+  title: ShallotProp
 }
 
 export type TagProps<T> = T &

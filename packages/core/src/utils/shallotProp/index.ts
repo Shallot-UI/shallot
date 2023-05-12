@@ -1,6 +1,11 @@
-import { CSSProperties, CSSPseudos, DefaultTheme } from 'styled-components'
+import {
+  CSSObject,
+  CSSProperties,
+  CSSPseudos,
+  DefaultTheme,
+} from 'styled-components'
 
-export type ShallotProp<T> = Omit<CSSProperties, keyof T> &
+export type ShallotProp<T = CSSObject> = Omit<CSSProperties, keyof T> &
   Omit<CSSPseudos, keyof T> & {
     [K in keyof T]: T[K] | ((props: { theme: DefaultTheme }) => T[K])
   }

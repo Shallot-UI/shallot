@@ -35,8 +35,8 @@ export type ButtonStyleProps = {
 }
 
 export type ButtonShallot = {
-  container: ShallotProp<CSSObject>
-  title: ShallotProp<CSSObject>
+  container: ShallotProp
+  title: ShallotProp
 }
 
 export type ButtonState = {

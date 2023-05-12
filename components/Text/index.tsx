@@ -5,11 +5,13 @@ import {
   ShallotProp,
   applyStyles,
   getColorShade,
+  getFontSize,
+  getLineHeight,
   getTypeface,
   getUnits,
 } from '@shallot-ui/core'
 
-type TextShallot = ShallotProp<CSSObject>
+type TextShallot = ShallotProp
 
 export type TextStyleProps = {
   textColor?: AllColorShades
@@ -23,6 +25,8 @@ export type TextStyleProps = {
   maxUnitWidth?: number
   minUnitHeight?: number
   minUnitWidth?: number
+  fontSize?: keyof DefaultTheme['fontSizes']
+  lineHeight?: keyof DefaultTheme['lineHeights']
   typeface?: keyof DefaultTheme['typefaces']
   font?: string
 }
@@ -46,6 +50,8 @@ export const withTextStyleProps =
       minUnitHeight,
       minUnitWidth,
       typeface = 'Body',
+      fontSize,
+      lineHeight,
       font,
       ...boxProps
     } = props
@@ -53,6 +59,8 @@ export const withTextStyleProps =
     let boxShallot: TextShallot = {
       display: 'flex',
       typeface: getTypeface(typeface, font),
+      ...(fontSize && { fontSize: getFontSize(fontSize) }),
+      ...(lineHeight && { lineHeight: getLineHeight(lineHeight) }),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
       ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),

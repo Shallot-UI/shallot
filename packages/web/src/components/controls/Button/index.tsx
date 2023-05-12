@@ -1,5 +1,6 @@
 import { ComponentType, HTMLAttributes, RefObject, useRef } from 'react'
 import styled from 'styled-components'
+import { getStyle } from '@shallot-ui/core'
 import {
   ButtonProps,
   ButtonShallot,
@@ -7,8 +8,6 @@ import {
 } from '@shallot-ui/button'
 
 import { useFocus, useHover, usePressed } from '../../../hooks'
-import { Box } from '../../containers'
-import { Text } from '../../content'
 
 const ResetButton = styled.button`
   background: none;
@@ -19,6 +18,9 @@ const ResetButton = styled.button`
   cursor: pointer;
 `
 
+const Container = styled.div(getStyle)
+const Title = styled.div(getStyle)
+
 const StaticButton = (
   props: HTMLAttributes<HTMLButtonElement> & {
     shallot?: ButtonShallot
@@ -28,10 +30,10 @@ const StaticButton = (
   const { title, shallot, buttonRef, ...rest } = props
 
   return (
-    <ResetButton ref={buttonRef}>
-      <Box shallot={shallot?.container} {...rest}>
-        {title && <Text shallot={shallot?.title}>{title}</Text>}
-      </Box>
+    <ResetButton ref={buttonRef} {...rest}>
+      <Container shallot={shallot?.container}>
+        {title && <Title shallot={shallot?.title}>{title}</Title>}
+      </Container>
     </ResetButton>
   )
 }

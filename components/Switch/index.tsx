@@ -25,8 +25,8 @@ export type SwitchStyleProps = {
 }
 
 export type SwitchShallot = {
-  container: ShallotProp<CSSObject>
-  handle: ShallotProp<CSSObject>
+  container: ShallotProp
+  handle: ShallotProp
 }
 
 export type SwitchState = {

@@ -1,12 +1,12 @@
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 import { ShallotProp, getStyle } from '@shallot-ui/core'
 
-export const Column = styled.div<{ shallot?: ShallotProp }>(
+export const Row = styled.View<{ shallot?: ShallotProp }>(
   ({ shallot, ...rest }) =>
     getStyle({
       shallot: {
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         ...shallot,
       },
       ...rest,

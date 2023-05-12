@@ -9,7 +9,7 @@ import {
   getUnits,
 } from '@shallot-ui/core'
 
-type BoxShallot = ShallotProp<CSSObject>
+type BoxShallot = ShallotProp
 
 export type BoxStyleProps = {
   backgroundColor?: AllColorShades

@@ -15,8 +15,6 @@ const getColorShade = (colorShade: AllColorShades, theme: DefaultTheme) => {
   return theme.colors[colorName][colorShadeNumber]
 }
 
-/* ${fontProps.font.get({ font: 'Body' })}; */
-
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126

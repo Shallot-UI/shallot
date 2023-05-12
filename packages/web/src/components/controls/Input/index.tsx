@@ -16,7 +16,7 @@ import {
 import { useFocus, useHover, usePressed } from '../../../hooks'
 
 const Container = styled.div(getStyle)
-const InnerInput = styled.input<{ shallot?: ShallotProp<CSSObject> }>(
+const InnerInput = styled.input<{ shallot?: ShallotProp }>(
   ({ shallot, ...rest }) =>
     getStyle({
       shallot: {
