@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/column",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -37,9 +37,9 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@shallot-ui/box": "^0.1.0",
-    "@shallot-ui/core": "^2.0.0",
-    "@shallot-ui/theme": "^0.24.1",
+    "@shallot-ui/box": "^0.2.0",
+    "@shallot-ui/core": "^3.0.0",
+    "@shallot-ui/theme": "^0.25.0",
     "prop-types": "^15.8.1"
   }
 }

@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.25.0
+
+### Minor Changes
+
+- Major overhaul
+
 ## 0.24.1
 
 ### Patch Changes

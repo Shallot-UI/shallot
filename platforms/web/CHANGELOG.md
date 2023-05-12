@@ -1,5 +1,32 @@
 # @shallot-ui/web
 
+## 0.39.0
+
+### Minor Changes
+
+- Major overhaul
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/checkbox@0.2.0
+  - @shallot-ui/button@0.2.0
+  - @shallot-ui/column@0.2.0
+  - @shallot-ui/switch@0.2.0
+  - @shallot-ui/input@0.2.0
+  - @shallot-ui/text@0.2.0
+  - @shallot-ui/box@0.2.0
+  - @shallot-ui/row@0.2.0
+  - @shallot-ui/tag@0.2.0
+  - @shallot-ui/theme@0.25.0
+  - @shallot-ui/core@3.0.0
+
+## 0.38.1
+
+### Patch Changes
+
+- b302a46: Change default button typeface to body
+
 ## 0.38.1-next.0
 
 ### Patch Changes
