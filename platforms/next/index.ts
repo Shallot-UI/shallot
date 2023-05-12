@@ -1,3 +1,4 @@
 export * from '@shallot-ui/web'
 
-export * from './src'
+export * from './components'
+export * from './utils'
