@@ -1,5 +1,14 @@
 # stories
 
+## 0.5.3-next.0
+
+### Patch Changes
+
+- 5c20f90: Fixes the text line height story by providing a font size
+- b302a46: Change default button typeface to body
+- Updated dependencies [b302a46]
+  - @shallot-ui/web@0.38.1-next.0
+
 ## 0.5.2
 
 ### Patch Changes

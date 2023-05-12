@@ -1,0 +1,28 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "stories": "0.5.2",
+    "@shallot-ui/box": "0.1.0",
+    "@shallot-ui/button": "0.1.0",
+    "@shallot-ui/checkbox": "0.1.0",
+    "@shallot-ui/column": "0.1.0",
+    "@shallot-ui/input": "0.1.0",
+    "@shallot-ui/row": "0.1.0",
+    "@shallot-ui/switch": "0.1.0",
+    "@shallot-ui/tag": "0.1.0",
+    "@shallot-ui/text": "0.1.0",
+    "@shallot-ui/core": "2.0.0",
+    "eslint-config-custom": "0.0.1",
+    "@shallot-ui/theme": "0.24.1",
+    "tsconfig": "0.0.1",
+    "@shallot-ui/utils": "0.1.2",
+    "@shallot-ui/native": "0.28.8",
+    "@shallot-ui/next": "0.24.9",
+    "@shallot-ui/web": "0.38.0"
+  },
+  "changesets": [
+    "calm-otters-knock",
+    "dull-radios-camp"
+  ]
+}

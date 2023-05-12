@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.38.1-next.0
+
+### Patch Changes
+
+- b302a46: Change default button typeface to body
+
 ## 0.38.0
 
 ### Minor Changes
