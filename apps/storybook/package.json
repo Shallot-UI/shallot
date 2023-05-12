@@ -3,12 +3,8 @@
   "version": "0.5.2",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3001",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build": "build-storybook",
+    "dev": "start-storybook -p 6006"
   },
   "dependencies": {
     "@shallot-ui/web": "*",

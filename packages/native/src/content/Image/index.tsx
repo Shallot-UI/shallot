@@ -3,11 +3,8 @@ import styled, { DefaultTheme } from 'styled-components/native'
 import FastImage, { FastImageProps } from 'react-native-fast-image'
 import { ShallotProp, getStyle, getUnits, getRadius } from '@shallot-ui/core'
 
-type FastImageComponentProps = Omit<FastImageProps, 'source'> & {
+export interface ImageProps extends Omit<FastImageProps, 'source'> {
   source: FastImageProps['source'] | undefined
-}
-
-export interface ImageProps extends FastImageComponentProps {
   shallot?: ShallotProp
   radius?: keyof DefaultTheme['radii']
   unitHeight?: number

@@ -1,9 +1,4 @@
-import {
-  CSSObject,
-  CSSProp,
-  DefaultTheme,
-  ThemedCssFunction,
-} from 'styled-components'
+import { CSSObject, CSSProp, DefaultTheme } from 'styled-components'
 
 export type ColorShadingValue =
   | 100
@@ -35,22 +30,6 @@ export type Typeface = {
   }
 }
 
-export interface BorderProps {
-  borderWidth?: number
-  borderColor?: AllColorShades
-  borderPosition?: 'all' | 'top' | 'right' | 'bottom' | 'left'
-}
-
-export interface AnimationProps {
-  animation?:
-    | 'fadeIn'
-    | 'fadeOut'
-    | 'fadeInUp'
-    | 'fadeInDown'
-    | 'fadeInLeft'
-    | 'fadeInRight'
-}
-
 export type ColorName = keyof DefaultTheme['colors']
 
 // Combines a color name with each of its shade values.
@@ -62,111 +41,6 @@ export interface ColorProps {
   textColor?: AllColorShades
   borderColor?: AllColorShades
   fillColor?: AllColorShades
-}
-
-export interface CursorProps {
-  cursor?: CSSObject['cursor']
-}
-
-export interface ElevationProps {
-  elevation?: keyof DefaultTheme['elevations']
-}
-
-export interface FlexProps {
-  direction?: CSSObject['flexDirection']
-  flex?: boolean | CSSObject['flex']
-  grow?: boolean | CSSObject['flexGrow']
-  shrink?: boolean | CSSObject['shrink']
-  wrap?: boolean | 'reverse' | CSSObject['flexWrap']
-}
-
-export interface RadiusProps {
-  radius?: keyof DefaultTheme['radii']
-}
-
-export interface TransitionProps {
-  transition?: string
-}
-
-export interface FontProps {
-  font?: string
-  typeface?: keyof DefaultTheme['typefaces']
-}
-
-export interface FontSizeProps {
-  fontSize?: keyof DefaultTheme['fontSizes']
-}
-
-export interface LineHeightProps extends FontSizeProps {
-  lineHeight?: keyof DefaultTheme['lineHeights']
-}
-
-export interface UnderlineProps {
-  underline?: boolean | 'under'
-}
-
-export interface HorizontalAlignmentProps {
-  alignLeft?: boolean
-  alignRight?: boolean
-  alignCenter?: boolean
-}
-
-export interface VerticalAlignmentProps {
-  alignTop?: boolean
-  alignBottom?: boolean
-  alignMiddle?: boolean
-}
-
-export interface LetterSpacingProps {
-  letterSpacing?: keyof DefaultTheme['letterSpacings']
-}
-
-type ValueOrGetter<T> = T | ThemedCssFunction<DefaultTheme>
-
-export interface CasingProps {
-  casing?: CSSObject['textTransform']
-}
-
-export interface TextAlignProps {
-  textAlign?: CSSObject['textAlign']
-}
-
-export interface SizingProps {
-  width?: ValueOrGetter<CSSObject['width']>
-  minWidth?: ValueOrGetter<CSSObject['minWidth']>
-  maxWidth?: ValueOrGetter<CSSObject['maxWidth']>
-  height?: ValueOrGetter<CSSObject['height']>
-  minHeight?: ValueOrGetter<CSSObject['minHeight']>
-  maxHeight?: ValueOrGetter<CSSObject['maxHeight']>
-}
-
-export interface MarginProps {
-  fullHeight?: boolean
-  fullWidth?: boolean
-  margin?: ValueOrGetter<CSSObject['margin']>
-  marginTop?: ValueOrGetter<CSSObject['marginTop']>
-  marginBottom?: ValueOrGetter<CSSObject['marginBottom']>
-  marginLeft?: ValueOrGetter<CSSObject['marginLeft']>
-  marginRight?: ValueOrGetter<CSSObject['marginRight']>
-}
-
-export interface PaddingProps {
-  padding?: ValueOrGetter<CSSObject['padding']>
-  paddingTop?: ValueOrGetter<CSSObject['paddingTop']>
-  paddingBottom?: ValueOrGetter<CSSObject['paddingBottom']>
-  paddingLeft?: ValueOrGetter<CSSObject['paddingLeft']>
-  paddingRight?: ValueOrGetter<CSSObject['paddingRight']>
-}
-
-export interface DisplayProps {
-  display?:
-    | boolean
-    | 'hidden'
-    | 'inline'
-    | 'block'
-    | 'flex'
-    | 'inline-flex'
-    | 'none'
 }
 
 export interface ThemeOptions {
