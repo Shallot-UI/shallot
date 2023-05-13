@@ -30,6 +30,12 @@ export type FoldStyleProps = {
   minUnitWidth?: number
   fullWidth?: boolean
   fullHeight?: boolean
+  alignTop?: boolean
+  alignMiddle?: boolean
+  alignBottom?: boolean
+  alignLeft?: boolean
+  alignCenter?: boolean
+  alignRight?: boolean
 }
 
 export type FoldProps<T = {}> = T & FoldStyleProps & { shallot?: FoldShallot }
@@ -53,6 +59,12 @@ export const withFoldStyleProps =
       maxUnitWidth,
       minUnitHeight,
       minUnitWidth,
+      alignTop,
+      alignMiddle,
+      alignBottom,
+      alignLeft,
+      alignCenter,
+      alignRight,
       fullWidth,
       fullHeight,
       ...nonStyleProps
@@ -85,6 +97,12 @@ export const withFoldStyleProps =
       ...(fullHeight && {
         height: getFullHeight({ unitsAbove, unitsBelow, unitsAround }),
       }),
+      ...(alignTop && { alignItems: 'flex-start' }),
+      ...(alignMiddle && { alignItems: 'center' }),
+      ...(alignBottom && { alignItems: 'flex-end' }),
+      ...(alignLeft && { justifyContent: 'flex-start' }),
+      ...(alignCenter && { justifyContent: 'center' }),
+      ...(alignRight && { justifyContent: 'flex-end' }),
     }
 
     boxShallot = applyStyles(boxShallot, shallot)

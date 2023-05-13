@@ -30,6 +30,12 @@ export type ColumnStyleProps = {
   minUnitWidth?: number
   fullWidth?: boolean
   fullHeight?: boolean
+  alignTop?: boolean
+  alignMiddle?: boolean
+  alignBottom?: boolean
+  alignLeft?: boolean
+  alignCenter?: boolean
+  alignRight?: boolean
 }
 
 export type ColumnProps<T = {}> = T &
@@ -56,6 +62,12 @@ export const withColumnStyleProps =
       minUnitWidth,
       fullWidth,
       fullHeight,
+      alignTop,
+      alignMiddle,
+      alignBottom,
+      alignLeft,
+      alignCenter,
+      alignRight,
       ...nonStyleProps
     } = props
 
@@ -84,6 +96,12 @@ export const withColumnStyleProps =
       ...(fullHeight && {
         height: getFullHeight({ unitsAbove, unitsBelow, unitsAround }),
       }),
+      ...(alignTop && { alignItems: 'flex-start' }),
+      ...(alignMiddle && { alignItems: 'center' }),
+      ...(alignBottom && { alignItems: 'flex-end' }),
+      ...(alignLeft && { justifyContent: 'flex-start' }),
+      ...(alignCenter && { justifyContent: 'center' }),
+      ...(alignRight && { justifyContent: 'flex-end' }),
     }
 
     boxShallot = applyStyles(boxShallot, shallot)

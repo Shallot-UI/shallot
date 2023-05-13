@@ -30,6 +30,12 @@ export type RowStyleProps = {
   minUnitWidth?: number
   fullWidth?: boolean
   fullHeight?: boolean
+  alignTop?: boolean
+  alignMiddle?: boolean
+  alignBottom?: boolean
+  alignLeft?: boolean
+  alignCenter?: boolean
+  alignRight?: boolean
 }
 
 export type RowProps<T = {}> = T & RowStyleProps & { shallot?: RowShallot }
@@ -55,6 +61,12 @@ export const withRowStyleProps =
       minUnitWidth,
       fullWidth,
       fullHeight,
+      alignTop,
+      alignMiddle,
+      alignBottom,
+      alignLeft,
+      alignCenter,
+      alignRight,
       ...nonStyleProps
     } = props
 
@@ -83,6 +95,12 @@ export const withRowStyleProps =
       ...(fullHeight && {
         height: getFullHeight({ unitsAbove, unitsBelow, unitsAround }),
       }),
+      ...(alignTop && { justifyContent: 'flex-start' }),
+      ...(alignMiddle && { justifyContent: 'center' }),
+      ...(alignBottom && { justifyContent: 'flex-end' }),
+      ...(alignLeft && { alignItems: 'flex-start' }),
+      ...(alignCenter && { alignItems: 'center' }),
+      ...(alignRight && { alignItems: 'flex-end' }),
     }
 
     boxShallot = applyStyles(boxShallot, shallot)
