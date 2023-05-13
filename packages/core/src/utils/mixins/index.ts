@@ -50,6 +50,11 @@ export const getElevation =
   ({ theme }: { theme: DefaultTheme }) =>
     theme.elevations[value]
 
+export const getNumericValue = (value: boolean | number) => {
+  if (typeof value === 'boolean') return value ? 1 : 0
+  return value
+}
+
 const getDefaultTypeface = (theme: DefaultTheme) => {
   const name = theme?.defaults?.typeface
   const typeface =

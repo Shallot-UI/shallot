@@ -32,6 +32,7 @@ export type TextStyleProps<
   maxUnitWidth?: number
   minUnitHeight?: number
   minUnitWidth?: number
+  centerText?: boolean
 
   letterSpacing?: keyof DefaultTheme['letterSpacings']
   lineHeight?: keyof DefaultTheme['lineHeights']

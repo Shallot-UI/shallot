@@ -7,6 +7,7 @@ import {
   getColorShade,
   getFullHeight,
   getFullWidth,
+  getNumericValue,
   getRadius,
   getUnits,
 } from '@shallot-ui/core'
@@ -36,6 +37,9 @@ export type RowStyleProps = {
   alignLeft?: boolean
   alignCenter?: boolean
   alignRight?: boolean
+  grow?: boolean | number
+  shrink?: boolean | number
+  flex?: boolean | number
 }
 
 export type RowProps<T = {}> = T & RowStyleProps & { shallot?: RowShallot }
@@ -67,6 +71,9 @@ export const withRowStyleProps =
       alignLeft,
       alignCenter,
       alignRight,
+      grow,
+      shrink,
+      flex,
       ...nonStyleProps
     } = props
 
@@ -78,29 +85,30 @@ export const withRowStyleProps =
         backgroundColor: getColorShade(backgroundColor),
       }),
       ...(borderColor && { borderColor: getColorShade(borderColor) }),
-      ...(unitsAround && { margin: getUnits(unitsAround) }),
-      ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
-      ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
-      ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
-      ...(unitsRight && { marginRight: getUnits(unitsRight) }),
-      ...(unitHeight && { height: getUnits(unitHeight) }),
-      ...(unitWidth && { width: getUnits(unitWidth) }),
-      ...(maxUnitHeight && { maxHeight: getUnits(maxUnitHeight) }),
-      ...(maxUnitWidth && { maxWidth: getUnits(maxUnitWidth) }),
-      ...(minUnitHeight && { minHeight: getUnits(minUnitHeight) }),
-      ...(minUnitWidth && { minWidth: getUnits(minUnitWidth) }),
+      ...(unitsAround !== undefined && { margin: getUnits(unitsAround) }),
+      ...(unitsAbove !== undefined && { marginTop: getUnits(unitsAbove) }),
+      ...(unitsBelow !== undefined && { marginBottom: getUnits(unitsBelow) }),
+      ...(unitsLeft !== undefined && { marginLeft: getUnits(unitsLeft) }),
+      ...(unitsRight !== undefined && { marginRight: getUnits(unitsRight) }),
+      ...(unitHeight !== undefined && { height: getUnits(unitHeight) }),
+      ...(unitWidth !== undefined && { width: getUnits(unitWidth) }),
+      ...(maxUnitHeight !== undefined && {
+        maxHeight: getUnits(maxUnitHeight),
+      }),
+      ...(maxUnitWidth !== undefined && { maxWidth: getUnits(maxUnitWidth) }),
+      ...(minUnitHeight !== undefined && {
+        minHeight: getUnits(minUnitHeight),
+      }),
+      ...(minUnitWidth !== undefined && { minWidth: getUnits(minUnitWidth) }),
       ...(fullWidth && {
         width: getFullWidth({ unitsLeft, unitsRight, unitsAround }),
       }),
       ...(fullHeight && {
         height: getFullHeight({ unitsAbove, unitsBelow, unitsAround }),
       }),
-      ...(alignTop && { justifyContent: 'flex-start' }),
-      ...(alignMiddle && { justifyContent: 'center' }),
-      ...(alignBottom && { justifyContent: 'flex-end' }),
-      ...(alignLeft && { alignItems: 'flex-start' }),
-      ...(alignCenter && { alignItems: 'center' }),
-      ...(alignRight && { alignItems: 'flex-end' }),
+      ...(grow !== undefined && { flexGrow: getNumericValue(grow) }),
+      ...(shrink !== undefined && { flexShrink: getNumericValue(shrink) }),
+      ...(flex !== undefined && { flex: getNumericValue(flex) }),
     }
 
     boxShallot = applyStyles(boxShallot, shallot)
