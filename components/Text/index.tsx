@@ -5,6 +5,10 @@ import {
   ShallotProp,
   applyStyles,
   getColorShade,
+  getFontSize,
+  getLetterSpacing,
+  getLineHeight,
+  getTypeface,
   getUnits,
 } from '@shallot-ui/core'
 
@@ -28,6 +32,10 @@ export type TextStyleProps<
   maxUnitWidth?: number
   minUnitHeight?: number
   minUnitWidth?: number
+
+  letterSpacing?: keyof DefaultTheme['letterSpacings']
+  lineHeight?: keyof DefaultTheme['lineHeights']
+  fontSize?: keyof DefaultTheme['fontSizes']
 }
 
 export type TextProps<T = {}> = T & TextStyleProps & { shallot?: TextShallot }
@@ -50,6 +58,14 @@ export const withTextStyleProps =
       maxUnitWidth,
       minUnitHeight,
       minUnitWidth,
+
+      // Typography
+      typeface = 'Body',
+      font,
+      lineHeight = 'md',
+      letterSpacing = 'md',
+      fontSize = 'md',
+
       ...nonStyleProps
     } = props
 
@@ -58,6 +74,7 @@ export const withTextStyleProps =
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
       }),
+      typeface: getTypeface(typeface, font),
       ...(color && { color: getColorShade(color) }),
       ...(unitsAround && { margin: getUnits(unitsAround) }),
       ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
@@ -70,6 +87,9 @@ export const withTextStyleProps =
       ...(maxUnitWidth && { maxWidth: getUnits(maxUnitWidth) }),
       ...(minUnitHeight && { minHeight: getUnits(minUnitHeight) }),
       ...(minUnitWidth && { minWidth: getUnits(minUnitWidth) }),
+      ...(fontSize && { fontSize: getFontSize(fontSize) }),
+      ...(letterSpacing && { letterSpacing: getLetterSpacing(letterSpacing) }),
+      ...(lineHeight && { lineHeight: getLineHeight(lineHeight) }),
     }
 
     textShallot = applyStyles(textShallot, shallot)

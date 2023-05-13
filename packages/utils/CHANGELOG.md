@@ -1,5 +1,13 @@
 # @shallot-ui/utils
 
+## 3.0.2
+
+### Patch Changes
+
+- Adds more text style props
+- Updated dependencies
+  - @shallot-ui/theme@0.27.2
+
 ## 3.0.1
 
 ### Patch Changes

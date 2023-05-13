@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.2
+
+### Patch Changes
+
+- Adds more text style props
+- Updated dependencies
+  - @shallot-ui/web@0.41.2
+
 ## 0.27.1
 
 ### Patch Changes

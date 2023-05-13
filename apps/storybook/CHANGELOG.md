@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.2
+
+### Patch Changes
+
+- Adds more text style props
+- Updated dependencies
+  - @shallot-ui/web@0.41.2
+
 ## 0.8.1
 
 ### Patch Changes
