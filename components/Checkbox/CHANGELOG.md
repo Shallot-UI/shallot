@@ -1,5 +1,17 @@
 # @shallot-ui/checkbox
 
+## 0.4.5
+
+### Patch Changes
+
+- Adds flex style props
+- Updated dependencies
+  - @shallot-ui/text@0.4.5
+  - @shallot-ui/box@0.4.5
+  - @shallot-ui/row@0.4.5
+  - @shallot-ui/theme@0.27.5
+  - @shallot-ui/core@5.0.5
+
 ## 0.4.4
 
 ### Patch Changes

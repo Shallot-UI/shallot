@@ -1,5 +1,13 @@
 # @shallot-ui/core
 
+## 5.0.5
+
+### Patch Changes
+
+- Adds flex style props
+- Updated dependencies
+  - @shallot-ui/theme@0.27.5
+
 ## 5.0.4
 
 ### Patch Changes

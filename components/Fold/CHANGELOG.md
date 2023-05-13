@@ -1,5 +1,15 @@
 # @shallot-ui/fold
 
+## 0.4.4
+
+### Patch Changes
+
+- Adds flex style props
+- Updated dependencies
+  - @shallot-ui/box@0.4.5
+  - @shallot-ui/theme@0.27.5
+  - @shallot-ui/core@5.0.5
+
 ## 0.4.3
 
 ### Patch Changes

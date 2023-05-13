@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.5
+
+### Patch Changes
+
+- Adds flex style props
+
 ## 0.27.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.5
+
+### Patch Changes
+
+- Adds flex style props
+- Updated dependencies
+  - @shallot-ui/web@0.41.5
+
 ## 0.27.4
 
 ### Patch Changes
