@@ -1,5 +1,29 @@
 # @shallot-ui/native
 
+## 0.31.0
+
+### Minor Changes
+
+- More style props
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.27.0
+  - @shallot-ui/core@5.0.0
+
+## 0.30.0
+
+### Minor Changes
+
+- Adds some style props bacl
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.26.0
+  - @shallot-ui/core@4.0.0
+
 ## 0.29.0
 
 ### Minor Changes

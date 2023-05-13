@@ -14,7 +14,7 @@ import {
   withSwitchStyleProps,
 } from '@shallot-ui/switch'
 
-import { useFocus, useHover, usePressed } from '../../../hooks'
+import { useFocus, useHover, usePressed } from '../../hooks'
 
 const Container = styled.div(getStyle)
 const Handle = styled.div(getStyle)

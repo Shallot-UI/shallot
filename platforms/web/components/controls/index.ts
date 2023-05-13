@@ -1,6 +1,0 @@
-export * from './Button'
-export * from './Checkbox'
-export * from './Input'
-export * from './Spinner'
-export * from './TextArea'
-export * from './Switch'

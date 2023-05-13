@@ -1,5 +1,17 @@
 # @shallot-ui/theme
 
+## 0.27.0
+
+### Minor Changes
+
+- More style props
+
+## 0.26.0
+
+### Minor Changes
+
+- Adds some style props bacl
+
 ## 0.25.0
 
 ### Minor Changes

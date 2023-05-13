@@ -9,9 +9,9 @@ import {
   getUnits,
 } from '@shallot-ui/core'
 
-type BoxShallot = ShallotProp
+type RowShallot = ShallotProp
 
-export type BoxStyleProps = {
+export type RowStyleProps = {
   backgroundColor?: AllColorShades
   borderColor?: AllColorShades
   radius?: keyof DefaultTheme['radii']
@@ -28,11 +28,11 @@ export type BoxStyleProps = {
   minUnitWidth?: number
 }
 
-export type BoxProps<T = {}> = T & BoxStyleProps & { shallot?: BoxShallot }
+export type RowProps<T = {}> = T & RowStyleProps & { shallot?: RowShallot }
 
-export const withBoxStyleProps =
-  <T,>(BoxComponent: ComponentType<T & { shallot?: BoxShallot }>) =>
-  (props: BoxProps<T>) => {
+export const withRowStyleProps =
+  <T,>(RowComponent: ComponentType<T & { shallot?: RowShallot }>) =>
+  (props: RowProps<T>) => {
     const {
       backgroundColor,
       borderColor,
@@ -52,8 +52,9 @@ export const withBoxStyleProps =
       ...nonStyleProps
     } = props
 
-    let boxShallot: BoxShallot = {
+    let boxShallot: RowShallot = {
       display: 'flex',
+      flexDirection: 'row',
       ...(radius && { borderRadius: getRadius(radius) }),
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
@@ -74,5 +75,5 @@ export const withBoxStyleProps =
 
     boxShallot = applyStyles(boxShallot, shallot)
 
-    return <BoxComponent {...(nonStyleProps as T)} shallot={boxShallot} />
+    return <RowComponent {...(nonStyleProps as T)} shallot={boxShallot} />
   }

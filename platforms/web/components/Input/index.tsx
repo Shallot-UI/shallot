@@ -13,7 +13,7 @@ import {
   withInputStyleProps,
 } from '@shallot-ui/Input'
 
-import { useFocus, useHover, usePressed } from '../../../hooks'
+import { useFocus, useHover, usePressed } from '../../hooks'
 
 const Container = styled.div(getStyle)
 const InnerInput = styled.input<{ shallot?: ShallotProp }>(

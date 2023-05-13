@@ -7,7 +7,7 @@ import {
   withButtonStyleProps,
 } from '@shallot-ui/button'
 
-import { useFocus, useHover, usePressed } from '../../../hooks'
+import { useFocus, useHover, usePressed } from '../../hooks'
 
 const ResetButton = styled.button`
   background: none;

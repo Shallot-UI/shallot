@@ -1,5 +1,27 @@
 # stories
 
+## 0.8.0
+
+### Minor Changes
+
+- More style props
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.41.0
+
+## 0.7.0
+
+### Minor Changes
+
+- Adds some style props bacl
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.40.0
+
 ## 0.6.0
 
 ### Minor Changes

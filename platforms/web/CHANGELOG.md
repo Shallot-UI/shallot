@@ -1,5 +1,47 @@
 # @shallot-ui/web
 
+## 0.41.0
+
+### Minor Changes
+
+- More style props
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/checkbox@0.4.0
+  - @shallot-ui/button@0.4.0
+  - @shallot-ui/column@0.4.0
+  - @shallot-ui/switch@0.4.0
+  - @shallot-ui/input@0.4.0
+  - @shallot-ui/text@0.4.0
+  - @shallot-ui/box@0.4.0
+  - @shallot-ui/row@0.4.0
+  - @shallot-ui/tag@0.4.0
+  - @shallot-ui/theme@0.27.0
+  - @shallot-ui/core@5.0.0
+
+## 0.40.0
+
+### Minor Changes
+
+- Adds some style props bacl
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/checkbox@0.3.0
+  - @shallot-ui/button@0.3.0
+  - @shallot-ui/column@0.3.0
+  - @shallot-ui/switch@0.3.0
+  - @shallot-ui/input@0.3.0
+  - @shallot-ui/text@0.3.0
+  - @shallot-ui/box@0.3.0
+  - @shallot-ui/row@0.3.0
+  - @shallot-ui/tag@0.3.0
+  - @shallot-ui/theme@0.26.0
+  - @shallot-ui/core@4.0.0
+
 ## 0.39.0
 
 ### Minor Changes

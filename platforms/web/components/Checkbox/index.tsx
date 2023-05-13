@@ -14,7 +14,7 @@ import {
   withCheckboxStyleProps,
 } from '@shallot-ui/checkbox'
 
-import { useFocus, useHover, usePressed } from '../../../hooks'
+import { useFocus, useHover, usePressed } from '../../hooks'
 import { CheckIcon } from './Icons/CheckIcon'
 
 const ResetCheckbox = styled.div`
