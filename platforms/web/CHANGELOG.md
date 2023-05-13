@@ -1,5 +1,24 @@
 # @shallot-ui/web
 
+## 0.41.6
+
+### Patch Changes
+
+- Replaces color with textColor
+- Updated dependencies
+  - @shallot-ui/checkbox@0.4.6
+  - @shallot-ui/button@0.4.6
+  - @shallot-ui/column@0.4.6
+  - @shallot-ui/switch@0.4.6
+  - @shallot-ui/input@0.4.6
+  - @shallot-ui/fold@0.4.5
+  - @shallot-ui/text@0.4.6
+  - @shallot-ui/box@0.4.6
+  - @shallot-ui/row@0.4.6
+  - @shallot-ui/tag@0.4.6
+  - @shallot-ui/theme@0.27.6
+  - @shallot-ui/core@5.0.6
+
 ## 0.41.5
 
 ### Patch Changes

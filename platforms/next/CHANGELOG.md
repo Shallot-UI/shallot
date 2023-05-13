@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.6
+
+### Patch Changes
+
+- Replaces color with textColor
+- Updated dependencies
+  - @shallot-ui/web@0.41.6
+
 ## 0.27.5
 
 ### Patch Changes

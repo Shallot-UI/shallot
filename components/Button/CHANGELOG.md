@@ -1,5 +1,17 @@
 # @shallot-ui/button
 
+## 0.4.6
+
+### Patch Changes
+
+- Replaces color with textColor
+- Updated dependencies
+  - @shallot-ui/text@0.4.6
+  - @shallot-ui/box@0.4.6
+  - @shallot-ui/row@0.4.6
+  - @shallot-ui/theme@0.27.6
+  - @shallot-ui/core@5.0.6
+
 ## 0.4.5
 
 ### Patch Changes

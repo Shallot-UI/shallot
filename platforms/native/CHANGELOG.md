@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.6
+
+### Patch Changes
+
+- Replaces color with textColor
+- Updated dependencies
+  - @shallot-ui/theme@0.27.6
+  - @shallot-ui/core@5.0.6
+
 ## 0.31.5
 
 ### Patch Changes

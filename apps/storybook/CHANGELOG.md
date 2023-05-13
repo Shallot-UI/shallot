@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.6
+
+### Patch Changes
+
+- Replaces color with textColor
+- Updated dependencies
+  - @shallot-ui/web@0.41.6
+
 ## 0.8.5
 
 ### Patch Changes

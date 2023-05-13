@@ -17,7 +17,7 @@ type TextShallot = ShallotProp
 export type TextStyleProps<
   T extends keyof DefaultTheme['typefaces'] = 'System',
 > = {
-  color?: AllColorShades
+  textColor?: AllColorShades
   backgroundColor?: AllColorShades
   typeface?: T
   font?: keyof DefaultTheme['typefaces'][T]['fonts']
@@ -45,7 +45,7 @@ export const withTextStyleProps =
   <T,>(TextComponent: ComponentType<T & { shallot?: TextShallot }>) =>
   (props: TextProps<T>) => {
     const {
-      color,
+      textColor,
       backgroundColor,
       unitsAround,
       unitsAbove,
@@ -76,7 +76,7 @@ export const withTextStyleProps =
         backgroundColor: getColorShade(backgroundColor),
       }),
       typeface: getTypeface(typeface, font),
-      ...(color && { color: getColorShade(color) }),
+      ...(textColor && { color: getColorShade(textColor) }),
       ...(unitsAround && { margin: getUnits(unitsAround) }),
       ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
       ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),

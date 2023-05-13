@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/fold",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -37,9 +37,9 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@shallot-ui/box": "^0.4.5",
-    "@shallot-ui/core": "^5.0.5",
-    "@shallot-ui/theme": "^0.27.5",
+    "@shallot-ui/box": "^0.4.6",
+    "@shallot-ui/core": "^5.0.6",
+    "@shallot-ui/theme": "^0.27.6",
     "prop-types": "^15.8.1"
   }
 }

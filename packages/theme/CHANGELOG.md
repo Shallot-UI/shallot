@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.6
+
+### Patch Changes
+
+- Replaces color with textColor
+
 ## 0.27.5
 
 ### Patch Changes

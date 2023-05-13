@@ -1,5 +1,13 @@
 # @shallot-ui/core
 
+## 5.0.6
+
+### Patch Changes
+
+- Replaces color with textColor
+- Updated dependencies
+  - @shallot-ui/theme@0.27.6
+
 ## 5.0.5
 
 ### Patch Changes
