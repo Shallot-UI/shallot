@@ -76,3 +76,39 @@ export const getTypeface =
       ? getFontForTypeface(typefaceDef, font as string)
       : undefined
   }
+
+export const getFullWidth =
+  ({
+    unitsLeft,
+    unitsRight,
+    unitsAround,
+  }: {
+    unitsLeft?: number
+    unitsRight?: number
+    unitsAround?: number
+  }) =>
+  ({ theme }: { theme: DefaultTheme }) => {
+    const baseUnit = theme.gridUnits?.[0]
+    if (typeof baseUnit !== 'number') return ''
+    const leftMargin = baseUnit * (unitsLeft ?? unitsAround ?? 0)
+    const rightMargin = baseUnit * (unitsRight ?? unitsAround ?? 0)
+    return `calc(100% - ${leftMargin + rightMargin}px)`
+  }
+
+export const getFullHeight =
+  ({
+    unitsAbove,
+    unitsBelow,
+    unitsAround,
+  }: {
+    unitsAbove?: number
+    unitsBelow?: number
+    unitsAround?: number
+  }) =>
+  ({ theme }: { theme: DefaultTheme }) => {
+    const baseUnit = theme.gridUnits?.[0]
+    if (typeof baseUnit !== 'number') return ''
+    const topMargin = baseUnit * (unitsAbove ?? unitsAround ?? 0)
+    const bottomMargin = baseUnit * (unitsBelow ?? unitsAround ?? 0)
+    return `calc(100% - ${topMargin + bottomMargin}px)`
+  }

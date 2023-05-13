@@ -1,5 +1,14 @@
 # @shallot-ui/box
 
+## 0.4.1
+
+### Patch Changes
+
+- adds full height and width style props
+- Updated dependencies
+  - @shallot-ui/theme@0.27.1
+  - @shallot-ui/core@5.0.1
+
 ## 0.4.0
 
 ### Minor Changes

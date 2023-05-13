@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.1
+
+### Patch Changes
+
+- adds full height and width style props
+
 ## 0.27.0
 
 ### Minor Changes

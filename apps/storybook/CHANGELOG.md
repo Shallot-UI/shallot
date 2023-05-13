@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.1
+
+### Patch Changes
+
+- adds full height and width style props
+- Updated dependencies
+  - @shallot-ui/web@0.41.1
+
 ## 0.8.0
 
 ### Minor Changes

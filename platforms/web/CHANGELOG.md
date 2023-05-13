@@ -1,5 +1,23 @@
 # @shallot-ui/web
 
+## 0.41.1
+
+### Patch Changes
+
+- adds full height and width style props
+- Updated dependencies
+  - @shallot-ui/checkbox@0.4.1
+  - @shallot-ui/button@0.4.1
+  - @shallot-ui/column@0.4.1
+  - @shallot-ui/switch@0.4.1
+  - @shallot-ui/input@0.4.1
+  - @shallot-ui/text@0.4.1
+  - @shallot-ui/box@0.4.1
+  - @shallot-ui/row@0.4.1
+  - @shallot-ui/tag@0.4.1
+  - @shallot-ui/theme@0.27.1
+  - @shallot-ui/core@5.0.1
+
 ## 0.41.0
 
 ### Minor Changes

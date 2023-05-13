@@ -5,18 +5,18 @@ import {
   ShallotProp,
   applyStyles,
   getColorShade,
+  getFullHeight,
+  getFullWidth,
+  getRadius,
   getUnits,
 } from '@shallot-ui/core'
 
-type TextShallot = ShallotProp
+type FoldShallot = ShallotProp
 
-export type TextStyleProps<
-  T extends keyof DefaultTheme['typefaces'] = 'System',
-> = {
-  color?: AllColorShades
+export type FoldStyleProps = {
   backgroundColor?: AllColorShades
-  typeface?: T
-  font?: keyof DefaultTheme['typefaces'][T]['fonts']
+  borderColor?: AllColorShades
+  radius?: keyof DefaultTheme['radii']
   unitsAround?: number
   unitsAbove?: number
   unitsBelow?: number
@@ -28,16 +28,19 @@ export type TextStyleProps<
   maxUnitWidth?: number
   minUnitHeight?: number
   minUnitWidth?: number
+  fullWidth?: boolean
+  fullHeight?: boolean
 }
 
-export type TextProps<T = {}> = T & TextStyleProps & { shallot?: TextShallot }
+export type FoldProps<T = {}> = T & FoldStyleProps & { shallot?: FoldShallot }
 
-export const withTextStyleProps =
-  <T,>(TextComponent: ComponentType<T & { shallot?: TextShallot }>) =>
-  (props: TextProps<T>) => {
+export const withFoldStyleProps =
+  <T,>(FoldComponent: ComponentType<T & { shallot?: FoldShallot }>) =>
+  (props: FoldProps<T>) => {
     const {
-      color,
       backgroundColor,
+      borderColor,
+      radius,
       unitsAround,
       unitsAbove,
       unitsBelow,
@@ -50,15 +53,21 @@ export const withTextStyleProps =
       maxUnitWidth,
       minUnitHeight,
       minUnitWidth,
+      fullWidth,
+      fullHeight,
       ...nonStyleProps
     } = props
 
-    let textShallot: TextShallot = {
+    let boxShallot: FoldShallot = {
       display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+      width: '100vw',
+      ...(radius && { borderRadius: getRadius(radius) }),
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
       }),
-      ...(color && { color: getColorShade(color) }),
+      ...(borderColor && { borderColor: getColorShade(borderColor) }),
       ...(unitsAround && { margin: getUnits(unitsAround) }),
       ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
       ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
@@ -70,9 +79,15 @@ export const withTextStyleProps =
       ...(maxUnitWidth && { maxWidth: getUnits(maxUnitWidth) }),
       ...(minUnitHeight && { minHeight: getUnits(minUnitHeight) }),
       ...(minUnitWidth && { minWidth: getUnits(minUnitWidth) }),
+      ...(fullWidth && {
+        width: getFullWidth({ unitsLeft, unitsRight, unitsAround }),
+      }),
+      ...(fullHeight && {
+        height: getFullHeight({ unitsAbove, unitsBelow, unitsAround }),
+      }),
     }
 
-    textShallot = applyStyles(textShallot, shallot)
+    boxShallot = applyStyles(boxShallot, shallot)
 
-    return <TextComponent {...(nonStyleProps as T)} shallot={textShallot} />
+    return <FoldComponent {...(nonStyleProps as T)} shallot={boxShallot} />
   }

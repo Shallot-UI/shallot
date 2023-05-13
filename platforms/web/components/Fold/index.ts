@@ -1,16 +1,6 @@
 import styled from 'styled-components'
 import { ShallotProp, getStyle } from '@shallot-ui/core'
+import { withFoldStyleProps } from '@shallot-ui/fold'
 
-export const Fold = styled.div<{ shallot?: ShallotProp }>(
-  ({ shallot, ...rest }) =>
-    getStyle({
-      shallot: {
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100vh',
-        width: '100vw',
-        ...shallot,
-      },
-      ...rest,
-    }),
-)
+const Base = styled.div<{ shallot?: ShallotProp }>(getStyle)
+export const Fold = withFoldStyleProps(Base)

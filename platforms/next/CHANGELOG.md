@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.1
+
+### Patch Changes
+
+- adds full height and width style props
+- Updated dependencies
+  - @shallot-ui/web@0.41.1
+
 ## 0.27.0
 
 ### Minor Changes

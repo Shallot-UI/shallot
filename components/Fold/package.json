@@ -1,6 +1,6 @@
 {
-  "name": "@shallot-ui/utils",
-  "version": "3.0.1",
+  "name": "@shallot-ui/fold",
+  "version": "0.4.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -12,36 +12,34 @@
     "dist"
   ],
   "scripts": {
-    "test": "jest",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup ./index.ts --dts --format esm,cjs --minify"
+    "build": "tsup ./index.tsx --dts --format esm,cjs --minify"
   },
   "peerDependencies": {
-    "@shallot-ui/theme": "^0.27.1",
     "react": ">=18",
     "react-dom": ">=18",
     "styled-components": ">=5"
   },
   "devDependencies": {
-    "@shallot-ui/theme": "^0.27.1",
-    "@types/chroma-js": "^2.4.0",
-    "@types/jest": "^29.4.0",
+    "@babel/core": "^7.21.0",
+    "@types/prop-types": "^15.7.5",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.10",
     "@types/styled-components": ">=5",
+    "babel-loader": "^8.3.0",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
-    "jest": "^29.4.3",
     "react": "*",
     "react-dom": "*",
     "styled-components": "*",
-    "ts-jest": "^29.0.5",
     "tsconfig": "*",
-    "tsup": "^6.5.0",
-    "typescript": "^4.5.2"
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
-    "chroma-js": "^2.4.2",
-    "ts-deepmerge": "^6.0.2"
+    "@shallot-ui/box": "^0.4.0",
+    "@shallot-ui/core": "^5.0.0",
+    "@shallot-ui/theme": "^0.27.0",
+    "prop-types": "^15.8.1"
   }
 }

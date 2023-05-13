@@ -5,6 +5,8 @@ import {
   ShallotProp,
   applyStyles,
   getColorShade,
+  getFullHeight,
+  getFullWidth,
   getRadius,
   getUnits,
 } from '@shallot-ui/core'
@@ -26,6 +28,8 @@ export type BoxStyleProps = {
   maxUnitWidth?: number
   minUnitHeight?: number
   minUnitWidth?: number
+  fullWidth?: boolean
+  fullHeight?: boolean
 }
 
 export type BoxProps<T = {}> = T & BoxStyleProps & { shallot?: BoxShallot }
@@ -49,6 +53,8 @@ export const withBoxStyleProps =
       maxUnitWidth,
       minUnitHeight,
       minUnitWidth,
+      fullWidth,
+      fullHeight,
       ...nonStyleProps
     } = props
 
@@ -70,6 +76,12 @@ export const withBoxStyleProps =
       ...(maxUnitWidth && { maxWidth: getUnits(maxUnitWidth) }),
       ...(minUnitHeight && { minHeight: getUnits(minUnitHeight) }),
       ...(minUnitWidth && { minWidth: getUnits(minUnitWidth) }),
+      ...(fullWidth && {
+        width: getFullWidth({ unitsLeft, unitsRight, unitsAround }),
+      }),
+      ...(fullHeight && {
+        height: getFullHeight({ unitsAbove, unitsBelow, unitsAround }),
+      }),
     }
 
     boxShallot = applyStyles(boxShallot, shallot)
