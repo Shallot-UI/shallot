@@ -1,5 +1,24 @@
 # @shallot-ui/web
 
+## 0.41.3
+
+### Patch Changes
+
+- Allows a before and after node on web buttons
+- Updated dependencies
+  - @shallot-ui/checkbox@0.4.3
+  - @shallot-ui/button@0.4.3
+  - @shallot-ui/column@0.4.3
+  - @shallot-ui/switch@0.4.3
+  - @shallot-ui/input@0.4.3
+  - @shallot-ui/fold@0.4.2
+  - @shallot-ui/text@0.4.3
+  - @shallot-ui/box@0.4.3
+  - @shallot-ui/row@0.4.3
+  - @shallot-ui/tag@0.4.3
+  - @shallot-ui/theme@0.27.3
+  - @shallot-ui/core@5.0.3
+
 ## 0.41.2
 
 ### Patch Changes

@@ -1,4 +1,10 @@
-import { ComponentType, HTMLAttributes, RefObject, useRef } from 'react'
+import {
+  ComponentType,
+  HTMLAttributes,
+  ReactNode,
+  RefObject,
+  useRef,
+} from 'react'
 import styled from 'styled-components'
 import { getStyle } from '@shallot-ui/core'
 import {
@@ -25,14 +31,18 @@ const StaticButton = (
   props: HTMLAttributes<HTMLButtonElement> & {
     shallot?: ButtonShallot
     buttonRef?: RefObject<HTMLButtonElement>
+    before?: ReactNode
+    after?: ReactNode
   },
 ) => {
-  const { title, shallot, buttonRef, ...rest } = props
+  const { title, shallot, buttonRef, before, after, ...rest } = props
 
   return (
     <ResetButton ref={buttonRef} {...rest}>
       <Container shallot={shallot?.container}>
+        {before}
         {title && <Title shallot={shallot?.title}>{title}</Title>}
+        {after}
       </Container>
     </ResetButton>
   )

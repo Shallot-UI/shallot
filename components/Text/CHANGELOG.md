@@ -1,5 +1,15 @@
 # @shallot-ui/text
 
+## 0.4.3
+
+### Patch Changes
+
+- Allows a before and after node on web buttons
+- Updated dependencies
+  - @shallot-ui/box@0.4.3
+  - @shallot-ui/theme@0.27.3
+  - @shallot-ui/core@5.0.3
+
 ## 0.4.2
 
 ### Patch Changes

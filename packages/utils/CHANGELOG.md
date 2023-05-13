@@ -1,5 +1,13 @@
 # @shallot-ui/utils
 
+## 3.0.3
+
+### Patch Changes
+
+- Allows a before and after node on web buttons
+- Updated dependencies
+  - @shallot-ui/theme@0.27.3
+
 ## 3.0.2
 
 ### Patch Changes

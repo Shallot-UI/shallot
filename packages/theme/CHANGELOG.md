@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.3
+
+### Patch Changes
+
+- Allows a before and after node on web buttons
+
 ## 0.27.2
 
 ### Patch Changes

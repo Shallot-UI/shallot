@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.3
+
+### Patch Changes
+
+- Allows a before and after node on web buttons
+- Updated dependencies
+  - @shallot-ui/web@0.41.3
+
 ## 0.27.2
 
 ### Patch Changes

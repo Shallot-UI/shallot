@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.3
+
+### Patch Changes
+
+- Allows a before and after node on web buttons
+- Updated dependencies
+  - @shallot-ui/web@0.41.3
+
 ## 0.8.2
 
 ### Patch Changes
