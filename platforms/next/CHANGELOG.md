@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.10
+
+### Patch Changes
+
+- Fixes image height and width
+- Updated dependencies
+  - @shallot-ui/web@0.41.10
+
 ## 0.27.9
 
 ### Patch Changes

@@ -1,7 +1,7 @@
 import { ComponentProps, FunctionComponent } from 'react'
+import styled, { DefaultTheme, useTheme } from 'styled-components'
 import NextImage from 'next/image'
 import { ShallotProp, getStyle, getUnits, getRadius } from '@shallot-ui/web'
-import styled, { DefaultTheme } from 'styled-components'
 
 type NextImageProps = ComponentProps<typeof NextImage>
 
@@ -33,6 +33,8 @@ export const Image: FunctionComponent<ImageProps> = (props) => {
     ...rest
   } = props
 
+  const theme = useTheme()
+
   return (
     <Container
       shallot={{
@@ -52,10 +54,8 @@ export const Image: FunctionComponent<ImageProps> = (props) => {
         so that it can calculate the aspect ratio of the image. Note that these
         values might be overridden by the `{...rest}` props. */}
       <InnerImage
-        shallot={{
-          ...(unitWidth && { width: getUnits(unitWidth) }),
-          ...(unitHeight && { height: getUnits(unitHeight) }),
-        }}
+        width={unitWidth && unitWidth * theme.gridUnits[0]}
+        height={unitHeight && unitHeight * theme.gridUnits[0]}
         {...rest}
       />
     </Container>

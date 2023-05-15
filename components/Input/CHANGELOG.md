@@ -1,5 +1,17 @@
 # @shallot-ui/input
 
+## 0.4.10
+
+### Patch Changes
+
+- Fixes image height and width
+- Updated dependencies
+  - @shallot-ui/text@0.4.10
+  - @shallot-ui/box@0.4.10
+  - @shallot-ui/row@0.4.10
+  - @shallot-ui/theme@0.27.10
+  - @shallot-ui/core@5.0.10
+
 ## 0.4.9
 
 ### Patch Changes

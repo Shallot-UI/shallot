@@ -1,5 +1,13 @@
 # @shallot-ui/core
 
+## 5.0.10
+
+### Patch Changes
+
+- Fixes image height and width
+- Updated dependencies
+  - @shallot-ui/theme@0.27.10
+
 ## 5.0.9
 
 ### Patch Changes

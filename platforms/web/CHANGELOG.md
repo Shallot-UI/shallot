@@ -1,5 +1,24 @@
 # @shallot-ui/web
 
+## 0.41.10
+
+### Patch Changes
+
+- Fixes image height and width
+- Updated dependencies
+  - @shallot-ui/checkbox@0.4.10
+  - @shallot-ui/button@0.4.10
+  - @shallot-ui/column@0.4.10
+  - @shallot-ui/switch@0.4.10
+  - @shallot-ui/input@0.4.10
+  - @shallot-ui/fold@0.4.9
+  - @shallot-ui/text@0.4.10
+  - @shallot-ui/box@0.4.10
+  - @shallot-ui/row@0.4.10
+  - @shallot-ui/tag@0.4.10
+  - @shallot-ui/theme@0.27.10
+  - @shallot-ui/core@5.0.10
+
 ## 0.41.9
 
 ### Patch Changes
