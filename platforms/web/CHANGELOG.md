@@ -1,5 +1,24 @@
 # @shallot-ui/web
 
+## 0.41.9
+
+### Patch Changes
+
+- adds text alignment props`
+- Updated dependencies
+  - @shallot-ui/checkbox@0.4.9
+  - @shallot-ui/button@0.4.9
+  - @shallot-ui/column@0.4.9
+  - @shallot-ui/switch@0.4.9
+  - @shallot-ui/input@0.4.9
+  - @shallot-ui/fold@0.4.8
+  - @shallot-ui/text@0.4.9
+  - @shallot-ui/box@0.4.9
+  - @shallot-ui/row@0.4.9
+  - @shallot-ui/tag@0.4.9
+  - @shallot-ui/theme@0.27.9
+  - @shallot-ui/core@5.0.9
+
 ## 0.41.8
 
 ### Patch Changes

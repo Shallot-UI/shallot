@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.9
+
+### Patch Changes
+
+- adds text alignment props`
+
 ## 0.27.8
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.9
+
+### Patch Changes
+
+- adds text alignment props`
+- Updated dependencies
+  - @shallot-ui/web@0.41.9
+
 ## 0.8.8
 
 ### Patch Changes

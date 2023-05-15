@@ -1,5 +1,17 @@
 # @shallot-ui/input
 
+## 0.4.9
+
+### Patch Changes
+
+- adds text alignment props`
+- Updated dependencies
+  - @shallot-ui/text@0.4.9
+  - @shallot-ui/box@0.4.9
+  - @shallot-ui/row@0.4.9
+  - @shallot-ui/theme@0.27.9
+  - @shallot-ui/core@5.0.9
+
 ## 0.4.8
 
 ### Patch Changes

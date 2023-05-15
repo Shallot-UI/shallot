@@ -1,5 +1,14 @@
 # @shallot-ui/box
 
+## 0.4.9
+
+### Patch Changes
+
+- adds text alignment props`
+- Updated dependencies
+  - @shallot-ui/theme@0.27.9
+  - @shallot-ui/core@5.0.9
+
 ## 0.4.8
 
 ### Patch Changes

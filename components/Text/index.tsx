@@ -32,7 +32,9 @@ export type TextStyleProps<
   maxUnitWidth?: number
   minUnitHeight?: number
   minUnitWidth?: number
+  leftText?: boolean
   centerText?: boolean
+  rightText?: boolean
 
   letterSpacing?: keyof DefaultTheme['letterSpacings']
   lineHeight?: keyof DefaultTheme['lineHeights']
@@ -66,6 +68,9 @@ export const withTextStyleProps =
       lineHeight = 'md',
       letterSpacing = 'md',
       fontSize = 'md',
+      leftText,
+      centerText,
+      rightText,
 
       ...nonStyleProps
     } = props
@@ -91,6 +96,9 @@ export const withTextStyleProps =
       ...(fontSize && { fontSize: getFontSize(fontSize) }),
       ...(letterSpacing && { letterSpacing: getLetterSpacing(letterSpacing) }),
       ...(lineHeight && { lineHeight: getLineHeight(lineHeight) }),
+      ...(leftText && { textAlign: 'left' }),
+      ...(centerText && { textAlign: 'center' }),
+      ...(rightText && { textAlign: 'right' }),
     }
 
     textShallot = applyStyles(textShallot, shallot)
