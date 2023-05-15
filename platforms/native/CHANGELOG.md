@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.7
+
+### Patch Changes
+
+- Adds alignment props
+- Updated dependencies
+  - @shallot-ui/theme@0.27.7
+  - @shallot-ui/core@5.0.7
+
 ## 0.31.6
 
 ### Patch Changes

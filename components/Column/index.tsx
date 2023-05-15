@@ -15,6 +15,7 @@ import {
 type ColumnShallot = ShallotProp
 
 export type ColumnStyleProps = {
+  textColor?: AllColorShades
   backgroundColor?: AllColorShades
   borderColor?: AllColorShades
   radius?: keyof DefaultTheme['radii']
@@ -51,6 +52,7 @@ export const withColumnStyleProps =
     const {
       backgroundColor,
       borderColor,
+      textColor,
       radius,
       unitsAround,
       unitsAbove,
@@ -85,6 +87,7 @@ export const withColumnStyleProps =
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
       }),
+      ...(textColor && { color: getColorShade(textColor) }),
       ...(borderColor && { borderColor: getColorShade(borderColor) }),
       ...(unitsAround !== undefined && { margin: getUnits(unitsAround) }),
       ...(unitsAbove !== undefined && { marginTop: getUnits(unitsAbove) }),
@@ -110,6 +113,12 @@ export const withColumnStyleProps =
       ...(grow !== undefined && { flexGrow: getNumericValue(grow) }),
       ...(shrink !== undefined && { flexShrink: getNumericValue(shrink) }),
       ...(flex !== undefined && { flex: getNumericValue(flex) }),
+      ...(alignTop && { justifyContent: 'flex-start' }),
+      ...(alignMiddle && { justifyContent: 'center' }),
+      ...(alignBottom && { justifyContent: 'flex-end' }),
+      ...(alignLeft && { alignItems: 'flex-start' }),
+      ...(alignCenter && { alignItems: 'center' }),
+      ...(alignRight && { alignItems: 'flex-end' }),
     }
 
     boxShallot = applyStyles(boxShallot, shallot)

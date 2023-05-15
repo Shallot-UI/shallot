@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.7
+
+### Patch Changes
+
+- Adds alignment props
+- Updated dependencies
+  - @shallot-ui/web@0.41.7
+
 ## 0.27.6
 
 ### Patch Changes

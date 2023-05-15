@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/native",
-  "version": "0.31.6",
+  "version": "0.31.7",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -16,8 +16,8 @@
     "build": "tsup ./index.ts --dts --format esm,cjs --minify"
   },
   "dependencies": {
-    "@shallot-ui/core": "^5.0.6",
-    "@shallot-ui/theme": "^0.27.6",
+    "@shallot-ui/core": "^5.0.7",
+    "@shallot-ui/theme": "^0.27.7",
     "react-native-fast-image": "^8.6.3"
   },
   "peerDependencies": {

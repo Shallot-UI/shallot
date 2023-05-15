@@ -1,5 +1,17 @@
 # @shallot-ui/button
 
+## 0.4.7
+
+### Patch Changes
+
+- Adds alignment props
+- Updated dependencies
+  - @shallot-ui/text@0.4.7
+  - @shallot-ui/box@0.4.7
+  - @shallot-ui/row@0.4.7
+  - @shallot-ui/theme@0.27.7
+  - @shallot-ui/core@5.0.7
+
 ## 0.4.6
 
 ### Patch Changes

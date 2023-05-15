@@ -17,6 +17,7 @@ type FoldShallot = ShallotProp
 export type FoldStyleProps = {
   backgroundColor?: AllColorShades
   borderColor?: AllColorShades
+  textColor?: AllColorShades
   radius?: keyof DefaultTheme['radii']
   unitsAround?: number
   unitsAbove?: number
@@ -50,6 +51,7 @@ export const withFoldStyleProps =
     const {
       backgroundColor,
       borderColor,
+      textColor,
       radius,
       unitsAround,
       unitsAbove,
@@ -83,6 +85,7 @@ export const withFoldStyleProps =
       minHeight: '100vh',
       width: '100vw',
       ...(radius && { borderRadius: getRadius(radius) }),
+      ...(textColor && { color: getColorShade(textColor) }),
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
       }),
@@ -111,6 +114,12 @@ export const withFoldStyleProps =
       ...(grow !== undefined && { flexGrow: getNumericValue(grow) }),
       ...(shrink !== undefined && { flexShrink: getNumericValue(shrink) }),
       ...(flex !== undefined && { flex: getNumericValue(flex) }),
+      ...(alignTop && { justifyContent: 'flex-start' }),
+      ...(alignMiddle && { justifyContent: 'center' }),
+      ...(alignBottom && { justifyContent: 'flex-end' }),
+      ...(alignLeft && { alignItems: 'flex-start' }),
+      ...(alignCenter && { alignItems: 'center' }),
+      ...(alignRight && { alignItems: 'flex-end' }),
     }
 
     boxShallot = applyStyles(boxShallot, shallot)

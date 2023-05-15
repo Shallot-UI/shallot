@@ -17,6 +17,7 @@ type RowShallot = ShallotProp
 export type RowStyleProps = {
   backgroundColor?: AllColorShades
   borderColor?: AllColorShades
+  textColor?: AllColorShades
   radius?: keyof DefaultTheme['radii']
   unitsAround?: number
   unitsAbove?: number
@@ -50,6 +51,7 @@ export const withRowStyleProps =
     const {
       backgroundColor,
       borderColor,
+      textColor,
       radius,
       unitsAround,
       unitsAbove,
@@ -84,6 +86,7 @@ export const withRowStyleProps =
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
       }),
+      ...(textColor && { color: getColorShade(textColor) }),
       ...(borderColor && { borderColor: getColorShade(borderColor) }),
       ...(unitsAround !== undefined && { margin: getUnits(unitsAround) }),
       ...(unitsAbove !== undefined && { marginTop: getUnits(unitsAbove) }),
@@ -109,6 +112,12 @@ export const withRowStyleProps =
       ...(grow !== undefined && { flexGrow: getNumericValue(grow) }),
       ...(shrink !== undefined && { flexShrink: getNumericValue(shrink) }),
       ...(flex !== undefined && { flex: getNumericValue(flex) }),
+      ...(alignTop && { alignItems: 'flex-start' }),
+      ...(alignMiddle && { alignItems: 'center' }),
+      ...(alignBottom && { alignItems: 'flex-end' }),
+      ...(alignLeft && { justifyContent: 'flex-start' }),
+      ...(alignCenter && { justifyContent: 'center' }),
+      ...(alignRight && { justifyContent: 'flex-end' }),
     }
 
     boxShallot = applyStyles(boxShallot, shallot)
