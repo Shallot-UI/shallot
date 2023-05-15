@@ -1,5 +1,15 @@
 # @shallot-ui/fold
 
+## 0.4.7
+
+### Patch Changes
+
+- Adds column ref forwarding
+- Updated dependencies
+  - @shallot-ui/box@0.4.8
+  - @shallot-ui/theme@0.27.8
+  - @shallot-ui/core@5.0.8
+
 ## 0.4.6
 
 ### Patch Changes

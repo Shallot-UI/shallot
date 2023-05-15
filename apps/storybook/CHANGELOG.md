@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.8
+
+### Patch Changes
+
+- Adds column ref forwarding
+- Updated dependencies
+  - @shallot-ui/web@0.41.8
+
 ## 0.8.7
 
 ### Patch Changes

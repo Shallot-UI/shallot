@@ -1,5 +1,13 @@
 # @shallot-ui/utils
 
+## 3.0.8
+
+### Patch Changes
+
+- Adds column ref forwarding
+- Updated dependencies
+  - @shallot-ui/theme@0.27.8
+
 ## 3.0.7
 
 ### Patch Changes

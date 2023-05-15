@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.8
+
+### Patch Changes
+
+- Adds column ref forwarding
+- Updated dependencies
+  - @shallot-ui/web@0.41.8
+
 ## 0.27.7
 
 ### Patch Changes

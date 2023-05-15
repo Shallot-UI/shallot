@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.8
+
+### Patch Changes
+
+- Adds column ref forwarding
+- Updated dependencies
+  - @shallot-ui/theme@0.27.8
+  - @shallot-ui/core@5.0.8
+
 ## 0.31.7
 
 ### Patch Changes

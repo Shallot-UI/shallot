@@ -1,4 +1,4 @@
-import { ComponentType } from 'react'
+import { ComponentType, forwardRef } from 'react'
 import { DefaultTheme } from 'styled-components'
 import { AllColorShades } from '@shallot-ui/theme'
 import {
@@ -46,9 +46,10 @@ export type ColumnStyleProps = {
 export type ColumnProps<T = {}> = T &
   ColumnStyleProps & { shallot?: ColumnShallot }
 
-export const withColumnStyleProps =
-  <T,>(ColumnComponent: ComponentType<T & { shallot?: ColumnShallot }>) =>
-  (props: ColumnProps<T>) => {
+export const withColumnStyleProps = <T,>(
+  ColumnComponent: ComponentType<T & { shallot?: ColumnShallot }>,
+) =>
+  forwardRef<HTMLDivElement, ColumnProps<T>>((props: ColumnProps<T>, ref) => {
     const {
       backgroundColor,
       borderColor,
@@ -123,5 +124,11 @@ export const withColumnStyleProps =
 
     boxShallot = applyStyles(boxShallot, shallot)
 
-    return <ColumnComponent {...(nonStyleProps as T)} shallot={boxShallot} />
-  }
+    return (
+      <ColumnComponent
+        {...(nonStyleProps as T)}
+        ref={ref}
+        shallot={boxShallot}
+      />
+    )
+  })
