@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.14
+
+### Patch Changes
+
+- Adds modal component
+
 ## 0.27.13
 
 ### Patch Changes

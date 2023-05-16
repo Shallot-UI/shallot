@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.14
+
+### Patch Changes
+
+- Adds modal component
+- Updated dependencies
+  - @shallot-ui/web@0.41.14
+
 ## 0.27.13
 
 ### Patch Changes

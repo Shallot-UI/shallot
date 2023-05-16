@@ -1,5 +1,13 @@
 # @shallot-ui/utils
 
+## 3.0.14
+
+### Patch Changes
+
+- Adds modal component
+- Updated dependencies
+  - @shallot-ui/theme@0.27.14
+
 ## 3.0.13
 
 ### Patch Changes

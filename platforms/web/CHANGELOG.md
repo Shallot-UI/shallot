@@ -1,5 +1,24 @@
 # @shallot-ui/web
 
+## 0.41.14
+
+### Patch Changes
+
+- Adds modal component
+- Updated dependencies
+  - @shallot-ui/checkbox@0.4.14
+  - @shallot-ui/button@0.4.14
+  - @shallot-ui/column@0.4.14
+  - @shallot-ui/switch@0.4.14
+  - @shallot-ui/input@0.4.14
+  - @shallot-ui/fold@0.4.13
+  - @shallot-ui/text@0.4.14
+  - @shallot-ui/box@0.4.14
+  - @shallot-ui/row@0.4.14
+  - @shallot-ui/tag@0.4.14
+  - @shallot-ui/theme@0.27.14
+  - @shallot-ui/core@5.0.14
+
 ## 0.41.13
 
 ### Patch Changes

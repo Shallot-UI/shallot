@@ -1,5 +1,17 @@
 # @shallot-ui/checkbox
 
+## 0.4.14
+
+### Patch Changes
+
+- Adds modal component
+- Updated dependencies
+  - @shallot-ui/text@0.4.14
+  - @shallot-ui/box@0.4.14
+  - @shallot-ui/row@0.4.14
+  - @shallot-ui/theme@0.27.14
+  - @shallot-ui/core@5.0.14
+
 ## 0.4.13
 
 ### Patch Changes

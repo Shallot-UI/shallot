@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.14
+
+### Patch Changes
+
+- Adds modal component
+- Updated dependencies
+  - @shallot-ui/theme@0.27.14
+  - @shallot-ui/core@5.0.14
+
 ## 0.31.13
 
 ### Patch Changes

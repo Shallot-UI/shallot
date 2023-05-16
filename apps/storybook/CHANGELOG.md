@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.14
+
+### Patch Changes
+
+- Adds modal component
+- Updated dependencies
+  - @shallot-ui/web@0.41.14
+
 ## 0.8.13
 
 ### Patch Changes
