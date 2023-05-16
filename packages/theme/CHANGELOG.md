@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.13
+
+### Patch Changes
+
+- fixes button container display type
+
 ## 0.27.12
 
 ### Patch Changes

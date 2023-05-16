@@ -1,5 +1,13 @@
 # @shallot-ui/core
 
+## 5.0.13
+
+### Patch Changes
+
+- fixes button container display type
+- Updated dependencies
+  - @shallot-ui/theme@0.27.13
+
 ## 5.0.12
 
 ### Patch Changes

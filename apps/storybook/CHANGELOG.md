@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.13
+
+### Patch Changes
+
+- fixes button container display type
+- Updated dependencies
+  - @shallot-ui/web@0.41.13
+
 ## 0.8.12
 
 ### Patch Changes

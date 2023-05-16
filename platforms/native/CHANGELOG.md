@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.13
+
+### Patch Changes
+
+- fixes button container display type
+- Updated dependencies
+  - @shallot-ui/theme@0.27.13
+  - @shallot-ui/core@5.0.13
+
 ## 0.31.12
 
 ### Patch Changes

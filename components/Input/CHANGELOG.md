@@ -1,5 +1,17 @@
 # @shallot-ui/input
 
+## 0.4.13
+
+### Patch Changes
+
+- fixes button container display type
+- Updated dependencies
+  - @shallot-ui/text@0.4.13
+  - @shallot-ui/box@0.4.13
+  - @shallot-ui/row@0.4.13
+  - @shallot-ui/theme@0.27.13
+  - @shallot-ui/core@5.0.13
+
 ## 0.4.12
 
 ### Patch Changes

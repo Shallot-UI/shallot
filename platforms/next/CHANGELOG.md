@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.13
+
+### Patch Changes
+
+- fixes button container display type
+- Updated dependencies
+  - @shallot-ui/web@0.41.13
+
 ## 0.27.12
 
 ### Patch Changes
