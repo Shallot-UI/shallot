@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.12
+
+### Patch Changes
+
+- Centers button contents
+- Updated dependencies
+  - @shallot-ui/web@0.41.12
+
 ## 0.27.11
 
 ### Patch Changes

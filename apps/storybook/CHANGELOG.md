@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.12
+
+### Patch Changes
+
+- Centers button contents
+- Updated dependencies
+  - @shallot-ui/web@0.41.12
+
 ## 0.8.11
 
 ### Patch Changes

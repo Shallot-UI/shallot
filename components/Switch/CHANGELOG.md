@@ -1,5 +1,17 @@
 # @shallot-ui/switch
 
+## 0.4.12
+
+### Patch Changes
+
+- Centers button contents
+- Updated dependencies
+  - @shallot-ui/text@0.4.12
+  - @shallot-ui/box@0.4.12
+  - @shallot-ui/row@0.4.12
+  - @shallot-ui/theme@0.27.12
+  - @shallot-ui/core@5.0.12
+
 ## 0.4.11
 
 ### Patch Changes

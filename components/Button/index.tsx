@@ -110,6 +110,8 @@ export const withButtonStyleProps =
         borderRadius: getRadius(radius),
         backgroundColor: getColor(color, shades.default),
         borderColor: getColor(color, shades.default),
+        alignItems: 'center',
+        justifyContent: 'center',
         borderWidth: 2,
         borderStyle: 'solid',
         cursor: 'pointer',

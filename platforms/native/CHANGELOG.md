@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.12
+
+### Patch Changes
+
+- Centers button contents
+- Updated dependencies
+  - @shallot-ui/theme@0.27.12
+  - @shallot-ui/core@5.0.12
+
 ## 0.31.11
 
 ### Patch Changes

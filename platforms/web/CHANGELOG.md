@@ -1,5 +1,24 @@
 # @shallot-ui/web
 
+## 0.41.12
+
+### Patch Changes
+
+- Centers button contents
+- Updated dependencies
+  - @shallot-ui/checkbox@0.4.12
+  - @shallot-ui/button@0.4.12
+  - @shallot-ui/column@0.4.12
+  - @shallot-ui/switch@0.4.12
+  - @shallot-ui/input@0.4.12
+  - @shallot-ui/fold@0.4.11
+  - @shallot-ui/text@0.4.12
+  - @shallot-ui/box@0.4.12
+  - @shallot-ui/row@0.4.12
+  - @shallot-ui/tag@0.4.12
+  - @shallot-ui/theme@0.27.12
+  - @shallot-ui/core@5.0.12
+
 ## 0.41.11
 
 ### Patch Changes
