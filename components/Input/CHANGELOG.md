@@ -1,5 +1,17 @@
 # @shallot-ui/input
 
+## 0.4.11
+
+### Patch Changes
+
+- Allows button height and width
+- Updated dependencies
+  - @shallot-ui/text@0.4.11
+  - @shallot-ui/box@0.4.11
+  - @shallot-ui/row@0.4.11
+  - @shallot-ui/theme@0.27.11
+  - @shallot-ui/core@5.0.11
+
 ## 0.4.10
 
 ### Patch Changes

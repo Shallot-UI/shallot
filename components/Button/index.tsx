@@ -25,6 +25,8 @@ export type ButtonStyleProps = {
   verticalUnitPadding?: number
   horizontalUnitPadding?: number
   textAlign?: CSSObject['textAlign']
+  unitHeight?: number
+  unitWidth?: number
   unitsAround?: number
   unitsAbove?: number
   unitsBelow?: number
@@ -60,6 +62,9 @@ export const withButtonStyleProps =
       color = 'Shading',
       radius = 'md',
       outline,
+
+      unitHeight,
+      unitWidth,
 
       unitsAround,
       unitsAbove,
@@ -115,6 +120,8 @@ export const withButtonStyleProps =
           transform 0.2s ease-in-out
         `,
         // Units
+        ...(unitHeight && { height: getUnits(unitHeight) }),
+        ...(unitWidth && { width: getUnits(unitWidth) }),
         ...(unitsAround && { margin: getUnits(unitsAround) }),
         ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
         ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),

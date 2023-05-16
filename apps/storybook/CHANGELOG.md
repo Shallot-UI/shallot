@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.11
+
+### Patch Changes
+
+- Allows button height and width
+- Updated dependencies
+  - @shallot-ui/web@0.41.11
+
 ## 0.8.10
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.11
+
+### Patch Changes
+
+- Allows button height and width
+
 ## 0.27.10
 
 ### Patch Changes
