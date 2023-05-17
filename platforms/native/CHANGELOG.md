@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.22
+
+### Patch Changes
+
+- Adds a wrap prop
+- Updated dependencies
+  - @shallot-ui/theme@0.27.22
+  - @shallot-ui/core@5.0.22
+
 ## 0.31.21
 
 ### Patch Changes

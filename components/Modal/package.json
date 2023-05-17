@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/modal",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -37,11 +37,11 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@shallot-ui/box": "^0.4.21",
-    "@shallot-ui/text": "^0.4.21",
-    "@shallot-ui/row": "^0.4.21",
-    "@shallot-ui/theme": "^0.27.21",
-    "@shallot-ui/core": "^5.0.21",
+    "@shallot-ui/box": "^0.4.22",
+    "@shallot-ui/text": "^0.4.22",
+    "@shallot-ui/row": "^0.4.22",
+    "@shallot-ui/theme": "^0.27.22",
+    "@shallot-ui/core": "^5.0.22",
     "prop-types": "^15.8.1"
   }
 }

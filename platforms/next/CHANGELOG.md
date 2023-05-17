@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.22
+
+### Patch Changes
+
+- Adds a wrap prop
+- Updated dependencies
+  - @shallot-ui/web@0.41.22
+
 ## 0.27.21
 
 ### Patch Changes

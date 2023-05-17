@@ -1,5 +1,17 @@
 # @shallot-ui/tag
 
+## 0.4.22
+
+### Patch Changes
+
+- Adds a wrap prop
+- Updated dependencies
+  - @shallot-ui/text@0.4.22
+  - @shallot-ui/box@0.4.22
+  - @shallot-ui/row@0.4.22
+  - @shallot-ui/theme@0.27.22
+  - @shallot-ui/core@5.0.22
+
 ## 0.4.21
 
 ### Patch Changes

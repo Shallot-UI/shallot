@@ -41,6 +41,7 @@ export type RowStyleProps = {
   grow?: boolean | number
   shrink?: boolean | number
   flex?: boolean | number
+  wrap?: boolean | number
 }
 
 export type RowProps<T = {}> = T & RowStyleProps & { shallot?: RowShallot }
@@ -76,6 +77,7 @@ export const withRowStyleProps =
       grow,
       shrink,
       flex,
+      wrap,
       ...nonStyleProps
     } = props
 
@@ -118,6 +120,7 @@ export const withRowStyleProps =
       ...(alignLeft && { justifyContent: 'flex-start' }),
       ...(alignCenter && { justifyContent: 'center' }),
       ...(alignRight && { justifyContent: 'flex-end' }),
+      ...(wrap && { flexWrap: 'wrap' }),
     }
 
     boxShallot = applyStyles(boxShallot, shallot)
