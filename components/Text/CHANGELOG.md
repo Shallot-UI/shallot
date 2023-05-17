@@ -1,5 +1,11 @@
 # @shallot-ui/text
 
+## 0.4.23
+
+### Patch Changes
+
+- Cleans up typeface typing
+
 ## 0.4.22
 
 ### Patch Changes

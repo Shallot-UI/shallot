@@ -14,13 +14,11 @@ import {
 
 type TextShallot = ShallotProp
 
-export type TextStyleProps<
-  T extends keyof DefaultTheme['typefaces'] = 'System',
-> = {
+export type TextStyleProps = {
   textColor?: AllColorShades
   backgroundColor?: AllColorShades
-  typeface?: T
-  font?: keyof DefaultTheme['typefaces'][T]['fonts']
+  typeface?: keyof DefaultTheme['typefaces']
+  font?: keyof DefaultTheme['typefaces'][string]['fonts']
   unitsAround?: number
   unitsAbove?: number
   unitsBelow?: number
