@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.16
+
+### Patch Changes
+
+- Adds form column for web
+- Updated dependencies
+  - @shallot-ui/web@0.41.16
+
 ## 0.27.15
 
 ### Patch Changes

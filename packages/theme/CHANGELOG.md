@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.16
+
+### Patch Changes
+
+- Adds form column for web
+
 ## 0.27.15
 
 ### Patch Changes
