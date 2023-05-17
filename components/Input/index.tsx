@@ -108,6 +108,7 @@ export const withInputStyleProps =
 
     let styles: InputShallot = {
       container: {
+        display: 'flex',
         backgroundColor: getColor(...colors.default?.background),
         borderColor: getColor(...colors.default?.border),
         borderRadius: getRadius(radius),
@@ -122,7 +123,7 @@ export const withInputStyleProps =
       input: {
         unitWidth: 1,
         backgroundColor: 'transparent',
-        textColor: getColorShade('Shading.500'),
+        color: getColorShade('Shading.500'),
         placeholderColor: getColorShade('Shading.300'),
         fontSize: getFontSize('md'),
         margin: getUnits(3 / 4),

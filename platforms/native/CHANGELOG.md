@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.17
+
+### Patch Changes
+
+- [fix] fixes color prop in input
+- Updated dependencies
+  - @shallot-ui/theme@0.27.17
+  - @shallot-ui/core@5.0.17
+
 ## 0.31.16
 
 ### Patch Changes

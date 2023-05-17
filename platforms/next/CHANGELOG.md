@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.17
+
+### Patch Changes
+
+- [fix] fixes color prop in input
+- Updated dependencies
+  - @shallot-ui/web@0.41.17
+
 ## 0.27.16
 
 ### Patch Changes

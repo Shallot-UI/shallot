@@ -1,5 +1,14 @@
 # @shallot-ui/box
 
+## 0.4.17
+
+### Patch Changes
+
+- [fix] fixes color prop in input
+- Updated dependencies
+  - @shallot-ui/theme@0.27.17
+  - @shallot-ui/core@5.0.17
+
 ## 0.4.16
 
 ### Patch Changes

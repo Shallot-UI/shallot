@@ -5,7 +5,7 @@ import {
   RefObject,
   useRef,
 } from 'react'
-import styled, { CSSObject } from 'styled-components'
+import styled from 'styled-components'
 import { ShallotProp, getStyle } from '@shallot-ui/core'
 import {
   InputProps,
