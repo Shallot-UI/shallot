@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.15
+
+### Patch Changes
+
+- Ability to close modal
+- Updated dependencies
+  - @shallot-ui/web@0.41.15
+
 ## 0.27.14
 
 ### Patch Changes

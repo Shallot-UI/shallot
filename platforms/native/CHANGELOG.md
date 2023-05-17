@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.15
+
+### Patch Changes
+
+- Ability to close modal
+- Updated dependencies
+  - @shallot-ui/theme@0.27.15
+  - @shallot-ui/core@5.0.15
+
 ## 0.31.14
 
 ### Patch Changes

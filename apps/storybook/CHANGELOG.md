@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.15
+
+### Patch Changes
+
+- Ability to close modal
+- Updated dependencies
+  - @shallot-ui/web@0.41.15
+
 ## 0.8.14
 
 ### Patch Changes
