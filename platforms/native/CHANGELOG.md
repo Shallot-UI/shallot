@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.19
+
+### Patch Changes
+
+- Adds form row
+- Updated dependencies
+  - @shallot-ui/theme@0.27.19
+  - @shallot-ui/core@5.0.19
+
 ## 0.31.18
 
 ### Patch Changes

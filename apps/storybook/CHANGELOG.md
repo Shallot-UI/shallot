@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.19
+
+### Patch Changes
+
+- Adds form row
+- Updated dependencies
+  - @shallot-ui/web@0.41.19
+
 ## 0.8.18
 
 ### Patch Changes

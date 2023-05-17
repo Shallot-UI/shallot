@@ -12,7 +12,7 @@ import {
   getLineHeight,
 } from '@shallot-ui/core'
 
-export type FormColumnStyleProps = {
+export type FormRowStyleProps = {
   radius?: keyof DefaultTheme['radii']
   unitsAround?: number
   unitsAbove?: number
@@ -26,22 +26,23 @@ export type FormColumnStyleProps = {
   typeface?: keyof DefaultTheme['typefaces']
 }
 
-export type FormColumnShallot = {
+export type FormRowShallot = {
   container: ShallotProp
+  details: ShallotProp
   label: ShallotProp
   requiredStar: ShallotProp
   helperText: ShallotProp
   errorText: ShallotProp
 }
 
-export type FormColumnProps<T> = T &
-  FormColumnStyleProps & {
-    shallot?: FormColumnShallot
+export type FormRowProps<T> = T &
+  FormRowStyleProps & {
+    shallot?: FormRowShallot
   }
 
-export const withFormColumnStyleProps =
-  <T,>(FormColumnComponent: ComponentType<T>) =>
-  (props: FormColumnProps<T>) => {
+export const withFormRowStyleProps =
+  <T,>(FormRowComponent: ComponentType<T>) =>
+  (props: FormRowProps<T>) => {
     const {
       // General
       radius = 'md',
@@ -61,10 +62,10 @@ export const withFormColumnStyleProps =
       ...modalProps
     } = props
 
-    let modalShallot: FormColumnShallot = {
+    let modalShallot: FormRowShallot = {
       container: {
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         justifyContent: 'center',
         ...(unitsAround && { margin: getUnits(unitsAround) }),
         ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
@@ -79,6 +80,7 @@ export const withFormColumnStyleProps =
         fontSize: getFontSize(labelFontSize || 'md'),
         color: getColorShade(labelColor || 'Shading.400'),
       },
+      details: { unitsLeft: 1 },
       requiredStar: {
         color: getColorShade('Danger.300'),
       },
@@ -109,5 +111,5 @@ export const withFormColumnStyleProps =
       errorText: shallot?.errorText,
     })
 
-    return <FormColumnComponent {...(modalProps as T)} shallot={modalShallot} />
+    return <FormRowComponent {...(modalProps as T)} shallot={modalShallot} />
   }

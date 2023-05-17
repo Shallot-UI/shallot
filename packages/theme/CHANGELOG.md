@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.19
+
+### Patch Changes
+
+- Adds form row
+
 ## 0.27.18
 
 ### Patch Changes

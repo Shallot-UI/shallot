@@ -1,5 +1,26 @@
 # @shallot-ui/web
 
+## 0.41.19
+
+### Patch Changes
+
+- Adds form row
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.3
+  - @shallot-ui/checkbox@0.4.19
+  - @shallot-ui/form-row@0.4.1
+  - @shallot-ui/button@0.4.19
+  - @shallot-ui/column@0.4.19
+  - @shallot-ui/switch@0.4.19
+  - @shallot-ui/input@0.4.19
+  - @shallot-ui/fold@0.4.18
+  - @shallot-ui/text@0.4.19
+  - @shallot-ui/box@0.4.19
+  - @shallot-ui/row@0.4.19
+  - @shallot-ui/tag@0.4.19
+  - @shallot-ui/theme@0.27.19
+  - @shallot-ui/core@5.0.19
+
 ## 0.41.18
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/theme",
-  "version": "0.27.18",
+  "version": "0.27.19",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",

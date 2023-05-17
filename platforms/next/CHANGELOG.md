@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.19
+
+### Patch Changes
+
+- Adds form row
+- Updated dependencies
+  - @shallot-ui/web@0.41.19
+
 ## 0.27.18
 
 ### Patch Changes
