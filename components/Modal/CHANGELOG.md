@@ -1,5 +1,12 @@
 # @shallot-ui/modal
 
+## 0.4.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.5.0
+
 ## 0.4.8
 
 ### Patch Changes

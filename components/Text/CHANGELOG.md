@@ -1,5 +1,11 @@
 # @shallot-ui/text
 
+## 0.5.0
+
+### Minor Changes
+
+- Allows underline prop on text
+
 ## 0.4.23
 
 ### Patch Changes

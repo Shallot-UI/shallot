@@ -1,5 +1,12 @@
 # @shallot-ui/form-column
 
+## 0.4.7
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.5.0
+
 ## 0.4.6
 
 ### Patch Changes

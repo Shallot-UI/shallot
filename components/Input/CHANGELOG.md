@@ -1,5 +1,12 @@
 # @shallot-ui/input
 
+## 0.4.23
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.5.0
+
 ## 0.4.22
 
 ### Patch Changes

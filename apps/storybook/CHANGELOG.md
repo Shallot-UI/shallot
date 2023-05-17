@@ -1,5 +1,11 @@
 # stories
 
+## 0.8.23
+
+### Patch Changes
+
+- @shallot-ui/web@0.41.23
+
 ## 0.8.22
 
 ### Patch Changes

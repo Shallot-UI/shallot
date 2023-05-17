@@ -37,6 +37,8 @@ export type TextStyleProps = {
   letterSpacing?: keyof DefaultTheme['letterSpacings']
   lineHeight?: keyof DefaultTheme['lineHeights']
   fontSize?: keyof DefaultTheme['fontSizes']
+
+  underline?: 'under' | boolean
 }
 
 export type TextProps<T = {}> = T & TextStyleProps & { shallot?: TextShallot }
@@ -70,6 +72,8 @@ export const withTextStyleProps =
       centerText,
       rightText,
 
+      underline,
+
       ...nonStyleProps
     } = props
 
@@ -97,6 +101,12 @@ export const withTextStyleProps =
       ...(leftText && { textAlign: 'left' }),
       ...(centerText && { textAlign: 'center' }),
       ...(rightText && { textAlign: 'right' }),
+      ...(underline === true && { textDecoration: 'underline' }),
+      ...(underline === false && { textDecoration: 'none' }),
+      ...(underline === 'under' && {
+        textDecoration: 'underline',
+        textUnderlinePosition: 'under',
+      }),
     }
 
     textShallot = applyStyles(textShallot, shallot)
