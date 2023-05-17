@@ -1,5 +1,17 @@
 # @shallot-ui/switch
 
+## 0.4.21
+
+### Patch Changes
+
+- Fixes the layout of form columsn
+- Updated dependencies
+  - @shallot-ui/text@0.4.21
+  - @shallot-ui/box@0.4.21
+  - @shallot-ui/row@0.4.21
+  - @shallot-ui/theme@0.27.21
+  - @shallot-ui/core@5.0.21
+
 ## 0.4.20
 
 ### Patch Changes

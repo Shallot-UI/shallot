@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.21
+
+### Patch Changes
+
+- Fixes the layout of form columsn
+- Updated dependencies
+  - @shallot-ui/web@0.41.21
+
 ## 0.27.20
 
 ### Patch Changes

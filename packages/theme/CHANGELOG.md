@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.21
+
+### Patch Changes
+
+- Fixes the layout of form columsn
+
 ## 0.27.20
 
 ### Patch Changes

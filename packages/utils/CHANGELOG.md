@@ -1,5 +1,13 @@
 # @shallot-ui/utils
 
+## 3.0.21
+
+### Patch Changes
+
+- Fixes the layout of form columsn
+- Updated dependencies
+  - @shallot-ui/theme@0.27.21
+
 ## 3.0.20
 
 ### Patch Changes
