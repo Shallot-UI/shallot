@@ -1,5 +1,13 @@
 # @shallot-ui/core
 
+## 5.0.20
+
+### Patch Changes
+
+- Exports form row
+- Updated dependencies
+  - @shallot-ui/theme@0.27.20
+
 ## 5.0.19
 
 ### Patch Changes

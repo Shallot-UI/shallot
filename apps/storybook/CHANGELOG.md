@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.20
+
+### Patch Changes
+
+- Exports form row
+- Updated dependencies
+  - @shallot-ui/web@0.41.20
+
 ## 0.8.19
 
 ### Patch Changes

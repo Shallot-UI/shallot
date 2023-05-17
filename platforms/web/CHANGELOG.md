@@ -1,5 +1,26 @@
 # @shallot-ui/web
 
+## 0.41.20
+
+### Patch Changes
+
+- Exports form row
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.4
+  - @shallot-ui/checkbox@0.4.20
+  - @shallot-ui/form-row@0.4.2
+  - @shallot-ui/button@0.4.20
+  - @shallot-ui/column@0.4.20
+  - @shallot-ui/switch@0.4.20
+  - @shallot-ui/input@0.4.20
+  - @shallot-ui/fold@0.4.19
+  - @shallot-ui/text@0.4.20
+  - @shallot-ui/box@0.4.20
+  - @shallot-ui/row@0.4.20
+  - @shallot-ui/tag@0.4.20
+  - @shallot-ui/theme@0.27.20
+  - @shallot-ui/core@5.0.20
+
 ## 0.41.19
 
 ### Patch Changes

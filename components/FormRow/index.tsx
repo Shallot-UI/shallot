@@ -80,7 +80,12 @@ export const withFormRowStyleProps =
         fontSize: getFontSize(labelFontSize || 'md'),
         color: getColorShade(labelColor || 'Shading.400'),
       },
-      details: { unitsLeft: 1 },
+      details: {
+        marginLeft: getUnits(1),
+        display: 'flex',
+        flexGrow: 1,
+        flexDirection: 'column',
+      },
       requiredStar: {
         color: getColorShade('Danger.300'),
       },

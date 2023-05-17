@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.20
+
+### Patch Changes
+
+- Exports form row
+- Updated dependencies
+  - @shallot-ui/theme@0.27.20
+  - @shallot-ui/core@5.0.20
+
 ## 0.31.19
 
 ### Patch Changes
