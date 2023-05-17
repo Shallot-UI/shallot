@@ -1,5 +1,13 @@
 # stories
 
+## 0.8.18
+
+### Patch Changes
+
+- Allows spacing around inputs
+- Updated dependencies
+  - @shallot-ui/web@0.41.18
+
 ## 0.8.17
 
 ### Patch Changes

@@ -34,8 +34,11 @@ export type InputStyleProps = {
   outline?: boolean
   underline?: boolean
   uppercase?: boolean
-  verticalUnitPadding?: number
-  horizontalUnitPadding?: number
+  unitsAround?: number
+  unitsAbove?: number
+  unitsBelow?: number
+  unitsLeft?: number
+  unitsRight?: number
   textAlign?: CSSObject['textAlign']
 }
 
@@ -94,11 +97,14 @@ export const withInputStyleProps =
       // Text Alignment
       textAlign = 'center',
 
-      verticalUnitPadding = 1,
-      horizontalUnitPadding = 2,
-
       // Underline
       underline,
+
+      unitsAround,
+      unitsAbove,
+      unitsBelow,
+      unitsLeft,
+      unitsRight,
 
       shallot,
       state = {},
@@ -119,6 +125,11 @@ export const withInputStyleProps =
           background-color 0.2s ease-in-out,
           box-shadow 0.2s ease-in-out
         `,
+        ...(unitsAround && { margin: getUnits(unitsAround) }),
+        ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
+        ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
+        ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
+        ...(unitsRight && { marginRight: getUnits(unitsRight) }),
       },
       input: {
         unitWidth: 1,

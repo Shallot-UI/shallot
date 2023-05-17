@@ -1,5 +1,25 @@
 # @shallot-ui/web
 
+## 0.41.18
+
+### Patch Changes
+
+- Allows spacing around inputs
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.2
+  - @shallot-ui/checkbox@0.4.18
+  - @shallot-ui/button@0.4.18
+  - @shallot-ui/column@0.4.18
+  - @shallot-ui/switch@0.4.18
+  - @shallot-ui/input@0.4.18
+  - @shallot-ui/fold@0.4.17
+  - @shallot-ui/text@0.4.18
+  - @shallot-ui/box@0.4.18
+  - @shallot-ui/row@0.4.18
+  - @shallot-ui/tag@0.4.18
+  - @shallot-ui/theme@0.27.18
+  - @shallot-ui/core@5.0.18
+
 ## 0.41.17
 
 ### Patch Changes

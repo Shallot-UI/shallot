@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.18
+
+### Patch Changes
+
+- Allows spacing around inputs
+- Updated dependencies
+  - @shallot-ui/web@0.41.18
+
 ## 0.27.17
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.27.18
+
+### Patch Changes
+
+- Allows spacing around inputs
+
 ## 0.27.17
 
 ### Patch Changes

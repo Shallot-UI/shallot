@@ -1,5 +1,17 @@
 # @shallot-ui/modal
 
+## 0.4.4
+
+### Patch Changes
+
+- Allows spacing around inputs
+- Updated dependencies
+  - @shallot-ui/text@0.4.18
+  - @shallot-ui/box@0.4.18
+  - @shallot-ui/row@0.4.18
+  - @shallot-ui/theme@0.27.18
+  - @shallot-ui/core@5.0.18
+
 ## 0.4.3
 
 ### Patch Changes
