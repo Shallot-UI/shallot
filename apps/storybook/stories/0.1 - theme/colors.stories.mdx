@@ -18,23 +18,17 @@ Below is Sallot's default shading palette. It will be used if no other shading p
   <ThemeProvider theme={makeTheme()}>
     <Row>
       {[
+        'Shading.50',
         'Shading.100',
-        'Shading.125',
-        'Shading.150',
-        'Shading.175',
         'Shading.200',
-        'Shading.225',
-        'Shading.250',
-        'Shading.275',
         'Shading.300',
-        'Shading.325',
-        'Shading.350',
-        'Shading.375',
         'Shading.400',
-        'Shading.425',
-        'Shading.450',
-        'Shading.475',
         'Shading.500',
+        'Shading.600',
+        'Shading.700',
+        'Shading.800',
+        'Shading.900',
+        'Shading.950',
       ].map((color) => (
         <Box
           key={color}
@@ -63,23 +57,17 @@ The primary color palette is used to communicate that an element is the primary 
   <ThemeProvider theme={makeTheme()}>
     <Row>
       {[
+        'Primary.50',
         'Primary.100',
-        'Primary.125',
-        'Primary.150',
-        'Primary.175',
         'Primary.200',
-        'Primary.225',
-        'Primary.250',
-        'Primary.275',
         'Primary.300',
-        'Primary.325',
-        'Primary.350',
-        'Primary.375',
         'Primary.400',
-        'Primary.425',
-        'Primary.450',
-        'Primary.475',
         'Primary.500',
+        'Primary.600',
+        'Primary.700',
+        'Primary.800',
+        'Primary.900',
+        'Primary.950',
       ].map((color) => (
         <Box
           key={color}
@@ -104,23 +92,17 @@ The success color palette is used to communicate that an element is a success or
   <ThemeProvider theme={makeTheme()}>
     <Row>
       {[
+        'Success.50',
         'Success.100',
-        'Success.125',
-        'Success.150',
-        'Success.175',
         'Success.200',
-        'Success.225',
-        'Success.250',
-        'Success.275',
         'Success.300',
-        'Success.325',
-        'Success.350',
-        'Success.375',
         'Success.400',
-        'Success.425',
-        'Success.450',
-        'Success.475',
         'Success.500',
+        'Success.600',
+        'Success.700',
+        'Success.800',
+        'Success.900',
+        'Success.950',
       ].map((color) => (
         <Box
           key={color}
@@ -145,23 +127,17 @@ The warning color palette is used to communicate that an element is a warning or
   <ThemeProvider theme={makeTheme()}>
     <Row>
       {[
+        'Warning.50',
         'Warning.100',
-        'Warning.125',
-        'Warning.150',
-        'Warning.175',
         'Warning.200',
-        'Warning.225',
-        'Warning.250',
-        'Warning.275',
         'Warning.300',
-        'Warning.325',
-        'Warning.350',
-        'Warning.375',
         'Warning.400',
-        'Warning.425',
-        'Warning.450',
-        'Warning.475',
         'Warning.500',
+        'Warning.600',
+        'Warning.700',
+        'Warning.800',
+        'Warning.900',
+        'Warning.950',
       ].map((color) => (
         <Box
           key={color}
@@ -186,23 +162,17 @@ The danger color palette is used to communicate that an element is a danger or a
   <ThemeProvider theme={makeTheme()}>
     <Row>
       {[
+        'Danger.50',
         'Danger.100',
-        'Danger.125',
-        'Danger.150',
-        'Danger.175',
         'Danger.200',
-        'Danger.225',
-        'Danger.250',
-        'Danger.275',
         'Danger.300',
-        'Danger.325',
-        'Danger.350',
-        'Danger.375',
         'Danger.400',
-        'Danger.425',
-        'Danger.450',
-        'Danger.475',
         'Danger.500',
+        'Danger.600',
+        'Danger.700',
+        'Danger.800',
+        'Danger.900',
+        'Danger.950',
       ].map((color) => (
         <Box
           key={color}
@@ -226,8 +196,7 @@ Shading values should adjust their brightness, saturation, and/or hue to create 
 ```ts
 const convertPalette = (original: string[]) => {
   const shadeValues = [
-    100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450,
-    475, 500,
+    50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950,
   ] as const
 
   const shades = chroma.scale(original).colors(shadeValues.length)

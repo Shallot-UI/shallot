@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { CSSObject, DefaultTheme } from 'styled-components'
+import { DefaultTheme } from 'styled-components'
 import { ColorName } from '@shallot-ui/theme'
 import {
   applyStyles,
@@ -64,8 +64,8 @@ export const withCheckboxStyleProps =
 
     let styles: CheckboxShallot = {
       container: {
-        backgroundColor: getColor('Shading', 125),
-        borderColor: getColor('Shading', 200),
+        backgroundColor: getColor('Shading', 100),
+        borderColor: getColor('Shading', 300),
         borderRadius: getRadius(radius),
         borderWidth: 1,
         borderStyle: 'solid',
@@ -93,7 +93,7 @@ export const withCheckboxStyleProps =
       icon: {
         height: getUnits(iconSize),
         width: getUnits(iconSize),
-        fillColor: getColor('Shading', 100),
+        fillColor: getColor('Shading', 500),
         display: 'none',
       },
     }
@@ -114,8 +114,8 @@ export const withCheckboxStyleProps =
     if (state.checked)
       styles = applyStyles(styles, {
         container: {
-          backgroundColor: getColor(color, 300),
-          borderColor: getColor(color, 325),
+          backgroundColor: getColor(color, 500),
+          borderColor: getColor(color, 500),
         },
         icon: { display: 'block' },
       })
@@ -124,8 +124,8 @@ export const withCheckboxStyleProps =
     if (state.hovered && state.checked)
       styles = applyStyles(styles, {
         container: {
-          backgroundColor: getColor(color, 250),
-          borderColor: getColor(color, 250),
+          backgroundColor: getColor(color, 500),
+          borderColor: getColor(color, 500),
         },
       })
 

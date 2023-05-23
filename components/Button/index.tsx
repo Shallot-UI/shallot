@@ -101,8 +101,8 @@ export const withButtonStyleProps =
     // palette colors extend to shades darker and lighter than their foreground.
     const shades: Record<string, keyof DefaultTheme['colors']['Shading']> =
       color === 'Shading'
-        ? { default: 500, hovered: 450, pressed: 500, focused: 450 }
-        : { default: 300, hovered: 250, pressed: 350, focused: 300 }
+        ? { default: 900, hovered: 800, pressed: 950, focused: 900 }
+        : { default: 500, hovered: 400, pressed: 600, focused: 500 }
 
     let buttonShallot: ButtonShallot = {
       container: {

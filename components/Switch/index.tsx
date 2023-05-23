@@ -1,5 +1,4 @@
 import { ComponentType } from 'react'
-import { CSSObject } from 'styled-components'
 import { ColorName } from '@shallot-ui/theme'
 import {
   applyStyles,
@@ -67,7 +66,7 @@ export const withSwitchStyleProps =
     let styles: SwitchShallot = {
       container: {
         cursor: 'pointer',
-        backgroundColor: getColor('Shading', 125),
+        backgroundColor: getColor('Shading', 200),
         borderColor: getColor('Shading', 200),
         borderWidth: 1,
         borderStyle: 'solid',
@@ -116,15 +115,15 @@ export const withSwitchStyleProps =
     // Hovered
     if (state.hovered)
       styles = applyStyles(styles, {
-        container: { backgroundColor: getColor('Shading', 100) },
+        container: { backgroundColor: getColor('Shading', 200) },
       })
 
     // Checked
     if ((inverted && !state.checked) || (!inverted && state.checked))
       styles = applyStyles(styles, {
         container: {
-          backgroundColor: getColor(color, 300),
-          borderColor: getColor(color, 300),
+          backgroundColor: getColor(color, 500),
+          borderColor: getColor(color, 500),
         },
         handle: {
           backgroundColor: getColor('Shading', 100),
@@ -137,8 +136,8 @@ export const withSwitchStyleProps =
     if (state.hovered && state.checked)
       styles = applyStyles(styles, {
         container: {
-          backgroundColor: getColor(color, 250),
-          borderColor: getColor(color, 250),
+          backgroundColor: getColor(color, 400),
+          borderColor: getColor(color, 400),
         },
       })
 

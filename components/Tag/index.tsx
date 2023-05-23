@@ -64,7 +64,7 @@ export const withTagStyleProps =
     let styles: TagShallot = {
       container: {
         display: 'flex',
-        backgroundColor: getColor(color, 125),
+        backgroundColor: getColor(color, 100),
         borderRadius: getRadius(radius),
         transition: `
           background-color 200ms ease-in-out,
@@ -75,7 +75,7 @@ export const withTagStyleProps =
       },
       title: {
         fontSize: getFontSize('md'),
-        color: getColor(color, 400),
+        color: getColor(color, 700),
         lineHeight: getLineHeight('md'),
         typeface: getTypeface(typeface, font),
         transition: 'color 300ms ease-in-out',

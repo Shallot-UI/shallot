@@ -1,23 +1,17 @@
 import { CSSObject, CSSProp, DefaultTheme } from 'styled-components'
 
 export type ColorShadingValue =
+  | 50
   | 100
-  | 125
-  | 150
-  | 175
   | 200
-  | 225
-  | 250
-  | 275
   | 300
-  | 325
-  | 350
-  | 375
   | 400
-  | 425
-  | 450
-  | 475
   | 500
+  | 600
+  | 700
+  | 800
+  | 900
+  | 950
 
 export type Palette = Record<number, string>
 

@@ -72,12 +72,12 @@ export const withInputStyleProps =
       // Colors
       colors = {
         default: {
-          background: ['Shading', 125],
-          border: ['Shading', 250],
+          background: ['Shading', 50],
+          border: ['Shading', 300],
         },
         focused: {
-          background: ['Shading', 125],
-          border: ['Shading', 250],
+          background: ['Shading', 50],
+          border: ['Shading', 300],
         },
         error: {
           background: ['Danger', 100],
@@ -120,6 +120,7 @@ export const withInputStyleProps =
         borderRadius: getRadius(radius),
         cursor: 'text',
         borderWidth: 1,
+        borderStyle: 'solid',
         transition: `
           border-color 0.2s ease-in-out,
           background-color 0.2s ease-in-out,
