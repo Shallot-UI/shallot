@@ -1,5 +1,26 @@
 # @shallot-ui/web
 
+## 0.42.2
+
+### Patch Changes
+
+- Updates colors for form controls
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.10
+  - @shallot-ui/checkbox@0.5.2
+  - @shallot-ui/form-row@0.4.8
+  - @shallot-ui/button@0.5.2
+  - @shallot-ui/column@0.4.25
+  - @shallot-ui/switch@0.5.2
+  - @shallot-ui/input@0.5.2
+  - @shallot-ui/fold@0.4.24
+  - @shallot-ui/text@0.6.2
+  - @shallot-ui/box@0.4.25
+  - @shallot-ui/row@0.4.25
+  - @shallot-ui/tag@0.5.2
+  - @shallot-ui/theme@0.28.2
+  - @shallot-ui/core@6.0.2
+
 ## 0.42.1
 
 ### Patch Changes

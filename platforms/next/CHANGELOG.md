@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.25
+
+### Patch Changes
+
+- Updates colors for form controls
+- Updated dependencies
+  - @shallot-ui/web@0.42.2
+
 ## 0.27.24
 
 ### Patch Changes

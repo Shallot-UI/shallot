@@ -77,15 +77,15 @@ export const withFormColumnStyleProps =
         lineHeight: getLineHeight('md'),
         letterSpacing: getLetterSpacing('md'),
         fontSize: getFontSize(labelFontSize || 'md'),
-        color: getColorShade(labelColor || 'Shading.400'),
+        color: getColorShade(labelColor || 'Shading.800'),
       },
       requiredStar: {
-        color: getColorShade('Danger.300'),
+        color: getColorShade('Danger.500'),
       },
       helperText: {
         fontSize: getFontSize('sm'),
         letterSpacing: getLetterSpacing('md'),
-        color: getColorShade('Shading.275'),
+        color: getColorShade('Shading.600'),
         unitsAbove: getUnits(1 / 4),
         transition: 'color 350ms ease-in-out',
         animation: 'fadeInDown',
@@ -94,7 +94,7 @@ export const withFormColumnStyleProps =
       errorText: {
         fontSize: getFontSize('sm'),
         letterSpacing: getLetterSpacing('md'),
-        color: getColorShade('Danger.300'),
+        color: getColorShade('Danger.600'),
         unitsAbove: getUnits(1 / 4),
         animation: 'fadeInDown',
         typeface: getTypeface(typeface),

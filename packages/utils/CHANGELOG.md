@@ -1,5 +1,13 @@
 # @shallot-ui/utils
 
+## 4.0.2
+
+### Patch Changes
+
+- Updates colors for form controls
+- Updated dependencies
+  - @shallot-ui/theme@0.28.2
+
 ## 4.0.1
 
 ### Patch Changes

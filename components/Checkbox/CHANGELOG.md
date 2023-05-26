@@ -1,5 +1,17 @@
 # @shallot-ui/checkbox
 
+## 0.5.2
+
+### Patch Changes
+
+- Updates colors for form controls
+- Updated dependencies
+  - @shallot-ui/text@0.6.2
+  - @shallot-ui/box@0.4.25
+  - @shallot-ui/row@0.4.25
+  - @shallot-ui/theme@0.28.2
+  - @shallot-ui/core@6.0.2
+
 ## 0.5.1
 
 ### Patch Changes

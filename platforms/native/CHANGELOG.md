@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.25
+
+### Patch Changes
+
+- Updates colors for form controls
+- Updated dependencies
+  - @shallot-ui/theme@0.28.2
+  - @shallot-ui/core@6.0.2
+
 ## 0.31.24
 
 ### Patch Changes

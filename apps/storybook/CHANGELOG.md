@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.2
+
+### Patch Changes
+
+- Updates colors for form controls
+- Updated dependencies
+  - @shallot-ui/web@0.42.2
+
 ## 0.9.1
 
 ### Patch Changes

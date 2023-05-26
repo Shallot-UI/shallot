@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.28.2
+
+### Patch Changes
+
+- Updates colors for form controls
+
 ## 0.28.1
 
 ### Patch Changes

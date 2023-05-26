@@ -1,5 +1,15 @@
 # @shallot-ui/row
 
+## 0.4.25
+
+### Patch Changes
+
+- Updates colors for form controls
+- Updated dependencies
+  - @shallot-ui/box@0.4.25
+  - @shallot-ui/theme@0.28.2
+  - @shallot-ui/core@6.0.2
+
 ## 0.4.24
 
 ### Patch Changes
