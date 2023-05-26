@@ -1,5 +1,16 @@
 # stories
 
+## 0.9.0
+
+### Minor Changes
+
+- Adds breakpoints mixin
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.42.0
+
 ## 0.8.23
 
 ### Patch Changes

@@ -1,5 +1,11 @@
-import { ColorShadingValue, Typeface } from '@shallot-ui/theme'
+import {
+  ColorShadingValue,
+  ThemeOptions,
+  Typeface,
+  makeTheme,
+} from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
+import { getStyle } from '../shallotProp'
 
 export const getColor =
   (value: keyof DefaultTheme['colors'], shade: ColorShadingValue) =>
@@ -116,4 +122,24 @@ export const getFullHeight =
     const topMargin = baseUnit * (unitsAbove ?? unitsAround ?? 0)
     const bottomMargin = baseUnit * (unitsBelow ?? unitsAround ?? 0)
     return `calc(100% - ${topMargin + bottomMargin}px)`
+  }
+
+export const getBreakpoints =
+  ({ fontSize }: { fontSize?: keyof DefaultTheme['fontSizes'] }) =>
+  ({ theme }: { theme: DefaultTheme }) => {
+    if (!theme.breakpoints) return
+    const modifiers: any = {}
+    Object.entries(theme.breakpoints).forEach(([width, subtheme]) => {
+      const value: any = {}
+
+      if (fontSize && subtheme?.fontSizes?.[fontSize] !== undefined) {
+        value.fontSize = subtheme.fontSizes[fontSize]
+      }
+
+      // Ensure `value` is not empty
+      if (Object.keys(value).length > 0) {
+        modifiers[`@media(min-width: ${width}px)`] = value
+      }
+    })
+    return modifiers
   }

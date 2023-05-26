@@ -1,5 +1,29 @@
 # @shallot-ui/web
 
+## 0.42.0
+
+### Minor Changes
+
+- Adds breakpoints mixin
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/checkbox@0.5.0
+  - @shallot-ui/button@0.5.0
+  - @shallot-ui/switch@0.5.0
+  - @shallot-ui/input@0.5.0
+  - @shallot-ui/text@0.6.0
+  - @shallot-ui/tag@0.5.0
+  - @shallot-ui/theme@0.28.0
+  - @shallot-ui/core@6.0.0
+  - @shallot-ui/form-column@0.4.8
+  - @shallot-ui/form-row@0.4.6
+  - @shallot-ui/box@0.4.23
+  - @shallot-ui/column@0.4.23
+  - @shallot-ui/fold@0.4.22
+  - @shallot-ui/row@0.4.23
+
 ## 0.41.23
 
 ### Patch Changes

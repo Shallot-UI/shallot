@@ -4,6 +4,7 @@ import { AllColorShades } from '@shallot-ui/theme'
 import {
   ShallotProp,
   applyStyles,
+  getBreakpoints,
   getColorShade,
   getFontSize,
   getLetterSpacing,
@@ -79,10 +80,11 @@ export const withTextStyleProps =
 
     let textShallot: TextShallot = {
       display: 'flex',
+      ...getTypeface(typeface, font),
+      ...getBreakpoints({ fontSize }),
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
       }),
-      typeface: getTypeface(typeface, font),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(unitsAround && { margin: getUnits(unitsAround) }),
       ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),

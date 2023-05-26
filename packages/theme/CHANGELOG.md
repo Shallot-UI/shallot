@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.28.0
+
+### Minor Changes
+
+- Adds breakpoints mixin
+
 ## 0.27.22
 
 ### Patch Changes

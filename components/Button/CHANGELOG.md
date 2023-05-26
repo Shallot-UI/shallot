@@ -1,5 +1,20 @@
 # @shallot-ui/button
 
+## 0.5.0
+
+### Minor Changes
+
+- Adds breakpoints mixin
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.6.0
+  - @shallot-ui/theme@0.28.0
+  - @shallot-ui/core@6.0.0
+  - @shallot-ui/box@0.4.23
+  - @shallot-ui/row@0.4.23
+
 ## 0.4.23
 
 ### Patch Changes

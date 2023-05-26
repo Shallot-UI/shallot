@@ -1,5 +1,16 @@
 # @shallot-ui/core
 
+## 6.0.0
+
+### Minor Changes
+
+- Adds breakpoints mixin
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.28.0
+
 ## 5.0.22
 
 ### Patch Changes
