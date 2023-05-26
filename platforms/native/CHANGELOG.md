@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.24
+
+### Patch Changes
+
+- fixes text props
+- Updated dependencies
+  - @shallot-ui/theme@0.28.1
+  - @shallot-ui/core@6.0.1
+
 ## 0.31.23
 
 ### Patch Changes

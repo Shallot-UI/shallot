@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.28.1
+
+### Patch Changes
+
+- fixes text props
+
 ## 0.28.0
 
 ### Minor Changes

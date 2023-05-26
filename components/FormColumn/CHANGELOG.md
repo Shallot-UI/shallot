@@ -1,5 +1,17 @@
 # @shallot-ui/form-column
 
+## 0.4.9
+
+### Patch Changes
+
+- fixes text props
+- Updated dependencies
+  - @shallot-ui/text@0.6.1
+  - @shallot-ui/box@0.4.24
+  - @shallot-ui/row@0.4.24
+  - @shallot-ui/theme@0.28.1
+  - @shallot-ui/core@6.0.1
+
 ## 0.4.8
 
 ### Patch Changes

@@ -80,8 +80,8 @@ export const withTextStyleProps =
 
     let textShallot: TextShallot = {
       display: 'flex',
-      ...getTypeface(typeface, font),
-      ...getBreakpoints({ fontSize }),
+      typeface: getTypeface(typeface, font),
+      breakpoints: getBreakpoints({ fontSize }),
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
       }),

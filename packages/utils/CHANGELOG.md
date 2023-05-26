@@ -1,5 +1,13 @@
 # @shallot-ui/utils
 
+## 4.0.1
+
+### Patch Changes
+
+- fixes text props
+- Updated dependencies
+  - @shallot-ui/theme@0.28.1
+
 ## 4.0.0
 
 ### Patch Changes

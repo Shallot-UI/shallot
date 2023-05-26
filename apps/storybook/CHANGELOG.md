@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.1
+
+### Patch Changes
+
+- fixes text props
+- Updated dependencies
+  - @shallot-ui/web@0.42.1
+
 ## 0.9.0
 
 ### Minor Changes

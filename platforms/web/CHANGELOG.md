@@ -1,5 +1,26 @@
 # @shallot-ui/web
 
+## 0.42.1
+
+### Patch Changes
+
+- fixes text props
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.9
+  - @shallot-ui/checkbox@0.5.1
+  - @shallot-ui/form-row@0.4.7
+  - @shallot-ui/button@0.5.1
+  - @shallot-ui/column@0.4.24
+  - @shallot-ui/switch@0.5.1
+  - @shallot-ui/input@0.5.1
+  - @shallot-ui/fold@0.4.23
+  - @shallot-ui/text@0.6.1
+  - @shallot-ui/box@0.4.24
+  - @shallot-ui/row@0.4.24
+  - @shallot-ui/tag@0.5.1
+  - @shallot-ui/theme@0.28.1
+  - @shallot-ui/core@6.0.1
+
 ## 0.42.0
 
 ### Minor Changes

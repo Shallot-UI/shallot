@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.24
+
+### Patch Changes
+
+- fixes text props
+- Updated dependencies
+  - @shallot-ui/web@0.42.1
+
 ## 0.27.23
 
 ### Patch Changes
