@@ -1,5 +1,12 @@
 # @shallot-ui/theme
 
+## 0.28.3
+
+### Patch Changes
+
+- Updates convert palette to proper colors
+- Updates input color shades
+
 ## 0.28.2
 
 ### Patch Changes

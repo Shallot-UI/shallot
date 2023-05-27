@@ -1,16 +1,15 @@
-import {
-  ColorShadingValue,
-  ThemeOptions,
-  Typeface,
-  makeTheme,
-} from '@shallot-ui/theme'
+import { ColorShadingValue, Typeface } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
-import { getStyle } from '../shallotProp'
 
 export const getColor =
   (value: keyof DefaultTheme['colors'], shade: ColorShadingValue) =>
-  ({ theme }: { theme: DefaultTheme }) =>
-    theme.colors[value][shade as keyof typeof theme.colors.Shading]
+  ({ theme }: { theme: DefaultTheme }) => {
+    const color =
+      theme.colors[value][shade as keyof typeof theme.colors.Shading]
+    if (!color)
+      console.warn(`color not found for value "${value}" and shade "${shade}"`)
+    return color
+  }
 
 // Get a color from the theme using its dot notation address.
 export const getColorShade = (address: string | undefined) => {

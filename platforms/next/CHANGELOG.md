@@ -1,5 +1,15 @@
 # @shallot-ui/next
 
+## 0.27.26
+
+### Patch Changes
+
+- Updates convert palette to proper colors
+- Updates input color shades
+- Updated dependencies
+- Updated dependencies
+  - @shallot-ui/web@0.42.3
+
 ## 0.27.25
 
 ### Patch Changes

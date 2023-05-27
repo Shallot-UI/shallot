@@ -2,8 +2,7 @@ import chroma from 'chroma-js'
 
 export const convertPalette = (original: string[]) => {
   const shadeValues = [
-    100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450,
-    475, 500,
+    50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950,
   ] as const
 
   const shades = chroma.scale(original).colors(shadeValues.length)

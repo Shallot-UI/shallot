@@ -73,15 +73,15 @@ export const withInputStyleProps =
       colors = {
         default: {
           background: ['Shading', 50],
-          border: ['Shading', 300],
+          border: ['Shading', 500],
         },
         focused: {
           background: ['Shading', 50],
-          border: ['Shading', 300],
+          border: ['Shading', 500],
         },
         error: {
           background: ['Danger', 100],
-          border: ['Danger', 300],
+          border: ['Danger', 500],
         },
       },
 
@@ -135,8 +135,8 @@ export const withInputStyleProps =
       input: {
         unitWidth: 1,
         backgroundColor: 'transparent',
-        color: getColorShade('Shading.500'),
-        placeholderColor: getColorShade('Shading.300'),
+        color: getColorShade('Shading.900'),
+        placeholderColor: getColorShade('Shading.500'),
         fontSize: getFontSize('md'),
         margin: getUnits(3 / 4),
         flexGrow: 1,

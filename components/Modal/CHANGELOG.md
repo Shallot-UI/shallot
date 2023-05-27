@@ -1,5 +1,19 @@
 # @shallot-ui/modal
 
+## 0.4.13
+
+### Patch Changes
+
+- Updates convert palette to proper colors
+- Updates input color shades
+- Updated dependencies
+- Updated dependencies
+  - @shallot-ui/text@0.6.3
+  - @shallot-ui/box@0.4.26
+  - @shallot-ui/row@0.4.26
+  - @shallot-ui/theme@0.28.3
+  - @shallot-ui/core@6.0.3
+
 ## 0.4.12
 
 ### Patch Changes

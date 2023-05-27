@@ -1,5 +1,28 @@
 # @shallot-ui/web
 
+## 0.42.3
+
+### Patch Changes
+
+- Updates convert palette to proper colors
+- Updates input color shades
+- Updated dependencies
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.11
+  - @shallot-ui/checkbox@0.5.3
+  - @shallot-ui/form-row@0.4.9
+  - @shallot-ui/button@0.5.3
+  - @shallot-ui/column@0.4.26
+  - @shallot-ui/switch@0.5.3
+  - @shallot-ui/input@0.5.3
+  - @shallot-ui/fold@0.4.25
+  - @shallot-ui/text@0.6.3
+  - @shallot-ui/box@0.4.26
+  - @shallot-ui/row@0.4.26
+  - @shallot-ui/tag@0.5.3
+  - @shallot-ui/theme@0.28.3
+  - @shallot-ui/core@6.0.3
+
 ## 0.42.2
 
 ### Patch Changes

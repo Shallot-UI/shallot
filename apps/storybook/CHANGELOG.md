@@ -1,5 +1,15 @@
 # stories
 
+## 0.9.3
+
+### Patch Changes
+
+- Updates convert palette to proper colors
+- Updates input color shades
+- Updated dependencies
+- Updated dependencies
+  - @shallot-ui/web@0.42.3
+
 ## 0.9.2
 
 ### Patch Changes

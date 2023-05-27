@@ -1,5 +1,16 @@
 # @shallot-ui/box
 
+## 0.4.26
+
+### Patch Changes
+
+- Updates convert palette to proper colors
+- Updates input color shades
+- Updated dependencies
+- Updated dependencies
+  - @shallot-ui/theme@0.28.3
+  - @shallot-ui/core@6.0.3
+
 ## 0.4.25
 
 ### Patch Changes
