@@ -40,6 +40,7 @@ export type TextStyleProps = {
   fontSize?: keyof DefaultTheme['fontSizes']
 
   underline?: 'under' | boolean
+  uppercase?: boolean
 }
 
 export type TextProps<T = {}> = T & TextStyleProps & { shallot?: TextShallot }
@@ -74,6 +75,7 @@ export const withTextStyleProps =
       rightText,
 
       underline,
+      uppercase,
 
       ...nonStyleProps
     } = props
@@ -85,6 +87,7 @@ export const withTextStyleProps =
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
       }),
+      ...(uppercase && { textTransform: 'uppercase' }),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(unitsAround && { margin: getUnits(unitsAround) }),
       ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
