@@ -42,6 +42,7 @@ export type RowStyleProps = {
   shrink?: boolean | number
   flex?: boolean | number
   wrap?: boolean | number
+  borderWidth?: number
 }
 
 export type RowProps<T = {}> = T & RowStyleProps & { shallot?: RowShallot }
@@ -78,18 +79,21 @@ export const withRowStyleProps =
       shrink,
       flex,
       wrap,
+      borderWidth,
       ...nonStyleProps
     } = props
 
     let boxShallot: RowShallot = {
       display: 'flex',
       flexDirection: 'row',
+      borderStyle: 'solid',
       ...(radius && { borderRadius: getRadius(radius) }),
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
       }),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(borderColor && { borderColor: getColorShade(borderColor) }),
+      ...(borderWidth !== undefined && { borderWidth }),
       ...(unitsAround !== undefined && { margin: getUnits(unitsAround) }),
       ...(unitsAbove !== undefined && { marginTop: getUnits(unitsAbove) }),
       ...(unitsBelow !== undefined && { marginBottom: getUnits(unitsBelow) }),

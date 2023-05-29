@@ -34,6 +34,7 @@ export type BoxStyleProps = {
   grow?: boolean | number
   shrink?: boolean | number
   flex?: boolean | number
+  borderWidth?: number
 }
 
 export type BoxProps<T = {}> = T & BoxStyleProps & { shallot?: BoxShallot }
@@ -62,16 +63,19 @@ export const withBoxStyleProps =
       grow,
       shrink,
       flex,
+      borderWidth,
       ...nonStyleProps
     } = props
 
     let boxShallot: BoxShallot = {
       display: 'flex',
+      borderStyle: 'solid',
       ...(radius && { borderRadius: getRadius(radius) }),
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
       }),
       ...(borderColor && { borderColor: getColorShade(borderColor) }),
+      ...(borderWidth !== undefined && { borderWidth }),
       ...(unitsAround !== undefined && { margin: getUnits(unitsAround) }),
       ...(unitsAbove !== undefined && { marginTop: getUnits(unitsAbove) }),
       ...(unitsBelow !== undefined && { marginBottom: getUnits(unitsBelow) }),

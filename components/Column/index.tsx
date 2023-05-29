@@ -41,6 +41,7 @@ export type ColumnStyleProps = {
   grow?: boolean | number
   shrink?: boolean | number
   flex?: boolean | number
+  borderWidth?: number
 }
 
 export type ColumnProps<T = {}> = T &
@@ -78,18 +79,21 @@ export const withColumnStyleProps = <T,>(
       grow,
       shrink,
       flex,
+      borderWidth,
       ...nonStyleProps
     } = props
 
     let boxShallot: ColumnShallot = {
       display: 'flex',
       flexDirection: 'column',
+      borderStyle: 'solid',
       ...(radius && { borderRadius: getRadius(radius) }),
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),
       }),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(borderColor && { borderColor: getColorShade(borderColor) }),
+      ...(borderWidth !== undefined && { borderWidth }),
       ...(unitsAround !== undefined && { margin: getUnits(unitsAround) }),
       ...(unitsAbove !== undefined && { marginTop: getUnits(unitsAbove) }),
       ...(unitsBelow !== undefined && { marginBottom: getUnits(unitsBelow) }),
