@@ -1,5 +1,11 @@
 # @shallot-ui/input
 
+## 0.5.6
+
+### Patch Changes
+
+- Adds typeface to input
+
 ## 0.5.5
 
 ### Patch Changes

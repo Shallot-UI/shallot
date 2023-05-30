@@ -9,6 +9,7 @@ import {
   getFontSize,
   getLetterSpacing,
   getRadius,
+  getTypeface,
   getUnits,
   ShallotProp,
 } from '@shallot-ui/core'
@@ -40,6 +41,8 @@ export type InputStyleProps = {
   unitsLeft?: number
   unitsRight?: number
   textAlign?: CSSObject['textAlign']
+  typeface?: keyof DefaultTheme['typefaces']
+  font?: string
 }
 
 export type InputShallot = {
@@ -109,6 +112,9 @@ export const withInputStyleProps =
       shallot,
       state = {},
 
+      typeface = 'Body',
+      font = 'Bold',
+
       ...inputProps
     } = props
 
@@ -141,6 +147,7 @@ export const withInputStyleProps =
         margin: getUnits(3 / 4),
         flexGrow: 1,
         letterSpacing: getLetterSpacing('md'),
+        typeface: getTypeface(typeface, font),
       },
     }
 
