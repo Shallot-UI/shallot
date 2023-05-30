@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.10
+
+### Patch Changes
+
+- Raises the contrast of button titles
+- Updated dependencies
+  - @shallot-ui/web@0.42.10
+
 ## 0.9.9
 
 ### Patch Changes

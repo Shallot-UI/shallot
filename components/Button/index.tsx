@@ -136,7 +136,7 @@ export const withButtonStyleProps =
         textAlign,
         flex: 1,
         typeface: getTypeface(typeface, font),
-        color: getColor('Shading', 100),
+        color: getColor('Shading', 50),
         fontSize: getFontSize(fontSize),
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),

@@ -1,5 +1,14 @@
 # @shallot-ui/button
 
+## 0.5.6
+
+### Patch Changes
+
+- Raises the contrast of button titles
+- Updated dependencies
+  - @shallot-ui/box@0.4.30
+  - @shallot-ui/row@0.4.30
+
 ## 0.5.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @shallot-ui/box
 
+## 0.4.30
+
+### Patch Changes
+
+- Raises the contrast of button titles
+
 ## 0.4.29
 
 ### Patch Changes

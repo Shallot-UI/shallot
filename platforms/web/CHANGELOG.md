@@ -1,5 +1,19 @@
 # @shallot-ui/web
 
+## 0.42.10
+
+### Patch Changes
+
+- Raises the contrast of button titles
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.17
+  - @shallot-ui/form-row@0.4.15
+  - @shallot-ui/button@0.5.6
+  - @shallot-ui/column@0.4.30
+  - @shallot-ui/input@0.6.4
+  - @shallot-ui/box@0.4.30
+  - @shallot-ui/row@0.4.30
+
 ## 0.42.9
 
 ### Patch Changes
