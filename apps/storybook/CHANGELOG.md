@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.4
+
+### Patch Changes
+
+- Adds style props for borders and uppercase text
+- Updated dependencies
+  - @shallot-ui/web@0.42.4
+
 ## 0.9.3
 
 ### Patch Changes

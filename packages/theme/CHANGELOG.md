@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.28.4
+
+### Patch Changes
+
+- Adds style props for borders and uppercase text
+
 ## 0.28.3
 
 ### Patch Changes

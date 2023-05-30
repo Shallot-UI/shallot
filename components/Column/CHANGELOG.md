@@ -1,5 +1,15 @@
 # @shallot-ui/column
 
+## 0.4.27
+
+### Patch Changes
+
+- Adds style props for borders and uppercase text
+- Updated dependencies
+  - @shallot-ui/box@0.4.27
+  - @shallot-ui/theme@0.28.4
+  - @shallot-ui/core@6.0.4
+
 ## 0.4.26
 
 ### Patch Changes

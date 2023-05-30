@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.27
+
+### Patch Changes
+
+- Adds style props for borders and uppercase text
+- Updated dependencies
+  - @shallot-ui/web@0.42.4
+
 ## 0.27.26
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @shallot-ui/form-row
 
+## 0.4.10
+
+### Patch Changes
+
+- Adds style props for borders and uppercase text
+- Updated dependencies
+  - @shallot-ui/text@0.6.4
+  - @shallot-ui/box@0.4.27
+  - @shallot-ui/row@0.4.27
+  - @shallot-ui/theme@0.28.4
+  - @shallot-ui/core@6.0.4
+
 ## 0.4.9
 
 ### Patch Changes
