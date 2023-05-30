@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.11
+
+### Patch Changes
+
+- Fixes shallot prop on next image
+- Updated dependencies
+  - @shallot-ui/web@0.42.11
+
 ## 0.9.10
 
 ### Patch Changes

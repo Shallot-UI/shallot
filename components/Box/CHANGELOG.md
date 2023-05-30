@@ -1,5 +1,11 @@
 # @shallot-ui/box
 
+## 0.4.31
+
+### Patch Changes
+
+- Fixes shallot prop on next image
+
 ## 0.4.30
 
 ### Patch Changes

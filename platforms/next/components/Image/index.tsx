@@ -1,13 +1,21 @@
 import { ComponentProps, FunctionComponent } from 'react'
 import styled, { DefaultTheme, useTheme } from 'styled-components'
 import NextImage from 'next/image'
-import { ShallotProp, getStyle, getUnits, getRadius } from '@shallot-ui/web'
+import {
+  ShallotProp,
+  getStyle,
+  getUnits,
+  getRadius,
+  AllColorShades,
+  getColorShade,
+} from '@shallot-ui/web'
 
 type NextImageProps = ComponentProps<typeof NextImage>
 
 export interface ImageProps extends NextImageProps {
   shallot?: ShallotProp
   radius?: keyof DefaultTheme['radii']
+  backgroundColor?: AllColorShades
   unitHeight?: number
   unitWidth?: number
   unitsAround?: number
@@ -30,6 +38,8 @@ export const Image: FunctionComponent<ImageProps> = (props) => {
     unitsBelow,
     unitsLeft,
     unitsRight,
+    backgroundColor,
+    shallot,
     ...rest
   } = props
 
@@ -46,8 +56,12 @@ export const Image: FunctionComponent<ImageProps> = (props) => {
         ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
         ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
+        ...(backgroundColor && {
+          backgroundColor: getColorShade(backgroundColor),
+        }),
         position: 'relative',
         overflow: 'hidden',
+        ...shallot,
       }}
     >
       {/* We need to pass the width and height props to the NextImage component

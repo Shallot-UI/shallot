@@ -1,5 +1,14 @@
 # @shallot-ui/input
 
+## 0.6.5
+
+### Patch Changes
+
+- Fixes shallot prop on next image
+- Updated dependencies
+  - @shallot-ui/box@0.4.31
+  - @shallot-ui/row@0.4.31
+
 ## 0.6.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.29
+
+### Patch Changes
+
+- Fixes shallot prop on next image
+- Updated dependencies
+  - @shallot-ui/web@0.42.11
+
 ## 0.27.28
 
 ### Patch Changes
