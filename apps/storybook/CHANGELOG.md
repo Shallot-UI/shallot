@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.9
+
+### Patch Changes
+
+- Adds border position prop
+- Updated dependencies
+  - @shallot-ui/web@0.42.9
+
 ## 0.9.8
 
 ### Patch Changes

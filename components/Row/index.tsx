@@ -43,6 +43,7 @@ export type RowStyleProps = {
   flex?: boolean | number
   wrap?: boolean | number
   borderWidth?: number
+  borderPosition?: 'top' | 'right' | 'bottom' | 'left' | 'all'
 }
 
 export type RowProps<T = {}> = T & RowStyleProps & { shallot?: RowShallot }
@@ -80,6 +81,7 @@ export const withRowStyleProps =
       flex,
       wrap,
       borderWidth,
+      borderPosition = 'all',
       ...nonStyleProps
     } = props
 
@@ -93,7 +95,6 @@ export const withRowStyleProps =
       }),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(borderColor && { borderColor: getColorShade(borderColor) }),
-      ...(borderWidth !== undefined && { borderWidth }),
       ...(unitsAround !== undefined && { margin: getUnits(unitsAround) }),
       ...(unitsAbove !== undefined && { marginTop: getUnits(unitsAbove) }),
       ...(unitsBelow !== undefined && { marginBottom: getUnits(unitsBelow) }),
@@ -125,6 +126,17 @@ export const withRowStyleProps =
       ...(alignCenter && { justifyContent: 'center' }),
       ...(alignRight && { justifyContent: 'flex-end' }),
       ...(wrap && { flexWrap: 'wrap' }),
+
+      ...(borderPosition === 'top' &&
+        borderWidth !== undefined && { borderTopWidth: borderWidth }),
+      ...(borderPosition === 'right' &&
+        borderWidth !== undefined && { borderRightWidth: borderWidth }),
+      ...(borderPosition === 'bottom' &&
+        borderWidth !== undefined && { borderBottomWidth: borderWidth }),
+      ...(borderPosition === 'left' &&
+        borderWidth !== undefined && { borderLeftWidth: borderWidth }),
+      ...(borderPosition === 'all' &&
+        borderWidth !== undefined && { borderWidth }),
     }
 
     boxShallot = applyStyles(boxShallot, shallot)

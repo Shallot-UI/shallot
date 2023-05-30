@@ -1,5 +1,14 @@
 # @shallot-ui/input
 
+## 0.6.3
+
+### Patch Changes
+
+- Adds border position prop
+- Updated dependencies
+  - @shallot-ui/box@0.4.29
+  - @shallot-ui/row@0.4.29
+
 ## 0.6.2
 
 ### Patch Changes

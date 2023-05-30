@@ -1,5 +1,18 @@
 # @shallot-ui/web
 
+## 0.42.9
+
+### Patch Changes
+
+- Adds border position prop
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.16
+  - @shallot-ui/form-row@0.4.14
+  - @shallot-ui/column@0.4.29
+  - @shallot-ui/input@0.6.3
+  - @shallot-ui/box@0.4.29
+  - @shallot-ui/row@0.4.29
+
 ## 0.42.8
 
 ### Patch Changes

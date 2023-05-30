@@ -35,6 +35,7 @@ export type BoxStyleProps = {
   shrink?: boolean | number
   flex?: boolean | number
   borderWidth?: number
+  borderPosition?: 'top' | 'right' | 'bottom' | 'left' | 'all'
 }
 
 export type BoxProps<T = {}> = T & BoxStyleProps & { shallot?: BoxShallot }
@@ -64,6 +65,7 @@ export const withBoxStyleProps =
       shrink,
       flex,
       borderWidth,
+      borderPosition = 'all',
       ...nonStyleProps
     } = props
 
@@ -75,7 +77,6 @@ export const withBoxStyleProps =
         backgroundColor: getColorShade(backgroundColor),
       }),
       ...(borderColor && { borderColor: getColorShade(borderColor) }),
-      ...(borderWidth !== undefined && { borderWidth }),
       ...(unitsAround !== undefined && { margin: getUnits(unitsAround) }),
       ...(unitsAbove !== undefined && { marginTop: getUnits(unitsAbove) }),
       ...(unitsBelow !== undefined && { marginBottom: getUnits(unitsBelow) }),
@@ -100,6 +101,17 @@ export const withBoxStyleProps =
       ...(grow !== undefined && { flexGrow: getNumericValue(grow) }),
       ...(shrink !== undefined && { flexShrink: getNumericValue(shrink) }),
       ...(flex !== undefined && { flex: getNumericValue(flex) }),
+
+      ...(borderPosition === 'top' &&
+        borderWidth !== undefined && { borderTopWidth: borderWidth }),
+      ...(borderPosition === 'right' &&
+        borderWidth !== undefined && { borderRightWidth: borderWidth }),
+      ...(borderPosition === 'bottom' &&
+        borderWidth !== undefined && { borderBottomWidth: borderWidth }),
+      ...(borderPosition === 'left' &&
+        borderWidth !== undefined && { borderLeftWidth: borderWidth }),
+      ...(borderPosition === 'all' &&
+        borderWidth !== undefined && { borderWidth }),
     }
 
     boxShallot = applyStyles(boxShallot, shallot)

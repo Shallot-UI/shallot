@@ -1,5 +1,13 @@
 # @shallot-ui/column
 
+## 0.4.29
+
+### Patch Changes
+
+- Adds border position prop
+- Updated dependencies
+  - @shallot-ui/box@0.4.29
+
 ## 0.4.28
 
 ### Patch Changes

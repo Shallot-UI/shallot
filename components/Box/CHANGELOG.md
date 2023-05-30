@@ -1,5 +1,11 @@
 # @shallot-ui/box
 
+## 0.4.29
+
+### Patch Changes
+
+- Adds border position prop
+
 ## 0.4.28
 
 ### Patch Changes
