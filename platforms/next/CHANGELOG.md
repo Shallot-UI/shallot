@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.28
+
+### Patch Changes
+
+- [feat] Improves next link
+- Updated dependencies
+  - @shallot-ui/web@0.42.5
+
 ## 0.27.27
 
 ### Patch Changes

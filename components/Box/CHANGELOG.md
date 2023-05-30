@@ -1,5 +1,14 @@
 # @shallot-ui/box
 
+## 0.4.28
+
+### Patch Changes
+
+- [feat] Improves next link
+- Updated dependencies
+  - @shallot-ui/theme@0.28.5
+  - @shallot-ui/core@6.0.5
+
 ## 0.4.27
 
 ### Patch Changes

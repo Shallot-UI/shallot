@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.28.5
+
+### Patch Changes
+
+- [feat] Improves next link
+
 ## 0.28.4
 
 ### Patch Changes

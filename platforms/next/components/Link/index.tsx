@@ -1,5 +1,7 @@
+import { ComponentProps, FunctionComponent } from 'react'
 import NextLink from 'next/link'
-import { ShallotProp, getStyle } from '@shallot-ui/core'
-import styled from 'styled-components'
+import { Text } from '@shallot-ui/next'
 
-export const Link = styled(NextLink)<{ shallot?: ShallotProp }>(getStyle)
+export const Link: FunctionComponent<
+  ComponentProps<typeof Text> & ComponentProps<typeof NextLink>
+> = (props) => <Text as={NextLink as any} {...props} />

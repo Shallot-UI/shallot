@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.31.28
+
+### Patch Changes
+
+- [feat] Improves next link
+- Updated dependencies
+  - @shallot-ui/theme@0.28.5
+  - @shallot-ui/core@6.0.5
+
 ## 0.31.27
 
 ### Patch Changes

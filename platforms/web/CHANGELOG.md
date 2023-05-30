@@ -1,5 +1,26 @@
 # @shallot-ui/web
 
+## 0.42.5
+
+### Patch Changes
+
+- [feat] Improves next link
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.13
+  - @shallot-ui/checkbox@0.5.5
+  - @shallot-ui/form-row@0.4.11
+  - @shallot-ui/button@0.5.5
+  - @shallot-ui/column@0.4.28
+  - @shallot-ui/switch@0.5.5
+  - @shallot-ui/input@0.5.5
+  - @shallot-ui/fold@0.4.27
+  - @shallot-ui/text@0.6.5
+  - @shallot-ui/box@0.4.28
+  - @shallot-ui/row@0.4.28
+  - @shallot-ui/tag@0.5.5
+  - @shallot-ui/theme@0.28.5
+  - @shallot-ui/core@6.0.5
+
 ## 0.42.4
 
 ### Patch Changes

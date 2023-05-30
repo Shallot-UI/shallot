@@ -66,7 +66,7 @@ export const withFormRowStyleProps =
       container: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'center',
+        alignItems: 'center',
         ...(unitsAround && { margin: getUnits(unitsAround) }),
         ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
         ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),

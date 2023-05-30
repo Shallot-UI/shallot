@@ -1,5 +1,13 @@
 # @shallot-ui/utils
 
+## 4.0.5
+
+### Patch Changes
+
+- [feat] Improves next link
+- Updated dependencies
+  - @shallot-ui/theme@0.28.5
+
 ## 4.0.4
 
 ### Patch Changes
