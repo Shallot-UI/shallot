@@ -1,6 +1,7 @@
 import {
   ComponentType,
-  HTMLAttributes,
+  FunctionComponent,
+  InputHTMLAttributes,
   MutableRefObject,
   RefObject,
   useRef,
@@ -28,27 +29,23 @@ const InnerInput = styled.input<{ shallot?: ShallotProp }>(
     }),
 )
 
-const StaticInput = (
-  props: HTMLAttributes<HTMLInputElement> & {
+const StaticInput: FunctionComponent<
+  InputHTMLAttributes<HTMLInputElement> & {
     shallot?: InputShallot
     inputRef?: RefObject<HTMLInputElement>
-  },
-) => {
-  const { title, shallot, inputRef, ...rest } = props
-
-  return (
-    <Container
-      shallot={shallot?.container}
-      onClick={() =>
-        (inputRef as MutableRefObject<HTMLInputElement>)?.current?.focus()
-      }
-    >
-      {/* {startAdornment} */}
-      <InnerInput ref={inputRef} shallot={shallot?.input} {...rest} />
-      {/* {endAdornment} */}
-    </Container>
-  )
-}
+  }
+> = ({ title, shallot, inputRef, ...rest }) => (
+  <Container
+    shallot={shallot?.container}
+    onClick={() =>
+      (inputRef as MutableRefObject<HTMLInputElement>)?.current?.focus()
+    }
+  >
+    {/* {startAdornment} */}
+    <InnerInput ref={inputRef} shallot={shallot?.input} {...rest} />
+    {/* {endAdornment} */}
+  </Container>
+)
 
 const withInputState =
   <T,>(InputComponent: ComponentType<T>) =>

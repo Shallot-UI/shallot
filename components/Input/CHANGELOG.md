@@ -1,5 +1,11 @@
 # @shallot-ui/input
 
+## 0.6.2
+
+### Patch Changes
+
+- Fixes input attributes on web
+
 ## 0.6.1
 
 ### Patch Changes

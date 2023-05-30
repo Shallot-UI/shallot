@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.8
+
+### Patch Changes
+
+- Fixes input attributes on web
+- Updated dependencies
+  - @shallot-ui/web@0.42.8
+
 ## 0.9.7
 
 ### Patch Changes

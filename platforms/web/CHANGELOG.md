@@ -1,5 +1,15 @@
 # @shallot-ui/web
 
+## 0.42.8
+
+### Patch Changes
+
+- Fixes input attributes on web
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.15
+  - @shallot-ui/form-row@0.4.13
+  - @shallot-ui/input@0.6.2
+
 ## 0.42.7
 
 ### Patch Changes

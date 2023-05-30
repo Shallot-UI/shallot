@@ -1,5 +1,11 @@
 # @shallot-ui/form-column
 
+## 0.4.15
+
+### Patch Changes
+
+- Fixes input attributes on web
+
 ## 0.4.14
 
 ### Patch Changes

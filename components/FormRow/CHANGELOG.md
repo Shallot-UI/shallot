@@ -1,5 +1,11 @@
 # @shallot-ui/form-row
 
+## 0.4.13
+
+### Patch Changes
+
+- Fixes input attributes on web
+
 ## 0.4.12
 
 ### Patch Changes
