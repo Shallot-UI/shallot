@@ -1,5 +1,11 @@
 # @shallot-ui/form-column
 
+## 0.4.14
+
+### Patch Changes
+
+- Adds user-select none to form controls
+
 ## 0.4.13
 
 ### Patch Changes

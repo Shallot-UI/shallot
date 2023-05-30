@@ -1,5 +1,11 @@
 # @shallot-ui/form-row
 
+## 0.4.12
+
+### Patch Changes
+
+- Adds user-select none to form controls
+
 ## 0.4.11
 
 ### Patch Changes

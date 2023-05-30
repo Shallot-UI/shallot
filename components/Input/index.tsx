@@ -113,7 +113,7 @@ export const withInputStyleProps =
       state = {},
 
       typeface = 'Body',
-      font = 'Bold',
+      font = 'Regular',
 
       ...inputProps
     } = props

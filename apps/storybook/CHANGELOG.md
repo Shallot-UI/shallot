@@ -1,5 +1,19 @@
 # stories
 
+## 0.9.7
+
+### Patch Changes
+
+- Adds user-select none to form controls
+- Updated dependencies
+  - @shallot-ui/web@0.42.7
+
+## 0.9.6
+
+### Patch Changes
+
+- @shallot-ui/web@0.42.6
+
 ## 0.9.5
 
 ### Patch Changes

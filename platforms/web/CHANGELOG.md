@@ -1,5 +1,22 @@
 # @shallot-ui/web
 
+## 0.42.7
+
+### Patch Changes
+
+- Adds user-select none to form controls
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.14
+  - @shallot-ui/form-row@0.4.12
+  - @shallot-ui/input@0.6.1
+
+## 0.42.6
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/input@0.6.0
+
 ## 0.42.5
 
 ### Patch Changes

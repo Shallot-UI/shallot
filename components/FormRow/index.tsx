@@ -79,15 +79,18 @@ export const withFormRowStyleProps =
         letterSpacing: getLetterSpacing('md'),
         fontSize: getFontSize(labelFontSize || 'md'),
         color: getColorShade(labelColor || 'Shading.800'),
+        userSelect: 'none',
       },
       details: {
         marginLeft: getUnits(1),
         display: 'flex',
         flexGrow: 1,
         flexDirection: 'column',
+        userSelect: 'none',
       },
       requiredStar: {
         color: getColorShade('Danger.500'),
+        userSelect: 'none',
       },
       helperText: {
         fontSize: getFontSize('sm'),
@@ -97,6 +100,7 @@ export const withFormRowStyleProps =
         transition: 'color 350ms ease-in-out',
         animation: 'fadeInDown',
         typeface: getTypeface(typeface),
+        userSelect: 'none',
       },
       errorText: {
         fontSize: getFontSize('sm'),
@@ -105,6 +109,7 @@ export const withFormRowStyleProps =
         unitsAbove: getUnits(1 / 4),
         animation: 'fadeInDown',
         typeface: getTypeface(typeface),
+        userSelect: 'none',
       },
     }
 

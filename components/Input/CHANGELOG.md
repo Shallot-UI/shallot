@@ -1,5 +1,17 @@
 # @shallot-ui/input
 
+## 0.6.1
+
+### Patch Changes
+
+- Adds user-select none to form controls
+
+## 0.6.0
+
+### Minor Changes
+
+- Minor version bump for input
+
 ## 0.5.6
 
 ### Patch Changes
