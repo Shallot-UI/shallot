@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.28.8
+
+### Patch Changes
+
+- Improves button disabled types
+
 ## 0.28.7
 
 ### Patch Changes

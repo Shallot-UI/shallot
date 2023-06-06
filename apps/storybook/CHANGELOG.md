@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.14
+
+### Patch Changes
+
+- Improves button disabled types
+- Updated dependencies
+  - @shallot-ui/web@0.42.14
+
 ## 0.9.13
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @shallot-ui/button
 
+## 0.5.10
+
+### Patch Changes
+
+- Improves button disabled types
+- Updated dependencies
+  - @shallot-ui/box@0.4.34
+  - @shallot-ui/row@0.4.34
+  - @shallot-ui/theme@0.28.8
+
 ## 0.5.9
 
 ### Patch Changes

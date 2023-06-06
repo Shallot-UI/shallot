@@ -1,5 +1,14 @@
 # @shallot-ui/column
 
+## 0.4.34
+
+### Patch Changes
+
+- Improves button disabled types
+- Updated dependencies
+  - @shallot-ui/box@0.4.34
+  - @shallot-ui/theme@0.28.8
+
 ## 0.4.33
 
 ### Patch Changes

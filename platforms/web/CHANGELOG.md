@@ -1,5 +1,20 @@
 # @shallot-ui/web
 
+## 0.42.14
+
+### Patch Changes
+
+- Improves button disabled types
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.21
+  - @shallot-ui/form-row@0.4.19
+  - @shallot-ui/button@0.5.10
+  - @shallot-ui/column@0.4.34
+  - @shallot-ui/input@0.6.8
+  - @shallot-ui/box@0.4.34
+  - @shallot-ui/row@0.4.34
+  - @shallot-ui/theme@0.28.8
+
 ## 0.42.13
 
 ### Patch Changes

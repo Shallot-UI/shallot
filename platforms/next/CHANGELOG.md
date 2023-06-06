@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.32
+
+### Patch Changes
+
+- Improves button disabled types
+- Updated dependencies
+  - @shallot-ui/web@0.42.14
+
 ## 0.27.31
 
 ### Patch Changes
