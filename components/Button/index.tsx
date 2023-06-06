@@ -52,6 +52,7 @@ export type ButtonProps<T> = T &
   ButtonStyleProps & {
     shallot?: ButtonShallot
     state?: ButtonState
+    disabled?: boolean
   }
 
 export const withButtonStyleProps =

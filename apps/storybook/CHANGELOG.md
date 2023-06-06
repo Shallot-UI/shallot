@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.13
+
+### Patch Changes
+
+- adds disabled state to button
+- Updated dependencies
+  - @shallot-ui/web@0.42.13
+
 ## 0.9.12
 
 ### Patch Changes

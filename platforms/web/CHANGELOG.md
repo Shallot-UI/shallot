@@ -1,5 +1,20 @@
 # @shallot-ui/web
 
+## 0.42.13
+
+### Patch Changes
+
+- adds disabled state to button
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.20
+  - @shallot-ui/form-row@0.4.18
+  - @shallot-ui/button@0.5.9
+  - @shallot-ui/column@0.4.33
+  - @shallot-ui/input@0.6.7
+  - @shallot-ui/box@0.4.33
+  - @shallot-ui/row@0.4.33
+  - @shallot-ui/theme@0.28.7
+
 ## 0.42.12
 
 ### Patch Changes

@@ -59,7 +59,7 @@ const withButtonState =
     return (
       <ButtonComponent
         buttonRef={ref}
-        state={{ hovered, focused, pressed }}
+        state={{ hovered, focused, pressed, disabled: props.disabled }}
         {...props}
       />
     )

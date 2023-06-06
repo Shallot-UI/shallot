@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/row",
-  "version": "0.4.32",
+  "version": "0.4.33",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -37,9 +37,9 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@shallot-ui/box": "^0.4.32",
+    "@shallot-ui/box": "^0.4.33",
     "@shallot-ui/core": "^6.0.5",
-    "@shallot-ui/theme": "^0.28.6",
+    "@shallot-ui/theme": "^0.28.7",
     "prop-types": "^15.8.1"
   }
 }

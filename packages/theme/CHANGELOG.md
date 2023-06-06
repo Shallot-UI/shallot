@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.28.7
+
+### Patch Changes
+
+- adds disabled state to button
+
 ## 0.28.6
 
 ### Patch Changes

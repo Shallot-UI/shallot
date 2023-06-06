@@ -1,5 +1,13 @@
 # @shallot-ui/box
 
+## 0.4.33
+
+### Patch Changes
+
+- adds disabled state to button
+- Updated dependencies
+  - @shallot-ui/theme@0.28.7
+
 ## 0.4.32
 
 ### Patch Changes
