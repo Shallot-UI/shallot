@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.28.9
+
+### Patch Changes
+
+- Sets a default typeface on form elements
+
 ## 0.28.8
 
 ### Patch Changes

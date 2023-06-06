@@ -47,7 +47,7 @@ export const withFormRowStyleProps =
       // General
       radius = 'md',
 
-      typeface,
+      typeface = 'Body',
       labelFontSize,
       labelColor,
 

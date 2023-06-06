@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.15
+
+### Patch Changes
+
+- Sets a default typeface on form elements
+- Updated dependencies
+  - @shallot-ui/web@0.42.15
+
 ## 0.9.14
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.33
+
+### Patch Changes
+
+- Sets a default typeface on form elements
+- Updated dependencies
+  - @shallot-ui/web@0.42.15
+
 ## 0.27.32
 
 ### Patch Changes

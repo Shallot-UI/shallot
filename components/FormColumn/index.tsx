@@ -46,7 +46,7 @@ export const withFormColumnStyleProps =
       // General
       radius = 'md',
 
-      typeface,
+      typeface = 'Body',
       labelFontSize,
       labelColor,
 

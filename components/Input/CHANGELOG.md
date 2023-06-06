@@ -1,5 +1,15 @@
 # @shallot-ui/input
 
+## 0.6.9
+
+### Patch Changes
+
+- Sets a default typeface on form elements
+- Updated dependencies
+  - @shallot-ui/box@0.4.35
+  - @shallot-ui/row@0.4.35
+  - @shallot-ui/theme@0.28.9
+
 ## 0.6.8
 
 ### Patch Changes
