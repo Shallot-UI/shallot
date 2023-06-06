@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/form-row",
-  "version": "0.4.21",
+  "version": "0.4.22",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -37,10 +37,10 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@shallot-ui/box": "^0.4.36",
+    "@shallot-ui/box": "^0.4.37",
     "@shallot-ui/text": "^0.6.5",
-    "@shallot-ui/row": "^0.4.36",
-    "@shallot-ui/theme": "^0.28.10",
+    "@shallot-ui/row": "^0.4.37",
+    "@shallot-ui/theme": "^0.28.11",
     "@shallot-ui/core": "^6.0.5",
     "prop-types": "^15.8.1"
   }

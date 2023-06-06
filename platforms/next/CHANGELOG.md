@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.35
+
+### Patch Changes
+
+- Wider shading palette
+- Updated dependencies
+  - @shallot-ui/web@0.42.17
+
 ## 0.27.34
 
 ### Patch Changes

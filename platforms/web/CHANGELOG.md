@@ -1,5 +1,20 @@
 # @shallot-ui/web
 
+## 0.42.17
+
+### Patch Changes
+
+- Wider shading palette
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.24
+  - @shallot-ui/form-row@0.4.22
+  - @shallot-ui/button@0.5.13
+  - @shallot-ui/column@0.4.37
+  - @shallot-ui/input@0.6.11
+  - @shallot-ui/box@0.4.37
+  - @shallot-ui/row@0.4.37
+  - @shallot-ui/theme@0.28.11
+
 ## 0.42.16
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.28.11
+
+### Patch Changes
+
+- Wider shading palette
+
 ## 0.28.10
 
 ### Patch Changes

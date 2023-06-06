@@ -1,5 +1,15 @@
 # @shallot-ui/button
 
+## 0.5.13
+
+### Patch Changes
+
+- Wider shading palette
+- Updated dependencies
+  - @shallot-ui/box@0.4.37
+  - @shallot-ui/row@0.4.37
+  - @shallot-ui/theme@0.28.11
+
 ## 0.5.12
 
 ### Patch Changes

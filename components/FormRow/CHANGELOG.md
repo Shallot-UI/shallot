@@ -1,5 +1,15 @@
 # @shallot-ui/form-row
 
+## 0.4.22
+
+### Patch Changes
+
+- Wider shading palette
+- Updated dependencies
+  - @shallot-ui/box@0.4.37
+  - @shallot-ui/row@0.4.37
+  - @shallot-ui/theme@0.28.11
+
 ## 0.4.21
 
 ### Patch Changes

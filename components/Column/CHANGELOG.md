@@ -1,5 +1,14 @@
 # @shallot-ui/column
 
+## 0.4.37
+
+### Patch Changes
+
+- Wider shading palette
+- Updated dependencies
+  - @shallot-ui/box@0.4.37
+  - @shallot-ui/theme@0.28.11
+
 ## 0.4.36
 
 ### Patch Changes

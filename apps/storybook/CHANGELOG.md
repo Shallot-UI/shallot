@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.17
+
+### Patch Changes
+
+- Wider shading palette
+- Updated dependencies
+  - @shallot-ui/web@0.42.17
+
 ## 0.9.16
 
 ### Patch Changes

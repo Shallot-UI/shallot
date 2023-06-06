@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/next",
-  "version": "0.27.34",
+  "version": "0.27.35",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "build": "tsup ./index.ts --dts --format esm,cjs --minify"
   },
   "dependencies": {
-    "@shallot-ui/web": "^0.42.16"
+    "@shallot-ui/web": "^0.42.17"
   },
   "peerDependencies": {
     "next": ">=13",

@@ -1,5 +1,15 @@
 # @shallot-ui/input
 
+## 0.6.11
+
+### Patch Changes
+
+- Wider shading palette
+- Updated dependencies
+  - @shallot-ui/box@0.4.37
+  - @shallot-ui/row@0.4.37
+  - @shallot-ui/theme@0.28.11
+
 ## 0.6.10
 
 ### Patch Changes
