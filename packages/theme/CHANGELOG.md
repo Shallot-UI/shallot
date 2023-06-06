@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.28.6
+
+### Patch Changes
+
+- Fixes letter spacing and default colors
+
 ## 0.28.5
 
 ### Patch Changes

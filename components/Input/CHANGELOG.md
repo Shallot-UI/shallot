@@ -1,5 +1,15 @@
 # @shallot-ui/input
 
+## 0.6.6
+
+### Patch Changes
+
+- Fixes letter spacing and default colors
+- Updated dependencies
+  - @shallot-ui/box@0.4.32
+  - @shallot-ui/row@0.4.32
+  - @shallot-ui/theme@0.28.6
+
 ## 0.6.5
 
 ### Patch Changes

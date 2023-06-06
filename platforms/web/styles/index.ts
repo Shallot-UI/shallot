@@ -56,9 +56,9 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
 
   body {
     color: ${({ theme, textColor }) =>
-      getColorShade(textColor ?? 'Shading.900', theme)};
+      getColorShade(textColor ?? 'Shading.950', theme)};
     background-color: ${({ theme, backgroundColor }) =>
-      getColorShade(backgroundColor ?? 'Shading.100', theme)};
+      getColorShade(backgroundColor ?? 'Shading.50', theme)};
   }
 
   // SYSTEM FONT

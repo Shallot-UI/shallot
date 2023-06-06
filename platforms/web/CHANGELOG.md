@@ -1,5 +1,20 @@
 # @shallot-ui/web
 
+## 0.42.12
+
+### Patch Changes
+
+- Fixes letter spacing and default colors
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.19
+  - @shallot-ui/form-row@0.4.17
+  - @shallot-ui/button@0.5.8
+  - @shallot-ui/column@0.4.32
+  - @shallot-ui/input@0.6.6
+  - @shallot-ui/box@0.4.32
+  - @shallot-ui/row@0.4.32
+  - @shallot-ui/theme@0.28.6
+
 ## 0.42.11
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.30
+
+### Patch Changes
+
+- Fixes letter spacing and default colors
+- Updated dependencies
+  - @shallot-ui/web@0.42.12
+
 ## 0.27.29
 
 ### Patch Changes

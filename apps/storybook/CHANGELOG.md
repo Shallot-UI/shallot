@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.12
+
+### Patch Changes
+
+- Fixes letter spacing and default colors
+- Updated dependencies
+  - @shallot-ui/web@0.42.12
+
 ## 0.9.11
 
 ### Patch Changes
