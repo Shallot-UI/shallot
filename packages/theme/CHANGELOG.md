@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.28.10
+
+### Patch Changes
+
+- Fixes the package deps for the default typeface on form columns
+
 ## 0.28.9
 
 ### Patch Changes

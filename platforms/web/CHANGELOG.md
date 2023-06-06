@@ -1,5 +1,20 @@
 # @shallot-ui/web
 
+## 0.42.16
+
+### Patch Changes
+
+- Fixes the package deps for the default typeface on form columns
+- Updated dependencies
+  - @shallot-ui/form-column@0.4.23
+  - @shallot-ui/form-row@0.4.21
+  - @shallot-ui/button@0.5.12
+  - @shallot-ui/column@0.4.36
+  - @shallot-ui/input@0.6.10
+  - @shallot-ui/box@0.4.36
+  - @shallot-ui/row@0.4.36
+  - @shallot-ui/theme@0.28.10
+
 ## 0.42.15
 
 ### Patch Changes

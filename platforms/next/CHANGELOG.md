@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.27.34
+
+### Patch Changes
+
+- Fixes the package deps for the default typeface on form columns
+- Updated dependencies
+  - @shallot-ui/web@0.42.16
+
 ## 0.27.33
 
 ### Patch Changes

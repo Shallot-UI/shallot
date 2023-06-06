@@ -1,5 +1,13 @@
 # stories
 
+## 0.9.16
+
+### Patch Changes
+
+- Fixes the package deps for the default typeface on form columns
+- Updated dependencies
+  - @shallot-ui/web@0.42.16
+
 ## 0.9.15
 
 ### Patch Changes
