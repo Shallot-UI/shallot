@@ -5,7 +5,7 @@ import { FormRowShallot, withFormRowStyleProps } from '@shallot-ui/form-row'
 
 const Container = styled.div(getStyle)
 const Details = styled.div(getStyle)
-const Label = styled.span(getStyle)
+const Label = styled.label(getStyle)
 const RequiredStar = styled.span(getStyle)
 const HelperText = styled.span(getStyle)
 const ErrorText = styled.span(getStyle)
