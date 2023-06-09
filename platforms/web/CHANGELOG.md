@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.43.0
+
+### Minor Changes
+
+- A11y improvements to form labels
+
 ## 0.42.17
 
 ### Patch Changes
