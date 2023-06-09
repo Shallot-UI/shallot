@@ -12,7 +12,7 @@ import {
   InputProps,
   InputShallot,
   withInputStyleProps,
-} from '@shallot-ui/Input'
+} from '@shallot-ui/input'
 
 import { useFocus, useHover, usePressed } from '../../hooks'
 
