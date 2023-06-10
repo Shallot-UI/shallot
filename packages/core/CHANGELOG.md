@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 6.0.6
+
+### Patch Changes
+
+- Reduces some re-used code in style props
+
 ## 6.0.5
 
 ### Patch Changes

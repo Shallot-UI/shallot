@@ -1,150 +1,64 @@
 import { ComponentType, forwardRef } from 'react'
-import { DefaultTheme } from 'styled-components'
-import { AllColorShades } from '@shallot-ui/theme'
+import { omit } from 'lodash'
 import {
-  ShallotProp,
+  alignmentPropKeys,
   applyStyles,
-  getColorShade,
-  getFullHeight,
-  getFullWidth,
-  getNumericValue,
-  getRadius,
-  getUnits,
+  backgroundColorPropKeys,
+  borderColorPropKeys,
+  borderPropKeys,
+  flexPropKeys,
+  getAlignmentShallot,
+  getBackgroundColorShallot,
+  getBorderColorShallot,
+  getBorderShallot,
+  getFlexShallot,
+  getMarginShallot,
+  getRadiusShallot,
+  getSizingShallot,
+  getTextColorShallot,
+  marginPropKeys,
+  radiusPropKeys,
+  sizingPropKeys,
+  textColorPropKeys,
 } from '@shallot-ui/core'
 
-type ColumnShallot = ShallotProp
-
-export type ColumnStyleProps = {
-  textColor?: AllColorShades
-  backgroundColor?: AllColorShades
-  borderColor?: AllColorShades
-  radius?: keyof DefaultTheme['radii']
-  unitsAround?: number
-  unitsAbove?: number
-  unitsBelow?: number
-  unitsLeft?: number
-  unitsRight?: number
-  unitHeight?: number
-  unitWidth?: number
-  maxUnitHeight?: number
-  maxUnitWidth?: number
-  minUnitHeight?: number
-  minUnitWidth?: number
-  fullWidth?: boolean
-  fullHeight?: boolean
-  alignTop?: boolean
-  alignMiddle?: boolean
-  alignBottom?: boolean
-  alignLeft?: boolean
-  alignCenter?: boolean
-  alignRight?: boolean
-  grow?: boolean | number
-  shrink?: boolean | number
-  flex?: boolean | number
-  borderWidth?: number
-  borderPosition?: 'top' | 'right' | 'bottom' | 'left' | 'all'
-}
-
-export type ColumnProps<T = {}> = T &
-  ColumnStyleProps & { shallot?: ColumnShallot }
+import { ColumnProps, ColumnShallot, ColumnStyleProps } from './types'
+export * from './types'
 
 export const withColumnStyleProps = <T,>(
-  ColumnComponent: ComponentType<T & { shallot?: ColumnShallot }>,
+  ColumnComponent: ComponentType<T & ColumnStyleProps>,
 ) =>
   forwardRef<HTMLDivElement, ColumnProps<T>>((props: ColumnProps<T>, ref) => {
-    const {
-      backgroundColor,
-      borderColor,
-      textColor,
-      radius,
-      unitsAround,
-      unitsAbove,
-      unitsBelow,
-      unitsLeft,
-      unitsRight,
-      shallot,
-      unitHeight,
-      unitWidth,
-      maxUnitHeight,
-      maxUnitWidth,
-      minUnitHeight,
-      minUnitWidth,
-      fullWidth,
-      fullHeight,
-      alignTop,
-      alignMiddle,
-      alignBottom,
-      alignLeft,
-      alignCenter,
-      alignRight,
-      grow,
-      shrink,
-      flex,
-      borderWidth,
-      borderPosition = 'all',
-      ...nonStyleProps
-    } = props
-
-    let boxShallot: ColumnShallot = {
+    const baseShallot: ColumnShallot = applyStyles({
       display: 'flex',
       flexDirection: 'column',
-      borderStyle: 'solid',
-      ...(radius && { borderRadius: getRadius(radius) }),
-      ...(backgroundColor && {
-        backgroundColor: getColorShade(backgroundColor),
-      }),
-      ...(textColor && { color: getColorShade(textColor) }),
-      ...(borderColor && { borderColor: getColorShade(borderColor) }),
-      ...(unitsAround !== undefined && { margin: getUnits(unitsAround) }),
-      ...(unitsAbove !== undefined && { marginTop: getUnits(unitsAbove) }),
-      ...(unitsBelow !== undefined && { marginBottom: getUnits(unitsBelow) }),
-      ...(unitsLeft !== undefined && { marginLeft: getUnits(unitsLeft) }),
-      ...(unitsRight !== undefined && { marginRight: getUnits(unitsRight) }),
-      ...(unitHeight !== undefined && { height: getUnits(unitHeight) }),
-      ...(unitWidth !== undefined && { width: getUnits(unitWidth) }),
-      ...(maxUnitHeight !== undefined && {
-        maxHeight: getUnits(maxUnitHeight),
-      }),
-      ...(maxUnitWidth !== undefined && { maxWidth: getUnits(maxUnitWidth) }),
-      ...(minUnitHeight !== undefined && {
-        minHeight: getUnits(minUnitHeight),
-      }),
-      ...(minUnitWidth !== undefined && { minWidth: getUnits(minUnitWidth) }),
-      ...(fullWidth && {
-        width: getFullWidth({ unitsLeft, unitsRight, unitsAround }),
-      }),
-      ...(fullHeight && {
-        height: getFullHeight({ unitsAbove, unitsBelow, unitsAround }),
-      }),
-      ...(grow !== undefined && { flexGrow: getNumericValue(grow) }),
-      ...(shrink !== undefined && { flexShrink: getNumericValue(shrink) }),
-      ...(flex !== undefined && { flex: getNumericValue(flex) }),
-      ...(alignTop && { justifyContent: 'flex-start' }),
-      ...(alignMiddle && { justifyContent: 'center' }),
-      ...(alignBottom && { justifyContent: 'flex-end' }),
-      ...(alignLeft && { alignItems: 'flex-start' }),
-      ...(alignCenter && { alignItems: 'center' }),
-      ...(alignRight && { alignItems: 'flex-end' }),
+      ...props.shallot,
+    })
 
-      ...(borderPosition === 'top' &&
-        borderWidth !== undefined && { borderTopWidth: borderWidth }),
-      ...(borderPosition === 'right' &&
-        borderWidth !== undefined && { borderRightWidth: borderWidth }),
-      ...(borderPosition === 'bottom' &&
-        borderWidth !== undefined && { borderBottomWidth: borderWidth }),
-      ...(borderPosition === 'left' &&
-        borderWidth !== undefined && { borderLeftWidth: borderWidth }),
-      ...(borderPosition === 'all' &&
-        borderWidth !== undefined && { borderWidth }),
-    }
+    const shallot = applyStyles(baseShallot, {
+      ...getAlignmentShallot(baseShallot.flexDirection, props),
+      ...getBorderShallot(props),
+      ...getBackgroundColorShallot(props),
+      ...getBorderColorShallot(props),
+      ...getTextColorShallot(props),
+      ...getFlexShallot(props),
+      ...getMarginShallot(props),
+      ...getRadiusShallot(props),
+      ...getSizingShallot(props),
+    })
 
-    boxShallot = applyStyles(boxShallot, shallot)
+    const baseProps = omit(
+      props,
+      ...alignmentPropKeys,
+      ...borderPropKeys,
+      ...backgroundColorPropKeys,
+      ...borderColorPropKeys,
+      ...textColorPropKeys,
+      ...flexPropKeys,
+      ...marginPropKeys,
+      ...radiusPropKeys,
+      ...sizingPropKeys,
+    ) as T
 
-    return (
-      <ColumnComponent
-        {...(nonStyleProps as T)}
-        ref={ref}
-        shallot={boxShallot}
-      />
-    )
+    return <ColumnComponent {...baseProps} ref={ref} shallot={shallot} />
   })

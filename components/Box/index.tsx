@@ -1,120 +1,64 @@
-import { ComponentType } from 'react'
-import { DefaultTheme } from 'styled-components'
-import { AllColorShades } from '@shallot-ui/theme'
+import { ComponentType, forwardRef } from 'react'
+import { omit } from 'lodash'
 import {
-  ShallotProp,
+  alignmentPropKeys,
   applyStyles,
-  getColorShade,
-  getFullHeight,
-  getFullWidth,
-  getNumericValue,
-  getRadius,
-  getUnits,
+  backgroundColorPropKeys,
+  borderColorPropKeys,
+  borderPropKeys,
+  flexPropKeys,
+  getAlignmentShallot,
+  getBackgroundColorShallot,
+  getBorderColorShallot,
+  getBorderShallot,
+  getFlexShallot,
+  getMarginShallot,
+  getRadiusShallot,
+  getSizingShallot,
+  getTextColorShallot,
+  marginPropKeys,
+  radiusPropKeys,
+  sizingPropKeys,
+  textColorPropKeys,
 } from '@shallot-ui/core'
 
-type BoxShallot = ShallotProp
+import { BoxProps, BoxShallot, BoxStyleProps } from './types'
+export * from './types'
 
-export type BoxStyleProps = {
-  backgroundColor?: AllColorShades
-  borderColor?: AllColorShades
-  radius?: keyof DefaultTheme['radii']
-  unitsAround?: number
-  unitsAbove?: number
-  unitsBelow?: number
-  unitsLeft?: number
-  unitsRight?: number
-  unitHeight?: number
-  unitWidth?: number
-  maxUnitHeight?: number
-  maxUnitWidth?: number
-  minUnitHeight?: number
-  minUnitWidth?: number
-  fullWidth?: boolean
-  fullHeight?: boolean
-  grow?: boolean | number
-  shrink?: boolean | number
-  flex?: boolean | number
-  borderWidth?: number
-  borderPosition?: 'top' | 'right' | 'bottom' | 'left' | 'all'
-}
-
-export type BoxProps<T = {}> = T & BoxStyleProps & { shallot?: BoxShallot }
-
-export const withBoxStyleProps =
-  <T,>(BoxComponent: ComponentType<T & { shallot?: BoxShallot }>) =>
-  (props: BoxProps<T>) => {
-    const {
-      backgroundColor,
-      borderColor,
-      radius,
-      unitsAround,
-      unitsAbove,
-      unitsBelow,
-      unitsLeft,
-      unitsRight,
-      shallot,
-      unitHeight,
-      unitWidth,
-      maxUnitHeight,
-      maxUnitWidth,
-      minUnitHeight,
-      minUnitWidth,
-      fullWidth,
-      fullHeight,
-      grow,
-      shrink,
-      flex,
-      borderWidth,
-      borderPosition = 'all',
-      ...nonStyleProps
-    } = props
-
-    let boxShallot: BoxShallot = {
+export const withBoxStyleProps = <T,>(
+  BoxComponent: ComponentType<T & BoxStyleProps>,
+) =>
+  forwardRef<HTMLDivElement, BoxProps<T>>((props: BoxProps<T>, ref) => {
+    const baseShallot: BoxShallot = applyStyles({
       display: 'flex',
-      borderStyle: 'solid',
-      ...(radius && { borderRadius: getRadius(radius) }),
-      ...(backgroundColor && {
-        backgroundColor: getColorShade(backgroundColor),
-      }),
-      ...(borderColor && { borderColor: getColorShade(borderColor) }),
-      ...(unitsAround !== undefined && { margin: getUnits(unitsAround) }),
-      ...(unitsAbove !== undefined && { marginTop: getUnits(unitsAbove) }),
-      ...(unitsBelow !== undefined && { marginBottom: getUnits(unitsBelow) }),
-      ...(unitsLeft !== undefined && { marginLeft: getUnits(unitsLeft) }),
-      ...(unitsRight !== undefined && { marginRight: getUnits(unitsRight) }),
-      ...(unitHeight !== undefined && { height: getUnits(unitHeight) }),
-      ...(unitWidth !== undefined && { width: getUnits(unitWidth) }),
-      ...(maxUnitHeight !== undefined && {
-        maxHeight: getUnits(maxUnitHeight),
-      }),
-      ...(maxUnitWidth !== undefined && { maxWidth: getUnits(maxUnitWidth) }),
-      ...(minUnitHeight !== undefined && {
-        minHeight: getUnits(minUnitHeight),
-      }),
-      ...(minUnitWidth !== undefined && { minWidth: getUnits(minUnitWidth) }),
-      ...(fullWidth && {
-        width: getFullWidth({ unitsLeft, unitsRight, unitsAround }),
-      }),
-      ...(fullHeight && {
-        height: getFullHeight({ unitsAbove, unitsBelow, unitsAround }),
-      }),
-      ...(grow !== undefined && { flexGrow: getNumericValue(grow) }),
-      ...(shrink !== undefined && { flexShrink: getNumericValue(shrink) }),
-      ...(flex !== undefined && { flex: getNumericValue(flex) }),
+      flexDirection: 'column',
+      ...props.shallot,
+    })
 
-      ...(borderPosition === 'top' &&
-        borderWidth !== undefined && { borderTopWidth: borderWidth }),
-      ...(borderPosition === 'right' &&
-        borderWidth !== undefined && { borderRightWidth: borderWidth }),
-      ...(borderPosition === 'bottom' &&
-        borderWidth !== undefined && { borderBottomWidth: borderWidth }),
-      ...(borderPosition === 'left' &&
-        borderWidth !== undefined && { borderLeftWidth: borderWidth }),
-      ...(borderPosition === 'all' &&
-        borderWidth !== undefined && { borderWidth }),
-    }
+    const shallot = applyStyles(baseShallot, {
+      ...getAlignmentShallot(baseShallot.flexDirection, props),
+      ...getBorderShallot(props),
+      ...getBackgroundColorShallot(props),
+      ...getBorderColorShallot(props),
+      ...getTextColorShallot(props),
+      ...getFlexShallot(props),
+      ...getMarginShallot(props),
+      ...getRadiusShallot(props),
+      ...getSizingShallot(props),
+    })
 
-    boxShallot = applyStyles(boxShallot, shallot)
+    const baseProps = omit(
+      props,
+      ...alignmentPropKeys,
+      ...borderPropKeys,
+      ...backgroundColorPropKeys,
+      ...borderColorPropKeys,
+      ...textColorPropKeys,
+      ...flexPropKeys,
+      ...marginPropKeys,
+      ...radiusPropKeys,
+      ...sizingPropKeys,
+    ) as T
 
-    return <BoxComponent {...(nonStyleProps as T)} shallot={boxShallot} />
-  }
+    return <BoxComponent {...baseProps} ref={ref} shallot={shallot} />
+  })

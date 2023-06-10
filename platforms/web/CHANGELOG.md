@@ -1,5 +1,16 @@
 # @shallot-ui/web
 
+## 0.43.1
+
+### Patch Changes
+
+- Reduces some re-used code in style props
+- Updated dependencies
+  - @shallot-ui/column@0.4.38
+  - @shallot-ui/box@0.4.38
+  - @shallot-ui/row@0.4.38
+  - @shallot-ui/core@6.0.6
+
 ## 0.43.0
 
 ### Minor Changes
