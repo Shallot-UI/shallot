@@ -1,5 +1,35 @@
 # @shallot-ui/box
 
+## 0.6.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@6.2.0
+
+## 0.5.0
+
+### Minor Changes
+
+- Improves handing of types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@6.1.0
+
+## 0.4.38
+
+### Patch Changes
+
+- Reduces some re-used code in style props
+- Updated dependencies
+  - @shallot-ui/core@6.0.6
+
 ## 0.4.37
 
 ### Patch Changes

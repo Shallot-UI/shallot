@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/fold",
-  "version": "0.4.27",
+  "version": "0.5.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -23,8 +23,8 @@
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@types/prop-types": "^15.7.5",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.10",
+    "@types/react": "^18.2.11",
+    "@types/react-dom": "^18.2.4",
     "@types/styled-components": ">=5",
     "babel-loader": "^8.3.0",
     "eslint": "^7.32.0",
@@ -37,8 +37,8 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@shallot-ui/box": "^0.4.28",
-    "@shallot-ui/core": "^6.0.5",
+    "@shallot-ui/box": "^0.6.0",
+    "@shallot-ui/core": "^6.2.0",
     "@shallot-ui/theme": "^0.28.5",
     "prop-types": "^15.8.1"
   }

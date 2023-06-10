@@ -1,5 +1,33 @@
 # @shallot-ui/button
 
+## 0.7.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.7.0
+  - @shallot-ui/box@0.6.0
+  - @shallot-ui/row@0.6.0
+  - @shallot-ui/core@6.2.0
+
+## 0.6.0
+
+### Minor Changes
+
+- Improves handing of types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.5.0
+  - @shallot-ui/row@0.5.0
+  - @shallot-ui/core@6.1.0
+  - @shallot-ui/text@0.6.6
+
 ## 0.5.13
 
 ### Patch Changes

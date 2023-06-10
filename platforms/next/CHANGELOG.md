@@ -1,5 +1,23 @@
 # @shallot-ui/next
 
+## 0.28.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.45.0
+
+## 0.27.37
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.44.0
+
 ## 0.27.36
 
 ### Patch Changes

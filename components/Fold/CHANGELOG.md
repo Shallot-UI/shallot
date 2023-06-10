@@ -1,5 +1,25 @@
 # @shallot-ui/fold
 
+## 0.5.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.6.0
+  - @shallot-ui/core@6.2.0
+
+## 0.4.28
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.5.0
+  - @shallot-ui/core@6.1.0
+
 ## 0.4.27
 
 ### Patch Changes

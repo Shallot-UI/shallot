@@ -1,5 +1,16 @@
 # @shallot-ui/native
 
+## 0.32.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@6.2.0
+
 ## 0.31.28
 
 ### Patch Changes
