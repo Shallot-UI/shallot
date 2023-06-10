@@ -1,5 +1,17 @@
 # @shallot-ui/row
 
+## 0.5.0
+
+### Minor Changes
+
+- Improves handing of types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.5.0
+  - @shallot-ui/core@6.1.0
+
 ## 0.4.38
 
 ### Patch Changes

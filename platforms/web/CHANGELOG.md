@@ -1,5 +1,28 @@
 # @shallot-ui/web
 
+## 0.44.0
+
+### Minor Changes
+
+- Improves handing of types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/button@0.6.0
+  - @shallot-ui/column@0.5.0
+  - @shallot-ui/box@0.5.0
+  - @shallot-ui/row@0.5.0
+  - @shallot-ui/core@6.1.0
+  - @shallot-ui/checkbox@0.5.6
+  - @shallot-ui/fold@0.4.28
+  - @shallot-ui/form-column@0.4.25
+  - @shallot-ui/form-row@0.4.23
+  - @shallot-ui/input@0.6.12
+  - @shallot-ui/switch@0.5.6
+  - @shallot-ui/tag@0.5.6
+  - @shallot-ui/text@0.6.6
+
 ## 0.43.1
 
 ### Patch Changes

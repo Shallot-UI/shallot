@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 6.1.0
+
+### Minor Changes
+
+- Improves handing of types
+
 ## 6.0.6
 
 ### Patch Changes

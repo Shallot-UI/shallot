@@ -1,5 +1,16 @@
 # stories
 
+## 0.10.0
+
+### Minor Changes
+
+- Improves handing of types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.44.0
+
 ## 0.9.19
 
 ### Patch Changes
