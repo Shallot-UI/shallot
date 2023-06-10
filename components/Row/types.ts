@@ -12,12 +12,6 @@ import {
   TextColorProps,
 } from '@shallot-ui/core'
 
-export type RowShallot = ShallotProp & {
-  // We use `flexDirection` to infer the `alignItems` and `justifyContent` props
-  // for the `Row` component, so it can't be a mixin prop.
-  flexDirection: CSSProperties['flexDirection']
-}
-
 export type RowStyleProps = AlignmentProps &
   BorderProps &
   BackgroundColorProps &
@@ -26,6 +20,12 @@ export type RowStyleProps = AlignmentProps &
   FlexProps &
   MarginProps &
   RadiusProps &
-  SizingProps & { shallot?: RowShallot }
+  SizingProps
 
-export type RowProps<T = {}> = T & RowStyleProps
+export type RowShallot = ShallotProp & {
+  // We use `flexDirection` to infer the `alignItems` and `justifyContent` props
+  // for the `Row` component, so it can't be a mixin prop.
+  flexDirection: CSSProperties['flexDirection']
+}
+
+export type RowProps<T = {}> = T & RowStyleProps & { shallot?: RowShallot }

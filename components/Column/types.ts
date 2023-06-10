@@ -12,12 +12,6 @@ import {
   TextColorProps,
 } from '@shallot-ui/core'
 
-export type ColumnShallot = ShallotProp & {
-  // We use `flexDirection` to infer the `alignItems` and `justifyContent` props
-  // for the `Column` component, so it can't be a mixin prop.
-  flexDirection: CSSProperties['flexDirection']
-}
-
 export type ColumnStyleProps = AlignmentProps &
   BorderProps &
   BackgroundColorProps &
@@ -26,6 +20,13 @@ export type ColumnStyleProps = AlignmentProps &
   FlexProps &
   MarginProps &
   RadiusProps &
-  SizingProps & { shallot?: ColumnShallot }
+  SizingProps
 
-export type ColumnProps<T = {}> = T & ColumnStyleProps
+export type ColumnShallot = ShallotProp & {
+  // We use `flexDirection` to infer the `alignItems` and `justifyContent` props
+  // for the `Column` component, so it can't be a mixin prop.
+  flexDirection: CSSProperties['flexDirection']
+}
+
+export type ColumnProps<T = {}> = T &
+  ColumnStyleProps & { shallot?: ColumnShallot }
