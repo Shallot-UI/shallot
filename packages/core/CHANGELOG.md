@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 6.2.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
 ## 6.1.0
 
 ### Minor Changes

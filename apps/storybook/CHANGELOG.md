@@ -1,5 +1,16 @@
 # stories
 
+## 0.11.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.45.0
+
 ## 0.10.0
 
 ### Minor Changes

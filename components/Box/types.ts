@@ -12,6 +12,12 @@ import {
   TextColorProps,
 } from '@shallot-ui/core'
 
+export type BoxShallot = ShallotProp & {
+  // We use `flexDirection` to infer the `alignItems` and `justifyContent` props
+  // for the `Box` component, so it can't be a mixin prop.
+  flexDirection: CSSProperties['flexDirection']
+}
+
 export type BoxStyleProps = AlignmentProps &
   BorderProps &
   BackgroundColorProps &
@@ -21,11 +27,5 @@ export type BoxStyleProps = AlignmentProps &
   MarginProps &
   RadiusProps &
   SizingProps
-
-export type BoxShallot = ShallotProp & {
-  // We use `flexDirection` to infer the `alignItems` and `justifyContent` props
-  // for the `Box` component, so it can't be a mixin prop.
-  flexDirection: CSSProperties['flexDirection']
-}
 
 export type BoxProps<T = {}> = T & BoxStyleProps & { shallot?: BoxShallot }
