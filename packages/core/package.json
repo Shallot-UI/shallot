@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/core",
-  "version": "6.2.0",
+  "version": "6.2.1",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
-    "@types/react": "^18.2.11",
+    "@types/react": "^18.0.28",
     "@types/react-dom": "^18.2.4",
     "@types/styled-components": ">=5",
     "eslint": "^7.32.0",

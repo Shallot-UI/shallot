@@ -19,7 +19,7 @@ export type TextStyleProps = {
   textColor?: AllColorShades
   backgroundColor?: AllColorShades
   typeface?: keyof DefaultTheme['typefaces']
-  font?: keyof DefaultTheme['typefaces'][string]['fonts']
+  font?: string
   unitsAround?: number
   unitsAbove?: number
   unitsBelow?: number

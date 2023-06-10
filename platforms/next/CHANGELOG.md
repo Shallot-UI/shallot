@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 0.28.1
+
+### Patch Changes
+
+- Fixes intellisense
+- Updated dependencies
+  - @shallot-ui/web@0.45.1
+
 ## 0.28.0
 
 ### Minor Changes

@@ -2,11 +2,11 @@ import { ComponentType } from 'react'
 
 import omitStyleKeys from './utils/omitStyleKeys'
 import getShallotProp from './utils/getShallotProp'
-import { RowProps, RowShallot } from './types'
+import { RowProps } from './types'
 export * from './types'
 
 export const withRowStyleProps =
-  <T,>(RowComponent: ComponentType<T & { shallot?: RowShallot }>) =>
+  <T,>(RowComponent: ComponentType<T>) =>
   (props: RowProps<T>) =>
     (
       <RowComponent

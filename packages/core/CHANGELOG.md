@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 6.2.1
+
+### Patch Changes
+
+- Fixes intellisense
+
 ## 6.2.0
 
 ### Minor Changes

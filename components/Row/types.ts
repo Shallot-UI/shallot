@@ -1,4 +1,3 @@
-import { CSSProperties } from 'styled-components'
 import {
   AlignmentProps,
   BackgroundColorProps,
@@ -25,7 +24,7 @@ export type RowStyleProps = AlignmentProps &
 export type RowShallot = ShallotProp & {
   // We use `flexDirection` to infer the `alignItems` and `justifyContent` props
   // for the `Row` component, so it can't be a mixin prop.
-  flexDirection: CSSProperties['flexDirection']
+  flexDirection: 'column' | 'column-reverse' | 'row' | 'row-reverse'
 }
 
 export type RowProps<T = {}> = T & RowStyleProps & { shallot?: RowShallot }

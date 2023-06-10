@@ -1,5 +1,16 @@
 # @shallot-ui/checkbox
 
+## 0.6.1
+
+### Patch Changes
+
+- Fixes intellisense
+- Updated dependencies
+  - @shallot-ui/text@0.7.1
+  - @shallot-ui/box@0.6.1
+  - @shallot-ui/row@0.6.1
+  - @shallot-ui/core@6.2.1
+
 ## 0.6.0
 
 ### Minor Changes

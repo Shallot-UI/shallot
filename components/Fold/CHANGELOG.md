@@ -1,5 +1,14 @@
 # @shallot-ui/fold
 
+## 0.5.1
+
+### Patch Changes
+
+- Fixes intellisense
+- Updated dependencies
+  - @shallot-ui/box@0.6.1
+  - @shallot-ui/core@6.2.1
+
 ## 0.5.0
 
 ### Minor Changes

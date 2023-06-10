@@ -1,5 +1,11 @@
 # @shallot-ui/utils
 
+## 4.1.1
+
+### Patch Changes
+
+- Fixes intellisense
+
 ## 4.1.0
 
 ### Minor Changes
