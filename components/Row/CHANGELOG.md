@@ -1,5 +1,16 @@
 # @shallot-ui/row
 
+## 0.7.0
+
+### Minor Changes
+
+- Adds refs to columns rows and boxes
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.7.0
+
 ## 0.6.1
 
 ### Patch Changes

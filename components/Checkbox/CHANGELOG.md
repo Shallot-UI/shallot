@@ -1,5 +1,14 @@
 # @shallot-ui/checkbox
 
+## 0.6.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.7.0
+  - @shallot-ui/row@0.7.0
+  - @shallot-ui/text@0.7.2
+
 ## 0.6.1
 
 ### Patch Changes

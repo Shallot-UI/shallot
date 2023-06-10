@@ -1,5 +1,14 @@
 # @shallot-ui/form-row
 
+## 0.5.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.7.0
+  - @shallot-ui/row@0.7.0
+  - @shallot-ui/text@0.7.2
+
 ## 0.5.1
 
 ### Patch Changes

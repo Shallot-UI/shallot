@@ -1,5 +1,12 @@
 # @shallot-ui/fold
 
+## 0.5.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.7.0
+
 ## 0.5.1
 
 ### Patch Changes

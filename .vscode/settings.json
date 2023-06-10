@@ -1,12 +1,12 @@
-// {
-//   "files.exclude": {
-//     "**/.changeset": true,
-//     "**/.storybook": true,
-//     "**/.turbo": true,
-//     "**/dist": true,
-//     "**/node_modules": true,
-//     "**/.gitignore": true,
-//     "**/styled.d.ts": true,
-//     "**/tsconfig.json": true,
-//   }
-// }
+{
+  "files.exclude": {
+    "**/.changeset": true,
+    "**/.storybook": true,
+    "**/.turbo": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/.gitignore": true,
+    "**/styled.d.ts": true,
+    "**/tsconfig.json": true,
+  }
+}

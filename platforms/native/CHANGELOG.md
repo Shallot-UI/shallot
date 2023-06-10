@@ -1,5 +1,23 @@
 # @shallot-ui/native
 
+## 0.32.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/column@0.7.0
+  - @shallot-ui/box@0.7.0
+  - @shallot-ui/row@0.7.0
+  - @shallot-ui/button@0.7.2
+  - @shallot-ui/checkbox@0.6.2
+  - @shallot-ui/fold@0.5.2
+  - @shallot-ui/form-column@0.5.2
+  - @shallot-ui/form-row@0.5.2
+  - @shallot-ui/input@0.7.2
+  - @shallot-ui/switch@0.6.2
+  - @shallot-ui/tag@0.6.2
+  - @shallot-ui/text@0.7.2
+
 ## 0.32.1
 
 ### Patch Changes

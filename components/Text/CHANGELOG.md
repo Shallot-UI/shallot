@@ -1,5 +1,12 @@
 # @shallot-ui/text
 
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.7.0
+
 ## 0.7.1
 
 ### Patch Changes
