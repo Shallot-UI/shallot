@@ -1,4 +1,3 @@
-import { omit } from 'lodash'
 import {
   alignmentPropKeys,
   backgroundColorPropKeys,
@@ -11,11 +10,11 @@ import {
   textColorPropKeys,
 } from '@shallot-ui/core'
 
-import { BoxProps, BoxStyleProps } from '../types'
+import { BoxProps } from '../types'
 
-const omitStyleKeys = <T>(props: BoxProps<T>) =>
-  omit(
-    props,
+const omitStyleKeys = <T>(props: BoxProps<T>) => {
+  const baseProps = {} as T
+  const stylePropKeys = [
     ...alignmentPropKeys,
     ...borderPropKeys,
     ...backgroundColorPropKeys,
@@ -25,6 +24,15 @@ const omitStyleKeys = <T>(props: BoxProps<T>) =>
     ...marginPropKeys,
     ...radiusPropKeys,
     ...sizingPropKeys,
-  ) as Omit<T, keyof BoxStyleProps>
+  ]
+
+  Object.keys(props).forEach((key) => {
+    if (!(stylePropKeys as string[]).includes(key)) {
+      baseProps[key as keyof T] = props[key as keyof T]
+    }
+  })
+
+  return baseProps
+}
 
 export default omitStyleKeys

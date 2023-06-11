@@ -1,10 +1,9 @@
 {
   "name": "eslint-config-custom",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.4.0",
   "main": "index.js",
   "license": "MIT",
-  "type": "module",
   "dependencies": {
     "eslint": "^7.23.0",
     "eslint-config-next": "13.0.0",

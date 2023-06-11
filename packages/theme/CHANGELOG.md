@@ -1,5 +1,17 @@
 # @shallot-ui/theme
 
+## 0.33.0
+
+### Minor Changes
+
+- Cleans build folders and fixes broken import
+
+## 0.32.0
+
+### Minor Changes
+
+- Move to esm
+
 ## 0.31.0
 
 ### Minor Changes

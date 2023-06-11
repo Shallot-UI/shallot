@@ -1,5 +1,35 @@
 # @shallot-ui/modal
 
+## 0.10.0
+
+### Minor Changes
+
+- Cleans build folders and fixes broken import
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.12.0
+  - @shallot-ui/box@0.12.0
+  - @shallot-ui/row@0.12.0
+  - @shallot-ui/theme@0.33.0
+  - @shallot-ui/core@11.0.0
+
+## 0.9.0
+
+### Minor Changes
+
+- Move to esm
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.11.0
+  - @shallot-ui/box@0.11.0
+  - @shallot-ui/row@0.11.0
+  - @shallot-ui/theme@0.32.0
+  - @shallot-ui/core@10.0.0
+
 ## 0.8.0
 
 ### Minor Changes

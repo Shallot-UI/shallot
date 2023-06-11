@@ -1,4 +1,3 @@
-import { omit } from 'lodash'
 import {
   alignmentPropKeys,
   backgroundColorPropKeys,
@@ -10,11 +9,12 @@ import {
   sizingPropKeys,
   textColorPropKeys,
 } from '@shallot-ui/core'
+
 import { RowProps } from '../types'
 
-const omitStyleKeys = <T>(props: RowProps<T>) =>
-  omit(
-    props,
+const omitStyleKeys = <T>(props: RowProps<T>) => {
+  const baseProps = {} as T
+  const stylePropKeys = [
     ...alignmentPropKeys,
     ...borderPropKeys,
     ...backgroundColorPropKeys,
@@ -24,6 +24,15 @@ const omitStyleKeys = <T>(props: RowProps<T>) =>
     ...marginPropKeys,
     ...radiusPropKeys,
     ...sizingPropKeys,
-  ) as T
+  ]
+
+  Object.keys(props).forEach((key) => {
+    if (!(stylePropKeys as string[]).includes(key)) {
+      baseProps[key as keyof T] = props[key as keyof T]
+    }
+  })
+
+  return baseProps
+}
 
 export default omitStyleKeys

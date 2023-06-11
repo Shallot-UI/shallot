@@ -8,6 +8,7 @@ import {
 
 import omitStyleKeys from './utils/omitStyleKeys'
 import getShallotProp from './utils/getShallotProp'
+
 import { BoxProps } from './types'
 export * from './types'
 
