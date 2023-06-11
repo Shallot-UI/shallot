@@ -16,7 +16,7 @@ import { RowProps, RowShallot } from '../types'
 const getShallotProp = <T>(props: RowProps<T>): RowShallot => {
   const baseShallot: RowShallot = applyStyles({
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     ...props.shallot,
   })
 
