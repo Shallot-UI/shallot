@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.34.0
+
+### Minor Changes
+
+- 68f77e9: Removed missing dep
+
 ## 0.33.0
 
 ### Minor Changes

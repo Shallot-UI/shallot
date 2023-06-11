@@ -1,5 +1,11 @@
 # eslint-config-custom
 
+## 0.5.0
+
+### Minor Changes
+
+- 68f77e9: Removed missing dep
+
 ## 0.4.0
 
 ### Minor Changes

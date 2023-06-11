@@ -1,5 +1,16 @@
 # @shallot-ui/utils
 
+## 10.0.0
+
+### Minor Changes
+
+- 68f77e9: Removed missing dep
+
+### Patch Changes
+
+- Updated dependencies [68f77e9]
+  - @shallot-ui/theme@0.34.0
+
 ## 9.0.0
 
 ### Minor Changes

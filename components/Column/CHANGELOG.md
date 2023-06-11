@@ -1,5 +1,18 @@
 # @shallot-ui/column
 
+## 0.13.0
+
+### Minor Changes
+
+- 68f77e9: Removed missing dep
+
+### Patch Changes
+
+- Updated dependencies [68f77e9]
+  - @shallot-ui/box@0.13.0
+  - @shallot-ui/theme@0.34.0
+  - @shallot-ui/core@12.0.0
+
 ## 0.12.0
 
 ### Minor Changes

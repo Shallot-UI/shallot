@@ -1,5 +1,16 @@
 # stories
 
+## 0.16.0
+
+### Minor Changes
+
+- 68f77e9: Removed missing dep
+
+### Patch Changes
+
+- Updated dependencies [68f77e9]
+  - @shallot-ui/web@0.52.0
+
 ## 0.15.0
 
 ### Minor Changes
