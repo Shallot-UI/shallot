@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 0.31.0
+
+### Minor Changes
+
+- Fix error `withBoxStyleProps is not a function`
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.49.0
+
 ## 0.30.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.31.0
+
+### Minor Changes
+
+- Fix error `withBoxStyleProps is not a function`
+
 ## 0.30.0
 
 ### Minor Changes

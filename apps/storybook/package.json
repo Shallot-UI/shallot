@@ -1,13 +1,13 @@
 {
   "name": "stories",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "private": true,
   "scripts": {
     "build": "build-storybook",
     "dev": "start-storybook -p 6006"
   },
   "dependencies": {
-    "@shallot-ui/web": "0.48.0",
+    "@shallot-ui/web": "0.49.0",
     "next": "^13.1.1",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",

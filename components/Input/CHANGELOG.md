@@ -1,5 +1,20 @@
 # @shallot-ui/input
 
+## 0.10.0
+
+### Minor Changes
+
+- Fix error `withBoxStyleProps is not a function`
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.10.0
+  - @shallot-ui/box@0.10.0
+  - @shallot-ui/row@0.10.0
+  - @shallot-ui/theme@0.31.0
+  - @shallot-ui/core@9.0.0
+
 ## 0.9.0
 
 ### Minor Changes
