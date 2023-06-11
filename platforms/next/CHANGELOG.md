@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 0.32.0
+
+### Minor Changes
+
+- Remove module declaration from next & web
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.50.0
+
 ## 0.31.0
 
 ### Minor Changes

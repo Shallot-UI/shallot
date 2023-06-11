@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup ./index.ts --dts --format esm,cjs --minify"
+    "build": "tsup ./index.ts --format cjs --dts"
   },
   "dependencies": {
     "@shallot-ui/web": "^0.49.0"
