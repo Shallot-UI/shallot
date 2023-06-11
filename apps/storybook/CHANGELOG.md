@@ -1,5 +1,16 @@
 # stories
 
+## 0.12.0
+
+### Minor Changes
+
+- bump deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.47.0
+
 ## 0.11.2
 
 ### Patch Changes

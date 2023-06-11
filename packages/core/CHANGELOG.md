@@ -1,5 +1,16 @@
 # @shallot-ui/core
 
+## 7.0.0
+
+### Minor Changes
+
+- bump deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.29.0
+
 ## 6.2.1
 
 ### Patch Changes

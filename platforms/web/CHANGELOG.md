@@ -1,5 +1,29 @@
 # @shallot-ui/web
 
+## 0.47.0
+
+### Minor Changes
+
+- bump deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.8.0
+  - @shallot-ui/button@0.8.0
+  - @shallot-ui/checkbox@0.7.0
+  - @shallot-ui/column@0.8.0
+  - @shallot-ui/fold@0.6.0
+  - @shallot-ui/form-column@0.6.0
+  - @shallot-ui/form-row@0.6.0
+  - @shallot-ui/input@0.8.0
+  - @shallot-ui/row@0.8.0
+  - @shallot-ui/switch@0.7.0
+  - @shallot-ui/tag@0.7.0
+  - @shallot-ui/text@0.8.0
+  - @shallot-ui/core@7.0.0
+  - @shallot-ui/theme@0.29.0
+
 ## 0.46.0
 
 ### Minor Changes

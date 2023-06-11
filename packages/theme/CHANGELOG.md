@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.29.0
+
+### Minor Changes
+
+- bump deps
+
 ## 0.28.11
 
 ### Patch Changes

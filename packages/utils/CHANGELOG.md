@@ -1,5 +1,16 @@
 # @shallot-ui/utils
 
+## 5.0.0
+
+### Minor Changes
+
+- bump deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.29.0
+
 ## 4.1.1
 
 ### Patch Changes

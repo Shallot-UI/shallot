@@ -1,5 +1,17 @@
 # @shallot-ui/box
 
+## 0.8.0
+
+### Minor Changes
+
+- bump deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@7.0.0
+  - @shallot-ui/theme@0.29.0
+
 ## 0.7.0
 
 ### Minor Changes
