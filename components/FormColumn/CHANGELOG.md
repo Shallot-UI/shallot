@@ -1,5 +1,20 @@
 # @shallot-ui/form-column
 
+## 0.7.0
+
+### Minor Changes
+
+- Republish
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.9.0
+  - @shallot-ui/row@0.9.0
+  - @shallot-ui/text@0.9.0
+  - @shallot-ui/core@8.0.0
+  - @shallot-ui/theme@0.30.0
+
 ## 0.6.0
 
 ### Minor Changes

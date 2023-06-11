@@ -1,5 +1,11 @@
 # tsconfig
 
+## 0.2.0
+
+### Minor Changes
+
+- Republish
+
 ## 0.1.0
 
 ### Minor Changes
