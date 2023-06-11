@@ -1,5 +1,16 @@
 # stories
 
+## 0.17.0
+
+### Minor Changes
+
+- don't require flexDirection
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.53.0
+
 ## 0.16.0
 
 ### Minor Changes

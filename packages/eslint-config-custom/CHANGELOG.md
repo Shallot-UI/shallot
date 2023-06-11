@@ -1,5 +1,11 @@
 # eslint-config-custom
 
+## 0.6.0
+
+### Minor Changes
+
+- don't require flexDirection
+
 ## 0.5.0
 
 ### Minor Changes

@@ -24,7 +24,7 @@ export type ColumnStyleProps = AlignmentProps &
 export type ColumnShallot = ShallotProp & {
   // We use `flexDirection` to infer the `alignItems` and `justifyContent` props
   // for the `Column` component, so it can't be a mixin prop.
-  flexDirection: 'column' | 'column-reverse' | 'row' | 'row-reverse'
+  flexDirection?: 'column' | 'column-reverse' | 'row' | 'row-reverse'
 }
 
 export type ColumnProps<T = {}> = T &

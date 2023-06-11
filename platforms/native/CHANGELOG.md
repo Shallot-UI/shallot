@@ -1,5 +1,29 @@
 # @shallot-ui/native
 
+## 0.39.0
+
+### Minor Changes
+
+- don't require flexDirection
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/form-column@0.12.0
+  - @shallot-ui/checkbox@0.13.0
+  - @shallot-ui/form-row@0.12.0
+  - @shallot-ui/button@0.14.0
+  - @shallot-ui/column@0.14.0
+  - @shallot-ui/switch@0.13.0
+  - @shallot-ui/input@0.14.0
+  - @shallot-ui/fold@0.12.0
+  - @shallot-ui/text@0.14.0
+  - @shallot-ui/box@0.14.0
+  - @shallot-ui/row@0.14.0
+  - @shallot-ui/tag@0.13.0
+  - @shallot-ui/theme@0.35.0
+  - @shallot-ui/core@13.0.0
+
 ## 0.38.0
 
 ### Minor Changes

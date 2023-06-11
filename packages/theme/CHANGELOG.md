@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.35.0
+
+### Minor Changes
+
+- don't require flexDirection
+
 ## 0.34.0
 
 ### Minor Changes

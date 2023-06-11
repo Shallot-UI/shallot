@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 0.35.0
+
+### Minor Changes
+
+- don't require flexDirection
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.53.0
+
 ## 0.34.0
 
 ### Minor Changes

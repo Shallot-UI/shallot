@@ -1,5 +1,18 @@
 # @shallot-ui/text
 
+## 0.14.0
+
+### Minor Changes
+
+- don't require flexDirection
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.14.0
+  - @shallot-ui/theme@0.35.0
+  - @shallot-ui/core@13.0.0
+
 ## 0.13.0
 
 ### Minor Changes

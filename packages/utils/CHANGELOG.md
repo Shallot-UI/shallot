@@ -1,5 +1,16 @@
 # @shallot-ui/utils
 
+## 11.0.0
+
+### Minor Changes
+
+- don't require flexDirection
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.35.0
+
 ## 10.0.0
 
 ### Minor Changes
