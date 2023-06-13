@@ -15,17 +15,16 @@ import {
 
 import { useFocus, useHover, usePressed } from '../../hooks'
 
-const ResetButton = styled.button`
+const Container = styled.button`
   background: none;
   border: none;
   padding: 0;
   margin: 0;
   outline: none;
   cursor: pointer;
+  ${getStyle}
 `
-
-const Container = styled.div(getStyle)
-const Title = styled.div(getStyle)
+const Title = styled.label(getStyle)
 
 const StaticButton = (
   props: HTMLAttributes<HTMLButtonElement> & {
@@ -38,13 +37,11 @@ const StaticButton = (
   const { title, shallot, buttonRef, before, after, ...rest } = props
 
   return (
-    <ResetButton ref={buttonRef} {...rest}>
-      <Container shallot={shallot?.container}>
-        {before}
-        {title && <Title shallot={shallot?.title}>{title}</Title>}
-        {after}
-      </Container>
-    </ResetButton>
+    <Container ref={buttonRef} shallot={shallot?.container} {...rest}>
+      {before}
+      {title && <Title shallot={shallot?.title}>{title}</Title>}
+      {after}
+    </Container>
   )
 }
 
