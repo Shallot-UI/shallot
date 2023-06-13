@@ -1,8 +1,9 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { makeTheme, Input } from '@shallot-ui/web'
+import { InputProps } from '@shallot-ui/input'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -25,19 +26,26 @@ export default {
     startAdornment: { table: { disable: true } },
     endAdornment: { table: { disable: true } },
   },
-} as ComponentMeta<typeof Input>
+} as Meta<typeof Input>
+
+interface TemplateProps {
+  label: string
+  args: InputProps
+}
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Input> = () => {
+const Template: StoryFn<TemplateProps> = ({ label, ...args }) => {
   const [value, setValue] = useState('')
   return (
     <ThemeProvider theme={makeTheme({})}>
       <Input
+        {...args}
         defaultValue={value}
         onChange={(e) => setValue(e.currentTarget.value)}
         placeholder="Your Text Here"
         fullWidth
         maxUnitWidth={35}
+        label="labeddddfl"
       />
     </ThemeProvider>
   )
@@ -45,4 +53,6 @@ const Template: ComponentStory<typeof Input> = () => {
 
 export const Default = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {}
+Default.args = {
+  label: 'label',
+}
