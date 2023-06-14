@@ -6,7 +6,7 @@ import {
   InputProps,
   InputShallot,
   withInputStyleProps,
-} from '@shallot-ui/Input'
+} from '@shallot-ui/input/index'
 
 const Container = styled.View(getStyle)
 const InnerInput = styled.TextInput<{ shallot?: ShallotProp }>(
