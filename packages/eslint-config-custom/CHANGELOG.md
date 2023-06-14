@@ -1,5 +1,15 @@
 # eslint-config-custom
 
+## 0.7.0
+
+### Minor Changes
+
+- 9bdfdad: testing changeset gh action
+
+### Patch Changes
+
+- 7f8fe21: config: introduce changesets
+
 ## 0.6.0
 
 ### Minor Changes

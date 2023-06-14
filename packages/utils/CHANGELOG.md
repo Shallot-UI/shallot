@@ -1,5 +1,18 @@
 # @shallot-ui/utils
 
+## 12.0.0
+
+### Minor Changes
+
+- 9bdfdad: testing changeset gh action
+
+### Patch Changes
+
+- 7f8fe21: config: introduce changesets
+- Updated dependencies [7f8fe21]
+- Updated dependencies [9bdfdad]
+  - @shallot-ui/theme@0.36.0
+
 ## 11.0.0
 
 ### Minor Changes
