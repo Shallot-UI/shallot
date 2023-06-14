@@ -1,5 +1,5 @@
 import { makeTheme, Column, GlobalStyle, Fold } from '@shallot-ui/web'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 import { Text } from '@shallot-ui/web'
 
@@ -27,10 +27,10 @@ export default {
     lineHeight: { control: 'select', options: ['sm', 'md', 'lg'] },
     fontSize: { control: 'select', options: ['sm', 'md', 'lg'] },
   },
-} as ComponentMeta<typeof Text>
+} as Meta<typeof Text>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Text> = (args) => (
+const Template: StoryFn<typeof Text> = (args) => (
   <ThemeProvider theme={makeTheme({})}>
     <GlobalStyle />
     <Fold alignCenter alignMiddle>
