@@ -1,4 +1,4 @@
-name: ublish-packages
+name: publish-packages
 
 on:
   push:
