@@ -1,5 +1,142 @@
 # stories
 
+## 0.17.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.54.0
+
+## 0.17.0
+
+### Minor Changes
+
+- don't require flexDirection
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.53.0
+
+## 0.16.0
+
+### Minor Changes
+
+- 68f77e9: Removed missing dep
+
+### Patch Changes
+
+- Updated dependencies [68f77e9]
+  - @shallot-ui/web@0.52.0
+
+## 0.15.0
+
+### Minor Changes
+
+- Cleans build folders and fixes broken import
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.51.0
+
+## 0.14.0
+
+### Minor Changes
+
+- Move to esm
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.50.0
+
+## 0.13.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.50.0
+
+## 0.13.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.49.0
+
+## 0.13.0
+
+### Minor Changes
+
+- Republish
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.48.0
+
+## 0.12.0
+
+### Minor Changes
+
+- bump deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.47.0
+
+## 0.11.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.46.0
+
+## 0.11.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.45.1
+
+## 0.11.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.45.0
+
+## 0.10.0
+
+### Minor Changes
+
+- Improves handing of types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.44.0
+
+## 0.9.19
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.43.1
+
+## 0.9.18
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.43.0
+
 ## 0.9.17
 
 ### Patch Changes

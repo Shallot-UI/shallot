@@ -1,5 +1,158 @@
 # @shallot-ui/button
 
+## 0.14.0
+
+### Minor Changes
+
+- don't require flexDirection
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.14.0
+  - @shallot-ui/box@0.14.0
+  - @shallot-ui/row@0.14.0
+  - @shallot-ui/theme@0.35.0
+  - @shallot-ui/core@13.0.0
+
+## 0.13.0
+
+### Minor Changes
+
+- 68f77e9: Removed missing dep
+
+### Patch Changes
+
+- Updated dependencies [68f77e9]
+  - @shallot-ui/text@0.13.0
+  - @shallot-ui/box@0.13.0
+  - @shallot-ui/row@0.13.0
+  - @shallot-ui/theme@0.34.0
+  - @shallot-ui/core@12.0.0
+
+## 0.12.0
+
+### Minor Changes
+
+- Cleans build folders and fixes broken import
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.12.0
+  - @shallot-ui/box@0.12.0
+  - @shallot-ui/row@0.12.0
+  - @shallot-ui/theme@0.33.0
+  - @shallot-ui/core@11.0.0
+
+## 0.11.0
+
+### Minor Changes
+
+- Move to esm
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.11.0
+  - @shallot-ui/box@0.11.0
+  - @shallot-ui/row@0.11.0
+  - @shallot-ui/theme@0.32.0
+  - @shallot-ui/core@10.0.0
+
+## 0.10.0
+
+### Minor Changes
+
+- Fix error `withBoxStyleProps is not a function`
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.10.0
+  - @shallot-ui/box@0.10.0
+  - @shallot-ui/row@0.10.0
+  - @shallot-ui/theme@0.31.0
+  - @shallot-ui/core@9.0.0
+
+## 0.9.0
+
+### Minor Changes
+
+- Republish
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.9.0
+  - @shallot-ui/row@0.9.0
+  - @shallot-ui/text@0.9.0
+  - @shallot-ui/core@8.0.0
+  - @shallot-ui/theme@0.30.0
+
+## 0.8.0
+
+### Minor Changes
+
+- bump deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.8.0
+  - @shallot-ui/row@0.8.0
+  - @shallot-ui/text@0.8.0
+  - @shallot-ui/core@7.0.0
+  - @shallot-ui/theme@0.29.0
+
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.7.0
+  - @shallot-ui/row@0.7.0
+  - @shallot-ui/text@0.7.2
+
+## 0.7.1
+
+### Patch Changes
+
+- Fixes intellisense
+- Updated dependencies
+  - @shallot-ui/text@0.7.1
+  - @shallot-ui/box@0.6.1
+  - @shallot-ui/row@0.6.1
+  - @shallot-ui/core@6.2.1
+
+## 0.7.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.7.0
+  - @shallot-ui/box@0.6.0
+  - @shallot-ui/row@0.6.0
+  - @shallot-ui/core@6.2.0
+
+## 0.6.0
+
+### Minor Changes
+
+- Improves handing of types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.5.0
+  - @shallot-ui/row@0.5.0
+  - @shallot-ui/core@6.1.0
+  - @shallot-ui/text@0.6.6
+
 ## 0.5.13
 
 ### Patch Changes

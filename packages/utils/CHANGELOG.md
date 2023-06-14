@@ -1,5 +1,94 @@
 # @shallot-ui/utils
 
+## 11.0.0
+
+### Minor Changes
+
+- don't require flexDirection
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.35.0
+
+## 10.0.0
+
+### Minor Changes
+
+- 68f77e9: Removed missing dep
+
+### Patch Changes
+
+- Updated dependencies [68f77e9]
+  - @shallot-ui/theme@0.34.0
+
+## 9.0.0
+
+### Minor Changes
+
+- Cleans build folders and fixes broken import
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.33.0
+
+## 8.0.0
+
+### Minor Changes
+
+- Move to esm
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.32.0
+
+## 7.0.0
+
+### Minor Changes
+
+- Fix error `withBoxStyleProps is not a function`
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.31.0
+
+## 6.0.0
+
+### Minor Changes
+
+- Republish
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.30.0
+
+## 5.0.0
+
+### Minor Changes
+
+- bump deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.29.0
+
+## 4.1.1
+
+### Patch Changes
+
+- Fixes intellisense
+
+## 4.1.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
 ## 4.0.5
 
 ### Patch Changes

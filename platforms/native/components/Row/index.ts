@@ -1,14 +1,6 @@
 import styled from 'styled-components/native'
-import { ShallotProp, getStyle } from '@shallot-ui/core'
+import { getStyle } from '@shallot-ui/core'
+import { RowShallot, withRowStyleProps } from '@shallot-ui/row'
 
-export const Row = styled.View<{ shallot?: ShallotProp }>(
-  ({ shallot, ...rest }) =>
-    getStyle({
-      shallot: {
-        display: 'flex',
-        flexDirection: 'row',
-        ...shallot,
-      },
-      ...rest,
-    }),
-)
+const Base = styled.View<{ shallot?: RowShallot }>(getStyle)
+export const Row = withRowStyleProps(Base)

@@ -1,5 +1,5 @@
 import { ShallotProp, getStyle } from '@shallot-ui/core'
-import styled, { CSSObject } from 'styled-components'
+import styled from 'styled-components'
 
 export const TextArea = styled('textarea')<{ shallot?: ShallotProp }>(
   ({ shallot, ...rest }) =>

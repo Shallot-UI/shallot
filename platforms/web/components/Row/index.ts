@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { ShallotProp, getStyle } from '@shallot-ui/core'
-import { withRowStyleProps } from '@shallot-ui/row'
+import { getStyle } from '@shallot-ui/core'
+import { RowShallot, withRowStyleProps } from '@shallot-ui/row'
 
-const Base = styled.div<{ shallot?: ShallotProp }>(getStyle)
+const Base = styled.div<{ shallot?: RowShallot }>(getStyle)
 export const Row = withRowStyleProps(Base)

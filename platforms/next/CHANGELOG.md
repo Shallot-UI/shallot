@@ -1,5 +1,140 @@
 # @shallot-ui/next
 
+## 0.35.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.54.0
+
+## 0.35.0
+
+### Minor Changes
+
+- don't require flexDirection
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.53.0
+
+## 0.34.0
+
+### Minor Changes
+
+- 68f77e9: Removed missing dep
+
+### Patch Changes
+
+- Updated dependencies [68f77e9]
+  - @shallot-ui/web@0.52.0
+
+## 0.33.0
+
+### Minor Changes
+
+- Cleans build folders and fixes broken import
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.51.0
+
+## 0.32.0
+
+### Minor Changes
+
+- Move to esm
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.50.0
+
+## 0.32.0
+
+### Minor Changes
+
+- Remove module declaration from next & web
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.50.0
+
+## 0.31.0
+
+### Minor Changes
+
+- Fix error `withBoxStyleProps is not a function`
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.49.0
+
+## 0.30.0
+
+### Minor Changes
+
+- Republish
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.48.0
+
+## 0.29.0
+
+### Minor Changes
+
+- bump deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.47.0
+
+## 0.28.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.46.0
+
+## 0.28.1
+
+### Patch Changes
+
+- Fixes intellisense
+- Updated dependencies
+  - @shallot-ui/web@0.45.1
+
+## 0.28.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.45.0
+
+## 0.27.37
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.44.0
+
+## 0.27.36
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.43.0
+
 ## 0.27.35
 
 ### Patch Changes

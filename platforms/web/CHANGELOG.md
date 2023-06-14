@@ -1,5 +1,290 @@
 # @shallot-ui/web
 
+## 0.54.0
+
+### Minor Changes
+
+- Remove the reset button wrapper from the button component.
+
+## 0.53.0
+
+### Minor Changes
+
+- don't require flexDirection
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/form-column@0.12.0
+  - @shallot-ui/checkbox@0.13.0
+  - @shallot-ui/form-row@0.12.0
+  - @shallot-ui/button@0.14.0
+  - @shallot-ui/column@0.14.0
+  - @shallot-ui/switch@0.13.0
+  - @shallot-ui/input@0.14.0
+  - @shallot-ui/fold@0.12.0
+  - @shallot-ui/text@0.14.0
+  - @shallot-ui/box@0.14.0
+  - @shallot-ui/row@0.14.0
+  - @shallot-ui/tag@0.13.0
+  - @shallot-ui/theme@0.35.0
+  - @shallot-ui/core@13.0.0
+
+## 0.52.0
+
+### Minor Changes
+
+- 68f77e9: Removed missing dep
+
+### Patch Changes
+
+- Updated dependencies [68f77e9]
+  - @shallot-ui/form-column@0.11.0
+  - @shallot-ui/checkbox@0.12.0
+  - @shallot-ui/form-row@0.11.0
+  - @shallot-ui/button@0.13.0
+  - @shallot-ui/column@0.13.0
+  - @shallot-ui/switch@0.12.0
+  - @shallot-ui/input@0.13.0
+  - @shallot-ui/fold@0.11.0
+  - @shallot-ui/text@0.13.0
+  - @shallot-ui/box@0.13.0
+  - @shallot-ui/row@0.13.0
+  - @shallot-ui/tag@0.12.0
+  - @shallot-ui/theme@0.34.0
+  - @shallot-ui/core@12.0.0
+
+## 0.51.0
+
+### Minor Changes
+
+- Cleans build folders and fixes broken import
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/form-column@0.10.0
+  - @shallot-ui/checkbox@0.11.0
+  - @shallot-ui/form-row@0.10.0
+  - @shallot-ui/button@0.12.0
+  - @shallot-ui/column@0.12.0
+  - @shallot-ui/switch@0.11.0
+  - @shallot-ui/input@0.12.0
+  - @shallot-ui/fold@0.10.0
+  - @shallot-ui/text@0.12.0
+  - @shallot-ui/box@0.12.0
+  - @shallot-ui/row@0.12.0
+  - @shallot-ui/tag@0.11.0
+  - @shallot-ui/theme@0.33.0
+  - @shallot-ui/core@11.0.0
+
+## 0.50.0
+
+### Minor Changes
+
+- Move to esm
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/form-column@0.9.0
+  - @shallot-ui/checkbox@0.10.0
+  - @shallot-ui/form-row@0.9.0
+  - @shallot-ui/button@0.11.0
+  - @shallot-ui/column@0.11.0
+  - @shallot-ui/switch@0.10.0
+  - @shallot-ui/input@0.11.0
+  - @shallot-ui/fold@0.9.0
+  - @shallot-ui/text@0.11.0
+  - @shallot-ui/box@0.11.0
+  - @shallot-ui/row@0.11.0
+  - @shallot-ui/tag@0.10.0
+  - @shallot-ui/theme@0.32.0
+  - @shallot-ui/core@10.0.0
+
+## 0.50.0
+
+### Minor Changes
+
+- Remove module declaration from next & web
+
+## 0.49.0
+
+### Minor Changes
+
+- Fix error `withBoxStyleProps is not a function`
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/form-column@0.8.0
+  - @shallot-ui/checkbox@0.9.0
+  - @shallot-ui/form-row@0.8.0
+  - @shallot-ui/button@0.10.0
+  - @shallot-ui/column@0.10.0
+  - @shallot-ui/switch@0.9.0
+  - @shallot-ui/input@0.10.0
+  - @shallot-ui/fold@0.8.0
+  - @shallot-ui/text@0.10.0
+  - @shallot-ui/box@0.10.0
+  - @shallot-ui/row@0.10.0
+  - @shallot-ui/tag@0.9.0
+  - @shallot-ui/theme@0.31.0
+  - @shallot-ui/core@9.0.0
+
+## 0.48.0
+
+### Minor Changes
+
+- Republish
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.9.0
+  - @shallot-ui/button@0.9.0
+  - @shallot-ui/checkbox@0.8.0
+  - @shallot-ui/column@0.9.0
+  - @shallot-ui/fold@0.7.0
+  - @shallot-ui/form-column@0.7.0
+  - @shallot-ui/form-row@0.7.0
+  - @shallot-ui/input@0.9.0
+  - @shallot-ui/row@0.9.0
+  - @shallot-ui/switch@0.8.0
+  - @shallot-ui/tag@0.8.0
+  - @shallot-ui/text@0.9.0
+  - @shallot-ui/core@8.0.0
+  - @shallot-ui/theme@0.30.0
+
+## 0.47.0
+
+### Minor Changes
+
+- bump deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.8.0
+  - @shallot-ui/button@0.8.0
+  - @shallot-ui/checkbox@0.7.0
+  - @shallot-ui/column@0.8.0
+  - @shallot-ui/fold@0.6.0
+  - @shallot-ui/form-column@0.6.0
+  - @shallot-ui/form-row@0.6.0
+  - @shallot-ui/input@0.8.0
+  - @shallot-ui/row@0.8.0
+  - @shallot-ui/switch@0.7.0
+  - @shallot-ui/tag@0.7.0
+  - @shallot-ui/text@0.8.0
+  - @shallot-ui/core@7.0.0
+  - @shallot-ui/theme@0.29.0
+
+## 0.46.0
+
+### Minor Changes
+
+- Adds refs to columns rows and boxes
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/column@0.7.0
+  - @shallot-ui/box@0.7.0
+  - @shallot-ui/row@0.7.0
+  - @shallot-ui/button@0.7.2
+  - @shallot-ui/checkbox@0.6.2
+  - @shallot-ui/fold@0.5.2
+  - @shallot-ui/form-column@0.5.2
+  - @shallot-ui/form-row@0.5.2
+  - @shallot-ui/input@0.7.2
+  - @shallot-ui/switch@0.6.2
+  - @shallot-ui/tag@0.6.2
+  - @shallot-ui/text@0.7.2
+
+## 0.45.1
+
+### Patch Changes
+
+- Fixes intellisense
+- Updated dependencies
+  - @shallot-ui/form-column@0.5.1
+  - @shallot-ui/checkbox@0.6.1
+  - @shallot-ui/form-row@0.5.1
+  - @shallot-ui/button@0.7.1
+  - @shallot-ui/column@0.6.1
+  - @shallot-ui/switch@0.6.1
+  - @shallot-ui/input@0.7.1
+  - @shallot-ui/fold@0.5.1
+  - @shallot-ui/text@0.7.1
+  - @shallot-ui/box@0.6.1
+  - @shallot-ui/row@0.6.1
+  - @shallot-ui/tag@0.6.1
+  - @shallot-ui/core@6.2.1
+
+## 0.45.0
+
+### Minor Changes
+
+- Removes forward ref to improve surface types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/form-column@0.5.0
+  - @shallot-ui/checkbox@0.6.0
+  - @shallot-ui/form-row@0.5.0
+  - @shallot-ui/button@0.7.0
+  - @shallot-ui/column@0.6.0
+  - @shallot-ui/switch@0.6.0
+  - @shallot-ui/input@0.7.0
+  - @shallot-ui/fold@0.5.0
+  - @shallot-ui/text@0.7.0
+  - @shallot-ui/box@0.6.0
+  - @shallot-ui/row@0.6.0
+  - @shallot-ui/tag@0.6.0
+  - @shallot-ui/core@6.2.0
+
+## 0.44.0
+
+### Minor Changes
+
+- Improves handing of types
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/button@0.6.0
+  - @shallot-ui/column@0.5.0
+  - @shallot-ui/box@0.5.0
+  - @shallot-ui/row@0.5.0
+  - @shallot-ui/core@6.1.0
+  - @shallot-ui/checkbox@0.5.6
+  - @shallot-ui/fold@0.4.28
+  - @shallot-ui/form-column@0.4.25
+  - @shallot-ui/form-row@0.4.23
+  - @shallot-ui/input@0.6.12
+  - @shallot-ui/switch@0.5.6
+  - @shallot-ui/tag@0.5.6
+  - @shallot-ui/text@0.6.6
+
+## 0.43.1
+
+### Patch Changes
+
+- Reduces some re-used code in style props
+- Updated dependencies
+  - @shallot-ui/column@0.4.38
+  - @shallot-ui/box@0.4.38
+  - @shallot-ui/row@0.4.38
+  - @shallot-ui/core@6.0.6
+
+## 0.43.0
+
+### Minor Changes
+
+- A11y improvements to form labels
+
 ## 0.42.17
 
 ### Patch Changes
