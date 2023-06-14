@@ -1,5 +1,19 @@
 # @shallot-ui/core
 
+## 14.0.0
+
+### Minor Changes
+
+- 9bdfdad: testing changeset gh action
+- 99a9a3e: Releasing a new minor version to test changesets setup.
+
+### Patch Changes
+
+- 7f8fe21: config: introduce changesets
+- Updated dependencies [7f8fe21]
+- Updated dependencies [9bdfdad]
+  - @shallot-ui/theme@0.36.0
+
 ## 13.0.0
 
 ### Minor Changes
