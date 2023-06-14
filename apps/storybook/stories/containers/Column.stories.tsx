@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 
 import {
@@ -37,10 +37,10 @@ export default {
     borderColor: { control: 'select', options: allColorNames },
     radius: { control: 'select', options: ['sm', 'md', 'lg', 'xl', 'pill'] },
   },
-} as ComponentMeta<typeof Column>
+} as Meta<typeof Column>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Column> = (args) => (
+const Template: StoryFn<typeof Column> = (args) => (
   <ThemeProvider theme={makeTheme({})}>
     <Column
       shallot={{

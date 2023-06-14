@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
@@ -26,10 +26,10 @@ export default {
     value: { table: { disable: true } },
     setValue: { table: { disable: true } },
   },
-} as ComponentMeta<typeof Checkbox>
+} as Meta<typeof Checkbox>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Checkbox> = (args) => {
+const Template: StoryFn<typeof Checkbox> = (args) => {
   const [value, setValue] = useState(false)
   return (
     <ThemeProvider theme={makeTheme({})}>
