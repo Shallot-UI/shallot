@@ -17,6 +17,7 @@ import {
 import { useFocus, useHover, usePressed } from '../../hooks'
 
 const Container = styled.div(getStyle)
+const Label = styled.label(getStyle)
 const InnerInput = styled.input<{ shallot?: ShallotProp }>(
   ({ shallot, ...rest }) =>
     getStyle({
@@ -31,10 +32,11 @@ const InnerInput = styled.input<{ shallot?: ShallotProp }>(
 
 const StaticInput: FunctionComponent<
   InputHTMLAttributes<HTMLInputElement> & {
-    shallot?: InputShallot
+    shallot?: InputShallot & { label?: ShallotProp }
     inputRef?: RefObject<HTMLInputElement>
+    label?: typeof Label
   }
-> = ({ title, shallot, inputRef, ...rest }) => (
+> = ({ shallot, inputRef, label, ...rest }) => (
   <Container
     shallot={shallot?.container}
     onClick={() =>
@@ -42,7 +44,11 @@ const StaticInput: FunctionComponent<
     }
   >
     {/* {startAdornment} */}
-    <InnerInput ref={inputRef} shallot={shallot?.input} {...rest} />
+    <Label shallot={shallot?.label}>
+      {/* {Label} */}
+      <InnerInput ref={inputRef} shallot={shallot?.input} {...rest} />
+    </Label>
+
     {/* {endAdornment} */}
   </Container>
 )

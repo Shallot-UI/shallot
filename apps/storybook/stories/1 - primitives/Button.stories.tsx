@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 
 import { makeTheme, Button, Column, getUnits } from '@shallot-ui/web'
@@ -45,10 +45,10 @@ export default {
     },
     fullWidth: { control: 'boolean' },
   },
-} as ComponentMeta<typeof Button>
+} as Meta<typeof Button>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => (
+const Template: StoryFn<typeof Button> = (args) => (
   <ThemeProvider theme={makeTheme({})}>
     <Column shallot={{ width: getUnits(20) }}>
       <Button title="Hello World" {...args} />

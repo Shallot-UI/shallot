@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 
 import { Tag, makeTheme } from '@shallot-ui/web'
@@ -34,10 +34,10 @@ export default {
     startAdornment: { table: { disable: true } },
     endAdornment: { table: { disable: true } },
   },
-} as ComponentMeta<typeof Tag>
+} as Meta<typeof Tag>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Tag> = (args) => (
+const Template: StoryFn<typeof Tag> = (args) => (
   <ThemeProvider theme={makeTheme({})}>
     <Tag title="Hello World" {...args} />
   </ThemeProvider>

@@ -1,5 +1,32 @@
 # @shallot-ui/web
 
+## 0.55.0
+
+### Minor Changes
+
+- 9bdfdad: testing changeset gh action
+
+### Patch Changes
+
+- 7f8fe21: config: introduce changesets
+- Updated dependencies [7f8fe21]
+- Updated dependencies [9bdfdad]
+- Updated dependencies [99a9a3e]
+  - @shallot-ui/box@0.15.0
+  - @shallot-ui/button@0.15.0
+  - @shallot-ui/checkbox@0.14.0
+  - @shallot-ui/column@0.15.0
+  - @shallot-ui/fold@0.13.0
+  - @shallot-ui/form-column@0.13.0
+  - @shallot-ui/form-row@0.13.0
+  - @shallot-ui/input@0.15.0
+  - @shallot-ui/row@0.15.0
+  - @shallot-ui/switch@0.14.0
+  - @shallot-ui/tag@0.14.0
+  - @shallot-ui/text@0.15.0
+  - @shallot-ui/core@14.0.0
+  - @shallot-ui/theme@0.36.0
+
 ## 0.54.0
 
 ### Minor Changes
