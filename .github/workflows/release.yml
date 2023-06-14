@@ -1,16 +1,15 @@
-name: publish-packages
+name: Release
 
 on:
   push:
     branches:
       - main
-      - develop
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  publish-packages:
-    name: publish-packages
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -24,16 +23,11 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-      - name: Create publish-packages Pull Request or Publish to npm
+      - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: |
-            if [ "${{ github.ref }}" = "refs/heads/develop" ]; then
-              yarn publish-packages --pre-release
-            else
-              yarn publish-packages
-            fi
+          publish: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
