@@ -11,7 +11,6 @@
 - 7f8fe21: config: introduce changesets
 - Updated dependencies [7f8fe21]
 - Updated dependencies [9bdfdad]
-- Updated dependencies [99a9a3e]
   - @shallot-ui/core@14.0.0
   - @shallot-ui/theme@0.36.0
 

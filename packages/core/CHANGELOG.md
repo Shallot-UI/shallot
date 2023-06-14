@@ -5,7 +5,6 @@
 ### Minor Changes
 
 - 9bdfdad: testing changeset gh action
-- 99a9a3e: Releasing a new minor version to test changesets setup.
 
 ### Patch Changes
 

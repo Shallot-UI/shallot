@@ -16,7 +16,7 @@
     "build": "tsup ./index.ts --format cjs --minify --dts --clean"
   },
   "dependencies": {
-    "@shallot-ui/web": "^0.55.0"
+    "@shallot-ui/web": "^0.54.0"
   },
   "peerDependencies": {
     "next": ">=13",

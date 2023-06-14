@@ -1,6 +1,6 @@
 # @shallot-ui/web
 
-## 0.55.0
+## 0.54.0
 
 ### Minor Changes
 
@@ -11,7 +11,6 @@
 - 7f8fe21: config: introduce changesets
 - Updated dependencies [7f8fe21]
 - Updated dependencies [9bdfdad]
-- Updated dependencies [99a9a3e]
   - @shallot-ui/box@0.15.0
   - @shallot-ui/button@0.15.0
   - @shallot-ui/checkbox@0.14.0
@@ -26,12 +25,6 @@
   - @shallot-ui/text@0.15.0
   - @shallot-ui/core@14.0.0
   - @shallot-ui/theme@0.36.0
-
-## 0.54.0
-
-### Minor Changes
-
-- Remove the reset button wrapper from the button component.
 
 ## 0.53.0
 

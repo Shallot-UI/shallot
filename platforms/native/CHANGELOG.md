@@ -11,7 +11,6 @@
 - 7f8fe21: config: introduce changesets
 - Updated dependencies [7f8fe21]
 - Updated dependencies [9bdfdad]
-- Updated dependencies [99a9a3e]
   - @shallot-ui/box@0.15.0
   - @shallot-ui/button@0.15.0
   - @shallot-ui/checkbox@0.14.0
