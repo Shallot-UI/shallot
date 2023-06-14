@@ -1,5 +1,18 @@
 # @shallot-ui/next
 
+## 0.36.0
+
+### Minor Changes
+
+- 9bdfdad: testing changeset gh action
+
+### Patch Changes
+
+- 7f8fe21: config: introduce changesets
+- Updated dependencies [7f8fe21]
+- Updated dependencies [9bdfdad]
+  - @shallot-ui/web@0.54.0
+
 ## 0.35.0
 
 ### Minor Changes
