@@ -1,5 +1,12 @@
 # @shallot-ui/core
 
+## 14.1.0
+
+### Minor Changes
+
+- 6f294ff: SHALLOT-9: Make `borderStyle: 'solid'` a default for `<Box />`, `<Column/ >`, and `<Row />`
+  SHALLOT-10: Default to `borderWidth: 1` when a color is set and no width is explicitly set.
+
 ## 14.0.0
 
 ### Minor Changes
