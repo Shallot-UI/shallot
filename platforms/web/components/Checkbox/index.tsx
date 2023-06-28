@@ -51,7 +51,7 @@ const withCheckboxState =
   (
     props: CheckboxProps<T> & {
       value?: boolean
-      setValue?: Dispatch<SetStateAction<boolean>>
+      setValue?: Dispatch<SetStateAction<boolean>> | ((value: boolean) => void)
     },
   ) => {
     const ref = useRef<HTMLDivElement>(null)
