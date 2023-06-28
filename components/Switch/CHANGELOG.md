@@ -1,5 +1,11 @@
 # @shallot-ui/switch
 
+## 0.14.1
+
+### Patch Changes
+
+- 76f69d2: SHALLOT-12: Allow a simpler `setValue` function to be supplied to `Checkbox` and `Switch`
+
 ## 0.14.0
 
 ### Minor Changes
