@@ -27,33 +27,62 @@ export const getColorShade = (address: string | undefined) => {
 
 export const getRadius =
   (value: keyof DefaultTheme['radii']) =>
-  ({ theme }: { theme: DefaultTheme }) =>
-    theme.radii[value]
+  ({ theme }: { theme: DefaultTheme }) => {
+    if (!theme?.radii?.[value])
+      console.warn(
+        `Radius not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+      )
+    return theme.radii[value]
+  }
 
 export const getLetterSpacing =
   (value: keyof DefaultTheme['letterSpacings']) =>
-  ({ theme }: { theme: DefaultTheme }) =>
-    theme.letterSpacings[value]
-
+  ({ theme }: { theme: DefaultTheme }) => {
+    if (!theme?.letterSpacings?.[value])
+      console.warn(
+        `Letter spacing not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+      )
+    return theme.letterSpacings[value]
+  }
 export const getLineHeight =
   (value: keyof DefaultTheme['lineHeights']) =>
-  ({ theme }: { theme: DefaultTheme }) =>
-    theme.lineHeights[value]
+  ({ theme }: { theme: DefaultTheme }) => {
+    if (!theme?.lineHeights?.[value])
+      console.warn(
+        `Line height not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+      )
+    return theme.lineHeights[value]
+  }
 
 export const getFontSize =
   (value: keyof DefaultTheme['fontSizes']) =>
-  ({ theme }: { theme: DefaultTheme }) =>
-    theme.fontSizes[value]
+  ({ theme }: { theme: DefaultTheme }) => {
+    if (!theme?.fontSizes?.[value])
+      console.warn(
+        `Font size not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+      )
+    return theme.fontSizes[value]
+  }
 
 export const getUnits =
   (value: number) =>
-  ({ theme }: { theme: DefaultTheme }) =>
-    theme.gridUnits[0] * value
+  ({ theme }: { theme: DefaultTheme }) => {
+    if (!theme?.gridUnits?.[value])
+      console.warn(
+        `gridUnit not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+      )
+    return theme.gridUnits[value]
+  }
 
 export const getElevation =
   (value: keyof DefaultTheme['elevations']) =>
-  ({ theme }: { theme: DefaultTheme }) =>
-    theme.elevations[value]
+  ({ theme }: { theme: DefaultTheme }) => {
+    if (!theme?.elevations?.[value])
+      console.warn(
+        `Elevation not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+      )
+    return theme.elevations[value]
+  }
 
 export const getNumericValue = (value: boolean | number) => {
   if (typeof value === 'boolean') return value ? 1 : 0
