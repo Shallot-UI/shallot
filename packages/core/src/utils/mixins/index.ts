@@ -5,7 +5,7 @@ export const getColor =
   (value: keyof DefaultTheme['colors'], shade: ColorShadingValue) =>
   ({ theme }: { theme: DefaultTheme }) => {
     const color =
-      theme.colors[value][shade as keyof typeof theme.colors.Shading]
+      theme.colors?.[value]?.[shade as keyof typeof theme.colors.Shading]
     if (!color)
       console.warn(
         `Color not found for value "${value}" and shade "${shade}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
