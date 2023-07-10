@@ -7,6 +7,7 @@ export const Space = styled.View<{ shallot?: ShallotProp }>(
       shallot: {
         display: 'flex',
         flexGrow: 1,
+        flexShrink: 1,
         ...shallot,
       },
       ...rest,
