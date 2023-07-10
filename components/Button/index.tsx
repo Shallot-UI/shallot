@@ -147,6 +147,7 @@ export const withButtonStyleProps =
         textTransform: uppercase ? 'uppercase' : 'none',
         letterSpacing: getLetterSpacing(letterSpacing),
         lineHeight: getLineHeight(fontSize),
+        cursor: 'pointer',
       },
     }
 
