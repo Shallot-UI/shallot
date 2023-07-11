@@ -10,6 +10,7 @@ import {
   SizingProps,
   TextColorProps,
 } from '@shallot-ui/core'
+import { ReactNode } from 'react'
 
 export type RowStyleProps = AlignmentProps &
   BorderProps &
@@ -27,4 +28,5 @@ export type RowShallot = ShallotProp & {
   flexDirection?: 'column' | 'column-reverse' | 'row' | 'row-reverse'
 }
 
-export type RowProps<T = {}> = T & RowStyleProps & { shallot?: RowShallot }
+export type RowProps<T = {}> = T &
+  RowStyleProps & { shallot?: RowShallot; children: ReactNode | ReactNode[] }
