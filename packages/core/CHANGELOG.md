@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 14.1.1
+
+### Patch Changes
+
+- 5584188: release
+
 ## 14.1.0
 
 ### Minor Changes
