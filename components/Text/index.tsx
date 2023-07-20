@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { DefaultTheme } from 'styled-components'
+import { DefaultTheme, useTheme } from 'styled-components'
 import { AllColorShades, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
@@ -42,7 +42,8 @@ export type TextStyleProps = {
   uppercase?: boolean
 }
 
-export type TextProps<T = {}> = T & TextStyleProps & { shallot?: TextShallot }
+export type TextProps<T = {}> = T &
+  TextStyleProps & { shallot?: TextShallot; variant?: string }
 
 export const withTextStyleProps =
   <T,>(TextComponent: ComponentType<T & { shallot?: TextShallot }>) =>
@@ -55,7 +56,6 @@ export const withTextStyleProps =
       unitsBelow,
       unitsLeft,
       unitsRight,
-      shallot,
       unitHeight,
       unitWidth,
       maxUnitHeight,
@@ -64,11 +64,11 @@ export const withTextStyleProps =
       minUnitWidth,
 
       // Typography
-      typeface = 'Body',
+      typeface,
       font,
-      lineHeight = 'md',
-      letterSpacing = 'md',
-      fontSize = 'md',
+      lineHeight,
+      letterSpacing,
+      fontSize,
       leftText,
       centerText,
       rightText,
@@ -76,16 +76,18 @@ export const withTextStyleProps =
       underline,
       uppercase,
 
+      shallot,
+      variant = 'default',
+
       ...nonStyleProps
     } = props
 
+    const theme = useTheme()
+
     let textShallot: TextShallot = {
       display: 'flex',
-      typeface: getTypeface(typeface, font),
-      breakpoints: getBreakpoints({ fontSize }),
-      ...(backgroundColor && {
-        backgroundColor: getColorShade(backgroundColor),
-      }),
+      ...(theme?.variants?.Text?.[variant] as ShallotProp),
+      ...(typeface && { typeface: getTypeface(typeface, font) }),
       ...(uppercase && { textTransform: 'uppercase' }),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(unitsAround && { margin: getUnits(unitsAround) }),
@@ -110,6 +112,10 @@ export const withTextStyleProps =
       ...(underline === 'under' && {
         textDecoration: 'underline',
         textUnderlinePosition: 'under',
+      }),
+      breakpoints: getBreakpoints({ fontSize }),
+      ...(backgroundColor && {
+        backgroundColor: getColorShade(backgroundColor),
       }),
     }
 

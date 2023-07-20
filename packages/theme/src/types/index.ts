@@ -64,5 +64,5 @@ export interface ThemeOptions {
   }
   typefaces?: { [name: string]: Typeface }
   elevations?: { [name: string]: CSSProp }
-  variants?: { [name: string]: { [variant: string]: ShallotProp } }
+  variants?: { [component: string]: { [variant: string]: ShallotProp } }
 }
