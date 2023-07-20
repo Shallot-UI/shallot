@@ -1,5 +1,14 @@
 # @shallot-ui/box
 
+## 0.15.1
+
+### Patch Changes
+
+- 5584188: release
+- a42d548: SHALLOT-14: Add ReactNode and ReactNode[] as children on Column, Row, and Box com…
+- Updated dependencies [5584188]
+  - @shallot-ui/core@14.1.1
+
 ## 0.15.0
 
 ### Minor Changes
