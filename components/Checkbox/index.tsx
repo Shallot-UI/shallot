@@ -1,13 +1,12 @@
 import { ComponentType } from 'react'
 import { DefaultTheme } from 'styled-components'
-import { ColorName } from '@shallot-ui/theme'
+import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
   getElevation,
   getRadius,
   getUnits,
-  ShallotProp,
 } from '@shallot-ui/core'
 
 export type CheckboxStyleProps = {

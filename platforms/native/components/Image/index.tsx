@@ -1,7 +1,8 @@
 import { FunctionComponent } from 'react'
 import styled, { DefaultTheme } from 'styled-components/native'
 import FastImage, { FastImageProps } from 'react-native-fast-image'
-import { ShallotProp, getStyle, getUnits, getRadius } from '@shallot-ui/core'
+import { getStyle, getUnits, getRadius } from '@shallot-ui/core'
+import { ShallotProp } from '@shallot-ui/theme'
 
 export interface ImageProps extends Omit<FastImageProps, 'source'> {
   source: FastImageProps['source'] | undefined

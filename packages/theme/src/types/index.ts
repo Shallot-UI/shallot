@@ -1,4 +1,10 @@
-import { CSSObject, CSSProp, DefaultTheme } from 'styled-components'
+import {
+  CSSObject,
+  CSSProp,
+  CSSProperties,
+  CSSPseudos,
+  DefaultTheme,
+} from 'styled-components'
 
 export type ColorShadingValue =
   | 50
@@ -37,6 +43,11 @@ export interface ColorProps {
   fillColor?: AllColorShades
 }
 
+export type ShallotProp<T = CSSObject> = Omit<CSSProperties, keyof T> &
+  Omit<CSSPseudos, keyof T> & {
+    [K in keyof T]: T[K] | ((props: { theme: DefaultTheme }) => T[K])
+  }
+
 export interface ThemeOptions {
   defaults?: { typeface?: string }
   gridUnits?: number[]
@@ -53,4 +64,5 @@ export interface ThemeOptions {
   }
   typefaces?: { [name: string]: Typeface }
   elevations?: { [name: string]: CSSProp }
+  variants?: { [name: string]: { [variant: string]: ShallotProp } }
 }

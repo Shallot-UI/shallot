@@ -1,7 +1,10 @@
 import { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { getStyle } from '@shallot-ui/core'
+import { merge } from 'lodash'
 import { FormRowShallot, withFormRowStyleProps } from '@shallot-ui/form-row'
+
+import { useVariant } from '../../hooks/useVariant'
 
 const Container = styled.div(getStyle)
 const Details = styled.div(getStyle)
@@ -17,6 +20,7 @@ const StaticFormRow = (
     required?: boolean
     helperText?: string
     errorText?: string
+    variant?: string
   },
 ) => {
   const {
@@ -27,24 +31,28 @@ const StaticFormRow = (
     required,
     helperText,
     errorText,
+    variant,
     ...rest
   } = props
 
+  const variantStyles = useVariant('FormRow', variant)
+  const styles = merge({}, variantStyles, shallot)
+
   return (
-    <Container shallot={shallot?.container} {...rest}>
+    <Container shallot={styles?.container} {...rest}>
       {children}
-      <Details shallot={shallot?.details}>
-        <Label shallot={shallot?.label}>
+      <Details shallot={styles?.details}>
+        <Label shallot={styles?.label}>
           {label}
           {required && (
-            <RequiredStar shallot={shallot?.requiredStar}>*</RequiredStar>
+            <RequiredStar shallot={styles?.requiredStar}>*</RequiredStar>
           )}
         </Label>
         {errorText && (
-          <ErrorText shallot={shallot?.errorText}>{errorText}</ErrorText>
+          <ErrorText shallot={styles?.errorText}>{errorText}</ErrorText>
         )}
         {!errorText && helperText && (
-          <HelperText shallot={shallot?.helperText}>{helperText}</HelperText>
+          <HelperText shallot={styles?.helperText}>{helperText}</HelperText>
         )}
       </Details>
     </Container>

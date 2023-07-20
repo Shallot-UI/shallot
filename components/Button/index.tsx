@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import { CSSObject, DefaultTheme } from 'styled-components'
-import { ColorName } from '@shallot-ui/theme'
+import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
@@ -9,7 +9,6 @@ import {
   getLineHeight,
   getFontSize,
   getUnits,
-  ShallotProp,
   getElevation,
   getTypeface,
 } from '@shallot-ui/core'

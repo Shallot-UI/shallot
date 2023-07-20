@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { ThemeProvider } from 'styled-components'
+import { makeTheme, Button, Row } from '@shallot-ui/web'
+
+<Meta title="The Shallot Prop" />
+
+# Shallot
+
+Shallot is a toolkit that makes it easier to design and build applications across web and mobile with a common theme. There are three main ways we achieve this:
+
+1. **Theme & Mixins**: We provide a theme object that contains a set of tokens that can be used to style components. We also provide a set of mixins that can be used to apply these tokens to components.
+2. **The `Shallot` Prop**: We provide a prop called `shallot` that resembles the classic `style` prop, but includes support for mixins. You can use it to easily apply mixin styles to any component.
+3. **Cross-Platform Primitives**: We provide a set of components with simple style props that can be used to build applications.
+
+To start, let's make an SVG icon component that can pull its fill color from the theme.
+
+```tsx
+import styled from 'styled-components'
+import { getStyle } from '@shallot-ui/web'
+
+// Since getStyle is a typed fnction, this `svg` will now automatically accept
+// the `shallot` prop so we can apply the mixin styles to the SVG element.
+export const Icon = styled.svg(getStyle)
+```
+
+Now, we can use the `Icon` component to render an icon with a fill color from the theme.
+
+```tsx
+import { getColorShade } from '@shallot-ui/web'
+
+const MyIcon = () => <Icon shallot={{ fill: getColorShade('Primary.500') }} />
+```
+
+We can even extend the component to accept a `color` prop that will override the `fill` color from the theme.
+
+```tsx
+import { FC } from 'react'
+import { getColorShade, AllColorShades } from '@shallot-ui/web'
+
+const MyIcon = ({ fill }): FC<{ fill: AllColorShades }> => (
+  <Icon shallot={{ fill }} />
+)
+```

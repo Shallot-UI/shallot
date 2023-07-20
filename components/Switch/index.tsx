@@ -1,12 +1,11 @@
 import { ComponentType } from 'react'
-import { ColorName } from '@shallot-ui/theme'
+import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
   getElevation,
   getRadius,
   getUnits,
-  ShallotProp,
 } from '@shallot-ui/core'
 
 export type SwitchStyleProps = {
