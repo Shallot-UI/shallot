@@ -1,4 +1,12 @@
-import { makeTheme, Column, GlobalStyle, Fold } from '@shallot-ui/web'
+import {
+  makeTheme,
+  Column,
+  GlobalStyle,
+  Fold,
+  getColor,
+  getFontSize,
+  getTypeface,
+} from '@shallot-ui/web'
 import { StoryFn, Meta } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 import { Text } from '@shallot-ui/web'
@@ -31,15 +39,32 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Text> = (args) => (
-  <ThemeProvider theme={makeTheme({})}>
+  <ThemeProvider
+    theme={makeTheme({
+      variants: {
+        Text: {
+          H1: {
+            typeface: getTypeface('Body', 'Bold'),
+            fontSize: getFontSize('xl'),
+            color: getColor('Shading', 800),
+          },
+          H2: {
+            typeface: getTypeface('Body', 'Bold'),
+            fontSize: getFontSize('lg'),
+            color: getColor('Shading', 800),
+          },
+        },
+      },
+    })}
+  >
     <GlobalStyle />
     <Fold alignCenter alignMiddle>
-      <Column unitWidth={30}>
-        <Text {...args}>
-          This is {`<Text />`} component. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Praesent convallis enim vitae tempus
-          mollis. Quisque fringilla tortor risus, in elementum neque convallis
-          sit amet. {JSON.stringify(args)}
+      <Column unitWidth={20}>
+        <Text variant="H1" {...args}>
+          Heading 1
+        </Text>
+        <Text variant="H2" {...args}>
+          Heading 2
         </Text>
       </Column>
     </Fold>

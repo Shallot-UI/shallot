@@ -1,11 +1,10 @@
 import { ComponentType } from 'react'
 import { DefaultTheme } from 'styled-components'
-import { AllColorShades } from '@shallot-ui/theme'
+import { AllColorShades, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
   getRadius,
   getUnits,
-  ShallotProp,
   getColorShade,
 } from '@shallot-ui/core'
 

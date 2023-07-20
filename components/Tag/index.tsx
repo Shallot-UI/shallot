@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import { CSSObject, DefaultTheme } from 'styled-components'
-import { ColorName } from '@shallot-ui/theme'
+import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
@@ -10,7 +10,6 @@ import {
   getRadius,
   getTypeface,
   getUnits,
-  ShallotProp,
 } from '@shallot-ui/core'
 
 export type TagStyleProps = {

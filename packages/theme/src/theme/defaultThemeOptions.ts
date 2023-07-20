@@ -8,6 +8,7 @@ import { DEFAULT_RADII } from './radii'
 import { DEFAULT_ELEVATIONS } from './elevations'
 import { DEFAULT_LETTER_SPACINGS } from './letterSpacings'
 import { DEFAULT_GRID_UNITS } from './gridUnits'
+import { DEFAULT_VARIANTS } from './variants'
 
 const DEFAULT_THEME_OPTIONS = {
   defaults: DEFAULT_THEME_DEFAULTS,
@@ -20,6 +21,7 @@ const DEFAULT_THEME_OPTIONS = {
   radii: DEFAULT_RADII,
   elevations: DEFAULT_ELEVATIONS,
   letterSpacings: DEFAULT_LETTER_SPACINGS,
+  variants: DEFAULT_VARIANTS,
 } as const
 
 export default DEFAULT_THEME_OPTIONS
