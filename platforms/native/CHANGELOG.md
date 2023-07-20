@@ -1,5 +1,13 @@
 # @shallot-ui/native
 
+## 0.40.1
+
+### Patch Changes
+
+- 523414d: [fix] fixes input import
+- Updated dependencies [523414d]
+  - @shallot-ui/input@0.15.1
+
 ## 0.40.0
 
 ### Minor Changes
