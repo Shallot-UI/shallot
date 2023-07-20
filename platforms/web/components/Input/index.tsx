@@ -7,7 +7,7 @@ import {
   useRef,
 } from 'react'
 import styled from 'styled-components'
-import { ShallotProp, getStyle } from '@shallot-ui/core'
+import { getStyle } from '@shallot-ui/core'
 import {
   InputProps,
   InputShallot,
@@ -15,6 +15,7 @@ import {
 } from '@shallot-ui/input'
 
 import { useFocus, useHover, usePressed } from '../../hooks'
+import { ShallotProp } from '@shallot-ui/theme'
 
 const Container = styled.div(getStyle)
 const Label = styled.label(getStyle)

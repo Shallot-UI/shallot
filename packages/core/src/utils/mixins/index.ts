@@ -1,6 +1,11 @@
 import { ColorShadingValue, Typeface } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
 
+export const getVariant =
+  (component: keyof DefaultTheme['variants'], name: string = 'default') =>
+  ({ theme }: { theme: DefaultTheme }) =>
+    theme?.variants?.[component]?.[name]
+
 export const getColor =
   (value: keyof DefaultTheme['colors'], shade: ColorShadingValue) =>
   ({ theme }: { theme: DefaultTheme }) => {
