@@ -1,5 +1,11 @@
 # @shallot-ui/input
 
+## 0.15.1
+
+### Patch Changes
+
+- 523414d: [fix] fixes input import
+
 ## 0.15.0
 
 ### Minor Changes
