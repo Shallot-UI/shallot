@@ -10,6 +10,7 @@ import {
   SizingProps,
   TextColorProps,
 } from '@shallot-ui/core'
+import { ReactNode } from 'react'
 
 export type BoxShallot = ShallotProp & {
   // We use `flexDirection` to infer the `alignItems` and `justifyContent` props
@@ -27,4 +28,5 @@ export type BoxStyleProps = AlignmentProps &
   RadiusProps &
   SizingProps
 
-export type BoxProps<T = {}> = T & BoxStyleProps & { shallot?: BoxShallot }
+export type BoxProps<T = {}> = T &
+  BoxStyleProps & { shallot?: BoxShallot; children: ReactNode | ReactNode[] }
