@@ -154,6 +154,10 @@ export const withCheckboxStyleProps =
         container: {
           backgroundColor: getColor(color, 500),
           borderColor: getColor(color, 500),
+
+          // Variants (overrides)
+          ...theme?.variants?.Checkbox?.[variant]?.container?.state
+            ?.hoveredAndChecked,
         },
       })
 
