@@ -75,7 +75,7 @@ export const Default = Template.bind({})
 Default.args = {}
 
 export const Variant = Template.bind({})
-Default.args = { variant: 'switchVariant' }
+Variant.args = { variant: 'switchVariant' }
 
 export const Success = Template.bind({})
 Success.args = { color: 'Success' }
