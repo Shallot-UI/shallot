@@ -29,4 +29,8 @@ export type BoxStyleProps = AlignmentProps &
   SizingProps
 
 export type BoxProps<T = {}> = T &
-  BoxStyleProps & { shallot?: BoxShallot; children: ReactNode | ReactNode[] }
+  BoxStyleProps & {
+    shallot?: BoxShallot
+    // variant?: string
+    children: ReactNode | ReactNode[]
+  }

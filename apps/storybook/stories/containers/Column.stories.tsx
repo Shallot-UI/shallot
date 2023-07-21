@@ -41,7 +41,17 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Column> = (args) => (
-  <ThemeProvider theme={makeTheme({})}>
+  <ThemeProvider
+    theme={makeTheme({
+      variants: {
+        c1: {
+          backgroundColor: {
+            default: 'red',
+          },
+        },
+      },
+    })}
+  >
     <Column
       shallot={{
         backgroundColor: getColor('Shading', 150),
@@ -80,6 +90,7 @@ const Template: StoryFn<typeof Column> = (args) => (
           }}
         />
         <Column
+          variant="c1"
           shallot={{
             backgroundColor: getColor('Shading', 100),
             borderRadius: getRadius(args.radius),
