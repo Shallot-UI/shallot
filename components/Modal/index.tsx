@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { DefaultTheme } from 'styled-components'
+import { DefaultTheme, useTheme } from 'styled-components'
 import { AllColorShades, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
@@ -29,6 +29,7 @@ export type ModalShallot = {
 export type ModalProps<T> = T &
   ModalStyleProps & {
     shallot?: ModalShallot
+    variant?: string
   }
 
 export const withModalStyleProps =
@@ -50,8 +51,12 @@ export const withModalStyleProps =
 
       shallot,
 
+      variant = 'default',
+
       ...modalProps
     } = props
+
+    const theme = useTheme()
 
     let modalShallot: ModalShallot = {
       wrapper: {
@@ -64,6 +69,9 @@ export const withModalStyleProps =
         top: 0,
         left: 0,
         zIndex: 9999,
+
+        // Variants (overrides)
+        ...theme?.variants?.Modal?.[variant]?.wrapper,
       },
       curtain: {
         animation: 'fadeIn',
@@ -74,6 +82,8 @@ export const withModalStyleProps =
         top: 0,
         left: 0,
         zIndex: -1,
+
+        // Variants (overrides)
       },
       container: {
         animation: 'fadeInUp',
@@ -86,6 +96,9 @@ export const withModalStyleProps =
         ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
         ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
+
+        // Variants (overrides)
+        ...theme?.variants?.Modal?.[variant]?.container,
       },
     }
 
