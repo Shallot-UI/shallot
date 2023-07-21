@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { CSSObject, DefaultTheme } from 'styled-components'
+import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
 import { ColorName, ColorShadingValue, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
@@ -61,6 +61,7 @@ export type InputProps<T> = T &
   InputStyleProps & {
     shallot?: InputShallot
     state?: InputState
+    variant?: string
   }
 
 export const withInputStyleProps =
@@ -111,11 +112,15 @@ export const withInputStyleProps =
       shallot,
       state = {},
 
+      variant = 'default',
+
       typeface = 'Body',
       font = 'Regular',
 
       ...inputProps
     } = props
+
+    const theme = useTheme()
 
     let styles: InputShallot = {
       container: {
@@ -136,6 +141,9 @@ export const withInputStyleProps =
         ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
         ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
+
+        // Variants (overrides)
+        ...theme?.variants?.Input?.[variant]?.container,
       },
       input: {
         unitWidth: 1,
@@ -147,6 +155,9 @@ export const withInputStyleProps =
         flexGrow: 1,
         letterSpacing: getLetterSpacing('md'),
         typeface: getTypeface(typeface, font),
+
+        // Variants (overrides)
+        ...theme?.variants?.Input?.[variant]?.input,
       },
     }
 
@@ -156,6 +167,9 @@ export const withInputStyleProps =
           elevation: getElevation('focused'),
           backgroundColor: getColor(...colors.focused?.background),
           borderColor: getColor(...colors.focused?.border),
+
+          // Variants (overrides)
+          ...theme?.variants?.Input?.[variant]?.container?.state?.focused,
         },
       })
 
@@ -164,6 +178,9 @@ export const withInputStyleProps =
         container: {
           backgroundColor: getColor(...colors.error?.background),
           borderColor: getColor(...colors.error?.border),
+
+          // Variants (overrides)
+          ...theme?.variants?.Input?.[variant]?.container?.state?.error,
         },
       })
 

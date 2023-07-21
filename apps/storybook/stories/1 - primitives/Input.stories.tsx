@@ -28,6 +28,8 @@ export default {
   },
 } as Meta<typeof Input>
 
+// figure out InputProps
+
 interface TemplateProps {
   label: string
   args: InputProps
