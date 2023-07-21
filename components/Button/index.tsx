@@ -92,7 +92,7 @@ export const withButtonStyleProps =
       underline,
 
       shallot,
-      variant,
+      variant = 'default',
       state = {},
 
       ...buttonProps
