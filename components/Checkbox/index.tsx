@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { DefaultTheme } from 'styled-components'
+import { DefaultTheme, useTheme } from 'styled-components'
 import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
@@ -38,6 +38,7 @@ export type CheckboxProps<T> = T &
   CheckboxStyleProps & {
     shallot?: CheckboxShallot
     state?: CheckboxState
+    variant?: string
   }
 
 export const withCheckboxStyleProps =
@@ -58,8 +59,12 @@ export const withCheckboxStyleProps =
       shallot,
       state = {},
 
+      variant = 'default',
+
       ...checkboxProps
     } = props
+
+    const theme = useTheme()
 
     let styles: CheckboxShallot = {
       container: {
@@ -88,25 +93,41 @@ export const withCheckboxStyleProps =
         ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
         ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
+
+        // Variants (overrides)
+        ...theme?.variants?.Checkbox?.[variant]?.container,
       },
       icon: {
         height: getUnits(iconSize),
         width: getUnits(iconSize),
         fillColor: getColor('Shading', 500),
         display: 'none',
+
+        // Variants (overrides)
+        ...theme?.variants?.Checkbox?.[variant]?.icon,
       },
     }
 
     // Focused
     if (state.focused)
       styles = applyStyles(styles, {
-        container: { elevation: getElevation('focused') },
+        container: {
+          elevation: getElevation('focused'),
+
+          // Variants (overrides)
+          ...theme?.variants?.Checkbox?.[variant]?.container?.state?.focused,
+        },
       })
 
     // Hovered
     if (state.hovered)
       styles = applyStyles(styles, {
-        container: { backgroundColor: getColor('Shading', 100) },
+        container: {
+          backgroundColor: getColor('Shading', 100),
+
+          // Variants (overrides)
+          ...theme?.variants?.Checkbox?.[variant]?.container?.state?.hovered,
+        },
       })
 
     // Checked
@@ -115,8 +136,16 @@ export const withCheckboxStyleProps =
         container: {
           backgroundColor: getColor(color, 500),
           borderColor: getColor(color, 500),
+
+          // Variants (overrides)
+          ...theme?.variants?.Checkbox?.[variant]?.container?.state?.checked,
         },
-        icon: { display: 'block' },
+        icon: {
+          display: 'block',
+
+          // Variants (overrides)
+          ...theme?.variants?.Checkbox?.[variant]?.icon?.state?.focused,
+        },
       })
 
     // Hovered and Checked
