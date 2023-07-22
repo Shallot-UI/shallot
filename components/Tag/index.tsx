@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { CSSObject, DefaultTheme } from 'styled-components'
+import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
 import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
@@ -32,6 +32,7 @@ export type TagShallot = {
 export type TagProps<T> = T &
   TagStyleProps & {
     shallot?: TagShallot
+    variant?: string
   }
 
 export const withTagStyleProps =
@@ -56,9 +57,13 @@ export const withTagStyleProps =
 
       shallot,
 
+      variant = 'default',
+
       // Non-Style Props
       ...nonStyleProps
     } = props
+
+    const theme = useTheme()
 
     let styles: TagShallot = {
       container: {
@@ -71,6 +76,9 @@ export const withTagStyleProps =
           transform 300ms ease-in-out,
           box-shadow 300ms ease-in-out
         `,
+
+        // Variant (overrides)
+        ...theme?.variants?.Tag?.[variant]?.container,
       },
       title: {
         fontSize: getFontSize('md'),
@@ -87,13 +95,26 @@ export const withTagStyleProps =
         }),
         textAlign: 'center',
         flex: 1,
+
+        // Variant (overrides)
+        ...theme?.variants?.Tag?.[variant]?.title,
       },
     }
 
     if (outline)
       styles = applyStyles(styles, {
-        container: { backgroundColor: getColor('Shading', 100) },
-        title: { textColor: getColor(color, 300) },
+        container: {
+          backgroundColor: getColor('Shading', 100),
+
+          // Variant (overrides)
+          ...theme?.variants?.Tag?.[variant]?.outline?.container,
+        },
+        title: {
+          textColor: getColor(color, 300),
+
+          // Variant (overrides)
+          ...theme?.variants?.Tag?.[variant]?.outline?.title,
+        },
       })
 
     styles = applyStyles(styles, {
