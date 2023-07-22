@@ -24,7 +24,6 @@ const getShallotProp = <T>(props: ColumnProps<T>): ColumnShallot => {
   const theme = useTheme()
 
   return applyStyles(baseShallot, {
-    ...theme?.variants?.Box?.[props.variant],
     ...getAlignmentShallot(baseShallot.flexDirection, props),
     ...getBorderShallot(props),
     ...getBackgroundColorShallot(props),
@@ -34,6 +33,9 @@ const getShallotProp = <T>(props: ColumnProps<T>): ColumnShallot => {
     ...getMarginShallot(props),
     ...getRadiusShallot(props),
     ...getSizingShallot(props),
+
+    // Variants (overrides)
+    ...theme?.variants?.Box?.[props.variant],
   })
 }
 
