@@ -55,6 +55,11 @@ export type ButtonProps<T> = T &
     variant: string
   }
 
+export type ButtonVariant = ButtonShallot & {
+  state?: { [Key in keyof ButtonState]: ButtonShallot }
+  outline?: ButtonShallot
+}
+
 export const withButtonStyleProps =
   <T,>(ButtonComponent: ComponentType<T>) =>
   (props: ButtonProps<T>) => {
@@ -107,6 +112,7 @@ export const withButtonStyleProps =
         : { default: 500, hovered: 400, pressed: 600, focused: 500 }
 
     const theme = useTheme()
+    const themeVariant = theme?.variants?.Button?.[variant] as ButtonVariant
 
     let buttonShallot: ButtonShallot = {
       container: {
@@ -136,7 +142,7 @@ export const withButtonStyleProps =
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
 
         // Variants (overrides)
-        ...theme?.variants?.Button?.[variant]?.container,
+        ...themeVariant?.container,
       },
       title: {
         display: 'block',
@@ -156,7 +162,7 @@ export const withButtonStyleProps =
         cursor: 'pointer',
 
         // Variants (overrides)
-        ...theme?.variants?.Button?.[variant]?.title,
+        ...themeVariant?.title,
       },
     }
 
@@ -168,7 +174,7 @@ export const withButtonStyleProps =
           borderColor: getColor(color, shades.hovered),
 
           // Variants (overrides)
-          ...theme?.variants?.Button?.[variant]?.container?.state?.hovered,
+          ...themeVariant?.state?.hovered?.container,
         },
       })
 
@@ -180,7 +186,7 @@ export const withButtonStyleProps =
           borderColor: getColor(color, shades.pressed),
 
           // Variants (overrides)
-          ...theme?.variants?.Button?.[variant]?.container?.state?.pressed,
+          ...themeVariant?.state?.pressed?.container,
         },
       })
 
@@ -190,7 +196,7 @@ export const withButtonStyleProps =
           elevation: getElevation('focused'),
 
           // Variants (overrides)
-          ...theme?.variants?.Button?.[variant]?.container?.state?.focused,
+          ...themeVariant?.state?.pressed?.container,
         },
       })
 
@@ -200,13 +206,13 @@ export const withButtonStyleProps =
           backgroundColor: getColor('Shading', 100),
 
           // Variants (overrides)
-          ...theme?.variants?.Button?.[variant]?.outline?.container,
+          ...themeVariant?.outline?.container,
         },
         title: {
           color: getColor(color, shades.default),
 
           // Variants (overrides)
-          ...theme?.variants?.Button?.[variant]?.outline?.title,
+          ...themeVariant?.outline?.title,
         },
       })
 
