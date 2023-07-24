@@ -57,6 +57,7 @@ export const withModalStyleProps =
     } = props
 
     const theme = useTheme()
+    const themeVariant = theme?.variants?.Modal?.[variant] as ModalShallot
 
     let modalShallot: ModalShallot = {
       wrapper: {
@@ -71,7 +72,7 @@ export const withModalStyleProps =
         zIndex: 9999,
 
         // Variants (overrides)
-        ...theme?.variants?.Modal?.[variant]?.wrapper,
+        ...themeVariant?.wrapper,
       },
       curtain: {
         animation: 'fadeIn',
@@ -84,6 +85,7 @@ export const withModalStyleProps =
         zIndex: -1,
 
         // Variants (overrides)
+        ...themeVariant?.curtain,
       },
       container: {
         animation: 'fadeInUp',
@@ -98,7 +100,7 @@ export const withModalStyleProps =
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
 
         // Variants (overrides)
-        ...theme?.variants?.Modal?.[variant]?.container,
+        ...themeVariant?.container,
       },
     }
 
