@@ -12,6 +12,7 @@ import {
 } from '@shallot-ui/core'
 
 import { BoxProps, BoxShallot } from '../types'
+import { useTheme } from 'styled-components'
 
 const getShallotProp = <T>(props: BoxProps<T>): BoxShallot => {
   const baseShallot: BoxShallot = applyStyles({
@@ -19,6 +20,12 @@ const getShallotProp = <T>(props: BoxProps<T>): BoxShallot => {
     flexDirection: 'column',
     ...props.shallot,
   })
+
+  const theme = useTheme()
+  const { variant } = props
+
+  console.log('theme', theme?.variants.Box[variant])
+  console.log('variant', variant)
 
   return applyStyles(baseShallot, {
     ...getAlignmentShallot(baseShallot.flexDirection, props),
@@ -30,6 +37,9 @@ const getShallotProp = <T>(props: BoxProps<T>): BoxShallot => {
     ...getMarginShallot(props),
     ...getRadiusShallot(props),
     ...getSizingShallot(props),
+
+    // Variants (overrides)
+    ...(variant && theme?.variants?.Box?.[variant]),
   })
 }
 
