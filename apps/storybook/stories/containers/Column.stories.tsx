@@ -45,9 +45,7 @@ const Template: StoryFn<typeof Column> = (...args) => (
     theme={makeTheme({
       variants: {
         Box: {
-          columnVariant: {
-            width: '500px',
-          },
+          columnVariant: {},
         },
       },
     })}
@@ -90,7 +88,7 @@ const Template: StoryFn<typeof Column> = (...args) => (
           }}
         />
         <Column
-          variant="c1"
+          variant="columnVariant"
           shallot={{
             backgroundColor: getColor('Shading', 100),
             borderRadius: getRadius(args.radius),
