@@ -64,6 +64,9 @@ export const withFormColumnStyleProps =
     } = props
 
     const theme = useTheme()
+    const themeVariant = theme?.variants?.FormColumn?.[
+      variant
+    ] as FormColumnShallot
 
     let modalShallot: FormColumnShallot = {
       container: {
@@ -77,7 +80,7 @@ export const withFormColumnStyleProps =
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
 
         // Variants (overrides)
-        ...theme?.variants?.FormColumn?.[variant]?.container,
+        ...themeVariant?.container,
       },
       label: {
         typeface: getTypeface(typeface),
@@ -88,14 +91,14 @@ export const withFormColumnStyleProps =
         userSelect: 'none',
 
         // Variants (overrides)
-        ...theme?.variants?.FormColumn?.[variant]?.label,
+        ...themeVariant?.label,
       },
       requiredStar: {
         color: getColorShade('Danger.500'),
         userSelect: 'none',
 
         // Variants (overrides)
-        ...theme?.variants?.FormColumn?.[variant]?.requiredStar,
+        ...themeVariant?.requiredStar,
       },
       helperText: {
         fontSize: getFontSize('sm'),
@@ -108,7 +111,7 @@ export const withFormColumnStyleProps =
         userSelect: 'none',
 
         // Variants (overrides)
-        ...theme?.variants?.FormColumn?.[variant]?.helperText,
+        ...themeVariant?.helperText,
       },
       errorText: {
         fontSize: getFontSize('sm'),
@@ -120,7 +123,7 @@ export const withFormColumnStyleProps =
         userSelect: 'none',
 
         // Variants (overrides)
-        ...theme?.variants?.FormColumn?.[variant]?.errorText,
+        ...themeVariant?.errorText,
       },
     }
 
