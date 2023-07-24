@@ -59,12 +59,13 @@ export const withFormRowStyleProps =
 
       shallot,
 
-      variant='default'
+      variant = 'default',
 
       ...modalProps
     } = props
 
     const theme = useTheme()
+    const themeVariant = theme?.variants?.FormRow?.[variant] as FormRowShallot
 
     let modalShallot: FormRowShallot = {
       container: {
@@ -78,7 +79,7 @@ export const withFormRowStyleProps =
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
 
         // Variants (overrides)
-        ...theme?.variants?.FormRow?.[variant]?.container,
+        ...themeVariant?.container,
       },
       label: {
         typeface: getTypeface(typeface),
@@ -89,7 +90,7 @@ export const withFormRowStyleProps =
         userSelect: 'none',
 
         // Variants (overrides)
-        ...theme?.variants?.FormRow?.[variant]?.label,
+        ...themeVariant?.label,
       },
       details: {
         marginLeft: getUnits(1),
@@ -99,14 +100,14 @@ export const withFormRowStyleProps =
         userSelect: 'none',
 
         // Variants (overrides)
-        ...theme?.variants?.FormRow?.[variant]?.details,
+        ...themeVariant?.details,
       },
       requiredStar: {
         color: getColorShade('Danger.500'),
         userSelect: 'none',
 
         // Variants (overrides)
-        ...theme?.variants?.FormRow?.[variant]?.requiredStar,
+        ...themeVariant?.requiredStar,
       },
       helperText: {
         fontSize: getFontSize('sm'),
@@ -119,7 +120,7 @@ export const withFormRowStyleProps =
         userSelect: 'none',
 
         // Variants (overrides)
-        ...theme?.variants?.FormRow?.[variant]?.helperText,
+        ...themeVariant?.helperText,
       },
       errorText: {
         fontSize: getFontSize('sm'),
@@ -131,7 +132,7 @@ export const withFormRowStyleProps =
         userSelect: 'none',
 
         // Variants (overrides)
-        ...theme?.variants?.FormRow?.[variant]?.errorText,
+        ...themeVariant?.errorText,
       },
     }
 
