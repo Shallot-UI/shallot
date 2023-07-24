@@ -46,7 +46,7 @@ const Template: StoryFn<typeof Column> = (...args) => (
       variants: {
         Box: {
           columnVariant: {
-            backgroundColor: 'red',
+            width: '500px',
           },
         },
       },
