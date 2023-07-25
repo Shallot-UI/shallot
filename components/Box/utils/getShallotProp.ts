@@ -23,9 +23,7 @@ const getShallotProp = <T>(props: BoxProps<T>): BoxShallot => {
 
   const theme = useTheme()
   const { variant } = props
-
-  console.log('theme', theme?.variants.Box[variant])
-  console.log('variant', variant)
+  const themeVariant = theme?.variants?.Box?.[variant] as BoxShallot
 
   return applyStyles(baseShallot, {
     ...getAlignmentShallot(baseShallot.flexDirection, props),
@@ -39,7 +37,7 @@ const getShallotProp = <T>(props: BoxProps<T>): BoxShallot => {
     ...getSizingShallot(props),
 
     // Variants (overrides)
-    ...(variant && theme?.variants?.Box?.[variant]),
+    ...themeVariant,
   })
 }
 
