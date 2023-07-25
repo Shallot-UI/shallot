@@ -35,6 +35,10 @@ export type TagProps<T> = T &
     variant?: string
   }
 
+export type TagVariant = TagShallot & {
+  outline?: TagShallot
+}
+
 export const withTagStyleProps =
   <T,>(TagComponent: ComponentType<T>) =>
   (props: TagProps<T>) => {
@@ -64,6 +68,7 @@ export const withTagStyleProps =
     } = props
 
     const theme = useTheme()
+    const themeVariant = theme?.variants?.Tag?.[variant] as TagVariant
 
     let styles: TagShallot = {
       container: {
@@ -78,7 +83,7 @@ export const withTagStyleProps =
         `,
 
         // Variant (overrides)
-        ...theme?.variants?.Tag?.[variant]?.container,
+        ...themeVariant?.container,
       },
       title: {
         fontSize: getFontSize('md'),
@@ -97,7 +102,7 @@ export const withTagStyleProps =
         flex: 1,
 
         // Variant (overrides)
-        ...theme?.variants?.Tag?.[variant]?.title,
+        ...themeVariant?.title,
       },
     }
 
@@ -107,13 +112,13 @@ export const withTagStyleProps =
           backgroundColor: getColor('Shading', 100),
 
           // Variant (overrides)
-          ...theme?.variants?.Tag?.[variant]?.outline?.container,
+          ...themeVariant?.outline?.container,
         },
         title: {
           textColor: getColor(color, 300),
 
           // Variant (overrides)
-          ...theme?.variants?.Tag?.[variant]?.outline?.title,
+          ...themeVariant?.outline?.title,
         },
       })
 
