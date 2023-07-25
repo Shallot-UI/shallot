@@ -42,6 +42,12 @@ export type SwitchProps<T> = T &
     variant?: string
   }
 
+export type SwitchVariant = SwitchShallot & {
+  state: { [Key in keyof SwitchState]?: SwitchShallot } & {
+    hoveredAndChecked?: SwitchShallot
+  }
+}
+
 export const withSwitchStyleProps =
   <T,>(SwitchComponent: ComponentType<T>) =>
   (props: SwitchProps<T>) => {
@@ -67,6 +73,7 @@ export const withSwitchStyleProps =
     } = props
 
     const theme = useTheme()
+    const themeVariant = theme?.variants?.Switch?.[variant] as SwitchVariant
 
     let styles: SwitchShallot = {
       container: {
@@ -92,7 +99,7 @@ export const withSwitchStyleProps =
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
 
         // Variants (overrides)
-        ...theme?.variants?.Switch?.[variant]?.container,
+        ...themeVariant?.container,
       },
       handle: {
         height: getUnits(size - 1 / 3),
@@ -113,7 +120,7 @@ export const withSwitchStyleProps =
         },
 
         // Variants (overrides)
-        ...theme?.variants?.Switch?.[variant]?.handle,
+        ...themeVariant?.handle,
       },
     }
 
@@ -124,7 +131,7 @@ export const withSwitchStyleProps =
           elevation: getElevation('focused'),
 
           // Variants (overrides)
-          ...theme?.variants?.Switch?.[variant]?.container?.state?.focused,
+          ...themeVariant?.state?.focused?.container,
         },
       })
 
@@ -135,7 +142,7 @@ export const withSwitchStyleProps =
           backgroundColor: getColor('Shading', 200),
 
           // Variants (overrides)
-          ...theme?.variants?.Switch?.[variant]?.container?.state?.hovered,
+          ...themeVariant?.state?.hovered?.container,
         },
       })
 
@@ -147,7 +154,7 @@ export const withSwitchStyleProps =
           borderColor: getColor(color, 500),
 
           // Variants (overrides)
-          ...theme?.variants?.Switch?.[variant]?.container?.state?.checked,
+          ...themeVariant?.state?.checked?.container,
         },
         handle: {
           backgroundColor: getColor('Shading', 100),
@@ -155,7 +162,7 @@ export const withSwitchStyleProps =
           style: { left: size * 12 - 3 },
 
           // Variants (overrides)
-          ...theme?.variants?.Switch?.[variant]?.handle?.state?.hovered,
+          ...themeVariant?.state?.hovered?.handle,
         },
       })
 
@@ -167,8 +174,7 @@ export const withSwitchStyleProps =
           borderColor: getColor(color, 400),
 
           // Variants (overrides)
-          ...theme?.variants?.Switch?.[variant]?.container?.state
-            ?.hoveredAndChecked,
+          ...themeVariant?.state?.hoveredAndChecked?.container,
         },
       })
 
