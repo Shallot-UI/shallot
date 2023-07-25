@@ -22,7 +22,7 @@ const getShallotProp = <T>(props: BoxProps<T>): BoxShallot => {
   })
 
   const theme = useTheme()
-  const { variant } = props
+  const { variant = 'default' } = props
   const themeVariant = theme?.variants?.Box?.[variant] as BoxShallot
 
   return applyStyles(baseShallot, {
