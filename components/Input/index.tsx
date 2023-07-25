@@ -64,6 +64,10 @@ export type InputProps<T> = T &
     variant?: string
   }
 
+export type InputVariant = InputShallot & {
+  state?: { [Key in keyof InputState]?: InputShallot }
+}
+
 export const withInputStyleProps =
   <T,>(InputComponent: ComponentType<T>) =>
   (props: InputProps<T>) => {
@@ -121,6 +125,7 @@ export const withInputStyleProps =
     } = props
 
     const theme = useTheme()
+    const themeVariant = theme?.variants?.Input?.[variant] as InputVariant
 
     let styles: InputShallot = {
       container: {
@@ -143,7 +148,7 @@ export const withInputStyleProps =
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
 
         // Variants (overrides)
-        ...theme?.variants?.Input?.[variant]?.container,
+        ...themeVariant?.container,
       },
       input: {
         unitWidth: 1,
@@ -157,7 +162,7 @@ export const withInputStyleProps =
         typeface: getTypeface(typeface, font),
 
         // Variants (overrides)
-        ...theme?.variants?.Input?.[variant]?.input,
+        ...themeVariant?.input,
       },
     }
 
@@ -169,7 +174,7 @@ export const withInputStyleProps =
           borderColor: getColor(...colors.focused?.border),
 
           // Variants (overrides)
-          ...theme?.variants?.Input?.[variant]?.container?.state?.focused,
+          ...themeVariant?.state?.focused?.container,
         },
       })
 
@@ -180,7 +185,7 @@ export const withInputStyleProps =
           borderColor: getColor(...colors.error?.border),
 
           // Variants (overrides)
-          ...theme?.variants?.Input?.[variant]?.container?.state?.error,
+          ...themeVariant?.state?.error?.container,
         },
       })
 
