@@ -13,6 +13,7 @@ import {
 
 import { BoxProps, BoxShallot } from '../types'
 import { useTheme } from 'styled-components'
+import { Variant } from '@shallot-ui/theme'
 
 const getShallotProp = <T>(props: BoxProps<T>): BoxShallot => {
   const baseShallot: BoxShallot = applyStyles({
@@ -23,7 +24,7 @@ const getShallotProp = <T>(props: BoxProps<T>): BoxShallot => {
 
   const theme = useTheme()
   const { variant = 'default' } = props
-  const themeVariant = theme?.variants?.Box?.[variant] as BoxShallot
+  const themeVariant = theme?.variants?.Box?.[variant] as Variant<BoxShallot>
 
   return applyStyles(baseShallot, {
     ...getAlignmentShallot(baseShallot.flexDirection, props),
