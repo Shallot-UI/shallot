@@ -29,6 +29,7 @@ const getShallotProp = <T>(props: BoxProps<T>): BoxShallot => {
     | undefined
 
   return applyStyles(baseShallot, {
+    // ...theme?.variants?.Box?.[props.variant],
     ...getAlignmentShallot(baseShallot.flexDirection, props),
     ...getBorderShallot(props),
     ...getBackgroundColorShallot(props),

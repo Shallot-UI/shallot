@@ -32,5 +32,6 @@ export type ColumnShallot = ShallotProp & {
 export type ColumnProps<T = {}> = T &
   ColumnStyleProps & {
     shallot?: ColumnShallot
-    children: ReactNode | ReactNode[]
+    variant: string
+    children?: ReactNode | ReactNode[]
   }
