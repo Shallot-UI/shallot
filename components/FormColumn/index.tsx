@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import { DefaultTheme, useTheme } from 'styled-components'
-import { AllColorShades, ShallotProp } from '@shallot-ui/theme'
+import { AllColorShades, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
   applyStyles,
   getUnits,
@@ -64,9 +64,9 @@ export const withFormColumnStyleProps =
     } = props
 
     const theme = useTheme()
-    const themeVariant = theme?.variants?.FormColumn?.[
-      variant
-    ] as FormColumnShallot
+    const themeVariant = theme?.variants?.FormColumn?.[variant] as
+      | Variant<FormColumnShallot>
+      | undefined
 
     let modalShallot: FormColumnShallot = {
       container: {
