@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
-import { ColorName, ShallotProp } from '@shallot-ui/theme'
+import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
@@ -35,10 +35,6 @@ export type TagProps<T> = T &
     variant?: string
   }
 
-export type TagVariant = TagShallot & {
-  outline?: TagShallot
-}
-
 export const withTagStyleProps =
   <T,>(TagComponent: ComponentType<T>) =>
   (props: TagProps<T>) => {
@@ -68,7 +64,9 @@ export const withTagStyleProps =
     } = props
 
     const theme = useTheme()
-    const themeVariant = theme?.variants?.Tag?.[variant] as TagVariant
+    const themeVariant = theme?.variants?.Tag?.[variant] as
+      | Variant<TagShallot>
+      | undefined
 
     let styles: TagShallot = {
       container: {
