@@ -55,17 +55,18 @@ const Template: StoryFn<typeof Button> = (args) => (
         Button: {
           // Edit variants here.
           buttonVariant1: {
-            container: {
-              state: {
-                focused: {},
-                pressed: {},
-                hovered: {},
-              },
-            },
+            container: {},
             title: {},
-            outline: {
-              container: {},
-              title: {},
+            state: {
+              focused: {
+                container: {},
+              },
+              pressed: {
+                container: {},
+              },
+              hovered: {
+                container: {},
+              },
             },
           },
         },

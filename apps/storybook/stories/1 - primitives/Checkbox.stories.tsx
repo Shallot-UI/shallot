@@ -38,7 +38,7 @@ const Template: StoryFn<typeof Checkbox> = (args) => {
           Checkbox: {
             // Edit variants here.
             checkBoxVariant: {
-              container: { width: '500px' },
+              container: {},
               icon: {},
               state: {
                 focused: {
