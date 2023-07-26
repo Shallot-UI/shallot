@@ -29,4 +29,8 @@ export type RowShallot = ShallotProp & {
 }
 
 export type RowProps<T = {}> = T &
-  RowStyleProps & { shallot?: RowShallot; children: ReactNode | ReactNode[] }
+  RowStyleProps & {
+    shallot?: RowShallot
+    children: ReactNode | ReactNode[]
+    variant: string
+  }
