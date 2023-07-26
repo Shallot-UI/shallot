@@ -1,6 +1,11 @@
 import { ComponentType } from 'react'
-import { CSSObject, DefaultTheme } from 'styled-components'
-import { ColorName, ColorShadingValue } from '@shallot-ui/theme'
+import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
+import {
+  ColorName,
+  ColorShadingValue,
+  ShallotProp,
+  Variant,
+} from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
@@ -11,7 +16,6 @@ import {
   getRadius,
   getTypeface,
   getUnits,
-  ShallotProp,
 } from '@shallot-ui/core'
 
 export type InputStyleProps = {
@@ -62,6 +66,7 @@ export type InputProps<T> = T &
   InputStyleProps & {
     shallot?: InputShallot
     state?: InputState
+    variant?: string
   }
 
 export const withInputStyleProps =
@@ -112,11 +117,18 @@ export const withInputStyleProps =
       shallot,
       state = {},
 
+      variant = 'default',
+
       typeface = 'Body',
       font = 'Regular',
 
       ...inputProps
     } = props
+
+    const theme = useTheme()
+    const themeVariant = theme?.variants?.Input?.[variant] as
+      | Variant<InputShallot>
+      | undefined
 
     let styles: InputShallot = {
       container: {
@@ -137,6 +149,9 @@ export const withInputStyleProps =
         ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
         ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
+
+        // Variants (overrides)
+        ...themeVariant?.container,
       },
       input: {
         unitWidth: 1,
@@ -148,6 +163,9 @@ export const withInputStyleProps =
         flexGrow: 1,
         letterSpacing: getLetterSpacing('md'),
         typeface: getTypeface(typeface, font),
+
+        // Variants (overrides)
+        ...themeVariant?.input,
       },
     }
 
@@ -157,6 +175,9 @@ export const withInputStyleProps =
           elevation: getElevation('focused'),
           backgroundColor: getColor(...colors.focused?.background),
           borderColor: getColor(...colors.focused?.border),
+
+          // Variants (overrides)
+          ...themeVariant?.state?.focused?.container,
         },
       })
 
@@ -165,6 +186,9 @@ export const withInputStyleProps =
         container: {
           backgroundColor: getColor(...colors.error?.background),
           borderColor: getColor(...colors.error?.border),
+
+          // Variants (overrides)
+          ...themeVariant?.state?.error?.container,
         },
       })
 

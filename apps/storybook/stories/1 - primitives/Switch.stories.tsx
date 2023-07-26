@@ -30,7 +30,24 @@ export default {
 const Template: StoryFn<typeof Switch> = (args) => {
   const [value, setValue] = useState(false)
   return (
-    <ThemeProvider theme={makeTheme({})}>
+    <ThemeProvider
+      theme={makeTheme({
+        variants: {
+          Switch: {
+            switchVariant: {
+              container: {},
+              handle: {},
+              state: {
+                focused: {},
+                hovered: {},
+                checked: {},
+                hoveredAndChecked: {},
+              },
+            },
+          },
+        },
+      })}
+    >
       <Row>
         <Switch
           unitsAround={1 / 2}
@@ -52,6 +69,9 @@ const Template: StoryFn<typeof Switch> = (args) => {
 
 export const Default = Template.bind({})
 Default.args = {}
+
+export const Variant = Template.bind({})
+Variant.args = { variant: 'switchVariant' }
 
 export const Success = Template.bind({})
 Success.args = { color: 'Success' }

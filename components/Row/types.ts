@@ -6,10 +6,10 @@ import {
   FlexProps,
   MarginProps,
   RadiusProps,
-  ShallotProp,
   SizingProps,
   TextColorProps,
 } from '@shallot-ui/core'
+import { ShallotProp } from '@shallot-ui/theme'
 import { ReactNode } from 'react'
 
 export type RowStyleProps = AlignmentProps &
@@ -29,4 +29,8 @@ export type RowShallot = ShallotProp & {
 }
 
 export type RowProps<T = {}> = T &
-  RowStyleProps & { shallot?: RowShallot; children: ReactNode | ReactNode[] }
+  RowStyleProps & {
+    shallot?: RowShallot
+    children: ReactNode | ReactNode[]
+    variant: string
+  }

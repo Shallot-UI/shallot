@@ -1,5 +1,30 @@
 # @shallot-ui/native
 
+## 0.40.2
+
+### Patch Changes
+
+- a45b9e2: Shallot -7: Remove the reset button wrapper
+- 5584188: release
+- Updated dependencies [a45b9e2]
+- Updated dependencies [5584188]
+- Updated dependencies [8c3aef4]
+- Updated dependencies [a42d548]
+  - @shallot-ui/button@0.15.1
+  - @shallot-ui/box@0.15.1
+  - @shallot-ui/column@0.15.1
+  - @shallot-ui/row@0.15.1
+  - @shallot-ui/core@14.1.1
+  - @shallot-ui/input@0.15.2
+
+## 0.40.1
+
+### Patch Changes
+
+- 523414d: [fix] fixes input import
+- Updated dependencies [523414d]
+  - @shallot-ui/input@0.15.1
+
 ## 0.40.0
 
 ### Minor Changes

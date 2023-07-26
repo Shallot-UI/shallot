@@ -40,8 +40,16 @@ export default {
 } as Meta<typeof Column>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Column> = (args) => (
-  <ThemeProvider theme={makeTheme({})}>
+const Template: StoryFn<typeof Column> = (...args) => (
+  <ThemeProvider
+    theme={makeTheme({
+      variants: {
+        Box: {
+          columnVariant: {},
+        },
+      },
+    })}
+  >
     <Column
       shallot={{
         backgroundColor: getColor('Shading', 150),
@@ -80,6 +88,7 @@ const Template: StoryFn<typeof Column> = (args) => (
           }}
         />
         <Column
+          variant="columnVariant"
           shallot={{
             backgroundColor: getColor('Shading', 100),
             borderRadius: getRadius(args.radius),
@@ -97,6 +106,12 @@ const Template: StoryFn<typeof Column> = (args) => (
 export const Default = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
+  backgroundColor: 'Shading.100',
+  radius: 'xl',
+}
+export const Variant = Template.bind({})
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Variant.args = {
   backgroundColor: 'Shading.100',
   radius: 'xl',
 }

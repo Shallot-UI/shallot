@@ -6,10 +6,10 @@ import {
   FlexProps,
   MarginProps,
   RadiusProps,
-  ShallotProp,
   SizingProps,
   TextColorProps,
 } from '@shallot-ui/core'
+import { ShallotProp } from '@shallot-ui/theme'
 import { ReactNode } from 'react'
 
 export type BoxShallot = ShallotProp & {
@@ -29,4 +29,8 @@ export type BoxStyleProps = AlignmentProps &
   SizingProps
 
 export type BoxProps<T = {}> = T &
-  BoxStyleProps & { shallot?: BoxShallot; children: ReactNode | ReactNode[] }
+  BoxStyleProps & {
+    shallot?: BoxShallot
+    children: ReactNode | ReactNode[]
+    variant: string
+  }
