@@ -28,8 +28,6 @@ const getShallotProp = <T>(props: RowProps<T>): RowShallot => {
     | Variant<RowShallot>
     | undefined
 
-  console.log(themeVariant)
-
   return applyStyles(baseShallot, {
     ...getAlignmentShallot(baseShallot.flexDirection, props),
     ...getBorderShallot(props),
