@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
-import { CSSObject, DefaultTheme } from 'styled-components'
-import { ColorName, ShallotProp } from '@shallot-ui/theme'
+import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
+import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
@@ -52,7 +52,13 @@ export type ButtonProps<T> = T &
     shallot?: ButtonShallot
     state?: ButtonState
     disabled?: boolean
+    variant: string
   }
+
+export type ButtonVariant = ButtonShallot & {
+  state?: { [Key in keyof ButtonState]: ButtonShallot }
+  outline?: ButtonShallot
+}
 
 export const withButtonStyleProps =
   <T,>(ButtonComponent: ComponentType<T>) =>
@@ -91,6 +97,7 @@ export const withButtonStyleProps =
       underline,
 
       shallot,
+      variant = 'default',
       state = {},
 
       ...buttonProps
@@ -103,6 +110,11 @@ export const withButtonStyleProps =
       color === 'Shading'
         ? { default: 900, hovered: 800, pressed: 950, focused: 900 }
         : { default: 500, hovered: 400, pressed: 600, focused: 500 }
+
+    const theme = useTheme()
+    const themeVariant = theme?.variants?.Button?.[variant] as
+      | Variant<ButtonShallot>
+      | undefined
 
     let buttonShallot: ButtonShallot = {
       container: {
@@ -130,6 +142,9 @@ export const withButtonStyleProps =
         ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
         ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
+
+        // Variants (overrides)
+        ...themeVariant?.container,
       },
       title: {
         display: 'block',
@@ -147,6 +162,9 @@ export const withButtonStyleProps =
         letterSpacing: getLetterSpacing(letterSpacing),
         lineHeight: getLineHeight(fontSize),
         cursor: 'pointer',
+
+        // Variants (overrides)
+        ...themeVariant?.title,
       },
     }
 
@@ -156,6 +174,9 @@ export const withButtonStyleProps =
           elevation: getElevation('hover'),
           backgroundColor: getColor(color, shades.hovered),
           borderColor: getColor(color, shades.hovered),
+
+          // Variants (overrides)
+          ...themeVariant?.state?.hovered?.container,
         },
       })
 
@@ -165,18 +186,30 @@ export const withButtonStyleProps =
           elevation: getElevation('pressed'),
           backgroundColor: getColor(color, shades.pressed),
           borderColor: getColor(color, shades.pressed),
+
+          // Variants (overrides)
+          ...themeVariant?.state?.pressed?.container,
         },
       })
 
     if (state.focused)
       buttonShallot = applyStyles(buttonShallot, {
-        container: { elevation: getElevation('focused') },
+        container: {
+          elevation: getElevation('focused'),
+
+          // Variants (overrides)
+          ...themeVariant?.state?.pressed?.container,
+        },
       })
 
     if (outline)
       buttonShallot = applyStyles(buttonShallot, {
-        container: { backgroundColor: getColor('Shading', 100) },
-        title: { color: getColor(color, shades.default) },
+        container: {
+          backgroundColor: getColor('Shading', 100),
+        },
+        title: {
+          color: getColor(color, shades.default),
+        },
       })
 
     buttonShallot = applyStyles(buttonShallot, {
