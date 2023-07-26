@@ -37,13 +37,12 @@ const Template: StoryFn<typeof Input> = (...args) => {
         variants: {
           Input: {
             inputVariant: {
-              container: {
-                state: {
-                  focused: {},
-                  error: {},
-                },
-              },
+              container: {},
               input: {},
+              state: {
+                focused: {},
+                error: {},
+              },
             },
           },
         },
