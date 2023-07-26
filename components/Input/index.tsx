@@ -1,6 +1,11 @@
 import { ComponentType } from 'react'
 import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
-import { ColorName, ColorShadingValue, ShallotProp } from '@shallot-ui/theme'
+import {
+  ColorName,
+  ColorShadingValue,
+  ShallotProp,
+  Variant,
+} from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
@@ -64,10 +69,6 @@ export type InputProps<T> = T &
     variant?: string
   }
 
-export type InputVariant = InputShallot & {
-  state?: { [Key in keyof InputState]?: InputShallot }
-}
-
 export const withInputStyleProps =
   <T,>(InputComponent: ComponentType<T>) =>
   (props: InputProps<T>) => {
@@ -125,7 +126,9 @@ export const withInputStyleProps =
     } = props
 
     const theme = useTheme()
-    const themeVariant = theme?.variants?.Input?.[variant] as InputVariant
+    const themeVariant = theme?.variants?.Input?.[variant] as
+      | Variant<InputShallot>
+      | undefined
 
     let styles: InputShallot = {
       container: {
