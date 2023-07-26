@@ -47,7 +47,7 @@ const Template: StoryFn<typeof Row> = (args) => (
     theme={makeTheme({
       variants: {
         Box: {
-          rowVariant: {},
+          rowVariant: { width: '500px' },
         },
       },
     })}

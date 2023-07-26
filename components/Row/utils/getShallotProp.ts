@@ -13,6 +13,7 @@ import {
 
 import { RowProps, RowShallot } from '../types'
 import { useTheme } from 'styled-components'
+import { Variant } from '@shallot-ui/theme'
 
 const getShallotProp = <T>(props: RowProps<T>): RowShallot => {
   const baseShallot: RowShallot = applyStyles({
@@ -23,7 +24,11 @@ const getShallotProp = <T>(props: RowProps<T>): RowShallot => {
 
   const theme = useTheme()
   const { variant = 'default' } = props
-  const themeVariant = theme?.variants?.Box?.[variant] as RowShallot
+  const themeVariant = theme?.variants?.Box?.[variant] as
+    | Variant<RowShallot>
+    | undefined
+
+  console.log(themeVariant)
 
   return applyStyles(baseShallot, {
     ...getAlignmentShallot(baseShallot.flexDirection, props),
