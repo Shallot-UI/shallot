@@ -13,6 +13,7 @@ import {
 
 import { ColumnProps, ColumnShallot } from '../types'
 import { useTheme } from 'styled-components'
+import { Variant } from '@shallot-ui/theme'
 
 const getShallotProp = <T>(props: ColumnProps<T>): ColumnShallot => {
   const baseShallot: ColumnShallot = applyStyles({
@@ -23,7 +24,9 @@ const getShallotProp = <T>(props: ColumnProps<T>): ColumnShallot => {
 
   const theme = useTheme()
   const { variant = 'default' } = props
-  const themeVariant = theme?.variants?.Box?.[variant] as ColumnShallot
+  const themeVariant = theme?.variants?.Box?.[variant] as
+    | Variant<ColumnShallot>
+    | undefined
 
   return applyStyles(baseShallot, {
     ...getAlignmentShallot(baseShallot.flexDirection, props),
