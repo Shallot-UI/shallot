@@ -1,5 +1,22 @@
 # @shallot-ui/input
 
+## 0.15.2
+
+### Patch Changes
+
+- 5584188: release
+- Updated dependencies [5584188]
+- Updated dependencies [a42d548]
+  - @shallot-ui/box@0.15.1
+  - @shallot-ui/row@0.15.1
+  - @shallot-ui/core@14.1.1
+
+## 0.15.1
+
+### Patch Changes
+
+- 523414d: [fix] fixes input import
+
 ## 0.15.0
 
 ### Minor Changes

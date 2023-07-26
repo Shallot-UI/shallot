@@ -1,5 +1,18 @@
 # @shallot-ui/button
 
+## 0.15.1
+
+### Patch Changes
+
+- a45b9e2: Shallot -7: Remove the reset button wrapper
+- 5584188: release
+- 8c3aef4: Shallot-13: Ensure that cursor on button label is pointer by default
+- Updated dependencies [5584188]
+- Updated dependencies [a42d548]
+  - @shallot-ui/box@0.15.1
+  - @shallot-ui/row@0.15.1
+  - @shallot-ui/core@14.1.1
+
 ## 0.15.0
 
 ### Minor Changes
