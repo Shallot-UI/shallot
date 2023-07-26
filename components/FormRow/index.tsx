@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
-import { DefaultTheme } from 'styled-components'
-import { AllColorShades, ShallotProp } from '@shallot-ui/theme'
+import { DefaultTheme, useTheme } from 'styled-components'
+import { AllColorShades, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
   applyStyles,
   getUnits,
@@ -37,6 +37,7 @@ export type FormRowShallot = {
 export type FormRowProps<T> = T &
   FormRowStyleProps & {
     shallot?: FormRowShallot
+    variant: string
   }
 
 export const withFormRowStyleProps =
@@ -58,8 +59,15 @@ export const withFormRowStyleProps =
 
       shallot,
 
+      variant = 'default',
+
       ...modalProps
     } = props
+
+    const theme = useTheme()
+    const themeVariant = theme?.variants?.FormRow?.[variant] as
+      | Variant<FormRowShallot>
+      | undefined
 
     let modalShallot: FormRowShallot = {
       container: {
@@ -71,6 +79,9 @@ export const withFormRowStyleProps =
         ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
         ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
+
+        // Variants (overrides)
+        ...themeVariant?.container,
       },
       label: {
         typeface: getTypeface(typeface),
@@ -79,6 +90,9 @@ export const withFormRowStyleProps =
         fontSize: getFontSize(labelFontSize || 'md'),
         color: getColorShade(labelColor || 'Shading.800'),
         userSelect: 'none',
+
+        // Variants (overrides)
+        ...themeVariant?.label,
       },
       details: {
         marginLeft: getUnits(1),
@@ -86,10 +100,16 @@ export const withFormRowStyleProps =
         flexGrow: 1,
         flexDirection: 'column',
         userSelect: 'none',
+
+        // Variants (overrides)
+        ...themeVariant?.details,
       },
       requiredStar: {
         color: getColorShade('Danger.500'),
         userSelect: 'none',
+
+        // Variants (overrides)
+        ...themeVariant?.requiredStar,
       },
       helperText: {
         fontSize: getFontSize('sm'),
@@ -100,6 +120,9 @@ export const withFormRowStyleProps =
         animation: 'fadeInDown',
         typeface: getTypeface(typeface),
         userSelect: 'none',
+
+        // Variants (overrides)
+        ...themeVariant?.helperText,
       },
       errorText: {
         fontSize: getFontSize('sm'),
@@ -109,6 +132,9 @@ export const withFormRowStyleProps =
         animation: 'fadeInDown',
         typeface: getTypeface(typeface),
         userSelect: 'none',
+
+        // Variants (overrides)
+        ...themeVariant?.errorText,
       },
     }
 
