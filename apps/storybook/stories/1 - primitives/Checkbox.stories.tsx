@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { makeTheme, Checkbox, Row } from '@shallot-ui/web'
-import { CheckboxVariant } from '@shallot-ui/checkbox'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -39,7 +38,7 @@ const Template: StoryFn<typeof Checkbox> = (args) => {
           Checkbox: {
             // Edit variants here.
             checkBoxVariant: {
-              container: {},
+              container: { width: '500px' },
               icon: {},
               state: {
                 focused: {
