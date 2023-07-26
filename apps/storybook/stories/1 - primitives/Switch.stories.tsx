@@ -35,18 +35,14 @@ const Template: StoryFn<typeof Switch> = (args) => {
         variants: {
           Switch: {
             switchVariant: {
-              container: {
-                state: {
-                  focused: {},
-                  hovered: {},
-                  checked: {
-                    container: {},
-                    handle: {},
-                  },
-                  hoveredAndChecked: {},
-                },
-              },
+              container: {},
               handle: {},
+              state: {
+                focused: {},
+                hovered: {},
+                checked: {},
+                hoveredAndChecked: {},
+              },
             },
           },
         },
