@@ -48,6 +48,8 @@ export type ShallotProp<T = CSSObject> = Omit<CSSProperties, keyof T> &
     [K in keyof T]: T[K] | ((props: { theme: DefaultTheme }) => T[K])
   }
 
+export type Variant<T = any> = T & { state?: { [state: string]: T } }
+
 export interface ThemeOptions {
   defaults?: { typeface?: string }
   gridUnits?: number[]
@@ -64,5 +66,5 @@ export interface ThemeOptions {
   }
   typefaces?: { [name: string]: Typeface }
   elevations?: { [name: string]: CSSProp }
-  variants?: { [component: string]: { [variant: string]: ShallotProp } }
+  variants?: { [component: string]: { [variant: string]: Variant } }
 }
