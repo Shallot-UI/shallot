@@ -1,5 +1,17 @@
 # @shallot-ui/box
 
+## 0.16.0
+
+### Minor Changes
+
+- Forcing new build
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.37.0
+  - @shallot-ui/core@15.0.0
+
 ## 0.15.1
 
 ### Patch Changes

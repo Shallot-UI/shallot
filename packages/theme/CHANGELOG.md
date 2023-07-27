@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.37.0
+
+### Minor Changes
+
+- Forcing new build
+
 ## 0.36.0
 
 ### Minor Changes
