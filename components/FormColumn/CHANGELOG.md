@@ -1,5 +1,11 @@
 # @shallot-ui/form-column
 
+## 0.13.1
+
+### Patch Changes
+
+- 58c3958: SHALLOT-18: Remove duplicate variant props from form row and column
+
 ## 0.13.0
 
 ### Minor Changes
