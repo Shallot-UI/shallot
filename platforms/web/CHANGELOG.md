@@ -1,5 +1,16 @@
 # @shallot-ui/web
 
+## 0.54.3
+
+### Patch Changes
+
+- 07b2e73: SHALLOT-19: Fix build and upgrade turborepo
+- Updated dependencies [07b2e73]
+  - @shallot-ui/tag@0.14.1
+  - @shallot-ui/text@0.15.1
+  - @shallot-ui/form-column@0.13.2
+  - @shallot-ui/form-row@0.13.2
+
 ## 0.54.2
 
 ### Patch Changes

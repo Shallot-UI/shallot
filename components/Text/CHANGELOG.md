@@ -1,5 +1,11 @@
 # @shallot-ui/text
 
+## 0.15.1
+
+### Patch Changes
+
+- 07b2e73: SHALLOT-19: Fix build and upgrade turborepo
+
 ## 0.15.0
 
 ### Minor Changes
