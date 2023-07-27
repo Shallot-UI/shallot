@@ -108,15 +108,9 @@ export const withTagStyleProps =
       styles = applyStyles(styles, {
         container: {
           backgroundColor: getColor('Shading', 100),
-
-          // Variant (overrides)
-          ...themeVariant?.outline?.container,
         },
         title: {
           textColor: getColor(color, 300),
-
-          // Variant (overrides)
-          ...themeVariant?.outline?.title,
         },
       })
 
