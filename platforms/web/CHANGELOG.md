@@ -6,6 +6,19 @@
 
 - Forcing new build
 
+## 0.54.3
+
+### Patch Changes
+
+- 07b2e73: SHALLOT-19: Fix build and upgrade turborepo
+- Updated dependencies [07b2e73]
+  - @shallot-ui/tag@0.14.1
+  - @shallot-ui/text@0.15.1
+  - @shallot-ui/form-column@0.13.2
+  - @shallot-ui/form-row@0.13.2
+
+## 0.54.2
+
 ### Patch Changes
 
 - 58c3958: SHALLOT-18: Remove duplicate variant props from form row and column
@@ -25,6 +38,8 @@
   - @shallot-ui/tag@0.15.0
   - @shallot-ui/theme@0.37.0
   - @shallot-ui/core@15.0.0
+  - @shallot-ui/form-column@0.13.1
+  - @shallot-ui/form-row@0.13.1
 
 ## 0.54.1
 

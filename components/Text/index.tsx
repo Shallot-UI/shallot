@@ -12,8 +12,6 @@ import {
   getUnits,
 } from '@shallot-ui/core'
 
-type TextShallot = ShallotProp
-
 export type TextStyleProps = {
   textColor?: AllColorShades
   backgroundColor?: AllColorShades
@@ -43,10 +41,10 @@ export type TextStyleProps = {
 }
 
 export type TextProps<T = {}> = T &
-  TextStyleProps & { shallot?: TextShallot; variant?: string }
+  TextStyleProps & { shallot?: ShallotProp; variant?: string }
 
 export const withTextStyleProps =
-  <T,>(TextComponent: ComponentType<T & { shallot?: TextShallot }>) =>
+  <T,>(TextComponent: ComponentType<T & { shallot?: ShallotProp }>) =>
   (props: TextProps<T>) => {
     const {
       textColor,
@@ -84,10 +82,10 @@ export const withTextStyleProps =
 
     const theme = useTheme()
     const themeVariant = theme?.variants?.Text?.[variant] as
-      | Variant<TextShallot>
+      | ShallotProp
       | undefined
 
-    let textShallot: TextShallot = {
+    let textShallot: ShallotProp = {
       display: 'flex',
       ...(typeface && { typeface: getTypeface(typeface, font) }),
       ...(uppercase && { textTransform: 'uppercase' }),
