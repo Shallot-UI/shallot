@@ -1,13 +1,10 @@
 import { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { getStyle } from '@shallot-ui/core'
-import { merge } from 'lodash'
 import {
   FormColumnShallot,
   withFormColumnStyleProps,
 } from '@shallot-ui/form-column'
-
-import { useVariant } from '../../hooks/useVariant'
 
 const Container = styled.div(getStyle)
 const Label = styled.label(getStyle)
@@ -22,7 +19,6 @@ const StaticFormColumn = (
     required?: boolean
     helperText?: string
     errorText?: string
-    variant?: string
   },
 ) => {
   const {
@@ -33,27 +29,23 @@ const StaticFormColumn = (
     required,
     helperText,
     errorText,
-    variant,
     ...rest
   } = props
 
-  const variantStyles = useVariant('FormColumn', variant)
-  const styles = merge({}, variantStyles, shallot)
-
   return (
-    <Container shallot={styles?.container} {...rest}>
-      <Label shallot={styles?.label}>
+    <Container shallot={shallot?.container} {...rest}>
+      <Label shallot={shallot?.label}>
         {label}
         {required && (
-          <RequiredStar shallot={styles?.requiredStar}>*</RequiredStar>
+          <RequiredStar shallot={shallot?.requiredStar}>*</RequiredStar>
         )}
       </Label>
       {children}
       {errorText && (
-        <ErrorText shallot={styles?.errorText}>{errorText}</ErrorText>
+        <ErrorText shallot={shallot?.errorText}>{errorText}</ErrorText>
       )}
       {!errorText && helperText && (
-        <HelperText shallot={styles?.helperText}>{helperText}</HelperText>
+        <HelperText shallot={shallot?.helperText}>{helperText}</HelperText>
       )}
     </Container>
   )
