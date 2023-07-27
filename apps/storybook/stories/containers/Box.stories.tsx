@@ -41,7 +41,15 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Box> = (args) => (
-  <ThemeProvider theme={makeTheme({})}>
+  <ThemeProvider
+    theme={makeTheme({
+      variants: {
+        Box: {
+          boxVariant: {},
+        },
+      },
+    })}
+  >
     <Box
       shallot={{
         backgroundColor: getColor('Shading', 150),
@@ -67,4 +75,10 @@ Default.args = {
   backgroundColor: 'Shading.100',
   radius: 'xl',
   elevation: 'pressable',
+}
+export const Variant = Template.bind({})
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Variant.args = {
+  backgroundColor: 'Shading.100',
+  variant: 'boxVariant',
 }

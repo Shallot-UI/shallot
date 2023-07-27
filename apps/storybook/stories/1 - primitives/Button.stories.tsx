@@ -49,7 +49,30 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Button> = (args) => (
-  <ThemeProvider theme={makeTheme({})}>
+  <ThemeProvider
+    theme={makeTheme({
+      variants: {
+        Button: {
+          // Edit variants here.
+          buttonVariant1: {
+            container: {},
+            title: {},
+            state: {
+              focused: {
+                container: {},
+              },
+              pressed: {
+                container: {},
+              },
+              hovered: {
+                container: {},
+              },
+            },
+          },
+        },
+      },
+    })}
+  >
     <Column shallot={{ width: getUnits(20) }}>
       <Button title="Hello World" {...args} />
     </Column>
@@ -58,6 +81,11 @@ const Template: StoryFn<typeof Button> = (args) => (
 
 export const Default = Template.bind({})
 Default.args = {}
+
+export const Variant = Template.bind({})
+Variant.args = {
+  variant: 'buttonVariant1',
+}
 
 export const Success = Template.bind({})
 Success.args = { color: 'Success' }

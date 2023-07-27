@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { ShallotProp, getStyle } from '@shallot-ui/core'
+import { getStyle } from '@shallot-ui/core'
+import { ShallotProp } from '@shallot-ui/theme'
 
 export const Space = styled.div<{ shallot?: ShallotProp }>(
   ({ shallot, ...rest }) =>

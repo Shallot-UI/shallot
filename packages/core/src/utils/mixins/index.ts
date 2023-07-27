@@ -1,6 +1,11 @@
 import { ColorShadingValue, Typeface } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
 
+export const getVariant =
+  (component: keyof DefaultTheme['variants'], name: string = 'default') =>
+  ({ theme }: { theme: DefaultTheme }) =>
+    theme?.variants?.[component]?.[name]
+
 export const getColor =
   (value: keyof DefaultTheme['colors'], shade: ColorShadingValue) =>
   ({ theme }: { theme: DefaultTheme }) => {
@@ -73,13 +78,8 @@ export const getFontSize =
 
 export const getUnits =
   (value: number) =>
-  ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme?.gridUnits?.[value])
-      console.warn(
-        `gridUnit not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
-      )
-    return theme.gridUnits[value]
-  }
+  ({ theme }: { theme: DefaultTheme }) =>
+    theme.gridUnits[0] * value
 
 export const getElevation =
   (value: keyof DefaultTheme['elevations']) =>

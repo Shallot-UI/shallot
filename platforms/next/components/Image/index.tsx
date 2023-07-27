@@ -2,12 +2,12 @@ import { ComponentProps, FunctionComponent } from 'react'
 import styled, { DefaultTheme, useTheme } from 'styled-components'
 import NextImage from 'next/image'
 import {
-  ShallotProp,
   getStyle,
   getUnits,
   getRadius,
   AllColorShades,
   getColorShade,
+  ShallotProp,
 } from '@shallot-ui/web'
 
 type NextImageProps = ComponentProps<typeof NextImage>

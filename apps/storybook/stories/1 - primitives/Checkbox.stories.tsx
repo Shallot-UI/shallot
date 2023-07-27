@@ -32,7 +32,33 @@ export default {
 const Template: StoryFn<typeof Checkbox> = (args) => {
   const [value, setValue] = useState(false)
   return (
-    <ThemeProvider theme={makeTheme({})}>
+    <ThemeProvider
+      theme={makeTheme({
+        variants: {
+          Checkbox: {
+            // Edit variants here.
+            checkBoxVariant: {
+              container: {},
+              icon: {},
+              state: {
+                focused: {
+                  container: {},
+                  icon: {},
+                },
+                hovered: {
+                  container: {},
+                  icon: {},
+                },
+                checked: {
+                  container: {},
+                  icon: {},
+                },
+              },
+            },
+          },
+        },
+      })}
+    >
       <Row>
         <Checkbox
           unitsAround={1 / 2}
@@ -53,6 +79,9 @@ const Template: StoryFn<typeof Checkbox> = (args) => {
 
 export const Default = Template.bind({})
 Default.args = {}
+
+export const Variant = Template.bind({})
+Variant.args = { variant: 'checkBoxVariant' }
 
 export const Success = Template.bind({})
 Success.args = { color: 'Success' }

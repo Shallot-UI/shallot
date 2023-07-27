@@ -11,6 +11,7 @@ export const makeTheme = <T extends ThemeOptions>(options: T) =>
     breakpoints: options?.breakpoints || DEFAULT_THEME_OPTIONS.breakpoints,
     gridUnits: options?.gridUnits || DEFAULT_THEME_OPTIONS.gridUnits,
     typefaces: options?.typefaces || DEFAULT_THEME_OPTIONS.typefaces,
+    variants: options?.variants || DEFAULT_THEME_OPTIONS.variants,
     elevations: {
       ...DEFAULT_THEME_OPTIONS.elevations,
       ...options?.elevations,

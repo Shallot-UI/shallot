@@ -1,8 +1,7 @@
 import { ComponentType } from 'react'
-import { DefaultTheme } from 'styled-components'
-import { AllColorShades } from '@shallot-ui/theme'
+import { DefaultTheme, useTheme } from 'styled-components'
+import { AllColorShades, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
-  ShallotProp,
   applyStyles,
   getBreakpoints,
   getColorShade,
@@ -43,7 +42,8 @@ export type TextStyleProps = {
   uppercase?: boolean
 }
 
-export type TextProps<T = {}> = T & TextStyleProps & { shallot?: TextShallot }
+export type TextProps<T = {}> = T &
+  TextStyleProps & { shallot?: TextShallot; variant?: string }
 
 export const withTextStyleProps =
   <T,>(TextComponent: ComponentType<T & { shallot?: TextShallot }>) =>
@@ -56,7 +56,6 @@ export const withTextStyleProps =
       unitsBelow,
       unitsLeft,
       unitsRight,
-      shallot,
       unitHeight,
       unitWidth,
       maxUnitHeight,
@@ -65,11 +64,11 @@ export const withTextStyleProps =
       minUnitWidth,
 
       // Typography
-      typeface = 'Body',
+      typeface,
       font,
-      lineHeight = 'md',
-      letterSpacing = 'md',
-      fontSize = 'md',
+      lineHeight,
+      letterSpacing,
+      fontSize,
       leftText,
       centerText,
       rightText,
@@ -77,16 +76,20 @@ export const withTextStyleProps =
       underline,
       uppercase,
 
+      shallot,
+      variant = 'default',
+
       ...nonStyleProps
     } = props
 
+    const theme = useTheme()
+    const themeVariant = theme?.variants?.Text?.[variant] as
+      | Variant<TextShallot>
+      | undefined
+
     let textShallot: TextShallot = {
       display: 'flex',
-      typeface: getTypeface(typeface, font),
-      breakpoints: getBreakpoints({ fontSize }),
-      ...(backgroundColor && {
-        backgroundColor: getColorShade(backgroundColor),
-      }),
+      ...(typeface && { typeface: getTypeface(typeface, font) }),
       ...(uppercase && { textTransform: 'uppercase' }),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(unitsAround && { margin: getUnits(unitsAround) }),
@@ -111,6 +114,13 @@ export const withTextStyleProps =
       ...(underline === 'under' && {
         textDecoration: 'underline',
         textUnderlinePosition: 'under',
+      }),
+
+      // Variants (overrides)
+      ...themeVariant,
+      breakpoints: getBreakpoints({ fontSize }),
+      ...(backgroundColor && {
+        backgroundColor: getColorShade(backgroundColor),
       }),
     }
 

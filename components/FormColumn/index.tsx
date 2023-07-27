@@ -1,10 +1,9 @@
 import { ComponentType } from 'react'
-import { DefaultTheme } from 'styled-components'
-import { AllColorShades } from '@shallot-ui/theme'
+import { DefaultTheme, useTheme } from 'styled-components'
+import { AllColorShades, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
   applyStyles,
   getUnits,
-  ShallotProp,
   getColorShade,
   getTypeface,
   getFontSize,
@@ -37,6 +36,7 @@ export type FormColumnShallot = {
 export type FormColumnProps<T> = T &
   FormColumnStyleProps & {
     shallot?: FormColumnShallot
+    variant?: string
   }
 
 export const withFormColumnStyleProps =
@@ -58,8 +58,15 @@ export const withFormColumnStyleProps =
 
       shallot,
 
+      variant = 'default',
+
       ...modalProps
     } = props
+
+    const theme = useTheme()
+    const themeVariant = theme?.variants?.FormColumn?.[variant] as
+      | Variant<FormColumnShallot>
+      | undefined
 
     let modalShallot: FormColumnShallot = {
       container: {
@@ -71,6 +78,9 @@ export const withFormColumnStyleProps =
         ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
         ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
+
+        // Variants (overrides)
+        ...themeVariant?.container,
       },
       label: {
         typeface: getTypeface(typeface),
@@ -79,10 +89,16 @@ export const withFormColumnStyleProps =
         fontSize: getFontSize(labelFontSize || 'md'),
         color: getColorShade(labelColor || 'Shading.800'),
         userSelect: 'none',
+
+        // Variants (overrides)
+        ...themeVariant?.label,
       },
       requiredStar: {
         color: getColorShade('Danger.500'),
         userSelect: 'none',
+
+        // Variants (overrides)
+        ...themeVariant?.requiredStar,
       },
       helperText: {
         fontSize: getFontSize('sm'),
@@ -93,6 +109,9 @@ export const withFormColumnStyleProps =
         animation: 'fadeInDown',
         typeface: getTypeface(typeface),
         userSelect: 'none',
+
+        // Variants (overrides)
+        ...themeVariant?.helperText,
       },
       errorText: {
         fontSize: getFontSize('sm'),
@@ -102,6 +121,9 @@ export const withFormColumnStyleProps =
         animation: 'fadeInDown',
         typeface: getTypeface(typeface),
         userSelect: 'none',
+
+        // Variants (overrides)
+        ...themeVariant?.errorText,
       },
     }
 
