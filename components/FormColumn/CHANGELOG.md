@@ -1,5 +1,13 @@
 # @shallot-ui/form-column
 
+## 0.13.2
+
+### Patch Changes
+
+- 07b2e73: SHALLOT-19: Fix build and upgrade turborepo
+- Updated dependencies [07b2e73]
+  - @shallot-ui/text@0.15.1
+
 ## 0.13.1
 
 ### Patch Changes
