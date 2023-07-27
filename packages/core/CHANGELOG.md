@@ -1,5 +1,16 @@
 # @shallot-ui/core
 
+## 16.0.0
+
+### Minor Changes
+
+- Force release
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@0.38.0
+
 ## 15.0.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.38.0
+
+### Minor Changes
+
+- Force release
+
 ## 0.37.0
 
 ### Minor Changes

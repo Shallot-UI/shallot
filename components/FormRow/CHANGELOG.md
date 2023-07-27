@@ -1,5 +1,20 @@
 # @shallot-ui/form-row
 
+## 0.15.0
+
+### Minor Changes
+
+- Force release
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/text@0.17.0
+  - @shallot-ui/box@0.17.0
+  - @shallot-ui/row@0.17.0
+  - @shallot-ui/theme@0.38.0
+  - @shallot-ui/core@16.0.0
+
 ## 0.14.0
 
 ### Minor Changes
