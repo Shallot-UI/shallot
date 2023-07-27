@@ -5,7 +5,8 @@
   "scripts": {
     "build": "storybook build",
     "build-storybook": "storybook build",
-    "dev": "storybook dev -p 6006"
+    "dev": "storybook dev -p 6006",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
     "@shallot-ui/web": "*",
@@ -32,11 +33,14 @@
     "@types/react-dom": "^18.0.7",
     "@types/styled-components": "^5.1.26",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.20.0",
     "eslint": "7.32.0",
     "eslint-config-custom": "*",
     "eslint-plugin-storybook": "^0.6.13",
     "storybook": "7.1.0",
     "tsconfig": "*",
     "typescript": "^4.5.3"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "stories@0.18.2"
 }
