@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import { DefaultTheme, useTheme } from 'styled-components'
-import { AllColorShades, ShallotProp } from '@shallot-ui/theme'
+import { AllColorShades, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
   applyStyles,
   getBreakpoints,
@@ -83,10 +83,12 @@ export const withTextStyleProps =
     } = props
 
     const theme = useTheme()
+    const themeVariant = theme?.variants?.Text?.[variant] as
+      | Variant<TextShallot>
+      | undefined
 
     let textShallot: TextShallot = {
       display: 'flex',
-      ...(theme?.variants?.Text?.[variant] as ShallotProp),
       ...(typeface && { typeface: getTypeface(typeface, font) }),
       ...(uppercase && { textTransform: 'uppercase' }),
       ...(textColor && { color: getColorShade(textColor) }),
@@ -113,6 +115,9 @@ export const withTextStyleProps =
         textDecoration: 'underline',
         textUnderlinePosition: 'under',
       }),
+
+      // Variants (overrides)
+      ...themeVariant,
       breakpoints: getBreakpoints({ fontSize }),
       ...(backgroundColor && {
         backgroundColor: getColorShade(backgroundColor),

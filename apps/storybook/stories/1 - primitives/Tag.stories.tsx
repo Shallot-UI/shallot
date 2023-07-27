@@ -38,13 +38,27 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Tag> = (args) => (
-  <ThemeProvider theme={makeTheme({})}>
+  <ThemeProvider
+    theme={makeTheme({
+      variants: {
+        Tag: {
+          tagVariant: {
+            container: {},
+            title: {},
+          },
+        },
+      },
+    })}
+  >
     <Tag title="Hello World" {...args} />
   </ThemeProvider>
 )
 
 export const Default = Template.bind({})
 Default.args = {}
+
+export const Variant = Template.bind({})
+Variant.args = { variant: 'tagVariant' }
 
 export const Primary = Template.bind({})
 Primary.args = { color: 'Primary' }

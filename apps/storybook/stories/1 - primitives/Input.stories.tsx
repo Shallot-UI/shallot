@@ -40,8 +40,14 @@ const Template: StoryFn<typeof Input> = (...args) => {
               container: {},
               input: {},
               state: {
-                focused: {},
-                error: {},
+                focused: {
+                  container: {},
+                  input: {},
+                },
+                error: {
+                  container: {},
+                  input: {},
+                },
               },
             },
           },

@@ -37,17 +37,21 @@ const Template: StoryFn<typeof Checkbox> = (args) => {
         variants: {
           Checkbox: {
             // Edit variants here.
-            variant1: {
-              container: {
-                state: {
-                  focused: {},
-                  hovered: {},
-                  checked: {},
+            checkBoxVariant: {
+              container: {},
+              icon: {},
+              state: {
+                focused: {
+                  container: {},
+                  icon: {},
                 },
-              },
-              icon: {
-                state: {
-                  checked: {},
+                hovered: {
+                  container: {},
+                  icon: {},
+                },
+                checked: {
+                  container: {},
+                  icon: {},
                 },
               },
             },
@@ -77,7 +81,7 @@ export const Default = Template.bind({})
 Default.args = {}
 
 export const Variant = Template.bind({})
-Variant.args = { variant: 'variant1' }
+Variant.args = { variant: 'checkBoxVariant' }
 
 export const Success = Template.bind({})
 Success.args = { color: 'Success' }
