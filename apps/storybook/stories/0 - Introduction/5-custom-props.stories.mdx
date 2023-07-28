@@ -1,7 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
-import { ThemeProvider } from 'styled-components'
 import { useState } from 'react'
-import { makeTheme, Button, Row } from '@shallot-ui/web'
+import { ShallotProvider, Button, Row } from '@shallot-ui/web'
 
 <Meta title="🔌 Extending / Custom Props" />
 
@@ -16,12 +15,12 @@ We've seen in the previous guide how we can customize component styling using th
 If you've been exploring Shallot, you've likely already seen the `<Button />` component. You might have noticed that the `Button` accepts a `color` prop which accepts values like `'Primary'` or `'Danger'` and adjusts the button styles accordingly &mdash; even when you interact by hovering or clicking!
 
 <Canvas>
-  <ThemeProvider theme={makeTheme()}>
+  <ShallotProvider>
     <Row alignCenter>
       <Button title="Hello World!" color="Primary" unitsAround={1 / 2} />
       <Button title="I'm in Danger" color="Danger" unitsAround={1 / 2} />
     </Row>
-  </ThemeProvider>
+  </ShallotProvider>
 </Canvas>
 
 Behind the scenes, this is accomplished by making a wrapper component that accepts a `color` prop and uses it to generate the `getStyles` prop for the button. Here's a simplified example of how this might work:

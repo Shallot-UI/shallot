@@ -13,7 +13,7 @@ export const getColor =
       theme.colors?.[value]?.[shade as keyof typeof theme.colors.Shading]
     if (!color)
       console.warn(
-        `Color not found for value "${value}" and shade "${shade}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+        `Color not found for value "${value}" and shade "${shade}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
     return color
   }
@@ -31,7 +31,7 @@ export const getColorShade = (address: string | undefined) => {
   ]
   if (!shade) {
     console.warn(
-      `Color shade not found for value "${address}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+      `Color shade not found for value "${address}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
     )
   }
   return getColor(color, shade)
@@ -42,7 +42,7 @@ export const getRadius =
   ({ theme }: { theme: DefaultTheme }) => {
     if (!theme?.radii?.[value])
       console.warn(
-        `Radius not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+        `Radius not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
     return theme.radii[value]
   }
@@ -52,7 +52,7 @@ export const getLetterSpacing =
   ({ theme }: { theme: DefaultTheme }) => {
     if (!theme?.letterSpacings?.[value])
       console.warn(
-        `Letter spacing not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+        `Letter spacing not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
     return theme.letterSpacings[value]
   }
@@ -61,7 +61,7 @@ export const getLineHeight =
   ({ theme }: { theme: DefaultTheme }) => {
     if (!theme?.lineHeights?.[value])
       console.warn(
-        `Line height not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+        `Line height not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
     return theme.lineHeights[value]
   }
@@ -71,7 +71,7 @@ export const getFontSize =
   ({ theme }: { theme: DefaultTheme }) => {
     if (!theme?.fontSizes?.[value])
       console.warn(
-        `Font size not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+        `Font size not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
     return theme.fontSizes[value]
   }
@@ -86,7 +86,7 @@ export const getElevation =
   ({ theme }: { theme: DefaultTheme }) => {
     if (!theme?.elevations?.[value])
       console.warn(
-        `Elevation not found for value "${value}". Are you sure it's defined in your theme and you're using a ThemeProvider?`,
+        `Elevation not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
     return theme.elevations[value]
   }

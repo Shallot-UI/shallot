@@ -1,11 +1,10 @@
-import { makeTheme } from '@shallot-ui/theme'
+import { ThemeOptions, makeTheme } from '@shallot-ui/theme'
 import { ReactNode } from 'react'
 import { ThemeProvider } from 'styled-components'
-import { Theme } from '../../styled'
 
 type ShallotProviderProps = {
-  children: ReactNode | ReactNode[]
-  theme?: Theme
+  children: ReactNode
+  theme?: ThemeOptions
 }
 
 export const ShallotProvider = ({

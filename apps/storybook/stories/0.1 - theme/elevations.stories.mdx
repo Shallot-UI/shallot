@@ -10,8 +10,8 @@ import {
   getFontSize,
   getColorShade,
   getColor,
+  ShallotProvider,
 } from '@shallot-ui/web'
-import { ThemeProvider } from 'styled-components'
 
 <Meta title="🎨 Theme / Elevations" />
 
@@ -24,7 +24,7 @@ Elevations are used to give depth and shadow to components such as `Row`, `Colum
 Below are the default values for the elevations in the Shallot theme.
 
 <Canvas>
-  <ThemeProvider theme={makeTheme()}>
+  <ShallotProvider>
     <Column
       shallot={{
         backgroundColor: getColor('Shading', 125),
@@ -61,7 +61,7 @@ Below are the default values for the elevations in the Shallot theme.
         )}
       </Row>
     </Column>
-  </ThemeProvider>
+  </ShallotProvider>
 </Canvas>
 
 - `pressable`: The default elevation state for a pressable component.
