@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.56.2
+
+### Patch Changes
+
+- af8433e: SHALLOT-21: Fix issues building native package related to ShallotProvider
+
 ## 0.56.1
 
 ### Patch Changes
