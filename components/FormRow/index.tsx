@@ -37,7 +37,7 @@ export type FormRowShallot = {
 export type FormRowProps<T> = T &
   FormRowStyleProps & {
     shallot?: FormRowShallot
-    variant: string
+    variant?: string
   }
 
 export const withFormRowStyleProps =

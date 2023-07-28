@@ -1,7 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react'
-import { ThemeProvider } from 'styled-components'
-
-import { Tag, makeTheme } from '@shallot-ui/web'
+import { Tag, ShallotProvider } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -38,8 +36,8 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Tag> = (args) => (
-  <ThemeProvider
-    theme={makeTheme({
+  <ShallotProvider
+    theme={{
       variants: {
         Tag: {
           tagVariant: {
@@ -48,10 +46,10 @@ const Template: StoryFn<typeof Tag> = (args) => (
           },
         },
       },
-    })}
+    }}
   >
     <Tag title="Hello World" {...args} />
-  </ThemeProvider>
+  </ShallotProvider>
 )
 
 export const Default = Template.bind({})

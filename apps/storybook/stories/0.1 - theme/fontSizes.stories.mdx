@@ -6,8 +6,8 @@ import {
   makeTheme,
   getUnits,
   getFontSize,
+  ShallotProvider,
 } from '@shallot-ui/web'
-import { ThemeProvider } from 'styled-components'
 
 <Meta title="🎨 Theme / Font Sizes" />
 
@@ -20,7 +20,7 @@ Font sizes determine the size of text in your design system. They are defined in
 Below are the default values for the font sizes in the Shallot theme.
 
 <Canvas>
-  <ThemeProvider theme={makeTheme()}>
+  <ShallotProvider>
     <Column>
       {['xs', 'sm', 'md', 'lg', 'xl'].map((fontSize) => (
         <Text
@@ -35,7 +35,7 @@ Below are the default values for the font sizes in the Shallot theme.
         </Text>
       ))}
     </Column>
-  </ThemeProvider>
+  </ShallotProvider>
 </Canvas>
 
 ## Custom Font Sizes
