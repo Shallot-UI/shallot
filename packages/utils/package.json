@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/utils",
-  "version": "14.0.0",
+  "version": "15.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -17,13 +17,13 @@
     "build": "tsup ./index.ts --format cjs --minify --dts --clean"
   },
   "peerDependencies": {
-    "@shallot-ui/theme": "^0.38.0",
+    "@shallot-ui/theme": "^0.39.0",
     "react": ">=18",
     "react-dom": ">=18",
     "styled-components": ">=5"
   },
   "devDependencies": {
-    "@shallot-ui/theme": "^0.38.0",
+    "@shallot-ui/theme": "^0.39.0",
     "@types/chroma-js": "^2.4.0",
     "@types/jest": "^29.4.0",
     "@types/react": "^18.0.28",

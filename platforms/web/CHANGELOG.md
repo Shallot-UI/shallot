@@ -1,5 +1,35 @@
 # @shallot-ui/web
 
+## 0.57.0
+
+### Minor Changes
+
+- Forced publish
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/box@0.18.0
+  - @shallot-ui/button@0.18.0
+  - @shallot-ui/checkbox@0.17.0
+  - @shallot-ui/column@0.18.0
+  - @shallot-ui/fold@0.16.0
+  - @shallot-ui/form-column@0.16.0
+  - @shallot-ui/form-row@0.16.0
+  - @shallot-ui/input@0.18.0
+  - @shallot-ui/row@0.18.0
+  - @shallot-ui/switch@0.17.0
+  - @shallot-ui/tag@0.17.0
+  - @shallot-ui/text@0.18.0
+  - @shallot-ui/core@17.0.0
+  - @shallot-ui/theme@0.39.0
+
+## 0.56.2
+
+### Patch Changes
+
+- af8433e: SHALLOT-21: Fix issues building native package related to ShallotProvider
+
 ## 0.56.1
 
 ### Patch Changes

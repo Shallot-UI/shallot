@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 0.39.0
+
+### Minor Changes
+
+- Forced publish
+
 ## 0.38.0
 
 ### Minor Changes
