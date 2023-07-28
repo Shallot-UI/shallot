@@ -1,9 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react'
 import { useState } from 'react'
-import { ThemeProvider } from 'styled-components'
-
-import { makeTheme, Input } from '@shallot-ui/web'
-import { InputProps } from '@shallot-ui/input'
+import { Input, ShallotProvider } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -32,8 +29,8 @@ export default {
 const Template: StoryFn<typeof Input> = (...args) => {
   const [value, setValue] = useState('')
   return (
-    <ThemeProvider
-      theme={makeTheme({
+    <ShallotProvider
+      theme={{
         variants: {
           Input: {
             inputVariant: {
@@ -52,7 +49,7 @@ const Template: StoryFn<typeof Input> = (...args) => {
             },
           },
         },
-      })}
+      }}
     >
       <Input
         {...args}
@@ -62,7 +59,7 @@ const Template: StoryFn<typeof Input> = (...args) => {
         placeholder="Your Text Here"
         label="label"
       />
-    </ThemeProvider>
+    </ShallotProvider>
   )
 }
 

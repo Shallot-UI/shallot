@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
-import { ThemeProvider } from 'styled-components'
 import { useState } from 'react'
 import {
   StaticButton,
@@ -10,6 +9,7 @@ import {
   makeTheme,
   StatefulInput,
   StatefulInputProps,
+  ShallotProvider,
 } from '@shallot-ui/web'
 
 <Meta title="🔌 Extending / Custom Styles" />
@@ -74,12 +74,12 @@ const CustomButton = (props: Omit<StaticButtonProps, 'styles'>) => (
 )
 ```
 
-Notice that many of these styles are references to theme tokens. You can see an example below of what the button looks like when rendered using the default theme, but these values can be overridden by passing a custom theme to the `<ThemeProvider />` component.
+Notice that many of these styles are references to theme tokens. You can see an example below of what the button looks like when rendered using the default theme, but these values can be overridden by passing a custom theme to the `<ShallotProvider />` component.
 
 ### ▶️ Live Example
 
 <Canvas>
-  <ThemeProvider theme={makeTheme({})}>
+  <ShallotProvider>
     <StaticButton
       title="Hello World!"
       styles={{
@@ -105,7 +105,7 @@ Notice that many of these styles are references to theme tokens. You can see an 
         },
       }}
     />
-  </ThemeProvider>
+  </ShallotProvider>
 </Canvas>
 
 ## Stateful Components
@@ -190,7 +190,7 @@ const MagicInput = (props: StatefulInputProps) => (
 And voila, below you'll see the result of our MagicInput component. Notice how the text color changes when we hover over the input.
 
 <Canvas>
-  <ThemeProvider theme={makeTheme({})}>
+  <ShallotProvider>
     <StatefulInput
       value="Shallot is awesome!"
       getStyles={(state) => {
@@ -204,7 +204,7 @@ And voila, below you'll see the result of our MagicInput component. Notice how t
         })
       }}
     />
-  </ThemeProvider>
+  </ShallotProvider>
 </Canvas>
 
 You can already begin to see from these examples how powerful the `getStyles` function is. The more you write Shallot components, the more you'll discover that even very complex components in your application can be built from simple compositions of static components and a `getStyles` function.

@@ -1,6 +1,4 @@
 import { StoryFn, Meta } from '@storybook/react'
-import { ThemeProvider } from 'styled-components'
-
 import {
   Column,
   DEFAULT_THEME,
@@ -8,6 +6,7 @@ import {
   getColor,
   getUnits,
   getRadius,
+  ShallotProvider,
 } from '@shallot-ui/web'
 
 const allColorNames = Object.keys(DEFAULT_THEME.colors)
@@ -41,14 +40,14 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Column> = (...args) => (
-  <ThemeProvider
-    theme={makeTheme({
+  <ShallotProvider
+    theme={{
       variants: {
         Box: {
           columnVariant: {},
         },
       },
-    })}
+    }}
   >
     <Column
       shallot={{
@@ -100,7 +99,7 @@ const Template: StoryFn<typeof Column> = (...args) => (
         />
       </Column>
     </Column>
-  </ThemeProvider>
+  </ShallotProvider>
 )
 
 export const Default = Template.bind({})

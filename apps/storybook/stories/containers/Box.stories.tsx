@@ -1,5 +1,4 @@
 import { StoryFn, Meta } from '@storybook/react'
-import { ThemeProvider } from 'styled-components'
 
 import {
   DEFAULT_THEME,
@@ -8,6 +7,7 @@ import {
   Fold,
   Column,
   getColor,
+  ShallotProvider,
 } from '@shallot-ui/web'
 
 const allColorNames = Object.keys(DEFAULT_THEME.colors)
@@ -41,14 +41,14 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Box> = (args) => (
-  <ThemeProvider
-    theme={makeTheme({
+  <ShallotProvider
+    theme={{
       variants: {
         Box: {
           boxVariant: {},
         },
       },
-    })}
+    }}
   >
     <Box
       shallot={{
@@ -66,7 +66,7 @@ const Template: StoryFn<typeof Box> = (args) => (
         transition="all 0.2s ease-in-out;"
       />
     </Box>
-  </ThemeProvider>
+  </ShallotProvider>
 )
 
 export const Default = Template.bind({})

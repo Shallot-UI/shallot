@@ -8,8 +8,7 @@ import {
   getTypeface,
 } from '@shallot-ui/web'
 import { StoryFn, Meta } from '@storybook/react'
-import { ThemeProvider } from 'styled-components'
-import { Text } from '@shallot-ui/web'
+import { Text, ShallotProvider } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -39,8 +38,8 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Text> = (args) => (
-  <ThemeProvider
-    theme={makeTheme({
+  <ShallotProvider
+    theme={{
       variants: {
         Text: {
           H1: {
@@ -55,7 +54,7 @@ const Template: StoryFn<typeof Text> = (args) => (
           },
         },
       },
-    })}
+    }}
   >
     <GlobalStyle />
     <Fold alignCenter alignMiddle>
@@ -68,7 +67,7 @@ const Template: StoryFn<typeof Text> = (args) => (
         </Text>
       </Column>
     </Fold>
-  </ThemeProvider>
+  </ShallotProvider>
 )
 
 export const Default = Template.bind({})
