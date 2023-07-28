@@ -1,5 +1,5 @@
 import { ThemeOptions, makeTheme } from '@shallot-ui/theme'
-import { ReactNode } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 type ShallotProviderProps = {
@@ -7,7 +7,7 @@ type ShallotProviderProps = {
   theme?: ThemeOptions
 }
 
-export const ShallotProvider = ({
+export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   children,
   theme = {},
 }: ShallotProviderProps) => {
