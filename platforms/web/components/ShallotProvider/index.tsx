@@ -10,6 +10,6 @@ type ShallotProviderProps = {
 export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   children,
   theme = {},
-}: ShallotProviderProps) => {
-  return <ThemeProvider theme={makeTheme(theme)}>{children}</ThemeProvider>
-}
+}: ShallotProviderProps) => (
+  <ThemeProvider theme={makeTheme(theme)}>{children}</ThemeProvider>
+)
