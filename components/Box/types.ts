@@ -31,6 +31,6 @@ export type BoxStyleProps = AlignmentProps &
 export type BoxProps<T = {}> = T &
   BoxStyleProps & {
     shallot?: BoxShallot
-    children: ReactNode | ReactNode[]
-    variant: string
+    children?: ReactNode | ReactNode[]
+    variant?: string
   }

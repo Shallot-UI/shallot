@@ -52,7 +52,7 @@ export type ButtonProps<T> = T &
     shallot?: ButtonShallot
     state?: ButtonState
     disabled?: boolean
-    variant: string
+    variant?: string
   }
 
 export type ButtonVariant = ButtonShallot & {
