@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 16.0.1
+
+### Patch Changes
+
+- b92bb6b: SHALLOT-17-Introduce-a-new-Shallot-Provider-component-on-each-platform-to-simplify-boilerplate
+
 ## 16.0.0
 
 ### Minor Changes
