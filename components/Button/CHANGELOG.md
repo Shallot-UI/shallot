@@ -1,5 +1,16 @@
 # @shallot-ui/button
 
+## 0.17.1
+
+### Patch Changes
+
+- 6e6f3a0: SHALLOT-20: Make variants and children optional in Column and Row com…
+- Updated dependencies [b92bb6b]
+- Updated dependencies [6e6f3a0]
+  - @shallot-ui/core@16.0.1
+  - @shallot-ui/box@0.17.1
+  - @shallot-ui/row@0.17.1
+
 ## 0.17.0
 
 ### Minor Changes

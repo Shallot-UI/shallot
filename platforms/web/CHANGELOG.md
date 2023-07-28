@@ -1,5 +1,19 @@
 # @shallot-ui/web
 
+## 0.56.1
+
+### Patch Changes
+
+- b92bb6b: SHALLOT-17-Introduce-a-new-Shallot-Provider-component-on-each-platform-to-simplify-boilerplate
+- Updated dependencies [b92bb6b]
+- Updated dependencies [6e6f3a0]
+  - @shallot-ui/core@16.0.1
+  - @shallot-ui/box@0.17.1
+  - @shallot-ui/button@0.17.1
+  - @shallot-ui/column@0.17.1
+  - @shallot-ui/form-row@0.15.1
+  - @shallot-ui/row@0.17.1
+
 ## 0.56.0
 
 ### Minor Changes

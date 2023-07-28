@@ -1,5 +1,13 @@
 # stories
 
+## 0.18.3
+
+### Patch Changes
+
+- b92bb6b: SHALLOT-17-Introduce-a-new-Shallot-Provider-component-on-each-platform-to-simplify-boilerplate
+- Updated dependencies [b92bb6b]
+  - @shallot-ui/web@0.56.1
+
 ## 0.18.2
 
 ### Patch Changes
