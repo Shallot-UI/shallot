@@ -1,8 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react'
 import { useState } from 'react'
-import { ThemeProvider } from 'styled-components'
-
-import { makeTheme, Checkbox, Row } from '@shallot-ui/web'
+import { Checkbox, Row, ShallotProvider } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -32,8 +30,8 @@ export default {
 const Template: StoryFn<typeof Checkbox> = (args) => {
   const [value, setValue] = useState(false)
   return (
-    <ThemeProvider
-      theme={makeTheme({
+    <ShallotProvider
+      theme={{
         variants: {
           Checkbox: {
             // Edit variants here.
@@ -57,7 +55,7 @@ const Template: StoryFn<typeof Checkbox> = (args) => {
             },
           },
         },
-      })}
+      }}
     >
       <Row>
         <Checkbox
@@ -73,7 +71,7 @@ const Template: StoryFn<typeof Checkbox> = (args) => {
           setValue={(v) => setValue(!v)}
         />
       </Row>
-    </ThemeProvider>
+    </ShallotProvider>
   )
 }
 

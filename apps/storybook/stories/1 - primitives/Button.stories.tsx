@@ -1,7 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react'
-import { ThemeProvider } from 'styled-components'
-
-import { makeTheme, Button, Column, getUnits } from '@shallot-ui/web'
+import { Button, Column, getUnits, ShallotProvider } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -49,8 +47,8 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Button> = (args) => (
-  <ThemeProvider
-    theme={makeTheme({
+  <ShallotProvider
+    theme={{
       variants: {
         Button: {
           // Edit variants here.
@@ -71,12 +69,12 @@ const Template: StoryFn<typeof Button> = (args) => (
           },
         },
       },
-    })}
+    }}
   >
     <Column shallot={{ width: getUnits(20) }}>
       <Button title="Hello World" {...args} />
     </Column>
-  </ThemeProvider>
+  </ShallotProvider>
 )
 
 export const Default = Template.bind({})

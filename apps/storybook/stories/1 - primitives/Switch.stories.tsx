@@ -1,8 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react'
 import { useState } from 'react'
-import { ThemeProvider } from 'styled-components'
 
-import { makeTheme, Switch, Row } from '@shallot-ui/web'
+import { ShallotProvider, Switch, Row } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -30,8 +29,8 @@ export default {
 const Template: StoryFn<typeof Switch> = (args) => {
   const [value, setValue] = useState(false)
   return (
-    <ThemeProvider
-      theme={makeTheme({
+    <ShallotProvider
+      theme={{
         variants: {
           Switch: {
             switchVariant: {
@@ -46,7 +45,7 @@ const Template: StoryFn<typeof Switch> = (args) => {
             },
           },
         },
-      })}
+      }}
     >
       <Row>
         <Switch
@@ -63,7 +62,7 @@ const Template: StoryFn<typeof Switch> = (args) => {
           setValue={setValue}
         />
       </Row>
-    </ThemeProvider>
+    </ShallotProvider>
   )
 }
 
