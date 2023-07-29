@@ -87,7 +87,7 @@ export const withTagStyleProps =
         fontSize: getFontSize('md'),
         color: getColor(color, 700),
         lineHeight: getLineHeight('md'),
-        typeface: getTypeface(typeface, font),
+        ...getTypeface(typeface, font),
         transition: 'color 300ms ease-in-out',
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),

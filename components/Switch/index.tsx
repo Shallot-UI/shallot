@@ -124,7 +124,7 @@ export const withSwitchStyleProps =
     if (state.focused)
       styles = applyStyles(styles, {
         container: {
-          elevation: getElevation('focused'),
+          ...getElevation('focused'),
 
           // Variants (overrides)
           ...themeVariant?.state?.focused?.container,

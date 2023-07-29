@@ -37,7 +37,7 @@ Below are the default values for the elevations in the Shallot theme.
             <Column
               key={elevation}
               shallot={{
-                elevation: getElevation(elevation),
+                ...getElevation(elevation),
                 backgroundColor: getColor('Shading', 100),
                 borderRadius: getRadius('lg'),
                 height: getUnits(8),

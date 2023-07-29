@@ -162,7 +162,7 @@ export const withInputStyleProps =
         margin: getUnits(3 / 4),
         flexGrow: 1,
         letterSpacing: getLetterSpacing('md'),
-        typeface: getTypeface(typeface, font),
+        ...getTypeface(typeface, font),
 
         // Variants (overrides)
         ...themeVariant?.input,
@@ -172,7 +172,7 @@ export const withInputStyleProps =
     if (state.focused)
       styles = applyStyles(styles, {
         container: {
-          elevation: getElevation('focused'),
+          ...getElevation('focused'),
           backgroundColor: getColor(...colors.focused?.background),
           borderColor: getColor(...colors.focused?.border),
 

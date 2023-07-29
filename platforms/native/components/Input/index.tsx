@@ -6,7 +6,7 @@ import {
   InputProps,
   InputShallot,
   withInputStyleProps,
-} from '@shallot-ui/input/index'
+} from '@shallot-ui/input'
 import { ShallotProp } from '@shallot-ui/theme'
 
 const Container = styled.View(getStyle)
