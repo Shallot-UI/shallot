@@ -1,14 +1,21 @@
 import {
-  makeTheme,
   Column,
   GlobalStyle,
   Fold,
   getColor,
   getFontSize,
   getTypeface,
+  Text,
+  ShallotProvider,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  P,
 } from '@shallot-ui/web'
 import { StoryFn, Meta } from '@storybook/react'
-import { Text, ShallotProvider } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -52,19 +59,28 @@ const Template: StoryFn<typeof Text> = (args) => (
             fontSize: getFontSize('lg'),
             color: getColor('Shading', 800),
           },
+          H3: {
+            typeface: getTypeface('Body', 'Bold'),
+            fontSize: getFontSize('md'),
+            color: getColor('Shading', 800),
+          },
+          P: {
+            typeface: getTypeface('Body', 'Regular'),
+            fontSize: getFontSize('md'),
+            color: getColor('Shading', 800),
+          },
         },
       },
     }}
   >
     <GlobalStyle />
     <Fold alignCenter alignMiddle>
-      <Column unitWidth={20}>
-        <Text variant="H1" {...args}>
-          Heading 1
-        </Text>
-        <Text variant="H2" {...args}>
-          Heading 2
-        </Text>
+      <Column unitWidth={40}>
+        <H1 {...args}>Heading 1</H1>
+        <H2 {...args}>Heading 2</H2>
+        <H3 {...args}>Heading 3</H3>
+        <P {...args}>Paragraph</P>
+        <Text {...args}>Text</Text>
       </Column>
     </Fold>
   </ShallotProvider>
