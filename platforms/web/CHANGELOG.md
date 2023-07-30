@@ -1,5 +1,17 @@
 # @shallot-ui/web
 
+## 0.57.1
+
+### Patch Changes
+
+- f4ca71c: SHALLOT-24: Add Text variants for headings and paragraph
+- 81cd011: SHALLOT-23: Ensure inner input width fills its container
+- Updated dependencies [f4ca71c]
+- Updated dependencies [81cd011]
+  - @shallot-ui/text@0.18.1
+  - @shallot-ui/core@17.0.1
+  - @shallot-ui/input@0.18.1
+
 ## 0.57.0
 
 ### Minor Changes

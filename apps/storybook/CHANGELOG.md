@@ -1,5 +1,15 @@
 # stories
 
+## 0.18.4
+
+### Patch Changes
+
+- f4ca71c: SHALLOT-24: Add Text variants for headings and paragraph
+- 81cd011: SHALLOT-23: Ensure inner input width fills its container
+- Updated dependencies [f4ca71c]
+- Updated dependencies [81cd011]
+  - @shallot-ui/web@0.57.1
+
 ## 0.18.3
 
 ### Patch Changes
