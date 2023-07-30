@@ -1,13 +1,13 @@
 import { StoryFn, Meta } from '@storybook/react'
 import { useState } from 'react'
-import { Input, ShallotProvider } from '@shallot-ui/web'
+import { Fold, Input, Row, ShallotProvider } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Controls / Input',
   component: Input,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
     controls: {
       sort: 'requiredFirst',
     },
@@ -51,14 +51,18 @@ const Template: StoryFn<typeof Input> = (...args) => {
         },
       }}
     >
-      <Input
-        {...args}
-        variant="inputVariant"
-        defaultValue={value}
-        onChange={(e) => setValue(e.currentTarget.value)}
-        placeholder="Your Text Here"
-        label="label"
-      />
+      <Fold alignCenter alignMiddle>
+        <Row maxUnitWidth={40} fullWidth alignCenter>
+          <Input
+            {...args}
+            variant="inputVariant"
+            defaultValue={value}
+            onChange={(e) => setValue(e.currentTarget.value)}
+            placeholder="Your Text Here"
+            grow
+          />
+        </Row>
+      </Fold>
     </ShallotProvider>
   )
 }
