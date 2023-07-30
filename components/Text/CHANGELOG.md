@@ -1,5 +1,13 @@
 # @shallot-ui/text
 
+## 0.18.1
+
+### Patch Changes
+
+- f4ca71c: SHALLOT-24: Add Text variants for headings and paragraph
+- Updated dependencies [f4ca71c]
+  - @shallot-ui/core@17.0.1
+
 ## 0.18.0
 
 ### Minor Changes
