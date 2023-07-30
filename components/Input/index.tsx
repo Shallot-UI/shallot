@@ -165,7 +165,7 @@ export const withInputStyleProps =
     if (state.focused)
       styles = applyStyles(styles, {
         container: {
-          elevation: getElevation('focused'),
+          ...getElevation('focused'),
           backgroundColor: getColor(...colors.focused?.background),
           borderColor: getColor(...colors.focused?.border),
 

@@ -50,12 +50,12 @@ const Template: StoryFn<typeof Text> = (args) => (
       variants: {
         Text: {
           H1: {
-            typeface: getTypeface('Body', 'Bold'),
+            ...getTypeface('Body', 'Bold'),
             fontSize: getFontSize('xl'),
             color: getColor('Shading', 800),
           },
           H2: {
-            typeface: getTypeface('Body', 'Bold'),
+            ...getTypeface('Body', 'Bold'),
             fontSize: getFontSize('lg'),
             color: getColor('Shading', 800),
           },
