@@ -156,10 +156,6 @@ export const withInputStyleProps =
         fontSize: getFontSize('md'),
         margin: getUnits(3 / 4),
         letterSpacing: getLetterSpacing('md'),
-<<<<<<< HEAD
-        ...getTypeface(typeface, font),
-=======
->>>>>>> develop
 
         // Variants (overrides)
         ...themeVariant?.input,
