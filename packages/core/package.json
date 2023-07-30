@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/core",
-  "version": "17.0.1",
+  "version": "17.0.2",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
