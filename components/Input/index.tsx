@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
+import { DefaultTheme, useTheme } from 'styled-components'
 import {
   ColorName,
   ColorShadingValue,
@@ -7,15 +7,28 @@ import {
   Variant,
 } from '@shallot-ui/theme'
 import {
+  BackgroundColorProps,
+  BorderColorProps,
+  BorderProps,
+  FlexProps,
+  MarginProps,
+  SizingProps,
   applyStyles,
+  getBorderShallot,
   getColor,
   getColorShade,
   getElevation,
+  getFlexShallot,
   getFontSize,
   getLetterSpacing,
+  getMarginShallot,
   getRadius,
+  getSizingShallot,
   getTypeface,
   getUnits,
+  pullFlexProps,
+  pullMarginProps,
+  pullSizingProps,
 } from '@shallot-ui/core'
 
 export type InputStyleProps = {
@@ -39,15 +52,14 @@ export type InputStyleProps = {
   outline?: boolean
   underline?: boolean
   uppercase?: boolean
-  unitsAround?: number
-  unitsAbove?: number
-  unitsBelow?: number
-  unitsLeft?: number
-  unitsRight?: number
-  textAlign?: CSSObject['textAlign']
   typeface?: keyof DefaultTheme['typefaces']
   font?: string
-}
+} & MarginProps &
+  SizingProps &
+  FlexProps &
+  BorderProps &
+  BackgroundColorProps &
+  BorderColorProps
 
 export type InputShallot = {
   container: ShallotProp
@@ -62,20 +74,18 @@ export type InputState = {
   error?: boolean
 }
 
-export type InputProps<T> = T &
-  InputStyleProps & {
-    shallot?: InputShallot
-    state?: InputState
-    variant?: string
-  }
+export type InputProps<T> = T & {
+  shallot?: InputShallot
+  state?: InputState
+  variant?: string
+}
 
 export const withInputStyleProps =
   <T,>(InputComponent: ComponentType<T>) =>
-  (props: InputProps<T>) => {
+  (props: InputProps<T> & InputStyleProps) => {
     const {
       // General
       radius = 'md',
-      outline,
 
       // Colors
       colors = {
@@ -94,33 +104,16 @@ export const withInputStyleProps =
       },
 
       // Typography
-      // typeface = 'Body',
-      // font = 'Bold',
+      typeface = 'Body',
+      font = 'Regular',
       letterSpacing = 'md',
       fontSize = 'md',
-
-      // Casing
       uppercase,
-
-      // Text Alignment
-      textAlign = 'center',
-
-      // Underline
       underline,
-
-      unitsAround,
-      unitsAbove,
-      unitsBelow,
-      unitsLeft,
-      unitsRight,
 
       shallot,
       state = {},
-
       variant = 'default',
-
-      typeface = 'Body',
-      font = 'Regular',
 
       ...inputProps
     } = props
@@ -132,37 +125,41 @@ export const withInputStyleProps =
 
     let styles: InputShallot = {
       container: {
+        borderStyle: 'solid',
+        borderWidth: 1,
         display: 'flex',
-        backgroundColor: getColor(...colors.default?.background),
-        borderColor: getColor(...colors.default?.border),
         borderRadius: getRadius(radius),
         cursor: 'text',
-        borderWidth: 1,
-        borderStyle: 'solid',
         transition: `
           border-color 0.2s ease-in-out,
           background-color 0.2s ease-in-out,
           box-shadow 0.2s ease-in-out
         `,
-        ...(unitsAround && { margin: getUnits(unitsAround) }),
-        ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
-        ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
-        ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
-        ...(unitsRight && { marginRight: getUnits(unitsRight) }),
+        ...getBorderShallot(props),
+        ...getSizingShallot(props),
+        ...getMarginShallot(props),
+        ...getFlexShallot(props),
+
+        backgroundColor: getColor(...colors.default?.background),
+        borderColor: getColor(...colors.default?.border),
 
         // Variants (overrides)
         ...themeVariant?.container,
       },
       input: {
-        unitWidth: 1,
+        ...getTypeface(typeface, font),
+        display: 'flex',
+        flexGrow: 1,
         backgroundColor: 'transparent',
         color: getColorShade('Shading.900'),
         placeholderColor: getColorShade('Shading.500'),
         fontSize: getFontSize('md'),
         margin: getUnits(3 / 4),
-        flexGrow: 1,
         letterSpacing: getLetterSpacing('md'),
+<<<<<<< HEAD
         ...getTypeface(typeface, font),
+=======
+>>>>>>> develop
 
         // Variants (overrides)
         ...themeVariant?.input,
@@ -197,5 +194,10 @@ export const withInputStyleProps =
       input: shallot?.input,
     })
 
-    return <InputComponent {...(inputProps as T)} shallot={styles} />
+    let filteredInputProps: any = { ...inputProps }
+    filteredInputProps = pullMarginProps(filteredInputProps)
+    filteredInputProps = pullSizingProps(filteredInputProps)
+    filteredInputProps = pullFlexProps(filteredInputProps)
+
+    return <InputComponent {...(filteredInputProps as T)} shallot={styles} />
   }

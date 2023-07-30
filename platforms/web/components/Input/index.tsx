@@ -45,7 +45,7 @@ const StaticInput: FunctionComponent<
     }
   >
     {/* {startAdornment} */}
-    <Label shallot={shallot?.label}>
+    <Label shallot={{ display: 'flex', flexGrow: 1, ...shallot?.label }}>
       {/* {Label} */}
       <InnerInput ref={inputRef} shallot={shallot?.input} {...rest} />
     </Label>
