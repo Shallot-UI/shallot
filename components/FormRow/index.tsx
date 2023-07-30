@@ -84,7 +84,7 @@ export const withFormRowStyleProps =
         ...themeVariant?.container,
       },
       label: {
-        typeface: getTypeface(typeface),
+        ...getTypeface(typeface),
         lineHeight: getLineHeight('md'),
         letterSpacing: getLetterSpacing('md'),
         fontSize: getFontSize(labelFontSize || 'md'),
@@ -118,7 +118,7 @@ export const withFormRowStyleProps =
         unitsAbove: getUnits(1 / 4),
         transition: 'color 350ms ease-in-out',
         animation: 'fadeInDown',
-        typeface: getTypeface(typeface),
+        ...getTypeface(typeface),
         userSelect: 'none',
 
         // Variants (overrides)
@@ -130,7 +130,7 @@ export const withFormRowStyleProps =
         color: getColorShade('Danger.600'),
         unitsAbove: getUnits(1 / 4),
         animation: 'fadeInDown',
-        typeface: getTypeface(typeface),
+        ...getTypeface(typeface),
         userSelect: 'none',
 
         // Variants (overrides)
