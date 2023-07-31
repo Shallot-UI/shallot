@@ -42,7 +42,7 @@ export default {
 } as Meta<typeof Row>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Row> = (args) => (
+const Template: StoryFn<typeof Row> = (...args) => (
   <ShallotProvider
     theme={{
       variants: {
@@ -63,6 +63,8 @@ const Template: StoryFn<typeof Row> = (args) => (
     >
       <Row
         {...args}
+        alignMiddle
+        alignCentre
         shallot={{
           height: getUnits(20),
           width: getUnits(40),
@@ -75,8 +77,8 @@ const Template: StoryFn<typeof Row> = (args) => (
             borderRadius: getRadius(args.radius),
             margin: getUnits(1),
             marginBottom: getUnits(1 / 2),
-            height: '100%',
-            width: '100%',
+            height: '90%',
+            width: '90%',
           }}
         />
         <Column
@@ -85,8 +87,8 @@ const Template: StoryFn<typeof Row> = (args) => (
             borderRadius: getRadius(args.radius),
             margin: getUnits(1),
             marginBottom: getUnits(1 / 2),
-            height: '100%',
-            width: '100%',
+            height: '90%',
+            width: '90%',
           }}
         />
         <Column
@@ -95,8 +97,8 @@ const Template: StoryFn<typeof Row> = (args) => (
             borderRadius: getRadius(args.radius),
             margin: getUnits(1),
             marginBottom: getUnits(1 / 2),
-            height: '100%',
-            width: '100%',
+            height: '90%',
+            width: '90%',
           }}
         />
       </Row>
