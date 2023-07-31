@@ -1,5 +1,13 @@
 # @shallot-ui/column
 
+## 0.18.1
+
+### Patch Changes
+
+- 6de1f04: SHALLOT-22: Allow nested objects in style props.
+- Updated dependencies [6de1f04]
+  - @shallot-ui/core@17.0.2
+
 ## 0.18.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @shallot-ui/checkbox
 
+## 0.17.1
+
+### Patch Changes
+
+- 6de1f04: SHALLOT-22: Allow nested objects in style props.
+- Updated dependencies [6de1f04]
+  - @shallot-ui/text@0.18.2
+  - @shallot-ui/core@17.0.2
+
 ## 0.17.0
 
 ### Minor Changes

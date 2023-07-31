@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 17.0.2
+
+### Patch Changes
+
+- 6de1f04: SHALLOT-22: Allow nested objects in style props.
+
 ## 17.0.1
 
 ### Patch Changes

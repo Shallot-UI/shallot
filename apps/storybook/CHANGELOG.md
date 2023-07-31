@@ -1,5 +1,11 @@
 # stories
 
+## 0.18.5
+
+### Patch Changes
+
+- 6de1f04: SHALLOT-22: Allow nested objects in style props.
+
 ## 0.18.4
 
 ### Patch Changes
