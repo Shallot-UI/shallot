@@ -1,6 +1,6 @@
-import { Typeface } from '../../types'
+import { FontFamily } from '../../types'
 
-const System: Typeface = {
+const System: FontFamily = {
   name: 'System',
   alternates: ['sans-serif'],
   defaults: {
@@ -25,7 +25,7 @@ const System: Typeface = {
   },
 }
 
-const Monospace: Typeface = {
+const Monospace: FontFamily = {
   name: 'ui-monospace',
   alternates: [
     'Menlo',
@@ -96,7 +96,7 @@ const Monospace: Typeface = {
   },
 }
 
-export const DEFAULT_TYPEFACES = {
+export const DEFAULT_FONT_FAMILIES = {
   System,
   Body: System,
   Monospace,

@@ -1,4 +1,4 @@
-import { ColorShadingValue, Typeface } from '@shallot-ui/theme'
+import { ColorShadingValue, FontFamily, Typeface } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
 
 export const getVariant =
@@ -81,14 +81,14 @@ export const getUnits =
   ({ theme }: { theme: DefaultTheme }) =>
     theme.gridUnits[0] * value
 
-export const getElevation =
-  (value: keyof DefaultTheme['elevations']) =>
+export const getShadow =
+  (value: keyof DefaultTheme['shadows']) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme?.elevations?.[value])
+    if (!theme?.shadows?.[value])
       console.warn(
         `Elevation not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
-    return theme.elevations[value]
+    return theme.shadows[value]
   }
 
 export const getNumericValue = (value: boolean | number) => {
@@ -96,30 +96,39 @@ export const getNumericValue = (value: boolean | number) => {
   return value
 }
 
-const getDefaultTypeface = (theme: DefaultTheme) => {
-  const name = theme?.defaults?.typeface
-  const typeface =
-    name && theme?.typefaces?.[name as keyof typeof theme.typefaces]
-  return typeface || undefined
+const getDefaultFontFamily = (theme: DefaultTheme) => {
+  const name = theme?.defaults?.fontFamily
+  const fontFamily =
+    name && theme?.fontFamilies?.[name as keyof typeof theme.fontFamilies]
+  return fontFamily || undefined
 }
 
-const getFontForTypeface = (typeface: Typeface, font?: string) =>
-  font && typeface.fonts[font]
-    ? typeface.fonts[font]
-    : typeface.fonts[typeface.defaults.font]
+const getFontForFontFamily = (fontFamilies: FontFamily, font?: string) => {
+  return font && fontFamilies.fonts[font]
+    ? fontFamilies.fonts[font]
+    : fontFamilies.fonts[fontFamilies.defaults.font]
+}
 
-export const getTypeface =
-  <T extends keyof DefaultTheme['typefaces']>(
-    typeface?: T,
-    font?: keyof DefaultTheme['typefaces'][T]['fonts'],
+export const getFontFamily =
+  <T extends keyof DefaultTheme['fontFamilies']>(
+    fontFamily?: T,
+    font?: keyof DefaultTheme['fontFamily'][T]['fonts'],
   ) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!font && !typeface) return
-    const defaultTypeface = getDefaultTypeface(theme)
-    const typefaceDef =
-      (typeface && theme?.typefaces?.[typeface]) || defaultTypeface
-    return typefaceDef
-      ? getFontForTypeface(typefaceDef, font as string)
+    if (!font && !fontFamily) return
+    const defaultFontFamily = getDefaultFontFamily(theme)
+    const fontFamilyDef =
+      (fontFamily && theme?.fontFamilies?.[font]) || defaultFontFamily
+    console.log(
+      // 'defaultFontFamily',
+      // defaultFontFamily,
+      'tff',
+      theme?.fontFamilies?.[font],
+      'ff',
+      fontFamilyDef,
+    )
+    return fontFamilyDef
+      ? getFontForFontFamily(fontFamilyDef, font as string)
       : undefined
   }
 

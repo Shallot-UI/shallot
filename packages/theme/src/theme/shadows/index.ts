@@ -1,6 +1,6 @@
 import { DEFAULT_COLORS } from '../colors'
 
-export const DEFAULT_ELEVATIONS = {
+export const DEFAULT_SHADOWS = {
   pressable: {
     transform: 'translateY(0)',
     boxShadow: '0 4px 6px -4px rgba(0,0,0,0.4)',

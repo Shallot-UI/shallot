@@ -14,6 +14,7 @@ import {
   H5,
   H6,
   P,
+  getFontFamily,
 } from '@shallot-ui/web'
 import { StoryFn, Meta } from '@storybook/react'
 
@@ -47,25 +48,30 @@ export default {
 const Template: StoryFn<typeof Text> = (args) => (
   <ShallotProvider
     theme={{
+      defaults: {
+        fontFamilies: {
+          Body: { Regular: 'Roboto', Bold: 'Roboto', Italic: 'Roboto' },
+        },
+      },
       variants: {
         Text: {
           H1: {
-            ...getTypeface('Body', 'Bold'),
+            fontFamily: getFontFamily('Body', 'Bold'),
             fontSize: getFontSize('xl'),
             color: getColor('Shading', 800),
           },
           H2: {
-            ...getTypeface('Body', 'Bold'),
+            fontFamily: getFontFamily('Body', 'Bold'),
             fontSize: getFontSize('lg'),
             color: getColor('Shading', 800),
           },
           H3: {
-            typeface: getTypeface('Body', 'Bold'),
+            fontFamily: getFontFamily('Body', 'Bold'),
             fontSize: getFontSize('md'),
             color: getColor('Shading', 800),
           },
           P: {
-            typeface: getTypeface('Body', 'Regular'),
+            fontFamily: getFontFamily('Body', 'Regular'),
             fontSize: getFontSize('md'),
             color: getColor('Shading', 800),
           },

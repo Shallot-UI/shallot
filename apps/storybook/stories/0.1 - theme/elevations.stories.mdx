@@ -6,22 +6,23 @@ import {
   makeTheme,
   getUnits,
   getRadius,
-  getElevation,
+  getShadows,
   getFontSize,
+  getFontFamily,
   getColorShade,
   getColor,
   ShallotProvider,
 } from '@shallot-ui/web'
 
-<Meta title="🎨 Theme / Elevations" />
+<Meta title="🎨 Theme / Shadows" />
 
-# Elevations
+# Shadows
 
-Elevations are used to give depth and shadow to components such as `Row`, `Column`, and `Box`. They are defined in the theme as an object of keys and values, where each key corresponds to a specific elevation state and the value is an object that defines the `boxShadow` and `transform` properties.
+Shadows are used to give elevation & depth to components. They are defined in the theme as an object of keys and values, where each key corresponds to a specific shadow state and the value is an object that defines the `boxShadow` and `transform` properties.
 
 ## Default Values
 
-Below are the default values for the elevations in the Shallot theme.
+Below are the default values for the shadows in the Shallot theme.
 
 <Canvas>
   <ShallotProvider>
@@ -33,11 +34,11 @@ Below are the default values for the elevations in the Shallot theme.
     >
       <Row alignCenter unitsAround={4}>
         {['pressable', 'hover', 'pressed', 'focused', 'none'].map(
-          (elevation) => (
+          (shadowState) => (
             <Column
-              key={elevation}
+              key={shadowState}
               shallot={{
-                ...getElevation(elevation),
+                ...getShadows(shadowState),
                 backgroundColor: getColor('Shading', 100),
                 borderRadius: getRadius('lg'),
                 height: getUnits(8),
@@ -49,12 +50,12 @@ Below are the default values for the elevations in the Shallot theme.
             >
               <Text
                 shallot={{
-                  // typeface: "Monospace",
+                  // fontFamily: getFontFamily("Monospace"),
                   fontSize: getFontSize('sm'),
                   textColor: getColorShade('Shading.350'),
                 }}
               >
-                {elevation}
+                {shadowState}
               </Text>
             </Column>
           ),
@@ -70,13 +71,13 @@ Below are the default values for the elevations in the Shallot theme.
 - `focused`: The elevation state when the component is being focused.
 - `none`: The elevation state when the component has no elevation.
 
-## Customizing Elevations
+## Customizing Shadows
 
-You can customize the default elevations by passing an object to the `elevations` key of the theme object passed to `makeTheme()`. You don't have to define all of the keys, only the ones you want to override.
+You can customize the default shadows by passing an object to the `shadows` key of the theme object passed to the `ShallotProvider` component. You don't have to define all of the keys, only the ones you want to override.
 
 ```ts
 const myTheme = makeTheme({
-  elevations: {
+  shadows: {
     pressable: {
       transform: 'translateY(0)',
       boxShadow: '0 4px 6px -4px rgba(0,0,0,0.4)',
@@ -89,8 +90,8 @@ const myTheme = makeTheme({
 })
 ```
 
-To apply an elevation to a component, use the `elevation` prop.
+To apply a shadow to a component, use the `shadow` prop.
 
 ```jsx
-<Box elevation="pressable">This box has the "pressable" elevation.</Box>
+<Box shadow="pressable">This box has the "pressable" shadow.</Box>
 ```
