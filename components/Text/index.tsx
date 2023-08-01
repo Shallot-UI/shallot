@@ -8,14 +8,14 @@ import {
   getFontSize,
   getLetterSpacing,
   getLineHeight,
-  getTypeface,
+  getFontFamily,
   getUnits,
 } from '@shallot-ui/core'
 
 export type TextStyleProps = {
   textColor?: AllColorShades
   backgroundColor?: AllColorShades
-  typeface?: keyof DefaultTheme['typefaces']
+  fontFamily?: keyof DefaultTheme['fontFamilies']
   font?: string
   unitsAround?: number
   unitsAbove?: number
@@ -62,7 +62,7 @@ export const withTextStyleProps =
       minUnitWidth,
 
       // Typography
-      typeface,
+      fontFamily,
       font,
       lineHeight,
       letterSpacing,
@@ -87,7 +87,7 @@ export const withTextStyleProps =
 
     let textShallot: ShallotProp = {
       display: 'flex',
-      ...(typeface && { ...getTypeface(typeface, font) }),
+      ...(fontFamily && { ...getFontFamily(fontFamily, font) }),
       ...(uppercase && { textTransform: 'uppercase' }),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(unitsAround && { margin: getUnits(unitsAround) }),

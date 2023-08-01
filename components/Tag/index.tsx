@@ -8,7 +8,7 @@ import {
   getLetterSpacing,
   getLineHeight,
   getRadius,
-  getTypeface,
+  getFontFamily,
   getUnits,
 } from '@shallot-ui/core'
 
@@ -19,7 +19,7 @@ export type TagStyleProps = {
   uppercase?: boolean
   verticalUnitPadding?: number
   horizontalUnitPadding?: number
-  typeface?: keyof DefaultTheme['typefaces']
+  fontFamily?: keyof DefaultTheme['fontFamilies']
   font?: string
   letterSpacing?: keyof DefaultTheme['letterSpacings']
 }
@@ -44,7 +44,7 @@ export const withTagStyleProps =
       radius = 'md',
       // animation,
       outline,
-      typeface = 'Body',
+      fontFamily = 'Body',
       font = 'Bold',
 
       // Casing
@@ -87,7 +87,7 @@ export const withTagStyleProps =
         fontSize: getFontSize('md'),
         color: getColor(color, 700),
         lineHeight: getLineHeight('md'),
-        ...getTypeface(typeface, font),
+        ...getFontFamily(fontFamily, font),
         transition: 'color 300ms ease-in-out',
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),

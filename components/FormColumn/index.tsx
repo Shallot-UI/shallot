@@ -5,7 +5,7 @@ import {
   applyStyles,
   getUnits,
   getColorShade,
-  getTypeface,
+  getFontFamily,
   getFontSize,
   getLetterSpacing,
   getLineHeight,
@@ -22,7 +22,7 @@ export type FormColumnStyleProps = {
   labelFontSize?: keyof DefaultTheme['fontSizes']
   labelColor?: AllColorShades
 
-  typeface?: keyof DefaultTheme['typefaces']
+  fontFamily?: keyof DefaultTheme['fontFamilies']
 }
 
 export type FormColumnShallot = {
@@ -46,7 +46,7 @@ export const withFormColumnStyleProps =
       // General
       radius = 'md',
 
-      typeface = 'Body',
+      fontFamily = 'Body',
       labelFontSize,
       labelColor,
 
@@ -83,7 +83,7 @@ export const withFormColumnStyleProps =
         ...themeVariant?.container,
       },
       label: {
-        ...getTypeface(typeface),
+        ...getFontFamily(fontFamily),
         lineHeight: getLineHeight('md'),
         letterSpacing: getLetterSpacing('md'),
         fontSize: getFontSize(labelFontSize || 'md'),
@@ -107,7 +107,7 @@ export const withFormColumnStyleProps =
         unitsAbove: getUnits(1 / 4),
         transition: 'color 350ms ease-in-out',
         animation: 'fadeInDown',
-        ...getTypeface(typeface),
+        ...getFontFamily(fontFamily),
         userSelect: 'none',
 
         // Variants (overrides)
@@ -119,7 +119,7 @@ export const withFormColumnStyleProps =
         color: getColorShade('Danger.600'),
         unitsAbove: getUnits(1 / 4),
         animation: 'fadeInDown',
-        ...getTypeface(typeface),
+        ...getFontFamily(fontFamily),
         userSelect: 'none',
 
         // Variants (overrides)

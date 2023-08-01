@@ -4,7 +4,7 @@ import {
   Fold,
   getColor,
   getFontSize,
-  getTypeface,
+  getFontFamily,
   Text,
   ShallotProvider,
   H1,
@@ -28,7 +28,7 @@ export default {
     },
   },
   argTypes: {
-    typeface: {
+    fontFamily: {
       control: 'select',
       options: ['Body', 'Monospace', 'Display'],
     },
