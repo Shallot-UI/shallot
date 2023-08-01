@@ -17,14 +17,14 @@ import {
   getBorderShallot,
   getColor,
   getColorShade,
-  getElevation,
+  getShadow,
   getFlexShallot,
   getFontSize,
   getLetterSpacing,
   getMarginShallot,
   getRadius,
   getSizingShallot,
-  getTypeface,
+  getFontFamily,
   getUnits,
   pullFlexProps,
   pullMarginProps,
@@ -52,7 +52,7 @@ export type InputStyleProps = {
   outline?: boolean
   underline?: boolean
   uppercase?: boolean
-  typeface?: keyof DefaultTheme['typefaces']
+  fontFamily?: keyof DefaultTheme['fontFamilies']
   font?: string
 } & MarginProps &
   SizingProps &
@@ -104,7 +104,7 @@ export const withInputStyleProps =
       },
 
       // Typography
-      typeface = 'Body',
+      fontFamily = 'Body',
       font = 'Regular',
       letterSpacing = 'md',
       fontSize = 'md',
@@ -147,7 +147,7 @@ export const withInputStyleProps =
         ...themeVariant?.container,
       },
       input: {
-        ...getTypeface(typeface, font),
+        ...getFontFamily(fontFamily, font),
         display: 'flex',
         flexGrow: 1,
         backgroundColor: 'transparent',
@@ -165,7 +165,7 @@ export const withInputStyleProps =
     if (state.focused)
       styles = applyStyles(styles, {
         container: {
-          ...getElevation('focused'),
+          ...getShadow('focused'),
           backgroundColor: getColor(...colors.focused?.background),
           borderColor: getColor(...colors.focused?.border),
 

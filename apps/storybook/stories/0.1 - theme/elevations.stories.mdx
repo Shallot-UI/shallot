@@ -6,7 +6,7 @@ import {
   makeTheme,
   getUnits,
   getRadius,
-  getShadows,
+  getShadow,
   getFontSize,
   getFontFamily,
   getColorShade,
@@ -16,9 +16,9 @@ import {
 
 <Meta title="🎨 Theme / Shadows" />
 
-# Shadows
+# Shadow
 
-Shadows are used to give elevation & depth to components. They are defined in the theme as an object of keys and values, where each key corresponds to a specific shadow state and the value is an object that defines the `boxShadow` and `transform` properties.
+Shadow (box-shadow) is used to give elevation & depth to components. They are defined in the theme as an object of keys and values, where each key corresponds to a specific shadow state and the value is an object that defines the `boxShadow` and `transform` properties.
 
 ## Default Values
 
@@ -38,7 +38,7 @@ Below are the default values for the shadows in the Shallot theme.
             <Column
               key={shadowState}
               shallot={{
-                ...getShadows(shadowState),
+                ...getShadow(shadowState),
                 backgroundColor: getColor('Shading', 100),
                 borderRadius: getRadius('lg'),
                 height: getUnits(8),
@@ -65,19 +65,19 @@ Below are the default values for the shadows in the Shallot theme.
   </ShallotProvider>
 </Canvas>
 
-- `pressable`: The default elevation state for a pressable component.
-- `hover`: The elevation state when the component is being hovered over.
-- `pressed`: The elevation state when the component is being pressed.
-- `focused`: The elevation state when the component is being focused.
-- `none`: The elevation state when the component has no elevation.
+- `pressable`: The default box-shadow for a pressable component.
+- `hover`: The box-shadow when the component is being hovered over.
+- `pressed`: The box-shadow when the component is being pressed.
+- `focused`: The box-shadow when the component is being focused.
+- `none`: The box-shadow when the component has no shadow set.
 
 ## Customizing Shadows
 
-You can customize the default shadows by passing an object to the `shadows` key of the theme object passed to the `ShallotProvider` component. You don't have to define all of the keys, only the ones you want to override.
+You can customize the default shadow by passing an object to the `shadows` key of the theme object passed to the `ShallotProvider` component. You don't have to define all of the keys, only the ones you want to override.
 
 ```ts
 const myTheme = makeTheme({
-  shadows: {
+  shadow: {
     pressable: {
       transform: 'translateY(0)',
       boxShadow: '0 4px 6px -4px rgba(0,0,0,0.4)',

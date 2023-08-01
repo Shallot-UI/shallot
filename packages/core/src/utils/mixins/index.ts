@@ -1,4 +1,4 @@
-import { ColorShadingValue, FontFamily, Typeface } from '@shallot-ui/theme'
+import { ColorShadingValue, FontFamily } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
 
 export const getVariant =
@@ -86,7 +86,7 @@ export const getShadow =
   ({ theme }: { theme: DefaultTheme }) => {
     if (!theme?.shadows?.[value])
       console.warn(
-        `Elevation not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
+        `Shadow not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
     return theme.shadows[value]
   }
