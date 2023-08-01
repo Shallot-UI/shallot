@@ -2,7 +2,6 @@ import { StoryFn, Meta } from '@storybook/react'
 import {
   Column,
   DEFAULT_THEME,
-  makeTheme,
   getColor,
   getUnits,
   getRadius,

@@ -2,7 +2,6 @@ import { StoryFn, Meta } from '@storybook/react'
 
 import {
   DEFAULT_THEME,
-  makeTheme,
   Box,
   Fold,
   Column,

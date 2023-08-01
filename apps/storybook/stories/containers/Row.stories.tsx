@@ -5,7 +5,6 @@ import {
   Fold,
   Column,
   DEFAULT_THEME,
-  makeTheme,
   getColor,
   getUnits,
   getRadius,
