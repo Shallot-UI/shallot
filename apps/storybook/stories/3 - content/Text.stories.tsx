@@ -47,10 +47,13 @@ export default {
 const Template: StoryFn<typeof Text> = (args) => (
   <ShallotProvider
     theme={{
+      defaults: {
+        fontFamily: 'Body',
+      },
       variants: {
         Text: {
           H1: {
-            ...getTypeface('Body', 'Bold'),
+            fontFamily: getFontFamily('Body', 'Italic'),
             fontSize: getFontSize('xl'),
             color: getColor('Shading', 800),
           },

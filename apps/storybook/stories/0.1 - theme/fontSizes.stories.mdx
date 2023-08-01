@@ -40,13 +40,17 @@ Below are the default values for the font sizes in the Shallot theme.
 
 ## Custom Font Sizes
 
-You can override the default font sizes by passing an object to the fontSizes key of the theme object passed to `makeTheme()`. You don't have to define all of the keys, only the ones you want to override.
+You can override the default font sizes by passing an object to the fontSizes key of the theme object passed to the `theme` prop of the `ShallotProvider` component. You don't have to define all of the keys, only the ones you want to override.
 
 ```ts
-const myTheme = makeTheme({
+const myTheme = {
   fontSizes: {
     xxs: 8, // define a new font size
     md: 18, // override a default font size
   },
-})
+}
+
+<ShallotProvider theme={myTheme}>
+  ...// Your app
+</ShallotProvider>
 ```

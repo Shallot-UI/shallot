@@ -25,7 +25,6 @@ Below are the default values for the radii in the Shallot theme.
   <ShallotProvider>
     <Column
       shallot={{
-        backgroundColor: getColor('Shading', 125),
         borderRadius: getRadius('xl'),
       }}
     >
@@ -35,7 +34,7 @@ Below are the default values for the radii in the Shallot theme.
             key={radius}
             shallot={{
               backgroundColor: getColor('Shading', 100),
-              borderColor: getColor('Shading', 250),
+              borderColor: getColor('Shading', 200),
               borderRadius: getRadius(radius),
               borderWidth: 1,
               height: getUnits(5),
@@ -49,7 +48,7 @@ Below are the default values for the radii in the Shallot theme.
               shallot={{
                 // fontFamily: getFontFamily('Monospace')
                 fontSize: getFontSize('sm'),
-                textColor: getColor('Shading', 350),
+                textColor: getColor('Shading', 300),
               }}
             >
               {radius}
@@ -65,13 +64,17 @@ Below are the default values for the radii in the Shallot theme.
 
 ### Custom Radii
 
-You can override the default radii by passing an object to the `radii` key of the theme object passed to `makeTheme()`. You don't have to define all of the keys, only the ones you want to override.
+You can override the default radii by passing an object to the `radii` key of the theme object passed to the `theme` prop of the `ShallotProvider` component. You don't have to define all of the keys, only the ones you want to override.
 
 ```ts
-const myTheme = makeTheme({
+const myTheme = {
   radii: {
     xs: 2, // define a new radius
     md: 4, // override a default radius
   },
-})
+}
+
+<ShallotProvider theme={myTheme}>
+  ...// Your app
+</ShallotProvider>
 ```

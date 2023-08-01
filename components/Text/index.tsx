@@ -87,7 +87,7 @@ export const withTextStyleProps =
 
     let textShallot: ShallotProp = {
       display: 'flex',
-      ...(fontFamily && { ...getFontFamily(fontFamily, font) }),
+      ...(fontFamily && { fontFamily: getFontFamily(fontFamily, font) }),
       ...(uppercase && { textTransform: 'uppercase' }),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(unitsAround && { margin: getUnits(unitsAround) }),

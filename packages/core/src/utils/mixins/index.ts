@@ -88,7 +88,9 @@ export const getElevation =
       console.warn(
         `Shadow not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
-    return theme.elevations[value]
+
+    console.log(theme.shadows[value])
+    return theme.shadows[value]
   }
 
 export const getNumericValue = (value: boolean | number) => {
@@ -108,18 +110,18 @@ const getFontForTypeface = (typeface: Typeface, font?: string) =>
     ? typeface.fonts[font]
     : typeface.fonts[typeface.defaults.font]
 
-export const getTypeface =
-  <T extends keyof DefaultTheme['typefaces']>(
-    typeface?: T,
-    font?: keyof DefaultTheme['typefaces'][T]['fonts'],
+export const getFontFamily =
+  <T extends keyof DefaultTheme['fontFamilies']>(
+    fontFamily?: T,
+    font?: keyof DefaultTheme['fontFamilies'][T]['fonts'],
   ) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!font && !typeface) return
-    const defaultTypeface = getDefaultTypeface(theme)
-    const typefaceDef =
-      (typeface && theme?.typefaces?.[typeface]) || defaultTypeface
-    return typefaceDef
-      ? getFontForTypeface(typefaceDef, font as string)
+    if (!font && !fontFamily) return
+    const defaultFontFamily = getDefaultFontFamily(theme)
+    const fontFamilyDef =
+      (fontFamily && theme?.fontFamilies?.[font]) || defaultFontFamily
+    return fontFamilyDef
+      ? getFontForFontFamily(fontFamilyDef, font as string)
       : undefined
   }
 
