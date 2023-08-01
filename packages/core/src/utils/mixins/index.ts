@@ -88,8 +88,6 @@ export const getElevation =
       console.warn(
         `Shadow not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
-
-    console.log(theme.shadows[value])
     return theme.shadows[value]
   }
 
