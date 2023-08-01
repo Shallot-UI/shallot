@@ -81,7 +81,7 @@ You can customize the default shadow by passing an object to the `shadows` key o
 const myTheme = {
   shadow: {
     100: {
-      boxShadow: '0 4px 6px -4px rgba(0,0,0,0.4)',
+      boxShadow: '0 4px 6px -4px rgba(0,0,0,0.04)',
     },
     ...,
     900: {
@@ -95,7 +95,7 @@ const myTheme = {
 </ShallotProvider>
 ```
 
-To apply a shadow to a component, use the `shadow` prop.
+To apply a shadow to a component, use the `getShadow` MixIn along with the `shallot` prop.
 
 ```jsx
 <Box shallot={boxShadow: getShadow(500)}>This box has the "500" shadow.</Box>
