@@ -118,15 +118,7 @@ export const getFontFamily =
     if (!font && !fontFamily) return
     const defaultFontFamily = getDefaultFontFamily(theme)
     const fontFamilyDef =
-      (fontFamily && theme?.fontFamilies?.[font]) || defaultFontFamily
-    console.log(
-      // 'defaultFontFamily',
-      // defaultFontFamily,
-      'tff',
-      theme?.fontFamilies?.[font],
-      'ff',
-      fontFamilyDef,
-    )
+      (fontFamily && theme?.fontFamilies?.[fontFamily]) || defaultFontFamily
     return fontFamilyDef
       ? getFontForFontFamily(fontFamilyDef, font as string)
       : undefined
