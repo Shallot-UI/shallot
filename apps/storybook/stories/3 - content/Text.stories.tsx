@@ -50,7 +50,7 @@ const Template: StoryFn<typeof Text> = (args) => (
       variants: {
         Text: {
           H1: {
-            fontFamily: getFontFamily('Monospace'),
+            fontFamily: getFontFamily('Body', 'Bold'),
             fontSize: getFontSize('xl'),
             color: getColor('Shading', 800),
           },
