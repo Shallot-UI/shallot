@@ -150,7 +150,7 @@ export const withButtonStyleProps =
         display: 'block',
         textAlign,
         flex: 1,
-        ...getFontFamily(fontFamily, font),
+        fontFamily: getFontFamily(fontFamily, font),
         color: getColor('Shading', 50),
         fontSize: getFontSize(fontSize),
         marginLeft: getUnits(horizontalUnitPadding),

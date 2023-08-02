@@ -69,8 +69,6 @@ export const withCheckboxStyleProps =
       | Variant<CheckboxShallot>
       | undefined
 
-    console.log(themeVariant)
-
     let styles: CheckboxShallot = {
       container: {
         backgroundColor: getColor('Shading', 100),

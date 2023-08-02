@@ -81,10 +81,10 @@ export const getUnits =
   ({ theme }: { theme: DefaultTheme }) =>
     theme.gridUnits[0] * value
 
-export const getElevation =
-  (value: keyof DefaultTheme['elevations']) =>
+export const getShadow =
+  (value: keyof DefaultTheme['shadows']) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme?.elevations?.[value])
+    if (!theme?.shadows?.[value])
       console.warn(
         `Shadow not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
@@ -96,28 +96,29 @@ export const getNumericValue = (value: boolean | number) => {
   return value
 }
 
-const getDefaultTypeface = (theme: DefaultTheme) => {
-  const name = theme?.defaults?.typeface
-  const typeface =
-    name && theme?.typefaces?.[name as keyof typeof theme.typefaces]
-  return typeface || undefined
+const getDefaultFontFamily = (theme: DefaultTheme) => {
+  const name = theme?.defaults?.fontFamily
+  const fontFamily =
+    name && theme?.fontFamilies?.[name as keyof typeof theme.fontFamilies]
+  return fontFamily || undefined
 }
 
-const getFontForTypeface = (typeface: Typeface, font?: string) =>
-  font && typeface.fonts[font]
-    ? typeface.fonts[font]
-    : typeface.fonts[typeface.defaults.font]
+const getFontForFontFamily = (fontFamilies: FontFamily, font?: string) => {
+  return font && fontFamilies.fonts[font]
+    ? fontFamilies.fonts[font]
+    : fontFamilies.fonts[fontFamilies.defaults.font]
+}
 
 export const getFontFamily =
   <T extends keyof DefaultTheme['fontFamilies']>(
     fontFamily?: T,
-    font?: keyof DefaultTheme['fontFamilies'][T]['fonts'],
+    font?: keyof DefaultTheme['fontFamily'][T]['fonts'],
   ) =>
   ({ theme }: { theme: DefaultTheme }) => {
     if (!font && !fontFamily) return
     const defaultFontFamily = getDefaultFontFamily(theme)
     const fontFamilyDef =
-      (fontFamily && theme?.fontFamilies?.[font]) || defaultFontFamily
+      (fontFamily && theme?.fontFamilies?.[fontFamily]) || defaultFontFamily
     return fontFamilyDef
       ? getFontForFontFamily(fontFamilyDef, font as string)
       : undefined

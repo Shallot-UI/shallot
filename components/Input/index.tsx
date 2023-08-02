@@ -147,7 +147,7 @@ export const withInputStyleProps =
         ...themeVariant?.container,
       },
       input: {
-        ...getFontFamily(fontFamily, font),
+        fontFamily: getFontFamily(fontFamily, font),
         display: 'flex',
         flexGrow: 1,
         backgroundColor: 'transparent',

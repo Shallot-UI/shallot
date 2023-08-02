@@ -83,7 +83,7 @@ export const withFormColumnStyleProps =
         ...themeVariant?.container,
       },
       label: {
-        ...getFontFamily(fontFamily),
+        fontFamily: getFontFamily(fontFamily),
         lineHeight: getLineHeight('md'),
         letterSpacing: getLetterSpacing('md'),
         fontSize: getFontSize(labelFontSize || 'md'),
@@ -107,7 +107,7 @@ export const withFormColumnStyleProps =
         unitsAbove: getUnits(1 / 4),
         transition: 'color 350ms ease-in-out',
         animation: 'fadeInDown',
-        ...getFontFamily(fontFamily),
+        fontFamily: getFontFamily(fontFamily),
         userSelect: 'none',
 
         // Variants (overrides)
@@ -119,7 +119,7 @@ export const withFormColumnStyleProps =
         color: getColorShade('Danger.600'),
         unitsAbove: getUnits(1 / 4),
         animation: 'fadeInDown',
-        ...getFontFamily(fontFamily),
+        fontFamily: getFontFamily(fontFamily),
         userSelect: 'none',
 
         // Variants (overrides)
