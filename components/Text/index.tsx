@@ -16,7 +16,7 @@ export type TextStyleProps = {
   textColor?: AllColorShades
   backgroundColor?: AllColorShades
   fontFamily?: string
-  font?: string
+  fontStyle?: 'normal' | 'italic' | 'oblique' | 'inherit'
   unitsAround?: number
   unitsAbove?: number
   unitsBelow?: number
@@ -63,7 +63,7 @@ export const withTextStyleProps =
 
       // Typography
       fontFamily,
-      font,
+      fontStyle,
       lineHeight,
       letterSpacing,
       fontSize,
@@ -88,6 +88,8 @@ export const withTextStyleProps =
     let textShallot: ShallotProp = {
       display: 'flex',
       ...(fontFamily && { fontFamily: getFontFamily(fontFamily) }),
+      ...(fontStyle && { fontStyle }),
+      ...(fontSize && { fontSize: getFontSize(fontSize) }),
       ...(uppercase && { textTransform: 'uppercase' }),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(unitsAround && { margin: getUnits(unitsAround) }),
@@ -101,7 +103,6 @@ export const withTextStyleProps =
       ...(maxUnitWidth && { maxWidth: getUnits(maxUnitWidth) }),
       ...(minUnitHeight && { minHeight: getUnits(minUnitHeight) }),
       ...(minUnitWidth && { minWidth: getUnits(minUnitWidth) }),
-      ...(fontSize && { fontSize: getFontSize(fontSize) }),
       ...(letterSpacing && { letterSpacing: getLetterSpacing(letterSpacing) }),
       ...(lineHeight && { lineHeight: getLineHeight(lineHeight) }),
       ...(leftText && { textAlign: 'left' }),

@@ -32,9 +32,9 @@ export default {
       control: 'select',
       options: ['Body', 'Monospace', 'Display'],
     },
-    font: {
+    fontStyle: {
       control: 'select',
-      options: ['Regular', 'Bold', 'Italic'],
+      options: ['Normal', 'Italic', 'Oblique', 'Inherit'],
     },
     underline: { control: 'boolean' },
     letterSpacing: { control: 'select', options: ['sm', 'md', 'lg'] },
