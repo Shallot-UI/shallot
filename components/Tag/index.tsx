@@ -19,7 +19,7 @@ export type TagStyleProps = {
   uppercase?: boolean
   verticalUnitPadding?: number
   horizontalUnitPadding?: number
-  fontFamily?: keyof DefaultTheme['fontFamilies']
+  fontFamily?: string
   font?: string
   letterSpacing?: keyof DefaultTheme['letterSpacings']
 }
@@ -87,7 +87,7 @@ export const withTagStyleProps =
         fontSize: getFontSize('md'),
         color: getColor(color, 700),
         lineHeight: getLineHeight('md'),
-        fontFamily: getFontFamily(fontFamily, font),
+        fontFamily: getFontFamily(fontFamily),
         transition: 'color 300ms ease-in-out',
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),

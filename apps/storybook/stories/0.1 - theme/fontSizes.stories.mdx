@@ -6,6 +6,7 @@ import {
   makeTheme,
   getUnits,
   getFontSize,
+  getFontFamily,
   ShallotProvider,
 } from '@shallot-ui/web'
 
@@ -26,7 +27,7 @@ Below are the default values for the font sizes in the Shallot theme.
         <Text
           key={fontSize}
           shallot={{
-            // fontFamily: getFontFamily("Body"),
+            fontFamily: getFontFamily('Body'),
             margin: getUnits(1),
             fontSize: getFontSize(fontSize),
           }}

@@ -22,7 +22,7 @@ export type FormRowStyleProps = {
   labelFontSize?: keyof DefaultTheme['fontSizes']
   labelColor?: AllColorShades
 
-  fontFamily?: keyof DefaultTheme['fontFamilies']
+  fontFamily?: string
 }
 
 export type FormRowShallot = {

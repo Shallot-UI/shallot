@@ -15,7 +15,7 @@ import {
 export type TextStyleProps = {
   textColor?: AllColorShades
   backgroundColor?: AllColorShades
-  fontFamily?: keyof DefaultTheme['fontFamilies']
+  fontFamily?: string
   font?: string
   unitsAround?: number
   unitsAbove?: number
@@ -87,7 +87,7 @@ export const withTextStyleProps =
 
     let textShallot: ShallotProp = {
       display: 'flex',
-      ...(fontFamily && { fontFamily: getFontFamily(fontFamily, font) }),
+      ...(fontFamily && { fontFamily: getFontFamily(fontFamily) }),
       ...(uppercase && { textTransform: 'uppercase' }),
       ...(textColor && { color: getColorShade(textColor) }),
       ...(unitsAround && { margin: getUnits(unitsAround) }),

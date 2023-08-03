@@ -52,7 +52,7 @@ export type InputStyleProps = {
   outline?: boolean
   underline?: boolean
   uppercase?: boolean
-  fontFamily?: keyof DefaultTheme['fontFamilies']
+  fontFamily?: string
   font?: string
 } & MarginProps &
   SizingProps &
