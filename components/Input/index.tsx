@@ -52,7 +52,7 @@ export type InputStyleProps = {
   outline?: boolean
   underline?: boolean
   uppercase?: boolean
-  fontFamily?: string
+  fontFamily?: keyof DefaultTheme['fontFamilies']
   font?: string
 } & MarginProps &
   SizingProps &
@@ -147,7 +147,7 @@ export const withInputStyleProps =
         ...themeVariant?.container,
       },
       input: {
-        fontFamily: getFontFamily(fontFamily, font),
+        fontFamily: getFontFamily(fontFamily),
         display: 'flex',
         flexGrow: 1,
         backgroundColor: 'transparent',
@@ -165,7 +165,7 @@ export const withInputStyleProps =
     if (state.focused)
       styles = applyStyles(styles, {
         container: {
-          ...getShadow('focused'),
+          boxShadow: getShadow('focused'),
           backgroundColor: getColor(...colors.focused?.background),
           borderColor: getColor(...colors.focused?.border),
 

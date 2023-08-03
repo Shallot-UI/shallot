@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import { DefaultTheme, useTheme } from 'styled-components'
-import { AllColorShades, ShallotProp, Variant } from '@shallot-ui/theme'
+import { AllColorShades, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
   getBreakpoints,
@@ -15,7 +15,7 @@ import {
 export type TextStyleProps = {
   textColor?: AllColorShades
   backgroundColor?: AllColorShades
-  fontFamily?: string
+  fontFamily?: keyof DefaultTheme['fontFamilies']
   font?: string
   unitsAround?: number
   unitsAbove?: number

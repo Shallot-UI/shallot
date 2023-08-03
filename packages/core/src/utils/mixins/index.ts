@@ -97,7 +97,7 @@ export const getNumericValue = (value: boolean | number) => {
 }
 
 export const getFontFamily =
-  (fontFamily: FontFamily) =>
+  (fontFamily: keyof DefaultTheme['fontFamilies']) =>
   ({ theme }: { theme: DefaultTheme }) => {
     if (!theme?.fontFamilies?.[fontFamily])
       console.warn(

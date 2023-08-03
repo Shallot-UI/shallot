@@ -11,7 +11,10 @@ export const makeTheme = <T extends ThemeOptions>(options: T) =>
     },
     breakpoints: options?.breakpoints || DEFAULT_THEME_OPTIONS.breakpoints,
     gridUnits: options?.gridUnits || DEFAULT_THEME_OPTIONS.gridUnits,
-    fontFamilies: options?.fontFamilies || DEFAULT_THEME_OPTIONS.fontFamilies,
+    fontFamilies: {
+      ...DEFAULT_THEME_OPTIONS.fontFamilies,
+      ...options?.fontFamilies,
+    },
     variants: options?.variants || DEFAULT_THEME_OPTIONS.variants,
     shadows: {
       ...DEFAULT_THEME_OPTIONS.shadows,

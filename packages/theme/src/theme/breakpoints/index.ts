@@ -1,5 +1,3 @@
-import { DefaultTheme } from 'styled-components'
-
 export const DEFAULT_BREAKPOINTS = {} as {
-  fontSizes?: Partial<DefaultTheme['fontFamilies']>
+  fontSizes?: Record<string, number>
 }

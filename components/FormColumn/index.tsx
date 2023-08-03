@@ -22,7 +22,7 @@ export type FormColumnStyleProps = {
   labelFontSize?: keyof DefaultTheme['fontSizes']
   labelColor?: AllColorShades
 
-  fontFamily?: string
+  fontFamily?: keyof DefaultTheme['fontFamilies']
 }
 
 export type FormColumnShallot = {

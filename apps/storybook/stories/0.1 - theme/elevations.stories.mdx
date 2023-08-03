@@ -33,12 +33,12 @@ Below are the default values for the shadows in the Shallot theme.
       }}
     >
       <Row alignCenter unitsAround={4}>
-        {['pressable', 'hover', 'pressed', 'focused', 'none'].map(
+        {[100, 200, 300, 400, 500, 600, 700, 800, 900, 'focused', 'none'].map(
           (shadowState) => (
             <Column
               key={shadowState}
               shallot={{
-                ...getShadow(shadowState),
+                boxShadow: getShadow(shadowState),
                 backgroundColor: getColor('Shading', 100),
                 borderRadius: getRadius('lg'),
                 height: getUnits(8),
@@ -50,7 +50,7 @@ Below are the default values for the shadows in the Shallot theme.
             >
               <Text
                 shallot={{
-                  // fontFamily: getFontFamily("Monospace"),
+                  fontFamily: getFontFamily('Monospace'),
                   fontSize: getFontSize('sm'),
                   textColor: getColorShade('Shading.350'),
                 }}

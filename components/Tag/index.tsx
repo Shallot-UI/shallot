@@ -19,7 +19,7 @@ export type TagStyleProps = {
   uppercase?: boolean
   verticalUnitPadding?: number
   horizontalUnitPadding?: number
-  fontFamily?: string
+  fontFamily?: keyof DefaultTheme['fontFamilies']
   font?: string
   letterSpacing?: keyof DefaultTheme['letterSpacings']
 }

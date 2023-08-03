@@ -115,7 +115,7 @@ export const withCheckboxStyleProps =
     if (state.focused)
       styles = applyStyles(styles, {
         container: {
-          ...getShadow('focused'),
+          boxShadow: getShadow('focused'),
 
           // Variants (overrides)
           ...themeVariant?.state?.focused?.container,

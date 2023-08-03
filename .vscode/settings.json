@@ -7,6 +7,6 @@
     "**/node_modules": true,
     "**/.gitignore": true,
     "**/styled.d.ts": true,
-    "**/tsconfig.json": true,
+    "**/tsconfig.json": true
   }
 }

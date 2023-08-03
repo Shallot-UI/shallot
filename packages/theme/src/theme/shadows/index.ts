@@ -11,4 +11,5 @@ export const DEFAULT_SHADOWS = {
   700: 'rgba(0, 0, 0, 0.4) 0 20px 40px',
   800: 'rgba(0, 0, 0, 0.5) 0 24px 48px',
   900: 'rgba(0, 0, 0, 0.6) 0 28px 56px',
-}
+  focused: `0 0 0 4px ${DEFAULT_COLORS.Primary[300]}29`,
+} as const
