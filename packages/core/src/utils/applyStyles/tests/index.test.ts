@@ -1,6 +1,6 @@
 import { applyStyles } from '../index'
 
-describe('applyStyles', () => {
+describe('Test the `applyStyles` function', () => {
   // Test case 1: Merge two style objects with no overrides
   it('should merge two style objects with no overrides', () => {
     const baseStyle = {
