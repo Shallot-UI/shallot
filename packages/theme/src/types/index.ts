@@ -21,14 +21,7 @@ export type ColorShadingValue =
 
 export type Palette = Record<number, string>
 
-export type FontFamily = {
-  name: string
-  alternates?: string[]
-  fonts: Record<string, CSSObject>
-  defaults: {
-    font: string
-  }
-}
+export type FontFamily = string
 
 export type ColorName = keyof DefaultTheme['colors']
 

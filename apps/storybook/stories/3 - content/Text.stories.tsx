@@ -50,22 +50,23 @@ const Template: StoryFn<typeof Text> = (args) => (
       variants: {
         Text: {
           H1: {
-            fontFamily: getFontFamily('Body', 'Bold'),
+            fontFamily: getFontFamily('Monospace'),
+            fontWeight: 'bold',
             fontSize: getFontSize('xl'),
             color: getColor('Shading', 800),
           },
           H2: {
-            fontFamily: getFontFamily('Body', 'Bold'),
+            fontFamily: getFontFamily('Body'),
             fontSize: getFontSize('lg'),
             color: getColor('Shading', 800),
           },
           H3: {
-            fontFamily: getFontFamily('Body', 'Bold'),
+            fontFamily: getFontFamily('Body'),
             fontSize: getFontSize('md'),
             color: getColor('Shading', 800),
           },
           P: {
-            fontFamily: getFontFamily('Body', 'Regular'),
+            fontFamily: getFontFamily('Body'),
             fontSize: getFontSize('md'),
             color: getColor('Shading', 800),
           },

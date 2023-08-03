@@ -31,7 +31,7 @@ export type ButtonStyleProps = {
   unitsBelow?: number
   unitsLeft?: number
   unitsRight?: number
-  fontFamily?: keyof DefaultTheme['fontFamilies']
+  fontFamily?: string
   font?: string
 }
 
@@ -150,7 +150,7 @@ export const withButtonStyleProps =
         display: 'block',
         textAlign,
         flex: 1,
-        fontFamily: getFontFamily(fontFamily, font),
+        fontFamily: getFontFamily(fontFamily),
         color: getColor('Shading', 50),
         fontSize: getFontSize(fontSize),
         marginLeft: getUnits(horizontalUnitPadding),

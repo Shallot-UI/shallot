@@ -96,32 +96,14 @@ export const getNumericValue = (value: boolean | number) => {
   return value
 }
 
-const getDefaultFontFamily = (theme: DefaultTheme) => {
-  const name = theme?.defaults?.fontFamily
-  const fontFamily =
-    name && theme?.fontFamilies?.[name as keyof typeof theme.fontFamilies]
-  return fontFamily || undefined
-}
-
-const getFontForFontFamily = (fontFamilies: FontFamily, font?: string) => {
-  return font && fontFamilies.fonts[font]
-    ? fontFamilies.fonts[font]
-    : fontFamilies.fonts[fontFamilies.defaults.font]
-}
-
 export const getFontFamily =
-  <T extends keyof DefaultTheme['fontFamilies']>(
-    fontFamily?: T,
-    font?: keyof DefaultTheme['fontFamily'][T]['fonts'],
-  ) =>
+  (fontFamily: FontFamily) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!font && !fontFamily) return
-    const defaultFontFamily = getDefaultFontFamily(theme)
-    const fontFamilyDef =
-      (fontFamily && theme?.fontFamilies?.[fontFamily]) || defaultFontFamily
-    return fontFamilyDef
-      ? getFontForFontFamily(fontFamilyDef, font as string)
-      : undefined
+    if (!theme?.fontFamilies?.[fontFamily])
+      console.warn(
+        `Font Family not found for "${fontFamily}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
+      )
+    return theme?.fontFamilies?.[fontFamily]
   }
 
 export const getFullWidth =
