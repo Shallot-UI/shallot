@@ -1,5 +1,14 @@
 # @shallot-ui/column
 
+## 0.18.2
+
+### Patch Changes
+
+- Updated dependencies [a8024c0]
+  - @shallot-ui/core@18.0.0
+  - @shallot-ui/theme@1.0.0
+  - @shallot-ui/box@0.18.1
+
 ## 0.18.1
 
 ### Patch Changes
