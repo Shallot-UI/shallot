@@ -1,5 +1,16 @@
 # @shallot-ui/core
 
+## 18.0.0
+
+### Major Changes
+
+- a8024c0: Release
+
+### Patch Changes
+
+- Updated dependencies [a8024c0]
+  - @shallot-ui/theme@1.0.0
+
 ## 17.0.2
 
 ### Patch Changes

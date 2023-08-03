@@ -1,5 +1,20 @@
 # @shallot-ui/input
 
+## 1.0.0
+
+### Major Changes
+
+- a8024c0: Release
+
+### Patch Changes
+
+- Updated dependencies [a8024c0]
+  - @shallot-ui/text@1.0.0
+  - @shallot-ui/core@18.0.0
+  - @shallot-ui/theme@1.0.0
+  - @shallot-ui/box@0.18.1
+  - @shallot-ui/row@0.18.1
+
 ## 0.18.2
 
 ### Patch Changes
