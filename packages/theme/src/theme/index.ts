@@ -5,16 +5,20 @@ import DEFAULT_THEME_OPTIONS from './defaultThemeOptions'
 export const makeTheme = <T extends ThemeOptions>(options: T) =>
   Object.freeze({
     defaults: {
-      typeface:
-        options?.defaults?.typeface || DEFAULT_THEME_OPTIONS.defaults.typeface,
+      fontFamily:
+        options?.defaults?.fontFamily ||
+        DEFAULT_THEME_OPTIONS.defaults.fontFamily,
     },
     breakpoints: options?.breakpoints || DEFAULT_THEME_OPTIONS.breakpoints,
     gridUnits: options?.gridUnits || DEFAULT_THEME_OPTIONS.gridUnits,
-    typefaces: options?.typefaces || DEFAULT_THEME_OPTIONS.typefaces,
+    fontFamilies: {
+      ...DEFAULT_THEME_OPTIONS.fontFamilies,
+      ...options?.fontFamilies,
+    },
     variants: options?.variants || DEFAULT_THEME_OPTIONS.variants,
-    elevations: {
-      ...DEFAULT_THEME_OPTIONS.elevations,
-      ...options?.elevations,
+    shadows: {
+      ...DEFAULT_THEME_OPTIONS.shadows,
+      ...options?.shadows,
     },
     colors: {
       ...DEFAULT_THEME_OPTIONS.colors,

@@ -74,7 +74,7 @@ export const Default = Template.bind({})
 Default.args = {
   backgroundColor: 'Shading.100',
   radius: 'xl',
-  elevation: 'pressable',
+  shadow: 400,
 }
 export const Variant = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

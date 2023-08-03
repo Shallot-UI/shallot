@@ -3,7 +3,7 @@ import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
-  getElevation,
+  getShadow,
   getRadius,
   getUnits,
 } from '@shallot-ui/core'
@@ -124,7 +124,7 @@ export const withSwitchStyleProps =
     if (state.focused)
       styles = applyStyles(styles, {
         container: {
-          ...getElevation('focused'),
+          boxShadow: getShadow('focused'),
 
           // Variants (overrides)
           ...themeVariant?.state?.focused?.container,

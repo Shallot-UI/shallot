@@ -5,7 +5,7 @@ import {
   applyStyles,
   getUnits,
   getColorShade,
-  getTypeface,
+  getFontFamily,
   getFontSize,
   getLetterSpacing,
   getLineHeight,
@@ -22,7 +22,7 @@ export type FormRowStyleProps = {
   labelFontSize?: keyof DefaultTheme['fontSizes']
   labelColor?: AllColorShades
 
-  typeface?: keyof DefaultTheme['typefaces']
+  fontFamily?: keyof DefaultTheme['fontFamilies']
 }
 
 export type FormRowShallot = {
@@ -47,7 +47,7 @@ export const withFormRowStyleProps =
       // General
       radius = 'md',
 
-      typeface = 'Body',
+      fontFamily = 'Body',
       labelFontSize,
       labelColor,
 
@@ -84,7 +84,7 @@ export const withFormRowStyleProps =
         ...themeVariant?.container,
       },
       label: {
-        ...getTypeface(typeface),
+        fontFamily: getFontFamily(fontFamily),
         lineHeight: getLineHeight('md'),
         letterSpacing: getLetterSpacing('md'),
         fontSize: getFontSize(labelFontSize || 'md'),
@@ -118,7 +118,7 @@ export const withFormRowStyleProps =
         unitsAbove: getUnits(1 / 4),
         transition: 'color 350ms ease-in-out',
         animation: 'fadeInDown',
-        ...getTypeface(typeface),
+        fontFamily: getFontFamily(fontFamily),
         userSelect: 'none',
 
         // Variants (overrides)
@@ -130,7 +130,7 @@ export const withFormRowStyleProps =
         color: getColorShade('Danger.600'),
         unitsAbove: getUnits(1 / 4),
         animation: 'fadeInDown',
-        ...getTypeface(typeface),
+        fontFamily: getFontFamily(fontFamily),
         userSelect: 'none',
 
         // Variants (overrides)
