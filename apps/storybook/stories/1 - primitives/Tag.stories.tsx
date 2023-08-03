@@ -17,7 +17,7 @@ export default {
       control: 'select',
       options: ['Primary', 'Success', 'Danger', 'Warning'],
     },
-    typeface: {
+    fontFamily: {
       control: 'select',
       options: ['Body', 'Monospace', 'Display'],
     },

@@ -52,7 +52,7 @@ import {
 const buttonStyles: ButtonComponentStyles = {
   container: {
     backgroundColor: 'Primary.300',
-    elevation: 'pressable',
+    shadow: 400,
     cursor: 'pointer',
   },
   label: {
@@ -85,7 +85,7 @@ Notice that many of these styles are references to theme tokens. You can see an 
       styles={{
         container: {
           backgroundColor: 'Primary.300',
-          elevation: 'pressable',
+          shadow: 400,
           cursor: 'pointer',
           transition:
             'background-color 200ms ease-in-out, transform 300ms ease-in-out, box-shadow 300ms ease-in-out',
@@ -135,14 +135,14 @@ const getButtonStyles = (state: ButtonState) => {
     styles = applyStyles(styles, {
       container: {
         backgroundColor: 'Primary.250',
-        elevation: 'hover',
+        shadow: 600,
       },
     })
 
   // We can also change the styles when the button is focused.
   if (state.focused)
     styles = applyStyles(styles, {
-      container: { elevation: 'focused' },
+      container: { shadow: 'focused' },
     })
 
   return styles

@@ -3,7 +3,7 @@ import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
-  getElevation,
+  getShadow,
   getRadius,
   getUnits,
 } from '@shallot-ui/core'
@@ -109,11 +109,9 @@ export const withSwitchStyleProps =
           left 200ms ease-in-out,
           border-color 500ms ease-in-out
         `,
-        style: {
-          position: 'absolute',
-          left: 1,
-          top: 1,
-        },
+        position: 'absolute',
+        left: 1,
+        top: 1,
 
         // Variants (overrides)
         ...themeVariant?.handle,
@@ -124,7 +122,7 @@ export const withSwitchStyleProps =
     if (state.focused)
       styles = applyStyles(styles, {
         container: {
-          ...getElevation('focused'),
+          boxShadow: getShadow('focused'),
 
           // Variants (overrides)
           ...themeVariant?.state?.focused?.container,
@@ -155,7 +153,7 @@ export const withSwitchStyleProps =
         handle: {
           backgroundColor: getColor('Shading', 100),
           borderColor: getColor('Shading', 100),
-          style: { left: size * 12 - 3 },
+          left: size * 12 - 3,
 
           // Variants (overrides)
           ...themeVariant?.state?.hovered?.handle,

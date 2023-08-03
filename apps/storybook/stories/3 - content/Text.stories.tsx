@@ -4,7 +4,7 @@ import {
   Fold,
   getColor,
   getFontSize,
-  getTypeface,
+  getFontFamily,
   Text,
   ShallotProvider,
   H1,
@@ -28,7 +28,7 @@ export default {
     },
   },
   argTypes: {
-    typeface: {
+    fontFamily: {
       control: 'select',
       options: ['Body', 'Monospace', 'Display'],
     },
@@ -50,22 +50,23 @@ const Template: StoryFn<typeof Text> = (args) => (
       variants: {
         Text: {
           H1: {
-            ...getTypeface('Body', 'Bold'),
+            fontFamily: getFontFamily('Monospace'),
+            fontWeight: 'bold',
             fontSize: getFontSize('xl'),
             color: getColor('Shading', 800),
           },
           H2: {
-            ...getTypeface('Body', 'Bold'),
+            fontFamily: getFontFamily('Body'),
             fontSize: getFontSize('lg'),
             color: getColor('Shading', 800),
           },
           H3: {
-            typeface: getTypeface('Body', 'Bold'),
+            fontFamily: getFontFamily('Body'),
             fontSize: getFontSize('md'),
             color: getColor('Shading', 800),
           },
           P: {
-            typeface: getTypeface('Body', 'Regular'),
+            fontFamily: getFontFamily('Body'),
             fontSize: getFontSize('md'),
             color: getColor('Shading', 800),
           },
