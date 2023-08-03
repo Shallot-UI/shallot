@@ -13,6 +13,8 @@
   ],
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
     "build": "tsup ./index.ts --format cjs --minify --dts --clean"
   },

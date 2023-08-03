@@ -13,7 +13,10 @@
   ],
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup ./index.ts --format cjs --minify --dts --clean"
+    "build": "tsup ./index.ts --format cjs --minify --dts --clean",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage"
   },
   "dependencies": {
     "@shallot-ui/box": "^0.18.0",
@@ -21,15 +24,16 @@
     "@shallot-ui/checkbox": "^0.17.0",
     "@shallot-ui/column": "^0.18.0",
     "@shallot-ui/core": "^17.0.0",
+    "@shallot-ui/fold": "^0.16.0",
     "@shallot-ui/form-column": "^0.16.0",
     "@shallot-ui/form-row": "^0.16.0",
-    "@shallot-ui/fold": "^0.16.0",
     "@shallot-ui/input": "^0.18.0",
     "@shallot-ui/row": "^0.18.0",
     "@shallot-ui/switch": "^0.17.0",
     "@shallot-ui/tag": "^0.17.0",
     "@shallot-ui/text": "^0.18.0",
     "@shallot-ui/theme": "^0.39.0",
+
     "react-native-fast-image": "^8.6.3"
   },
   "peerDependencies": {
@@ -51,6 +55,9 @@
     "styled-components": "*",
     "tsconfig": "*",
     "tsup": "^6.5.0",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "@testing-library/react": "^14.0.0",
+    "jest": "^29.6.2",
+    "ts-jest": "^29.1.1"
   }
 }
