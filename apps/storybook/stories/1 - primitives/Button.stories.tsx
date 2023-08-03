@@ -21,7 +21,7 @@ export default {
       control: 'select',
       options: ['left', 'center', 'right', 'justify'],
     },
-    typeface: {
+    fontFamily: {
       control: 'select',
       options: ['Body', 'Monospace', 'Display'],
     },
@@ -103,5 +103,5 @@ Square.args = { radius: 'none' }
 export const Outline = Template.bind({})
 Outline.args = { outline: true }
 
-export const Typeface = Template.bind({})
-Typeface.args = { typeface: 'Monospace' }
+export const FontFamily = Template.bind({})
+FontFamily.args = { fontFamily: 'Monospace' }

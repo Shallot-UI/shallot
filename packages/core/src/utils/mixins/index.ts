@@ -1,4 +1,4 @@
-import { ColorShadingValue, Typeface } from '@shallot-ui/theme'
+import { ColorShadingValue, FontFamily } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
 
 export const getVariant =
@@ -81,14 +81,14 @@ export const getUnits =
   ({ theme }: { theme: DefaultTheme }) =>
     theme.gridUnits[0] * value
 
-export const getElevation =
-  (value: keyof DefaultTheme['elevations']) =>
+export const getShadow =
+  (value: keyof DefaultTheme['shadows']) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme?.elevations?.[value])
+    if (!theme?.shadows?.[value])
       console.warn(
-        `Elevation not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
+        `Shadow not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
       )
-    return theme.elevations[value]
+    return theme.shadows[value]
   }
 
 export const getNumericValue = (value: boolean | number) => {
@@ -96,31 +96,14 @@ export const getNumericValue = (value: boolean | number) => {
   return value
 }
 
-const getDefaultTypeface = (theme: DefaultTheme) => {
-  const name = theme?.defaults?.typeface
-  const typeface =
-    name && theme?.typefaces?.[name as keyof typeof theme.typefaces]
-  return typeface || undefined
-}
-
-const getFontForTypeface = (typeface: Typeface, font?: string) =>
-  font && typeface.fonts[font]
-    ? typeface.fonts[font]
-    : typeface.fonts[typeface.defaults.font]
-
-export const getTypeface =
-  <T extends keyof DefaultTheme['typefaces']>(
-    typeface?: T,
-    font?: keyof DefaultTheme['typefaces'][T]['fonts'],
-  ) =>
+export const getFontFamily =
+  (fontFamily: FontFamily) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!font && !typeface) return
-    const defaultTypeface = getDefaultTypeface(theme)
-    const typefaceDef =
-      (typeface && theme?.typefaces?.[typeface]) || defaultTypeface
-    return typefaceDef
-      ? getFontForTypeface(typefaceDef, font as string)
-      : undefined
+    if (!theme?.fontFamilies?.[fontFamily])
+      console.warn(
+        `Font Family not found for "${fontFamily}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
+      )
+    return theme?.fontFamilies?.[fontFamily]
   }
 
 export const getFullWidth =

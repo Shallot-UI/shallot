@@ -21,14 +21,7 @@ export type ColorShadingValue =
 
 export type Palette = Record<number, string>
 
-export type Typeface = {
-  name: string
-  alternates?: string[]
-  fonts: Record<string, CSSObject>
-  defaults: {
-    font: string
-  }
-}
+export type FontFamily = string
 
 export type ColorName = keyof DefaultTheme['colors']
 
@@ -51,7 +44,7 @@ export type ShallotProp<T = CSSObject> = Omit<CSSProperties, keyof T> &
 export type Variant<T = any> = T & { state?: { [state: string]: T } }
 
 export interface ThemeOptions {
-  defaults?: { typeface?: string }
+  defaults?: { fontFamily?: string }
   gridUnits?: number[]
   colors?: { [name: string]: { [shade: string]: string } }
   fontSizes?: { [name: string]: number }
@@ -64,7 +57,7 @@ export interface ThemeOptions {
       radii?: { [name: string]: number }
     }
   }
-  typefaces?: { [name: string]: Typeface }
-  elevations?: { [name: string]: CSSProp }
+  fontFamilies?: { [name: string]: FontFamily }
+  shadows?: { [name: string]: CSSProp }
   variants?: { [component: string]: { [variant: string]: Variant } }
 }

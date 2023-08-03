@@ -37,7 +37,7 @@ export const scopeGetStyle =
 
         // In some cases, values can be objects. When they are, we want to
         // merge them into the shallot object directly rather than under their
-        // key. For example, "elevation" is an object containing box shadow,
+        // key. For example, "Shadow" is an object containing box shadow,
         // border, and transform values.
         value = typeof value === 'object' ? value : { [key]: value }
 

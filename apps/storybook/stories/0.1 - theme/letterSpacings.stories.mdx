@@ -6,7 +6,7 @@ import {
   makeTheme,
   getUnits,
   getLetterSpacing,
-  getTypeface,
+  getFontFamily,
   getFontSize,
   ShallotProvider,
 } from '@shallot-ui/web'
@@ -30,7 +30,7 @@ Below are the default values for the letter spacings in the Shallot theme.
           shallot={{
             margin: getUnits(1),
             letterSpacing: getLetterSpacing(letterSpacing),
-            ...getTypeface('Body'),
+            fontFamily: getFontFamily('Body'),
             fontSize: getFontSize('md'),
           }}
         >

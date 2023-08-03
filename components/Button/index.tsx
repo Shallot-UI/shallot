@@ -9,8 +9,8 @@ import {
   getLineHeight,
   getFontSize,
   getUnits,
-  getElevation,
-  getTypeface,
+  getShadow,
+  getFontFamily,
 } from '@shallot-ui/core'
 
 export type ButtonStyleProps = {
@@ -31,7 +31,7 @@ export type ButtonStyleProps = {
   unitsBelow?: number
   unitsLeft?: number
   unitsRight?: number
-  typeface?: keyof DefaultTheme['typefaces']
+  fontFamily?: string
   font?: string
 }
 
@@ -79,7 +79,7 @@ export const withButtonStyleProps =
       unitsRight,
 
       // Typography
-      typeface = 'Body',
+      fontFamily = 'Body',
       font = 'Bold',
       letterSpacing = 'md',
       fontSize = 'md',
@@ -118,7 +118,7 @@ export const withButtonStyleProps =
 
     let buttonShallot: ButtonShallot = {
       container: {
-        ...getElevation('pressable'),
+        ...getShadow('pressable'),
         borderRadius: getRadius(radius),
         backgroundColor: getColor(color, shades.default),
         borderColor: getColor(color, shades.default),
@@ -150,7 +150,7 @@ export const withButtonStyleProps =
         display: 'block',
         textAlign,
         flex: 1,
-        ...getTypeface(typeface, font),
+        fontFamily: getFontFamily(fontFamily),
         color: getColor('Shading', 50),
         fontSize: getFontSize(fontSize),
         marginLeft: getUnits(horizontalUnitPadding),
@@ -171,7 +171,7 @@ export const withButtonStyleProps =
     if (state.hovered)
       buttonShallot = applyStyles(buttonShallot, {
         container: {
-          ...getElevation('hover'),
+          ...getShadow('hover'),
           backgroundColor: getColor(color, shades.hovered),
           borderColor: getColor(color, shades.hovered),
 
@@ -183,7 +183,7 @@ export const withButtonStyleProps =
     if (state.pressed)
       buttonShallot = applyStyles(buttonShallot, {
         container: {
-          ...getElevation('pressed'),
+          ...getShadow('pressed'),
           backgroundColor: getColor(color, shades.pressed),
           borderColor: getColor(color, shades.pressed),
 
@@ -195,7 +195,7 @@ export const withButtonStyleProps =
     if (state.focused)
       buttonShallot = applyStyles(buttonShallot, {
         container: {
-          ...getElevation('focused'),
+          ...getShadow('focused'),
 
           // Variants (overrides)
           ...themeVariant?.state?.pressed?.container,

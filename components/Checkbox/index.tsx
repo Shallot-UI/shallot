@@ -4,7 +4,7 @@ import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
-  getElevation,
+  getShadow,
   getRadius,
   getUnits,
 } from '@shallot-ui/core'
@@ -69,8 +69,6 @@ export const withCheckboxStyleProps =
       | Variant<CheckboxShallot>
       | undefined
 
-    console.log(themeVariant)
-
     let styles: CheckboxShallot = {
       container: {
         backgroundColor: getColor('Shading', 100),
@@ -117,7 +115,7 @@ export const withCheckboxStyleProps =
     if (state.focused)
       styles = applyStyles(styles, {
         container: {
-          ...getElevation('focused'),
+          ...getShadow('focused'),
 
           // Variants (overrides)
           ...themeVariant?.state?.focused?.container,
