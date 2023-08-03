@@ -34,7 +34,7 @@ export default {
     },
     fontStyle: {
       control: 'select',
-      options: ['Normal', 'Italic', 'Oblique', 'Inherit'],
+      options: ['Regular', 'Bold', 'Italic'],
     },
     underline: { control: 'boolean' },
     letterSpacing: { control: 'select', options: ['sm', 'md', 'lg'] },
@@ -50,7 +50,7 @@ const Template: StoryFn<typeof Text> = (args) => (
       variants: {
         Text: {
           H1: {
-            fontFamily: getFontFamily('Monospace'),
+            fontFamily: getFontFamily('Body'),
             fontWeight: 'bold',
             fontSize: getFontSize('xl'),
             color: getColor('Shading', 800),
