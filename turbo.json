@@ -11,7 +11,9 @@
     "test:watch": {
       "cache": false
     },
-    
+    "test:coverage": {
+      "cache": false
+    },
     "lint": {
       "outputs": []
     },

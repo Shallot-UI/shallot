@@ -16,7 +16,7 @@
     "build": "tsup ./index.ts --format cjs --minify --dts --clean",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage"
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@shallot-ui/web": "^0.57.0"

@@ -1,10 +1,16 @@
-import { ColorShadingValue, FontFamily } from '@shallot-ui/theme'
+import { ColorShadingValue } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
 
 export const getVariant =
   (component: keyof DefaultTheme['variants'], name: string = 'default') =>
-  ({ theme }: { theme: DefaultTheme }) =>
-    theme?.variants?.[component]?.[name]
+  ({ theme }: { theme: DefaultTheme }) => {
+    const variant = theme?.variants?.[component]?.[name]
+    if (!variant)
+      console.warn(
+        `Variant not found for component "${component}" and name "${name}". Are you sure it's defined correctly in your theme and you're using a ShallotProvider? More info: https://www.shallotui.com/?path=/docs/%F0%9F%8E%A8-theme-variants--docs`,
+      )
+    return variant
+  }
 
 export const getColor =
   (value: keyof DefaultTheme['colors'], shade: ColorShadingValue) =>
