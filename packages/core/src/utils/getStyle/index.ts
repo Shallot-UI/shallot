@@ -1,6 +1,14 @@
 import { ShallotProp } from '@shallot-ui/theme'
 import { CSSObject, DefaultTheme } from 'styled-components'
 
+/**
+ * Returns a function that generates CSS styles based on a given `shallot` object.
+ * The `shallot` object is a set of key-value pairs where the key is a CSS property and the value is either a string or a function that returns a string.
+ * If the value is a function, it will be called with the `theme` object as its argument.
+ * If the value is an object, `getStyle` will be called recursively on that object.
+ * @param shallot - An object containing CSS properties and values.
+ * @returns A function that generates CSS styles based on the `shallot` object.
+ */
 export const getStyle =
   <T extends { shallot?: ShallotProp }>({ shallot = {} }: T) =>
   ({ theme }: { theme: DefaultTheme }): CSSObject =>
@@ -21,6 +29,15 @@ export const getStyle =
       return acc
     }, {} as CSSObject)
 
+/**
+ * Returns a function that generates CSS styles based on a given `shallot` object and a `variant` string.
+ * The `variant` string is used to select a variant from the `variants` object in the `theme` object.
+ * The `shallot` object is a set of key-value pairs where the key is a CSS property and the value is either a string or a function that returns a string.
+ * If the value is a function, it will be called with the `theme` object as its argument.
+ * If the value is an object, `scopeGetStyle` will be called recursively on that object.
+ * @param variantNamespace - An optional string representing the namespace of the variant.
+ * @returns A function that generates CSS styles based on the `shallot` object and the `variant` string.
+ */
 export const scopeGetStyle =
   (variantNamespace?: string) =>
   <T extends { shallot?: {}; variant?: string }>({
