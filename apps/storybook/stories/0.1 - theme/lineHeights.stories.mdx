@@ -34,15 +34,19 @@ Below are the default values for the line heights in the Shallot theme.
 
 ### Custom Line Heights
 
-You can override the default line heights by passing an object to the `lineHeights` key of the theme object passed to `makeTheme()`. You don't have to define all of the keys, only the ones you want to override.
+You can override the default line heights by passing an object to the `lineHeights` key of the theme object passed to the `theme` prop of the `ShallotProvider` component. You don't have to define all of the keys, only the ones you want to override.
 
 ```ts
-const myTheme = makeTheme({
+const myTheme = {
   lineHeights: {
     xxs: 1.05, // define a new line height
     md: 1.5, // override a default line height
   },
-})
+}
+
+<ShallotProvider theme={myTheme}>
+  ...// Your app
+</ShallotProvider>
 ```
 
 To apply a line height to a `Text` component, use the `lineHeight` prop.

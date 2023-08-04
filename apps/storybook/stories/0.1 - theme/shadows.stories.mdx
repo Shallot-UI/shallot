@@ -1,0 +1,102 @@
+import { Canvas, Meta } from '@storybook/addon-docs'
+import {
+  Column,
+  Row,
+  Text,
+  makeTheme,
+  getUnits,
+  getRadius,
+  getShadow,
+  getFontSize,
+  getFontFamily,
+  getColorShade,
+  getColor,
+  ShallotProvider,
+} from '@shallot-ui/web'
+
+<Meta title="🎨 Theme / Shadows" />
+
+# Shadow
+
+Shadow (box-shadow) is used to give depth to components. They are defined in the theme as an object of keys and values, where each key is a number ranging from 100 to 900 (in increments of `100`), and the value is a string that defines the CSS `boxShadow` property.
+
+## Default Values
+
+Below are the default values for the shadows in the Shallot theme.
+
+<Canvas>
+  <ShallotProvider>
+    <Column
+      shallot={{
+        borderRadius: getRadius('xl'),
+      }}
+    >
+      <Row alignCenter unitsAround={4}>
+        {[
+          '0',
+          '100',
+          '200',
+          '300',
+          '400',
+          '500',
+          '600',
+          '700',
+          '800',
+          '900',
+        ].map((shadow) => (
+          <Column
+            key={shadow}
+            shallot={{
+              shadow: getShadow(shadow),
+              backgroundColor: getColor('Shading', 100),
+              borderRadius: getRadius('lg'),
+              height: getUnits(5),
+              flex: 1,
+              margin: getUnits(1),
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Text
+              shallot={{
+                fontFamily: getFontFamily('Body'),
+                fontSize: getFontSize('sm'),
+                textColor: getColorShade('Shading.100'),
+              }}
+            >
+              {shadow}
+            </Text>
+          </Column>
+        ))}
+      </Row>
+    </Column>
+  </ShallotProvider>
+</Canvas>
+
+## Customizing Shadows
+
+You can customize the default shadow by passing an object to the `shadows` key of the theme object passed to the `theme` prop of the `ShallotProvider` component. You don't have to define all of the keys, only the ones you want to override.
+
+```ts
+const myTheme = {
+  shadow: {
+    100: {
+      boxShadow: '0 4px 6px -4px rgba(0,0,0,0.04)',
+    },
+    ...,
+    900: {
+      boxShadow: '0 4px 12px -4px rgba(0,0,0,0.4)',
+    },
+  },
+}
+
+<ShallotProvider theme={myTheme}>
+  ...// Your app
+</ShallotProvider>
+```
+
+To apply a shadow to a component, use the `getShadow` MixIn along with the `shallot` prop.
+
+```jsx
+<Box shallot={boxShadow: getShadow(500)}>This box has the "500" shadow.</Box>
+```
