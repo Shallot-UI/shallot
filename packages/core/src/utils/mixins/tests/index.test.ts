@@ -3,7 +3,7 @@ import { getVariant } from '..'
 import { makeTheme } from '@shallot-ui/theme'
 
 // GETVARIANT //
-describe.only('Test the `getVariant` function', () => {
+describe('Test the `getVariant` function', () => {
   const theme = makeTheme({
     variants: {
       Button: {
@@ -40,7 +40,8 @@ describe.only('Test the `getVariant` function', () => {
       .spyOn(console, 'warn')
       .mockImplementation(() => {})
 
-    const component = 'componentWithWrongName'
+    // Argument of type 'string' is not assignable to parameter of type 'Capitalize<string>'.
+    const component = 'ComponentWithWrongName'
     const name = 'variantWithWrongName'
     getVariant(component, name)({ theme })
 

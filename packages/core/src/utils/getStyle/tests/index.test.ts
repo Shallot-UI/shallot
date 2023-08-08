@@ -1,9 +1,9 @@
 import { ThemeOptions, makeTheme } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components/native'
 import { getStyle, scopeGetStyle } from '..'
-import { getColor, getFontSize } from '../../mixins'
+import { getColor, getFontSize, getShadow } from '../../mixins'
 
-describe('Test the `getStyle` function', () => {
+describe.only('Test the `getStyle` function', () => {
   const theme = makeTheme({
     colors: {
       Primary: {
@@ -21,6 +21,11 @@ describe('Test the `getStyle` function', () => {
       sm: 12,
       md: 16,
       lg: 20,
+    },
+    shadows: {
+      500: '2px 2px 4px gray',
+      600: '4px 4px 8px gray',
+      700: '8px 8px 16px gray',
     },
   })
 
@@ -100,5 +105,18 @@ describe('Test the `getStyle` function', () => {
       fontSize: undefined,
       boxShadow: undefined,
     })
+  })
+
+  it('should return a CSSObject , not an array', () => {
+    const shallotProp = {
+      color: getColor('Primary', 500),
+      fontSize: getFontSize('md'),
+      boxShadow: getShadow(500),
+    }
+
+    const result = getStyle({ shallot: shallotProp })({ theme })
+    console.log(result)
+
+    expect(Array.isArray(result)).toBe(false)
   })
 })
