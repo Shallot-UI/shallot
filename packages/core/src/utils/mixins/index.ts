@@ -1,4 +1,4 @@
-import { ColorShadingValue, FontFamily } from '@shallot-ui/theme'
+import { ColorShadingValue } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
 
 export const getVariant =

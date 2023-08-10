@@ -1,5 +1,5 @@
-import { ShallotProp } from '@shallot-ui/theme'
 import { CSSObject, DefaultTheme } from 'styled-components'
+import { ShallotProp } from '@shallot-ui/theme'
 
 export const getStyle =
   <T extends { shallot?: ShallotProp }>({ shallot = {} }: T) =>

@@ -1,49 +1,30 @@
 import { ComponentType } from 'react'
 import { DefaultTheme, useTheme } from 'styled-components'
+import { AllColorShades, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
-  ColorName,
-  ColorShadingValue,
-  ShallotProp,
-  Variant,
-} from '@shallot-ui/theme'
-import {
-  BackgroundColorProps,
-  BorderColorProps,
-  BorderProps,
-  FlexProps,
-  MarginProps,
-  SizingProps,
   applyStyles,
-  getBorderShallot,
-  getColor,
   getColorShade,
-  getShadow,
-  getFlexShallot,
+  getFontFamily,
   getFontSize,
   getLetterSpacing,
-  getMarginShallot,
   getRadius,
-  getSizingShallot,
-  getFontFamily,
+  getShadow,
   getUnits,
-  pullFlexProps,
-  pullMarginProps,
-  pullSizingProps,
 } from '@shallot-ui/core'
 
 export type InputStyleProps = {
   colors?: {
     default: {
-      background: [ColorName, ColorShadingValue]
-      border: [ColorName, ColorShadingValue]
+      background: AllColorShades
+      border: AllColorShades
     }
     focused: {
-      background: [ColorName, ColorShadingValue]
-      border: [ColorName, ColorShadingValue]
+      background: AllColorShades
+      border: AllColorShades
     }
     error: {
-      background: [ColorName, ColorShadingValue]
-      border: [ColorName, ColorShadingValue]
+      background: AllColorShades
+      border: AllColorShades
     }
   }
   radius?: keyof DefaultTheme['radii']
@@ -54,12 +35,7 @@ export type InputStyleProps = {
   uppercase?: boolean
   fontFamily?: keyof DefaultTheme['fontFamilies']
   font?: string
-} & MarginProps &
-  SizingProps &
-  FlexProps &
-  BorderProps &
-  BackgroundColorProps &
-  BorderColorProps
+}
 
 export type InputShallot = {
   container: ShallotProp
@@ -89,18 +65,9 @@ export const withInputStyleProps =
 
       // Colors
       colors = {
-        default: {
-          background: ['Shading', 50],
-          border: ['Shading', 500],
-        },
-        focused: {
-          background: ['Shading', 50],
-          border: ['Shading', 500],
-        },
-        error: {
-          background: ['Danger', 100],
-          border: ['Danger', 500],
-        },
+        default: { background: 'Shading.50', border: 'Shading.500' },
+        focused: { background: 'Shading.50', border: 'Shading.500' },
+        error: { background: 'Danger.100', border: 'Danger.500' },
       },
 
       // Typography
@@ -135,13 +102,12 @@ export const withInputStyleProps =
           background-color 0.2s ease-in-out,
           box-shadow 0.2s ease-in-out
         `,
-        ...getBorderShallot(props),
-        ...getSizingShallot(props),
-        ...getMarginShallot(props),
-        ...getFlexShallot(props),
-
-        backgroundColor: getColor(...colors.default?.background),
-        borderColor: getColor(...colors.default?.border),
+        ...(colors.default?.background && {
+          backgroundColor: getColorShade(colors.default.background),
+        }),
+        ...(colors.default?.border && {
+          borderColor: getColorShade(colors.default.border),
+        }),
 
         // Variants (overrides)
         ...themeVariant?.container,
@@ -166,8 +132,12 @@ export const withInputStyleProps =
       styles = applyStyles(styles, {
         container: {
           boxShadow: getShadow('focused'),
-          backgroundColor: getColor(...colors.focused?.background),
-          borderColor: getColor(...colors.focused?.border),
+          ...(colors.focused?.background && {
+            backgroundColor: getColorShade(colors.focused.background),
+          }),
+          ...(colors.focused?.border && {
+            borderColor: getColorShade(colors.focused.border),
+          }),
 
           // Variants (overrides)
           ...themeVariant?.state?.focused?.container,
@@ -177,8 +147,12 @@ export const withInputStyleProps =
     if (state.error)
       styles = applyStyles(styles, {
         container: {
-          backgroundColor: getColor(...colors.error?.background),
-          borderColor: getColor(...colors.error?.border),
+          ...(colors.error?.background && {
+            backgroundColor: getColorShade(colors.error.background),
+          }),
+          ...(colors.error?.border && {
+            borderColor: getColorShade(colors.error.border),
+          }),
 
           // Variants (overrides)
           ...themeVariant?.state?.error?.container,
@@ -190,10 +164,5 @@ export const withInputStyleProps =
       input: shallot?.input,
     })
 
-    let filteredInputProps: any = { ...inputProps }
-    filteredInputProps = pullMarginProps(filteredInputProps)
-    filteredInputProps = pullSizingProps(filteredInputProps)
-    filteredInputProps = pullFlexProps(filteredInputProps)
-
-    return <InputComponent {...(filteredInputProps as T)} shallot={styles} />
+    return <InputComponent {...(inputProps as T)} shallot={styles} />
   }
