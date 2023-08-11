@@ -12,12 +12,11 @@ const Base: FunctionComponent<
   SwitchProps<InputHTMLAttributes<HTMLInputElement>> & {
     inputRef?: RefObject<HTMLInputElement>
     shallot?: SwitchShallot
-    inverted?: boolean
   }
-> = ({ shallot, type, inverted, ...rest }) => (
+> = ({ shallot, type, ...rest }) => (
   <S.Wrapper>
     <S.Checkbox {...rest} />
-    <S.Container shallot={shallot} inverted={inverted}>
+    <S.Container shallot={shallot}>
       <S.Handle />
     </S.Container>
   </S.Wrapper>

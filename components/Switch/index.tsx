@@ -24,7 +24,6 @@ export type SwitchProps<T> = T &
   SwitchStyleProps & {
     shallot?: SwitchShallot
     variant?: string
-    inverted?: boolean
   }
 
 export const withSwitchStyleProps =

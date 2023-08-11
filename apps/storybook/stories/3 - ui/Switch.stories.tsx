@@ -39,10 +39,9 @@ const Template: StoryFn<typeof Switch> = (args) => {
           {...args}
         />
         <Switch
-          checked={checked}
+          checked={!checked}
           onClick={() => setChecked((current) => !current)}
           unitsAround={1 / 2}
-          inverted
           {...args}
         />
       </Row>
@@ -52,9 +51,6 @@ const Template: StoryFn<typeof Switch> = (args) => {
 
 export const Default = Template.bind({})
 Default.args = {}
-
-export const Inverted = Template.bind({})
-Inverted.args = { inverted: true }
 
 export const Success = Template.bind({})
 Success.args = { color: 'Success' }
