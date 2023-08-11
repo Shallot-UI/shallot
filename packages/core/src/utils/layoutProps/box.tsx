@@ -20,7 +20,7 @@ type LayoutOptions = ShallotProp & {
 }
 
 export const withBoxLayoutProps =
-  <T extends { shallot?: ShallotProp }>(
+  <T extends { shallot?: ShallotProp | Record<string, ShallotProp> }>(
     Component: ComponentType<T>,
     layoutShallot: LayoutOptions,
     boxKey?: string,

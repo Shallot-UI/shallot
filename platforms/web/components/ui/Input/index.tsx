@@ -1,74 +1,42 @@
 import {
-  ComponentType,
   FunctionComponent,
   InputHTMLAttributes,
-  MutableRefObject,
+  ReactNode,
   RefObject,
-  useRef,
 } from 'react'
 import styled from 'styled-components'
-import { getStyle } from '@shallot-ui/core'
-import {
-  InputProps,
-  InputShallot,
-  withInputStyleProps,
-} from '@shallot-ui/input'
-
-import { useFocus, useHover, usePressed } from '../../../hooks'
+import { getStyle, withBoxLayoutProps } from '@shallot-ui/core'
 import { ShallotProp } from '@shallot-ui/theme'
+import { InputShallot, withInputStyleProps } from '@shallot-ui/input'
 
 const Container = styled.div(getStyle)
 const Label = styled.label(getStyle)
-const InnerInput = styled.input<{ shallot?: ShallotProp }>(
-  ({ shallot, ...rest }) =>
-    getStyle({
-      shallot: {
-        border: 'none',
-        outline: 'none',
-        ...shallot,
-      },
-      ...rest,
-    }),
-)
+const InnerInput = styled.input`
+  border: none;
+  outline: none;
+  ${getStyle}
+`
 
 const StaticInput: FunctionComponent<
   InputHTMLAttributes<HTMLInputElement> & {
     shallot?: InputShallot & { label?: ShallotProp }
     inputRef?: RefObject<HTMLInputElement>
     label?: typeof Label
+    before?: ReactNode
+    after?: ReactNode
   }
-> = ({ shallot, inputRef, label, ...rest }) => (
-  <Container
-    shallot={shallot?.container}
-    onClick={() =>
-      (inputRef as MutableRefObject<HTMLInputElement>)?.current?.focus()
-    }
-  >
-    {/* {startAdornment} */}
+> = ({ shallot, inputRef, label, before, after, ...rest }) => (
+  <Container shallot={shallot?.container}>
+    {before}
     <Label shallot={{ display: 'flex', flexGrow: 1, ...shallot?.label }}>
-      {/* {Label} */}
       <InnerInput ref={inputRef} shallot={shallot?.input} {...rest} />
     </Label>
-
-    {/* {endAdornment} */}
+    {after}
   </Container>
 )
 
-const withInputState =
-  <T,>(InputComponent: ComponentType<T>) =>
-  (props: InputProps<T>) => {
-    const ref = useRef<HTMLInputElement>(null)
-    const hovered = useHover(ref)
-    const focused = useFocus(ref)
-    const pressed = usePressed(ref)
-
-    return (
-      <InputComponent
-        inputRef={ref}
-        state={{ hovered, focused, pressed }}
-        {...props}
-      />
-    )
-  }
-
-export const Input = withInputState(withInputStyleProps(StaticInput))
+export const Input = withBoxLayoutProps(
+  withInputStyleProps(StaticInput),
+  { flexDirection: 'row' },
+  'container',
+)

@@ -1,65 +1,36 @@
-import {
-  ComponentType,
-  HTMLAttributes,
-  ReactNode,
-  RefObject,
-  useRef,
-} from 'react'
-import styled from 'styled-components'
-import { getStyle } from '@shallot-ui/core'
-import {
-  ButtonProps,
-  ButtonShallot,
-  withButtonStyleProps,
-} from '@shallot-ui/button'
+import { HTMLAttributes, ReactNode } from 'react'
+import { withBoxLayoutProps } from '@shallot-ui/core'
+import { ButtonProps, withButtonStyleProps } from '@shallot-ui/button'
 
-import { useFocus, useHover, usePressed } from '../../../hooks'
+import S from './styles'
 
-const Container = styled.button`
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  outline: none;
-  cursor: pointer;
-  ${getStyle}
-`
-const Title = styled.label(getStyle)
-
-const StaticButton = (
-  props: HTMLAttributes<HTMLButtonElement> & {
-    shallot?: ButtonShallot
-    buttonRef?: RefObject<HTMLButtonElement>
+const Base = (
+  props: ButtonProps<HTMLAttributes<HTMLButtonElement>> & {
     before?: ReactNode
     after?: ReactNode
   },
 ) => {
-  const { title, shallot, buttonRef, before, after, ...rest } = props
+  const { title, shallot, before, after, ...rest } = props
 
   return (
-    <Container ref={buttonRef} shallot={shallot?.container} {...rest}>
+    <S.Container shallot={shallot} {...rest}>
       {before}
-      {title && <Title shallot={shallot?.title}>{title}</Title>}
+      {title && <S.Title>{title}</S.Title>}
       {after}
-    </Container>
+    </S.Container>
   )
 }
 
-const withButtonState =
-  <T,>(ButtonComponent: ComponentType<T>) =>
-  (props: ButtonProps<T>) => {
-    const ref = useRef<HTMLButtonElement>(null)
-    const hovered = useHover(ref)
-    const focused = useFocus(ref)
-    const pressed = usePressed(ref)
-
-    return (
-      <ButtonComponent
-        buttonRef={ref}
-        state={{ hovered, focused, pressed, disabled: props.disabled }}
-        {...props}
-      />
-    )
-  }
-
-export const Button = withButtonState(withButtonStyleProps(StaticButton))
+export const Button = withBoxLayoutProps(
+  // The style props are common utilities to extend the button's shallot prop
+  // in common ways. For example, changing the button's color.
+  withButtonStyleProps(Base),
+  // These are style overrides sent to the Button's container component. They
+  // must contain at least a `flexDirection` so that the flex alignment
+  // properties will be applied correctly.
+  { flexDirection: 'row' },
+  // This is the name of the component that will be used as the Box for the
+  // button. The box is the outermost element that wraps the button's content
+  // and it will be extended with any layout props passed to the button.
+  'Container',
+)

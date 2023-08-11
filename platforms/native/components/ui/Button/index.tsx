@@ -1,4 +1,4 @@
-import { TouchableOpacityProps } from 'react-native'
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native'
 import styled from 'styled-components/native'
 import { getStyle } from '@shallot-ui/core'
 import { ButtonShallot, withButtonStyleProps } from '@shallot-ui/button'
@@ -12,12 +12,14 @@ const StaticButton = (
     title?: string
   },
 ) => {
-  const { title, shallot, ...rest } = props
+  const { title, shallot, ...touchableProps } = props
 
   return (
-    <Container shallot={shallot?.container}>
-      {title && <Title shallot={shallot?.title}>{title}</Title>}
-    </Container>
+    <TouchableOpacity {...touchableProps}>
+      <Container shallot={shallot?.Container}>
+        {title && <Title shallot={shallot?.Title}>{title}</Title>}
+      </Container>
+    </TouchableOpacity>
   )
 }
 

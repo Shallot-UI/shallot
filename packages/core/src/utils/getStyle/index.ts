@@ -21,6 +21,21 @@ export const getStyle =
       return acc
     }, {} as CSSObject)
 
+type ShallotState = Record<string, ShallotProp>
+
+export type StatefulShallotProp = Record<
+  string, // componentName
+  ShallotProp | ShallotState
+>
+
+export const getNestedStyle =
+  (componentName: string, state?: string) =>
+  <T extends { shallot?: StatefulShallotProp }>({ shallot = {} }: T) =>
+  ({ theme }: { theme: DefaultTheme }): CSSObject => {
+    const nestedShallot = (state ? shallot?.[state] : shallot)[componentName]
+    return getStyle({ shallot: nestedShallot as ShallotProp })({ theme })
+  }
+
 export const scopeGetStyle =
   (variantNamespace?: string) =>
   <T extends { shallot?: {}; variant?: string }>({

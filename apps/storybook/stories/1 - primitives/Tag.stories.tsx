@@ -29,26 +29,18 @@ export default {
     radius: { control: 'select', options: ['sm', 'md', 'lg', 'pill'] },
     letterSpacing: { control: 'select', options: ['sm', 'md', 'lg'] },
     fontSize: { control: 'select', options: ['sm', 'md', 'lg'] },
-    startAdornment: { table: { disable: true } },
-    endAdornment: { table: { disable: true } },
+    before: { table: { disable: true } },
+    after: { table: { disable: true } },
   },
 } as Meta<typeof Tag>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Tag> = (args) => (
-  <ShallotProvider
-    theme={{
-      variants: {
-        Tag: {
-          tagVariant: {
-            container: {},
-            title: {},
-          },
-        },
-      },
-    }}
-  >
-    <Tag title="Hello World" {...args} />
+  <ShallotProvider>
+    <Tag title="Hello World" unitsAround={2} {...args} />
+    <Tag title="Hello World" unitsAround={2} {...args} />
+    <Tag title="Hello World" unitsAround={2} {...args} />
+    <Tag title="Hello World" unitsAround={2} {...args} />
   </ShallotProvider>
 )
 

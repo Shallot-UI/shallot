@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { TagShallot, withTagStyleProps } from '@shallot-ui/tag'
-import { getStyle } from '@shallot-ui/core'
+import { getStyle, withBoxLayoutProps } from '@shallot-ui/core'
 
 const Container = styled.div(getStyle)
 const Title = styled.div(getStyle)
@@ -20,4 +20,8 @@ const StaticTag = (
   )
 }
 
-export const Tag = withTagStyleProps(StaticTag)
+export const Tag = withBoxLayoutProps(
+  withTagStyleProps(StaticTag),
+  { flexDirection: 'row' },
+  'container',
+)

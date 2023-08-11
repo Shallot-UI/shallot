@@ -1,5 +1,13 @@
 import { StoryFn, Meta } from '@storybook/react'
-import { Button, Column, getUnits, ShallotProvider } from '@shallot-ui/web'
+import {
+  Button,
+  Column,
+  Fold,
+  getColor,
+  getRadius,
+  getUnits,
+  ShallotProvider,
+} from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -41,6 +49,9 @@ export default {
     horizontalUnitPadding: {
       control: { type: 'number', min: 1, max: 4, step: 1 },
     },
+    unitsAround: {
+      control: { type: 'number', min: 1, max: 4, step: 1 },
+    },
     fullWidth: { control: 'boolean' },
   },
 } as Meta<typeof Button>
@@ -71,9 +82,18 @@ const Template: StoryFn<typeof Button> = (args) => (
       },
     }}
   >
-    <Column shallot={{ width: getUnits(20) }}>
-      <Button title="Hello World" {...args} />
-    </Column>
+    <Fold alignCenter alignMiddle>
+      <Column
+        fullWidth
+        maxUnitWidth={30}
+        shallot={{
+          backgroundColor: getColor('Shading', 200),
+          borderRadius: getRadius('xl'),
+        }}
+      >
+        <Button title="Hello World" fullWidth {...args} />
+      </Column>
+    </Fold>
   </ShallotProvider>
 )
 

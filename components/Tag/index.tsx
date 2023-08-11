@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
+import { DefaultTheme, useTheme } from 'styled-components'
 import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
   applyStyles,
@@ -25,8 +25,8 @@ export type TagStyleProps = {
 }
 
 export type TagShallot = {
-  container: ShallotProp
-  title: ShallotProp
+  container?: ShallotProp
+  title?: ShallotProp
 }
 
 export type TagProps<T> = T &

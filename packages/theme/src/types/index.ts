@@ -38,7 +38,10 @@ export interface ColorProps {
 
 export type ShallotProp<T = CSSObject> = Omit<CSSProperties, keyof T> &
   Omit<CSSPseudos, keyof T> & {
-    [K in keyof T]: T[K] | ((props: { theme: DefaultTheme }) => T[K])
+    [K in keyof T]:
+      | T[K]
+      | ((props: { theme: DefaultTheme }) => T[K])
+      | ShallotProp
   }
 
 export type Variant<T = any> = T & { state?: { [state: string]: T } }
