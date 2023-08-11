@@ -2,7 +2,6 @@ import { StoryFn, Meta } from '@storybook/react'
 import {
   Column,
   DEFAULT_THEME,
-  makeTheme,
   getColor,
   getUnits,
   getRadius,
@@ -22,7 +21,7 @@ const allColorNames = Object.keys(DEFAULT_THEME.colors)
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Containers/Column',
+  title: '📐 Layout / Column',
   component: Column,
   parameters: {
     layout: 'fullscreen',
@@ -39,16 +38,8 @@ export default {
 } as Meta<typeof Column>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Column> = (...args) => (
-  <ShallotProvider
-    theme={{
-      variants: {
-        Box: {
-          columnVariant: {},
-        },
-      },
-    }}
-  >
+const Template: StoryFn<typeof Column> = (args) => (
+  <ShallotProvider>
     <Column
       shallot={{
         backgroundColor: getColor('Shading', 150),

@@ -2,10 +2,8 @@ import { StoryFn, Meta } from '@storybook/react'
 
 import {
   Row,
-  Fold,
   Column,
   DEFAULT_THEME,
-  makeTheme,
   getColor,
   getUnits,
   getRadius,
@@ -25,7 +23,7 @@ const allColorNames = Object.keys(DEFAULT_THEME.colors)
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Containers/Row',
+  title: '📐 Layout / Row',
   component: Row,
   parameters: {
     layout: 'fullscreen',
@@ -42,16 +40,8 @@ export default {
 } as Meta<typeof Row>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Row> = (...args) => (
-  <ShallotProvider
-    theme={{
-      variants: {
-        Box: {
-          rowVariant: {},
-        },
-      },
-    }}
-  >
+const Template: StoryFn<typeof Row> = (args) => (
+  <ShallotProvider>
     <Column
       shallot={{
         backgroundColor: getColor('Shading', 150),

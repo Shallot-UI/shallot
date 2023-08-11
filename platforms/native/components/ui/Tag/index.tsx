@@ -15,8 +15,8 @@ const StaticTag = (
   const { title, shallot, ...rest } = props
 
   return (
-    <Container shallot={shallot?.container} {...rest}>
-      {title && <Title shallot={shallot?.title}>{title}</Title>}
+    <Container shallot={shallot?.Container} {...rest}>
+      {title && <Title shallot={shallot?.Title}>{title}</Title>}
     </Container>
   )
 }

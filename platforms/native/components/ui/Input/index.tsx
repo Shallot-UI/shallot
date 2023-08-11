@@ -31,9 +31,9 @@ const StaticInput = (
   const { shallot, inputRef, ...rest } = props
 
   return (
-    <Container shallot={shallot?.container}>
+    <Container shallot={shallot?.Container}>
       {/* {startAdornment} */}
-      <InnerInput shallot={shallot?.input} {...rest} />
+      <InnerInput shallot={shallot?.Input} {...rest} />
       {/* {endAdornment} */}
     </Container>
   )

@@ -4,7 +4,7 @@ import { Checkbox, Row, ShallotProvider } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Controls / Checkbox',
+  title: '💎 UI / Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',

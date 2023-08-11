@@ -1,14 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react'
 
-import {
-  DEFAULT_THEME,
-  makeTheme,
-  Box,
-  Fold,
-  Column,
-  getColor,
-  ShallotProvider,
-} from '@shallot-ui/web'
+import { DEFAULT_THEME, Box, getColor, ShallotProvider } from '@shallot-ui/web'
 
 const allColorNames = Object.keys(DEFAULT_THEME.colors)
   .map((color) => {
@@ -23,7 +15,7 @@ const allColorNames = Object.keys(DEFAULT_THEME.colors)
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Containers/Box',
+  title: '📐 Layout / Box',
   component: Box,
   parameters: {
     layout: 'fullscreen',

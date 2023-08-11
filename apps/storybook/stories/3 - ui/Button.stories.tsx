@@ -5,13 +5,12 @@ import {
   Fold,
   getColor,
   getRadius,
-  getUnits,
   ShallotProvider,
 } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Controls / Button',
+  title: '💎 UI / Button',
   component: Button,
   parameters: {
     layout: 'centered',

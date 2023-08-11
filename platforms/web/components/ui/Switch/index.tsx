@@ -1,60 +1,39 @@
-import {
-  ComponentType,
-  Dispatch,
-  HTMLAttributes,
-  RefObject,
-  SetStateAction,
-  useRef,
-} from 'react'
-import styled from 'styled-components'
-import { getStyle } from '@shallot-ui/core'
+import { FunctionComponent, InputHTMLAttributes, RefObject } from 'react'
+import { withBoxLayoutProps } from '@shallot-ui/core'
 import {
   SwitchProps,
   SwitchShallot,
   withSwitchStyleProps,
 } from '@shallot-ui/switch'
 
-import { useFocus, useHover, usePressed } from '../../../hooks'
+import S from './styles'
 
-const Container = styled.div(getStyle)
-const Handle = styled.div(getStyle)
-
-const StaticSwitch = (
-  props: HTMLAttributes<HTMLDivElement> & {
+const Base: FunctionComponent<
+  SwitchProps<InputHTMLAttributes<HTMLInputElement>> & {
+    inputRef?: RefObject<HTMLInputElement>
     shallot?: SwitchShallot
-    inputRef?: RefObject<HTMLDivElement>
-  },
-) => {
-  const { shallot, inputRef, ...rest } = props
-
-  return (
-    <Container ref={inputRef} shallot={shallot?.container} {...rest}>
-      <Handle shallot={shallot?.handle} />
-    </Container>
-  )
-}
-
-const withSwitchState =
-  <T,>(SwitchComponent: ComponentType<T>) =>
-  (
-    props: SwitchProps<T> & {
-      value?: boolean
-      setValue?: Dispatch<SetStateAction<boolean>> | ((value: boolean) => void)
-    },
-  ) => {
-    const ref = useRef<HTMLDivElement>(null)
-    const focused = useFocus(ref)
-    const hovered = useHover(ref)
-    const pressed = usePressed(ref)
-
-    return (
-      <SwitchComponent
-        inputRef={ref}
-        state={{ hovered, focused, pressed, checked: props.value }}
-        onClick={() => props.setValue?.(!props.value)}
-        {...props}
-      />
-    )
+    inverted?: boolean
   }
+> = ({ shallot, type, inverted, ...rest }) => (
+  <S.Wrapper>
+    <S.Checkbox {...rest} />
+    <S.Container shallot={shallot} inverted={inverted}>
+      <S.Handle />
+    </S.Container>
+  </S.Wrapper>
+)
 
-export const Switch = withSwitchState(withSwitchStyleProps(StaticSwitch))
+export const Switch = withBoxLayoutProps(
+  // The style props are common utilities to extend the component's shallot prop
+  // in common ways. For example, changing the component's color.
+  withSwitchStyleProps(Base),
+  // These are style overrides sent to the component's container component. They
+  // must contain at least a `flexDirection` so that the flex alignment
+  // properties will be applied correctly.
+  { flexDirection: 'row' },
+  // This is the name of the component that will be used as the Box for the
+  // component. The box is the outermost element that wraps the component's
+  // content and it will be extended with any layout props passed to the
+  // component.
+  'Container',
+)

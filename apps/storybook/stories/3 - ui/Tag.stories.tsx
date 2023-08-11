@@ -3,7 +3,7 @@ import { Tag, ShallotProvider } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Controls / Tag',
+  title: '💎 UI / Tag',
   component: Tag,
   parameters: {
     layout: 'centered',
@@ -25,7 +25,6 @@ export default {
       control: 'select',
       options: ['Regular', 'Bold', 'Italic'],
     },
-    underline: { control: 'boolean' },
     radius: { control: 'select', options: ['sm', 'md', 'lg', 'pill'] },
     letterSpacing: { control: 'select', options: ['sm', 'md', 'lg'] },
     fontSize: { control: 'select', options: ['sm', 'md', 'lg'] },

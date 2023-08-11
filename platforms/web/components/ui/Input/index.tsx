@@ -4,39 +4,38 @@ import {
   ReactNode,
   RefObject,
 } from 'react'
-import styled from 'styled-components'
-import { getStyle, withBoxLayoutProps } from '@shallot-ui/core'
+import { withBoxLayoutProps } from '@shallot-ui/core'
 import { ShallotProp } from '@shallot-ui/theme'
 import { InputShallot, withInputStyleProps } from '@shallot-ui/input'
 
-const Container = styled.div(getStyle)
-const Label = styled.label(getStyle)
-const InnerInput = styled.input`
-  border: none;
-  outline: none;
-  ${getStyle}
-`
+import S from './styles'
 
-const StaticInput: FunctionComponent<
+const Base: FunctionComponent<
   InputHTMLAttributes<HTMLInputElement> & {
     shallot?: InputShallot & { label?: ShallotProp }
     inputRef?: RefObject<HTMLInputElement>
-    label?: typeof Label
     before?: ReactNode
     after?: ReactNode
   }
-> = ({ shallot, inputRef, label, before, after, ...rest }) => (
-  <Container shallot={shallot?.container}>
+> = ({ shallot, inputRef, before, after, ...rest }) => (
+  <S.Container shallot={shallot}>
     {before}
-    <Label shallot={{ display: 'flex', flexGrow: 1, ...shallot?.label }}>
-      <InnerInput ref={inputRef} shallot={shallot?.input} {...rest} />
-    </Label>
+    <S.Input ref={inputRef} {...rest} />
     {after}
-  </Container>
+  </S.Container>
 )
 
 export const Input = withBoxLayoutProps(
-  withInputStyleProps(StaticInput),
+  // The style props are common utilities to extend the component's shallot prop
+  // in common ways. For example, changing the component's color.
+  withInputStyleProps(Base),
+  // These are style overrides sent to the component's container component. They
+  // must contain at least a `flexDirection` so that the flex alignment
+  // properties will be applied correctly.
   { flexDirection: 'row' },
-  'container',
+  // This is the name of the component that will be used as the Box for the
+  // component. The box is the outermost element that wraps the component's
+  // content and it will be extended with any layout props passed to the
+  // component.
+  'Container',
 )

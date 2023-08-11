@@ -5,7 +5,7 @@ import { ShallotProvider, Switch, Row } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Controls / Switch',
+  title: '💎 UI / Switch',
   component: Switch,
   parameters: {
     layout: 'centered',
@@ -27,39 +27,23 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Switch> = (args) => {
-  const [value, setValue] = useState(false)
+  const [checked, setChecked] = useState(false)
+
   return (
-    <ShallotProvider
-      theme={{
-        variants: {
-          Switch: {
-            switchVariant: {
-              container: {},
-              handle: {},
-              state: {
-                focused: {},
-                hovered: {},
-                checked: {},
-                hoveredAndChecked: {},
-              },
-            },
-          },
-        },
-      }}
-    >
+    <ShallotProvider>
       <Row>
         <Switch
+          checked={checked}
+          onClick={() => setChecked((current) => !current)}
           unitsAround={1 / 2}
           {...args}
-          value={value}
-          setValue={setValue}
         />
         <Switch
-          inverted
+          checked={checked}
+          onClick={() => setChecked((current) => !current)}
           unitsAround={1 / 2}
+          inverted
           {...args}
-          value={value}
-          setValue={setValue}
         />
       </Row>
     </ShallotProvider>
@@ -69,8 +53,8 @@ const Template: StoryFn<typeof Switch> = (args) => {
 export const Default = Template.bind({})
 Default.args = {}
 
-export const Variant = Template.bind({})
-Variant.args = { variant: 'switchVariant' }
+export const Inverted = Template.bind({})
+Inverted.args = { inverted: true }
 
 export const Success = Template.bind({})
 Success.args = { color: 'Success' }
@@ -80,6 +64,3 @@ Warning.args = { color: 'Warning' }
 
 export const Danger = Template.bind({})
 Danger.args = { color: 'Danger' }
-
-export const Larger = Template.bind({})
-Larger.args = { size: 3 }

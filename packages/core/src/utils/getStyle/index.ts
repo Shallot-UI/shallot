@@ -32,7 +32,7 @@ export const getNestedStyle =
   (componentName: string, state?: string) =>
   <T extends { shallot?: StatefulShallotProp }>({ shallot = {} }: T) =>
   ({ theme }: { theme: DefaultTheme }): CSSObject => {
-    const nestedShallot = (state ? shallot?.[state] : shallot)[componentName]
+    const nestedShallot = (state ? shallot?.[state] : shallot)?.[componentName]
     return getStyle({ shallot: nestedShallot as ShallotProp })({ theme })
   }
 
