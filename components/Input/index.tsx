@@ -1,118 +1,66 @@
 import { ComponentType } from 'react'
-import { DefaultTheme, useTheme } from 'styled-components'
+import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
+import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
-  ColorName,
-  ColorShadingValue,
-  ShallotProp,
-  Variant,
-} from '@shallot-ui/theme'
-import {
-  BackgroundColorProps,
-  BorderColorProps,
-  BorderProps,
-  FlexProps,
-  MarginProps,
-  SizingProps,
-  applyStyles,
-  getBorderShallot,
   getColor,
-  getColorShade,
-  getShadow,
-  getFlexShallot,
+  getFontFamily,
   getFontSize,
   getLetterSpacing,
-  getMarginShallot,
   getRadius,
-  getSizingShallot,
-  getFontFamily,
+  getShadow,
   getUnits,
-  pullFlexProps,
-  pullMarginProps,
-  pullSizingProps,
 } from '@shallot-ui/core'
 
-export type InputStyleProps = {
-  colors?: {
-    default: {
-      background: [ColorName, ColorShadingValue]
-      border: [ColorName, ColorShadingValue]
-    }
-    focused: {
-      background: [ColorName, ColorShadingValue]
-      border: [ColorName, ColorShadingValue]
-    }
-    error: {
-      background: [ColorName, ColorShadingValue]
-      border: [ColorName, ColorShadingValue]
-    }
-  }
+type InputStyleProps = {
+  color?: ColorName
   radius?: keyof DefaultTheme['radii']
+  fontFamily?: keyof DefaultTheme['fontFamilies']
   letterSpacing?: keyof DefaultTheme['letterSpacings']
   fontSize?: keyof DefaultTheme['fontSizes']
-  outline?: boolean
-  underline?: boolean
+  fontWeight?: string
   uppercase?: boolean
-  fontFamily?: keyof DefaultTheme['fontFamilies']
-  font?: string
-} & MarginProps &
-  SizingProps &
-  FlexProps &
-  BorderProps &
-  BackgroundColorProps &
-  BorderColorProps
-
-export type InputShallot = {
-  container: ShallotProp
-  input: ShallotProp
+  textAlign?: CSSObject['textAlign']
 }
 
-export type InputState = {
-  disabled?: boolean
-  focused?: boolean
-  hovered?: boolean
-  pressed?: boolean
-  error?: boolean
+export type BaseInputShallot = {
+  Container?: ShallotProp
+  Input?: ShallotProp
 }
 
-export type InputProps<T> = T & {
-  shallot?: InputShallot
-  state?: InputState
-  variant?: string
+export type InputShallot = BaseInputShallot & {
+  ':focus'?: BaseInputShallot
+  ':hover'?: BaseInputShallot
+  ':active'?: BaseInputShallot
+  ':error'?: BaseInputShallot
 }
+
+export type InputProps<T> = T &
+  InputStyleProps & {
+    shallot?: InputShallot
+    variant?: string
+  }
 
 export const withInputStyleProps =
   <T,>(InputComponent: ComponentType<T>) =>
-  (props: InputProps<T> & InputStyleProps) => {
+  (props: InputProps<T>) => {
     const {
       // General
+      color = 'Shading',
       radius = 'md',
-
-      // Colors
-      colors = {
-        default: {
-          background: ['Shading', 50],
-          border: ['Shading', 500],
-        },
-        focused: {
-          background: ['Shading', 50],
-          border: ['Shading', 500],
-        },
-        error: {
-          background: ['Danger', 100],
-          border: ['Danger', 500],
-        },
-      },
 
       // Typography
       fontFamily = 'Body',
-      font = 'Regular',
       letterSpacing = 'md',
       fontSize = 'md',
+      fontWeight = 'bold',
+
+      // Casing
       uppercase,
-      underline,
+
+      // Text Alignment
+      textAlign = 'center',
 
       shallot,
-      state = {},
       variant = 'default',
 
       ...inputProps
@@ -123,77 +71,58 @@ export const withInputStyleProps =
       | Variant<InputShallot>
       | undefined
 
-    let styles: InputShallot = {
-      container: {
-        borderStyle: 'solid',
-        borderWidth: 1,
-        display: 'flex',
+    let inputShallot: InputShallot = {
+      Container: {
         borderRadius: getRadius(radius),
+        backgroundColor: getColor(color, 50),
+        borderColor: getColor(color, 700),
+        display: 'flex',
+        borderWidth: 2,
+        borderStyle: 'solid',
         cursor: 'text',
         transition: `
           border-color 0.2s ease-in-out,
           background-color 0.2s ease-in-out,
           box-shadow 0.2s ease-in-out
         `,
-        ...getBorderShallot(props),
-        ...getSizingShallot(props),
-        ...getMarginShallot(props),
-        ...getFlexShallot(props),
 
-        backgroundColor: getColor(...colors.default?.background),
-        borderColor: getColor(...colors.default?.border),
-
-        // Variants (overrides)
-        ...themeVariant?.container,
+        ...themeVariant?.Container,
+        ...shallot?.Container,
       },
-      input: {
-        fontFamily: getFontFamily(fontFamily),
+      Input: {
         display: 'flex',
         flexGrow: 1,
-        backgroundColor: 'transparent',
-        color: getColorShade('Shading.900'),
-        placeholderColor: getColorShade('Shading.500'),
-        fontSize: getFontSize('md'),
-        margin: getUnits(3 / 4),
-        letterSpacing: getLetterSpacing('md'),
+        fontFamily: getFontFamily(fontFamily),
+        color: getColor(color, 900),
+        fontSize: getFontSize(fontSize),
+        letterSpacing: getLetterSpacing(letterSpacing),
 
-        // Variants (overrides)
-        ...themeVariant?.input,
+        ...(uppercase && { textTransform: uppercase ? 'uppercase' : 'none' }),
+
+        backgroundColor: 'transparent',
+        border: 'none',
+        placeholderColor: getColor('Shading', 500),
+        padding: getUnits(3 / 4),
+
+        ...themeVariant?.Input,
+        ...shallot?.Input,
+      },
+      ':focus': {
+        Container: {
+          boxShadow: getShadow('focused'),
+          borderColor: getColor(color, 900),
+        },
+        Input: {
+          outline: 'none',
+        },
+      },
+      ':error': {
+        Container: {
+          borderColor: getColor('Danger', 700),
+          color: getColor('Danger', 700),
+        },
       },
     }
 
-    if (state.focused)
-      styles = applyStyles(styles, {
-        container: {
-          boxShadow: getShadow('focused'),
-          backgroundColor: getColor(...colors.focused?.background),
-          borderColor: getColor(...colors.focused?.border),
-
-          // Variants (overrides)
-          ...themeVariant?.state?.focused?.container,
-        },
-      })
-
-    if (state.error)
-      styles = applyStyles(styles, {
-        container: {
-          backgroundColor: getColor(...colors.error?.background),
-          borderColor: getColor(...colors.error?.border),
-
-          // Variants (overrides)
-          ...themeVariant?.state?.error?.container,
-        },
-      })
-
-    styles = applyStyles(styles, {
-      container: shallot?.container,
-      input: shallot?.input,
-    })
-
-    let filteredInputProps: any = { ...inputProps }
-    filteredInputProps = pullMarginProps(filteredInputProps)
-    filteredInputProps = pullSizingProps(filteredInputProps)
-    filteredInputProps = pullFlexProps(filteredInputProps)
-
-    return <InputComponent {...(filteredInputProps as T)} shallot={styles} />
+    return <InputComponent {...(inputProps as T)} shallot={inputShallot} />
   }
