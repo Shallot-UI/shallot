@@ -5,6 +5,8 @@ import {
   RefObject,
   SetStateAction,
   useRef,
+  ReactNode,
+  ComponentProps,
 } from 'react'
 import styled from 'styled-components'
 import { getStyle } from '@shallot-ui/core'
@@ -16,59 +18,31 @@ import {
 
 import { useFocus, useHover, usePressed } from '../../../hooks'
 import { CheckIcon } from './Icons/CheckIcon'
+import S from './styles'
+import { withBoxLayoutProps } from '@shallot-ui/core'
 
-const ResetCheckbox = styled.div`
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  outline: none;
-  cursor: pointer;
-`
 
-const Container = styled.div(getStyle)
-const Icon = styled(CheckIcon)(getStyle)
-
-const StaticCheckbox = (
-  props: HTMLAttributes<HTMLDivElement> & {
-    shallot?: CheckboxShallot
-    checkboxRef?: RefObject<HTMLDivElement>
-  },
-) => {
-  const { shallot, checkboxRef, ...rest } = props
-
-  return (
-    <ResetCheckbox ref={checkboxRef}>
-      <Container shallot={shallot?.container} {...rest}>
-        <Icon shallot={shallot?.icon} />
-      </Container>
-    </ResetCheckbox>
+const Base = (
+  props: ComponentProps<typeof S.Container> & {
+    shallot?: CheckboxShallot  },
+) => (
+      <S.Container  {...props}>
+        <S.Icon />
+      </S.Container>
   )
-}
 
-// const withCheckboxState =
-//   <T,>(CheckboxComponent: ComponentType<T>) =>
-//   (
-//     props: CheckboxProps<T> & {
-//       value?: boolean
-//       setValue?: Dispatch<SetStateAction<boolean>> | ((value: boolean) => void)
-//     },
-//   ) => {
-//     const ref = useRef<HTMLDivElement>(null)
-//     const focused = useFocus(ref)
-//     const hovered = useHover(ref)
-//     const pressed = usePressed(ref)
 
-//     return (
-//       <CheckboxComponent
-//         ref={ref}
-//         state={{ hovered, focused, pressed, checked: props.value }}
-//         onClick={() => props.setValue?.(!props.value)}
-//         {...props}
-//       />
-//     )
-//   }
-
-export const Checkbox = withCheckboxState(
-  withCheckboxStyleProps(StaticCheckbox),
+export const Input = withBoxLayoutProps(
+  // The style props are common utilities to extend the component's shallot prop
+  // in common ways. For example, changing the component's color.
+  withCheckboxStyleProps(Base),
+  // These are style overrides sent to the component's container component. They
+  // must contain at least a `flexDirection` so that the flex alignment
+  // properties will be applied correctly.
+  { flexDirection: 'row' },
+  // This is the name of the component that will be used as the Box for the
+  // component. The box is the outermost element that wraps the component's
+  // content and it will be extended with any layout props passed to the
+  // component.
+  'Container',
 )

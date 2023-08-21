@@ -23,7 +23,7 @@ export type CheckboxStyleProps = {
 }
 
 export type BaseCheckboxShallot = {
-  container?: ShallotProp
+  Container?: ShallotProp
   icon?: ShallotProp
 }
 
@@ -77,7 +77,7 @@ export const withCheckboxStyleProps =
       | undefined
 
     let checkboxShallot: CheckboxShallot = {
-      container: {
+      Container: {
         backgroundColor: getColor('Shading', 100),
         borderColor: getColor('Shading', 300),
         borderRadius: getRadius(radius),
@@ -105,7 +105,7 @@ export const withCheckboxStyleProps =
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
 
         // Variants (overrides)
-        ...themeVariant?.container,
+        ...themeVariant?.Container,
       },
       icon: {
         height: getUnits(iconSize),
@@ -117,32 +117,23 @@ export const withCheckboxStyleProps =
         ...themeVariant?.icon,
       },
       ':focus': {
-        container: {
+        Container: {
           boxShadow: getShadow('focused'),
-
-          // Variants (overrides)
-          ...themeVariant?.state?.focused?.container,
         },
       },
       ':hover': {
-        container: {
+        Container: {
           backgroundColor: getColor('Shading', 100),
-
-          // Variants (overrides)
-          ...themeVariant?.state?.hovered?.container,
         },
       },
       ':checked': {
-        container: {
+        Container: {
           backgroundColor: getColor(color, 500),
           borderColor: getColor(color, 500),
-
-          // Variants (overrides)
-          ...themeVariant?.state?.checked?.container,
         },
       },
       ':disabled': {
-        container: {},
+        Container: {},
       },
     }
 
