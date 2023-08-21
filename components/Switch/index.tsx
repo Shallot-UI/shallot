@@ -1,45 +1,30 @@
 import { ComponentType } from 'react'
-import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
-import {
-  applyStyles,
-  getColor,
-  getShadow,
-  getRadius,
-  getUnits,
-} from '@shallot-ui/core'
 import { useTheme } from 'styled-components'
+import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
+import { getColor, getShadow, getRadius, getUnits } from '@shallot-ui/core'
 
 export type SwitchStyleProps = {
   color?: ColorName
   size?: number
   iconSize?: number
-  unitsAround?: number
-  unitsAbove?: number
-  unitsBelow?: number
-  unitsLeft?: number
-  unitsRight?: number
-  unitHeight?: number
-  unitWidth?: number
-  inverted?: boolean
 }
 
-export type SwitchShallot = {
-  container: ShallotProp
-  handle: ShallotProp
+type BaseSwitchShallot = {
+  Container?: ShallotProp
+  Handle?: ShallotProp
 }
 
-export type SwitchState = {
-  disabled?: boolean
-  focused?: boolean
-  hovered?: boolean
-  checked?: boolean
+export type SwitchShallot = BaseSwitchShallot & {
+  ':focus'?: BaseSwitchShallot
+  ':hover'?: BaseSwitchShallot
+  ':checked'?: BaseSwitchShallot
 }
 
 export type SwitchProps<T> = T &
   SwitchStyleProps & {
     shallot?: SwitchShallot
-    state?: SwitchState
     variant?: string
+    inverted?: boolean
   }
 
 export const withSwitchStyleProps =
@@ -50,17 +35,7 @@ export const withSwitchStyleProps =
       size = 4 / 3,
       iconSize = 1,
 
-      unitsAround,
-      unitsAbove,
-      unitsBelow,
-      unitsLeft,
-      unitsRight,
-
-      inverted,
-
       shallot,
-      state = {},
-
       variant = 'default',
 
       ...nonStyleProps
@@ -71,111 +46,59 @@ export const withSwitchStyleProps =
       | Variant<SwitchShallot>
       | undefined
 
-    let styles: SwitchShallot = {
-      container: {
-        cursor: 'pointer',
+    let switchShallot: SwitchShallot = {
+      Container: {
+        width: getUnits(2 * size - 1 / 3),
+        height: getUnits(size),
+        borderRadius: getRadius('pill'),
         backgroundColor: getColor('Shading', 200),
         borderColor: getColor('Shading', 200),
+        position: 'relative',
+        cursor: 'pointer',
         borderWidth: 1,
         borderStyle: 'solid',
-        borderRadius: getRadius('pill'),
         transition: `
           background-color 500ms ease-in-out,
           border-color 500ms ease-in-out
         `,
-        position: 'relative',
-        // Configurable
-        width: getUnits(2 * size - 1 / 3),
-        height: getUnits(size),
 
-        ...(unitsAround && { margin: getUnits(unitsAround) }),
-        ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
-        ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
-        ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
-        ...(unitsRight && { marginRight: getUnits(unitsRight) }),
-
-        // Variants (overrides)
-        ...themeVariant?.container,
+        ...themeVariant?.Container,
+        ...shallot?.Container,
       },
-      handle: {
+      Handle: {
         height: getUnits(size - 1 / 3),
         width: getUnits(size - 1 / 3),
+        borderRadius: getRadius('pill'),
         backgroundColor: getColor('Shading', 100),
         borderColor: getColor('Shading', 200),
         borderWidth: 1,
         borderStyle: 'solid',
-        borderRadius: getRadius('pill'),
+        position: 'absolute',
+        top: 1,
+        left: 1,
         transition: `
           left 200ms ease-in-out,
           border-color 500ms ease-in-out
         `,
-        position: 'absolute',
-        left: 1,
-        top: 1,
 
-        // Variants (overrides)
-        ...themeVariant?.handle,
+        ...themeVariant?.Handle,
+        ...shallot?.Handle,
       },
-    }
-
-    // Focused
-    if (state.focused)
-      styles = applyStyles(styles, {
-        container: {
-          boxShadow: getShadow('focused'),
-
-          // Variants (overrides)
-          ...themeVariant?.state?.focused?.container,
-        },
-      })
-
-    // Hovered
-    if (state.hovered)
-      styles = applyStyles(styles, {
-        container: {
-          backgroundColor: getColor('Shading', 200),
-
-          // Variants (overrides)
-          ...themeVariant?.state?.hovered?.container,
-        },
-      })
-
-    // Checked
-    if ((inverted && !state.checked) || (!inverted && state.checked))
-      styles = applyStyles(styles, {
-        container: {
+      ':focus': {
+        Container: { boxShadow: getShadow('focused') },
+      },
+      ':checked': {
+        Container: {
           backgroundColor: getColor(color, 500),
           borderColor: getColor(color, 500),
-
-          // Variants (overrides)
-          ...themeVariant?.state?.checked?.container,
         },
-        handle: {
+        Handle: {
           backgroundColor: getColor('Shading', 100),
           borderColor: getColor('Shading', 100),
           left: size * 12 - 3,
-
-          // Variants (overrides)
-          ...themeVariant?.state?.hovered?.handle,
         },
-      })
+      },
+    }
 
-    // Hovered and Checked
-    if (state.hovered && state.checked)
-      styles = applyStyles(styles, {
-        container: {
-          backgroundColor: getColor(color, 400),
-          borderColor: getColor(color, 400),
-
-          // Variants (overrides)
-          ...themeVariant?.state?.hoveredAndChecked?.container,
-        },
-      })
-
-    styles = applyStyles(styles, {
-      container: shallot?.container,
-      handle: shallot?.handle,
-    })
-
-    return <SwitchComponent {...(nonStyleProps as T)} shallot={styles} />
+    return <SwitchComponent {...(nonStyleProps as T)} shallot={switchShallot} />
   }
