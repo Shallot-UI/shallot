@@ -1,38 +1,19 @@
-import {
-  ComponentType,
-  Dispatch,
-  HTMLAttributes,
-  RefObject,
-  SetStateAction,
-  useRef,
-  ReactNode,
-  ComponentProps,
-} from 'react'
-import styled from 'styled-components'
-import { getStyle } from '@shallot-ui/core'
-import {
-  CheckboxProps,
-  CheckboxShallot,
-  withCheckboxStyleProps,
-} from '@shallot-ui/checkbox'
-
-import { useFocus, useHover, usePressed } from '../../../hooks'
-import { CheckIcon } from './Icons/CheckIcon'
+import { ComponentProps } from 'react'
+import { CheckboxShallot, withCheckboxStyleProps } from '@shallot-ui/checkbox'
 import S from './styles'
 import { withBoxLayoutProps } from '@shallot-ui/core'
 
-
 const Base = (
   props: ComponentProps<typeof S.Container> & {
-    shallot?: CheckboxShallot  },
+    shallot?: CheckboxShallot
+  },
 ) => (
-      <S.Container  {...props}>
-        <S.Icon />
-      </S.Container>
-  )
+  <S.Container {...props}>
+    <S.Icon />
+  </S.Container>
+)
 
-
-export const Input = withBoxLayoutProps(
+export const Checkbox = withBoxLayoutProps(
   // The style props are common utilities to extend the component's shallot prop
   // in common ways. For example, changing the component's color.
   withCheckboxStyleProps(Base),

@@ -1,14 +1,10 @@
-import { HTMLAttributes } from 'react'
-import styled from 'styled-components'
-import { getStyle } from '@shallot-ui/core'
+import { ComponentProps } from 'react'
 import { ModalShallot, withModalStyleProps } from '@shallot-ui/modal'
+import { withBoxLayoutProps } from '@shallot-ui/core'
+import S from './styles'
 
-const Wrapper = styled.div(getStyle)
-const Curtain = styled.div(getStyle)
-const Container = styled.div(getStyle)
-
-const StaticModal = (
-  props: HTMLAttributes<HTMLDivElement> & {
+const Base = (
+  props: ComponentProps<typeof S.Container> & {
     shallot?: ModalShallot
     onClose?: () => void
   },
@@ -16,13 +12,26 @@ const StaticModal = (
   const { title, shallot, children, onClose, ...rest } = props
 
   return (
-    <Wrapper shallot={shallot?.wrapper}>
-      <Curtain shallot={shallot?.curtain} onClick={() => onClose?.()} />
-      <Container shallot={shallot?.container} {...rest}>
+    <S.Wrapper shallot={shallot?.wrapper}>
+      <S.Curtain shallot={shallot?.curtain} onClick={() => onClose?.()} />
+      <S.Container shallot={shallot?.container} {...rest}>
         {children}
-      </Container>
-    </Wrapper>
+      </S.Container>
+    </S.Wrapper>
   )
 }
 
-export const Modal = withModalStyleProps(StaticModal)
+export const Modal = withBoxLayoutProps(
+  // The style props are common utilities to extend the component's shallot prop
+  // in common ways. For example, changing the component's color.
+  withModalStyleProps(Base),
+  // These are style overrides sent to the component's container component. They
+  // must contain at least a `flexDirection` so that the flex alignment
+  // properties will be applied correctly.
+  { flexDirection: 'row' },
+  // This is the name of the component that will be used as the Box for the
+  // component. The box is the outermost element that wraps the component's
+  // content and it will be extended with any layout props passed to the
+  // component.
+  'Container',
+)
