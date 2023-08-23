@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup ./index.ts --format cjs --minify --dts --clean"
+    "build": "tsup ./index.ts --format cjs --minify --dts --clean --watch"
   },
   "peerDependencies": {
     "styled-components": ">=5"
