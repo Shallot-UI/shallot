@@ -57,6 +57,6 @@
     "@shallot-ui/text": "^0.18.0",
     "@shallot-ui/theme": "^0.39.0",
     "@testing-library/react": "^14.0.0",
-    "prop-types": "^15.8.1",
+    "prop-types": "^15.8.1"
   }
 }
