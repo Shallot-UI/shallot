@@ -1,5 +1,37 @@
 # @shallot-ui/web
 
+## 0.57.2
+
+### Patch Changes
+
+- Updated dependencies [a8024c0]
+  - @shallot-ui/button@1.0.0
+  - @shallot-ui/checkbox@1.0.0
+  - @shallot-ui/form-column@1.0.0
+  - @shallot-ui/form-row@1.0.0
+  - @shallot-ui/input@1.0.0
+  - @shallot-ui/switch@1.0.0
+  - @shallot-ui/tag@1.0.0
+  - @shallot-ui/text@1.0.0
+  - @shallot-ui/core@18.0.0
+  - @shallot-ui/theme@1.0.0
+  - @shallot-ui/box@0.18.1
+  - @shallot-ui/column@0.18.2
+  - @shallot-ui/fold@0.16.1
+  - @shallot-ui/row@0.18.1
+
+## 0.57.1
+
+### Patch Changes
+
+- f4ca71c: SHALLOT-24: Add Text variants for headings and paragraph
+- 81cd011: SHALLOT-23: Ensure inner input width fills its container
+- Updated dependencies [f4ca71c]
+- Updated dependencies [81cd011]
+  - @shallot-ui/text@0.18.1
+  - @shallot-ui/core@17.0.1
+  - @shallot-ui/input@0.18.1
+
 ## 0.57.0
 
 ### Minor Changes

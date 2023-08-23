@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 1.0.0
+
+### Major Changes
+
+- a8024c0: Release
+
 ## 0.39.0
 
 ### Minor Changes

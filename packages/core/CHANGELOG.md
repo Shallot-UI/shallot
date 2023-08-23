@@ -1,5 +1,28 @@
 # @shallot-ui/core
 
+## 18.0.0
+
+### Major Changes
+
+- a8024c0: Release
+
+### Patch Changes
+
+- Updated dependencies [a8024c0]
+  - @shallot-ui/theme@1.0.0
+
+## 17.0.2
+
+### Patch Changes
+
+- 6de1f04: SHALLOT-22: Allow nested objects in style props.
+
+## 17.0.1
+
+### Patch Changes
+
+- f4ca71c: SHALLOT-24: Add Text variants for headings and paragraph
+
 ## 17.0.0
 
 ### Minor Changes
