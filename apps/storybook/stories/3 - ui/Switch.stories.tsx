@@ -1,7 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react'
-import { useState } from 'react'
-
-import { ShallotProvider, Switch, Row } from '@shallot-ui/web'
+import { ShallotProvider, Switch } from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -26,29 +24,11 @@ export default {
 } as Meta<typeof Switch>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Switch> = (args) => {
-  const [checked, setChecked] = useState(false)
-
-  return (
-    <ShallotProvider>
-      <Row>
-        <Switch
-          checked={checked}
-          onClick={() => setChecked((current) => !current)}
-          unitsAround={1 / 2}
-          {...args}
-        />
-        <Switch
-          checked={checked}
-          onClick={() => setChecked((current) => !current)}
-          unitsAround={1 / 2}
-          inverted
-          {...args}
-        />
-      </Row>
-    </ShallotProvider>
-  )
-}
+const Template: StoryFn<typeof Switch> = (args) => (
+  <ShallotProvider>
+    <Switch {...args} />
+  </ShallotProvider>
+)
 
 export const Default = Template.bind({})
 Default.args = {}

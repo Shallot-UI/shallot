@@ -1,12 +1,29 @@
-import styled, { css } from 'styled-components'
-import { getNestedStyle, getStyle } from '@shallot-ui/core'
-import { InputShallot } from '@shallot-ui/input'
-import { CheckIcon } from './Icons/CheckIcon'
+import styled from 'styled-components'
+import { getNestedStyle } from '@shallot-ui/core'
 import { CheckboxShallot } from '@shallot-ui/checkbox'
+
+import { CheckIcon } from './Icons/CheckIcon'
+
+const Wrapper = styled.label`
+  display: flex;
+`
+
+const Checkbox = styled.input.attrs({ type: 'checkbox' })`
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+`
 
 const Icon = styled(CheckIcon)``
 
-const Container = styled.input.attrs({ type: 'checkbox' })<{ shallot?: CheckboxShallot, disabled?: boolean}>`
+type ContainerProps = {
+  shallot?: CheckboxShallot
+  disabled?: boolean
+}
+
+const Container = styled.div<ContainerProps>`
   // Default Shallot Styles
   ${getNestedStyle('Container')}
   ${Icon} {
@@ -21,8 +38,8 @@ const Container = styled.input.attrs({ type: 'checkbox' })<{ shallot?: CheckboxS
     }
   }
 
-  // Active Shallot Styles
-  &:checked {
+  // Checked Shallot Styles
+  ${Checkbox}:checked + & {
     ${getNestedStyle('Container', ':checked')}
     ${Icon} {
       ${getNestedStyle('Icon', ':checked')}
@@ -38,7 +55,8 @@ const Container = styled.input.attrs({ type: 'checkbox' })<{ shallot?: CheckboxS
   }
 
   // disabled
-  ${(props) => props.disabled && getNestedStyle('Container', ':disabled')(props)}
+  ${(props) =>
+    props.disabled && getNestedStyle('Container', ':disabled')(props)}
   ${Icon} {
     ${(props) => props.disabled && getNestedStyle('Handle', ':disabled')(props)}
   }
@@ -47,4 +65,6 @@ const Container = styled.input.attrs({ type: 'checkbox' })<{ shallot?: CheckboxS
 export default {
   Container,
   Icon,
+  Wrapper,
+  Checkbox,
 }

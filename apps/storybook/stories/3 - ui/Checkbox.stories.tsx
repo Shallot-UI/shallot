@@ -27,53 +27,11 @@ export default {
 } as Meta<typeof Checkbox>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Checkbox> = (args) => {
-  const [value, setValue] = useState(false)
-  return (
-    <ShallotProvider
-      theme={{
-        variants: {
-          Checkbox: {
-            // Edit variants here.
-            checkBoxVariant: {
-              container: {},
-              icon: {},
-              state: {
-                focused: {
-                  container: {},
-                  icon: {},
-                },
-                hovered: {
-                  container: {},
-                  icon: {},
-                },
-                checked: {
-                  container: {},
-                  icon: {},
-                },
-              },
-            },
-          },
-        },
-      }}
-    >
-      <Row>
-        <Checkbox
-          unitsAround={1 / 2}
-          {...args}
-          value={value}
-          setValue={setValue}
-        />
-        <Checkbox
-          unitsAround={1 / 2}
-          {...args}
-          value={!value}
-          setValue={(v) => setValue(!v)}
-        />
-      </Row>
-    </ShallotProvider>
-  )
-}
+const Template: StoryFn<typeof Checkbox> = (args) => (
+  <ShallotProvider>
+    <Checkbox {...args} />
+  </ShallotProvider>
+)
 
 export const Default = Template.bind({})
 Default.args = {}

@@ -2,11 +2,11 @@ import { ComponentType } from 'react'
 import { DefaultTheme, useTheme } from 'styled-components'
 import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
-  applyStyles,
   getColor,
   getShadow,
   getRadius,
   getUnits,
+  applyStyles,
 } from '@shallot-ui/core'
 
 export type CheckboxStyleProps = {
@@ -14,17 +14,11 @@ export type CheckboxStyleProps = {
   size?: number
   iconSize?: number
   radius?: keyof DefaultTheme['radii']
-
-  unitsAround?: number
-  unitsAbove?: number
-  unitsBelow?: number
-  unitsLeft?: number
-  unitsRight?: number
 }
 
 export type BaseCheckboxShallot = {
   Container?: ShallotProp
-  icon?: ShallotProp
+  Icon?: ShallotProp
 }
 
 export type CheckboxShallot = BaseCheckboxShallot & {
@@ -34,17 +28,9 @@ export type CheckboxShallot = BaseCheckboxShallot & {
   ':disabled'?: BaseCheckboxShallot
 }
 
-// export type CheckboxState = {
-//   disabled?: boolean
-//   focused?: boolean
-//   hovered?: boolean
-//   checked?: boolean
-// }
-
 export type CheckboxProps<T> = T &
   CheckboxStyleProps & {
     shallot?: CheckboxShallot
-    // state?: CheckboxState
     variant?: string
   }
 
@@ -57,15 +43,7 @@ export const withCheckboxStyleProps =
       iconSize = 1,
       radius = 'sm',
 
-      unitsAround,
-      unitsAbove,
-      unitsBelow,
-      unitsLeft,
-      unitsRight,
-
       shallot,
-      // state = {},
-
       variant = 'default',
 
       ...checkboxProps
@@ -96,25 +74,13 @@ export const withCheckboxStyleProps =
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-
-        // Units
-        ...(unitsAround && { margin: getUnits(unitsAround) }),
-        ...(unitsAbove && { marginTop: getUnits(unitsAbove) }),
-        ...(unitsBelow && { marginBottom: getUnits(unitsBelow) }),
-        ...(unitsLeft && { marginLeft: getUnits(unitsLeft) }),
-        ...(unitsRight && { marginRight: getUnits(unitsRight) }),
-
-        // Variants (overrides)
-        ...themeVariant?.Container,
+        cursor: 'pointer',
       },
-      icon: {
+      Icon: {
         height: getUnits(iconSize),
         width: getUnits(iconSize),
         fillColor: getColor('Shading', 500),
         display: 'none',
-
-        // Variants (overrides)
-        ...themeVariant?.icon,
       },
       ':focus': {
         Container: {
@@ -127,15 +93,17 @@ export const withCheckboxStyleProps =
         },
       },
       ':checked': {
+        Icon: { display: 'block' },
         Container: {
           backgroundColor: getColor(color, 500),
           borderColor: getColor(color, 500),
         },
       },
-      ':disabled': {
-        Container: {},
-      },
+      ':disabled': {},
     }
+
+    checkboxShallot = applyStyles(checkboxShallot, themeVariant)
+    checkboxShallot = applyStyles(checkboxShallot, shallot)
 
     return (
       <CheckboxComponent {...(checkboxProps as T)} shallot={checkboxShallot} />

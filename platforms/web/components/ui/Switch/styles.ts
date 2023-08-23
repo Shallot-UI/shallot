@@ -1,9 +1,12 @@
 import styled from 'styled-components'
-import { getNestedStyle, getStyle } from '@shallot-ui/core'
+import { getNestedStyle } from '@shallot-ui/core'
 import { SwitchShallot } from '@shallot-ui/switch'
 
-const Wrapper = styled.label(getStyle)
-const Handle = styled.div(getStyle)
+const Wrapper = styled.label`
+  display: flex;
+`
+
+const Handle = styled.div``
 
 const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;

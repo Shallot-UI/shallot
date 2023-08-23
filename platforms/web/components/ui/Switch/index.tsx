@@ -1,4 +1,4 @@
-import { FunctionComponent, InputHTMLAttributes, RefObject } from 'react'
+import { FunctionComponent, InputHTMLAttributes } from 'react'
 import { withBoxLayoutProps } from '@shallot-ui/core'
 import {
   SwitchProps,
@@ -10,7 +10,6 @@ import S from './styles'
 
 const Base: FunctionComponent<
   SwitchProps<InputHTMLAttributes<HTMLInputElement>> & {
-    inputRef?: RefObject<HTMLInputElement>
     shallot?: SwitchShallot
   }
 > = ({ shallot, type, ...rest }) => (

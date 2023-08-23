@@ -1,7 +1,13 @@
 import { ComponentType } from 'react'
 import { useTheme } from 'styled-components'
 import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
-import { getColor, getShadow, getRadius, getUnits } from '@shallot-ui/core'
+import {
+  getColor,
+  getShadow,
+  getRadius,
+  getUnits,
+  applyStyles,
+} from '@shallot-ui/core'
 
 export type SwitchStyleProps = {
   color?: ColorName
@@ -61,9 +67,6 @@ export const withSwitchStyleProps =
           background-color 500ms ease-in-out,
           border-color 500ms ease-in-out
         `,
-
-        ...themeVariant?.Container,
-        ...shallot?.Container,
       },
       Handle: {
         height: getUnits(size - 1 / 3),
@@ -80,9 +83,6 @@ export const withSwitchStyleProps =
           left 200ms ease-in-out,
           border-color 500ms ease-in-out
         `,
-
-        ...themeVariant?.Handle,
-        ...shallot?.Handle,
       },
       ':focus': {
         Container: { boxShadow: getShadow('focused') },
@@ -99,6 +99,9 @@ export const withSwitchStyleProps =
         },
       },
     }
+
+    switchShallot = applyStyles(switchShallot, themeVariant)
+    switchShallot = applyStyles(switchShallot, shallot)
 
     return <SwitchComponent {...(nonStyleProps as T)} shallot={switchShallot} />
   }

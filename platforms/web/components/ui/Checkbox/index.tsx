@@ -1,16 +1,24 @@
-import { ComponentProps } from 'react'
-import { CheckboxShallot, withCheckboxStyleProps } from '@shallot-ui/checkbox'
-import S from './styles'
+import { FunctionComponent, InputHTMLAttributes } from 'react'
 import { withBoxLayoutProps } from '@shallot-ui/core'
+import {
+  CheckboxProps,
+  CheckboxShallot,
+  withCheckboxStyleProps,
+} from '@shallot-ui/checkbox'
 
-const Base = (
-  props: ComponentProps<typeof S.Container> & {
+import S from './styles'
+
+const Base: FunctionComponent<
+  CheckboxProps<InputHTMLAttributes<HTMLInputElement>> & {
     shallot?: CheckboxShallot
-  },
-) => (
-  <S.Container {...props}>
-    <S.Icon />
-  </S.Container>
+  }
+> = ({ shallot, type, ...rest }) => (
+  <S.Wrapper>
+    <S.Checkbox {...rest} />
+    <S.Container shallot={shallot}>
+      <S.Icon />
+    </S.Container>
+  </S.Wrapper>
 )
 
 export const Checkbox = withBoxLayoutProps(
