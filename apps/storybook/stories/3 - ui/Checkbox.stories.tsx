@@ -1,6 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react'
-import { useState } from 'react'
 import { Checkbox, Row, ShallotProvider } from '@shallot-ui/web'
+import { useState } from 'react'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -27,11 +27,28 @@ export default {
 } as Meta<typeof Checkbox>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Checkbox> = (args) => (
-  <ShallotProvider>
-    <Checkbox {...args} />
-  </ShallotProvider>
-)
+const Template: StoryFn<typeof Checkbox> = (args) => {
+  const [checked, setChecked] = useState(false)
+
+  return (
+    <ShallotProvider>
+      <Row>
+        <Checkbox
+          checked={checked}
+          onChange={() => setChecked((current) => !current)}
+          unitsAround={1 / 2}
+          {...args}
+        />
+        <Checkbox
+          checked={!checked}
+          onChange={() => setChecked((current) => !current)}
+          unitsAround={1 / 2}
+          {...args}
+        />
+      </Row>
+    </ShallotProvider>
+  )
+}
 
 export const Default = Template.bind({})
 Default.args = {}

@@ -16,7 +16,7 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   width: 0;
 `
 
-const Container = styled.div<{ shallot?: SwitchShallot }>`
+const Container = styled.div<{ shallot?: SwitchShallot; checked?: boolean }>`
   // Default Shallot Styles
   ${getNestedStyle('Container')}
   ${Handle} {
@@ -47,11 +47,10 @@ const Container = styled.div<{ shallot?: SwitchShallot }>`
     }
   }
 
-  ${Checkbox}:checked + & {
-    ${getNestedStyle('Container', ':checked')}
-    ${Handle} {
-      ${getNestedStyle('Handle', ':checked')}
-    }
+  // Checked Shallot Styles
+  ${(props) => props.checked && getNestedStyle('Container', ':checked')(props)}
+  ${Handle} {
+    ${(props) => props.checked && getNestedStyle('Handle', ':checked')(props)}
   }
 `
 

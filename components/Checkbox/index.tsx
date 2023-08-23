@@ -89,7 +89,8 @@ export const withCheckboxStyleProps =
       },
       ':hover': {
         Container: {
-          backgroundColor: getColor('Shading', 100),
+          backgroundColor: getColor(color, 400),
+          borderColor: getColor(color, 400),
         },
       },
       ':checked': {

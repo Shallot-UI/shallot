@@ -1,4 +1,4 @@
-import { FunctionComponent, InputHTMLAttributes } from 'react'
+import { FunctionComponent, InputHTMLAttributes, useState } from 'react'
 import { withBoxLayoutProps } from '@shallot-ui/core'
 import {
   SwitchProps,
@@ -12,14 +12,31 @@ const Base: FunctionComponent<
   SwitchProps<InputHTMLAttributes<HTMLInputElement>> & {
     shallot?: SwitchShallot
   }
-> = ({ shallot, type, ...rest }) => (
-  <S.Wrapper>
-    <S.Checkbox {...rest} />
-    <S.Container shallot={shallot}>
-      <S.Handle />
-    </S.Container>
-  </S.Wrapper>
-)
+> = ({ shallot, type, ...checkboxProps }) => {
+  // Manage the checkbox's checked state locally so that it can be controlled
+  // or uncontrolled.
+  const [localChecked, setLocalChecked] = useState(false)
+
+  // If the checkbox is controlled, use the controlled value. Otherwise, use the
+  // local value.
+  const checked = checkboxProps.checked ?? localChecked
+
+  // When the checkbox changes, update the local value and call the onChange
+  // prop.
+  const onChange = (e: any) => {
+    setLocalChecked(e.target.checked)
+    checkboxProps.onChange?.(e)
+  }
+
+  return (
+    <S.Wrapper>
+      <S.Checkbox {...checkboxProps} checked={checked} onChange={onChange} />
+      <S.Container checked={checked} shallot={shallot}>
+        <S.Handle />
+      </S.Container>
+    </S.Wrapper>
+  )
+}
 
 export const Switch = withBoxLayoutProps(
   // The style props are common utilities to extend the component's shallot prop
