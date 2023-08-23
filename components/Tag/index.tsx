@@ -2,31 +2,37 @@ import { ComponentType } from 'react'
 import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
 import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
 import {
-  applyStyles,
   getColor,
   getFontSize,
   getLetterSpacing,
-  getLineHeight,
   getRadius,
   getFontFamily,
   getUnits,
 } from '@shallot-ui/core'
 
-export type TagStyleProps = {
+type TagStyleProps = {
   color?: ColorName
   radius?: keyof DefaultTheme['radii']
+  letterSpacing?: keyof DefaultTheme['letterSpacings']
+  fontSize?: keyof DefaultTheme['fontSizes']
   outline?: boolean
   uppercase?: boolean
   verticalUnitPadding?: number
   horizontalUnitPadding?: number
+  textAlign?: CSSObject['textAlign']
   fontFamily?: keyof DefaultTheme['fontFamilies']
-  font?: string
-  letterSpacing?: keyof DefaultTheme['letterSpacings']
+  fontWeight?: string
 }
 
-export type TagShallot = {
-  container: ShallotProp
-  title: ShallotProp
+type BaseTagShallot = {
+  Container?: ShallotProp
+  Title?: ShallotProp
+}
+
+export type TagShallot = BaseTagShallot & {
+  ':focus'?: BaseTagShallot
+  ':hover'?: BaseTagShallot
+  ':active'?: BaseTagShallot
 }
 
 export type TagProps<T> = T &
@@ -42,25 +48,27 @@ export const withTagStyleProps =
       // General
       color = 'Shading',
       radius = 'md',
-      // animation,
       outline,
+
+      // Typography
       fontFamily = 'Body',
-      font = 'Bold',
+      letterSpacing = 'md',
+      fontSize = 'md',
+      fontWeight = 'bold',
 
       // Casing
       uppercase,
 
+      // Text Alignment
+      textAlign = 'center',
+
       verticalUnitPadding = 1 / 2,
       horizontalUnitPadding = 1,
 
-      letterSpacing,
-
       shallot,
-
       variant = 'default',
 
-      // Non-Style Props
-      ...nonStyleProps
+      ...tagProps
     } = props
 
     const theme = useTheme()
@@ -68,56 +76,51 @@ export const withTagStyleProps =
       | Variant<TagShallot>
       | undefined
 
-    let styles: TagShallot = {
-      container: {
-        display: 'flex',
-        backgroundColor: getColor(color, 100),
+    let tagShallot: TagShallot = {
+      Container: {
         borderRadius: getRadius(radius),
+        backgroundColor: getColor(color, 100),
+        borderColor: getColor(color, 100),
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 2,
+        borderStyle: 'solid',
         transition: `
-          background-color 200ms ease-in-out,
-          border-color 300ms ease-in-out,
-          transform 300ms ease-in-out,
-          box-shadow 300ms ease-in-out
+          background-color 0.2s ease-in-out,
+          border-color 0.2s ease-in-out,
+          box-shadow 0.2s ease-in-out,
+          transform 0.2s ease-in-out
         `,
 
-        // Variant (overrides)
-        ...themeVariant?.container,
+        ...(outline && {
+          backgroundColor: 'transparent',
+          borderColor: getColor(color, 700),
+        }),
+
+        ...themeVariant?.Container,
+        ...shallot?.Container,
       },
-      title: {
-        fontSize: getFontSize('md'),
-        color: getColor(color, 700),
-        lineHeight: getLineHeight('md'),
+      Title: {
+        display: 'flex',
+        flexGrow: 1,
+        textAlign,
+        fontWeight,
         fontFamily: getFontFamily(fontFamily),
-        transition: 'color 300ms ease-in-out',
+        color: getColor(color, 700),
+        fontSize: getFontSize(fontSize),
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),
         marginTop: getUnits(verticalUnitPadding),
         marginBottom: getUnits(verticalUnitPadding),
-        ...(letterSpacing && {
-          letterSpacing: getLetterSpacing(letterSpacing),
-        }),
-        textAlign: 'center',
-        flex: 1,
+        letterSpacing: getLetterSpacing(letterSpacing),
 
-        // Variant (overrides)
-        ...themeVariant?.title,
+        ...(uppercase && { textTransform: uppercase ? 'uppercase' : 'none' }),
+
+        ...themeVariant?.Title,
+        ...shallot?.Title,
       },
     }
 
-    if (outline)
-      styles = applyStyles(styles, {
-        container: {
-          backgroundColor: getColor('Shading', 100),
-        },
-        title: {
-          textColor: getColor(color, 300),
-        },
-      })
-
-    styles = applyStyles(styles, {
-      container: shallot?.container,
-      title: shallot?.title,
-    })
-
-    return <TagComponent {...(nonStyleProps as T)} shallot={styles} />
+    return <TagComponent {...(tagProps as T)} shallot={tagShallot} />
   }

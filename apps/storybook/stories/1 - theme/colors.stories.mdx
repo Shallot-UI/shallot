@@ -1,0 +1,216 @@
+import { Meta, Canvas } from '@storybook/addon-docs'
+import {
+  Row,
+  Box,
+  getColorShade,
+  getUnits,
+  ShallotProvider,
+} from '@shallot-ui/web'
+
+<Meta title="🎨 Theme / Colors" />
+
+# Color Palettes
+
+In Shallot, color palettes are stored in the colors object within the theme. These palettes are used to provide a consistent and visually pleasing set of colors for your application.
+
+## The Shading Palette
+
+Each color palette is represented by a color name and a set of shade values ranging from 100 to 900 in increments of `100`. (There are two included values of 50 and 950 at each end of the scale) The color names in the default theme are `'Primary'`, `'Success'`, `'Warning'`, `'Danger'`, and `'Shading'`.
+
+Below is Sallot's default shading palette. It will be used if no other shading palette is provided in the theme.
+
+<Canvas>
+  <ShallotProvider>
+    <Row>
+      {[
+        'Shading.50',
+        'Shading.100',
+        'Shading.200',
+        'Shading.300',
+        'Shading.400',
+        'Shading.500',
+        'Shading.600',
+        'Shading.700',
+        'Shading.800',
+        'Shading.900',
+        'Shading.950',
+      ].map((color) => (
+        <Box
+          key={color}
+          shallot={{
+            backgroundColor: getColorShade(color),
+            height: getUnits(5),
+            display: 'flex',
+            flexGrow: 1,
+            flexShrink: 1,
+          }}
+        />
+      ))}
+    </Row>
+  </ShallotProvider>
+</Canvas>
+
+## Contextual Color Palettes
+
+The contextual color palettes are used to communicate different states and actions. Each has its own meaning and should be used consistently throughout your application. It's important to note that these colors will be used by some Shallot components by default, so they should not be overridden in ways that don't align with their intended meaning.
+
+### Primary
+
+The primary color palette is used to communicate that an element is the primary action or the primary element on the page. For example, it is used to style the primary button, primary text, and other elements that require a consistent color.
+
+<Canvas>
+  <ShallotProvider>
+    <Row>
+      {[
+        'Primary.50',
+        'Primary.100',
+        'Primary.200',
+        'Primary.300',
+        'Primary.400',
+        'Primary.500',
+        'Primary.600',
+        'Primary.700',
+        'Primary.800',
+        'Primary.900',
+        'Primary.950',
+      ].map((color) => (
+        <Box
+          key={color}
+          shallot={{
+            backgroundColor: getColorShade(color),
+            height: getUnits(5),
+            display: 'flex',
+            flexGrow: 1,
+            flexShrink: 1,
+          }}
+        />
+      ))}
+    </Row>
+  </ShallotProvider>
+</Canvas>
+
+### Success
+
+The success color palette is used to communicate that an element is a success or a positive action. For example, it could be used to style the result of a successful action, or a button that performs a positive action.
+
+<Canvas>
+  <ShallotProvider>
+    <Row>
+      {[
+        'Success.50',
+        'Success.100',
+        'Success.200',
+        'Success.300',
+        'Success.400',
+        'Success.500',
+        'Success.600',
+        'Success.700',
+        'Success.800',
+        'Success.900',
+        'Success.950',
+      ].map((color) => (
+        <Box
+          key={color}
+          shallot={{
+            backgroundColor: getColorShade(color),
+            height: getUnits(5),
+            display: 'flex',
+            flexGrow: 1,
+            flexShrink: 1,
+          }}
+        />
+      ))}
+    </Row>
+  </ShallotProvider>
+</Canvas>
+
+### Warning
+
+The warning color palette is used to communicate that an element is a warning or potentially hazardous action. For example, it could be used to style the result of a file upload where the upload was successful but the file format was incorrect.
+
+<Canvas>
+  <ShallotProvider>
+    <Row>
+      {[
+        'Warning.50',
+        'Warning.100',
+        'Warning.200',
+        'Warning.300',
+        'Warning.400',
+        'Warning.500',
+        'Warning.600',
+        'Warning.700',
+        'Warning.800',
+        'Warning.900',
+        'Warning.950',
+      ].map((color) => (
+        <Box
+          key={color}
+          shallot={{
+            backgroundColor: getColorShade(color),
+            height: getUnits(5),
+            display: 'flex',
+            flexGrow: 1,
+            flexShrink: 1,
+          }}
+        />
+      ))}
+    </Row>
+  </ShallotProvider>
+</Canvas>
+
+### Danger
+
+The danger color palette is used to communicate that an element is a danger or a negative action. For example, it could be used to style the result of a failed action, or a button that performs a negative action. For example a button that deletes an item.
+
+<Canvas>
+  <ShallotProvider>
+    <Row>
+      {[
+        'Danger.50',
+        'Danger.100',
+        'Danger.200',
+        'Danger.300',
+        'Danger.400',
+        'Danger.500',
+        'Danger.600',
+        'Danger.700',
+        'Danger.800',
+        'Danger.900',
+        'Danger.950',
+      ].map((color) => (
+        <Box
+          key={color}
+          shallot={{
+            backgroundColor: getColorShade(color),
+            height: getUnits(5),
+            display: 'flex',
+            flexGrow: 1,
+            flexShrink: 1,
+          }}
+        />
+      ))}
+    </Row>
+  </ShallotProvider>
+</Canvas>
+
+## Converting Palettes
+
+Shading values should adjust their brightness, saturation, and/or hue to create a consistent visual progression. Various tools and libraries exist to help with this process. The default color palettes were generated by adapting similar palettes from [Tailwind CSS](https://tailwindui.com/) using a library called `chroma-js`.
+
+```ts
+const convertPalette = (original: string[]) => {
+  const shadeValues = [
+    50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950,
+  ] as const
+
+  const shades = chroma.scale(original).colors(shadeValues.length)
+
+  const palette: Record<string, string> = {}
+  shadeValues.forEach((shade, index) => {
+    palette[shade] = shades[index]
+  })
+
+  return palette
+}
+```
