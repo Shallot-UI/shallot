@@ -13,7 +13,10 @@
   ],
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup ./index.ts --format cjs --minify --dts --clean"
+    "build": "tsup ./index.ts --format cjs --minify --dts --clean --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@shallot-ui/box": "^0.18.1",
