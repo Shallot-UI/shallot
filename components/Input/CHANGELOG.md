@@ -1,5 +1,17 @@
 # @shallot-ui/input
 
+## 1.1.0
+
+### Minor Changes
+
+- New approach to variants and layout
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@19.0.0
+  - @shallot-ui/theme@1.1.0
+
 ## 1.0.0
 
 ### Major Changes
