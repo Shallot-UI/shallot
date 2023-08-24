@@ -2720,7 +2720,7 @@
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.3.1.tgz"
   integrity sha512-RkmuBcqiNioeeBKbgzMlOdreUkJfYaSjwgx9XDgGGpjvWgyaxWvDmZVSN9CS6LjEASadhgPv2BcFp+SeouWXXA==
 
-"@shallot-ui/box@^0.18.0", "@shallot-ui/box@^0.18.1":
+"@shallot-ui/box@^0.18.1":
   version "0.18.1"
   resolved "https://registry.yarnpkg.com/@shallot-ui/box/-/box-0.18.1.tgz#3d676fe34b08950709003afbdabe34f8e7595b78"
   integrity sha512-kCWcJsKo4Vxeqllj5QVbqWyyUGdH4GvXxMfSxzBQWDKswKVUmzYYczbVoxRYKKeW0OPcCxEuj529F32zulTWPg==
@@ -2730,7 +2730,7 @@
     csstype "^3.1.2"
     prop-types "^15.8.1"
 
-"@shallot-ui/column@^0.18.0":
+"@shallot-ui/column@^0.18.2":
   version "0.18.2"
   resolved "https://registry.yarnpkg.com/@shallot-ui/column/-/column-0.18.2.tgz#6ae8551b7b91812275e139554fe5c88eaffc3a18"
   integrity sha512-NKMMPZ1HfgNzxRDCoA9TSa8mwgeU40m1jBMlqj6K2a95yevaKTEr3APqC2p3LyB7Y0AW2nUkK4qplryNnte1Yg==
@@ -2740,21 +2740,14 @@
     "@shallot-ui/theme" "^1.0.0"
     prop-types "^15.8.1"
 
-"@shallot-ui/core@^17.0.2":
+"@shallot-ui/core@^17.0.0":
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/@shallot-ui/core/-/core-17.0.2.tgz#58ed8673e232d14f8cd9c64b06e12587b836a1e5"
   integrity sha512-mCSC2UROrM1WbDvxva6UNynwSQmf+CnkrN6BKJuoS4ffHAzpCmKWlDsAxHUYTwBMtMRVU9vAxFyhMdrPyC54JQ==
   dependencies:
     ts-deepmerge "^6.0.2"
 
-"@shallot-ui/core@^18.0.0":
-  version "18.0.0"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/core/-/core-18.0.0.tgz#9f29288c1c698b281d92be06133ad1b81311a921"
-  integrity sha512-NR1GN40vWVoa7sp6S1jwu9TsN631ndP6nui4KfrXSB+y4NyCt4+EkpmuGPO7LLPZD9ikfmb3yGFOgeTvztdCRg==
-  dependencies:
-    ts-deepmerge "^6.0.2"
-
-"@shallot-ui/fold@^0.16.0":
+"@shallot-ui/fold@^0.16.1":
   version "0.16.1"
   resolved "https://registry.yarnpkg.com/@shallot-ui/fold/-/fold-0.16.1.tgz#585c6a799fbd069b6d3b23b5edf8d4a0d7832b65"
   integrity sha512-zAlMJS68wNKHrlqmSMu2e9Ar6SqXe4+8dV9eLFoaVDhZU3rkhqIr3mWJMPsoosTO4DwFky8MlZ7NAWH4Ua2J0w==
@@ -2764,31 +2757,31 @@
     "@shallot-ui/theme" "^1.0.0"
     prop-types "^15.8.1"
 
-"@shallot-ui/form-column@^0.16.0":
-  version "0.16.1"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/form-column/-/form-column-0.16.1.tgz#9f6dfc9af520de52b249eb71eeef39b5209dd2d8"
-  integrity sha512-kvMr2rkc9IBI5D6nCCczecfIF03nYot3hiZK0Rlu14fcZ4znwwPANHRIqmOElIlYrF3tYq+AZaDWLQ1YHaYV4A==
+"@shallot-ui/form-column@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@shallot-ui/form-column/-/form-column-1.0.0.tgz#e630a6003aea67978469a17d1463bca834caba3e"
+  integrity sha512-aXjME9CXz1EcddDXAGT698JCQEVHXU6O0Nb9mrNhfTBQ43I05pyY7UlxpltOsTHt87ziA19cTE7SWnx6sA15FA==
   dependencies:
-    "@shallot-ui/box" "^0.18.0"
-    "@shallot-ui/core" "^17.0.2"
-    "@shallot-ui/row" "^0.18.0"
-    "@shallot-ui/text" "^0.18.2"
-    "@shallot-ui/theme" "^0.39.0"
+    "@shallot-ui/box" "^0.18.1"
+    "@shallot-ui/core" "^18.0.0"
+    "@shallot-ui/row" "^0.18.1"
+    "@shallot-ui/text" "^1.0.0"
+    "@shallot-ui/theme" "^1.0.0"
     prop-types "^15.8.1"
 
-"@shallot-ui/form-row@^0.16.0":
-  version "0.16.1"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/form-row/-/form-row-0.16.1.tgz#958f58d8b8bc6a02d92157c81e1b76d30f5a358d"
-  integrity sha512-kiRoL2xfXIUYjCcGmvNPTjpzcrP7TLySVqe/r3CxhuEWWa0Btgkt5nPCWL+zUT+oxD5AIwwAthBlt/i8c5ToRQ==
+"@shallot-ui/form-row@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@shallot-ui/form-row/-/form-row-1.0.0.tgz#aa43b6bf9244fde93babd2d302f2b54d23b3c389"
+  integrity sha512-KF4uDI777P5qrx6Eh6CrMmIcnEDNK10eyEAPBCZ2dgQg9fOJBwtrLU/jDWfm/LD76AMEeJMKvnj8lClDFVHZFw==
   dependencies:
-    "@shallot-ui/box" "^0.18.0"
-    "@shallot-ui/core" "^17.0.2"
-    "@shallot-ui/row" "^0.18.0"
-    "@shallot-ui/text" "^0.18.2"
-    "@shallot-ui/theme" "^0.39.0"
+    "@shallot-ui/box" "^0.18.1"
+    "@shallot-ui/core" "^18.0.0"
+    "@shallot-ui/row" "^0.18.1"
+    "@shallot-ui/text" "^1.0.0"
+    "@shallot-ui/theme" "^1.0.0"
     prop-types "^15.8.1"
 
-"@shallot-ui/row@^0.18.0":
+"@shallot-ui/row@^0.18.1":
   version "0.18.1"
   resolved "https://registry.yarnpkg.com/@shallot-ui/row/-/row-0.18.1.tgz#d52e4500fbb68500ad7cffdd98df621a3cd71d44"
   integrity sha512-JEb9iLcIX7oRG6HWlgv2mjSRLfszpiFKybxjyf0VdtB4bqXe0H5yvjFMMdOwvXz7Dy+3SsUkKtmCwzaqlsgvWA==
@@ -2798,20 +2791,20 @@
     "@shallot-ui/theme" "^1.0.0"
     prop-types "^15.8.1"
 
-"@shallot-ui/text@^0.18.0", "@shallot-ui/text@^0.18.2":
-  version "0.18.2"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/text/-/text-0.18.2.tgz#640b291853ccb7a628361df30783d07ca5988e8a"
-  integrity sha512-sFmPOoy5VEK4ovnTnIf2cvtVu1VTbbKW3IVVlibfIROXagiFojbi+IHB+e9Z1epKcYGVxNmJHqRCsUlzdFV7+g==
+"@shallot-ui/text@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@shallot-ui/text/-/text-1.0.0.tgz#7c4845cd7e532aed2e736b8bdbffabc2da139233"
+  integrity sha512-UD1grvZisF3+ORcK67QBmzzEEayipSrSW0xs5Ct9fVuR3STHTjkkRiAoqtcKLZS8jObdkc/95LrIDY1P+0ThLw==
   dependencies:
-    "@shallot-ui/box" "^0.18.0"
-    "@shallot-ui/core" "^17.0.2"
-    "@shallot-ui/theme" "^0.39.0"
+    "@shallot-ui/box" "^0.18.1"
+    "@shallot-ui/core" "^18.0.0"
+    "@shallot-ui/theme" "^1.0.0"
     prop-types "^15.8.1"
 
-"@shallot-ui/theme@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/theme/-/theme-1.0.0.tgz#f57fa01a553f5cf401f3448c7b89b852437bf5de"
-  integrity sha512-Q4pM+nRg6RvtK8WtybUz7J9Qmy2lyMw+P/ktmsKS1gf4Xk9TcRdLVv1R5ngp37biku0BE9ZqS9t745t5QGjQbQ==
+"@shallot-ui/theme@^0.39.0":
+  version "0.39.0"
+  resolved "https://registry.yarnpkg.com/@shallot-ui/theme/-/theme-0.39.0.tgz#a9d8d632d823ba0aaafe7a8c34124b15df92b05f"
+  integrity sha512-D785h6Og3PklXFpb9im8boFiUkSPEBy07gkl+6NxAyN/UyPzXmIBeLRIRMeTRhl9HrKNBi6l5o+NaAotPdjv8A==
   dependencies:
     ts-deepmerge "^6.0.2"
 
