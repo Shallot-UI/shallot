@@ -29,13 +29,28 @@ export const getStyle =
       return acc
     }, {} as CSSObject)
 
+/**
+ * Defines the type of the state object for a Shallot component.
+ */
 type ShallotState = Record<string, ShallotProp>
 
+/**
+ * Defines the type of a Shallot prop that can contain a state object.
+ */
 export type StatefulShallotProp = Record<
   string, // componentName
   ShallotProp | ShallotState
 >
 
+/**
+ * Returns a function that generates CSS styles based on a nested `shallot` object.
+ * The `shallot` object is a set of key-value pairs where the key is a CSS property and the value is either a string or a function that returns a string.
+ * If the value is a function, it will be called with the `theme` object as its argument.
+ * If the value is an object, `getStyle` will be called recursively on that object.
+ * @param componentName - The name of the component to generate styles for.
+ * @param state - The name of the state object to generate styles for.
+ * @returns A function that generates CSS styles based on the nested `shallot` object.
+ */
 export const getNestedStyle =
   (componentName: string, state?: string) =>
   <T extends { shallot?: StatefulShallotProp }>({ shallot = {} }: T) =>
@@ -44,6 +59,14 @@ export const getNestedStyle =
     return getStyle({ shallot: nestedShallot as ShallotProp })({ theme })
   }
 
+/**
+ * Returns a function that generates CSS styles based on a `shallot` object with optional variant styles.
+ * The `shallot` object is a set of key-value pairs where the key is a CSS property and the value is either a string or a function that returns a string.
+ * If the value is a function, it will be called with the `theme` object as its argument.
+ * If the value is an object, `getStyle` will be called recursively on that object.
+ * @param variantNamespace - The namespace of the variant styles to use.
+ * @returns A function that generates CSS styles based on the `shallot` object with optional variant styles.
+ */
 export const scopeGetStyle =
   (variantNamespace?: string) =>
   <T extends { shallot?: {}; variant?: string }>({
