@@ -1,6 +1,14 @@
 import { CSSObject, DefaultTheme } from 'styled-components'
 import { ShallotProp } from '@shallot-ui/theme'
 
+/**
+ * Returns a function that generates CSS styles based on a given `shallot` object.
+ * The `shallot` object is a set of key-value pairs where the key is a CSS property and the value is either a string or a function that returns a string.
+ * If the value is a function, it will be called with the `theme` object as its argument.
+ * If the value is an object, `getStyle` will be called recursively on that object.
+ * @param shallot - An object containing CSS properties and values.
+ * @returns A function that generates CSS styles based on the `shallot` object.
+ */
 export const getStyle =
   <T extends { shallot?: ShallotProp }>({ shallot = {} }: T) =>
   ({ theme }: { theme: DefaultTheme }): CSSObject =>
