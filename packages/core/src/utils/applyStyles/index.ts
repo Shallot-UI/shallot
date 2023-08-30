@@ -1,8 +1,12 @@
-// Apply Styles
-// ============
-// A utility function to merge two style objects. This is useful when writing
-// `getStyles` functions where the state of the component causes changes to
-// the base styles.
+/**
+ * A utility function to merge two style objects. This is useful when writing
+ * `getStyles` functions where the state of the component causes changes to
+ * the base styles.
+ *
+ * @param base - The base style object.
+ * @param overrides - The style object to override the base styles.
+ * @returns The merged style object.
+ */
 
 export const applyStyles = <T extends Record<string, any>>(
   base: T, // base style object
