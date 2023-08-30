@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 1.1.0
+
+### Minor Changes
+
+- New approach to variants and layout
+
 ## 1.0.0
 
 ### Major Changes
