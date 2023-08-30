@@ -1,5 +1,16 @@
 # @shallot-ui/core
 
+## 20.0.0
+
+### Minor Changes
+
+- Updated all packages
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@1.2.0
+
 ## 19.0.0
 
 ### Minor Changes

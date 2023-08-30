@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 0.41.0
+
+### Minor Changes
+
+- Updated all packages
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@0.59.0
+
 ## 0.40.0
 
 ### Minor Changes

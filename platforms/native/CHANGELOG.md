@@ -1,5 +1,22 @@
 # @shallot-ui/native
 
+## 0.45.0
+
+### Minor Changes
+
+- Updated all packages
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/button@1.2.0
+  - @shallot-ui/checkbox@1.2.0
+  - @shallot-ui/input@1.2.0
+  - @shallot-ui/switch@1.2.0
+  - @shallot-ui/tag@1.2.0
+  - @shallot-ui/core@20.0.0
+  - @shallot-ui/theme@1.2.0
+
 ## 0.44.0
 
 ### Minor Changes
