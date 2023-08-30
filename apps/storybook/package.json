@@ -1,6 +1,6 @@
 {
   "name": "stories",
-  "version": "0.18.3",
+  "version": "0.18.5",
   "private": true,
   "scripts": {
     "build": "storybook build",
@@ -14,7 +14,7 @@
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.1.1",
+    "storybook": "^7.3.2",
     "styled-components": "^5.3.6",
     "ts-dedent": "^2.2.0"
   },

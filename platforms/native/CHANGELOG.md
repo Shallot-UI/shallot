@@ -1,5 +1,42 @@
 # @shallot-ui/native
 
+## 0.43.2
+
+### Patch Changes
+
+- Updated dependencies [a8024c0]
+  - @shallot-ui/button@1.0.0
+  - @shallot-ui/checkbox@1.0.0
+  - @shallot-ui/form-column@1.0.0
+  - @shallot-ui/form-row@1.0.0
+  - @shallot-ui/input@1.0.0
+  - @shallot-ui/switch@1.0.0
+  - @shallot-ui/tag@1.0.0
+  - @shallot-ui/text@1.0.0
+  - @shallot-ui/core@18.0.0
+  - @shallot-ui/theme@1.0.0
+  - @shallot-ui/box@0.18.1
+  - @shallot-ui/column@0.18.2
+  - @shallot-ui/fold@0.16.1
+  - @shallot-ui/row@0.18.1
+
+## 0.43.1
+
+### Patch Changes
+
+- 6de1f04: SHALLOT-22: Allow nested objects in style props.
+- Updated dependencies [6de1f04]
+  - @shallot-ui/button@0.18.1
+  - @shallot-ui/checkbox@0.17.1
+  - @shallot-ui/column@0.18.1
+  - @shallot-ui/form-column@0.16.1
+  - @shallot-ui/form-row@0.16.1
+  - @shallot-ui/input@0.18.2
+  - @shallot-ui/switch@0.17.1
+  - @shallot-ui/tag@0.17.1
+  - @shallot-ui/text@0.18.2
+  - @shallot-ui/core@17.0.2
+
 ## 0.43.0
 
 ### Minor Changes

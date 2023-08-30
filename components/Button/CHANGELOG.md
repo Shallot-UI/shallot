@@ -1,5 +1,29 @@
 # @shallot-ui/button
 
+## 1.0.0
+
+### Major Changes
+
+- a8024c0: Release
+
+### Patch Changes
+
+- Updated dependencies [a8024c0]
+  - @shallot-ui/text@1.0.0
+  - @shallot-ui/core@18.0.0
+  - @shallot-ui/theme@1.0.0
+  - @shallot-ui/box@0.18.1
+  - @shallot-ui/row@0.18.1
+
+## 0.18.1
+
+### Patch Changes
+
+- 6de1f04: SHALLOT-22: Allow nested objects in style props.
+- Updated dependencies [6de1f04]
+  - @shallot-ui/text@0.18.2
+  - @shallot-ui/core@17.0.2
+
 ## 0.18.0
 
 ### Minor Changes
