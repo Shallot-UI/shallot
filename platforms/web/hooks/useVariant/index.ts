@@ -1,6 +1,6 @@
 import { DefaultTheme, useTheme } from 'styled-components'
 
-export const getVariant = (
+const getVariant = (
   theme: DefaultTheme,
   componentName: string,
   variant: string = 'default',
