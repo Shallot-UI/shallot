@@ -1,8 +1,7 @@
-import styled from 'styled-components'
-import { withBoxLayoutProps, getStyle } from '@shallot-ui/core'
-import { ShallotProp } from '@shallot-ui/theme'
+import { withBoxLayoutProps } from '@shallot-ui/core'
+import { withShallot } from '../../utils'
 
-const Base = styled.div<{ shallot?: ShallotProp }>(getStyle)
+const Base = withShallot('div')``
 export const Space = withBoxLayoutProps(Base, {
   flexDirection: 'column',
   flexGrow: 1,
