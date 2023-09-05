@@ -77,10 +77,10 @@ const Template: StoryFn<typeof Text> = (args) => (
     <GlobalStyle />
     <Fold alignCenter alignMiddle>
       <Column unitWidth={40}>
-        <H1 {...args}>Heading 1</H1>
-        <H2 {...args}>Heading 2</H2>
-        <H3 {...args}>Heading 3</H3>
-        <P {...args}>Paragraph</P>
+        <H1>Heading 1</H1>
+        <H2>Heading 2</H2>
+        <H3>Heading 3</H3>
+        <P>Paragraph</P>
         <Text {...args}>Text</Text>
       </Column>
     </Fold>

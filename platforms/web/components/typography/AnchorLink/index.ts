@@ -1,7 +1,5 @@
-import styled from 'styled-components'
-import { scopeGetStyle, withTextLayoutProps } from '@shallot-ui/core'
-import { ShallotProp } from '@shallot-ui/theme'
+import { withTextLayoutProps } from '@shallot-ui/core'
+import { withComponentShallot } from '../../utils'
 
-export const AnchorLink = withTextLayoutProps(
-  styled.a<{ shallot?: ShallotProp }>(scopeGetStyle('Text')),
-)
+const BaseLink = withComponentShallot('a', 'Text', 'Link')``
+export const AnchorLink = withTextLayoutProps(BaseLink)
