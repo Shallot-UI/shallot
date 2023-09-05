@@ -1,4 +1,3 @@
-import { DefaultTheme } from 'styled-components/native'
 import { getVariant } from '..'
 import { makeTheme } from '@shallot-ui/theme'
 

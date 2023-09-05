@@ -1,49 +1,26 @@
-import styled from 'styled-components'
-import { scopeGetStyle, withTextLayoutProps } from '@shallot-ui/core'
-import { ShallotProp } from '@shallot-ui/theme'
+import { withTextLayoutProps } from '@shallot-ui/core'
+import { withComponentShallot } from '../../utils'
 
-export const Text = withTextLayoutProps(
-  styled.span<{ shallot?: ShallotProp }>(scopeGetStyle('Text')),
-)
+const BaseSpan = withComponentShallot('span', 'Text')``
+export const Text = withTextLayoutProps(BaseSpan)
 
-export const H1 = withTextLayoutProps(
-  styled.h1.attrs<{ shallot?: ShallotProp }>({ variant: 'H1' })(
-    scopeGetStyle('Text'),
-  ),
-)
+const BaseH1 = withComponentShallot('h1', 'Text', 'H1')``
+export const H1 = withTextLayoutProps(BaseH1)
 
-export const H2 = withTextLayoutProps(
-  styled.h2.attrs<{ shallot?: ShallotProp }>({ variant: 'H2' })(
-    scopeGetStyle('Text'),
-  ),
-)
+const BaseH2 = withComponentShallot('h2', 'Text', 'H2')``
+export const H2 = withTextLayoutProps(BaseH2)
 
-export const H3 = withTextLayoutProps(
-  styled.h3.attrs<{ shallot?: ShallotProp }>({ variant: 'H3' })(
-    scopeGetStyle('Text'),
-  ),
-)
+const BaseH3 = withComponentShallot('h3', 'Text', 'H3')``
+export const H3 = withTextLayoutProps(BaseH3)
 
-export const H4 = withTextLayoutProps(
-  styled.h4.attrs<{ shallot?: ShallotProp }>({ variant: 'H4' })(
-    scopeGetStyle('Text'),
-  ),
-)
+const BaseH4 = withComponentShallot('h4', 'Text', 'H4')``
+export const H4 = withTextLayoutProps(BaseH4)
 
-export const H5 = withTextLayoutProps(
-  styled.h5.attrs<{ shallot?: ShallotProp }>({ variant: 'H5' })(
-    scopeGetStyle('Text'),
-  ),
-)
+const BaseH5 = withComponentShallot('h5', 'Text', 'H5')``
+export const H5 = withTextLayoutProps(BaseH5)
 
-export const H6 = withTextLayoutProps(
-  styled.h6.attrs<{ shallot?: ShallotProp }>({ variant: 'H6' })(
-    scopeGetStyle('Text'),
-  ),
-)
+const BaseH6 = withComponentShallot('h6', 'Text', 'H6')``
+export const H6 = withTextLayoutProps(BaseH6)
 
-export const P = withTextLayoutProps(
-  styled.p.attrs<{ shallot?: ShallotProp }>({ variant: 'P' })(
-    scopeGetStyle('Text'),
-  ),
-)
+const BaseP = withComponentShallot('p', 'Text', 'P')``
+export const P = withTextLayoutProps(BaseP)
