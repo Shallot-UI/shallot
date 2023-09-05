@@ -1,5 +1,17 @@
 # @shallot-ui/modal
 
+## 0.19.0
+
+### Minor Changes
+
+- 3ed8c84: Ensures that the shallot prop doesn't make it into the dom
+
+### Patch Changes
+
+- Updated dependencies [3ed8c84]
+  - @shallot-ui/core@21.0.0
+  - @shallot-ui/theme@1.3.0
+
 ## 0.18.0
 
 ### Minor Changes

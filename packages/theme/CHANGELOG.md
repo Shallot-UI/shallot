@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 1.3.0
+
+### Minor Changes
+
+- 3ed8c84: Ensures that the shallot prop doesn't make it into the dom
+
 ## 1.2.0
 
 ### Minor Changes
