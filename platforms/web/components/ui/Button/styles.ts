@@ -4,7 +4,9 @@ import { ButtonShallot } from '@shallot-ui/button'
 
 const Title = styled.label(getStyle)
 
-const Container = styled.button<{ shallot?: ButtonShallot }>`
+const Container = styled.button.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<{ shallot?: ButtonShallot }>`
   background: none;
   border: none;
   padding: 0;

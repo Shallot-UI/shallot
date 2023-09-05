@@ -4,7 +4,9 @@ import { TagShallot } from '@shallot-ui/tag'
 
 const Title = styled.label(getStyle)
 
-const Container = styled.button<{ shallot?: TagShallot }>`
+const Container = styled.button.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<{ shallot?: TagShallot }>`
   background: none;
   border: none;
   padding: 0;

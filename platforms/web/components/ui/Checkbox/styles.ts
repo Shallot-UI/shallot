@@ -24,7 +24,9 @@ type ContainerProps = {
   disabled?: boolean
 }
 
-const Container = styled.div<ContainerProps>`
+const Container = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<ContainerProps>`
   // Default Shallot Styles
   ${getNestedStyle('Container')}
   ${Icon} {

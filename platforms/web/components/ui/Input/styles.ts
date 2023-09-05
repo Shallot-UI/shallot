@@ -4,7 +4,9 @@ import { InputShallot } from '@shallot-ui/input'
 
 const Input = styled.input(getStyle)
 
-const Container = styled.div<{ shallot?: InputShallot; hasError?: boolean }>`
+const Container = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<{ shallot?: InputShallot; hasError?: boolean }>`
   // Default Shallot Styles
   ${getNestedStyle('Container')}
   ${Input} {

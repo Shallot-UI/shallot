@@ -16,7 +16,9 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   width: 0;
 `
 
-const Container = styled.div<{ shallot?: SwitchShallot; checked?: boolean }>`
+const Container = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<{ shallot?: SwitchShallot; checked?: boolean }>`
   // Default Shallot Styles
   ${getNestedStyle('Container')}
   ${Handle} {
