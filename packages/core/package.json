@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/core",
-  "version": "20.0.0",
+  "version": "21.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "react": ">=18",
     "react-dom": ">=18",
     "styled-components": ">=5",
-    "@shallot-ui/theme": "^1.2.0"
+    "@shallot-ui/theme": "^1.3.0"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
@@ -40,7 +40,7 @@
     "tsconfig": "*",
     "tsup": "^6.5.0",
     "typescript": "^4.5.2",
-    "@shallot-ui/theme": "^1.2.0"
+    "@shallot-ui/theme": "^1.3.0"
   },
   "dependencies": {
     "ts-deepmerge": "^6.0.2"

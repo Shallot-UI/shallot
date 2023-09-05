@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 0.42.0
+
+### Minor Changes
+
+- 3ed8c84: Ensures that the shallot prop doesn't make it into the dom
+
+### Patch Changes
+
+- Updated dependencies [3ed8c84]
+  - @shallot-ui/web@0.60.0
+
 ## 0.41.0
 
 ### Minor Changes

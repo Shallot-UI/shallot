@@ -1,5 +1,22 @@
 # @shallot-ui/web
 
+## 0.60.0
+
+### Minor Changes
+
+- 3ed8c84: Ensures that the shallot prop doesn't make it into the dom
+
+### Patch Changes
+
+- Updated dependencies [3ed8c84]
+  - @shallot-ui/core@21.0.0
+  - @shallot-ui/button@1.3.0
+  - @shallot-ui/checkbox@1.3.0
+  - @shallot-ui/input@1.3.0
+  - @shallot-ui/switch@1.3.0
+  - @shallot-ui/tag@1.3.0
+  - @shallot-ui/theme@1.3.0
+
 ## 0.59.0
 
 ### Minor Changes
