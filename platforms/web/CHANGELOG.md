@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.61.0
+
+### Minor Changes
+
+- More repairs for prop forwarding
+
 ## 0.60.0
 
 ### Minor Changes
