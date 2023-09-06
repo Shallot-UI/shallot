@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 21.1.0
+
+### Minor Changes
+
+- Fixes variant props
+
 ## 21.0.0
 
 ### Minor Changes
