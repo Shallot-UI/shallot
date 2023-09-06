@@ -70,6 +70,11 @@ const Template: StoryFn<typeof Text> = (args) => (
             fontSize: getFontSize('md'),
             color: getColor('Shading', 800),
           },
+          Label: {
+            fontFamily: getFontFamily('Body'),
+            fontSize: getFontSize('sm'),
+            color: getColor('Shading', 400),
+          },
         },
       },
     }}
@@ -82,6 +87,7 @@ const Template: StoryFn<typeof Text> = (args) => (
         <H3>Heading 3</H3>
         <P>Paragraph</P>
         <Text {...args}>Text</Text>
+        <Text variant="Label">Label Variant</Text>
       </Column>
     </Fold>
   </ShallotProvider>

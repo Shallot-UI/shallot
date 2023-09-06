@@ -7,6 +7,11 @@ import { FlexProps, getFlexShallot } from './flex'
 import { MarginProps, getMarginShallot } from './margin'
 import { SizingProps, getSizingShallot } from './sizing'
 
+type ExtendedProps = {
+  shallot?: ShallotProp
+  variant?: string
+}
+
 export type BoxLayoutProps = AlignmentProps &
   BorderProps &
   FlexProps &
@@ -20,12 +25,12 @@ type LayoutOptions = ShallotProp & {
 }
 
 export const withBoxLayoutProps =
-  <T extends { shallot?: ShallotProp | Record<string, ShallotProp> }>(
+  <T extends {}>(
     Component: ComponentType<T>,
     layoutShallot: LayoutOptions,
     boxKey?: string,
   ) =>
-  (props: T & BoxLayoutProps) => {
+  (props: T & BoxLayoutProps & ExtendedProps) => {
     const {
       alignTop,
       alignMiddle,
