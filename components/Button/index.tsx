@@ -9,6 +9,7 @@ import {
   getUnits,
   getShadow,
   getFontFamily,
+  applyStyles,
 } from '@shallot-ui/core'
 
 export type ButtonStyleProps = {
@@ -34,6 +35,7 @@ export type ButtonShallot = BaseButtonShallot & {
   ':focus'?: BaseButtonShallot
   ':hover'?: BaseButtonShallot
   ':active'?: BaseButtonShallot
+  ':disabled'?: BaseButtonShallot
 }
 
 export type ButtonProps<T> = T &
@@ -106,9 +108,6 @@ export const withButtonStyleProps =
         `,
 
         ...(outline && { backgroundColor: 'transparent' }),
-
-        ...themeVariant?.Container,
-        ...shallot?.Container,
       },
       Title: {
         display: 'block',
@@ -127,9 +126,6 @@ export const withButtonStyleProps =
 
         ...(uppercase && { textTransform: uppercase ? 'uppercase' : 'none' }),
         ...(outline && { color: getColor(color, shades.default) }),
-
-        ...themeVariant?.Title,
-        ...shallot?.Title,
       },
       ':focus': {
         Container: {
@@ -150,7 +146,21 @@ export const withButtonStyleProps =
           borderColor: getColor(color, shades.pressed),
         },
       },
+      ':disabled': {
+        Container: {
+          boxShadow: 'none',
+          backgroundColor: getColor('Shading', 200),
+          borderColor: getColor('Shading', 100),
+          cursor: 'not-allowed',
+        },
+        Title: {
+          color: getColor('Shading', 500),
+        },
+      },
     }
+
+    buttonShallot = applyStyles(buttonShallot, themeVariant)
+    buttonShallot = applyStyles(buttonShallot, shallot)
 
     return <ButtonComponent {...(buttonProps as T)} shallot={buttonShallot} />
   }
