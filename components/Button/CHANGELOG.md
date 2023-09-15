@@ -1,5 +1,11 @@
 # @shallot-ui/button
 
+## 1.4.0
+
+### Minor Changes
+
+- 1006f0f: [feat] deep merge `themeVariant` and `shallot` to `buttonShallot`
+
 ## 1.3.0
 
 ### Minor Changes
