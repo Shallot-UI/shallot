@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 0.63.0
+
+### Minor Changes
+
+- 4a06320: add custom icon to checkbox
+
 ## 0.62.0
 
 ### Minor Changes
