@@ -1,4 +1,9 @@
-import { FunctionComponent, InputHTMLAttributes, useState } from 'react'
+import {
+  FunctionComponent,
+  InputHTMLAttributes,
+  ReactNode,
+  useState,
+} from 'react'
 import { withBoxLayoutProps } from '@shallot-ui/core'
 import {
   CheckboxProps,
@@ -11,8 +16,9 @@ import S from './styles'
 const Base: FunctionComponent<
   CheckboxProps<InputHTMLAttributes<HTMLInputElement>> & {
     shallot?: CheckboxShallot
+    icon?: ReactNode
   }
-> = ({ shallot, type, ...checkboxProps }) => {
+> = ({ shallot, type, icon, ...checkboxProps }) => {
   // Manage the checkbox's checked state locally so that it can be controlled
   // or uncontrolled.
   const [localChecked, setLocalChecked] = useState(false)
@@ -32,7 +38,7 @@ const Base: FunctionComponent<
     <S.Wrapper>
       <S.Checkbox {...checkboxProps} checked={checked} onChange={onChange} />
       <S.Container checked={checked} shallot={shallot}>
-        <S.Icon />
+        {icon ? icon : <S.Icon />}
       </S.Container>
     </S.Wrapper>
   )
