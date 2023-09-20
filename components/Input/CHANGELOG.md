@@ -1,5 +1,11 @@
 # @shallot-ui/input
 
+## 1.4.0
+
+### Minor Changes
+
+- 20bdf62: [fix] fixes issue of themeVariant and shallot styles not being applied
+
 ## 1.3.0
 
 ### Minor Changes
