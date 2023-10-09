@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 1.0.0
+
+### Major Changes
+
+- f5fc825: [fix] Changes how withShallot function works
+
+### Patch Changes
+
+- Updated dependencies [f5fc825]
+  - @shallot-ui/web@1.0.0
+
 ## 0.42.4
 
 ### Patch Changes

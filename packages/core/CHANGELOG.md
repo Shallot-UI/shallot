@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 22.0.0
+
+### Major Changes
+
+- f5fc825: [fix] Changes how withShallot function works
+
 ## 21.2.0
 
 ### Minor Changes
