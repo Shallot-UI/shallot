@@ -1,5 +1,7 @@
-import { withTextLayoutProps } from '@shallot-ui/core'
-import { withShallot } from '../../utils'
+import { withTextShallot } from '../../utils'
 
-const BaseLink = withShallot('a', 'Text', 'Link')``
-export const AnchorLink = withTextLayoutProps(BaseLink)
+export const AnchorLink = withTextShallot(
+  'a',
+  {},
+  { scope: 'Text', variant: 'Link' },
+)
