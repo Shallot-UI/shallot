@@ -18,7 +18,7 @@ export type BoxLayoutProps = AlignmentProps &
   MarginProps &
   SizingProps
 
-type LayoutOptions = ShallotProp & {
+export type LayoutShallot = ShallotProp & {
   // We need to force a flex direction to exist in order to apply the correct
   // alignment styles.
   flexDirection: 'row' | 'column' | 'row-reverse' | 'column-reverse'
@@ -27,7 +27,7 @@ type LayoutOptions = ShallotProp & {
 export const withBoxLayoutProps =
   <T extends {}>(
     Component: ComponentType<T>,
-    layoutShallot: LayoutOptions,
+    layoutShallot: LayoutShallot,
     boxKey?: string,
   ) =>
   (props: T & BoxLayoutProps & ExtendedProps) => {

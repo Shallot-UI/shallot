@@ -1,5 +1,16 @@
 # @shallot-ui/web
 
+## 0.64.0
+
+### Minor Changes
+
+- Changes how withShallot function works
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@21.2.0
+
 ## 0.63.0
 
 ### Minor Changes

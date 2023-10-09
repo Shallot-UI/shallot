@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/next",
-  "version": "0.42.3",
+  "version": "0.42.4",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@shallot-ui/web": "^0.63.0"
+    "@shallot-ui/web": "^0.64.0"
   },
   "peerDependencies": {
     "next": ">=13",

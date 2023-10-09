@@ -2740,10 +2740,10 @@
     "@shallot-ui/theme" "^1.0.0"
     prop-types "^15.8.1"
 
-"@shallot-ui/core@^17.0.0":
-  version "17.0.2"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/core/-/core-17.0.2.tgz#58ed8673e232d14f8cd9c64b06e12587b836a1e5"
-  integrity sha512-mCSC2UROrM1WbDvxva6UNynwSQmf+CnkrN6BKJuoS4ffHAzpCmKWlDsAxHUYTwBMtMRVU9vAxFyhMdrPyC54JQ==
+"@shallot-ui/core@^18.0.0":
+  version "18.0.0"
+  resolved "https://registry.yarnpkg.com/@shallot-ui/core/-/core-18.0.0.tgz#9f29288c1c698b281d92be06133ad1b81311a921"
+  integrity sha512-NR1GN40vWVoa7sp6S1jwu9TsN631ndP6nui4KfrXSB+y4NyCt4+EkpmuGPO7LLPZD9ikfmb3yGFOgeTvztdCRg==
   dependencies:
     ts-deepmerge "^6.0.2"
 
@@ -2800,13 +2800,6 @@
     "@shallot-ui/core" "^18.0.0"
     "@shallot-ui/theme" "^1.0.0"
     prop-types "^15.8.1"
-
-"@shallot-ui/theme@^0.39.0":
-  version "0.39.0"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/theme/-/theme-0.39.0.tgz#a9d8d632d823ba0aaafe7a8c34124b15df92b05f"
-  integrity sha512-D785h6Og3PklXFpb9im8boFiUkSPEBy07gkl+6NxAyN/UyPzXmIBeLRIRMeTRhl9HrKNBi6l5o+NaAotPdjv8A==
-  dependencies:
-    ts-deepmerge "^6.0.2"
 
 "@sideway/address@^4.1.3":
   version "4.1.4"

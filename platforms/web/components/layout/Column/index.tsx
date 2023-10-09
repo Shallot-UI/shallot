@@ -1,5 +1,7 @@
-import { withBoxLayoutProps } from '@shallot-ui/core'
-import { withShallot } from '../../utils'
+import { withBoxShallot } from '../../utils'
 
-const Base = withShallot('div', 'Box', 'Column')``
-export const Column = withBoxLayoutProps(Base, { flexDirection: 'column' })
+export const Column = withBoxShallot(
+  'div',
+  { flexDirection: 'column' },
+  { scope: 'Box', variant: 'Column' },
+)
