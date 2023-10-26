@@ -1,6 +1,6 @@
-import styled from 'styled-components/native'
-import { withBoxLayoutProps, getStyle } from '@shallot-ui/core'
-import { ShallotProp } from '@shallot-ui/theme'
+import { withBoxShallot } from '../../utils'
 
-const Base = styled.View<{ shallot?: ShallotProp }>(getStyle)
-export const Column = withBoxLayoutProps(Base, { flexDirection: 'column' })
+export const Column = withBoxShallot({
+  flexDirection: 'column',
+  borderWidth: 0,
+})
