@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 22.1.1
+
+### Patch Changes
+
+- [fix] fixes issue with layout props on native boxes
+
 ## 22.0.0
 
 ### Major Changes

@@ -1,5 +1,13 @@
 # @shallot-ui/button
 
+## 1.4.2
+
+### Patch Changes
+
+- [fix] fixes issue with layout props on native boxes
+- Updated dependencies
+  - @shallot-ui/core@22.1.1
+
 ## 1.4.1
 
 ### Patch Changes

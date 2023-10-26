@@ -1,5 +1,13 @@
 # @shallot-ui/checkbox
 
+## 1.3.2
+
+### Patch Changes
+
+- [fix] fixes issue with layout props on native boxes
+- Updated dependencies
+  - @shallot-ui/core@22.1.1
+
 ## 1.3.1
 
 ### Patch Changes

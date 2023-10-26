@@ -1,5 +1,13 @@
 # @shallot-ui/modal
 
+## 0.19.2
+
+### Patch Changes
+
+- [fix] fixes issue with layout props on native boxes
+- Updated dependencies
+  - @shallot-ui/core@22.1.1
+
 ## 0.19.1
 
 ### Patch Changes

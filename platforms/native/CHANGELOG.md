@@ -1,5 +1,18 @@
 # @shallot-ui/native
 
+## 0.49.1
+
+### Patch Changes
+
+- [fix] fixes issue with layout props on native boxes
+- Updated dependencies
+  - @shallot-ui/checkbox@1.3.2
+  - @shallot-ui/button@1.4.2
+  - @shallot-ui/switch@1.3.2
+  - @shallot-ui/input@1.4.2
+  - @shallot-ui/tag@1.3.2
+  - @shallot-ui/core@22.1.1
+
 ## 0.49.0
 
 ### Minor Changes

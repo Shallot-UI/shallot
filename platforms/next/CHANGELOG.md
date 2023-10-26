@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 1.0.1
+
+### Patch Changes
+
+- [fix] fixes issue with layout props on native boxes
+- Updated dependencies
+  - @shallot-ui/web@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
