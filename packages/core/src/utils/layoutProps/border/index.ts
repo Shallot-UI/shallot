@@ -9,7 +9,6 @@ export const getBorderShallot = ({
   borderWidth,
 }: BorderProps) => {
   let width = borderWidth
-  if (width === undefined) width = 1
 
   // We don't want to return a border if there is no width
   if (width === undefined) return
