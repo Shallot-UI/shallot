@@ -1,5 +1,13 @@
 # @shallot-ui/switch
 
+## 1.3.1
+
+### Patch Changes
+
+- Updated dependencies [f5fc825]
+- Updated dependencies
+  - @shallot-ui/core@22.0.0
+
 ## 1.3.0
 
 ### Minor Changes

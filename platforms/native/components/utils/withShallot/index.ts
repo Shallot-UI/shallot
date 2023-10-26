@@ -5,6 +5,7 @@ import {
   LayoutShallot,
   getStyle,
   getVariantStyle,
+  withBoxLayoutProps,
   withTextLayoutProps,
 } from '@shallot-ui/core'
 
@@ -39,7 +40,7 @@ export const withBoxShallot = (
     ${getStyle}
   `
 
-  return withTextLayoutProps(Component, shallot)
+  return withBoxLayoutProps(Component, shallot)
 }
 
 export const withTextShallot = (

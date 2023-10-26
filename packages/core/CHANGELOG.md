@@ -1,5 +1,15 @@
 # @shallot-ui/core
 
+## 22.0.0
+
+### Major Changes
+
+- f5fc825: [fix] Changes how withShallot function works
+
+### Minor Changes
+
+- Fixes how variants are handled on native
+
 ## 21.2.0
 
 ### Minor Changes

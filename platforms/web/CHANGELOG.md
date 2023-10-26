@@ -1,5 +1,22 @@
 # @shallot-ui/web
 
+## 1.0.0
+
+### Major Changes
+
+- f5fc825: [fix] Changes how withShallot function works
+
+### Patch Changes
+
+- Updated dependencies [f5fc825]
+- Updated dependencies
+  - @shallot-ui/core@22.0.0
+  - @shallot-ui/button@1.4.1
+  - @shallot-ui/checkbox@1.3.1
+  - @shallot-ui/input@1.4.1
+  - @shallot-ui/switch@1.3.1
+  - @shallot-ui/tag@1.3.1
+
 ## 0.64.0
 
 ### Minor Changes
