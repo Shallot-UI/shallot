@@ -21,9 +21,9 @@ export type ModalStyleProps = {
 }
 
 export type ModalShallot = {
-  wrapper: ShallotProp
-  curtain: ShallotProp
-  container: ShallotProp
+  Wrapper: ShallotProp
+  Curtain: ShallotProp
+  Container: ShallotProp
 }
 
 export type ModalProps<T> = T &
@@ -62,7 +62,7 @@ export const withModalStyleProps =
       | undefined
 
     let modalShallot: ModalShallot = {
-      wrapper: {
+      Wrapper: {
         height: '100vh',
         width: '100vw',
         display: 'flex',
@@ -74,9 +74,9 @@ export const withModalStyleProps =
         zIndex: 9999,
 
         // Variants (overrides)
-        ...themeVariant?.wrapper,
+        ...themeVariant?.Wrapper,
       },
-      curtain: {
+      Curtain: {
         animation: 'fadeIn',
         height: '100vh',
         width: '100vw',
@@ -87,9 +87,9 @@ export const withModalStyleProps =
         zIndex: -1,
 
         // Variants (overrides)
-        ...themeVariant?.curtain,
+        ...themeVariant?.Curtain,
       },
-      container: {
+      Container: {
         animation: 'fadeInUp',
         backgroundColor: getColorShade(backgroundColor),
         borderRadius: getRadius(radius),
@@ -102,14 +102,14 @@ export const withModalStyleProps =
         ...(unitsRight && { marginRight: getUnits(unitsRight) }),
 
         // Variants (overrides)
-        ...themeVariant?.container,
+        ...themeVariant?.Container,
       },
     }
 
     modalShallot = applyStyles(modalShallot, {
-      wrapper: shallot?.wrapper,
-      curtain: shallot?.curtain,
-      container: shallot?.container,
+      Wrapper: shallot?.Wrapper,
+      Curtain: shallot?.Curtain,
+      Container: shallot?.Container,
     })
 
     return <ModalComponent {...(modalProps as T)} shallot={modalShallot} />
