@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 1.2.0
+
+### Minor Changes
+
+- Supports breakpoint values in variants
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@1.3.0
+
 ## 1.1.0
 
 ### Minor Changes

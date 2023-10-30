@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 1.3.0
+
+### Minor Changes
+
+- Supports breakpoint values in variants
+
 ## 1.2.1
 
 ### Patch Changes

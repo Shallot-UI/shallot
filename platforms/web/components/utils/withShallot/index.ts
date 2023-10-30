@@ -5,7 +5,6 @@ import {
   LayoutShallot,
   getBreakpointsStyle,
   getStyle,
-  getVariantStyle,
   withBoxLayoutProps,
   withTextLayoutProps,
 } from '@shallot-ui/core'
@@ -32,10 +31,10 @@ export const withShallot = <T extends ElementType>(
     variant?: string
   } = {},
 ) => styled(element).withConfig(config)<ExtendedProps>`
-  ${({ shallot: shallotProp, variant, theme }) => {
+  ${({ shallot: shallotProp, variant: variantProp, theme }) => {
     // Get any shallot extensions from the theme for the current variant.
     const variantShallot = scope
-      ? theme?.variants?.[scope]?.[variant] ?? {}
+      ? theme?.variants?.[scope]?.[variantProp ?? variant] ?? {}
       : {}
 
     // Merge the shallot props and overrides together.
@@ -56,12 +55,15 @@ export const withBoxShallot = <T extends ElementType>(
   element: T,
   shallot: LayoutShallot,
   {
-    scope,
-    variant,
+    scope = 'Box',
+    variant = 'Default',
   }: {
     scope?: string
     variant?: string
-  } = {},
+  } = {
+    scope: 'Box',
+    variant: 'Default',
+  },
 ) => {
   const Base = withShallot(element, {}, { scope, variant })
   return withBoxLayoutProps(Base, shallot)
@@ -71,12 +73,15 @@ export const withTextShallot = <T extends ElementType>(
   element: T,
   shallot?: ShallotProp,
   {
-    scope,
-    variant,
+    scope = 'Text',
+    variant = 'Default',
   }: {
     scope?: string
     variant?: string
-  } = {},
+  } = {
+    scope: 'Text',
+    variant: 'Default',
+  },
 ) => {
   const Base = withShallot(element, {}, { scope, variant })
   return withTextLayoutProps(Base, shallot)
