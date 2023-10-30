@@ -1,5 +1,13 @@
 # @shallot-ui/web
 
+## 1.2.1
+
+### Patch Changes
+
+- Collects all breakpoint styles before rendering
+- Updated dependencies
+  - @shallot-ui/core@22.2.1
+
 ## 1.2.0
 
 ### Minor Changes

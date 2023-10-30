@@ -23,7 +23,7 @@ const config = {
 
 export const withShallot = <T extends ElementType>(
   element: T,
-  shallot?: ShallotProp,
+  baseShallot?: ShallotProp,
   {
     scope,
     variant,
@@ -31,21 +31,26 @@ export const withShallot = <T extends ElementType>(
     scope?: string
     variant?: string
   } = {},
-) => {
-  const getVariant = (p: ExtendedProps) =>
-    scope && (p.variant ?? variant)
-      ? getVariantStyle(scope, p.variant ?? variant)
-      : ''
+) => styled(element).withConfig(config)<ExtendedProps>`
+  ${({ shallot: shallotProp, variant, theme }) => {
+    // Get any shallot extensions from the theme for the current variant.
+    const variantShallot = scope
+      ? theme?.variants?.[scope]?.[variant] ?? {}
+      : {}
 
-  const component = styled(element).withConfig(config)<ExtendedProps>`
-    ${getVariant}
-    ${(p) => getStyle({ ...p, shallot: { ...shallot, ...p.shallot } })(p)}
-    ${(p) =>
-      getBreakpointsStyle({ ...p, shallot: { ...shallot, ...p.shallot } })(p)}
-  `
+    // Merge the shallot props and overrides together.
+    const shallot = { ...baseShallot, ...variantShallot, ...shallotProp }
 
-  return component
-}
+    // Get the variant styles.
+    const baseStyles = getStyle({ shallot })({ theme })
+
+    // Collect the breakpoint styles.
+    const breakpointsStyles = getBreakpointsStyle({ shallot })({ theme })
+
+    // Merge and return all of the rendered styles.
+    return { ...baseStyles, ...breakpointsStyles }
+  }}
+`
 
 export const withBoxShallot = <T extends ElementType>(
   element: T,

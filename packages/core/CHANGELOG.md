@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 22.2.1
+
+### Patch Changes
+
+- Collects all breakpoint styles before rendering
+
 ## 22.2.0
 
 ### Minor Changes

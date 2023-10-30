@@ -1,6 +1,5 @@
-import { ThemeOptions, makeTheme } from '@shallot-ui/theme'
-import { DefaultTheme } from 'styled-components/native'
-import { getStyle, scopeGetStyle } from '..'
+import { makeTheme } from '@shallot-ui/theme'
+import { getStyle } from '..'
 import { getColor, getFontSize, getShadow } from '../../mixins'
 
 describe.only('Test the `getStyle` function', () => {
