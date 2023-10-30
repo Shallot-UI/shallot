@@ -1,5 +1,16 @@
 # @shallot-ui/web
 
+## 1.2.0
+
+### Minor Changes
+
+- Improves how breakpoints are rendered on web.
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@22.2.0
+
 ## 1.1.0
 
 ### Minor Changes

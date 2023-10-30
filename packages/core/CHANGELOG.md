@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 22.2.0
+
+### Minor Changes
+
+- Improves how breakpoints are rendered on web.
+
 ## 22.1.1
 
 ### Patch Changes

@@ -1,5 +1,6 @@
-import { ColorShadingValue } from '@shallot-ui/theme'
+import { ColorShadingValue, ShallotProp } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
+import { getStyle } from '../getStyle'
 
 /**
  * Get a variant from the theme using its component name and variant name.
@@ -217,29 +218,4 @@ export const getFullHeight =
     const topMargin = baseUnit * (unitsAbove ?? unitsAround ?? 0)
     const bottomMargin = baseUnit * (unitsBelow ?? unitsAround ?? 0)
     return `calc(100% - ${topMargin + bottomMargin}px)`
-  }
-
-/**
- * Get a set of media query breakpoints from the theme using a font size.
- * @param fontSize - The font size name.
- * @returns The set of media query breakpoints.
- */
-export const getBreakpoints =
-  ({ fontSize }: { fontSize?: keyof DefaultTheme['fontSizes'] }) =>
-  ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme.breakpoints) return
-    const modifiers: any = {}
-    Object.entries(theme.breakpoints).forEach(([width, subtheme]) => {
-      const value: any = {}
-
-      if (fontSize && subtheme?.fontSizes?.[fontSize] !== undefined) {
-        value.fontSize = subtheme.fontSizes[fontSize]
-      }
-
-      // Ensure `value` is not empty
-      if (Object.keys(value).length > 0) {
-        modifiers[`@media(min-width: ${width}px)`] = value
-      }
-    })
-    return modifiers
   }
