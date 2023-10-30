@@ -2730,30 +2730,6 @@
     csstype "^3.1.2"
     prop-types "^15.8.1"
 
-"@shallot-ui/button@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/button/-/button-1.4.1.tgz#1f6691ba4e42e11ec95e72a2b8c8926687bda300"
-  integrity sha512-8KUQyZJULtu+t6IiuMY8e2HLSEgbXr//lnWtkFCbl/jvJLXVBooh/BzCsq8t31C00CPYb/6CRlmebtLVOnr7qw==
-  dependencies:
-    "@shallot-ui/box" "^0.18.1"
-    "@shallot-ui/core" "^22.0.0"
-    "@shallot-ui/row" "^0.18.1"
-    "@shallot-ui/text" "^1.0.0"
-    "@shallot-ui/theme" "^1.3.0"
-    prop-types "^15.8.1"
-
-"@shallot-ui/checkbox@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/checkbox/-/checkbox-1.3.1.tgz#e015836f182fb4dd49afe440fa0dfbeeb68ae3d4"
-  integrity sha512-AfeT5xGJCZGcro6ximkQZrbtLmH4nC2KjIi+Km7pkHjjGivv+TfUe3PTQo9mLGLLGs7aLJnWmUYjR0WSrb4HvQ==
-  dependencies:
-    "@shallot-ui/box" "^0.18.1"
-    "@shallot-ui/core" "^22.0.0"
-    "@shallot-ui/row" "^0.18.1"
-    "@shallot-ui/text" "^1.0.0"
-    "@shallot-ui/theme" "^1.3.0"
-    prop-types "^15.8.1"
-
 "@shallot-ui/column@^0.18.2":
   version "0.18.2"
   resolved "https://registry.yarnpkg.com/@shallot-ui/column/-/column-0.18.2.tgz#6ae8551b7b91812275e139554fe5c88eaffc3a18"
@@ -2768,13 +2744,6 @@
   version "18.0.0"
   resolved "https://registry.yarnpkg.com/@shallot-ui/core/-/core-18.0.0.tgz#9f29288c1c698b281d92be06133ad1b81311a921"
   integrity sha512-NR1GN40vWVoa7sp6S1jwu9TsN631ndP6nui4KfrXSB+y4NyCt4+EkpmuGPO7LLPZD9ikfmb3yGFOgeTvztdCRg==
-  dependencies:
-    ts-deepmerge "^6.0.2"
-
-"@shallot-ui/core@^22.0.0":
-  version "22.0.0"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/core/-/core-22.0.0.tgz#cb312f7f12be9b5ff5acf60d09add97fdc912f81"
-  integrity sha512-Nu78q50fvykGanTTNwLOC/drbGoUrHqYa6jSk21q23n6lV8mxrGE8tb2YdRItK1t9PCKGXb1DJu7peS/+x8GiQ==
   dependencies:
     ts-deepmerge "^6.0.2"
 
@@ -2812,18 +2781,6 @@
     "@shallot-ui/theme" "^1.0.0"
     prop-types "^15.8.1"
 
-"@shallot-ui/input@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/input/-/input-1.4.1.tgz#562a36b3869430d78949e7471c39a353d04d2cd3"
-  integrity sha512-vWCM4Wo18+hOXqbhbXJWQseFSgBp0OhVkb06nTUE/OKrpuSBRQ5Xq8RQvAjb9lAKcBDmG1+6Np55YcGlEMnryg==
-  dependencies:
-    "@shallot-ui/box" "^0.18.1"
-    "@shallot-ui/core" "^22.0.0"
-    "@shallot-ui/row" "^0.18.1"
-    "@shallot-ui/text" "^1.0.0"
-    "@shallot-ui/theme" "^1.3.0"
-    prop-types "^15.8.1"
-
 "@shallot-ui/row@^0.18.1":
   version "0.18.1"
   resolved "https://registry.yarnpkg.com/@shallot-ui/row/-/row-0.18.1.tgz#d52e4500fbb68500ad7cffdd98df621a3cd71d44"
@@ -2832,30 +2789,6 @@
     "@shallot-ui/box" "^0.18.1"
     "@shallot-ui/core" "^18.0.0"
     "@shallot-ui/theme" "^1.0.0"
-    prop-types "^15.8.1"
-
-"@shallot-ui/switch@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/switch/-/switch-1.3.1.tgz#2b4de1cdc5c3722d617c73c6a80c3dffd5f19589"
-  integrity sha512-F6Ssa9GZb21RQ2mAdmtZsCi2HvsoNXXpF8VEi7mMTtqbMJBehIBeqPJCPAFlLy3h5piLjdJA87BsyYO7ZT4jIA==
-  dependencies:
-    "@shallot-ui/box" "^0.18.1"
-    "@shallot-ui/core" "^22.0.0"
-    "@shallot-ui/row" "^0.18.1"
-    "@shallot-ui/text" "^1.0.0"
-    "@shallot-ui/theme" "^1.3.0"
-    prop-types "^15.8.1"
-
-"@shallot-ui/tag@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@shallot-ui/tag/-/tag-1.3.1.tgz#a7fd2005ae4a023559731d3c2a9ba58b8d5fae7f"
-  integrity sha512-bQAJuaZRjHPTvqeTadR7OrfK+l5QUkNy2WU7KHRmzY7mXhg58pwcwwk8EiS2HiExDOqMvsZOWjqvlE4PCguhgQ==
-  dependencies:
-    "@shallot-ui/box" "^0.18.1"
-    "@shallot-ui/core" "^22.0.0"
-    "@shallot-ui/row" "^0.18.1"
-    "@shallot-ui/text" "^1.0.0"
-    "@shallot-ui/theme" "^1.3.0"
     prop-types "^15.8.1"
 
 "@shallot-ui/text@^1.0.0":

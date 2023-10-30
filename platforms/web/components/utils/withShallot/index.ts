@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import {
   LayoutShallot,
+  getBreakpoints,
   getStyle,
   getVariantStyle,
   withBoxLayoutProps,
@@ -38,8 +39,8 @@ export const withShallot = <T extends ElementType>(
 
   const component = styled(element).withConfig(config)<ExtendedProps>`
     ${getVariant}
-    ${getStyle({ shallot })}
-    ${getStyle}
+    ${(p) => getStyle({ ...p, shallot: { ...shallot, ...p.shallot } })}
+    ${(p) => getBreakpoints({ ...p, shallot: { ...shallot, ...p.shallot } })}
   `
 
   return component
