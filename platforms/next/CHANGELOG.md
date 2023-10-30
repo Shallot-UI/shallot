@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 1.1.0
+
+### Minor Changes
+
+- 6f832bd: Uses breakpoints on web
+
+### Patch Changes
+
+- Updated dependencies [6f832bd]
+  - @shallot-ui/web@1.1.0
+
 ## 1.0.1
 
 ### Patch Changes

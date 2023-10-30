@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 1.1.0
+
+### Minor Changes
+
+- 6f832bd: Uses breakpoints on web
+
 ## 1.0.1
 
 ### Patch Changes
