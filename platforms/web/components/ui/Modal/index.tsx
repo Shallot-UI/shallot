@@ -12,9 +12,9 @@ const Base = (
   const { title, shallot, children, onClose, ...rest } = props
 
   return (
-    <S.Wrapper shallot={shallot?.wrapper}>
-      <S.Curtain shallot={shallot?.curtain} onClick={() => onClose?.()} />
-      <S.Container shallot={shallot?.container} {...rest}>
+    <S.Wrapper shallot={shallot?.Wrapper}>
+      <S.Curtain shallot={shallot?.Curtain} onClick={() => onClose?.()} />
+      <S.Container shallot={shallot?.Container} {...rest}>
         {children}
       </S.Container>
     </S.Wrapper>

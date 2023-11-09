@@ -1,5 +1,14 @@
 # @shallot-ui/next
 
+## 1.2.1
+
+### Patch Changes
+
+- Improves switch colors
+- Updated dependencies
+- Updated dependencies
+  - @shallot-ui/web@1.4.0
+
 ## 1.2.0
 
 ### Minor Changes

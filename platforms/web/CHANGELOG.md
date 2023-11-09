@@ -1,5 +1,17 @@
 # @shallot-ui/web
 
+## 1.4.0
+
+### Minor Changes
+
+- fixes issue with modal casing
+
+### Patch Changes
+
+- Improves switch colors
+- Updated dependencies
+  - @shallot-ui/switch@1.3.3
+
 ## 1.3.0
 
 ### Minor Changes
