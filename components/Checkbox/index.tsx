@@ -94,7 +94,7 @@ export const withCheckboxStyleProps =
         },
       },
       ':checked': {
-        Icon: { display: 'block' },
+        Icon: { display: 'flex' },
         Container: {
           backgroundColor: getColor(color, 500),
           borderColor: getColor(color, 500),

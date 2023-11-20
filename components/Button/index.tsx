@@ -110,7 +110,7 @@ export const withButtonStyleProps =
         ...(outline && { backgroundColor: 'transparent' }),
       },
       Title: {
-        display: 'block',
+        display: 'flex',
         textAlign,
         fontWeight,
         flex: 1,
