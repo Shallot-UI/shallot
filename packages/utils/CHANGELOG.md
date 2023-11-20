@@ -1,5 +1,16 @@
 # @shallot-ui/utils
 
+## 20.0.0
+
+### Minor Changes
+
+- Improvements for consistency on native
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@1.4.0
+
 ## 19.0.0
 
 ### Minor Changes

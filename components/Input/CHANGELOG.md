@@ -1,5 +1,17 @@
 # @shallot-ui/input
 
+## 1.5.0
+
+### Minor Changes
+
+- Improvements for consistency on native
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@23.0.0
+  - @shallot-ui/theme@1.4.0
+
 ## 1.4.2
 
 ### Patch Changes

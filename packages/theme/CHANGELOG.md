@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 1.4.0
+
+### Minor Changes
+
+- Improvements for consistency on native
+
 ## 1.3.0
 
 ### Minor Changes

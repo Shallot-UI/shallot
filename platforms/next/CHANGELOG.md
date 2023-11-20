@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 1.3.0
+
+### Minor Changes
+
+- Improvements for consistency on native
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@1.5.0
+
 ## 1.2.1
 
 ### Patch Changes
