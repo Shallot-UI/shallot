@@ -1,5 +1,11 @@
 # @shallot-ui/next
 
+## 1.4.1
+
+### Patch Changes
+
+- 2699b13: [fix] fixes transient prop issue in `Image` component by adding `shouldForwardProp` function
+
 ## 1.4.0
 
 ### Minor Changes
