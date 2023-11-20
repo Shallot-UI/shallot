@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 1.5.0
+
+### Minor Changes
+
+- Removes use of block
+
 ## 1.4.0
 
 ### Minor Changes

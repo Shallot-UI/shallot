@@ -1,5 +1,22 @@
 # @shallot-ui/web
 
+## 1.6.0
+
+### Minor Changes
+
+- Removes use of block
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/button@1.6.0
+  - @shallot-ui/checkbox@1.5.0
+  - @shallot-ui/input@1.6.0
+  - @shallot-ui/switch@1.5.0
+  - @shallot-ui/tag@1.5.0
+  - @shallot-ui/core@24.0.0
+  - @shallot-ui/theme@1.5.0
+
 ## 1.5.0
 
 ### Minor Changes

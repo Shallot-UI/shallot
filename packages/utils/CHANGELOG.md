@@ -1,5 +1,16 @@
 # @shallot-ui/utils
 
+## 21.0.0
+
+### Minor Changes
+
+- Removes use of block
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@1.5.0
+
 ## 20.0.0
 
 ### Minor Changes

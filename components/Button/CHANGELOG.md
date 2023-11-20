@@ -1,5 +1,17 @@
 # @shallot-ui/button
 
+## 1.6.0
+
+### Minor Changes
+
+- Removes use of block
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@24.0.0
+  - @shallot-ui/theme@1.5.0
+
 ## 1.5.0
 
 ### Minor Changes

@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 1.4.0
+
+### Minor Changes
+
+- Removes use of block
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/web@1.6.0
+
 ## 1.3.0
 
 ### Minor Changes
