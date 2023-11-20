@@ -4,7 +4,7 @@ import { TagShallot, withTagStyleProps } from '@shallot-ui/tag'
 import { getStyle, withBoxLayoutProps } from '@shallot-ui/core'
 
 const Container = styled.View(getStyle)
-const Title = styled.View(getStyle)
+const Title = styled.Text(getStyle)
 
 const StaticTag = (
   props: ViewProps & {
