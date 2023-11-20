@@ -53,7 +53,7 @@ export const withShallot = <T extends ElementType>(
 
 export const withBoxShallot = <T extends ElementType>(
   element: T,
-  shallot: LayoutShallot,
+  shallot: ShallotProp,
   {
     scope = 'Box',
     variant = 'Default',
@@ -65,8 +65,12 @@ export const withBoxShallot = <T extends ElementType>(
     variant: 'Default',
   },
 ) => {
-  const Base = withShallot(element, {}, { scope, variant })
-  return withBoxLayoutProps(Base, shallot)
+  const Base = withShallot(
+    element,
+    { flexDirection: 'column' },
+    { scope, variant },
+  )
+  return withBoxLayoutProps(Base, shallot as LayoutShallot)
 }
 
 export const withTextShallot = <T extends ElementType>(

@@ -20,7 +20,7 @@ const config = {
 }
 
 export const withBoxShallot = (
-  shallot: LayoutShallot,
+  shallot: ShallotProp,
   {
     scope = 'Box',
     variant,
@@ -40,7 +40,10 @@ export const withBoxShallot = (
     ${getStyle}
   `
 
-  return withBoxLayoutProps(Component, shallot)
+  return withBoxLayoutProps(Component, {
+    flexDirection: 'column',
+    ...shallot,
+  } as LayoutShallot)
 }
 
 export const withTextShallot = (
