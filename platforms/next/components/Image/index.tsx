@@ -11,7 +11,9 @@ export interface ImageProps extends NextImageProps {
   unitHeight?: number
 }
 
-const Container = styled.div(getStyle)
+const Container = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})(getStyle)
 const InnerImage = styled(NextImage)(getStyle)
 
 const Base: FunctionComponent<ImageProps> = (props) => {
