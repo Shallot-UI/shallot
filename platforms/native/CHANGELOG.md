@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 0.51.1
+
+### Patch Changes
+
+- 136532d: Re-center button labels
+- Updated dependencies [136532d]
+- Updated dependencies [82c4743]
+  - @shallot-ui/button@1.6.1
+
 ## 0.51.0
 
 ### Minor Changes

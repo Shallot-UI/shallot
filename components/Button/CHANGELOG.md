@@ -1,5 +1,12 @@
 # @shallot-ui/button
 
+## 1.6.1
+
+### Patch Changes
+
+- 136532d: Re-center button labels
+- 82c4743: Re-center button labels
+
 ## 1.6.0
 
 ### Minor Changes
