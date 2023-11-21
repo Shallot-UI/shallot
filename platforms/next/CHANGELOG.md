@@ -1,5 +1,11 @@
 # @shallot-ui/next
 
+## 1.4.2
+
+### Patch Changes
+
+- 136532d: Re-center button labels
+
 ## 1.4.1
 
 ### Patch Changes
