@@ -111,6 +111,7 @@ export const withButtonStyleProps =
       },
       Title: {
         display: 'flex',
+        justifyContent: 'center',
         textAlign,
         fontWeight,
         flex: 1,
