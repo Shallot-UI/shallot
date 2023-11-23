@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 0.51.2
+
+### Patch Changes
+
+- 25a32bc: Button consistency on native with web
+
 ## 0.51.1
 
 ### Patch Changes
