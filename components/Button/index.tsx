@@ -114,7 +114,7 @@ export const withButtonStyleProps =
         justifyContent: 'center',
         textAlign,
         fontWeight,
-        flex: 1,
+        flexGrow: 1,
         fontFamily: getFontFamily(fontFamily),
         color: getColor('Shading', 50),
         fontSize: getFontSize(fontSize),
