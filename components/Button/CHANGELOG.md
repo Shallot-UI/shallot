@@ -1,5 +1,11 @@
 # @shallot-ui/button
 
+## 1.6.2
+
+### Patch Changes
+
+- e51c803: Fixes text cut off on buttons in native
+
 ## 1.6.1
 
 ### Patch Changes
