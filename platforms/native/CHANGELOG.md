@@ -1,5 +1,16 @@
 # @shallot-ui/native
 
+## 0.52.0
+
+### Minor Changes
+
+- dc50544: Fix tag sizing on native
+
+### Patch Changes
+
+- Updated dependencies [dc50544]
+  - @shallot-ui/tag@1.5.1
+
 ## 0.51.4
 
 ### Patch Changes
