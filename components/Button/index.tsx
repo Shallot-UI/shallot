@@ -99,7 +99,6 @@ export const withButtonStyleProps =
         justifyContent: 'center',
         borderWidth: 2,
         borderStyle: 'solid',
-        cursor: 'pointer',
         transition: `
           background-color 0.2s ease-in-out,
           border-color 0.2s ease-in-out,
@@ -123,7 +122,6 @@ export const withButtonStyleProps =
         marginTop: getUnits(verticalUnitPadding),
         marginBottom: getUnits(verticalUnitPadding),
         letterSpacing: getLetterSpacing(letterSpacing),
-        cursor: 'pointer',
 
         ...(uppercase && { textTransform: uppercase ? 'uppercase' : 'none' }),
         ...(outline && { color: getColor(color, shades.default) }),
@@ -152,7 +150,6 @@ export const withButtonStyleProps =
           boxShadow: 'none',
           backgroundColor: getColor('Shading', 200),
           borderColor: getColor('Shading', 100),
-          cursor: 'not-allowed',
         },
         Title: {
           color: getColor('Shading', 500),
