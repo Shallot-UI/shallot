@@ -1,5 +1,13 @@
 # @shallot-ui/native
 
+## 0.51.4
+
+### Patch Changes
+
+- 456b06f: Improvements to native tags
+- Updated dependencies [456b06f]
+  - @shallot-ui/button@1.6.3
+
 ## 0.51.3
 
 ### Patch Changes
