@@ -103,7 +103,7 @@ export const withTagStyleProps =
       },
       Title: {
         display: 'flex',
-        flexGrow: 1,
+        flexGrow: 0,
         textAlign,
         fontWeight,
         fontFamily: getFontFamily(fontFamily),
