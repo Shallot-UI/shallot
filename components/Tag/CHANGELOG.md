@@ -1,5 +1,11 @@
 # @shallot-ui/tag
 
+## 1.5.1
+
+### Patch Changes
+
+- dc50544: Fix tag sizing on native
+
 ## 1.5.0
 
 ### Minor Changes
