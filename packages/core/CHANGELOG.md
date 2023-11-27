@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 24.1.0
+
+### Minor Changes
+
+- d3d2b26: Fix build types
+
 ## 24.0.1
 
 ### Patch Changes
