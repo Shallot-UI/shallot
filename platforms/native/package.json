@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/native",
-  "version": "0.52.0",
+  "version": "0.52.1",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "@shallot-ui/button": "^1.6.3",
     "@shallot-ui/checkbox": "^1.5.0",
     "@shallot-ui/column": "^0.18.2",
-    "@shallot-ui/core": "^24.0.0",
+    "@shallot-ui/core": "^24.0.1",
     "@shallot-ui/fold": "^0.16.1",
     "@shallot-ui/form-column": "^1.0.0",
     "@shallot-ui/form-row": "^1.0.0",
