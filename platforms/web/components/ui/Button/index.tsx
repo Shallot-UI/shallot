@@ -1,11 +1,11 @@
-import { HTMLAttributes, ReactNode } from 'react'
+import { ComponentProps, ReactNode } from 'react'
 import { withBoxLayoutProps } from '@shallot-ui/core'
 import { ButtonProps, withButtonStyleProps } from '@shallot-ui/button'
 
 import S from './styles'
 
 const Base = (
-  props: ButtonProps<HTMLAttributes<HTMLButtonElement>> & {
+  props: ButtonProps<ComponentProps<typeof S.Container>> & {
     before?: ReactNode
     after?: ReactNode
   },

@@ -1,11 +1,11 @@
-import { HTMLAttributes, ReactNode } from 'react'
+import { ComponentProps, HTMLAttributes, ReactNode } from 'react'
 import { withBoxLayoutProps } from '@shallot-ui/core'
 import { TagProps, withTagStyleProps } from '@shallot-ui/tag'
 
 import S from './styles'
 
 const Base = (
-  props: TagProps<HTMLAttributes<HTMLButtonElement>> & {
+  props: TagProps<ComponentProps<typeof S.Container>> & {
     before?: ReactNode
     after?: ReactNode
   },
