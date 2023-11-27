@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 24.0.1
+
+### Patch Changes
+
+- 89fb268: Adding wrap prop and making tags divs instead of buttons
+
 ## 24.0.0
 
 ### Minor Changes
