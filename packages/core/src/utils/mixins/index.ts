@@ -1,6 +1,9 @@
 import { ColorShadingValue } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
 
+const valueNotFoundError = (property: string, key: string) =>
+  `Shallot UI: Value "${key}" not found for theme property "${property}". Are you sure it's defined correctly in your theme and you're using a ShallotProvider? More info: https://www.shallotui.com/?path=/docs/%F0%9F%8E%A8-theme-variants--docs`
+
 /**
  * Get a variant from the theme using its component name and variant name.
  * @param component  - The name of the component. Name must be capitalized.
@@ -12,9 +15,7 @@ export const getVariant =
   ({ theme }: { theme: DefaultTheme }) => {
     const variant = theme?.variants?.[component]?.[name]
     if (!variant)
-      console.warn(
-        `Variant not found for component "${component}" and name "${name}". Are you sure it's defined correctly in your theme and you're using a ShallotProvider? More info: https://www.shallotui.com/?path=/docs/%F0%9F%8E%A8-theme-variants--docs`,
-      )
+      console.warn(valueNotFoundError('variants', `${component}.${name}`))
     return variant
   }
 
@@ -29,10 +30,7 @@ export const getColor =
   ({ theme }: { theme: DefaultTheme }) => {
     const color =
       theme.colors?.[value]?.[shade as keyof typeof theme.colors.Shading]
-    if (!color)
-      console.warn(
-        `Color not found for value "${value}" and shade "${shade}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
-      )
+    if (!color) console.warn(valueNotFoundError('colors', `${value}.${shade}`))
     return color
   }
 
@@ -51,11 +49,7 @@ export const getColorShade = (address: string | undefined) => {
     keyof DefaultTheme['colors'],
     ColorShadingValue,
   ]
-  if (!shade) {
-    console.warn(
-      `Color shade not found for value "${address}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
-    )
-  }
+  if (!shade) console.warn(valueNotFoundError('colors', `${color}.${shade}`))
   return getColor(color, shade)
 }
 
@@ -65,13 +59,11 @@ export const getColorShade = (address: string | undefined) => {
  * @returns A valid CSS radius value.
  */
 export const getRadius =
-  (value: keyof DefaultTheme['radii']) =>
+  (key: keyof DefaultTheme['radii'] | string) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme?.radii?.[value])
-      console.warn(
-        `Radius not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
-      )
-    return theme.radii[value]
+    const value = theme?.radii?.[key as keyof DefaultTheme['radii']]
+    if (!value) console.warn(valueNotFoundError('radii', `${value}`))
+    return value
   }
 
 /**
@@ -80,13 +72,12 @@ export const getRadius =
  * @returns The letter spacing value.
  */
 export const getLetterSpacing =
-  (value: keyof DefaultTheme['letterSpacings']) =>
+  (key: keyof DefaultTheme['letterSpacings'] | string) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme?.letterSpacings?.[value])
-      console.warn(
-        `Letter spacing not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
-      )
-    return theme.letterSpacings[value]
+    const value =
+      theme?.letterSpacings?.[key as keyof DefaultTheme['letterSpacings']]
+    if (!value) console.warn(valueNotFoundError('letterSpacings', `${key}`))
+    return value
   }
 
 /**
@@ -95,13 +86,11 @@ export const getLetterSpacing =
  * @returns The line height value.
  */
 export const getLineHeight =
-  (value: keyof DefaultTheme['lineHeights']) =>
+  (key: keyof DefaultTheme['lineHeights'] | string) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme?.lineHeights?.[value])
-      console.warn(
-        `Line height not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
-      )
-    return theme.lineHeights[value]
+    const value = theme?.lineHeights?.[key as keyof DefaultTheme['lineHeights']]
+    if (!value) console.warn(valueNotFoundError('lineHeights', `${key}`))
+    return value
   }
 
 /**
@@ -110,13 +99,11 @@ export const getLineHeight =
  * @returns The font size value.
  */
 export const getFontSize =
-  (value: keyof DefaultTheme['fontSizes']) =>
+  (key: keyof DefaultTheme['fontSizes'] | string) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme?.fontSizes?.[value])
-      console.warn(
-        `Font size not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
-      )
-    return theme.fontSizes[value]
+    const value = theme?.fontSizes?.[key as keyof DefaultTheme['fontSizes']]
+    if (!value) console.warn(valueNotFoundError('fontSizes', `${key}`))
+    return value
   }
 
 /**
@@ -135,13 +122,11 @@ export const getUnits =
  * @returns The shadow value as a valid CSS box-shadow.
  */
 export const getShadow =
-  (value: keyof DefaultTheme['shadows']) =>
+  (key: keyof DefaultTheme['shadows'] | string) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme?.shadows?.[value])
-      console.warn(
-        `Shadow not found for value "${value}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
-      )
-    return theme.shadows[value]
+    const value = theme?.shadows?.[key as keyof DefaultTheme['shadows']]
+    if (!value) console.warn(valueNotFoundError('shadows', `${key}`))
+    return value
   }
 
 /**
@@ -160,13 +145,12 @@ export const getNumericValue = (value: boolean | number) => {
  * @returns The font family value.
  */
 export const getFontFamily =
-  (fontFamily: keyof DefaultTheme['fontFamilies']) =>
+  (key: keyof DefaultTheme['fontFamilies'] | string) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme?.fontFamilies?.[fontFamily])
-      console.warn(
-        `Font Family not found for "${fontFamily}". Are you sure it's defined in your theme and you're using a ShallotProvider?`,
-      )
-    return theme?.fontFamilies?.[fontFamily]
+    const value =
+      theme?.fontFamilies?.[key as keyof DefaultTheme['fontFamilies']]
+    if (!value) console.warn(valueNotFoundError('fontFamilies', `${key}`))
+    return value
   }
 
 /**
