@@ -70,14 +70,6 @@ const DEFAULT_SHADING_COLORS = {
   950: '#020617',
 }
 
-export const DEFAULT_DARK_COLORS = {
-  Primary: invertPalette(DEFAULT_PRIMARY_COLORS),
-  Success: invertPalette(DEFAULT_SUCCESS_COLORS),
-  Warning: invertPalette(DEFAULT_WARNING_COLORS),
-  Danger: invertPalette(DEFAULT_DANGER_COLORS),
-  Shading: invertPalette(DEFAULT_SHADING_COLORS),
-}
-
 export const DEFAULT_COLORS = {
   Primary: DEFAULT_PRIMARY_COLORS,
   Success: DEFAULT_SUCCESS_COLORS,
