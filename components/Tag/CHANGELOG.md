@@ -1,5 +1,17 @@
 # @shallot-ui/tag
 
+## 2.1.0
+
+### Minor Changes
+
+- Improves handling of inputs
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core@27.0.0
+  - @shallot-ui/theme@3.1.0
+
 ## 2.0.0
 
 ### Major Changes

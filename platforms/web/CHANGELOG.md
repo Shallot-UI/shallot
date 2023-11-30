@@ -1,5 +1,22 @@
 # @shallot-ui/web
 
+## 3.1.0
+
+### Minor Changes
+
+- Improves handling of inputs
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/button@2.1.0
+  - @shallot-ui/checkbox@2.1.0
+  - @shallot-ui/input@2.1.0
+  - @shallot-ui/switch@2.1.0
+  - @shallot-ui/tag@2.1.0
+  - @shallot-ui/core@27.0.0
+  - @shallot-ui/theme@3.1.0
+
 ## 3.0.1
 
 ### Patch Changes

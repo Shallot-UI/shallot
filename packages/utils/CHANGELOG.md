@@ -1,5 +1,16 @@
 # @shallot-ui/utils
 
+## 24.0.0
+
+### Minor Changes
+
+- Improves handling of inputs
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@3.1.0
+
 ## 23.0.0
 
 ### Patch Changes
