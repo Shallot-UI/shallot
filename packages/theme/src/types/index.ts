@@ -51,13 +51,13 @@ export interface ThemeOptions {
   gridUnits?: number[]
   gridUnit?: number
   colors?: { [name: string]: { [shade: string]: CSSProperties['color'] } }
-  fontSizes?: { [name: string]: number }
-  lineHeights?: { [name: string]: number }
+  fontSizes?: { [name: string]: CSSProperties['fontSize'] }
+  lineHeights?: { [name: string]: CSSProperties['lineHeight'] }
   radii?: { [name: string]: number }
-  letterSpacings?: { [name: string]: number }
+  letterSpacings?: { [name: string]: CSSProperties['letterSpacing'] }
   breakpoints?: {
     [point: number]: {
-      fontSizes?: { [name: string]: number }
+      fontSizes?: { [name: string]: CSSProperties['fontSize'] }
       radii?: { [name: string]: number }
     }
   }
