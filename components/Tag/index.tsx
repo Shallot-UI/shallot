@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
-import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
+import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   getColor,
   getFontSize,
@@ -8,6 +8,7 @@ import {
   getRadius,
   getFontFamily,
   getUnits,
+  getVariant,
 } from '@shallot-ui/core'
 
 type TagStyleProps = {
@@ -72,9 +73,7 @@ export const withTagStyleProps =
     } = props
 
     const theme = useTheme()
-    const themeVariant = theme?.variants?.Tag?.[variant] as
-      | Variant<TagShallot>
-      | undefined
+    const themeVariant = getVariant<TagShallot>('Tag', variant)({ theme })
 
     let tagShallot: TagShallot = {
       Container: {

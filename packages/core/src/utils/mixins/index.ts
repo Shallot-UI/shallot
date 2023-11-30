@@ -1,4 +1,3 @@
-import { ColorShadingValue } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
 
 const valueNotFoundError = (property: string, key: string) =>
@@ -11,12 +10,16 @@ const valueNotFoundError = (property: string, key: string) =>
  * @returns The variant object.
  */
 export const getVariant =
-  (component: keyof DefaultTheme['variants'], name: string = 'default') =>
+  <T = any>(
+    component: keyof DefaultTheme['variants'] | string,
+    name: string = 'default',
+  ) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    const variant = theme?.variants?.[component]?.[name]
+    const variant =
+      theme?.variants?.[component as keyof DefaultTheme['variants']]?.[name]
     if (!variant)
       console.warn(valueNotFoundError('variants', `${component}.${name}`))
-    return variant
+    return variant as T
   }
 
 /**
@@ -26,7 +29,13 @@ export const getVariant =
  * @returns A valid CSS color value.
  */
 export const getColor =
-  (value: keyof DefaultTheme['colors'], shade: ColorShadingValue) =>
+  <
+    C extends keyof DefaultTheme['colors'],
+    S extends keyof DefaultTheme['colors'][C] extends infer R ? R : never,
+  >(
+    value: C,
+    shade: S,
+  ) =>
   ({ theme }: { theme: DefaultTheme }) => {
     const color =
       theme.colors?.[value]?.[shade as keyof typeof theme.colors.Shading]
@@ -43,14 +52,17 @@ export const getColorShade = (address: string | undefined) => {
   // if the color is falsy, return an empty string.
   if (!address) return
   // If the color is transparent, return the transparent keyword.
-  if (address === 'transparent') return `transparent`
+  if (address === 'transparent') return 'transparent'
   // Split the color key into its color name and shade.
   const [color, shade] = address.split('.') as [
     keyof DefaultTheme['colors'],
-    ColorShadingValue,
+    string,
   ]
   if (!shade) console.warn(valueNotFoundError('colors', `${color}.${shade}`))
-  return getColor(color, shade)
+  return getColor(
+    color,
+    shade as unknown as keyof DefaultTheme['colors'][typeof color],
+  )
 }
 
 /**

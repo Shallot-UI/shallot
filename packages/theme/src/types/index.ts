@@ -1,41 +1,9 @@
 import {
   CSSObject,
-  CSSProp,
   CSSProperties,
   CSSPseudos,
   DefaultTheme,
 } from 'styled-components'
-
-export type ColorShadingValue =
-  | number
-  | 50
-  | 100
-  | 200
-  | 300
-  | 400
-  | 500
-  | 600
-  | 700
-  | 800
-  | 900
-  | 950
-
-export type Palette = Record<number, string>
-
-export type FontFamily = keyof DefaultTheme['fontFamilies']
-
-export type ColorName = keyof DefaultTheme['colors']
-
-// Combines a color name with each of its shade values.
-export type AllColorShades = `${ColorName}.${ColorShadingValue}` | 'transparent'
-
-export interface ColorProps {
-  placeholderColor?: AllColorShades
-  backgroundColor?: AllColorShades
-  textColor?: AllColorShades
-  borderColor?: AllColorShades
-  fillColor?: AllColorShades
-}
 
 export type ShallotProp<T = CSSObject> = Omit<CSSProperties, keyof T> &
   Omit<CSSPseudos, keyof T> & {
@@ -45,12 +13,14 @@ export type ShallotProp<T = CSSObject> = Omit<CSSProperties, keyof T> &
       | ShallotProp
   }
 
-export type Variant<T = any> = T & { state?: { [state: string]: T } }
+export type ColorName = keyof DefaultTheme['colors']
+export type ColorShade = `${keyof DefaultTheme['colors']}.${number}`
+export type Variant = keyof DefaultTheme['variants']
 
 export interface ThemeOptions {
   gridUnits?: number[]
   gridUnit?: number
-  colors?: { [name: string]: { [shade: string]: CSSProperties['color'] } }
+  colors?: { [name: string]: { [shade: number]: CSSProperties['color'] } }
   fontSizes?: { [name: string]: CSSProperties['fontSize'] }
   lineHeights?: { [name: string]: CSSProperties['lineHeight'] }
   radii?: { [name: string]: number }
@@ -63,5 +33,5 @@ export interface ThemeOptions {
   }
   fontFamilies?: { [name: string]: CSSProperties['fontFamily'] }
   shadows?: { [name: string]: CSSProperties['boxShadow'] }
-  variants?: { [component: string]: { [variant: string]: Variant } }
+  variants?: { [namespace: string]: { [variant: string]: any } }
 }

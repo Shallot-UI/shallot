@@ -1,15 +1,16 @@
 import { ComponentType } from 'react'
 import { DefaultTheme, useTheme } from 'styled-components'
-import { AllColorShades, ShallotProp, Variant } from '@shallot-ui/theme'
+import { ColorShade, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
   getRadius,
   getUnits,
   getColorShade,
+  getVariant,
 } from '@shallot-ui/core'
 
 export type ModalStyleProps = {
-  backgroundColor?: AllColorShades
+  backgroundColor?: ColorShade
   radius?: keyof DefaultTheme['radii']
   unitHeight?: number
   unitWidth?: number
@@ -57,9 +58,7 @@ export const withModalStyleProps =
     } = props
 
     const theme = useTheme()
-    const themeVariant = theme?.variants?.Modal?.[variant] as
-      | Variant<ModalShallot>
-      | undefined
+    const themeVariant = getVariant<ModalShallot>('Modal', variant)({ theme })
 
     let modalShallot: ModalShallot = {
       Wrapper: {

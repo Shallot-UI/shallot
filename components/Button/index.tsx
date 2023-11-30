@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
-import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
+import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   getColor,
   getRadius,
@@ -10,6 +10,7 @@ import {
   getShadow,
   getFontFamily,
   applyStyles,
+  getVariant,
 } from '@shallot-ui/core'
 
 export type ButtonStyleProps = {
@@ -84,9 +85,7 @@ export const withButtonStyleProps =
         : { default: 500, hovered: 400, pressed: 600, focused: 500 }
 
     const theme = useTheme()
-    const themeVariant = theme?.variants?.Button?.[variant] as
-      | Variant<ButtonShallot>
-      | undefined
+    const themeVariant = getVariant<ButtonShallot>('Button', variant)({ theme })
 
     let buttonShallot: ButtonShallot = {
       Container: {

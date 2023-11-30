@@ -35,19 +35,61 @@ export const makeTheme = <T extends ThemeOptions>(options: T) => {
       'The `gridUnits: number[]` option is deprecated. It will be removed in a future release. Please use `gridUnit: number` instead.',
     )
   }
-  return Object.freeze({
-    breakpoints: { ...options?.breakpoints },
-    colors: { ...DEFAULT_COLORS, ...options?.colors },
-    fontFamilies: { ...DEFAULT_FONT_FAMILIES, ...options?.fontFamilies },
-    fontSizes: { ...DEFAULT_FONT_SIZES, ...options?.fontSizes },
-    gridUnit: options?.gridUnit ?? options?.gridUnits?.[0] ?? 12,
-    gridUnits: options?.gridUnits || [12],
-    letterSpacings: { ...DEFAULT_LETTER_SPACINGS, ...options?.letterSpacings },
-    lineHeights: { ...DEFAULT_LINE_HEIGHTS, ...options?.lineHeights },
-    radii: { ...DEFAULT_RADII, ...options?.radii },
-    shadows: { ...DEFAULT_SHADOWS, ...options?.shadows },
-    variants: { ...options?.variants },
-  })
+
+  const breakpoints = options?.breakpoints as T['breakpoints']
+
+  const colors = {
+    ...DEFAULT_COLORS,
+    ...options?.colors,
+  } as typeof DEFAULT_COLORS & T['colors']
+
+  const fontFamilies = {
+    ...DEFAULT_FONT_FAMILIES,
+    ...options?.fontFamilies,
+  } as typeof DEFAULT_FONT_FAMILIES & T['fontFamilies']
+
+  const fontSizes = {
+    ...DEFAULT_FONT_SIZES,
+    ...options?.fontSizes,
+  } as typeof DEFAULT_FONT_SIZES & T['fontSizes']
+
+  const gridUnit = options?.gridUnit ?? options?.gridUnits?.[0] ?? 12
+
+  const letterSpacings = {
+    ...DEFAULT_LETTER_SPACINGS,
+    ...options?.letterSpacings,
+  } as typeof DEFAULT_LETTER_SPACINGS & T['letterSpacings']
+
+  const lineHeights = {
+    ...DEFAULT_LINE_HEIGHTS,
+    ...options?.lineHeights,
+  } as typeof DEFAULT_LINE_HEIGHTS & T['lineHeights']
+
+  const radii = {
+    ...DEFAULT_RADII,
+    ...options?.radii,
+  } as typeof DEFAULT_RADII & T['radii']
+
+  const shadows = {
+    ...DEFAULT_SHADOWS,
+    ...options?.shadows,
+  } as typeof DEFAULT_SHADOWS & T['shadows']
+
+  const variants = options?.variants as T['variants']
+
+  return {
+    breakpoints,
+    colors,
+    fontFamilies,
+    fontSizes,
+    gridUnit,
+    gridUnits: [gridUnit], // legacy, deprecated
+    letterSpacings,
+    lineHeights,
+    radii,
+    shadows,
+    variants,
+  }
 }
 
 export const DEFAULT_THEME = makeTheme({})

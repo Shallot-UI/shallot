@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
-import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
+import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   applyStyles,
   getColor,
@@ -10,17 +10,18 @@ import {
   getRadius,
   getShadow,
   getUnits,
+  getVariant,
 } from '@shallot-ui/core'
 
 type InputStyleProps = {
   color?: ColorName
-  radius?: keyof DefaultTheme[ 'radii' ]
-  fontFamily?: keyof DefaultTheme[ 'fontFamilies' ]
-  letterSpacing?: keyof DefaultTheme[ 'letterSpacings' ]
-  fontSize?: keyof DefaultTheme[ 'fontSizes' ]
+  radius?: keyof DefaultTheme['radii']
+  fontFamily?: keyof DefaultTheme['fontFamilies']
+  letterSpacing?: keyof DefaultTheme['letterSpacings']
+  fontSize?: keyof DefaultTheme['fontSizes']
   fontWeight?: string
   uppercase?: boolean
-  textAlign?: CSSObject[ 'textAlign' ]
+  textAlign?: CSSObject['textAlign']
 }
 
 export type BaseInputShallot = {
@@ -41,89 +42,84 @@ export type InputProps<T> = T &
     variant?: string
   }
 
-
-
 export const withInputStyleProps =
   <T,>(InputComponent: ComponentType<T>) =>
-    (props: InputProps<T>) => {
-      const {
-        // General
-        color = 'Shading',
-        radius = 'md',
+  (props: InputProps<T>) => {
+    const {
+      // General
+      color = 'Shading',
+      radius = 'md',
 
-        // Typography
-        fontFamily = 'Body',
-        letterSpacing = 'md',
-        fontSize = 'md',
-        fontWeight = 'bold',
+      // Typography
+      fontFamily = 'Body',
+      letterSpacing = 'md',
+      fontSize = 'md',
+      fontWeight = 'bold',
 
-        // Casing
-        uppercase,
+      // Casing
+      uppercase,
 
-        // Text Alignment
-        textAlign = 'center',
+      // Text Alignment
+      textAlign = 'center',
 
-        shallot,
-        variant = 'default',
+      shallot,
+      variant = 'default',
 
-        ...inputProps
-      } = props
+      ...inputProps
+    } = props
 
-      const theme = useTheme()
-      const themeVariant = theme?.variants?.Input?.[ variant ] as
-        | Variant<InputShallot>
-        | undefined
+    const theme = useTheme()
+    const themeVariant = getVariant<InputShallot>('Input', variant)({ theme })
 
-      let inputShallot: InputShallot = {
-        Container: {
-          borderRadius: getRadius(radius),
-          backgroundColor: getColor(color, 50),
-          borderColor: getColor(color, 700),
-          display: 'flex',
-          borderWidth: 2,
-          borderStyle: 'solid',
-          cursor: 'text',
-          transition: `
+    let inputShallot: InputShallot = {
+      Container: {
+        borderRadius: getRadius(radius),
+        backgroundColor: getColor(color, 50),
+        borderColor: getColor(color, 700),
+        display: 'flex',
+        borderWidth: 2,
+        borderStyle: 'solid',
+        cursor: 'text',
+        transition: `
             border-color 0.2s ease-in-out,
             background-color 0.2s ease-in-out,
             box-shadow 0.2s ease-in-out
-          `
+          `,
+      },
+      Input: {
+        display: 'flex',
+        flexGrow: 1,
+        fontFamily: getFontFamily(fontFamily),
+        color: getColor(color, 900),
+        fontSize: getFontSize(fontSize),
+        letterSpacing: getLetterSpacing(letterSpacing),
+
+        ...(uppercase && { textTransform: uppercase ? 'uppercase' : 'none' }),
+
+        backgroundColor: 'transparent',
+        border: 'none',
+        placeholderColor: getColor('Shading', 500),
+        padding: getUnits(3 / 4),
+      },
+      ':focus': {
+        Container: {
+          boxShadow: getShadow('focused'),
+          borderColor: getColor(color, 900),
         },
         Input: {
-          display: 'flex',
-          flexGrow: 1,
-          fontFamily: getFontFamily(fontFamily),
-          color: getColor(color, 900),
-          fontSize: getFontSize(fontSize),
-          letterSpacing: getLetterSpacing(letterSpacing),
-
-          ...(uppercase && { textTransform: uppercase ? 'uppercase' : 'none' }),
-
-          backgroundColor: 'transparent',
-          border: 'none',
-          placeholderColor: getColor('Shading', 500),
-          padding: getUnits(3 / 4),
+          outline: 'none',
         },
-        ':focus': {
-          Container: {
-            boxShadow: getShadow('focused'),
-            borderColor: getColor(color, 900),
-          },
-          Input: {
-            outline: 'none',
-          },
+      },
+      ':error': {
+        Container: {
+          borderColor: getColor('Danger', 700),
+          color: getColor('Danger', 700),
         },
-        ':error': {
-          Container: {
-            borderColor: getColor('Danger', 700),
-            color: getColor('Danger', 700),
-          },
-        },
-      }
-
-      inputShallot = applyStyles(inputShallot, shallot)
-      inputShallot = applyStyles(inputShallot, themeVariant)
-
-      return <InputComponent {...(inputProps as T)} shallot={inputShallot} />
+      },
     }
 
+    inputShallot = applyStyles(inputShallot, shallot)
+    inputShallot = applyStyles(inputShallot, themeVariant)
+
+    return <InputComponent {...(inputProps as T)} shallot={inputShallot} />
+  }

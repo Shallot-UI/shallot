@@ -1,5 +1,3 @@
-import { invertPalette } from '../../utils'
-
 const DEFAULT_PRIMARY_COLORS = {
   50: '#eff6ff',
   100: '#dbeafe',
