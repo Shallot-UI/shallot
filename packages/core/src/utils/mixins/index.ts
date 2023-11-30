@@ -12,13 +12,16 @@ const valueNotFoundError = (property: string, key: string) =>
 export const getVariant =
   <T = any>(
     component: keyof DefaultTheme['variants'] | string,
-    name: string = 'default',
+    name: string = 'Default',
   ) =>
   ({ theme }: { theme: DefaultTheme }) => {
     const variant =
       theme?.variants?.[component as keyof DefaultTheme['variants']]?.[name]
-    if (!variant)
+
+    if (!variant && name !== 'Default') {
       console.warn(valueNotFoundError('variants', `${component}.${name}`))
+    }
+
     return variant as T
   }
 

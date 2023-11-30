@@ -45,7 +45,7 @@ export const withCheckboxStyleProps =
       radius = 'sm',
 
       shallot,
-      variant = 'default',
+      variant = 'Default',
 
       ...checkboxProps
     } = props

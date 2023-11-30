@@ -71,7 +71,7 @@ export const withButtonStyleProps =
       horizontalUnitPadding = 2,
 
       shallot,
-      variant = 'default',
+      variant = 'Default',
 
       ...buttonProps
     } = props

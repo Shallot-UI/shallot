@@ -52,7 +52,7 @@ export const withModalStyleProps =
 
       shallot,
 
-      variant = 'default',
+      variant = 'Default',
 
       ...modalProps
     } = props
