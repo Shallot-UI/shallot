@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 26.0.1
+
+### Patch Changes
+
+- 2a05322: [feat] Updating colors types on mixins
+
 ## 26.0.0
 
 ### Major Changes
