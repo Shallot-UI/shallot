@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/native",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "@shallot-ui/button": "^1.6.4",
     "@shallot-ui/checkbox": "^1.5.1",
     "@shallot-ui/column": "^0.18.2",
-    "@shallot-ui/core": "^25.0.0",
+    "@shallot-ui/core": "^25.0.1",
     "@shallot-ui/fold": "^0.16.1",
     "@shallot-ui/form-column": "^1.0.0",
     "@shallot-ui/form-row": "^1.0.0",
@@ -33,7 +33,7 @@
     "@shallot-ui/switch": "^1.5.1",
     "@shallot-ui/tag": "^1.5.2",
     "@shallot-ui/text": "^1.0.0",
-    "@shallot-ui/theme": "^2.0.0",
+    "@shallot-ui/theme": "^2.0.1",
     "react-native-fast-image": "^8.6.3"
   },
   "peerDependencies": {

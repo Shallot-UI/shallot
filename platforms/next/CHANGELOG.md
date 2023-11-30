@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 2.0.1
+
+### Patch Changes
+
+- 25011ad: [fix] more lenient types
+- Updated dependencies [25011ad]
+  - @shallot-ui/web@2.0.1
+
 ## 2.0.0
 
 ### Major Changes

@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 2.0.1
+
+### Patch Changes
+
+- 25011ad: [fix] more lenient types
+
 ## 2.0.0
 
 ### Major Changes

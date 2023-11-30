@@ -1,5 +1,13 @@
 # @shallot-ui/core
 
+## 25.0.1
+
+### Patch Changes
+
+- 25011ad: [fix] more lenient types
+- Updated dependencies [25011ad]
+  - @shallot-ui/theme@2.0.1
+
 ## 25.0.0
 
 ### Major Changes
