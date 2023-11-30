@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 3.0.0
+
+### Major Changes
+
+- b7e9579: [feat] better handling of theme types for typeahead
+
 ## 2.0.1
 
 ### Patch Changes

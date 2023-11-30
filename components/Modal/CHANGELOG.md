@@ -1,5 +1,17 @@
 # @shallot-ui/modal
 
+## 1.0.0
+
+### Major Changes
+
+- b7e9579: [feat] better handling of theme types for typeahead
+
+### Patch Changes
+
+- Updated dependencies [b7e9579]
+  - @shallot-ui/core@26.0.0
+  - @shallot-ui/theme@3.0.0
+
 ## 0.21.1
 
 ### Patch Changes

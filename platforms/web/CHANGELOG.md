@@ -1,5 +1,22 @@
 # @shallot-ui/web
 
+## 3.0.0
+
+### Major Changes
+
+- b7e9579: [feat] better handling of theme types for typeahead
+
+### Patch Changes
+
+- Updated dependencies [b7e9579]
+  - @shallot-ui/button@2.0.0
+  - @shallot-ui/checkbox@2.0.0
+  - @shallot-ui/input@2.0.0
+  - @shallot-ui/switch@2.0.0
+  - @shallot-ui/tag@2.0.0
+  - @shallot-ui/core@26.0.0
+  - @shallot-ui/theme@3.0.0
+
 ## 2.0.1
 
 ### Patch Changes
