@@ -1,12 +1,13 @@
 import { ComponentType } from 'react'
 import { DefaultTheme, useTheme } from 'styled-components'
-import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
+import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   getColor,
   getShadow,
   getRadius,
   getUnits,
   applyStyles,
+  getVariant,
 } from '@shallot-ui/core'
 
 export type CheckboxStyleProps = {
@@ -50,9 +51,10 @@ export const withCheckboxStyleProps =
     } = props
 
     const theme = useTheme()
-    const themeVariant = theme?.variants?.Checkbox?.[variant] as
-      | Variant<CheckboxShallot>
-      | undefined
+    const themeVariant = getVariant<CheckboxShallot>(
+      'Checkbox',
+      variant,
+    )({ theme })
 
     let checkboxShallot: CheckboxShallot = {
       Container: {

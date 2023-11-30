@@ -1,5 +1,6 @@
 import { CSSObject, DefaultTheme } from 'styled-components'
 import { ShallotProp, makeTheme } from '@shallot-ui/theme'
+import { getVariant } from '../mixins'
 
 /**
  * Returns a function that generates CSS styles based on a given `shallot` object.
@@ -74,9 +75,11 @@ export const scopeGetStyle =
     variant = 'default',
   }: T) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    const variantShallot = variantNamespace
-      ? theme?.variants?.[variantNamespace]?.[variant] ?? {}
-      : {}
+    const variantShallot =
+      (variantNamespace
+        ? getVariant(variantNamespace, variant)({ theme })
+        : {}) ?? {}
+
     return Object.entries({ ...variantShallot, ...shallot }).map(
       ([key, getter]) => {
         let value = typeof getter === 'function' ? getter({ theme }) : getter
@@ -98,9 +101,11 @@ export const getVariantStyle =
     variant = defaultVariant,
   }: T) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    const variantShallot = variantNamespace
-      ? theme?.variants?.[variantNamespace]?.[variant] ?? {}
-      : {}
+    const variantShallot =
+      (variantNamespace
+        ? getVariant(variantNamespace, variant)({ theme })
+        : {}) ?? {}
+
     return Object.entries(variantShallot).map(([key, getter]) => {
       let value = typeof getter === 'function' ? getter({ theme }) : getter
 

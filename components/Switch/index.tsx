@@ -1,12 +1,13 @@
 import { ComponentType } from 'react'
 import { useTheme } from 'styled-components'
-import { ColorName, ShallotProp, Variant } from '@shallot-ui/theme'
+import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   getColor,
   getShadow,
   getRadius,
   getUnits,
   applyStyles,
+  getVariant,
 } from '@shallot-ui/core'
 
 export type SwitchStyleProps = {
@@ -48,9 +49,7 @@ export const withSwitchStyleProps =
     } = props
 
     const theme = useTheme()
-    const themeVariant = theme?.variants?.Switch?.[variant] as
-      | Variant<SwitchShallot>
-      | undefined
+    const themeVariant = getVariant<SwitchShallot>('Switch', variant)({ theme })
 
     let switchShallot: SwitchShallot = {
       Container: {

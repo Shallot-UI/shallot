@@ -1,12 +1,12 @@
 import { DefaultTheme, createGlobalStyle } from 'styled-components'
-import { AllColorShades, ColorName } from '@shallot-ui/theme'
+import { ColorShade, ColorName } from '@shallot-ui/theme'
 
 interface GlobalStyleProps {
-  backgroundColor?: AllColorShades
-  textColor?: AllColorShades
+  backgroundColor?: ColorShade
+  textColor?: ColorShade
 }
 
-const getColorShade = (colorShade: AllColorShades, theme: DefaultTheme) => {
+const getColorShade = (colorShade: ColorShade, theme: DefaultTheme) => {
   const [color, shade] = colorShade.split('.')
   const colorName = color as ColorName
   const colorShadeNumber = Number(

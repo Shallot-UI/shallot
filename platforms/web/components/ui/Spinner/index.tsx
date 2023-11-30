@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { getColor } from '@shallot-ui/core'
-import { ColorShadingValue } from '@shallot-ui/theme'
 import { ColorName } from '@shallot-ui/theme'
 
 const spinAnimation = keyframes`
@@ -9,9 +8,9 @@ const spinAnimation = keyframes`
   100% { transform: rotate(360deg); }
 `
 
-interface SpinnerProps {
+type SpinnerProps = {
   color?: ColorName
-  shade?: ColorShadingValue
+  shade?: number
   size?: SizeName
 }
 
@@ -38,11 +37,12 @@ const SpinnerRing = styled.div<SpinnerProps>`
     height: ${({ size = 'md' }) => Math.floor(sizes[size] * 0.8)}px;
     margin: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px;
     border: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px solid
-      ${({ color, shade }) => getColor(color ?? 'Shading', shade ?? 200)};
+      ${({ color, shade }) =>
+        getColor(color ?? 'Shading', shade ?? (200 as any))};
     border-radius: 50%;
     animation: ${spinAnimation} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: ${({ color, shade }) =>
-        getColor(color ?? 'Shading', shade ?? 200)}
+        getColor(color ?? 'Shading', shade ?? (200 as any))}
       transparent transparent transparent;
   }
   & div:nth-child(1) {
