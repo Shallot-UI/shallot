@@ -67,7 +67,7 @@ export const withTagStyleProps =
       horizontalUnitPadding = 1,
 
       shallot,
-      variant = 'default',
+      variant = 'Default',
 
       ...tagProps
     } = props

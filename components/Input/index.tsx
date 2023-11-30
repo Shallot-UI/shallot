@@ -63,7 +63,7 @@ export const withInputStyleProps =
       textAlign = 'center',
 
       shallot,
-      variant = 'default',
+      variant = 'Default',
 
       ...inputProps
     } = props

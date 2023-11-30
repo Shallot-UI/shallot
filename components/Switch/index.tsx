@@ -43,7 +43,7 @@ export const withSwitchStyleProps =
       iconSize = 1,
 
       shallot,
-      variant = 'default',
+      variant = 'Default',
 
       ...nonStyleProps
     } = props

@@ -1,36 +1,32 @@
-import { ComponentProps, ReactNode, RefObject, useState } from 'react'
+import { ComponentProps, FC, ReactNode, RefObject, useState } from 'react'
 import { withBoxLayoutProps } from '@shallot-ui/core'
 import { InputProps, withInputStyleProps } from '@shallot-ui/input'
 import { TextInput } from 'react-native'
 
 import S from './style'
 
-const Base = (
-  props: InputProps<ComponentProps<typeof S.InnerInput>> & {
-    title?: string
+const Base: FC<
+  InputProps<ComponentProps<typeof S.InnerInput>> & {
     before?: ReactNode
     after?: ReactNode
     inputRef?: RefObject<TextInput>
     hasError?: boolean
-  },
-) => {
-  const { title, before, after, shallot, inputRef, hasError, ...rest } = props
+  }
+> = ({ before, after, shallot, inputRef, hasError, ...rest }) => {
   const [focused, setFocused] = useState(false)
 
   return (
     <S.Container $focused={focused} $error={hasError} shallot={shallot}>
       {before}
-      {title && (
-        <S.InnerInput
-          shallot={shallot}
-          ref={inputRef}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-          $focused={focused}
-          $error={hasError}
-          {...rest}
-        />
-      )}
+      <S.InnerInput
+        shallot={shallot}
+        ref={inputRef}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        $focused={focused}
+        $error={hasError}
+        {...rest}
+      />
       {after}
     </S.Container>
   )

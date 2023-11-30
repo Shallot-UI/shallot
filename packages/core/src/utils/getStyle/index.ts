@@ -72,7 +72,7 @@ export const scopeGetStyle =
   (variantNamespace?: string) =>
   <T extends { shallot?: {}; variant?: string }>({
     shallot = {},
-    variant = 'default',
+    variant = 'Default',
   }: T) =>
   ({ theme }: { theme: DefaultTheme }) => {
     const variantShallot =
@@ -96,7 +96,7 @@ export const scopeGetStyle =
   }
 
 export const getVariantStyle =
-  (variantNamespace: string, defaultVariant: string = 'default') =>
+  (variantNamespace: string, defaultVariant: string = 'Default') =>
   <T extends { shallot?: {}; variant?: string }>({
     variant = defaultVariant,
   }: T) =>
