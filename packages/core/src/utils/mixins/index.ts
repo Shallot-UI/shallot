@@ -33,12 +33,11 @@ export const getColor =
     C extends keyof DefaultTheme['colors'],
     S extends keyof DefaultTheme['colors'][C] extends infer R ? R : never,
   >(
-    value: C,
-    shade: S,
+    value: C | string,
+    shade: S | number,
   ) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    const color =
-      theme.colors?.[value]?.[shade as keyof typeof theme.colors.Shading]
+    const color = (theme.colors as any)?.[value]?.[shade]
     if (!color) console.warn(valueNotFoundError('colors', `${value}.${shade}`))
     return color
   }
@@ -59,10 +58,7 @@ export const getColorShade = (address: string | undefined) => {
     string,
   ]
   if (!shade) console.warn(valueNotFoundError('colors', `${color}.${shade}`))
-  return getColor(
-    color,
-    shade as unknown as keyof DefaultTheme['colors'][typeof color],
-  )
+  return getColor(color, Number(shade))
 }
 
 /**
