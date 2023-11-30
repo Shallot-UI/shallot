@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 2.0.0
+
+### Major Changes
+
+- a737b3b: [fix] fixes self-referencing in default theme types
+
+### Patch Changes
+
+- Updated dependencies [a737b3b]
+  - @shallot-ui/web@2.0.0
+
 ## 1.4.3
 
 ### Patch Changes

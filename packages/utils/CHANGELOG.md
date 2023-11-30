@@ -1,5 +1,12 @@
 # @shallot-ui/utils
 
+## 22.0.0
+
+### Patch Changes
+
+- Updated dependencies [a737b3b]
+  - @shallot-ui/theme@2.0.0
+
 ## 21.0.0
 
 ### Minor Changes

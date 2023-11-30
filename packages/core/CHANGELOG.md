@@ -1,5 +1,16 @@
 # @shallot-ui/core
 
+## 25.0.0
+
+### Major Changes
+
+- a737b3b: [fix] fixes self-referencing in default theme types
+
+### Patch Changes
+
+- Updated dependencies [a737b3b]
+  - @shallot-ui/theme@2.0.0
+
 ## 24.1.0
 
 ### Minor Changes

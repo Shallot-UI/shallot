@@ -1,5 +1,13 @@
 # @shallot-ui/modal
 
+## 0.21.1
+
+### Patch Changes
+
+- Updated dependencies [a737b3b]
+  - @shallot-ui/core@25.0.0
+  - @shallot-ui/theme@2.0.0
+
 ## 0.21.0
 
 ### Minor Changes
