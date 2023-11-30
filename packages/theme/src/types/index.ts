@@ -7,6 +7,7 @@ import {
 } from 'styled-components'
 
 export type ColorShadingValue =
+  | number
   | 50
   | 100
   | 200
@@ -47,9 +48,9 @@ export type ShallotProp<T = CSSObject> = Omit<CSSProperties, keyof T> &
 export type Variant<T = any> = T & { state?: { [state: string]: T } }
 
 export interface ThemeOptions {
-  defaults?: { fontFamily?: keyof DefaultTheme['fontFamilies'] }
   gridUnits?: number[]
-  colors?: { [name: string]: { [shade: string]: string } }
+  gridUnit?: number
+  colors?: { [name: string]: { [shade: string]: CSSProperties['color'] } }
   fontSizes?: { [name: string]: number }
   lineHeights?: { [name: string]: number }
   radii?: { [name: string]: number }
@@ -60,7 +61,7 @@ export interface ThemeOptions {
       radii?: { [name: string]: number }
     }
   }
-  fontFamilies?: { [name: string]: FontFamily }
-  shadows?: { [name: string]: CSSProp }
+  fontFamilies?: { [name: string]: CSSProperties['fontFamily'] }
+  shadows?: { [name: string]: CSSProperties['boxShadow'] }
   variants?: { [component: string]: { [variant: string]: Variant } }
 }

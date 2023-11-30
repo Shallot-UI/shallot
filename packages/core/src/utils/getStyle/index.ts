@@ -1,5 +1,5 @@
 import { CSSObject, DefaultTheme } from 'styled-components'
-import { ShallotProp } from '@shallot-ui/theme'
+import { ShallotProp, makeTheme } from '@shallot-ui/theme'
 
 /**
  * Returns a function that generates CSS styles based on a given `shallot` object.
@@ -134,7 +134,9 @@ export const getBreakpointsStyle =
     }
 
     Object.entries(theme.breakpoints).forEach(([width, subtheme]) => {
-      const value = getStyle({ shallot: supportedShallot })({ theme: subtheme })
+      const value = getStyle({ shallot: supportedShallot })({
+        theme: makeTheme(subtheme),
+      })
 
       // Ensure `value` is not empty
       if (Object.keys(value).length > 0) {

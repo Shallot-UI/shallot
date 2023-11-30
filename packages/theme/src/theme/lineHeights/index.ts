@@ -4,4 +4,4 @@ export const DEFAULT_LINE_HEIGHTS = {
   md: 1.111111,
   sm: 1,
   xs: 0.9,
-}
+} as const

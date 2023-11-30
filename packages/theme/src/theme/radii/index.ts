@@ -6,4 +6,4 @@ export const DEFAULT_RADII = {
   xl: 12,
   xxl: 18,
   pill: 9999,
-}
+} as const

@@ -1,6 +1,5 @@
-import { ColorShadingValue, ShallotProp } from '@shallot-ui/theme'
+import { ColorShadingValue } from '@shallot-ui/theme'
 import { DefaultTheme } from 'styled-components'
-import { getStyle } from '../getStyle'
 
 /**
  * Get a variant from the theme using its component name and variant name.
@@ -128,7 +127,7 @@ export const getFontSize =
 export const getUnits =
   (value: number) =>
   ({ theme }: { theme: DefaultTheme }) =>
-    theme.gridUnits[0] * value
+    (theme.gridUnits?.[0] ?? 12) * value
 
 /**
  * Get a shadow value from the theme using its name.
@@ -213,7 +212,7 @@ export const getFullHeight =
     unitsAround?: number
   }) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    const baseUnit = theme.gridUnits?.[0]
+    const baseUnit = theme.gridUnit
     if (typeof baseUnit !== 'number') return ''
     const topMargin = baseUnit * (unitsAbove ?? unitsAround ?? 0)
     const bottomMargin = baseUnit * (unitsBelow ?? unitsAround ?? 0)

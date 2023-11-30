@@ -1,11 +1,17 @@
 import { ThemeOptions } from '../types'
-import { DEFAULT_DARK_COLORS } from './colors'
-import DEFAULT_THEME_OPTIONS from './defaultThemeOptions'
+
+// Defaults
+import { DEFAULT_COLORS } from './colors'
+import { DEFAULT_FONT_FAMILIES } from './fontFamilies'
+import { DEFAULT_FONT_SIZES } from './fontSizes'
+import { DEFAULT_LETTER_SPACINGS } from './letterSpacings'
+import { DEFAULT_LINE_HEIGHTS } from './lineHeights'
+import { DEFAULT_RADII } from './radii'
+import { DEFAULT_SHADOWS } from './shadows'
 
 /**
  * This module exports a function `makeTheme` that creates a theme object based on the provided options.
  * The `makeTheme` function takes an object of type `ThemeOptions` as input and returns a frozen object with the following properties:
- * - defaults: an object containing any default values for the theme.
  * - breakpoints: an object containing the breakpoints for the theme.
  * - gridUnits: a number representing the grid unit for the theme.
  * - fontFamilies: an object containing the font families for the theme.
@@ -23,45 +29,25 @@ import DEFAULT_THEME_OPTIONS from './defaultThemeOptions'
  * @returns A frozen object representing the theme.
  */
 
-export const makeTheme = <T extends ThemeOptions>(options: T) =>
-  Object.freeze({
-    defaults: {
-      fontFamily:
-        options?.defaults?.fontFamily ||
-        DEFAULT_THEME_OPTIONS.defaults.fontFamily,
-    },
-    breakpoints: options?.breakpoints || DEFAULT_THEME_OPTIONS.breakpoints,
-    gridUnits: options?.gridUnits || DEFAULT_THEME_OPTIONS.gridUnits,
-    fontFamilies: {
-      ...DEFAULT_THEME_OPTIONS.fontFamilies,
-      ...options?.fontFamilies,
-    },
-    variants: options?.variants || DEFAULT_THEME_OPTIONS.variants,
-    shadows: {
-      ...DEFAULT_THEME_OPTIONS.shadows,
-      ...options?.shadows,
-    },
-    colors: {
-      ...DEFAULT_THEME_OPTIONS.colors,
-      ...options?.colors,
-    },
-    fontSizes: {
-      ...DEFAULT_THEME_OPTIONS.fontSizes,
-      ...options?.fontSizes,
-    },
-    lineHeights: {
-      ...DEFAULT_THEME_OPTIONS.lineHeights,
-      ...options?.lineHeights,
-    },
-    radii: {
-      ...DEFAULT_THEME_OPTIONS.radii,
-      ...options?.radii,
-    },
-    letterSpacings: {
-      ...DEFAULT_THEME_OPTIONS.letterSpacings,
-      ...options?.letterSpacings,
-    },
+export const makeTheme = <T extends ThemeOptions>(options: T) => {
+  if (options?.gridUnits?.length) {
+    console.warn(
+      'The `gridUnits: number[]` option is deprecated. It will be removed in a future release. Please use `gridUnit: number` instead.',
+    )
+  }
+  return Object.freeze({
+    breakpoints: { ...options?.breakpoints },
+    colors: { ...DEFAULT_COLORS, ...options?.colors },
+    fontFamilies: { ...DEFAULT_FONT_FAMILIES, ...options?.fontFamilies },
+    fontSizes: { ...DEFAULT_FONT_SIZES, ...options?.fontSizes },
+    gridUnit: options?.gridUnit ?? options?.gridUnits?.[0] ?? 12,
+    gridUnits: options?.gridUnits || [12],
+    letterSpacings: { ...DEFAULT_LETTER_SPACINGS, ...options?.letterSpacings },
+    lineHeights: { ...DEFAULT_LINE_HEIGHTS, ...options?.lineHeights },
+    radii: { ...DEFAULT_RADII, ...options?.radii },
+    shadows: { ...DEFAULT_SHADOWS, ...options?.shadows },
+    variants: { ...options?.variants },
   })
+}
 
 export const DEFAULT_THEME = makeTheme({})
-export const DEFAULT_DARK_THEME = makeTheme({ colors: DEFAULT_DARK_COLORS })
