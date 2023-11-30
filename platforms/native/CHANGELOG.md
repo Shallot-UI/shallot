@@ -1,5 +1,22 @@
 # @shallot-ui/native
 
+## 1.0.0
+
+### Major Changes
+
+- a737b3b: [fix] fixes self-referencing in default theme types
+
+### Patch Changes
+
+- Updated dependencies [a737b3b]
+  - @shallot-ui/core@25.0.0
+  - @shallot-ui/theme@2.0.0
+  - @shallot-ui/button@1.6.4
+  - @shallot-ui/checkbox@1.5.1
+  - @shallot-ui/input@1.6.1
+  - @shallot-ui/switch@1.5.1
+  - @shallot-ui/tag@1.5.2
+
 ## 0.52.1
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @shallot-ui/button
 
+## 1.6.4
+
+### Patch Changes
+
+- Updated dependencies [a737b3b]
+  - @shallot-ui/core@25.0.0
+  - @shallot-ui/theme@2.0.0
+
 ## 1.6.3
 
 ### Patch Changes
