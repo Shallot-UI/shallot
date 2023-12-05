@@ -30,12 +30,6 @@ import { DEFAULT_SHADOWS } from './shadows'
  */
 
 export const makeTheme = <T extends ThemeOptions>(options: T) => {
-  if (options?.gridUnits?.length) {
-    console.warn(
-      'The `gridUnits: number[]` option is deprecated. It will be removed in a future release. Please use `gridUnit: number` instead.',
-    )
-  }
-
   const breakpoints = options?.breakpoints as T['breakpoints']
 
   const colors = {
