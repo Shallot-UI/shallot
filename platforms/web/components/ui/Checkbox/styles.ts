@@ -4,10 +4,6 @@ import { CheckboxShallot } from '@shallot-ui/checkbox'
 
 import { CheckIcon } from './Icons/CheckIcon'
 
-const Wrapper = styled.label`
-  display: flex;
-`
-
 const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;
   opacity: 0;
@@ -24,18 +20,26 @@ type ContainerProps = {
   disabled?: boolean
 }
 
-const Container = styled.div.withConfig({
+const Container = styled.div``
+
+const Wrapper = styled.label.withConfig({
   shouldForwardProp: (prop) => !['shallot'].includes(prop),
 })<ContainerProps>`
+  display: flex;
+
   // Default Shallot Styles
-  ${getNestedStyle('Container')}
+  ${Container} {
+    ${getNestedStyle('Container')}
+  }
   ${Icon} {
     ${getNestedStyle('Icon')}
   }
 
   // Hover Shallot Styles
   &:hover {
-    ${getNestedStyle('Container', ':hover')}
+    ${Container} {
+      ${getNestedStyle('Container', ':hover')}
+    }
     ${Icon} {
       ${getNestedStyle('Icon', ':hover')}
     }
@@ -43,21 +47,28 @@ const Container = styled.div.withConfig({
 
   // Focus Shallot Styles
   &:focus-within {
-    ${getNestedStyle('Container', ':focus')}
+    ${Container} {
+      ${getNestedStyle('Container', ':focus')}
+    }
     ${Icon} {
       ${getNestedStyle('Icon', ':focus')}
     }
   }
 
   // Checked Shallot Styles
-  ${(props) => props.checked && getNestedStyle('Container', ':checked')(props)}
+  ${Container} {
+    ${(props) =>
+      props.checked && getNestedStyle('Container', ':checked')(props)}
+  }
   ${Icon} {
     ${(props) => props.checked && getNestedStyle('Icon', ':checked')(props)}
   }
 
   // disabled
-  ${(props) =>
-    props.disabled && getNestedStyle('Container', ':disabled')(props)}
+  ${Container} {
+    ${(props) =>
+      props.disabled && getNestedStyle('Container', ':disabled')(props)}
+  }
   ${Icon} {
     ${(props) => props.disabled && getNestedStyle('Icon', ':disabled')(props)}
   }

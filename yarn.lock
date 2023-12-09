@@ -2801,6 +2801,13 @@
     "@shallot-ui/theme" "^1.0.0"
     prop-types "^15.8.1"
 
+"@shallot-ui/theme@^1.0.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@shallot-ui/theme/-/theme-1.5.0.tgz#b5e4b15fef8b0e4316cdb7a02ea73e5fc5c1bdb2"
+  integrity sha512-Ty6HgJA4SQkmSuFSxULGVLcM2wfV1cSXAfOcq/qVdOYqJl8via0rqxGIDOmniUB6lRZO68xjWl35yji8KQMy4Q==
+  dependencies:
+    ts-deepmerge "^6.0.2"
+
 "@sideway/address@^4.1.3":
   version "4.1.4"
   resolved "https://registry.npmjs.org/@sideway/address/-/address-4.1.4.tgz"
