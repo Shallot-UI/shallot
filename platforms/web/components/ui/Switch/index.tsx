@@ -29,9 +29,9 @@ const Base: FunctionComponent<
   }
 
   return (
-    <S.Wrapper>
+    <S.Wrapper checked={checked} shallot={shallot}>
       <S.Checkbox {...checkboxProps} checked={checked} onChange={onChange} />
-      <S.Container checked={checked} shallot={shallot}>
+      <S.Container>
         <S.Handle />
       </S.Container>
     </S.Wrapper>

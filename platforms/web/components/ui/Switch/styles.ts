@@ -2,10 +2,6 @@ import styled from 'styled-components'
 import { getNestedStyle } from '@shallot-ui/core'
 import { SwitchShallot } from '@shallot-ui/switch'
 
-const Wrapper = styled.label`
-  display: flex;
-`
-
 const Handle = styled.div``
 
 const Checkbox = styled.input.attrs({ type: 'checkbox' })`
@@ -16,18 +12,26 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   width: 0;
 `
 
-const Container = styled.div.withConfig({
+const Container = styled.div``
+
+const Wrapper = styled.label.withConfig({
   shouldForwardProp: (prop) => !['shallot'].includes(prop),
 })<{ shallot?: SwitchShallot; checked?: boolean }>`
+  display: flex;
+
   // Default Shallot Styles
-  ${getNestedStyle('Container')}
+  ${Container} {
+    ${getNestedStyle('Container')}
+  }
   ${Handle} {
     ${getNestedStyle('Handle')}
   }
 
   // Hover Shallot Styles
   &:hover {
-    ${getNestedStyle('Container', ':hover')}
+    ${Container} {
+      ${getNestedStyle('Container', ':hover')}
+    }
     ${Handle} {
       ${getNestedStyle('Handle', ':hover')}
     }
@@ -35,7 +39,9 @@ const Container = styled.div.withConfig({
 
   // Active Shallot Styles
   &:active {
-    ${getNestedStyle('Container', ':active')}
+    ${Container} {
+      ${getNestedStyle('Container', ':active')}
+    }
     ${Handle} {
       ${getNestedStyle('Handle', ':active')}
     }
@@ -43,14 +49,19 @@ const Container = styled.div.withConfig({
 
   // Focus Shallot Styles
   &:focus-within {
-    ${getNestedStyle('Container', ':focus')}
+    ${Container} {
+      ${getNestedStyle('Container', ':focus')}
+    }
     ${Handle} {
       ${getNestedStyle('Handle', ':focus')}
     }
   }
 
   // Checked Shallot Styles
-  ${(props) => props.checked && getNestedStyle('Container', ':checked')(props)}
+  ${Container} {
+    ${(props) =>
+      props.checked && getNestedStyle('Container', ':checked')(props)}
+  }
   ${Handle} {
     ${(props) => props.checked && getNestedStyle('Handle', ':checked')(props)}
   }
