@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 3.1.0
+
+### Minor Changes
+
+- Improves handling of inputs
+
 ## 3.0.0
 
 ### Major Changes

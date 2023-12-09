@@ -1,5 +1,22 @@
 # @shallot-ui/core
 
+## 27.0.0
+
+### Minor Changes
+
+- Improves handling of inputs
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/theme@3.1.0
+
+## 26.0.1
+
+### Patch Changes
+
+- 2a05322: [feat] Updating colors types on mixins
+
 ## 26.0.0
 
 ### Major Changes

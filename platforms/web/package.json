@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/web",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -43,19 +43,19 @@
   },
   "dependencies": {
     "@shallot-ui/box": "^0.18.1",
-    "@shallot-ui/button": "^2.0.0",
-    "@shallot-ui/checkbox": "^2.0.0",
+    "@shallot-ui/button": "^2.1.0",
+    "@shallot-ui/checkbox": "^2.1.0",
     "@shallot-ui/column": "^0.18.2",
-    "@shallot-ui/core": "^26.0.0",
+    "@shallot-ui/core": "^27.0.0",
     "@shallot-ui/form-column": "^1.0.0",
     "@shallot-ui/form-row": "^1.0.0",
     "@shallot-ui/fold": "^0.16.1",
-    "@shallot-ui/input": "^2.0.0",
+    "@shallot-ui/input": "^2.1.0",
     "@shallot-ui/row": "^0.18.1",
-    "@shallot-ui/switch": "^2.0.0",
-    "@shallot-ui/tag": "^2.0.0",
+    "@shallot-ui/switch": "^2.1.0",
+    "@shallot-ui/tag": "^2.1.0",
     "@shallot-ui/text": "^1.0.0",
-    "@shallot-ui/theme": "^3.0.0",
+    "@shallot-ui/theme": "^3.1.0",
     "prop-types": "^15.8.1"
   }
 }
