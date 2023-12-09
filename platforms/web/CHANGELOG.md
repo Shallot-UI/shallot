@@ -1,5 +1,14 @@
 # @shallot-ui/web
 
+## 3.1.1
+
+### Patch Changes
+
+- 530c2e0: Fix focus states on switch and checkbox
+- Updated dependencies [530c2e0]
+  - @shallot-ui/checkbox@2.1.1
+  - @shallot-ui/switch@2.1.1
+
 ## 3.1.0
 
 ### Minor Changes
