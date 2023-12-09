@@ -1,3 +1,4 @@
+import { StoryFn, Meta } from '@storybook/react'
 import {
   Column,
   GlobalStyle,
@@ -10,12 +11,8 @@ import {
   H1,
   H2,
   H3,
-  H4,
-  H5,
-  H6,
   P,
 } from '@shallot-ui/web'
-import { StoryFn, Meta } from '@storybook/react'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
