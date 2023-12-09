@@ -1,6 +1,6 @@
+import { useState } from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 import { Checkbox, Row, ShallotProvider } from '@shallot-ui/web'
-import { useState } from 'react'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
