@@ -114,7 +114,6 @@ describe.only('Test the `getStyle` function', () => {
     }
 
     const result = getStyle({ shallot: shallotProp })({ theme })
-    console.log(result)
 
     expect(Array.isArray(result)).toBe(false)
   })
