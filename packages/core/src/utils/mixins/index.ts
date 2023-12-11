@@ -3,6 +3,8 @@ import { DefaultTheme } from 'styled-components'
 const valueNotFoundError = (property: string, key: string) =>
   `Shallot UI: Value "${key}" not found for theme property "${property}". Are you sure it's defined correctly in your theme and you're using a ShallotProvider? More info: https://www.shallotui.com/?path=/docs/%F0%9F%8E%A8-theme-variants--docs`
 
+type MixinFunction<T> = (props: { theme: DefaultTheme }) => T | undefined
+
 /**
  * Get a variant from the theme using its component name and variant name.
  * @param component  - The name of the component. Name must be capitalized.
@@ -13,8 +15,8 @@ export const getVariant =
   <T = any>(
     component: keyof DefaultTheme['variants'] | string,
     name: string = 'Default',
-  ) =>
-  ({ theme }: { theme: DefaultTheme }) => {
+  ): MixinFunction<T> =>
+  ({ theme }) => {
     const variant =
       theme?.variants?.[component as keyof DefaultTheme['variants']]?.[name]
 
@@ -38,7 +40,7 @@ export const getColor =
   >(
     value: C | string,
     shade: S | number,
-  ) =>
+  ): MixinFunction<string> =>
   ({ theme }: { theme: DefaultTheme }) => {
     const color = (theme.colors as any)?.[value]?.[shade]
     if (!color) console.warn(valueNotFoundError('colors', `${value}.${shade}`))
@@ -50,11 +52,15 @@ export const getColor =
  * @param address - The dot notation address of the color.
  * @returns A valid CSS color value.
  */
-export const getColorShade = (address: string | undefined) => {
+export const getColorShade = (
+  address: string | undefined,
+): MixinFunction<string> => {
   // if the color is falsy, return an empty string.
-  if (!address) return
+  if (!address) return () => undefined
+
   // If the color is transparent, return the transparent keyword.
-  if (address === 'transparent') return 'transparent'
+  if (address === 'transparent') return () => 'transparent'
+
   // Split the color key into its color name and shade.
   const [color, shade] = address.split('.') as [
     keyof DefaultTheme['colors'],
@@ -70,8 +76,8 @@ export const getColorShade = (address: string | undefined) => {
  * @returns A valid CSS radius value.
  */
 export const getRadius =
-  (key: keyof DefaultTheme['radii'] | string) =>
-  ({ theme }: { theme: DefaultTheme }) => {
+  (key: keyof DefaultTheme['radii'] | string): MixinFunction<string | number> =>
+  ({ theme }) => {
     const value = theme?.radii?.[key as keyof DefaultTheme['radii']]
     if (!value) console.warn(valueNotFoundError('radii', `${value}`))
     return value
@@ -83,8 +89,10 @@ export const getRadius =
  * @returns The letter spacing value.
  */
 export const getLetterSpacing =
-  (key: keyof DefaultTheme['letterSpacings'] | string) =>
-  ({ theme }: { theme: DefaultTheme }) => {
+  (
+    key: keyof DefaultTheme['letterSpacings'] | string,
+  ): MixinFunction<string | number> =>
+  ({ theme }) => {
     const value =
       theme?.letterSpacings?.[key as keyof DefaultTheme['letterSpacings']]
     if (!value) console.warn(valueNotFoundError('letterSpacings', `${key}`))
@@ -97,8 +105,10 @@ export const getLetterSpacing =
  * @returns The line height value.
  */
 export const getLineHeight =
-  (key: keyof DefaultTheme['lineHeights'] | string) =>
-  ({ theme }: { theme: DefaultTheme }) => {
+  (
+    key: keyof DefaultTheme['lineHeights'] | string,
+  ): MixinFunction<string | number> =>
+  ({ theme }) => {
     const value = theme?.lineHeights?.[key as keyof DefaultTheme['lineHeights']]
     if (!value) console.warn(valueNotFoundError('lineHeights', `${key}`))
     return value
@@ -110,8 +120,10 @@ export const getLineHeight =
  * @returns The font size value.
  */
 export const getFontSize =
-  (key: keyof DefaultTheme['fontSizes'] | string) =>
-  ({ theme }: { theme: DefaultTheme }) => {
+  (
+    key: keyof DefaultTheme['fontSizes'] | string,
+  ): MixinFunction<string | number> =>
+  ({ theme }) => {
     const value = theme?.fontSizes?.[key as keyof DefaultTheme['fontSizes']]
     if (!value) console.warn(valueNotFoundError('fontSizes', `${key}`))
     return value
@@ -123,8 +135,8 @@ export const getFontSize =
  * @returns The value in grid units.
  */
 export const getUnits =
-  (value: number) =>
-  ({ theme }: { theme: DefaultTheme }) =>
+  (value: number): MixinFunction<number> =>
+  ({ theme }) =>
     (theme.gridUnits?.[0] ?? 12) * value
 
 /**
@@ -133,8 +145,8 @@ export const getUnits =
  * @returns The shadow value as a valid CSS box-shadow.
  */
 export const getShadow =
-  (key: keyof DefaultTheme['shadows'] | string) =>
-  ({ theme }: { theme: DefaultTheme }) => {
+  (key: keyof DefaultTheme['shadows'] | string): MixinFunction<string> =>
+  ({ theme }) => {
     const value = theme?.shadows?.[key as keyof DefaultTheme['shadows']]
     if (!value) console.warn(valueNotFoundError('shadows', `${key}`))
     return value
@@ -156,8 +168,8 @@ export const getNumericValue = (value: boolean | number) => {
  * @returns The font family value.
  */
 export const getFontFamily =
-  (key: keyof DefaultTheme['fontFamilies'] | string) =>
-  ({ theme }: { theme: DefaultTheme }) => {
+  (key: keyof DefaultTheme['fontFamilies'] | string): MixinFunction<string> =>
+  ({ theme }) => {
     const value =
       theme?.fontFamilies?.[key as keyof DefaultTheme['fontFamilies']]
     if (!value) console.warn(valueNotFoundError('fontFamilies', `${key}`))
@@ -180,8 +192,8 @@ export const getFullWidth =
     unitsLeft?: number
     unitsRight?: number
     unitsAround?: number
-  }) =>
-  ({ theme }: { theme: DefaultTheme }) => {
+  }): MixinFunction<string> =>
+  ({ theme }) => {
     const baseUnit = theme.gridUnits?.[0]
     if (typeof baseUnit !== 'number') return ''
     const leftMargin = baseUnit * (unitsLeft ?? unitsAround ?? 0)
@@ -205,8 +217,8 @@ export const getFullHeight =
     unitsAbove?: number
     unitsBelow?: number
     unitsAround?: number
-  }) =>
-  ({ theme }: { theme: DefaultTheme }) => {
+  }): MixinFunction<string> =>
+  ({ theme }) => {
     const baseUnit = theme.gridUnit
     if (typeof baseUnit !== 'number') return ''
     const topMargin = baseUnit * (unitsAbove ?? unitsAround ?? 0)
