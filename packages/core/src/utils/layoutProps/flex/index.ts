@@ -18,11 +18,3 @@ export const getFlexShallot = ({ grow, shrink, flex, wrap }: FlexProps) => ({
   ...(flex !== undefined && { flex: getNumericValue(flex) }),
   ...(wrap !== undefined && { flexWrap: getWrapValue(wrap) }),
 })
-
-export const pullFlexProps = <T extends FlexProps>({
-  grow,
-  shrink,
-  flex,
-  wrap,
-  ...rest
-}: T) => rest

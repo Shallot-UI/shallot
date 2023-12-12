@@ -1,5 +1,5 @@
-import { DefaultTheme, createGlobalStyle } from 'styled-components'
-import { ColorShade, ColorName } from '@shallot-ui/theme'
+import { createGlobalStyle } from 'styled-components'
+import { ColorShade } from '@shallot-ui/theme'
 import { getColorShade } from '@shallot-ui/core'
 
 export type GlobalStyleProps = {

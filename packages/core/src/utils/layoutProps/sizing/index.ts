@@ -44,15 +44,3 @@ export const getSizingShallot = ({
     height: getFullHeight({ unitsAbove, unitsBelow, unitsAround }),
   }),
 })
-
-export const pullSizingProps = <T extends SizingProps>({
-  unitHeight,
-  unitWidth,
-  maxUnitHeight,
-  maxUnitWidth,
-  minUnitHeight,
-  minUnitWidth,
-  fullWidth,
-  fullHeight,
-  ...rest
-}: T) => rest

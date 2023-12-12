@@ -10,7 +10,7 @@ const DEFAULT_PRIMARY_COLORS = {
   800: '#1e40af',
   900: '#1e3a8a',
   950: '#172554',
-}
+} as const
 
 const DEFAULT_SUCCESS_COLORS = {
   50: '#f0fdf4',
@@ -24,7 +24,7 @@ const DEFAULT_SUCCESS_COLORS = {
   800: '#166534',
   900: '#14532d',
   950: '#052e16',
-}
+} as const
 
 const DEFAULT_WARNING_COLORS = {
   50: '#fffbeb',
@@ -38,7 +38,7 @@ const DEFAULT_WARNING_COLORS = {
   800: '#92400e',
   900: '#78350f',
   950: '#451a03',
-}
+} as const
 
 const DEFAULT_DANGER_COLORS = {
   50: '#fef2f2',
@@ -52,7 +52,7 @@ const DEFAULT_DANGER_COLORS = {
   800: '#991b1b',
   900: '#7f1d1d',
   950: '#450a0a',
-}
+} as const
 
 const DEFAULT_SHADING_COLORS = {
   50: '#ffffff',
@@ -66,7 +66,7 @@ const DEFAULT_SHADING_COLORS = {
   800: '#1e293b',
   900: '#0f172a',
   950: '#020617',
-}
+} as const
 
 export const DEFAULT_COLORS = {
   Primary: DEFAULT_PRIMARY_COLORS,
@@ -74,4 +74,4 @@ export const DEFAULT_COLORS = {
   Warning: DEFAULT_WARNING_COLORS,
   Danger: DEFAULT_DANGER_COLORS,
   Shading: DEFAULT_SHADING_COLORS,
-}
+} as const
