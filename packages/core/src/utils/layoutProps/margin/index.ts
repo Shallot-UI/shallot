@@ -1,4 +1,4 @@
-import { getUnits } from '../../mixins'
+import { getUnits } from '../../../mixins'
 
 export type MarginProps = {
   unitsAround?: number

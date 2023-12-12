@@ -1,4 +1,4 @@
-import { getFullHeight, getFullWidth, getUnits } from '../../mixins'
+import { getFullHeight, getFullWidth, getUnits } from '../../../mixins'
 import { MarginProps } from '../margin'
 
 export type SizingProps = {

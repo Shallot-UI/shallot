@@ -1,5 +1,6 @@
 import { CSSProperties } from 'styled-components'
-import { getNumericValue } from '../../mixins'
+
+import { getNumericValue } from '../../../mixins'
 import getWrapValue from './utils/getWrapValue'
 
 export type FlexProps = {

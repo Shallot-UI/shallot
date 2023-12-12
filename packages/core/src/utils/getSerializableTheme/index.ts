@@ -14,32 +14,28 @@ export const getSerializableTheme = (inputTheme: DefaultTheme) => {
       // if it's an object, recursively call this function
       if (typeof obj[key] === 'object' && obj[key] !== null) {
         serialized[key] = serializeRecursively(obj[key])
+        continue
       }
+
       // handle mixin functions
-      else if (typeof obj[key] === 'function') {
-        serialized[key] = obj[key]({ theme: inputTheme })
-        if (serialized[key] === null || serialized[key] === undefined) {
-          throwError(key, obj[key])
-        }
+      if (typeof obj[key] === 'function') {
+        const value = obj[key]({ theme: inputTheme })
+        if (value !== null && value !== undefined) serialized[key] = value
+        continue
       }
+
       // handle non-serializable values
-      else if (obj[key] === null || obj[key] === undefined) {
-        throwError(key, obj[key])
+      if (obj[key] === null || obj[key] === undefined) {
+        continue
       }
+
       // handle serializable values
-      else {
-        serialized[key] = obj[key]
-      }
+      serialized[key] = obj[key]
     }
+
     return serialized
   }
 
   const outputTheme = serializeRecursively(inputTheme)
   return outputTheme
-}
-
-const throwError = (key: string, value: any) => {
-  throw new Error(
-    `Error serializing theme value for key "${key}" because it's value "${value}" is not a serializable type. Please ensure that all data being serialized is of a serializable type.`,
-  )
 }
