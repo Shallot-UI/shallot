@@ -1,4 +1,4 @@
-import { withTextShallot } from '../../utils'
+import { withTextShallot } from '../../../utils'
 
 export const Text = withTextShallot('span')
 export const H1 = withTextShallot('h1', {}, { variant: 'H1' })
