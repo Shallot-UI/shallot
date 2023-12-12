@@ -1,6 +1,6 @@
 import { makeTheme } from '@shallot-ui/theme'
 import { getSerializableTheme } from '..'
-import { getColor, getFontSize } from '../../mixins'
+import { getColor, getFontSize } from '../../../mixins'
 import { getStyle } from '../../getStyle'
 
 describe('Test the `getSerializableTheme` function', () => {

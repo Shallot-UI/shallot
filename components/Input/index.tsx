@@ -1,6 +1,5 @@
 import { ComponentType } from 'react'
-import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
-import { ColorName, ShallotProp } from '@shallot-ui/theme'
+import { useTheme } from 'styled-components'
 import {
   applyStyles,
   getColor,
@@ -13,34 +12,9 @@ import {
   getVariant,
 } from '@shallot-ui/core'
 
-type InputStyleProps = {
-  color?: ColorName
-  radius?: keyof DefaultTheme['radii']
-  fontFamily?: keyof DefaultTheme['fontFamilies']
-  letterSpacing?: keyof DefaultTheme['letterSpacings']
-  fontSize?: keyof DefaultTheme['fontSizes']
-  fontWeight?: string
-  uppercase?: boolean
-  textAlign?: CSSObject['textAlign']
-}
+import { InputProps, InputShallot } from './types'
 
-export type BaseInputShallot = {
-  Container?: ShallotProp
-  Input?: ShallotProp
-}
-
-export type InputShallot = BaseInputShallot & {
-  ':focus'?: BaseInputShallot
-  ':hover'?: BaseInputShallot
-  ':active'?: BaseInputShallot
-  ':error'?: BaseInputShallot
-}
-
-export type InputProps<T> = T &
-  InputStyleProps & {
-    shallot?: InputShallot
-    variant?: string
-  }
+export * from './types'
 
 export const withInputStyleProps =
   <T,>(InputComponent: ComponentType<T>) =>

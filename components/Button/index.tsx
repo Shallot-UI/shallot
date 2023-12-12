@@ -1,6 +1,5 @@
 import { ComponentType } from 'react'
-import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
-import { ColorName, ShallotProp } from '@shallot-ui/theme'
+import { DefaultTheme, useTheme } from 'styled-components'
 import {
   getColor,
   getRadius,
@@ -13,38 +12,9 @@ import {
   getVariant,
 } from '@shallot-ui/core'
 
-export type ButtonStyleProps = {
-  color?: ColorName
-  radius?: keyof DefaultTheme['radii']
-  letterSpacing?: keyof DefaultTheme['letterSpacings']
-  fontSize?: keyof DefaultTheme['fontSizes']
-  outline?: boolean
-  uppercase?: boolean
-  verticalUnitPadding?: number
-  horizontalUnitPadding?: number
-  textAlign?: CSSObject['textAlign']
-  fontFamily?: keyof DefaultTheme['fontFamilies']
-  fontWeight?: string
-}
+import { ButtonProps, ButtonShallot } from './types'
 
-type BaseButtonShallot = {
-  Container?: ShallotProp
-  Title?: ShallotProp
-}
-
-export type ButtonShallot = BaseButtonShallot & {
-  ':focus'?: BaseButtonShallot
-  ':hover'?: BaseButtonShallot
-  ':active'?: BaseButtonShallot
-  ':disabled'?: BaseButtonShallot
-}
-
-export type ButtonProps<T> = T &
-  ButtonStyleProps & {
-    shallot?: ButtonShallot
-    disabled?: boolean
-    variant?: string
-  }
+export * from './types'
 
 export const withButtonStyleProps =
   <T,>(ButtonComponent: ComponentType<T>) =>

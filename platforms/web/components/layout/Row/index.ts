@@ -1,7 +1,7 @@
-import { withBoxShallot } from '../../utils'
+import { withBoxShallot } from '../../../utils'
 
 export const Row = withBoxShallot(
   'div',
   { flexDirection: 'row' },
-  { scope: 'Box', variant: 'Row' },
+  { variant: 'Row' },
 )
