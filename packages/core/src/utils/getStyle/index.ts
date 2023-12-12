@@ -1,6 +1,6 @@
 import { CSSObject, DefaultTheme } from 'styled-components'
 import { ShallotProp, makeTheme } from '@shallot-ui/theme'
-import { getVariant } from '../mixins'
+import { getVariant } from '../../mixins'
 
 /**
  * Returns a function that generates CSS styles based on a given `shallot` object.

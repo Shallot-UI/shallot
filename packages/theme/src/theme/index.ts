@@ -13,7 +13,7 @@ import { DEFAULT_SHADOWS } from './shadows'
  * This module exports a function `makeTheme` that creates a theme object based on the provided options.
  * The `makeTheme` function takes an object of type `ThemeOptions` as input and returns a frozen object with the following properties:
  * - breakpoints: an object containing the breakpoints for the theme.
- * - gridUnits: a number representing the grid unit for the theme.
+ * - gridUnit: a number representing the grid unit for the theme.
  * - fontFamilies: an object containing the font families for the theme.
  * - variants: an object containing the component variants for the theme.
  * - shadows: an object containing the box-shadows for the theme.

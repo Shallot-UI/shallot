@@ -1,4 +1,4 @@
-import { getUnits } from '../../mixins'
+import { getUnits } from '../../../mixins'
 
 export type MarginProps = {
   unitsAround?: number
@@ -21,12 +21,3 @@ export const getMarginShallot = ({
   ...(unitsLeft !== undefined && { marginLeft: getUnits(unitsLeft) }),
   ...(unitsRight !== undefined && { marginRight: getUnits(unitsRight) }),
 })
-
-export const pullMarginProps = <T extends MarginProps>({
-  unitsAround,
-  unitsAbove,
-  unitsBelow,
-  unitsLeft,
-  unitsRight,
-  ...rest
-}: T) => rest

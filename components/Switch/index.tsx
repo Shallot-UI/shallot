@@ -1,6 +1,5 @@
 import { ComponentType } from 'react'
 import { useTheme } from 'styled-components'
-import { ColorName, ShallotProp } from '@shallot-ui/theme'
 import {
   getColor,
   getShadow,
@@ -10,29 +9,9 @@ import {
   getVariant,
 } from '@shallot-ui/core'
 
-export type SwitchStyleProps = {
-  color?: ColorName
-  size?: number
-  iconSize?: number
-}
+import { SwitchProps, SwitchShallot } from './types'
 
-type BaseSwitchShallot = {
-  Container?: ShallotProp
-  Handle?: ShallotProp
-}
-
-export type SwitchShallot = BaseSwitchShallot & {
-  ':focus'?: BaseSwitchShallot
-  ':hover'?: BaseSwitchShallot
-  ':checked'?: BaseSwitchShallot
-}
-
-export type SwitchProps<T> = T &
-  SwitchStyleProps & {
-    shallot?: SwitchShallot
-    variant?: string
-    inverted?: boolean
-  }
+export * from './types'
 
 export const withSwitchStyleProps =
   <T,>(SwitchComponent: ComponentType<T>) =>

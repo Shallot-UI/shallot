@@ -1,7 +1,3 @@
-import { withTextShallot } from '../../utils'
+import { withTextShallot } from '../../../utils'
 
-export const AnchorLink = withTextShallot(
-  'a',
-  {},
-  { scope: 'Text', variant: 'Link' },
-)
+export const AnchorLink = withTextShallot('a', {}, { variant: 'Link' })

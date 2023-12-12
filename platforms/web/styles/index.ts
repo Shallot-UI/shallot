@@ -1,18 +1,10 @@
-import { DefaultTheme, createGlobalStyle } from 'styled-components'
-import { ColorShade, ColorName } from '@shallot-ui/theme'
+import { createGlobalStyle } from 'styled-components'
+import { ColorShade } from '@shallot-ui/theme'
+import { getColorShade } from '@shallot-ui/core'
 
-interface GlobalStyleProps {
+export type GlobalStyleProps = {
   backgroundColor?: ColorShade
   textColor?: ColorShade
-}
-
-const getColorShade = (colorShade: ColorShade, theme: DefaultTheme) => {
-  const [color, shade] = colorShade.split('.')
-  const colorName = color as ColorName
-  const colorShadeNumber = Number(
-    shade,
-  ) as keyof DefaultTheme['colors'][ColorName]
-  return theme.colors[colorName][colorShadeNumber]
 }
 
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
@@ -56,9 +48,9 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
 
   body {
     color: ${({ theme, textColor }) =>
-      getColorShade(textColor ?? 'Shading.950', theme)};
+      getColorShade(textColor ?? 'Shading.950')({ theme })};
     background-color: ${({ theme, backgroundColor }) =>
-      getColorShade(backgroundColor ?? 'Shading.50', theme)};
+      getColorShade(backgroundColor ?? 'Shading.50')({ theme })};
   }
 
   // SYSTEM FONT

@@ -12,6 +12,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
+    "test": "turbo run test",
     "check-types": "turbo run check-types",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
@@ -21,7 +22,7 @@
   "devDependencies": {
     "eslint-config-custom": "*",
     "prettier": "latest",
-    "turbo": "^1.10.12"
+    "turbo": "^1.11.1"
   },
   "engines": {
     "node": ">=14.0.0"

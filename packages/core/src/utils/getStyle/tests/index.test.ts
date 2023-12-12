@@ -1,6 +1,6 @@
 import { makeTheme } from '@shallot-ui/theme'
 import { getStyle } from '..'
-import { getColor, getFontSize, getShadow } from '../../mixins'
+import { getColor, getFontSize, getShadow } from '../../../mixins'
 
 describe.only('Test the `getStyle` function', () => {
   const theme = makeTheme({
@@ -114,7 +114,6 @@ describe.only('Test the `getStyle` function', () => {
     }
 
     const result = getStyle({ shallot: shallotProp })({ theme })
-    console.log(result)
 
     expect(Array.isArray(result)).toBe(false)
   })

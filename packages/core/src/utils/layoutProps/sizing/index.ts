@@ -1,4 +1,4 @@
-import { getFullHeight, getFullWidth, getUnits } from '../../mixins'
+import { getFullHeight, getFullWidth, getUnits } from '../../../mixins'
 import { MarginProps } from '../margin'
 
 export type SizingProps = {
@@ -44,15 +44,3 @@ export const getSizingShallot = ({
     height: getFullHeight({ unitsAbove, unitsBelow, unitsAround }),
   }),
 })
-
-export const pullSizingProps = <T extends SizingProps>({
-  unitHeight,
-  unitWidth,
-  maxUnitHeight,
-  maxUnitWidth,
-  minUnitHeight,
-  minUnitWidth,
-  fullWidth,
-  fullHeight,
-  ...rest
-}: T) => rest

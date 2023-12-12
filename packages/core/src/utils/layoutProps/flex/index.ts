@@ -1,5 +1,6 @@
 import { CSSProperties } from 'styled-components'
-import { getNumericValue } from '../../mixins'
+
+import { getNumericValue } from '../../../mixins'
 import getWrapValue from './utils/getWrapValue'
 
 export type FlexProps = {
@@ -17,11 +18,3 @@ export const getFlexShallot = ({ grow, shrink, flex, wrap }: FlexProps) => ({
   ...(flex !== undefined && { flex: getNumericValue(flex) }),
   ...(wrap !== undefined && { flexWrap: getWrapValue(wrap) }),
 })
-
-export const pullFlexProps = <T extends FlexProps>({
-  grow,
-  shrink,
-  flex,
-  wrap,
-  ...rest
-}: T) => rest

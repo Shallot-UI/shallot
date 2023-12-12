@@ -1,6 +1,5 @@
 import { ComponentType } from 'react'
-import { CSSObject, DefaultTheme, useTheme } from 'styled-components'
-import { ColorName, ShallotProp } from '@shallot-ui/theme'
+import { useTheme } from 'styled-components'
 import {
   getColor,
   getFontSize,
@@ -11,36 +10,9 @@ import {
   getVariant,
 } from '@shallot-ui/core'
 
-type TagStyleProps = {
-  color?: ColorName
-  radius?: keyof DefaultTheme['radii']
-  letterSpacing?: keyof DefaultTheme['letterSpacings']
-  fontSize?: keyof DefaultTheme['fontSizes']
-  outline?: boolean
-  uppercase?: boolean
-  verticalUnitPadding?: number
-  horizontalUnitPadding?: number
-  textAlign?: CSSObject['textAlign']
-  fontFamily?: keyof DefaultTheme['fontFamilies']
-  fontWeight?: string
-}
+import { TagProps, TagShallot } from './types'
 
-type BaseTagShallot = {
-  Container?: ShallotProp
-  Title?: ShallotProp
-}
-
-export type TagShallot = BaseTagShallot & {
-  ':focus'?: BaseTagShallot
-  ':hover'?: BaseTagShallot
-  ':active'?: BaseTagShallot
-}
-
-export type TagProps<T> = T &
-  TagStyleProps & {
-    shallot?: TagShallot
-    variant?: string
-  }
+export * from './types'
 
 export const withTagStyleProps =
   <T,>(TagComponent: ComponentType<T>) =>

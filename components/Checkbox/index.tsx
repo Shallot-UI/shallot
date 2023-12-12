@@ -1,6 +1,5 @@
 import { ComponentType } from 'react'
-import { DefaultTheme, useTheme } from 'styled-components'
-import { ColorName, ShallotProp } from '@shallot-ui/theme'
+import { useTheme } from 'styled-components'
 import {
   getColor,
   getShadow,
@@ -10,30 +9,9 @@ import {
   getVariant,
 } from '@shallot-ui/core'
 
-export type CheckboxStyleProps = {
-  color?: ColorName
-  size?: number
-  iconSize?: number
-  radius?: keyof DefaultTheme['radii']
-}
+import { CheckboxProps, CheckboxShallot } from './types'
 
-export type BaseCheckboxShallot = {
-  Container?: ShallotProp
-  Icon?: ShallotProp
-}
-
-export type CheckboxShallot = BaseCheckboxShallot & {
-  ':focus'?: BaseCheckboxShallot
-  ':hover'?: BaseCheckboxShallot
-  ':checked'?: BaseCheckboxShallot
-  ':disabled'?: BaseCheckboxShallot
-}
-
-export type CheckboxProps<T> = T &
-  CheckboxStyleProps & {
-    shallot?: CheckboxShallot
-    variant?: string
-  }
+export * from './types'
 
 export const withCheckboxStyleProps =
   <T,>(CheckboxComponent: ComponentType<T>) =>
