@@ -1,5 +1,11 @@
 # @shallot-ui/theme
 
+## 3.1.1
+
+### Patch Changes
+
+- dcaa312: [feat] bumps component imports to peers
+
 ## 3.1.0
 
 ### Minor Changes

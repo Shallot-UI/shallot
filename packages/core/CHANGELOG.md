@@ -1,5 +1,14 @@
 # @shallot-ui/core
 
+## 27.0.1
+
+### Patch Changes
+
+- dcaa312: [feat] bumps component imports to peers
+- 8de38b6: Package cleanup and optimization
+- Updated dependencies [dcaa312]
+  - @shallot-ui/theme@3.1.1
+
 ## 27.0.0
 
 ### Minor Changes

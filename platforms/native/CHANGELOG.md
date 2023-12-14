@@ -1,5 +1,23 @@
 # @shallot-ui/native
 
+## 2.2.0
+
+### Minor Changes
+
+- 8de38b6: Package cleanup and optimization
+
+### Patch Changes
+
+- Updated dependencies [dcaa312]
+- Updated dependencies [8de38b6]
+  - @shallot-ui/button@2.1.1
+  - @shallot-ui/checkbox@2.1.2
+  - @shallot-ui/input@2.1.1
+  - @shallot-ui/switch@2.1.2
+  - @shallot-ui/tag@2.1.1
+  - @shallot-ui/core@27.0.1
+  - @shallot-ui/theme@3.1.1
+
 ## 2.1.0
 
 ### Minor Changes
