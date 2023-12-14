@@ -11,6 +11,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'yarn'
+          cache-dependency-path: functions/yarn.lock
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Check Types
