@@ -1,5 +1,16 @@
 # @shallot-ui/next
 
+## 3.2.0
+
+### Minor Changes
+
+- 8de38b6: Package cleanup and optimization
+
+### Patch Changes
+
+- Updated dependencies [8de38b6]
+  - @shallot-ui/web@3.2.0
+
 ## 3.1.1
 
 ### Patch Changes
