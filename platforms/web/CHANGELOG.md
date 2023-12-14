@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 3.2.1
+
+### Patch Changes
+
+- e106782: [fix] cleans up unused deps
+
 ## 3.2.0
 
 ### Minor Changes

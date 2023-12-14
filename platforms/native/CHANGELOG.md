@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 2.2.1
+
+### Patch Changes
+
+- e106782: [fix] cleans up unused deps
+
 ## 2.2.0
 
 ### Minor Changes
