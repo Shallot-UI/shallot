@@ -61,7 +61,7 @@ This styling discribes how components should be laid out on the page. It's helpf
 
 ### 2. Common Styles
 
-This type of styling is used to describe styles that are shared across components. For example, a `Button` component might have a `primary` and `secondary` variant. These variants might share some styles, but have different colors. Variants for various text headings, buttons, checkboxes, switches, etc. are all examples of common styles and can be set in the theme's `variants` object.
+This type of styling is used to describe styles that are shared across components. For example, a `Button` component might have a `Primary` and `Secondary` variant. These variants might share some styles, but have different colors. Variants for various text headings, buttons, checkboxes, switches, etc. are all examples of common styles and can be set in the theme's `variants` object.
 
 ### 3. Component Styles
 This type of styling is used to describe styles that are unique to a specific component. For example, a project might require a `UserCard` component that has a specific layout and styling. This styling is done with `styled-components`, but we provide mixins like `getFontSize`, `getColor`, and `getUnits` to make it simple to use the theme's values.
