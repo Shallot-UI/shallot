@@ -12,7 +12,6 @@ const Container = styled.div.withConfig({
   padding: 0;
   margin: 0;
   outline: none;
-  cursor: pointer;
 
   // Default Shallot Styles
   ${getNestedStyle('Container')}
