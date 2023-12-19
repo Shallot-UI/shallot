@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { getNestedStyle, getStyle } from '@shallot-ui/core'
 import { TagShallot } from '@shallot-ui/tag'
 
-const Title = styled.label(getStyle)
+const Title = styled.span(getStyle)
 
 const Container = styled.div.withConfig({
   shouldForwardProp: (prop) => !['shallot'].includes(prop),
@@ -12,7 +12,6 @@ const Container = styled.div.withConfig({
   padding: 0;
   margin: 0;
   outline: none;
-  cursor: pointer;
 
   // Default Shallot Styles
   ${getNestedStyle('Container')}
