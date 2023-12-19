@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { getNestedStyle, getStyle } from '@shallot-ui/core'
 import { ButtonShallot } from '@shallot-ui/button'
 
-const Title = styled.label(getStyle)
+const Title = styled.span(getStyle)
 
 const Container = styled.button.withConfig({
   shouldForwardProp: (prop) => !['shallot'].includes(prop),
