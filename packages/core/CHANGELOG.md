@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 27.0.2
+
+### Patch Changes
+
+- c172a47: [feat] test fix for circular reference in DefaultTheme
+
 ## 27.0.1
 
 ### Patch Changes
