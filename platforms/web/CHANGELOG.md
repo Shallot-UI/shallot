@@ -1,5 +1,12 @@
 # @shallot-ui/web
 
+## 3.2.2
+
+### Patch Changes
+
+- 6bc8175: [feat] use span instead of label on button and tag
+- ad8696f: [feat] removes pointer cursor on tag
+
 ## 3.2.1
 
 ### Patch Changes
