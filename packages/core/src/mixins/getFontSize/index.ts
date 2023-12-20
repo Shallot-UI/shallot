@@ -9,8 +9,8 @@ import { MixinFunction } from '../types'
  * @returns The font size value.
  */
 export const getFontSize =
-  (
-    key: keyof DefaultTheme['fontSizes'] | string,
+  <T extends keyof DefaultTheme['fontSizes']>(
+    key: T | string,
   ): MixinFunction<string | number> =>
   ({ theme }) => {
     const value = theme?.fontSizes?.[key as keyof DefaultTheme['fontSizes']]
