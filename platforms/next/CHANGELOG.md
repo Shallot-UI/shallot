@@ -1,5 +1,11 @@
 # @shallot-ui/next
 
+## 3.3.0
+
+### Minor Changes
+
+- Attempt to fix circular type references
+
 ## 3.2.0
 
 ### Minor Changes
