@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 3.2.3
+
+### Patch Changes
+
+- 1a7aaf2: [feat] supports button disabled styles
+
 ## 3.2.2
 
 ### Patch Changes

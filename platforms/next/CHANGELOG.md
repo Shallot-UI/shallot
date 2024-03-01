@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 3.3.1
+
+### Patch Changes
+
+- 1a7aaf2: [feat] supports button disabled styles
+- Updated dependencies [1a7aaf2]
+  - @shallot-ui/web@3.2.3
+
 ## 3.3.0
 
 ### Minor Changes
