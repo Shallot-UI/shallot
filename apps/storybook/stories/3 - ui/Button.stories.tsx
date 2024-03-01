@@ -52,6 +52,7 @@ export default {
       control: { type: 'number', min: 1, max: 4, step: 1 },
     },
     fullWidth: { control: 'boolean' },
+    disabled: { control: 'boolean' },
   },
 } as Meta<typeof Button>
 

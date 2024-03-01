@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { getNestedStyle, getStyle } from '@shallot-ui/core'
 import { ButtonShallot } from '@shallot-ui/button'
 
@@ -19,6 +19,15 @@ const Container = styled.button.withConfig({
   ${Title} {
     ${getNestedStyle('Title')}
   }
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      ${getNestedStyle('Container', ':disabled')}
+      ${Title} {
+        ${getNestedStyle('Title', ':disabled')}
+      }
+    `}
 
   // Hover Shallot Styles
   &:hover {
