@@ -20,38 +20,39 @@ const Container = styled.button.withConfig({
     ${getNestedStyle('Title')}
   }
 
-  // Hover Shallot Styles
-  &:hover {
-    ${getNestedStyle('Container', ':hover')}
-    ${Title} {
-      ${getNestedStyle('Title', ':hover')}
-    }
-  }
-
-  // Active Shallot Styles
-  &:active {
-    ${getNestedStyle('Container', ':active')}
-    ${Title} {
-      ${getNestedStyle('Title', ':active')}
-    }
-  }
-
-  // Focus Shallot Styles
-  &:focus {
-    ${getNestedStyle('Container', ':focus')}
-    ${Title} {
-      ${getNestedStyle('Title', ':focus')}
-    }
-  }
-
   ${({ disabled }) =>
-    disabled &&
-    css`
-      ${getNestedStyle('Container', ':disabled')}
-      ${Title} {
-        ${getNestedStyle('Title', ':disabled')}
-      }
-    `}
+    disabled
+      ? css`
+          ${getNestedStyle('Container', ':disabled')}
+          ${Title} {
+            ${getNestedStyle('Title', ':disabled')}
+          }
+        `
+      : css`
+          // Hover Shallot Styles
+          &:hover {
+            ${getNestedStyle('Container', ':hover')}
+            ${Title} {
+              ${getNestedStyle('Title', ':hover')}
+            }
+          }
+
+          // Active Shallot Styles
+          &:active {
+            ${getNestedStyle('Container', ':active')}
+            ${Title} {
+              ${getNestedStyle('Title', ':active')}
+            }
+          }
+
+          // Focus Shallot Styles
+          &:focus {
+            ${getNestedStyle('Container', ':focus')}
+            ${Title} {
+              ${getNestedStyle('Title', ':focus')}
+            }
+          }
+        `}
 `
 
 export default {
