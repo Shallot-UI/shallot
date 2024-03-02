@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 3.2.4
+
+### Patch Changes
+
+- 7285ea9: Disabled button styles override other states
+
 ## 3.2.3
 
 ### Patch Changes
