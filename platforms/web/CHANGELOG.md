@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 3.2.5
+
+### Patch Changes
+
+- 9646438: Feature/fix disabled styles
+
 ## 3.2.4
 
 ### Patch Changes
