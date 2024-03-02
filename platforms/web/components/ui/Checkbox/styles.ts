@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { getNestedStyle } from '@shallot-ui/core'
+import { getColor, getNestedStyle } from '@shallot-ui/core'
 import { CheckboxShallot } from '@shallot-ui/checkbox'
 
 import { CheckIcon } from './Icons/CheckIcon'
