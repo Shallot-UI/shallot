@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 3.3.2
+
+### Patch Changes
+
+- 7285ea9: Disabled button styles override other states
+- Updated dependencies [7285ea9]
+  - @shallot-ui/web@3.2.4
+
 ## 3.3.1
 
 ### Patch Changes
