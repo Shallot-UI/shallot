@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 3.3.3
+
+### Patch Changes
+
+- 9646438: Feature/fix disabled styles
+- Updated dependencies [9646438]
+  - @shallot-ui/web@3.2.5
+
 ## 3.3.2
 
 ### Patch Changes
