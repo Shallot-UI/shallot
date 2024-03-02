@@ -20,15 +20,6 @@ const Container = styled.button.withConfig({
     ${getNestedStyle('Title')}
   }
 
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      ${getNestedStyle('Container', ':disabled')}
-      ${Title} {
-        ${getNestedStyle('Title', ':disabled')}
-      }
-    `}
-
   // Hover Shallot Styles
   &:hover {
     ${getNestedStyle('Container', ':hover')}
@@ -52,6 +43,15 @@ const Container = styled.button.withConfig({
       ${getNestedStyle('Title', ':focus')}
     }
   }
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      ${getNestedStyle('Container', ':disabled')}
+      ${Title} {
+        ${getNestedStyle('Title', ':disabled')}
+      }
+    `}
 `
 
 export default {
