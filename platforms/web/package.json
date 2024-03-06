@@ -44,7 +44,7 @@
   "dependencies": {
     "@shallot-ui/button": "^2.1.1",
     "@shallot-ui/checkbox": "^2.1.2",
-    "@shallot-ui/core": "^27.0.1",
+    "@shallot-ui/core": "^27.0.2",
     "@shallot-ui/input": "^2.1.1",
     "@shallot-ui/switch": "^2.1.2",
     "@shallot-ui/tag": "^2.1.1",

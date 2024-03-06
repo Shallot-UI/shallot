@@ -19,7 +19,7 @@
   },
   "peerDependencies": {
     "@shallot-ui/box": "^0.18.1",
-    "@shallot-ui/core": "^27.0.1",
+    "@shallot-ui/core": "^27.0.2",
     "@shallot-ui/row": "^0.18.1",
     "@shallot-ui/text": "^1.0.0",
     "@shallot-ui/theme": "^3.1.1",
