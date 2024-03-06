@@ -1,5 +1,11 @@
 # @shallot-ui/modal
 
+## 1.1.2
+
+### Patch Changes
+
+- 1dbfc3a: [chore] release
+
 ## 1.1.1
 
 ### Patch Changes
