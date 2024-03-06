@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 3.2.7
+
+### Patch Changes
+
+- f539e86: [feat] option to not include global style
+
 ## 3.2.6
 
 ### Patch Changes
