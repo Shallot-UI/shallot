@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 import { ColorShade } from '@shallot-ui/theme'
 import { getColorShade } from '@shallot-ui/core'
 
@@ -47,10 +47,12 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   * { box-sizing: border-box; }
 
   body {
-    color: ${({ theme, textColor }) =>
-      getColorShade(textColor ?? 'Shading.950')({ theme })};
-    background-color: ${({ theme, backgroundColor }) =>
-      getColorShade(backgroundColor ?? 'Shading.50')({ theme })};
+    ${({ theme, textColor }) => css`
+      color: ${getColorShade(textColor)({ theme })};
+    `}
+    ${({ theme, backgroundColor }) => css`
+      background-color: ${getColorShade(backgroundColor)({ theme })};
+    `}
   }
 
   // SYSTEM FONT
