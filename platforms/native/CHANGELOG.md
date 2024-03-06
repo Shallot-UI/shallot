@@ -1,5 +1,17 @@
 # @shallot-ui/native
 
+## 2.2.2
+
+### Patch Changes
+
+- 1dbfc3a: [chore] release
+- Updated dependencies [1dbfc3a]
+  - @shallot-ui/button@2.1.2
+  - @shallot-ui/checkbox@2.1.3
+  - @shallot-ui/input@2.1.2
+  - @shallot-ui/switch@2.1.3
+  - @shallot-ui/tag@2.1.2
+
 ## 2.2.1
 
 ### Patch Changes

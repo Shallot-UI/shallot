@@ -1,5 +1,11 @@
 # @shallot-ui/checkbox
 
+## 2.1.3
+
+### Patch Changes
+
+- 1dbfc3a: [chore] release
+
 ## 2.1.2
 
 ### Patch Changes

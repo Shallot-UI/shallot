@@ -1,5 +1,11 @@
 # @shallot-ui/tag
 
+## 2.1.2
+
+### Patch Changes
+
+- 1dbfc3a: [chore] release
+
 ## 2.1.1
 
 ### Patch Changes
