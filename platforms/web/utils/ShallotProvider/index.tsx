@@ -6,15 +6,17 @@ import { GlobalStyle, GlobalStyleProps } from '../../styles'
 type ShallotProviderProps = {
   children: ReactNode
   theme?: ThemeOptions
+  includeGlobalStyle?: boolean
 } & GlobalStyleProps
 
 export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   children,
   theme = {},
+  includeGlobalStyle = true,
   ...rest
 }: ShallotProviderProps) => (
   <ThemeProvider theme={makeTheme(theme)}>
-    <GlobalStyle {...rest} />
+    {includeGlobalStyle && <GlobalStyle {...rest} />}
     {children}
   </ThemeProvider>
 )
