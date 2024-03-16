@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 3.2.9
+
+### Patch Changes
+
+- 1483c49: [fix] fixes useVariant export
+
 ## 3.2.8
 
 ### Patch Changes

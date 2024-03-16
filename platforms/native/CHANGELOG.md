@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 2.2.4
+
+### Patch Changes
+
+- 1483c49: [fix] fixes useVariant export
+
 ## 2.2.3
 
 ### Patch Changes

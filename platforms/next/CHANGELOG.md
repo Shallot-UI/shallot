@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 3.3.5
+
+### Patch Changes
+
+- 1483c49: [fix] fixes useVariant export
+- Updated dependencies [1483c49]
+  - @shallot-ui/web@3.2.9
+
 ## 3.3.4
 
 ### Patch Changes
