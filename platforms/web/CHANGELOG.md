@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 3.2.8
+
+### Patch Changes
+
+- 4ceaaa4: [feat] adds useVariant hooks on web and native
+
 ## 3.2.7
 
 ### Patch Changes
