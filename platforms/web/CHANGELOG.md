@@ -1,5 +1,13 @@
 # @shallot-ui/web
 
+## 3.2.10
+
+### Patch Changes
+
+- aa1dbf8: [chore] release
+- Updated dependencies [aa1dbf8]
+  - @shallot-ui/core@27.0.3
+
 ## 3.2.9
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 3.3.6
+
+### Patch Changes
+
+- aa1dbf8: [chore] release
+- Updated dependencies [aa1dbf8]
+  - @shallot-ui/web@3.2.10
+
 ## 3.3.5
 
 ### Patch Changes
