@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 27.0.4
+
+### Patch Changes
+
+- 8780e61: [chore] release
+
 ## 27.0.3
 
 ### Patch Changes
