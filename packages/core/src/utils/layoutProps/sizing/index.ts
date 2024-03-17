@@ -10,8 +10,6 @@ export type SizingProps = {
   minUnitWidth?: number
   fullWidth?: boolean
   fullHeight?: boolean
-  unitGap?: number
-  unitFlexBasis?: number
 }
 
 export const getSizingShallot = ({
@@ -28,8 +26,6 @@ export const getSizingShallot = ({
   unitsBelow,
   unitsLeft,
   unitsRight,
-  unitGap,
-  unitFlexBasis,
 }: SizingProps & MarginProps) => ({
   ...(unitHeight !== undefined && { height: getUnits(unitHeight) }),
   ...(unitWidth !== undefined && { width: getUnits(unitWidth) }),
@@ -47,6 +43,4 @@ export const getSizingShallot = ({
   ...(fullHeight && {
     height: getFullHeight({ unitsAbove, unitsBelow, unitsAround }),
   }),
-  ...(unitGap !== undefined && { gap: getUnits(unitGap) }),
-  ...(unitFlexBasis !== undefined && { flexBasis: getUnits(unitFlexBasis) }),
 })
