@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 3.3.7
+
+### Patch Changes
+
+- 8780e61: [chore] release
+- Updated dependencies [8780e61]
+  - @shallot-ui/web@3.2.11
+
 ## 3.3.6
 
 ### Patch Changes
