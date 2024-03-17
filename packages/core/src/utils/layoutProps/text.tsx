@@ -30,6 +30,8 @@ export const withTextLayoutProps =
       grow,
       shrink,
       flex,
+      unitGap,
+      unitFlexBasis,
       unitsAround,
       unitsAbove,
       unitsBelow,
