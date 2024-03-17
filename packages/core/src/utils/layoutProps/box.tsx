@@ -44,8 +44,6 @@ export const withBoxLayoutProps =
       shrink,
       flex,
       wrap,
-      unitGap,
-      unitFlexBasis,
       unitsAround,
       unitsAbove,
       unitsBelow,
