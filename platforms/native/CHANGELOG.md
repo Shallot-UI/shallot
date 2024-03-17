@@ -1,5 +1,13 @@
 # @shallot-ui/native
 
+## 2.2.5
+
+### Patch Changes
+
+- aa1dbf8: [chore] release
+- Updated dependencies [aa1dbf8]
+  - @shallot-ui/core@27.0.3
+
 ## 2.2.4
 
 ### Patch Changes

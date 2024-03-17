@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 27.0.3
+
+### Patch Changes
+
+- aa1dbf8: [chore] release
+
 ## 27.0.2
 
 ### Patch Changes
