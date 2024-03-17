@@ -1,5 +1,3 @@
-import { DefaultTheme } from 'styled-components'
-
 import { MixinFunction } from '../types'
 
 /**
@@ -8,6 +6,6 @@ import { MixinFunction } from '../types'
  * @returns The value in grid units.
  */
 export const getUnits =
-  (value: number): MixinFunction<number> =>
+  (value: number, suffix?: string): MixinFunction<number | string> =>
   ({ theme }) =>
-    theme.gridUnit * value
+    suffix ? [theme.gridUnit * value, suffix].join() : theme.gridUnit * value
