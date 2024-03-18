@@ -1,5 +1,13 @@
 # @shallot-ui/next
 
+## 3.3.8
+
+### Patch Changes
+
+- 5d0420c: [feat] adds optional unitPadding option
+- Updated dependencies [5d0420c]
+  - @shallot-ui/web@3.2.12
+
 ## 3.3.7
 
 ### Patch Changes

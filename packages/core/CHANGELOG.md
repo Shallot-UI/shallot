@@ -1,5 +1,11 @@
 # @shallot-ui/core
 
+## 27.0.5
+
+### Patch Changes
+
+- 5d0420c: [feat] adds optional unitPadding option
+
 ## 27.0.4
 
 ### Patch Changes
