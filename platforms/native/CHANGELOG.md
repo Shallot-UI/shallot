@@ -1,5 +1,13 @@
 # @shallot-ui/native
 
+## 2.2.7
+
+### Patch Changes
+
+- 5d0420c: [feat] adds optional unitPadding option
+- Updated dependencies [5d0420c]
+  - @shallot-ui/core@27.0.5
+
 ## 2.2.6
 
 ### Patch Changes
