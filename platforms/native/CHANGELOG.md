@@ -1,5 +1,11 @@
 # @shallot-ui/native
 
+## 2.2.8
+
+### Patch Changes
+
+- bb966fd: [feat] adds pseudo button states on mobile
+
 ## 2.2.7
 
 ### Patch Changes
