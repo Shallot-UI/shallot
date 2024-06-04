@@ -1,11 +1,9 @@
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 import { TouchableOpacity, TouchableOpacityProps } from 'react-native'
-import styled from 'styled-components/native'
-import { getStyle, withBoxLayoutProps } from '@shallot-ui/core'
+import { withBoxLayoutProps } from '@shallot-ui/core'
 import { ButtonProps, withButtonStyleProps } from '@shallot-ui/button'
 
-const Container = styled.View(getStyle)
-const Title = styled.Text(getStyle)
+import S from './style'
 
 const Base = (
   props: ButtonProps<TouchableOpacityProps> & {
@@ -14,15 +12,31 @@ const Base = (
     after?: ReactNode
   },
 ) => {
-  const { title, before, after, shallot, ...touchableProps } = props
+  const { title, before, after, shallot, disabled, ...touchableProps } = props
+  const [active, setActive] = useState(false)
 
   return (
-    <TouchableOpacity {...touchableProps}>
-      <Container shallot={shallot?.Container}>
+    <TouchableOpacity
+      {...touchableProps}
+      disabled={disabled}
+      onPressIn={(e) => {
+        touchableProps.onPressIn?.(e)
+        setActive(true)
+      }}
+      onPressOut={(e) => {
+        touchableProps.onPressOut?.(e)
+        setActive(false)
+      }}
+    >
+      <S.Container $active={active} $disabled={disabled} shallot={shallot}>
         {before}
-        {title && <Title shallot={shallot?.Title}>{title}</Title>}
+        {title && (
+          <S.Title $active={active} $disabled={disabled} shallot={shallot}>
+            {title}
+          </S.Title>
+        )}
         {after}
-      </Container>
+      </S.Container>
     </TouchableOpacity>
   )
 }
