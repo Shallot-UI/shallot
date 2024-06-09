@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'styled-components'
+import { Theme } from '@shallot-ui/theme'
 
 import { valueNotFoundError } from '../utils'
 import { MixinFunction } from '../types'
@@ -9,10 +10,12 @@ import { MixinFunction } from '../types'
  * @returns The font family value.
  */
 export const getFontFamily =
-  (key: keyof DefaultTheme['fontFamilies'] | string): MixinFunction<string> =>
+  <T extends Theme = DefaultTheme>(
+    rawKey: keyof T['fontFamilies'],
+  ): MixinFunction<string> =>
   ({ theme }) => {
-    const value =
-      theme?.fontFamilies?.[key as keyof DefaultTheme['fontFamilies']]
-    if (!value) console.warn(valueNotFoundError('fontFamilies', `${key}`))
+    const key = rawKey as keyof (typeof theme)['fontFamilies']
+    const value = theme?.fontFamilies?.[key]
+    if (!value) console.warn(valueNotFoundError('fontFamilies', String(key)))
     return value
   }

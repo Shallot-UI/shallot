@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'styled-components'
+import { Theme } from '@shallot-ui/theme'
 
 import { MixinFunction } from '../types'
 import { valueNotFoundError } from '../utils'
@@ -11,14 +12,21 @@ import { valueNotFoundError } from '../utils'
  */
 export const getColor =
   <
-    C extends keyof DefaultTheme['colors'],
-    S extends keyof DefaultTheme['colors'][C] extends infer R ? R : never,
+    C extends keyof T['colors'],
+    S extends keyof T['colors'][C] extends infer R ? R : never,
+    T extends Theme = DefaultTheme,
   >(
     value: C | string,
     shade: S | number,
   ): MixinFunction<string> =>
-  ({ theme }: { theme: DefaultTheme }) => {
-    const color = (theme.colors as any)?.[value]?.[shade]
-    if (!color) console.warn(valueNotFoundError('colors', `${value}.${shade}`))
+  ({ theme }: any) => {
+    const color = theme.colors?.[value]?.[shade]
+
+    if (!color) {
+      console.warn(
+        valueNotFoundError('colors', [String(value), shade].join('.')),
+      )
+    }
+
     return color
   }

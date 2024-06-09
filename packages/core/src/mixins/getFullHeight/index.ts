@@ -1,5 +1,3 @@
-import { DefaultTheme } from 'styled-components'
-
 import { MixinFunction } from '../types'
 
 /**

@@ -1,4 +1,4 @@
-import { ThemeOptions } from '../types'
+import { ThemeOptions, ThemeVariants } from '../types'
 
 // Defaults
 import { DEFAULT_COLORS } from './colors'
@@ -29,8 +29,13 @@ import { DEFAULT_SHADOWS } from './shadows'
  * @returns A frozen object representing the theme.
  */
 
-export const makeTheme = <T extends ThemeOptions>(options: T) => {
-  const breakpoints = options?.breakpoints as T['breakpoints']
+export const makeTheme = <T extends ThemeOptions, V extends ThemeVariants>(
+  options: T,
+  themeVariants?: V,
+) => {
+  const breakpoints = {
+    ...options?.breakpoints,
+  } as ThemeOptions['breakpoints'] & T['breakpoints']
 
   const colors = {
     ...DEFAULT_COLORS,
@@ -47,7 +52,7 @@ export const makeTheme = <T extends ThemeOptions>(options: T) => {
     ...options?.fontSizes,
   } as typeof DEFAULT_FONT_SIZES & T['fontSizes']
 
-  const gridUnit = options?.gridUnit ?? options?.gridUnits?.[0] ?? 12
+  const gridUnit = options?.gridUnit ?? 12
 
   const letterSpacings = {
     ...DEFAULT_LETTER_SPACINGS,
@@ -69,7 +74,9 @@ export const makeTheme = <T extends ThemeOptions>(options: T) => {
     ...options?.shadows,
   } as typeof DEFAULT_SHADOWS & T['shadows']
 
-  const variants = options?.variants as T['variants']
+  const variants = {
+    ...themeVariants,
+  } as V
 
   return {
     breakpoints,
@@ -77,7 +84,6 @@ export const makeTheme = <T extends ThemeOptions>(options: T) => {
     fontFamilies,
     fontSizes,
     gridUnit,
-    gridUnits: [gridUnit], // legacy, deprecated
     letterSpacings,
     lineHeights,
     radii,
@@ -87,3 +93,5 @@ export const makeTheme = <T extends ThemeOptions>(options: T) => {
 }
 
 export const DEFAULT_THEME = makeTheme({})
+
+export type Theme = typeof DEFAULT_THEME

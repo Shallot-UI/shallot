@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'styled-components'
+import { Theme } from '@shallot-ui/theme'
 
 import { valueNotFoundError } from '../utils'
 import { MixinFunction } from '../types'
@@ -9,12 +10,12 @@ import { MixinFunction } from '../types'
  * @returns The letter spacing value.
  */
 export const getLetterSpacing =
-  (
-    key: keyof DefaultTheme['letterSpacings'] | string,
+  <T extends Theme = DefaultTheme>(
+    rawKey: keyof T['letterSpacings'],
   ): MixinFunction<string | number> =>
   ({ theme }) => {
-    const value =
-      theme?.letterSpacings?.[key as keyof DefaultTheme['letterSpacings']]
-    if (!value) console.warn(valueNotFoundError('letterSpacings', `${key}`))
+    const key = rawKey as keyof (typeof theme)['letterSpacings']
+    const value = theme?.letterSpacings?.[key]
+    if (!value) console.warn(valueNotFoundError('letterSpacings', String(key)))
     return value
   }

@@ -4,34 +4,36 @@ import {
   CSSPseudos,
   DefaultTheme,
 } from 'styled-components'
+import { Theme } from '../theme'
 
-export type ShallotProp<T = CSSObject> = Omit<CSSProperties, keyof T> &
-  Omit<CSSPseudos, keyof T> & {
-    [K in keyof T]:
-      | T[K]
-      | ((props: { theme: DefaultTheme }) => T[K])
-      | ShallotProp
+export type ShallotProp<O = CSSObject> = Omit<CSSProperties, keyof O> &
+  Omit<CSSPseudos, keyof O> & {
+    [K in keyof O]: O[K] | ((props: { theme: Theme }) => O[K]) | ShallotProp
   }
 
-export type ColorName = keyof DefaultTheme['colors']
-export type ColorShade = `${keyof DefaultTheme['colors']}.${number}`
-export type Variant = keyof DefaultTheme['variants']
-
-export interface ThemeOptions {
-  gridUnits?: number[]
+export type ThemeOptions = {
   gridUnit?: number
-  colors?: { [name: string]: { [shade: number]: CSSProperties['color'] } }
+  colors?: Record<string, Record<number, CSSProperties['color']>>
+  fontFamilies?: { [name: string]: CSSProperties['fontFamily'] }
   fontSizes?: { [name: string]: CSSProperties['fontSize'] }
-  lineHeights?: { [name: string]: CSSProperties['lineHeight'] }
-  radii?: { [name: string]: number }
   letterSpacings?: { [name: string]: CSSProperties['letterSpacing'] }
+  lineHeights?: { [name: string]: CSSProperties['lineHeight'] }
+  radii?: { [name: string]: CSSProperties['borderRadius'] }
+  shadows?: { [name: string]: CSSProperties['boxShadow'] }
   breakpoints?: {
-    [point: number]: {
+    [width: number]: {
       fontSizes?: { [name: string]: CSSProperties['fontSize'] }
-      radii?: { [name: string]: number }
+      radii?: { [name: string]: CSSProperties['borderRadius'] }
     }
   }
-  fontFamilies?: { [name: string]: CSSProperties['fontFamily'] }
-  shadows?: { [name: string]: CSSProperties['boxShadow'] }
-  variants?: { [namespace: string]: { [variant: string]: any } }
 }
+
+export type ThemeVariants = {
+  [namespace: string]: {
+    [variant: string]: ShallotProp
+  }
+}
+
+export type Variant<T extends Theme = DefaultTheme> = keyof T['variants']
+export type ColorName<T extends Theme = DefaultTheme> = keyof T['colors']
+export type ColorShade = `${string}.${number}`

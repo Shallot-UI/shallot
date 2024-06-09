@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'styled-components'
+import { Theme } from '@shallot-ui/theme'
 
 import { valueNotFoundError } from '../utils'
 import { MixinFunction } from '../types'
@@ -9,19 +10,21 @@ import { MixinFunction } from '../types'
  * @returns A valid CSS radius value.
  */
 export const getRadius =
-  (
-    key: keyof DefaultTheme['radii'] | string,
+  <T extends Theme = DefaultTheme>(
+    rawKey: keyof T['radii'],
     unitPadding?: number,
   ): MixinFunction<string | number> =>
   ({ theme }) => {
-    const value = theme?.radii?.[key as keyof DefaultTheme['radii']]
-    if (!value) console.warn(valueNotFoundError('radii', key))
+    const key = rawKey as keyof (typeof theme)['radii']
+    const value = theme?.radii?.[key]
+
+    if (!value) console.warn(valueNotFoundError('radii', String(key)))
 
     // Unit padding is used to adjust the radius value to account for the
     // padding of the element's container.
     // e.g., https://www.30secondsofcode.org/css/s/nested-border-radius/
-    if (unitPadding) {
-      return value - unitPadding * theme.gridUnit
+    if (unitPadding && typeof theme.gridUnit === 'number') {
+      return Number(value) - unitPadding * theme.gridUnit
     }
 
     return value

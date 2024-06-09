@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'styled-components'
+import { Theme } from '@shallot-ui/theme'
 
 import { valueNotFoundError } from '../utils'
 import { MixinFunction } from '../types'
@@ -9,11 +10,12 @@ import { MixinFunction } from '../types'
  * @returns The line height value.
  */
 export const getLineHeight =
-  (
-    key: keyof DefaultTheme['lineHeights'] | string,
+  <T extends Theme = DefaultTheme>(
+    rawKey: keyof T['lineHeights'],
   ): MixinFunction<string | number> =>
   ({ theme }) => {
-    const value = theme?.lineHeights?.[key as keyof DefaultTheme['lineHeights']]
-    if (!value) console.warn(valueNotFoundError('lineHeights', `${key}`))
+    const key = rawKey as keyof (typeof theme)['lineHeights']
+    const value = theme?.lineHeights?.[key]
+    if (!value) console.warn(valueNotFoundError('lineHeights', String(key)))
     return value
   }

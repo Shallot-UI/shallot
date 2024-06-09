@@ -1,6 +1,7 @@
 import { DefaultTheme } from 'styled-components'
-import { MixinFunction } from '../types'
+import { Theme } from '@shallot-ui/theme'
 
+import { MixinFunction } from '../types'
 import { valueNotFoundError } from '../utils'
 /**
  * Get a variant from the theme using its component name and variant name.
@@ -9,16 +10,17 @@ import { valueNotFoundError } from '../utils'
  * @returns The variant object.
  */
 export const getVariant =
-  <T = any>(
-    component: keyof DefaultTheme['variants'] | string,
+  <T = any, S extends Theme = DefaultTheme>(
+    component: keyof S['variants'],
     name: string = 'Default',
   ): MixinFunction<T> =>
   ({ theme }) => {
-    const variant =
-      theme?.variants?.[component as keyof DefaultTheme['variants']]?.[name]
+    const variant = theme?.variants?.[String(component)]?.[name]
 
     if (!variant && name !== 'Default') {
-      console.warn(valueNotFoundError('variants', `${component}.${name}`))
+      console.warn(
+        valueNotFoundError('variants', `${String(component)}.${name}`),
+      )
     }
 
     return variant as T

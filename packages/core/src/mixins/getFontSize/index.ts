@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'styled-components'
+import { Theme } from '@shallot-ui/theme'
 
 import { valueNotFoundError } from '../utils'
 import { MixinFunction } from '../types'
@@ -9,11 +10,12 @@ import { MixinFunction } from '../types'
  * @returns The font size value.
  */
 export const getFontSize =
-  <T extends keyof DefaultTheme['fontSizes']>(
-    key: T | string,
+  <T extends Theme = DefaultTheme>(
+    rawKey: keyof T['fontSizes'],
   ): MixinFunction<string | number> =>
   ({ theme }) => {
-    const value = theme?.fontSizes?.[key as keyof DefaultTheme['fontSizes']]
-    if (!value) console.warn(valueNotFoundError('fontSizes', `${key}`))
+    const key = rawKey as keyof (typeof theme)['fontSizes']
+    const value = theme?.fontSizes?.[key]
+    if (!value) console.warn(valueNotFoundError('fontSizes', String(key)))
     return value
   }

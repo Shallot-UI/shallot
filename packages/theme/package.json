@@ -18,15 +18,14 @@
     "dev": "tsup ./index.ts --format cjs --dts --watch"
   },
   "peerDependencies": {
-    "styled-components": ">=5"
+    "styled-components": "^6"
   },
   "devDependencies": {
-    "@types/styled-components": ">=5",
-    "eslint": "^7.32.0",
+    "eslint": "^9.4.0",
     "eslint-config-custom": "*",
-    "styled-components": "*",
+    "styled-components": "^6",
     "tsconfig": "*",
-    "tsup": "^6.5.0",
-    "typescript": "^4.5.2"
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5"
   }
 }

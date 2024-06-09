@@ -1,5 +1,3 @@
-import { DefaultTheme } from 'styled-components'
-
 import { getColor } from '../getColor'
 import { valueNotFoundError } from '../utils'
 import { MixinFunction } from '../types'
@@ -19,10 +17,7 @@ export const getColorShade = (
   if (address === 'transparent') return () => 'transparent'
 
   // Split the color key into its color name and shade.
-  const [color, shade] = address.split('.') as [
-    keyof DefaultTheme['colors'],
-    string,
-  ]
+  const [color, shade] = address.split('.') as [string, string]
   if (!shade) console.warn(valueNotFoundError('colors', `${color}.${shade}`))
   return getColor(color, Number(shade))
 }

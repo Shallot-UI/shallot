@@ -1,28 +1,22 @@
-import {
-  CSSObject,
-  ThemeProps,
-  DefaultTheme,
-  FlattenInterpolation,
-  FlattenSimpleInterpolation,
-  SimpleInterpolation,
-} from 'styled-components'
+import { Theme } from '@shallot-ui/theme'
+import { RuleSet, StyleFunction, StyledObject } from 'styled-components'
 
 export type ThemeGetterValue =
+  | StyledObject
   | string
-  | false
+  | number
+  | StyleFunction<any>
+  | RuleSet
   | undefined
-  | CSSObject
-  | FlattenSimpleInterpolation
-  | FlattenInterpolation<ThemeProps<DefaultTheme>>
 
 // Styled components accepts a function as a css value. This function has
 // access to a special object called `theme` which contains the theme passed
 // to the styled-components `ThemeProvider`.
 export type ThemeGetter<T> = (
-  propsWithTheme: T & { theme: DefaultTheme },
+  propsWithTheme: T & { theme: Theme },
 ) => ThemeGetterValue
 
-export type Getter<T> = (props: T) => SimpleInterpolation
+export type Getter<T> = (props: T) => ThemeGetterValue
 
 export type PropsConfig<T> = { [key: string]: { get: Getter<T> } }
 

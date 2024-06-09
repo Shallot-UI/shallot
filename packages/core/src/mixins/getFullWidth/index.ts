@@ -1,5 +1,3 @@
-import { DefaultTheme } from 'styled-components'
-
 import { MixinFunction } from '../types'
 
 /**
@@ -20,7 +18,7 @@ export const getFullWidth =
     unitsAround?: number
   }): MixinFunction<string> =>
   ({ theme }) => {
-    const baseUnit = theme.gridUnits?.[0]
+    const baseUnit = theme.gridUnit
     if (typeof baseUnit !== 'number') return ''
     const leftMargin = baseUnit * (unitsLeft ?? unitsAround ?? 0)
     const rightMargin = baseUnit * (unitsRight ?? unitsAround ?? 0)
