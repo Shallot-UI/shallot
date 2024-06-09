@@ -15,15 +15,15 @@ export type ThemeOptions = {
   gridUnit?: number
   colors?: Record<string, Record<number, CSS.Properties['color']>>
   fontFamilies?: { [name: string]: CSS.Properties['fontFamily'] }
-  fontSizes?: { [name: string]: CSS.Properties['fontSize'] }
-  letterSpacings?: { [name: string]: CSS.Properties['letterSpacing'] }
-  lineHeights?: { [name: string]: CSS.Properties['lineHeight'] }
-  radii?: { [name: string]: CSS.Properties['borderRadius'] }
+  fontSizes?: { [name: string]: number }
+  letterSpacings?: { [name: string]: number }
+  lineHeights?: { [name: string]: number }
+  radii?: { [name: string]: number }
   shadows?: { [name: string]: CSS.Properties['boxShadow'] }
   breakpoints?: {
     [width: number]: {
-      fontSizes?: { [name: string]: CSS.Properties['fontSize'] }
-      radii?: { [name: string]: CSS.Properties['borderRadius'] }
+      fontSizes?: { [name: string]: number }
+      radii?: { [name: string]: number }
     }
   }
 }

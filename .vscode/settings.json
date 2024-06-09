@@ -4,6 +4,8 @@
     "**/.gitignore": true,
     "**/.storybook": true,
     "**/.turbo": true,
+    "**/.next": true,
+    "**/next-env.d.ts": true,
     "**/dist": true,
     "**/node_modules": true,
     "**/storybook-static": true,
