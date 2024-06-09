@@ -6,7 +6,7 @@ import {
   Theme,
   withBoxLayoutProps,
   withBoxShallot,
-} from '@repo/web'
+} from '@shallot-ui/web'
 
 type NextImageProps = ComponentProps<typeof NextImage>
 

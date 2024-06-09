@@ -5,7 +5,7 @@ import {
   ShallotProvider,
   getColor,
   getFontSize,
-} from '@repo/web'
+} from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

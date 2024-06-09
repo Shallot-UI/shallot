@@ -12,7 +12,7 @@ import {
   H2,
   H3,
   P,
-} from '@repo/web'
+} from '@shallot-ui/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

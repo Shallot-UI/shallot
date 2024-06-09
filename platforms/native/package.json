@@ -1,5 +1,5 @@
 {
-  "name": "@repo/native",
+  "name": "@shallot-ui/native",
   "version": "2.2.8",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

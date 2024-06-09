@@ -10,7 +10,7 @@
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
-    "@repo/web": "workspace:*",
+    "@shallot-ui/web": "workspace:*",
     "next": "^13.5.6",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
