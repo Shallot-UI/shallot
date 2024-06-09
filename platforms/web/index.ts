@@ -1,4 +1,6 @@
-export * from '@shallot-ui/core'
-export * from '@shallot-ui/theme'
+import type {} from 'csstype'
+
+export * from '@repo/core'
+export * from '@repo/theme'
 
 export * from './src'

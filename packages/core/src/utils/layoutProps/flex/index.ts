@@ -1,4 +1,4 @@
-import { CSSProperties } from 'styled-components'
+import type { CSS, ShallotProp } from '@repo/theme'
 
 import { getNumericValue, getUnits } from '../../../mixins'
 import getWrapValue from './utils/getWrapValue'
@@ -7,7 +7,7 @@ export type FlexProps = {
   grow?: boolean | number
   shrink?: boolean | number
   flex?: boolean | number
-  wrap?: boolean | CSSProperties['flexWrap']
+  wrap?: boolean | CSS.Properties['flexWrap']
   unitGap?: number
   unitFlexBasis?: number
 }
@@ -28,7 +28,7 @@ export const getFlexShallot = ({
   wrap,
   unitGap,
   unitFlexBasis,
-}: FlexProps) => ({
+}: FlexProps): ShallotProp => ({
   ...(grow !== undefined && { flexGrow: getNumericValue(grow) }),
   ...(shrink !== undefined && { flexShrink: getNumericValue(shrink) }),
   ...(flex !== undefined && { flex: getNumericValue(flex) }),

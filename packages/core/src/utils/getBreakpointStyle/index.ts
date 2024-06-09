@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components'
-import { ShallotProp, makeTheme } from '@shallot-ui/theme'
+import { ShallotProp, makeTheme } from '@repo/theme'
 
 import { getStyle } from '../getStyle'
 

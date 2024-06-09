@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { getNestedStyle, getStyle } from '@shallot-ui/core'
-import { TagShallot } from '@shallot-ui/tag'
+import { getNestedStyle, getStyle } from '@repo/core'
+import { TagShallot } from '@repo/tag'
 
 const Title = styled.span(getStyle)
 

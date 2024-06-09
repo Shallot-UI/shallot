@@ -1,4 +1,4 @@
-import { CSSProperties } from 'styled-components'
+import type { CSS } from '@repo/theme'
 
 export type AlignmentProps = {
   alignTop?: boolean
@@ -10,7 +10,7 @@ export type AlignmentProps = {
 }
 
 export const getAlignmentShallot = (
-  flexDirection: CSSProperties['flexDirection'],
+  flexDirection: CSS.Properties['flexDirection'],
   {
     alignTop,
     alignMiddle,

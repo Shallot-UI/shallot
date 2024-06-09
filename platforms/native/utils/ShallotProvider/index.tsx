@@ -1,4 +1,4 @@
-import { ThemeOptions, makeTheme } from '@shallot-ui/theme'
+import { ThemeOptions, makeTheme } from '@repo/theme'
 import { FunctionComponent, ReactNode } from 'react'
 import { ThemeProvider } from 'styled-components'
 

@@ -1,3 +1,2 @@
-export * from '@shallot-ui/web'
-
+export * from '@repo/web'
 export * from './src'

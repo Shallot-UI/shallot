@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { ShallotProp } from '@shallot-ui/theme'
+import { ShallotProp } from '@repo/theme'
 
 import { TextAlignmentProps, getTextAlignmentShallot } from './textAlignment'
 import { BorderProps, getBorderShallot } from './border'

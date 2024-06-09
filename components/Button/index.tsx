@@ -10,7 +10,7 @@ import {
   getFontFamily,
   applyStyles,
   getVariant,
-} from '@shallot-ui/core'
+} from '@repo/core'
 
 import { ButtonProps, ButtonShallot } from './types'
 

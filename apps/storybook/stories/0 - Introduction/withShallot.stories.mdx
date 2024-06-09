@@ -9,7 +9,7 @@ The `withShallot` functions allows you to easily build a styled components that 
 ## Basic Usage
 
 ```tsx
-import { withShallot } from '@shallot-ui/web'
+import { withShallot } from '@repo/web'
 
 const Container = withShallot('div', {
   backgroundColor: getColor('Shading', 200),
@@ -20,7 +20,7 @@ const Container = withShallot('div', {
 ## Variants
 
 ```tsx
-import { withShallot } from '@shallot-ui/web'
+import { withShallot } from '@repo/web'
 
 const Container = withShallot(
   'div',
@@ -44,7 +44,7 @@ Now your component will have a `Box.Container` variant by default, and the varia
 If you want to enable Shallot layout props on your component, you can use the `withBoxShallot` function instead. The only difference is that this function requires a `flexDirection` property to be passed in the default styles object.
 
 ```tsx
-import { withBoxShallot } from '@shallot-ui/web'
+import { withBoxShallot } from '@repo/web'
 
 const Container = withBoxShallot('div', {
   flexDirection: 'column',
@@ -56,7 +56,7 @@ const Container = withBoxShallot('div', {
 Now you can use layout props to style the container component.
 
 ```tsx
-import { withTextShallot } from '@shallot-ui/web'
+import { withTextShallot } from '@repo/web'
 
 const Heading = withTextShallot('h1', {
   fontFamily: getFontFamily('Body'),

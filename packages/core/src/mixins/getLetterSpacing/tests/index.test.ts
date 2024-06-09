@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components'
 import { getLetterSpacing } from '../index'
-import { makeTheme } from '@shallot-ui/theme'
+import { makeTheme } from '@repo/theme'
 
 describe('getLetterSpacing', () => {
   it('should return letter spacing if letter spacing key is valid', () => {

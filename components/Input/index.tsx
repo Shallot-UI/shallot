@@ -10,7 +10,7 @@ import {
   getShadow,
   getUnits,
   getVariant,
-} from '@shallot-ui/core'
+} from '@repo/core'
 
 import { InputProps, InputShallot } from './types'
 

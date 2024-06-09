@@ -1,6 +1,6 @@
-import { ThemeOptions, makeTheme } from '@shallot-ui/theme'
+import { ThemeOptions, makeTheme } from '@repo/theme'
 import { DefaultTheme } from 'styled-components'
-import { ThemeGetterValue } from '@shallot-ui/core'
+import { ThemeGetterValue } from '@repo/core'
 
 export const getMediaQueries = (
   theme: DefaultTheme,

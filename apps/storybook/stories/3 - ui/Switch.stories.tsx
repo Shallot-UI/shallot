@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { StoryFn, Meta } from '@storybook/react'
-import { Row, ShallotProvider, Switch } from '@shallot-ui/web'
+import { Row, ShallotProvider, Switch } from '@repo/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

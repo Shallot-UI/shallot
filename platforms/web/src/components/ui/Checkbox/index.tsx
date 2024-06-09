@@ -4,12 +4,12 @@ import {
   ReactNode,
   useState,
 } from 'react'
-import { withBoxLayoutProps } from '@shallot-ui/core'
+import { withBoxLayoutProps } from '@repo/core'
 import {
   CheckboxProps,
   CheckboxShallot,
   withCheckboxStyleProps,
-} from '@shallot-ui/checkbox'
+} from '@repo/checkbox'
 
 import S from './styles'
 

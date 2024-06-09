@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
-import { getNestedStyle, getStyle } from '@shallot-ui/core'
-import { InputShallot } from '@shallot-ui/input'
+import { getNestedStyle, getStyle } from '@repo/core'
+import { InputShallot } from '@repo/input'
 
 const Input = styled.input(getStyle)
 

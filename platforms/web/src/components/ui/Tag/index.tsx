@@ -1,6 +1,6 @@
 import { ComponentProps, ReactNode } from 'react'
-import { withBoxLayoutProps } from '@shallot-ui/core'
-import { TagProps, withTagStyleProps } from '@shallot-ui/tag'
+import { withBoxLayoutProps } from '@repo/core'
+import { TagProps, withTagStyleProps } from '@repo/tag'
 
 import S from './styles'
 

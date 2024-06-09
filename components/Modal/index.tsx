@@ -6,7 +6,7 @@ import {
   getUnits,
   getColorShade,
   getVariant,
-} from '@shallot-ui/core'
+} from '@repo/core'
 
 import { ModalProps, ModalShallot } from './types'
 

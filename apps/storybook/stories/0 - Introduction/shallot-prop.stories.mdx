@@ -14,7 +14,7 @@ To start, let's make an SVG icon component that can pull its fill color from the
 
 ```tsx
 import styled from 'styled-components'
-import { getStyle } from '@shallot-ui/web'
+import { getStyle } from '@repo/web'
 
 // Since getStyle is a typed fnction, this `svg` will now automatically accept
 // the `shallot` prop so we can apply the mixin styles to the SVG element.
@@ -24,7 +24,7 @@ export const Icon = styled.svg(getStyle)
 Now, we can use the `Icon` component to render an icon with a fill color from the theme.
 
 ```tsx
-import { getColorShade } from '@shallot-ui/web'
+import { getColorShade } from '@repo/web'
 
 const MyIcon = () => <Icon shallot={{ fill: getColorShade('Primary.500') }} />
 ```
@@ -33,7 +33,7 @@ We can even extend the component to accept a `color` prop that will override the
 
 ```tsx
 import { FC } from 'react'
-import { getColorShade, AllColorShades } from '@shallot-ui/web'
+import { getColorShade, AllColorShades } from '@repo/web'
 
 const MyIcon = ({ fill }): FC<{ fill: AllColorShades }> => (
   <Icon shallot={{ fill }} />

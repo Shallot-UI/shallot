@@ -1,29 +1,29 @@
-import {
-  CSSObject,
-  CSSProperties,
-  CSSPseudos,
-  DefaultTheme,
-} from 'styled-components'
-import { Theme } from '../theme'
+import type * as CSS from 'csstype'
 
-export type ShallotProp<O = CSSObject> = Omit<CSSProperties, keyof O> &
-  Omit<CSSPseudos, keyof O> & {
+import type { DefaultTheme } from 'styled-components'
+
+export type { CSS }
+
+import type { Theme } from '../theme'
+
+export type ShallotProp<O = any> = Omit<CSS.Properties, keyof O> &
+  Omit<CSS.Pseudos, keyof O> & {
     [K in keyof O]: O[K] | ((props: { theme: Theme }) => O[K]) | ShallotProp
   }
 
 export type ThemeOptions = {
   gridUnit?: number
-  colors?: Record<string, Record<number, CSSProperties['color']>>
-  fontFamilies?: { [name: string]: CSSProperties['fontFamily'] }
-  fontSizes?: { [name: string]: CSSProperties['fontSize'] }
-  letterSpacings?: { [name: string]: CSSProperties['letterSpacing'] }
-  lineHeights?: { [name: string]: CSSProperties['lineHeight'] }
-  radii?: { [name: string]: CSSProperties['borderRadius'] }
-  shadows?: { [name: string]: CSSProperties['boxShadow'] }
+  colors?: Record<string, Record<number, CSS.Properties['color']>>
+  fontFamilies?: { [name: string]: CSS.Properties['fontFamily'] }
+  fontSizes?: { [name: string]: CSS.Properties['fontSize'] }
+  letterSpacings?: { [name: string]: CSS.Properties['letterSpacing'] }
+  lineHeights?: { [name: string]: CSS.Properties['lineHeight'] }
+  radii?: { [name: string]: CSS.Properties['borderRadius'] }
+  shadows?: { [name: string]: CSS.Properties['boxShadow'] }
   breakpoints?: {
     [width: number]: {
-      fontSizes?: { [name: string]: CSSProperties['fontSize'] }
-      radii?: { [name: string]: CSSProperties['borderRadius'] }
+      fontSizes?: { [name: string]: CSS.Properties['fontSize'] }
+      radii?: { [name: string]: CSS.Properties['borderRadius'] }
     }
   }
 }

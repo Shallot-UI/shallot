@@ -4,9 +4,9 @@ import {
   ReactNode,
   RefObject,
 } from 'react'
-import { withBoxLayoutProps } from '@shallot-ui/core'
-import { ShallotProp } from '@shallot-ui/theme'
-import { InputShallot, withInputStyleProps } from '@shallot-ui/input'
+import { withBoxLayoutProps } from '@repo/core'
+import { ShallotProp } from '@repo/theme'
+import { InputShallot, withInputStyleProps } from '@repo/input'
 
 import S from './styles'
 

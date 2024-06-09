@@ -1,4 +1,4 @@
-import { makeTheme } from '@shallot-ui/theme'
+import { makeTheme } from '@repo/theme'
 import { getStyle } from '..'
 import { getColor, getFontSize, getShadow } from '../../../mixins'
 

@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react'
 import styled, { DefaultTheme } from 'styled-components/native'
 import FastImage, { FastImageProps } from 'react-native-fast-image'
-import { getStyle, getUnits, getRadius } from '@shallot-ui/core'
-import { ShallotProp } from '@shallot-ui/theme'
+import { getStyle, getUnits, getRadius } from '@repo/core'
+import { ShallotProp } from '@repo/theme'
 
 export interface ImageProps extends Omit<FastImageProps, 'source'> {
   source: FastImageProps['source'] | undefined
@@ -17,8 +17,8 @@ export interface ImageProps extends Omit<FastImageProps, 'source'> {
   unitsRight?: number
 }
 
-const Container = styled.View(getStyle)
-const InnerImage = styled(FastImage)(getStyle)
+const Container = styled.View<{ shallot?: ShallotProp }>(getStyle)
+const InnerImage = styled(FastImage)<{ shallot?: ShallotProp }>(getStyle)
 
 export const Image: FunctionComponent<ImageProps> = (props) => {
   const {

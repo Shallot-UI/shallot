@@ -1,10 +1,11 @@
 import { ComponentProps, ReactNode } from 'react'
 import styled from 'styled-components/native'
-import { getStyle, withBoxLayoutProps } from '@shallot-ui/core'
-import { TagProps, withTagStyleProps } from '@shallot-ui/tag'
+import { getStyle, withBoxLayoutProps } from '@repo/core'
+import { TagProps, withTagStyleProps } from '@repo/tag'
+import { ShallotProp } from '@repo/theme'
 
-const Container = styled.View(getStyle)
-const Title = styled.Text(getStyle)
+const Container = styled.View<{ shallot?: ShallotProp }>(getStyle)
+const Title = styled.Text<{ shallot?: ShallotProp }>(getStyle)
 
 const Base = (
   props: TagProps<ComponentProps<typeof Container>> & {

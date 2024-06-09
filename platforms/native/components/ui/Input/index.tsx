@@ -1,6 +1,6 @@
 import { ComponentProps, FC, ReactNode, RefObject, useState } from 'react'
-import { withBoxLayoutProps } from '@shallot-ui/core'
-import { InputProps, withInputStyleProps } from '@shallot-ui/input'
+import { withBoxLayoutProps } from '@repo/core'
+import { InputProps, withInputStyleProps } from '@repo/input'
 import { TextInput } from 'react-native'
 
 import S from './style'
@@ -20,7 +20,7 @@ const Base: FC<
       {before}
       <S.InnerInput
         shallot={shallot}
-        ref={inputRef}
+        // ref={inputRef}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         $focused={focused}

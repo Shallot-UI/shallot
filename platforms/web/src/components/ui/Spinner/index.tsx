@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 import styled, { keyframes } from 'styled-components'
-import { getColor } from '@shallot-ui/core'
-import { ColorName } from '@shallot-ui/theme'
+import { getColor } from '@repo/core'
+import { ColorName } from '@repo/theme'
 
 const spinAnimation = keyframes`
   0% { transform: rotate(0deg); }

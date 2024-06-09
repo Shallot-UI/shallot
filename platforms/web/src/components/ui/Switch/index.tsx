@@ -1,10 +1,10 @@
 import { FunctionComponent, InputHTMLAttributes, useState } from 'react'
-import { withBoxLayoutProps } from '@shallot-ui/core'
+import { withBoxLayoutProps } from '@repo/core'
 import {
   SwitchProps,
   SwitchShallot,
   withSwitchStyleProps,
-} from '@shallot-ui/switch'
+} from '@repo/switch'
 
 import S from './styles'
 

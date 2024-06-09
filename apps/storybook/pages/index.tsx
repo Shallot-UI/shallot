@@ -1,4 +1,4 @@
-import { Column } from '@shallot-ui/web'
+import { Column } from '@repo/web'
 
 const Home = () => <Column />
 

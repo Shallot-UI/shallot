@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { getNestedStyle } from '@shallot-ui/core'
-import { SwitchShallot } from '@shallot-ui/switch'
+import { getNestedStyle } from '@repo/core'
+import { SwitchShallot } from '@repo/switch'
 
 const Handle = styled.div``
 

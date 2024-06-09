@@ -17,9 +17,9 @@ export const getFullHeight =
     unitsBelow?: number
     unitsAround?: number
   }): MixinFunction<string> =>
-  ({ theme }) => {
+  ({ theme }): string | undefined => {
     const baseUnit = theme.gridUnit
-    if (typeof baseUnit !== 'number') return ''
+    if (typeof baseUnit !== 'number') return undefined
     const topMargin = baseUnit * (unitsAbove ?? unitsAround ?? 0)
     const bottomMargin = baseUnit * (unitsBelow ?? unitsAround ?? 0)
     return `calc(100% - ${topMargin + bottomMargin}px)`

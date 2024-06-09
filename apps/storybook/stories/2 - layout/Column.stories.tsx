@@ -6,7 +6,7 @@ import {
   getUnits,
   getRadius,
   ShallotProvider,
-} from '@shallot-ui/web'
+} from '@repo/web'
 
 const allColorNames = Object.keys(DEFAULT_THEME.colors)
   .map((color) => {

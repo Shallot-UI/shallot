@@ -1,9 +1,10 @@
-import { CSSProperties } from 'react'
+import type { CSS } from '@repo/theme'
+
 import { getAlignmentShallot } from '../index'
 
 describe('getAlignmentShallot', () => {
   it('should return correct alignment for row direction', () => {
-    const flexDirection: CSSProperties['flexDirection'] = 'row'
+    const flexDirection: CSS.Properties['flexDirection'] = 'row'
     const alignmentProps = {
       alignTop: true,
       alignMiddle: false,
@@ -22,7 +23,7 @@ describe('getAlignmentShallot', () => {
   })
 
   it('should return correct alignment for column direction', () => {
-    const flexDirection: CSSProperties['flexDirection'] = 'column'
+    const flexDirection: CSS.Properties['flexDirection'] = 'column'
     const alignmentProps = {
       alignTop: false,
       alignMiddle: true,
@@ -41,7 +42,7 @@ describe('getAlignmentShallot', () => {
   })
 
   it('should return empty object if no alignment props are provided', () => {
-    const flexDirection: CSSProperties['flexDirection'] = 'row'
+    const flexDirection: CSS.Properties['flexDirection'] = 'row'
     const alignmentProps = {
       alignTop: false,
       alignMiddle: false,

@@ -1,5 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react'
-import { Tag, ShallotProvider } from '@shallot-ui/web'
+import { Tag, ShallotProvider } from '@repo/web'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

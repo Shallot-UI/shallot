@@ -1,5 +1,5 @@
 // styled.d.ts
-import { Theme } from '@shallot-ui/theme'
+import { Theme } from '@repo/theme'
 import 'styled-components'
 
 declare module 'styled-components' {

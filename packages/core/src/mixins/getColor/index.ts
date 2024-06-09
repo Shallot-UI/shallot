@@ -1,7 +1,7 @@
-import { DefaultTheme } from 'styled-components'
-import { Theme } from '@shallot-ui/theme'
+import type { DefaultTheme } from 'styled-components'
+import type { CSS, Theme } from '@repo/theme'
 
-import { MixinFunction } from '../types'
+import type { MixinFunction } from '../types'
 import { valueNotFoundError } from '../utils'
 
 /**
@@ -19,7 +19,7 @@ export const getColor =
     value: C | string,
     shade: S | number,
   ): MixinFunction<string> =>
-  ({ theme }: any) => {
+  ({ theme }: any): CSS.Properties['color'] => {
     const color = theme.colors?.[value]?.[shade]
 
     if (!color) {

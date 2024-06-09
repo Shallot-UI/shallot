@@ -1,8 +1,8 @@
 import { useTheme } from 'styled-components'
-import { getVariant } from '@shallot-ui/core'
-import { ShallotProp } from '@shallot-ui/theme'
+import { getVariant } from '@repo/core'
+import { ShallotProp } from '@repo/theme'
 
-export const useVariant = <Variant = ShallotProp>(
+export const useVariant = <Variant extends ShallotProp = ShallotProp>(
   namespace: string,
   name?: string,
 ) => {

@@ -1,3 +1,5 @@
+import type {} from 'csstype'
+
 export * from './getFullHeight'
 export * from './getColor'
 export * from './getColorShade'

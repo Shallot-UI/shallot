@@ -1,4 +1,4 @@
-import { makeTheme } from '@shallot-ui/theme'
+import { makeTheme } from '@repo/theme'
 import { DefaultTheme } from 'styled-components'
 
 import { getLineHeight } from '../index'

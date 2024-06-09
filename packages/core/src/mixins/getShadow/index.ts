@@ -1,8 +1,8 @@
-import { DefaultTheme } from 'styled-components'
-import { Theme } from '@shallot-ui/theme'
+import type { DefaultTheme } from 'styled-components'
+import type { CSS, Theme } from '@repo/theme'
+import type { MixinFunction } from '../types'
 
 import { valueNotFoundError } from '../utils'
-import { MixinFunction } from '../types'
 
 /**
  * Get a shadow value from the theme using its name.
@@ -13,7 +13,7 @@ export const getShadow =
   <T extends Theme = DefaultTheme>(
     rawKey: keyof T['shadows'],
   ): MixinFunction<string> =>
-  ({ theme }) => {
+  ({ theme }): CSS.Properties['boxShadow'] => {
     const key = rawKey as keyof (typeof theme)['shadows']
     const value = theme?.shadows?.[key]
     if (!value) console.warn(valueNotFoundError('shadows', String(key)))

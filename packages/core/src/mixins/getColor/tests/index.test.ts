@@ -1,4 +1,4 @@
-import { makeTheme } from '@shallot-ui/theme'
+import { makeTheme } from '@repo/theme'
 import { getColor } from '../index'
 import { DefaultTheme } from 'styled-components'
 

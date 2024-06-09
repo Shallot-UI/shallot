@@ -1,6 +1,6 @@
-import { CSSObject } from 'styled-components'
-import { ShallotProp, Theme } from '@shallot-ui/theme'
-import { Keyframes } from 'styled-components/dist/types'
+import type { CSSObject } from 'styled-components'
+import type { ShallotProp, Theme } from '@repo/theme'
+import type { Keyframes } from 'styled-components/dist/types'
 
 /**
  * getStyle

@@ -1,4 +1,4 @@
-import { Theme } from '@shallot-ui/theme'
+import { Theme } from '@repo/theme'
 
 import { getVariant } from '../../mixins'
 

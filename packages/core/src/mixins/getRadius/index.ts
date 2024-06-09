@@ -1,8 +1,8 @@
-import { DefaultTheme } from 'styled-components'
-import { Theme } from '@shallot-ui/theme'
+import type { DefaultTheme } from 'styled-components'
+import type { Theme } from '@repo/theme'
+import type { MixinFunction } from '../types'
 
 import { valueNotFoundError } from '../utils'
-import { MixinFunction } from '../types'
 
 /**
  * Get a radius value from the theme using its name.
@@ -14,7 +14,7 @@ export const getRadius =
     rawKey: keyof T['radii'],
     unitPadding?: number,
   ): MixinFunction<string | number> =>
-  ({ theme }) => {
+  ({ theme }): number => {
     const key = rawKey as keyof (typeof theme)['radii']
     const value = theme?.radii?.[key]
 

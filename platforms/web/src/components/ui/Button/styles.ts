@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
-import { getNestedStyle, getStyle } from '@shallot-ui/core'
-import { ShallotProp } from '@shallot-ui/theme'
-import { ButtonShallot } from '@shallot-ui/button'
+import { getNestedStyle, getStyle } from '@repo/core'
+import { ShallotProp } from '@repo/theme'
+import { ButtonShallot } from '@repo/button'
 
 const Title = styled.span<{ shallot?: ShallotProp }>(getStyle)
 

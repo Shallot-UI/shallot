@@ -1,5 +1,5 @@
-import { CSSObject, DefaultTheme } from 'styled-components'
-import { ColorName, ShallotProp } from '@shallot-ui/theme'
+import type { CSSObject, DefaultTheme } from 'styled-components'
+import type { ColorName, ShallotProp } from '@repo/theme'
 
 type InputStyleProps = {
   color?: ColorName

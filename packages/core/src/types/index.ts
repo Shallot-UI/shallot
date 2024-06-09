@@ -1,5 +1,7 @@
-import { Theme } from '@shallot-ui/theme'
-import { RuleSet, StyleFunction, StyledObject } from 'styled-components'
+import type {} from 'csstype'
+
+import type { Theme } from '@repo/theme'
+import type { RuleSet, StyleFunction, StyledObject } from 'styled-components'
 
 export type ThemeGetterValue =
   | StyledObject

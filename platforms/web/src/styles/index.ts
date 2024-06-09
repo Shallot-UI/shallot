@@ -1,6 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components'
-import { ColorShade } from '@shallot-ui/theme'
-import { getColorShade } from '@shallot-ui/core'
+import { ColorShade } from '@repo/theme'
+import { getColorShade } from '@repo/core'
 
 export type GlobalStyleProps = {
   backgroundColor?: ColorShade

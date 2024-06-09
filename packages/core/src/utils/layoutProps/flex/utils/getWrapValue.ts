@@ -1,8 +1,8 @@
-import { CSSProperties } from 'styled-components'
+import { CSS } from '@repo/theme'
 
 const getWrapValue = (
-  wrap: boolean | CSSProperties['flexWrap'],
-): CSSProperties['flexWrap'] => {
+  wrap: boolean | CSS.Properties['flexWrap'],
+): CSS.Properties['flexWrap'] => {
   if (typeof wrap === 'string') return wrap
   if (typeof wrap === 'boolean') return wrap ? 'wrap' : 'nowrap'
 }

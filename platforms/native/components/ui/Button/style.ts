@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
-import { getNestedStyle } from '@shallot-ui/core'
-import { ButtonShallot } from '@shallot-ui/button'
+import { getNestedStyle } from '@repo/core'
+import { ButtonShallot } from '@repo/button'
 
 const Container = styled.View.withConfig({
   shouldForwardProp: (prop) => !['shallot'].includes(prop),

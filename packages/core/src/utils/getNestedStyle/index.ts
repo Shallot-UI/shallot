@@ -1,6 +1,6 @@
-import { ShallotProp } from '@shallot-ui/theme'
+import { ShallotProp } from '@repo/theme'
 import { CSSObject } from 'styled-components'
-import { Theme } from '@shallot-ui/theme'
+import { Theme } from '@repo/theme'
 
 import { getStyle } from '../getStyle'
 

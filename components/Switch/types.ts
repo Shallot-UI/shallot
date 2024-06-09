@@ -1,4 +1,4 @@
-import { ColorName, ShallotProp } from '@shallot-ui/theme'
+import { ColorName, ShallotProp } from '@repo/theme'
 
 export type SwitchStyleProps = {
   color?: ColorName

@@ -2,12 +2,6 @@
   "name": "shallot",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "components/*",
-    "packages/*",
-    "platforms/*"
-  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
@@ -20,7 +14,7 @@
     "pre-release": "turbo run build && changeset pre enter beta && changeset version && changeset publish"
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
+    "@repo/eslint-config": "workspace:*",
     "prettier": "latest",
     "turbo": "^1.12.4"
   },
@@ -30,5 +24,5 @@
   "dependencies": {
     "@changesets/cli": "^2.26.0"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "pnpm@9.2.0+sha512.98a80fd11c2e7096747762304106432b3ddc67dcf54b5a8c01c93f68a2cd5e05e6821849522a06fb76284d41a2660d5e334f2ee3bbf29183bf2e739b1dafa771"
 }

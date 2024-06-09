@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react'
-import { ModalShallot, withModalStyleProps } from '@shallot-ui/modal'
-import { withBoxLayoutProps } from '@shallot-ui/core'
+import { ModalShallot, withModalStyleProps } from '@repo/modal'
+import { withBoxLayoutProps } from '@repo/core'
 
 import S from './styles'
 

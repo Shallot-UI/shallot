@@ -7,7 +7,7 @@ import {
   getUnits,
   applyStyles,
   getVariant,
-} from '@shallot-ui/core'
+} from '@repo/core'
 
 import { CheckboxProps, CheckboxShallot } from './types'
 

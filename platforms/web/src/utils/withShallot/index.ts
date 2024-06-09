@@ -1,13 +1,13 @@
 import { ElementType } from 'react'
 import styled from 'styled-components'
-import { ShallotProp, ThemeVariants } from '@shallot-ui/theme'
+import { ShallotProp, ThemeVariants } from '@repo/theme'
 import {
   LayoutShallot,
   getBreakpointsStyle,
   getStyle,
   withBoxLayoutProps,
   withTextLayoutProps,
-} from '@shallot-ui/core'
+} from '@repo/core'
 
 type ExtendedProps = {
   shallot?: ShallotProp

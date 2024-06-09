@@ -1,13 +1,13 @@
 import styled from 'styled-components/native'
 
-import { ShallotProp } from '@shallot-ui/theme'
+import { ShallotProp } from '@repo/theme'
 import {
   LayoutShallot,
   getStyle,
   getVariantStyle,
   withBoxLayoutProps,
   withTextLayoutProps,
-} from '@shallot-ui/core'
+} from '@repo/core'
 
 type ExtendedProps = {
   shallot?: ShallotProp

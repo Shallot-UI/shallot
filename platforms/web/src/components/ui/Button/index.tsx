@@ -1,6 +1,6 @@
 import { ComponentProps, ReactNode } from 'react'
-import { withBoxLayoutProps } from '@shallot-ui/core'
-import { ButtonProps, withButtonStyleProps } from '@shallot-ui/button'
+import { withBoxLayoutProps } from '@repo/core'
+import { ButtonProps, withButtonStyleProps } from '@repo/button'
 
 import S from './styles'
 

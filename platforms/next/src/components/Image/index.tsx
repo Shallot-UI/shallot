@@ -1,12 +1,12 @@
 import { ComponentProps, FunctionComponent } from 'react'
-import styled, { useTheme } from 'styled-components'
+import { useTheme } from 'styled-components'
 import NextImage from 'next/image'
 import {
-  getStyle,
   ShallotProp,
+  Theme,
   withBoxLayoutProps,
   withBoxShallot,
-} from '@shallot-ui/web'
+} from '@repo/web'
 
 type NextImageProps = ComponentProps<typeof NextImage>
 
@@ -17,14 +17,11 @@ export interface ImageProps extends NextImageProps {
 }
 
 const Container = withBoxShallot('div')
-
-const InnerImage = styled.div.withConfig({
-  shouldForwardProp: (prop) => !['shallot'].includes(prop),
-})<{ shallot?: ShallotProp }>(getStyle)
+const InnerImage = withBoxShallot(NextImage)
 
 const Base: FunctionComponent<ImageProps> = (props) => {
   const { ref, shallot, unitWidth, unitHeight, ...rest } = props
-  const theme = useTheme()
+  const theme = useTheme() as Theme
 
   const width =
     typeof shallot?.width === 'function'

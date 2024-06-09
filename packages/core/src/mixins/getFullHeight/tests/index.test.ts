@@ -1,4 +1,4 @@
-import { makeTheme } from '@shallot-ui/theme'
+import { makeTheme } from '@repo/theme'
 import { getFullHeight } from '../index'
 import { DefaultTheme } from 'styled-components'
 
