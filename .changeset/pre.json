@@ -21,5 +21,11 @@
     "@repo/eslint-config": "0.7.0",
     "@repo/tsconfig": "0.3.0"
   },
-  "changesets": []
+  "changesets": [
+    "modern-berries-double",
+    "quick-bikes-act",
+    "seven-wasps-collect",
+    "soft-lemons-protect",
+    "wet-parrots-obey"
+  ]
 }
