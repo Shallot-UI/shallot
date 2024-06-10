@@ -1,13 +1,10 @@
-import { createGlobalStyle, css } from 'styled-components'
-import { ColorShade } from '@shallot-ui/core-theme'
-import { getColorShade } from '@shallot-ui/core-mixins'
+import { createGlobalStyle } from 'styled-components'
+import {
+  getGlobalBackgroundColor,
+  getGlobalColor,
+} from '@shallot-ui/core-mixins'
 
-export type GlobalStyleProps = {
-  backgroundColor?: ColorShade
-  textColor?: ColorShade
-}
-
-export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
+export const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
     License: none (public domain)
@@ -46,13 +43,9 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   
   * { box-sizing: border-box; }
 
-  body {
-    ${({ theme, textColor }) => css`
-      color: ${getColorShade(textColor)({ theme })};
-    `}
-    ${({ theme, backgroundColor }) => css`
-      background-color: ${getColorShade(backgroundColor)({ theme })};
-    `}
+  body {    
+      color: ${getGlobalColor};
+      background-color: ${getGlobalBackgroundColor};
   }
 
   // SYSTEM FONT
