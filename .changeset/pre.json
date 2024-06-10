@@ -1,6 +1,6 @@
 {
-  "mode": "exit",
-  "tag": "next",
+  "mode": "pre",
+  "tag": "beta",
   "initialVersions": {
     "@shallot-ui/component-button": "2.1.2",
     "@shallot-ui/component-checkbox": "2.1.3",
