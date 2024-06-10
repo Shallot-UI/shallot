@@ -14,7 +14,7 @@ export const getStyle =
     shallot = {},
   }: T) =>
   ({ theme }: { theme: Theme }): CSSObject =>
-    Object.entries(shallot ?? {}).reduce((acc, [key, raw]) => {
+    Object.entries({ ...shallot }).reduce((acc, [key, raw]) => {
       // Key is the CSS property name. (e.g., `color`, `fontSize`)
       // Raw is the value of the CSS property. (e.g., `primary`, `2rem`)
       // Keep in mind that raw can be a getter function.

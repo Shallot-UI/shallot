@@ -1,6 +1,5 @@
 import { Theme } from '@shallot-ui/core-theme'
-
-import { getVariant } from '../../../mixins/src'
+import { getVariant } from '@shallot-ui/core-mixins'
 
 export const getVariantStyle =
   (variantNamespace: string, defaultVariant: string = 'Default') =>
@@ -13,7 +12,7 @@ export const getVariantStyle =
         ? getVariant(variantNamespace, variant)({ theme })
         : {}) ?? {}
 
-    return Object.entries(variantShallot).map(([key, getter]) => {
+    return Object.entries({ ...variantShallot }).map(([key, getter]) => {
       let value = typeof getter === 'function' ? getter({ theme }) : getter
 
       // In some cases, values can be objects. When they are, we want to

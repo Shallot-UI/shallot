@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components'
-import { ShallotProp, makeTheme } from '@shallot-ui/core-theme'
+import { ShallotProp, ThemeTokens } from '@shallot-ui/core-theme'
 
 import { getStyle } from '../getStyle'
 
@@ -11,7 +11,7 @@ import { getStyle } from '../getStyle'
 export const getBreakpointsStyle =
   <T extends { shallot?: ShallotProp }>({ shallot = {} }: T) =>
   ({ theme }: { theme: DefaultTheme }) => {
-    if (!theme.breakpoints) return
+    if (!theme?.tokens?.breakpoints) return
     const modifiers: any = {}
 
     // only certain properties are supported by breakpoints.
@@ -22,9 +22,13 @@ export const getBreakpointsStyle =
       supportedShallot.fontSize = shallot.fontSize
     }
 
-    Object.entries(theme.breakpoints).forEach(([width, subtheme]) => {
+    Object.entries(theme.tokens.breakpoints).forEach(([width, subtheme]) => {
       const value = getStyle({ shallot: supportedShallot })({
-        theme: makeTheme(subtheme),
+        theme: {
+          tokens: { ...theme, ...(subtheme as ThemeTokens) },
+          modes: theme.modes,
+          variants: theme.variants,
+        },
       })
 
       // Ensure `value` is not empty

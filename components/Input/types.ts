@@ -3,10 +3,10 @@ import type { ColorName, ShallotProp } from '@shallot-ui/core-theme'
 
 type InputStyleProps = {
   color?: ColorName
-  radius?: keyof DefaultTheme['radii']
-  fontFamily?: keyof DefaultTheme['fontFamilies']
-  letterSpacing?: keyof DefaultTheme['letterSpacings']
-  fontSize?: keyof DefaultTheme['fontSizes']
+  radius?: keyof DefaultTheme['tokens']['radii']
+  fontFamily?: keyof DefaultTheme['tokens']['fontFamilies']
+  letterSpacing?: keyof DefaultTheme['tokens']['letterSpacings']
+  fontSize?: keyof DefaultTheme['tokens']['fontSizes']
   fontWeight?: string
   uppercase?: boolean
   textAlign?: CSSObject['textAlign']

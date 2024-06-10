@@ -12,15 +12,15 @@ import { valueNotFoundError } from '../utils'
  */
 export const getColor =
   <
-    C extends keyof T['colors'],
-    S extends keyof T['colors'][C] extends infer R ? R : never,
+    C extends keyof T['tokens']['colors'],
+    S extends keyof T['tokens']['colors'][C] extends infer R ? R : never,
     T extends Theme = DefaultTheme,
   >(
     value: C | string,
     shade: S | number,
   ): MixinFunction<string> =>
   ({ theme }: any): CSS.Properties['color'] => {
-    const color = theme.colors?.[value]?.[shade]
+    const color = theme?.tokens?.colors?.[value]?.[shade]
 
     if (!color) {
       console.warn(

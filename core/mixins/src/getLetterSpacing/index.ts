@@ -11,11 +11,13 @@ import { valueNotFoundError } from '../utils'
  */
 export const getLetterSpacing =
   <T extends Theme = DefaultTheme>(
-    rawKey: keyof T['letterSpacings'],
+    rawKey: keyof T['tokens']['letterSpacings'],
   ): MixinFunction<string | number> =>
-  ({ theme }): string | number => {
-    const key = rawKey as keyof (typeof theme)['letterSpacings']
-    const value = theme?.letterSpacings?.[key]
-    if (!value) console.warn(valueNotFoundError('letterSpacings', String(key)))
+  ({ theme }): string | number | undefined => {
+    const key = rawKey as keyof (typeof theme)['tokens']['letterSpacings']
+    const value = theme?.tokens?.letterSpacings?.[key]
+    if (value === undefined) {
+      console.warn(valueNotFoundError('letterSpacings', String(key)))
+    }
     return value
   }

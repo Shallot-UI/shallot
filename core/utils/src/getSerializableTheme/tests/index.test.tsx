@@ -1,21 +1,24 @@
 import { makeTheme } from '@shallot-ui/core-theme'
-import { getSerializableTheme } from '..'
-import { getColor, getFontSize } from '../../../../mixins/src'
+import { getColor, getFontSize } from '@shallot-ui/core-mixins'
+
+import { getSerializableTheme } from '../'
 import { getStyle } from '../../getStyle'
 
 describe('Test the `getSerializableTheme` function', () => {
-  const theme = makeTheme({
-    colors: {
-      Primary: {
-        500: '#000',
-        600: '#111',
-        700: '#222',
+  const theme = makeTheme(
+    {
+      colors: {
+        Primary: {
+          500: '#000',
+          600: '#111',
+          700: '#222',
+        },
+      },
+      fontSizes: {
+        sm: 10,
       },
     },
-    fontSizes: {
-      sm: 10,
-    },
-    variants: {
+    {
       Box: {
         boxVariant: {
           color: getColor('Primary', 500),
@@ -29,12 +32,8 @@ describe('Test the `getSerializableTheme` function', () => {
           },
         },
       },
-      // edgeCases: {
-      //   null: null,
-      //   undefined: undefined,
-      // },
     },
-  })
+  )
 
   it('should return an object', () => {
     const result = getStyle({

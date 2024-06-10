@@ -1,17 +1,17 @@
-import type { CSSObject, DefaultTheme } from 'styled-components'
-import type { ColorName, ShallotProp } from '@shallot-ui/core-theme'
+import type { DefaultTheme } from 'styled-components'
+import type { CSS, ColorName, ShallotProp } from '@shallot-ui/core-theme'
 
 type TagStyleProps = {
   color?: ColorName
-  radius?: keyof DefaultTheme['radii']
-  letterSpacing?: keyof DefaultTheme['letterSpacings']
-  fontSize?: keyof DefaultTheme['fontSizes']
+  radius?: keyof DefaultTheme['tokens']['radii']
+  letterSpacing?: keyof DefaultTheme['tokens']['letterSpacings']
+  fontSize?: keyof DefaultTheme['tokens']['fontSizes']
   outline?: boolean
   uppercase?: boolean
   verticalUnitPadding?: number
   horizontalUnitPadding?: number
-  textAlign?: CSSObject['textAlign']
-  fontFamily?: keyof DefaultTheme['fontFamilies']
+  textAlign?: CSS.Properties['textAlign']
+  fontFamily?: keyof DefaultTheme['tokens']['fontFamilies']
   fontWeight?: string
 }
 

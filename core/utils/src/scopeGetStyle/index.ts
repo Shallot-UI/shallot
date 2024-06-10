@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components'
-import { getVariant } from '../../../mixins/src'
+import { getVariant } from '@shallot-ui/core-mixins'
 
 /**
  * Returns a function that generates CSS styles based on a `shallot` object with optional variant styles.

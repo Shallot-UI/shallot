@@ -11,11 +11,11 @@ import { valueNotFoundError } from '../utils'
  */
 export const getShadow =
   <T extends Theme = DefaultTheme>(
-    rawKey: keyof T['shadows'],
+    rawKey: keyof T['tokens']['shadows'],
   ): MixinFunction<string> =>
   ({ theme }): CSS.Properties['boxShadow'] => {
-    const key = rawKey as keyof (typeof theme)['shadows']
-    const value = theme?.shadows?.[key]
+    const key = rawKey as keyof (typeof theme)['tokens']['shadows']
+    const value = theme?.tokens?.shadows?.[key]
     if (!value) console.warn(valueNotFoundError('shadows', String(key)))
     return value
   }

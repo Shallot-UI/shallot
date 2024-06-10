@@ -8,12 +8,12 @@ import {
   ShallotProvider,
 } from '@shallot-ui/next'
 
-const allColorNames = Object.keys(DEFAULT_THEME.colors)
+const allColorNames = Object.keys(DEFAULT_THEME.tokens.colors)
   .map((color) => {
     // Map doesn't properly infer the type of the keys in the object
-    const typedColor = color as keyof typeof DEFAULT_THEME.colors
+    const typedColor = color as keyof typeof DEFAULT_THEME.tokens.colors
     // Return the name of all the shades of the color (e.g. 'Primary.100')
-    return Object.keys(DEFAULT_THEME.colors[typedColor]).map(
+    return Object.keys(DEFAULT_THEME.tokens.colors[typedColor]).map(
       (shade) => `${color}.${shade}`,
     )
   })

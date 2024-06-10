@@ -1,14 +1,14 @@
 import { getSizingShallot } from '../index'
 
-jest.mock('../../../../mixins/getUnits', () => ({
+jest.mock('getUnits', () => ({
   getUnits: jest.fn((units) => `${units}px`),
 }))
 
-jest.mock('../../../../mixins/getFullWidth', () => ({
+jest.mock('getFullWidth', () => ({
   getFullWidth: jest.fn(() => 'calc(100% - 2px)'),
 }))
 
-jest.mock('../../../../mixins/getFullHeight', () => ({
+jest.mock('getFullHeight', () => ({
   getFullHeight: jest.fn(() => 'calc(100% - 2px)'),
 }))
 

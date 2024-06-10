@@ -11,20 +11,22 @@ import { valueNotFoundError } from '../utils'
  */
 export const getRadius =
   <T extends Theme = DefaultTheme>(
-    rawKey: keyof T['radii'],
+    rawKey: keyof T['tokens']['radii'],
     unitPadding?: number,
   ): MixinFunction<string | number> =>
-  ({ theme }): number => {
-    const key = rawKey as keyof (typeof theme)['radii']
-    const value = theme?.radii?.[key]
+  ({ theme }): number | undefined => {
+    const key = rawKey as keyof (typeof theme)['tokens']['radii']
+    const value = theme?.tokens?.radii?.[key]
 
-    if (!value) console.warn(valueNotFoundError('radii', String(key)))
+    if (value === undefined) {
+      console.warn(valueNotFoundError('radii', String(key)))
+    }
 
     // Unit padding is used to adjust the radius value to account for the
     // padding of the element's container.
     // e.g., https://www.30secondsofcode.org/css/s/nested-border-radius/
-    if (unitPadding && typeof theme.gridUnit === 'number') {
-      return Number(value) - unitPadding * theme.gridUnit
+    if (unitPadding && typeof theme?.tokens?.gridUnit === 'number') {
+      return Number(value) - unitPadding * theme.tokens.gridUnit
     }
 
     return value

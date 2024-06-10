@@ -24,7 +24,7 @@ const Template: StoryFn = () => {
 
   return (
     <ShallotProvider
-      theme={{
+      tokens={{
         fontSizes: {
           xxxl: 34,
           xxl: 24,

@@ -11,11 +11,13 @@ import { valueNotFoundError } from '../utils'
  */
 export const getLineHeight =
   <T extends Theme = DefaultTheme>(
-    rawKey: keyof T['lineHeights'],
+    rawKey: keyof T['tokens']['lineHeights'],
   ): MixinFunction<string | number> =>
   ({ theme }): CSS.Properties['lineHeight'] => {
-    const key = rawKey as keyof (typeof theme)['lineHeights']
-    const value = theme?.lineHeights?.[key]
-    if (!value) console.warn(valueNotFoundError('lineHeights', String(key)))
+    const key = rawKey as keyof (typeof theme)['tokens']['lineHeights']
+    const value = theme?.tokens?.lineHeights?.[key]
+    if (value === undefined) {
+      console.warn(valueNotFoundError('lineHeights', String(key)))
+    }
     return value
   }

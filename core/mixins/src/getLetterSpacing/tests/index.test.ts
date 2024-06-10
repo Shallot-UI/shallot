@@ -6,23 +6,23 @@ describe('getLetterSpacing', () => {
   it('should return letter spacing if letter spacing key is valid', () => {
     const theme: DefaultTheme = makeTheme({
       letterSpacings: {
-        sm: '0.5px',
-        md: '1px',
-        lg: '1.5px',
+        sm: 0.5,
+        md: 1,
+        lg: 1.5,
       },
     })
 
     const letterSpacing = getLetterSpacing('md')({ theme })
 
-    expect(letterSpacing).toBe('1px')
+    expect(letterSpacing).toBe(1)
   })
 
   it('should return undefined and log warning if letter spacing key is invalid', () => {
     const theme: DefaultTheme = makeTheme({
       letterSpacings: {
-        sm: '0.5px',
-        md: '1px',
-        lg: '1.5px',
+        sm: 0.5,
+        md: 1,
+        lg: 1.5,
       },
     })
 

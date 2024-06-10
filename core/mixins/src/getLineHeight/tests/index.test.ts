@@ -7,23 +7,23 @@ describe('getLineHeight', () => {
   it('should return line height if line height key is valid', () => {
     const theme: DefaultTheme = makeTheme({
       lineHeights: {
-        sm: '1.2',
-        md: '1.5',
-        lg: '1.8',
+        sm: 1.2,
+        md: 1.5,
+        lg: 1.8,
       },
     })
 
     const lineHeight = getLineHeight('md')({ theme })
 
-    expect(lineHeight).toBe('1.5')
+    expect(lineHeight).toBe(1.5)
   })
 
   it('should return undefined and log warning if line height key is invalid', () => {
     const theme: DefaultTheme = makeTheme({
       lineHeights: {
-        sm: '1.2',
-        md: '1.5',
-        lg: '1.8',
+        sm: 1.2,
+        md: 1.5,
+        lg: 1.8,
       },
     })
 

@@ -3,7 +3,7 @@ import type { ColorShade, ShallotProp } from '@shallot-ui/core-theme'
 
 export type ModalStyleProps = {
   backgroundColor?: ColorShade
-  radius?: keyof DefaultTheme['radii']
+  radius?: keyof DefaultTheme['tokens']['radii']
   unitHeight?: number
   unitWidth?: number
   unitsAround?: number

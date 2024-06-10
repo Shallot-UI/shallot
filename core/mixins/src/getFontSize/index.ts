@@ -11,11 +11,13 @@ import { valueNotFoundError } from '../utils'
  */
 export const getFontSize =
   <T extends Theme = DefaultTheme>(
-    rawKey: keyof T['fontSizes'],
+    rawKey: keyof T['tokens']['fontSizes'],
   ): MixinFunction<string | number> =>
-  ({ theme }): number => {
-    const key = rawKey as keyof (typeof theme)['fontSizes']
-    const value = theme?.fontSizes?.[key]
-    if (!value) console.warn(valueNotFoundError('fontSizes', String(key)))
+  ({ theme }): number | undefined => {
+    const key = rawKey as keyof (typeof theme)['tokens']['fontSizes']
+    const value = theme?.tokens?.fontSizes?.[key]
+    if (value === undefined) {
+      console.warn(valueNotFoundError('fontSizes', String(key)))
+    }
     return value
   }

@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { DefaultTheme, useTheme } from 'styled-components'
+import { useTheme } from 'styled-components'
 import { applyStyles } from '@shallot-ui/core-utils'
 import {
   getColor,
@@ -49,7 +49,7 @@ export const withButtonStyleProps =
     // If the button uses the Shading color, we switch to the shading
     // foreground color rather than the mid-range color. This is because other
     // palette colors extend to shades darker and lighter than their foreground.
-    const shades: Record<string, keyof DefaultTheme['colors']['Shading']> =
+    const shades: Record<string, number> =
       color === 'Shading'
         ? { default: 900, hovered: 800, pressed: 950, focused: 900 }
         : { default: 500, hovered: 400, pressed: 600, focused: 500 }

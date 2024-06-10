@@ -26,7 +26,9 @@ describe('getMediaQueries', () => {
     })
     const getStyle = jest
       .fn()
-      .mockImplementation((theme) => `font-size: ${theme.fontSizes.md}px;`)
+      .mockImplementation(
+        (theme) => `font-size: ${theme.tokens.fontSizes.md}px;`,
+      )
 
     const result = getMediaQueries(theme, getStyle)
 

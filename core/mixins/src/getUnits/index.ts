@@ -8,8 +8,8 @@ import { MixinFunction } from '../types'
 export const getUnits =
   (value: number, suffix?: string): MixinFunction<number | string> =>
   ({ theme }): string | number | undefined => {
-    if (typeof theme.gridUnit !== 'number') return undefined
+    if (typeof theme?.tokens?.gridUnit !== 'number') return undefined
     return suffix
-      ? [theme.gridUnit * value, suffix].join()
-      : theme.gridUnit * value
+      ? [theme.tokens.gridUnit * value, suffix].join()
+      : theme.tokens.gridUnit * value
   }

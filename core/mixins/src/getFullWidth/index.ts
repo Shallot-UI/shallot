@@ -18,7 +18,7 @@ export const getFullWidth =
     unitsAround?: number
   }): MixinFunction<string> =>
   ({ theme }): string | undefined => {
-    const baseUnit = theme.gridUnit
+    const baseUnit = theme?.tokens?.gridUnit
     if (typeof baseUnit !== 'number') return undefined
     const leftMargin = baseUnit * (unitsLeft ?? unitsAround ?? 0)
     const rightMargin = baseUnit * (unitsRight ?? unitsAround ?? 0)

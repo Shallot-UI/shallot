@@ -1,6 +1,6 @@
 import { getMarginShallot } from '../index'
 
-jest.mock('../../../../mixins/getUnits', () => ({
+jest.mock('getUnits', () => ({
   getUnits: jest.fn((units) => `${units}px`),
 }))
 

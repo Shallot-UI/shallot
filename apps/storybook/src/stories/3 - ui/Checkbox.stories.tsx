@@ -70,6 +70,3 @@ Larger.args = { size: 3, iconSize: 2, radius: 'lg' }
 
 export const Circular = Template.bind({})
 Circular.args = { radius: 'pill', iconSize: 1 }
-
-export const Square = Template.bind({})
-Square.args = { radius: 'none' }

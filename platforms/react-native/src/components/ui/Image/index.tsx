@@ -8,7 +8,7 @@ import { ShallotProp } from '@shallot-ui/core-theme'
 export interface ImageProps extends Omit<FastImageProps, 'source'> {
   source: FastImageProps['source'] | undefined
   shallot?: ShallotProp
-  radius?: keyof DefaultTheme['radii']
+  radius?: keyof DefaultTheme['tokens']['radii']
   unitHeight?: number
   unitWidth?: number
   unitsAround?: number
