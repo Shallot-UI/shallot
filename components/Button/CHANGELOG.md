@@ -1,5 +1,25 @@
 # @shallot-ui/component-button
 
+## 3.0.0-beta.4
+
+### Patch Changes
+
+- Adds theme modees
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.0-beta.4
+  - @shallot-ui/core-theme@2.0.0-beta.4
+  - @shallot-ui/core-utils@2.0.0-beta.4
+
+## 3.0.0-beta.3
+
+### Patch Changes
+
+- Bug fixes
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.0-beta.3
+  - @shallot-ui/core-theme@2.0.0-beta.3
+  - @shallot-ui/core-utils@2.0.0-beta.3
+
 ## 3.0.0-beta.2
 
 ### Minor Changes

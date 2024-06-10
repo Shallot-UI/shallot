@@ -1,1 +1,1 @@
-export * from './ShallotProvider'
+export * from './context'

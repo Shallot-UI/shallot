@@ -1,5 +1,25 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.0-beta.4
+
+### Patch Changes
+
+- Adds theme modees
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.0-beta.4
+  - @shallot-ui/core-props@2.0.0-beta.4
+  - @shallot-ui/core-theme@2.0.0-beta.4
+
+## 2.0.0-beta.3
+
+### Patch Changes
+
+- Bug fixes
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.0-beta.3
+  - @shallot-ui/core-props@2.0.0-beta.3
+  - @shallot-ui/core-theme@2.0.0-beta.3
+
 ## 2.0.0-beta.2
 
 ### Minor Changes

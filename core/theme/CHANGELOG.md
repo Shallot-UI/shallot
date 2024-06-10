@@ -1,5 +1,17 @@
 # @shallot-ui/core-theme
 
+## 2.0.0-beta.4
+
+### Patch Changes
+
+- Adds theme modees
+
+## 2.0.0-beta.3
+
+### Patch Changes
+
+- Bug fixes
+
 ## 2.0.0-beta.2
 
 ### Minor Changes

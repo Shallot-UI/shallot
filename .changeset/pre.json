@@ -19,14 +19,17 @@
     "@shallot-ui/platform-react": "1.0.0",
     "@shallot-ui/platform-react-native": "1.0.0",
     "@repo/eslint-config": "0.7.0",
-    "@repo/tsconfig": "0.3.0"
+    "@repo/tsconfig": "0.3.0",
+    "stories": "0.1.0"
   },
   "changesets": [
     "modern-berries-double",
     "quick-bikes-act",
+    "seven-rats-perform",
     "seven-wasps-collect",
     "shiny-gorillas-dream",
     "soft-lemons-protect",
+    "warm-walls-yawn",
     "wet-parrots-obey"
   ]
 }
