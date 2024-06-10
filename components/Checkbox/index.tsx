@@ -1,13 +1,13 @@
 import { ComponentType } from 'react'
 import { useTheme } from 'styled-components'
+import { applyStyles } from '@shallot-ui/core-utils'
 import {
   getColor,
   getShadow,
   getRadius,
   getUnits,
-  applyStyles,
   getVariant,
-} from '@repo/core'
+} from '@shallot-ui/core-mixins'
 
 import { CheckboxProps, CheckboxShallot } from './types'
 

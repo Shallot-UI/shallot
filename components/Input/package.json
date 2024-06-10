@@ -1,5 +1,5 @@
 {
-  "name": "@repo/input",
+  "name": "@shallot-ui/component-input",
   "version": "2.1.2",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -18,8 +18,9 @@
     "dev": "tsup ./index.tsx --format cjs --dts --clean --watch"
   },
   "dependencies": {
-    "@repo/core": "workspace:*",
-    "@repo/theme": "workspace:*"
+    "@shallot-ui/core-utils": "workspace:*",
+    "@shallot-ui/core-mixins": "workspace:*",
+    "@shallot-ui/core-theme": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18",

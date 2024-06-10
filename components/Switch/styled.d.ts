@@ -1,4 +1,4 @@
-import { Theme } from '@repo/theme'
+import { Theme } from '@shallot-ui/core-theme'
 import 'styled-components'
 
 declare module 'styled-components' {

@@ -1,7 +1,7 @@
 import { ComponentType } from 'react'
 import { useTheme } from 'styled-components'
+import { applyStyles } from '@shallot-ui/core-utils'
 import {
-  applyStyles,
   getColor,
   getFontFamily,
   getFontSize,
@@ -10,7 +10,7 @@ import {
   getShadow,
   getUnits,
   getVariant,
-} from '@repo/core'
+} from '@shallot-ui/core-mixins'
 
 import { InputProps, InputShallot } from './types'
 

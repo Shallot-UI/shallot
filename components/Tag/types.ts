@@ -1,5 +1,5 @@
 import type { CSSObject, DefaultTheme } from 'styled-components'
-import type { ColorName, ShallotProp } from '@repo/theme'
+import type { ColorName, ShallotProp } from '@shallot-ui/core-theme'
 
 type TagStyleProps = {
   color?: ColorName

@@ -42,38 +42,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Text> = (args) => (
-  <ShallotProvider
-    variants={{
-      Text: {
-        H1: {
-          fontFamily: getFontFamily('Monospace'),
-          fontWeight: 'bold',
-          fontSize: getFontSize('xl'),
-          color: getColor('Shading', 800),
-        },
-        H2: {
-          fontFamily: getFontFamily('Body'),
-          fontSize: getFontSize('lg'),
-          color: getColor('Shading', 800),
-        },
-        H3: {
-          fontFamily: getFontFamily('Body'),
-          fontSize: getFontSize('md'),
-          color: getColor('Shading', 800),
-        },
-        P: {
-          fontFamily: getFontFamily('Body'),
-          fontSize: getFontSize('md'),
-          color: getColor('Shading', 800),
-        },
-        Label: {
-          fontFamily: getFontFamily('Body'),
-          fontSize: getFontSize('sm'),
-          color: getColor('Shading', 400),
-        },
-      },
-    }}
-  >
+  <ShallotProvider>
     <GlobalStyle />
     <Fold alignCenter alignMiddle>
       <Column unitWidth={40}>

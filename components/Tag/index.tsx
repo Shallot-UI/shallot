@@ -8,7 +8,7 @@ import {
   getFontFamily,
   getUnits,
   getVariant,
-} from '@repo/core'
+} from '@shallot-ui/core-mixins'
 
 import { TagProps, TagShallot } from './types'
 

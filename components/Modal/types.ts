@@ -1,5 +1,5 @@
 import type { DefaultTheme } from 'styled-components'
-import type { ColorShade, ShallotProp } from '@repo/theme'
+import type { ColorShade, ShallotProp } from '@shallot-ui/core-theme'
 
 export type ModalStyleProps = {
   backgroundColor?: ColorShade

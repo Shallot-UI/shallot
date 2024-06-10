@@ -1,9 +1,9 @@
 import type { CSSObject, DefaultTheme } from 'styled-components'
-import type { ColorName, ShallotProp } from '@repo/theme'
+import type { ColorName, ShallotProp, Theme } from '@shallot-ui/core-theme'
 
 export type ButtonStyleProps = {
   color?: ColorName
-  radius?: keyof DefaultTheme['radii']
+  radius?: keyof Theme['radii']
   letterSpacing?: keyof DefaultTheme['letterSpacings']
   fontSize?: keyof DefaultTheme['fontSizes']
   outline?: boolean

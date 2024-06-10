@@ -1,5 +1,6 @@
 import { ComponentType } from 'react'
 import { DefaultTheme, useTheme } from 'styled-components'
+import { applyStyles } from '@shallot-ui/core-utils'
 import {
   getColor,
   getRadius,
@@ -8,9 +9,8 @@ import {
   getUnits,
   getShadow,
   getFontFamily,
-  applyStyles,
   getVariant,
-} from '@repo/core'
+} from '@shallot-ui/core-mixins'
 
 import { ButtonProps, ButtonShallot } from './types'
 

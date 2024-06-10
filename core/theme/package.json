@@ -1,0 +1,34 @@
+{
+  "name": "@shallot-ui/core-theme",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "check-types": "yarn tsc --noEmit",
+    "lint": "TIMING=1 eslint \"**/*.ts*\"",
+    "build": "tsup ./index.ts --format cjs --minify --dts --clean",
+    "dev": "tsup ./index.ts --format cjs --dts --watch"
+  },
+  "peerDependencies": {
+    "styled-components": "^6"
+  },
+  "dependencies": {
+    "csstype": "^3.1.3"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+    "eslint": "^9.4.0",
+    "styled-components": "^6",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5"
+  }
+}

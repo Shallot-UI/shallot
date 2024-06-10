@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components'
-import { ColorName, ShallotProp } from '@repo/theme'
+import { ColorName, ShallotProp } from '@shallot-ui/core-theme'
 
 export type CheckboxStyleProps = {
   color?: ColorName
