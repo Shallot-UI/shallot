@@ -23,6 +23,7 @@
     "stories": "0.1.0"
   },
   "changesets": [
+    "grumpy-knives-sparkle",
     "happy-apricots-wink",
     "modern-berries-double",
     "quick-bikes-act",
@@ -31,6 +32,7 @@
     "shiny-gorillas-dream",
     "soft-lemons-protect",
     "spicy-ligers-arrive",
+    "tender-moles-explain",
     "warm-walls-yawn",
     "wet-parrots-obey"
   ]

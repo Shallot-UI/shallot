@@ -1,5 +1,17 @@
 # @shallot-ui/component-button
 
+## 3.0.0-beta.6
+
+### Patch Changes
+
+- 0f1aa67: Adds globals to theme
+- Adds mixins to get globals
+- Updated dependencies [0f1aa67]
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.0-beta.6
+  - @shallot-ui/core-theme@2.0.0-beta.6
+  - @shallot-ui/core-utils@2.0.0-beta.6
+
 ## 3.0.0-beta.5
 
 ### Patch Changes
