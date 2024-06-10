@@ -1,5 +1,11 @@
 # @shallot-ui/next
 
+## 4.0.0-beta.6
+
+### Major Changes
+
+- Fixes issue where theme mode variants were not applied
+
 ## 4.0.0-beta.5
 
 ### Patch Changes

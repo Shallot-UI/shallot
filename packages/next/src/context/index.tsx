@@ -50,9 +50,15 @@ type ShallotProviderProps = {
 
 const extendVariants = (variants: ThemeVariants, extended?: ThemeVariants) => {
   const newVariants = { ...variants }
-  Object.keys(variants).forEach((name) => {
-    if (!extended?.[name]) return
-    variants[name] = applyStyles(variants[name], extended[name])
+  Object.keys(variants).forEach((component) => {
+    if (!extended?.[component]) return
+    Object.keys(extended[component]).forEach((name) => {
+      if (!extended[component][name]) return
+      newVariants[component][name] = applyStyles(
+        variants[component][name],
+        extended[component][name],
+      )
+    })
   })
   return newVariants
 }
