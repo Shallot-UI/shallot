@@ -1,5 +1,4 @@
-// styled.d.ts
-import { Theme } from './src/theme'
+import { Theme } from './src'
 import 'styled-components'
 
 declare module 'styled-components' {

@@ -17,8 +17,13 @@ export interface ImageProps extends Omit<FastImageProps, 'source'> {
   unitsRight?: number
 }
 
-const Container = styled.View<{ shallot?: ShallotProp }>(getStyle)
-const InnerImage = styled(FastImage)<{ shallot?: ShallotProp }>(getStyle)
+const Container = styled.View.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<{ shallot?: ShallotProp }>(getStyle)
+
+const InnerImage = styled(FastImage).withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<{ shallot?: ShallotProp }>(getStyle)
 
 export const Image: FunctionComponent<ImageProps> = (props) => {
   const {

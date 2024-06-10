@@ -1,4 +1,4 @@
-import { withBoxShallot } from '../../../utils'
+import { withBoxShallot } from '@/utils'
 
 export const Fold = withBoxShallot({
   flexDirection: 'column',

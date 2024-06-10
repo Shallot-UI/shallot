@@ -76,7 +76,7 @@ export const makeTheme = <T extends ThemeOptions, V extends ThemeVariants>(
 
   const variants = {
     ...themeVariants,
-  } as V
+  } as ThemeVariants
 
   return {
     breakpoints,

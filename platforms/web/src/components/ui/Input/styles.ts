@@ -1,8 +1,11 @@
 import styled, { css } from 'styled-components'
 import { getNestedStyle, getStyle } from '@repo/core'
 import { InputShallot } from '@repo/input'
+import { ShallotProp } from '@repo/theme'
 
-const Input = styled.input(getStyle)
+const Input = styled.input.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<{ shallot?: ShallotProp }>(getStyle)
 
 const Container = styled.div.withConfig({
   shouldForwardProp: (prop) => !['shallot'].includes(prop),

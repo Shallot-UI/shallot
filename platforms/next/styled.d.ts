@@ -1,9 +1,6 @@
-// styled.d.ts
-import { DEFAULT_THEME } from '@repo/theme'
+import { NextTheme } from './src'
 import 'styled-components'
 
-type Theme = typeof DEFAULT_THEME
-
 declare module 'styled-components' {
-  export interface DefaultTheme extends Theme {}
+  export interface DefaultTheme extends NextTheme {}
 }

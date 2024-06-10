@@ -1,5 +1,5 @@
 import { ThemeOptions, ThemeVariants, makeTheme } from '@repo/theme'
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent, ReactNode, useMemo } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { GlobalStyle, GlobalStyleProps } from '@/styles'
@@ -17,9 +17,16 @@ export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   variants = {},
   includeGlobalStyle = true,
   ...rest
-}: ShallotProviderProps) => (
-  <ThemeProvider theme={makeTheme(theme, variants)}>
-    {includeGlobalStyle && <GlobalStyle {...rest} />}
-    {children}
-  </ThemeProvider>
-)
+}: ShallotProviderProps) => {
+  const providedTheme = useMemo(
+    () => makeTheme(theme, variants),
+    [theme, variants],
+  )
+
+  return (
+    <ThemeProvider theme={providedTheme}>
+      {includeGlobalStyle && <GlobalStyle {...rest} />}
+      {children}
+    </ThemeProvider>
+  )
+}

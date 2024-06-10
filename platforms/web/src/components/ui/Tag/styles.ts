@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 import { getNestedStyle, getStyle } from '@repo/core'
 import { TagShallot } from '@repo/tag'
+import { ShallotProp } from '@repo/theme'
 
-const Title = styled.span(getStyle)
+const Title = styled.span.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<{ shallot?: ShallotProp }>(getStyle)
 
 const Container = styled.div.withConfig({
   shouldForwardProp: (prop) => !['shallot'].includes(prop),

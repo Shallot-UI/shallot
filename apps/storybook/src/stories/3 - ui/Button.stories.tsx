@@ -1,11 +1,14 @@
 import { StoryFn, Meta } from '@storybook/react'
+import { fn } from '@storybook/test'
 import {
   Button,
   Column,
   Fold,
-  getColor,
-  getRadius,
   ShallotProvider,
+  getColor,
+  getLetterSpacing,
+  getRadius,
+  getUnits,
 } from '@shallot-ui/next'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -13,7 +16,7 @@ export default {
   title: '💎 UI / Button',
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
     controls: {
       sort: 'requiredFirst',
     },
@@ -22,74 +25,22 @@ export default {
   argTypes: {
     color: {
       control: 'select',
-      options: ['Shading', 'Primary', 'Success', 'Danger', 'Warning'],
+      options: ['Default', 'Success', 'Warning', 'Danger'],
     },
-    alignText: {
+    radius: {
       control: 'select',
-      options: ['left', 'center', 'right', 'justify'],
+      options: ['none', 'sm', 'md', 'lg', 'xl', 'pill'],
     },
-    fontFamily: {
-      control: 'select',
-      options: ['Body', 'Monospace', 'Display'],
-    },
-    font: {
-      control: 'select',
-      options: ['Regular', 'Bold', 'Italic'],
-    },
-    underline: { control: 'boolean' },
-    radius: { control: 'select', options: ['sm', 'md', 'lg', 'pill'] },
-    letterSpacing: { control: 'select', options: ['sm', 'md', 'lg'] },
-    fontSize: { control: 'select', options: ['sm', 'md', 'lg'] },
-    startAdornment: { table: { disable: true } },
-    endAdornment: { table: { disable: true } },
-    verticalUnitPadding: {
-      control: { type: 'number', min: 1, max: 4, step: 1 },
-    },
-    horizontalUnitPadding: {
-      control: { type: 'number', min: 1, max: 4, step: 1 },
-    },
-    unitsAround: {
-      control: { type: 'number', min: 1, max: 4, step: 1 },
-    },
-    fullWidth: { control: 'boolean' },
-    disabled: { control: 'boolean' },
   },
 } as Meta<typeof Button>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Button> = (args) => (
-  <ShallotProvider
-    variants={{
-      Button: {
-        // Edit variants here.
-        buttonVariant1: {
-          container: {},
-          title: {},
-          state: {
-            focused: {
-              container: {},
-            },
-            pressed: {
-              container: {},
-            },
-            hovered: {
-              container: {},
-            },
-          },
-        },
-      },
-    }}
-  >
+  <ShallotProvider>
     <Fold alignCenter alignMiddle>
-      <Column
-        fullWidth
-        maxUnitWidth={30}
-        shallot={{
-          backgroundColor: getColor('Shading', 200),
-          borderRadius: getRadius('xl'),
-        }}
-      >
-        <Button title="Hello World" fullWidth {...args} />
+      <Column unitGap={1} unitsAround={2}>
+        <Button title="Hello World" onClick={fn()} {...args} />
+        <Button disabled title="Disabled" onClick={fn()} {...args} />
       </Column>
     </Fold>
   </ShallotProvider>
@@ -98,28 +49,39 @@ const Template: StoryFn<typeof Button> = (args) => (
 export const Default = Template.bind({})
 Default.args = {}
 
-export const Variant = Template.bind({})
-Variant.args = {
-  variant: 'buttonVariant1',
+export const CustomStyling = Template.bind({})
+CustomStyling.args = {
+  shallot: {
+    Container: {
+      backgroundColor: getColor('Primary', 500),
+      paddingTop: getUnits(1 / 4),
+      paddingBottom: getUnits(1 / 4),
+      paddingLeft: getUnits(3 / 2),
+      paddingRight: getUnits(3 / 2),
+      borderRadius: getRadius('pill'),
+      borderColor: 'transparent',
+      boxShadow: 'none',
+    },
+    Title: {
+      color: getColor('Shading', 50),
+      letterSpacing: getLetterSpacing('md'),
+      lineHeight: '24px',
+      fontWeight: 500,
+      margin: 0,
+    },
+    ':hover': {
+      Container: {
+        backgroundColor: getColor('Primary', 600),
+        borderColor: 'transparent',
+        boxShadow: 'none',
+      },
+    },
+    ':active': {
+      Container: {
+        backgroundColor: getColor('Primary', 700),
+        borderColor: 'transparent',
+        boxShadow: 'none',
+      },
+    },
+  },
 }
-
-export const Success = Template.bind({})
-Success.args = { color: 'Success' }
-
-export const Warning = Template.bind({})
-Warning.args = { color: 'Warning' }
-
-export const Danger = Template.bind({})
-Danger.args = { color: 'Danger' }
-
-export const Pill = Template.bind({})
-Pill.args = { radius: 'pill' }
-
-export const Square = Template.bind({})
-Square.args = { radius: 'none' }
-
-export const Outline = Template.bind({})
-Outline.args = { outline: true }
-
-export const FontFamily = Template.bind({})
-FontFamily.args = { fontFamily: 'Monospace' }

@@ -1,3 +1,3 @@
-import { withBoxShallot } from '../../../utils'
+import { withBoxShallot } from '@/utils'
 
 export const Column = withBoxShallot({ flexDirection: 'column' })

@@ -3,7 +3,9 @@ import { getNestedStyle, getStyle } from '@repo/core'
 import { ShallotProp } from '@repo/theme'
 import { ButtonShallot } from '@repo/button'
 
-const Title = styled.span<{ shallot?: ShallotProp }>(getStyle)
+const Title = styled.span.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<{ shallot?: ShallotProp }>(getStyle)
 
 const Container = styled.button.withConfig({
   shouldForwardProp: (prop) => !['shallot'].includes(prop),

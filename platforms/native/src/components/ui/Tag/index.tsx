@@ -4,8 +4,13 @@ import { getStyle, withBoxLayoutProps } from '@repo/core'
 import { TagProps, withTagStyleProps } from '@repo/tag'
 import { ShallotProp } from '@repo/theme'
 
-const Container = styled.View<{ shallot?: ShallotProp }>(getStyle)
-const Title = styled.Text<{ shallot?: ShallotProp }>(getStyle)
+const Container = styled.View.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<{ shallot?: ShallotProp }>(getStyle)
+
+const Title = styled.Text.withConfig({
+  shouldForwardProp: (prop) => !['shallot'].includes(prop),
+})<{ shallot?: ShallotProp }>(getStyle)
 
 const Base = (
   props: TagProps<ComponentProps<typeof Container>> & {

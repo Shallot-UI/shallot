@@ -17,13 +17,11 @@ export const getNestedStyle =
   (componentName: string, state?: string) =>
   ({ shallot = {} }: any) =>
   ({ theme }: { theme: Theme }): CSSObject => {
-    console.log('getNestedStyle', state)
-
     let nestedShallot = shallot
     if (state) {
-      nestedShallot = nestedShallot?.[state] as ShallotProp
+      nestedShallot = nestedShallot?.[state]
     }
-    nestedShallot = nestedShallot?.[componentName] as ShallotProp
+    nestedShallot = nestedShallot?.[componentName]
 
     return getStyle({ shallot: nestedShallot as ShallotProp })({ theme })
   }
