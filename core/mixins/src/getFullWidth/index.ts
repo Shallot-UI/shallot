@@ -1,4 +1,4 @@
-import { MixinFunction } from '../types'
+import { MixinFunction } from '@shallot-ui/core-theme'
 
 /**
  * Get a full width value from the theme using the number of units on the left, right, or around.

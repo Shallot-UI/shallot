@@ -1,6 +1,6 @@
+import { MixinFunction } from '@shallot-ui/core-theme'
 import { getColor } from '../getColor'
 import { valueNotFoundError } from '../utils'
-import { MixinFunction } from '../types'
 
 /**
  * Get a color from the theme using its dot notation address.

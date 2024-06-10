@@ -25,9 +25,8 @@ export const getBreakpointsStyle =
     Object.entries(theme.tokens.breakpoints).forEach(([width, subtheme]) => {
       const value = getStyle({ shallot: supportedShallot })({
         theme: {
+          ...theme,
           tokens: { ...theme, ...(subtheme as ThemeTokens) },
-          modes: theme.modes,
-          variants: theme.variants,
         },
       })
 

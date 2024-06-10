@@ -1,6 +1,5 @@
 import type { DefaultTheme } from 'styled-components'
-import type { Theme } from '@shallot-ui/core-theme'
-import type { MixinFunction } from '../types'
+import type { Theme, MixinFunction } from '@shallot-ui/core-theme'
 
 import { valueNotFoundError } from '../utils'
 

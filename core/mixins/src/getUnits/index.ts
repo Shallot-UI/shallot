@@ -1,4 +1,4 @@
-import { MixinFunction } from '../types'
+import { MixinFunction } from '@shallot-ui/core-theme'
 
 /**
  * Get a value in grid units from the theme using a number.
