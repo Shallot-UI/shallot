@@ -4,12 +4,14 @@ import type { DefaultTheme } from 'styled-components'
 
 export type { CSS }
 
+export type MixinFunction<T> = (props: { theme: Theme }) => T | undefined
+
 // A shallot prop is used in components to allow for dynamic theming. Its use
 // is similar to the `style` prop in React, but it allows for objects, functions,
 // and nested shallot props.
 export type ShallotProp<O = any> = Omit<CSS.Properties, keyof O> &
   Omit<CSS.Pseudos, keyof O> & {
-    [K in keyof O]: O[K] | ((props: { theme: Theme }) => O[K]) | ShallotProp
+    [K in keyof O]: O[K] | MixinFunction<O[K]> | ShallotProp
   }
 
 // Theme tokens are the building blocks of a theme. They are used to define
@@ -50,6 +52,11 @@ export type ThemeModes = {
   }
 }
 
+export type ThemeGlobals = {
+  backgroundColor?: string | MixinFunction<string>
+  color?: string | MixinFunction<string>
+}
+
 // A theme is a collection of tokens, variants, and modes that define the
 // appearance of a component library. A theme is used to style components
 // in a consistent way.
@@ -57,6 +64,7 @@ export type Theme = {
   tokens: ThemeTokens
   variants: ThemeVariants
   modes: ThemeModes
+  globals: ThemeGlobals
 }
 
 export type Variant<T extends Theme = DefaultTheme> = keyof T['variants']
