@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.0.0-beta.2
+
+### Minor Changes
+
+- Renames theme options to tokens for clarity
+
 ## 2.0.0-beta.1
 
 ### Minor Changes

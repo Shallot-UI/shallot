@@ -1,4 +1,4 @@
-import { ThemeOptions, ThemeVariants } from '../types'
+import { ThemeTokens, ThemeVariants } from '../types'
 
 // Defaults
 import { DEFAULT_COLORS } from './colors'
@@ -11,7 +11,7 @@ import { DEFAULT_SHADOWS } from './shadows'
 
 /**
  * This module exports a function `makeTheme` that creates a theme object based on the provided options.
- * The `makeTheme` function takes an object of type `ThemeOptions` as input and returns a frozen object with the following properties:
+ * The `makeTheme` function takes an object of type `ThemeTokens` as input and returns a frozen object with the following properties:
  * - breakpoints: an object containing the breakpoints for the theme.
  * - gridUnit: a number representing the grid unit for the theme.
  * - fontFamilies: an object containing the font families for the theme.
@@ -25,53 +25,53 @@ import { DEFAULT_SHADOWS } from './shadows'
  *
  * The `DEFAULT_THEME` and `DEFAULT_DARK_THEME` objects are created using the `makeTheme` function with default options and default dark colors respectively.
  *
- * @param options An object of type `ThemeOptions` containing the options for the theme.
+ * @param tokens An object of type `ThemeTokens` containing the options for the theme.
  * @returns A frozen object representing the theme.
  */
 
-export const makeTheme = <T extends ThemeOptions, V extends ThemeVariants>(
-  options: T,
+export const makeTheme = <T extends ThemeTokens, V extends ThemeVariants>(
+  tokens?: T,
   themeVariants?: V,
 ) => {
   const breakpoints = {
-    ...options?.breakpoints,
-  } as ThemeOptions['breakpoints'] & T['breakpoints']
+    ...tokens?.breakpoints,
+  } as ThemeTokens['breakpoints'] & T['breakpoints']
 
   const colors = {
     ...DEFAULT_COLORS,
-    ...options?.colors,
+    ...tokens?.colors,
   } as typeof DEFAULT_COLORS & T['colors']
 
   const fontFamilies = {
     ...DEFAULT_FONT_FAMILIES,
-    ...options?.fontFamilies,
+    ...tokens?.fontFamilies,
   } as typeof DEFAULT_FONT_FAMILIES & T['fontFamilies']
 
   const fontSizes = {
     ...DEFAULT_FONT_SIZES,
-    ...options?.fontSizes,
+    ...tokens?.fontSizes,
   } as typeof DEFAULT_FONT_SIZES & T['fontSizes']
 
-  const gridUnit = options?.gridUnit ?? 12
+  const gridUnit = tokens?.gridUnit ?? 12
 
   const letterSpacings = {
     ...DEFAULT_LETTER_SPACINGS,
-    ...options?.letterSpacings,
+    ...tokens?.letterSpacings,
   } as typeof DEFAULT_LETTER_SPACINGS & T['letterSpacings']
 
   const lineHeights = {
     ...DEFAULT_LINE_HEIGHTS,
-    ...options?.lineHeights,
+    ...tokens?.lineHeights,
   } as typeof DEFAULT_LINE_HEIGHTS & T['lineHeights']
 
   const radii = {
     ...DEFAULT_RADII,
-    ...options?.radii,
+    ...tokens?.radii,
   } as typeof DEFAULT_RADII & T['radii']
 
   const shadows = {
     ...DEFAULT_SHADOWS,
-    ...options?.shadows,
+    ...tokens?.shadows,
   } as typeof DEFAULT_SHADOWS & T['shadows']
 
   const variants = {
@@ -92,6 +92,5 @@ export const makeTheme = <T extends ThemeOptions, V extends ThemeVariants>(
   }
 }
 
-export const DEFAULT_THEME = makeTheme({})
-
+export const DEFAULT_THEME = makeTheme()
 export type Theme = typeof DEFAULT_THEME

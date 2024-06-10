@@ -1,5 +1,17 @@
 # @shallot-ui/core-props
 
+## 2.0.0-beta.2
+
+### Minor Changes
+
+- Renames theme options to tokens for clarity
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.0-beta.2
+  - @shallot-ui/core-theme@2.0.0-beta.2
+
 ## 2.0.0-beta.1
 
 ### Minor Changes

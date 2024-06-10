@@ -1,4 +1,4 @@
-import { ThemeOptions, ThemeVariants, makeTheme } from '@shallot-ui/core-theme'
+import { ThemeTokens, ThemeVariants, makeTheme } from '@shallot-ui/core-theme'
 import { FunctionComponent, ReactNode, useMemo } from 'react'
 import { ThemeProvider } from 'styled-components'
 
@@ -10,25 +10,22 @@ import {
 
 type ShallotProviderProps = {
   children: ReactNode
-  theme?: ThemeOptions
+  tokens?: ThemeTokens
   variants?: ThemeVariants
   includeGlobalStyle?: boolean
 } & GlobalStyleProps
 
 export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   children,
-  theme = {},
+  tokens = {},
   variants = webVariants,
   includeGlobalStyle = true,
   ...rest
 }: ShallotProviderProps) => {
-  const providedTheme = useMemo(
-    () => makeTheme(theme, variants),
-    [theme, variants],
-  )
+  const theme = makeTheme(tokens, variants)
 
   return (
-    <ThemeProvider theme={providedTheme}>
+    <ThemeProvider theme={theme}>
       {includeGlobalStyle && <GlobalStyle {...rest} />}
       {children}
     </ThemeProvider>

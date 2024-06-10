@@ -11,7 +11,7 @@ export type ShallotProp<O = any> = Omit<CSS.Properties, keyof O> &
     [K in keyof O]: O[K] | ((props: { theme: Theme }) => O[K]) | ShallotProp
   }
 
-export type ThemeOptions = {
+export type ThemeTokens = {
   gridUnit?: number
   colors?: Record<string, Record<number, CSS.Properties['color']>>
   fontFamilies?: { [name: string]: CSS.Properties['fontFamily'] }
