@@ -6,5 +6,7 @@ const Monospace =
 export const DEFAULT_FONT_FAMILIES = {
   System,
   Body: System,
+  Display: System,
+  UI: System,
   Monospace,
 } as const
