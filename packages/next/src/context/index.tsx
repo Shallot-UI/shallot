@@ -20,6 +20,7 @@ import {
   reactThemeModes,
 } from '@shallot-ui/platform-react'
 import { DEFAULT_NEXT_THEME } from '@shallot-ui/platform-nextjs'
+import { applyStyles } from '@shallot-ui/core-utils'
 
 type ShallotContextValue = {
   theme: DefaultTheme
@@ -47,6 +48,15 @@ type ShallotProviderProps = {
   includeGlobalStyle?: boolean
 } & GlobalStyleProps
 
+const extendVariants = (variants: ThemeVariants, extended?: ThemeVariants) => {
+  const newVariants = { ...variants }
+  Object.keys(variants).forEach((name) => {
+    if (!extended?.[name]) return
+    variants[name] = applyStyles(variants[name], extended[name])
+  })
+  return newVariants
+}
+
 export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   children,
   tokens = {},
@@ -66,15 +76,15 @@ export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   const theme = useMemo(
     () =>
       ({
+        ...baseTheme,
         tokens: {
           ...baseTheme.tokens,
           ...(themeMode && baseTheme?.modes?.[themeMode]?.tokens),
         },
-        variants: {
-          ...baseTheme.variants,
-          ...(themeMode && baseTheme?.modes?.[themeMode]?.variants),
-        },
-        modes: baseTheme.modes,
+        variants: extendVariants(
+          baseTheme.variants,
+          themeMode ? baseTheme?.modes?.[themeMode]?.variants : {},
+        ),
       }) as DefaultTheme,
     [baseTheme, themeMode],
   )

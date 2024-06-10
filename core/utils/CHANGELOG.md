@@ -1,5 +1,14 @@
 # @shallot-ui/core-utils
 
+## 2.0.0-beta.5
+
+### Patch Changes
+
+- Theme mode variants extend existing varians
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.0-beta.5
+  - @shallot-ui/core-theme@2.0.0-beta.5
+
 ## 2.0.0-beta.4
 
 ### Patch Changes

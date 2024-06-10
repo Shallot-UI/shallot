@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.0.0-beta.5
+
+### Patch Changes
+
+- Theme mode variants extend existing varians
+
 ## 2.0.0-beta.4
 
 ### Patch Changes

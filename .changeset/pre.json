@@ -23,6 +23,7 @@
     "stories": "0.1.0"
   },
   "changesets": [
+    "happy-apricots-wink",
     "modern-berries-double",
     "quick-bikes-act",
     "seven-rats-perform",
