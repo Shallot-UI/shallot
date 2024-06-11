@@ -1,5 +1,15 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.0-beta.12
+
+### Patch Changes
+
+- Generalizing providers
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.0-beta.12
+  - @shallot-ui/core-props@2.0.0-beta.10
+  - @shallot-ui/core-theme@2.0.0-beta.10
+
 ## 2.0.0-beta.11
 
 ### Patch Changes

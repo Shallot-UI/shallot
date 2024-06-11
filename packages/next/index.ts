@@ -15,6 +15,3 @@ export * from '@shallot-ui/core-utils'
 // Platform
 export * from '@shallot-ui/platform-react'
 export * from '@shallot-ui/platform-nextjs'
-
-// Package
-export * from './src'

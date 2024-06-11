@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.0.0-beta.10
+
+### Patch Changes
+
+- Generalizing providers
+
 ## 2.0.0-beta.9
 
 ### Minor Changes

@@ -13,6 +13,3 @@ export * from '@shallot-ui/core-utils'
 
 // platform
 export * from '@shallot-ui/platform-react-native'
-
-// Package
-export * from './src'

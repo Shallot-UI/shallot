@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/core-mixins",
-  "version": "2.0.0-beta.9",
+  "version": "2.0.0-beta.10",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",

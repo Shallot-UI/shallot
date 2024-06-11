@@ -3,7 +3,7 @@ import reactThemeVariants from './variants'
 import reactThemeGlobals from './globals'
 
 export { reactThemeVariants, reactThemeGlobals }
-export const DEFAULT_WEB_THEME = makeTheme(
+export const DEFAULT_REACT_THEME = makeTheme(
   {},
   reactThemeVariants,
   reactThemeGlobals,

@@ -1,5 +1,14 @@
 # @shallot-ui/core-utils
 
+## 2.0.0-beta.11
+
+### Patch Changes
+
+- Generalizing providers
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.0-beta.10
+  - @shallot-ui/core-theme@2.0.0-beta.10
+
 ## 2.0.0-beta.10
 
 ### Minor Changes

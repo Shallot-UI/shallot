@@ -1,9 +1,4 @@
-import {
-  getColor,
-  getFontFamily,
-  getFontSize,
-  getGlobal,
-} from '@shallot-ui/core-mixins'
+import { getFontFamily, getFontSize, getGlobal } from '@shallot-ui/core-mixins'
 import { ShallotProp } from '@shallot-ui/core-theme'
 
 const Text: Record<string, ShallotProp> = {

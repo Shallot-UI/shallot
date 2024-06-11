@@ -1,5 +1,24 @@
 # @shallot-ui/next
 
+## 4.0.0-beta.13
+
+### Patch Changes
+
+- Generalizing providers
+- Updated dependencies
+  - @shallot-ui/component-checkbox@3.0.0-beta.12
+  - @shallot-ui/component-button@3.0.0-beta.12
+  - @shallot-ui/component-switch@3.0.0-beta.12
+  - @shallot-ui/component-input@3.0.0-beta.11
+  - @shallot-ui/component-modal@2.0.0-beta.11
+  - @shallot-ui/platform-nextjs@2.0.0-beta.12
+  - @shallot-ui/platform-react@2.0.0-beta.12
+  - @shallot-ui/component-tag@3.0.0-beta.12
+  - @shallot-ui/core-mixins@2.0.0-beta.10
+  - @shallot-ui/core-props@2.0.0-beta.10
+  - @shallot-ui/core-theme@2.0.0-beta.10
+  - @shallot-ui/core-utils@2.0.0-beta.11
+
 ## 4.0.0-beta.12
 
 ### Patch Changes

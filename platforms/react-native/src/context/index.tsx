@@ -6,19 +6,19 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { DefaultTheme, ThemeProvider } from 'styled-components'
+import { DefaultTheme, ThemeProvider } from 'styled-components/native'
 import {
   ThemeGlobals,
   ThemeTokens,
   ThemeVariants,
   makeTheme,
 } from '@shallot-ui/core-theme'
+
 import {
-  GlobalStyle,
-  reactThemeGlobals,
-  reactThemeVariants,
-} from '@shallot-ui/platform-react'
-import { DEFAULT_NEXT_THEME } from '@shallot-ui/platform-nextjs'
+  DEFAULT_NATIVE_THEME,
+  nativeThemeVariants,
+  nativeThemeGlobals,
+} from '@/theme'
 
 type ShallotContextValue = {
   theme: DefaultTheme
@@ -26,7 +26,7 @@ type ShallotContextValue = {
 }
 
 export const ShallotContext = createContext<ShallotContextValue>({
-  theme: DEFAULT_NEXT_THEME,
+  theme: DEFAULT_NATIVE_THEME,
   setThemeMode: () => {
     throw new Error('ShallotContext not provided')
   },
@@ -37,15 +37,13 @@ type ShallotProviderProps = {
   tokens?: ThemeTokens
   variants?: ThemeVariants
   globals?: ThemeGlobals
-  includeGlobalStyle?: boolean
 }
 
 export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   children,
   tokens = {},
-  variants = reactThemeVariants,
-  globals = reactThemeGlobals,
-  includeGlobalStyle = true,
+  variants = nativeThemeVariants,
+  globals = nativeThemeGlobals,
 }: ShallotProviderProps) => {
   const [mode, setMode] = useState('default')
 
@@ -56,10 +54,7 @@ export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
 
   return (
     <ShallotContext.Provider value={{ theme, setThemeMode: setMode }}>
-      <ThemeProvider theme={theme}>
-        {includeGlobalStyle && <GlobalStyle theme={theme} />}
-        {children}
-      </ThemeProvider>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </ShallotContext.Provider>
   )
 }

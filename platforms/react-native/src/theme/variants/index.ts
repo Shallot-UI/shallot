@@ -2,6 +2,6 @@ import { ThemeVariants } from '@shallot-ui/core-theme'
 
 import Text from './Text'
 
-const nativeVariants: ThemeVariants = { Text }
+const nativeThemeVariants: ThemeVariants = { Text }
 
-export default nativeVariants
+export default nativeThemeVariants
