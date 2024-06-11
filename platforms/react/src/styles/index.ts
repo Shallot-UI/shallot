@@ -1,8 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import {
-  getGlobalBackgroundColor,
-  getGlobalColor,
-} from '@shallot-ui/core-mixins'
+import { getGlobal } from '@shallot-ui/core-mixins'
 
 export const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -44,8 +41,8 @@ export const GlobalStyle = createGlobalStyle`
   * { box-sizing: border-box; }
 
   body {    
-      color: ${getGlobalColor};
-      background-color: ${getGlobalBackgroundColor};
+      color: ${getGlobal('foregroundColor')};
+      background-color: ${getGlobal('backgroundColor')};
   }
 
   // SYSTEM FONT

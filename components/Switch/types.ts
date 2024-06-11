@@ -2,8 +2,7 @@ import { ColorName, ShallotProp } from '@shallot-ui/core-theme'
 
 export type SwitchStyleProps = {
   color?: ColorName
-  size?: number
-  iconSize?: number
+  unitSize?: number
 }
 
 export type BaseSwitchShallot = {

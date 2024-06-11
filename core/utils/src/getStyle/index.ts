@@ -1,6 +1,5 @@
 import type { CSSObject } from 'styled-components'
 import type { ShallotProp, Theme } from '@shallot-ui/core-theme'
-import type { Keyframes } from 'styled-components/dist/types'
 
 /**
  * getStyle
@@ -10,11 +9,14 @@ import type { Keyframes } from 'styled-components/dist/types'
  * generate CSS styles based on the `ShallotProp` object.
  */
 export const getStyle =
-  <T extends { shallot?: ShallotProp | TemplateStringsArray | Keyframes }>({
-    shallot = {},
-  }: T) =>
-  ({ theme }: { theme: Theme }): CSSObject =>
-    Object.entries({ ...shallot }).reduce((acc, [key, raw]) => {
+  <T extends { shallot?: ShallotProp }>({ shallot = {} }: T) =>
+  ({ theme }: { theme: Theme }): CSSObject => {
+    const mode = theme.mode
+
+    const extensions = shallot?.[`mode:${mode}`] ?? {}
+    const extended = { ...shallot, ...extensions }
+
+    return Object.entries({ ...extended }).reduce((acc, [key, raw]) => {
       // Key is the CSS property name. (e.g., `color`, `fontSize`)
       // Raw is the value of the CSS property. (e.g., `primary`, `2rem`)
       // Keep in mind that raw can be a getter function.
@@ -35,3 +37,4 @@ export const getStyle =
 
       return acc
     }, {} as CSSObject)
+  }

@@ -511,12 +511,21 @@ importers:
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../utils/tsconfig
+      '@types/jest':
+        specifier: ^29.5.12
+        version: 29.5.12
       eslint:
         specifier: ^9.4.0
         version: 9.4.0
+      jest:
+        specifier: ^29.7.0
+        version: 29.7.0(@types/node@20.14.2)
       styled-components:
         specifier: ^6
         version: 6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      ts-jest:
+        specifier: ^29.1.4
+        version: 29.1.4(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(jest@29.7.0(@types/node@20.14.2))(typescript@5.4.5)
       tsup:
         specifier: ^8.1.0
         version: 8.1.0(postcss@8.4.38)(typescript@5.4.5)
@@ -6753,6 +6762,11 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  prettier@3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   pretty-error@4.0.0:
     resolution: {integrity: sha512-AoJ5YMAcXKYxKhuJGdcvse+Voc6v1RgnsR3nWcYU7q4t6z0Q6T86sv5Zq8VIRbOWWFpvdGE83LtdSMNd+6Y0xw==}
 
@@ -10778,7 +10792,7 @@ snapshots:
       node-fetch: 2.7.0
       picomatch: 2.3.1
       pkg-dir: 5.0.0
-      prettier-fallback: prettier@3.3.1
+      prettier-fallback: prettier@3.3.2
       pretty-hrtime: 1.0.3
       resolve-from: 5.0.0
       semver: 7.6.2
@@ -15913,6 +15927,8 @@ snapshots:
   prettier@2.8.8: {}
 
   prettier@3.3.1: {}
+
+  prettier@3.3.2: {}
 
   pretty-error@4.0.0:
     dependencies:

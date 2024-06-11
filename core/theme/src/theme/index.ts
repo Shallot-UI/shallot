@@ -1,4 +1,4 @@
-import { ThemeGlobals, ThemeModes, ThemeTokens, ThemeVariants } from '../types'
+import { ThemeGlobals, ThemeTokens, ThemeVariants } from '../types'
 
 // Defaults
 import { DEFAULT_COLORS } from './colors'
@@ -12,7 +12,6 @@ import { DEFAULT_SHADOWS } from './shadows'
 export const makeTheme = <T extends ThemeTokens>(
   tokens?: T,
   variants?: ThemeVariants,
-  modes?: ThemeModes,
   globals?: ThemeGlobals,
 ) => {
   const breakpoints = {
@@ -70,7 +69,6 @@ export const makeTheme = <T extends ThemeTokens>(
       shadows,
     },
     variants: { ...variants } as ThemeVariants,
-    modes: { ...modes } as ThemeModes,
     globals: { ...globals } as ThemeGlobals,
   }
 }

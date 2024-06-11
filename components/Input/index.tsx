@@ -5,6 +5,7 @@ import {
   getColor,
   getFontFamily,
   getFontSize,
+  getGlobal,
   getLetterSpacing,
   getRadius,
   getShadow,
@@ -21,7 +22,7 @@ export const withInputStyleProps =
   (props: InputProps<T>) => {
     const {
       // General
-      color = 'Shading',
+      color = 'Default',
       radius = 'md',
 
       // Typography
@@ -48,10 +49,14 @@ export const withInputStyleProps =
     let inputShallot: InputShallot = {
       Container: {
         borderRadius: getRadius(radius),
-        backgroundColor: getColor(color, 50),
-        borderColor: getColor(color, 700),
+        backgroundColor:
+          color === 'Default'
+            ? getGlobal('backgroundColor')
+            : getColor(color, 50),
+        borderColor:
+          color === 'Default' ? getGlobal('borderColor') : getColor(color, 700),
         display: 'flex',
-        borderWidth: 2,
+        borderWidth: 1,
         borderStyle: 'solid',
         cursor: 'text',
         transition: `
@@ -64,7 +69,10 @@ export const withInputStyleProps =
         display: 'flex',
         flexGrow: 1,
         fontFamily: getFontFamily(fontFamily),
-        color: getColor(color, 900),
+        color:
+          color === 'Default'
+            ? getGlobal('foregroundColor')
+            : getColor(color, 900),
         fontSize: getFontSize(fontSize),
         letterSpacing: getLetterSpacing(letterSpacing),
 
@@ -78,7 +86,10 @@ export const withInputStyleProps =
       ':focus': {
         Container: {
           boxShadow: getShadow('focused'),
-          borderColor: getColor(color, 900),
+          borderColor:
+            color === 'Default'
+              ? getGlobal('foregroundColor')
+              : getColor(color, 900),
         },
         Input: {
           outline: 'none',

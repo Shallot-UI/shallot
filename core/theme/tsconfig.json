@@ -1,5 +1,11 @@
 {
   "extends": "@repo/tsconfig/base.json",
-  "include": [".", "styled.d.ts"],
-  "exclude": ["dist", "build", "node_modules"]
+  "include": [".", "styled.d.ts", "../utils/src/applyStyles"],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
 }

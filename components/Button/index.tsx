@@ -10,6 +10,7 @@ import {
   getShadow,
   getFontFamily,
   getVariant,
+  getGlobal,
 } from '@shallot-ui/core-mixins'
 
 import { ButtonProps, ButtonShallot } from './types'
@@ -21,8 +22,8 @@ export const withButtonStyleProps =
   (props: ButtonProps<T>) => {
     const {
       // General
-      color = 'Shading',
-      radius = 'md',
+      color = 'Default',
+      radius = 'pill',
       outline,
 
       // Typography
@@ -37,8 +38,8 @@ export const withButtonStyleProps =
       // Text Alignment
       textAlign = 'center',
 
-      verticalUnitPadding = 1,
-      horizontalUnitPadding = 2,
+      verticalUnitPadding = 1 / 4,
+      horizontalUnitPadding = 3 / 2,
 
       shallot,
       variant = 'Default',
@@ -59,10 +60,12 @@ export const withButtonStyleProps =
 
     let buttonShallot: ButtonShallot = {
       Container: {
-        boxShadow: getShadow(100),
         borderRadius: getRadius(radius),
-        backgroundColor: getColor(color, shades.default),
-        borderColor: getColor(color, shades.default),
+        backgroundColor:
+          color === 'Default'
+            ? getGlobal('foregroundColor')
+            : getColor(color, 500),
+        borderColor: 'transparent',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -84,7 +87,10 @@ export const withButtonStyleProps =
         fontWeight,
         flexGrow: 1,
         fontFamily: getFontFamily(fontFamily),
-        color: getColor('Shading', 50),
+        color:
+          color === 'Default'
+            ? getGlobal('backgroundColor')
+            : getColor('Shading', 50),
         fontSize: getFontSize(fontSize),
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),
@@ -102,27 +108,15 @@ export const withButtonStyleProps =
       },
       ':hover': {
         Container: {
-          boxShadow: getShadow(300),
-          backgroundColor: getColor(color, shades.hovered),
-          borderColor: getColor(color, shades.hovered),
-        },
-      },
-      ':active': {
-        Container: {
-          boxShadow: getShadow(100),
-          backgroundColor: getColor(color, shades.pressed),
-          borderColor: getColor(color, shades.pressed),
+          backgroundColor:
+            color === 'Default'
+              ? getGlobal('foregroundFadeColor')
+              : getColor(color, 400),
         },
       },
       ':disabled': {
-        Container: {
-          boxShadow: 'none',
-          backgroundColor: getColor('Shading', 200),
-          borderColor: getColor('Shading', 100),
-        },
-        Title: {
-          color: getColor('Shading', 500),
-        },
+        Container: { backgroundColor: getColor('Shading', 200) },
+        Title: { color: getColor('Shading', 500) },
       },
     }
 

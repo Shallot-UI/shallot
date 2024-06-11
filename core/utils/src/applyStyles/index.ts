@@ -22,8 +22,8 @@ export const applyStyles = <T extends Record<string, any>>(
       // If the current key is an object, recursively call 'applyStyles' to
       // merge the base and overrides styles
       styles[key as keyof T] = applyStyles(
-        { ...base[key] } ?? {},
-        { ...overrides[key] } ?? {},
+        base[key] ?? {},
+        overrides[key] ?? {},
       )
     } else {
       // If the current key is not an object, update the corresponding value in

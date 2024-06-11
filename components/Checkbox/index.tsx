@@ -7,6 +7,7 @@ import {
   getRadius,
   getUnits,
   getVariant,
+  getGlobal,
 } from '@shallot-ui/core-mixins'
 
 import { CheckboxProps, CheckboxShallot } from './types'
@@ -36,8 +37,8 @@ export const withCheckboxStyleProps =
 
     let checkboxShallot: CheckboxShallot = {
       Container: {
-        backgroundColor: getColor('Shading', 100),
-        borderColor: getColor('Shading', 300),
+        backgroundColor: getGlobal('backgroundColor'),
+        borderColor: getGlobal('borderColor'),
         borderRadius: getRadius(radius),
         borderWidth: 1,
         borderStyle: 'solid',

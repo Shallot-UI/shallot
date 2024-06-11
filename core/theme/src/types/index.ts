@@ -42,21 +42,7 @@ export type ThemeVariants = {
   }
 }
 
-// A theme mode is used to define different themes that can be used in an
-// application. This allows for easy switching between light and dark themes,
-// for example.
-export type ThemeModes = {
-  [mode: string]: {
-    tokens?: ThemeTokens
-    variants?: ThemeVariants
-    globals?: ThemeGlobals
-  }
-}
-
-export type ThemeGlobals = {
-  backgroundColor?: string | MixinFunction<string>
-  color?: string | MixinFunction<string>
-}
+export type ThemeGlobals = ShallotProp
 
 // A theme is a collection of tokens, variants, and modes that define the
 // appearance of a component library. A theme is used to style components
@@ -65,7 +51,6 @@ export type Theme = {
   mode?: string
   tokens: ThemeTokens
   variants: ThemeVariants
-  modes: ThemeModes
   globals: ThemeGlobals
 }
 
