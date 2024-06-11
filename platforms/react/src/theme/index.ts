@@ -1,6 +1,12 @@
 import { makeTheme } from '@shallot-ui/core-theme'
-import webVariants from './variants'
+import reactThemeVariants from './variants'
 import reactThemeModes from './modes'
+import reactThemeGlobals from './globals'
 
-export { webVariants, reactThemeModes }
-export const DEFAULT_WEB_THEME = makeTheme({}, webVariants, reactThemeModes)
+export { reactThemeVariants, reactThemeModes, reactThemeGlobals }
+export const DEFAULT_WEB_THEME = makeTheme(
+  {},
+  reactThemeVariants,
+  reactThemeModes,
+  reactThemeGlobals,
+)

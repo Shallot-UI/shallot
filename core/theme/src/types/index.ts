@@ -62,6 +62,7 @@ export type ThemeGlobals = {
 // appearance of a component library. A theme is used to style components
 // in a consistent way.
 export type Theme = {
+  mode?: string
   tokens: ThemeTokens
   variants: ThemeVariants
   modes: ThemeModes

@@ -1,5 +1,15 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.0-beta.8
+
+### Patch Changes
+
+- improves use of globals
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.0-beta.8
+  - @shallot-ui/core-theme@2.0.0-beta.8
+  - @shallot-ui/core-props@2.0.0-beta.8
+
 ## 2.0.0-beta.7
 
 ### Patch Changes

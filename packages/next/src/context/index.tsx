@@ -8,6 +8,7 @@ import {
 } from 'react'
 import { DefaultTheme, ThemeProvider } from 'styled-components'
 import {
+  ThemeGlobals,
   ThemeModes,
   ThemeTokens,
   ThemeVariants,
@@ -15,8 +16,9 @@ import {
 } from '@shallot-ui/core-theme'
 import {
   GlobalStyle,
-  webVariants,
+  reactThemeGlobals,
   reactThemeModes,
+  reactThemeVariants,
 } from '@shallot-ui/platform-react'
 import { DEFAULT_NEXT_THEME } from '@shallot-ui/platform-nextjs'
 import { applyStyles } from '@shallot-ui/core-utils'
@@ -25,16 +27,12 @@ type ShallotContextValue = {
   theme: DefaultTheme
   themeMode: string | undefined
   setThemeMode: (mode: string) => void
-  clearThemeMode: () => void
 }
 
 export const ShallotContext = createContext<ShallotContextValue>({
   theme: DEFAULT_NEXT_THEME,
   themeMode: undefined,
   setThemeMode: () => {
-    throw new Error('ShallotContext not provided')
-  },
-  clearThemeMode: () => {
     throw new Error('ShallotContext not provided')
   },
 })
@@ -44,6 +42,7 @@ type ShallotProviderProps = {
   tokens?: ThemeTokens
   variants?: ThemeVariants
   modes?: ThemeModes
+  globals?: ThemeGlobals
   includeGlobalStyle?: boolean
 }
 
@@ -65,23 +64,23 @@ const extendVariants = (variants: ThemeVariants, extended?: ThemeVariants) => {
 export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   children,
   tokens = {},
-  variants = webVariants,
+  variants = reactThemeVariants,
   modes = reactThemeModes,
+  globals = reactThemeGlobals,
   includeGlobalStyle = true,
-  ...rest
 }: ShallotProviderProps) => {
-  const [themeMode, setThemeMode] = useState<string>()
-  const clearThemeMode = () => setThemeMode(undefined)
+  const [themeMode, setThemeMode] = useState('default')
 
   const baseTheme = useMemo(
-    () => makeTheme(tokens, variants, modes),
-    [tokens, variants, modes],
+    () => makeTheme(tokens, variants, modes, globals),
+    [tokens, variants, modes, globals],
   )
 
   const theme = useMemo(
     () =>
       ({
         ...baseTheme,
+        mode: themeMode,
         tokens: {
           ...baseTheme.tokens,
           ...(themeMode && baseTheme?.modes?.[themeMode]?.tokens),
@@ -99,9 +98,7 @@ export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   )
 
   return (
-    <ShallotContext.Provider
-      value={{ theme, themeMode, setThemeMode, clearThemeMode }}
-    >
+    <ShallotContext.Provider value={{ theme, themeMode, setThemeMode }}>
       <ThemeProvider theme={theme}>
         {includeGlobalStyle && <GlobalStyle theme={theme} />}
         {children}

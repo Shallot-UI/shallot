@@ -57,6 +57,7 @@ export const makeTheme = <T extends ThemeTokens>(
   } as typeof DEFAULT_SHADOWS & T['shadows']
 
   return {
+    mode: 'default',
     tokens: {
       breakpoints,
       colors,
