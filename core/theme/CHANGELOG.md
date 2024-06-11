@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.0.0-beta.9
+
+### Minor Changes
+
+- Improvements to dark mode using globals without theme modes object
+
 ## 2.0.0-beta.8
 
 ### Patch Changes

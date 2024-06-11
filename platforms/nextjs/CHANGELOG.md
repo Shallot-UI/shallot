@@ -1,5 +1,18 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.0-beta.10
+
+### Minor Changes
+
+- Improvements to dark mode using globals without theme modes object
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.0-beta.10
+  - @shallot-ui/core-theme@2.0.0-beta.9
+  - @shallot-ui/core-props@2.0.0-beta.9
+
 ## 2.0.0-beta.9
 
 ### Patch Changes

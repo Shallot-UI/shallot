@@ -23,6 +23,7 @@
     "stories": "0.1.0"
   },
   "changesets": [
+    "friendly-cows-give",
     "grumpy-knives-sparkle",
     "happy-apricots-wink",
     "modern-berries-double",
