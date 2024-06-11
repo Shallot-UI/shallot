@@ -1,5 +1,11 @@
 # @shallot-ui/platform-react
 
+## 2.0.0-beta.13
+
+### Patch Changes
+
+- Extend default theme configs
+
 ## 2.0.0-beta.12
 
 ### Patch Changes

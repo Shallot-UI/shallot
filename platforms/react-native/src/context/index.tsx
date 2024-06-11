@@ -41,14 +41,21 @@ type ShallotProviderProps = {
 
 export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   children,
-  tokens = {},
-  variants = nativeThemeVariants,
-  globals = nativeThemeGlobals,
+  tokens,
+  variants,
+  globals,
 }: ShallotProviderProps) => {
   const [mode, setMode] = useState('default')
 
   const theme: DefaultTheme = useMemo(
-    () => ({ ...makeTheme(tokens, variants, globals), mode }),
+    () => ({
+      ...makeTheme(
+        tokens,
+        { ...nativeThemeVariants, ...variants },
+        { ...nativeThemeGlobals, ...globals },
+      ),
+      mode,
+    }),
     [tokens, variants, globals, mode],
   )
 

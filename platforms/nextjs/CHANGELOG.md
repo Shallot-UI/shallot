@@ -1,5 +1,13 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.0-beta.13
+
+### Patch Changes
+
+- Extend default theme configs
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.0-beta.13
+
 ## 2.0.0-beta.12
 
 ### Patch Changes
