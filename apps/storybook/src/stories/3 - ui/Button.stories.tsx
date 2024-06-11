@@ -1,16 +1,7 @@
 import React from 'react'
 import { StoryFn, Meta } from '@storybook/react'
 import { fn } from '@storybook/test'
-import {
-  Button,
-  Column,
-  Fold,
-  ShallotProvider,
-  getColor,
-  getLetterSpacing,
-  getRadius,
-  getUnits,
-} from '@shallot-ui/next'
+import { Button, Column, Fold, ShallotProvider } from '@shallot-ui/next'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -49,40 +40,3 @@ const Template: StoryFn<typeof Button> = (args) => (
 
 export const Default = Template.bind({})
 Default.args = {}
-
-export const CustomStyling = Template.bind({})
-CustomStyling.args = {
-  shallot: {
-    Container: {
-      backgroundColor: getColor('Primary', 500),
-      paddingTop: getUnits(1 / 4),
-      paddingBottom: getUnits(1 / 4),
-      paddingLeft: getUnits(3 / 2),
-      paddingRight: getUnits(3 / 2),
-      borderRadius: getRadius('pill'),
-      borderColor: 'transparent',
-      boxShadow: 'none',
-    },
-    Title: {
-      color: getColor('Shading', 50),
-      letterSpacing: getLetterSpacing('md'),
-      lineHeight: '24px',
-      fontWeight: 500,
-      margin: 0,
-    },
-    ':hover': {
-      Container: {
-        backgroundColor: getColor('Primary', 600),
-        borderColor: 'transparent',
-        boxShadow: 'none',
-      },
-    },
-    ':active': {
-      Container: {
-        backgroundColor: getColor('Primary', 700),
-        borderColor: 'transparent',
-        boxShadow: 'none',
-      },
-    },
-  },
-}
