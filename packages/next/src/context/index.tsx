@@ -15,7 +15,6 @@ import {
 } from '@shallot-ui/core-theme'
 import {
   GlobalStyle,
-  GlobalStyleProps,
   webVariants,
   reactThemeModes,
 } from '@shallot-ui/platform-react'
@@ -46,7 +45,7 @@ type ShallotProviderProps = {
   variants?: ThemeVariants
   modes?: ThemeModes
   includeGlobalStyle?: boolean
-} & GlobalStyleProps
+}
 
 const extendVariants = (variants: ThemeVariants, extended?: ThemeVariants) => {
   const newVariants = { ...variants }
@@ -91,6 +90,10 @@ export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
           baseTheme.variants,
           themeMode ? baseTheme?.modes?.[themeMode]?.variants : {},
         ),
+        globals: {
+          ...baseTheme.globals,
+          ...(themeMode && baseTheme?.modes?.[themeMode]?.globals),
+        },
       }) as DefaultTheme,
     [baseTheme, themeMode],
   )
@@ -100,7 +103,7 @@ export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
       value={{ theme, themeMode, setThemeMode, clearThemeMode }}
     >
       <ThemeProvider theme={theme}>
-        {includeGlobalStyle && <GlobalStyle {...rest} />}
+        {includeGlobalStyle && <GlobalStyle theme={theme} />}
         {children}
       </ThemeProvider>
     </ShallotContext.Provider>

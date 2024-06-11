@@ -1,11 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react'
 import {
   Column,
-  GlobalStyle,
   Fold,
-  getColor,
-  getFontSize,
-  getFontFamily,
   Text,
   ShallotProvider,
   H1,
@@ -43,7 +39,6 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Text> = (args) => (
   <ShallotProvider>
-    <GlobalStyle />
     <Fold alignCenter alignMiddle>
       <Column unitWidth={40}>
         <H1>Heading 1</H1>

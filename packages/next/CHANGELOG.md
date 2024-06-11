@@ -1,5 +1,24 @@
 # @shallot-ui/next
 
+## 4.0.0-beta.8
+
+### Patch Changes
+
+- Fixes global styles
+- Updated dependencies
+  - @shallot-ui/component-checkbox@3.0.0-beta.7
+  - @shallot-ui/component-button@3.0.0-beta.7
+  - @shallot-ui/component-switch@3.0.0-beta.7
+  - @shallot-ui/component-input@3.0.0-beta.7
+  - @shallot-ui/component-modal@2.0.0-beta.7
+  - @shallot-ui/platform-nextjs@2.0.0-beta.7
+  - @shallot-ui/platform-react@2.0.0-beta.7
+  - @shallot-ui/component-tag@3.0.0-beta.7
+  - @shallot-ui/core-mixins@2.0.0-beta.7
+  - @shallot-ui/core-props@2.0.0-beta.7
+  - @shallot-ui/core-theme@2.0.0-beta.7
+  - @shallot-ui/core-utils@2.0.0-beta.7
+
 ## 4.0.0-beta.7
 
 ### Patch Changes

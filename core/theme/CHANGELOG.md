@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.0.0-beta.7
+
+### Patch Changes
+
+- Fixes global styles
+
 ## 2.0.0-beta.6
 
 ### Patch Changes

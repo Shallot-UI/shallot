@@ -49,6 +49,7 @@ export type ThemeModes = {
   [mode: string]: {
     tokens?: ThemeTokens
     variants?: ThemeVariants
+    globals?: ThemeGlobals
   }
 }
 

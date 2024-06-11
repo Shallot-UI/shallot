@@ -1,5 +1,15 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.0-beta.7
+
+### Patch Changes
+
+- Fixes global styles
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.0-beta.7
+  - @shallot-ui/core-props@2.0.0-beta.7
+  - @shallot-ui/core-theme@2.0.0-beta.7
+
 ## 2.0.0-beta.6
 
 ### Patch Changes
