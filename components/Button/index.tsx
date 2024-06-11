@@ -38,22 +38,14 @@ export const withButtonStyleProps =
       // Text Alignment
       textAlign = 'center',
 
-      verticalUnitPadding = 1 / 4,
-      horizontalUnitPadding = 3 / 2,
+      verticalUnitPadding = 2 / 3,
+      horizontalUnitPadding = 4 / 3,
 
       shallot,
       variant = 'Default',
 
       ...buttonProps
     } = props
-
-    // If the button uses the Shading color, we switch to the shading
-    // foreground color rather than the mid-range color. This is because other
-    // palette colors extend to shades darker and lighter than their foreground.
-    const shades: Record<string, number> =
-      color === 'Shading'
-        ? { default: 900, hovered: 800, pressed: 950, focused: 900 }
-        : { default: 500, hovered: 400, pressed: 600, focused: 500 }
 
     const theme = useTheme()
     const themeVariant = getVariant<ButtonShallot>('Button', variant)({ theme })
@@ -99,7 +91,12 @@ export const withButtonStyleProps =
         letterSpacing: getLetterSpacing(letterSpacing),
 
         ...(uppercase && { textTransform: uppercase ? 'uppercase' : 'none' }),
-        ...(outline && { color: getColor(color, shades.default) }),
+        ...(outline && {
+          color:
+            color === 'Default'
+              ? getGlobal('foregroundColor')
+              : getColor(color, 500),
+        }),
       },
       ':focus': {
         Container: {

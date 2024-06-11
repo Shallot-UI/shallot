@@ -36,8 +36,8 @@ export const withTagStyleProps =
       // Text Alignment
       textAlign = 'center',
 
-      verticalUnitPadding = 1 / 2,
-      horizontalUnitPadding = 1,
+      verticalUnitPadding = 1 / 3,
+      horizontalUnitPadding = 2 / 3,
 
       shallot,
       variant = 'Default',

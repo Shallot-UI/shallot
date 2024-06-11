@@ -20,7 +20,7 @@ export const withCheckboxStyleProps =
     const {
       color = 'Primary',
       size = 4 / 3,
-      iconSize = 1,
+      iconSize = 3 / 4,
       radius = 'sm',
 
       shallot,

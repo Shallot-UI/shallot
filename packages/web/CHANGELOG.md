@@ -1,5 +1,16 @@
 # @shallot-ui/web
 
+## 4.0.0-beta.11
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/component-checkbox@3.0.0-beta.11
+  - @shallot-ui/component-button@3.0.0-beta.11
+  - @shallot-ui/component-switch@3.0.0-beta.11
+  - @shallot-ui/platform-react@2.0.0-beta.11
+  - @shallot-ui/component-tag@3.0.0-beta.11
+
 ## 4.0.0-beta.10
 
 ### Patch Changes

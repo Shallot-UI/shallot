@@ -24,7 +24,7 @@ const DarkModeSwitch = () => {
   const { theme, setThemeMode } = useShallot()
 
   return (
-    <Column alignCenter unitGap={1 / 2}>
+    <Column alignCenter unitGap={1}>
       <H1>{theme.mode}</H1>
       <P maxUnitWidth={24} alignTextCenter>
         This is a demonstration of the dark mode functionality in Shallot.
@@ -35,15 +35,15 @@ const DarkModeSwitch = () => {
           setThemeMode(theme.mode === 'dark' ? 'default' : 'dark')
         }
       />
-      <Row unitGap={1 / 2} unitsAbove={2}>
+      <Row unitGap={1} unitsAbove={2}>
         <Button title="Button" />
         <Button title="Button" color="Primary" />
       </Row>
-      <Row unitGap={1 / 2}>
+      <Row unitGap={1}>
         <Tag title="Tag" />
         <Tag title="Tag" color="Primary" />
       </Row>
-      <Row unitGap={1 / 2}>
+      <Row unitGap={1}>
         <Checkbox />
         <Checkbox color="Success" />
         <Checkbox color="Success" checked />

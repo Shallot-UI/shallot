@@ -50,7 +50,7 @@ export const withSwitchStyleProps =
         height: getUnits(unitSize - 1 / 3),
         width: getUnits(unitSize - 1 / 3),
         borderRadius: getRadius('pill'),
-        backgroundColor: getGlobal('backgroundColor'),
+        backgroundColor: getColor('Shading', 50),
         borderColor: 'transparent',
         borderWidth: 1,
         borderStyle: 'solid',
@@ -67,11 +67,7 @@ export const withSwitchStyleProps =
           backgroundColor: getColor(color, 500),
           borderColor: getColor(color, 500),
         },
-        Handle: {
-          backgroundColor: getGlobal('backgroundColor'),
-          borderColor: getGlobal('backgroundColor'),
-          left: unitSize * 12 - 3,
-        },
+        Handle: { left: unitSize * 12 - 3 },
       },
     }
 

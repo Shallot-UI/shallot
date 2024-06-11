@@ -23,6 +23,7 @@
     "stories": "0.1.0"
   },
   "changesets": [
+    "fluffy-nails-brake",
     "friendly-cows-give",
     "grumpy-knives-sparkle",
     "happy-apricots-wink",

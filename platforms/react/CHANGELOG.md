@@ -1,5 +1,16 @@
 # @shallot-ui/platform-react
 
+## 2.0.0-beta.11
+
+### Patch Changes
+
+- Design review on components
+- Updated dependencies
+  - @shallot-ui/component-checkbox@3.0.0-beta.11
+  - @shallot-ui/component-button@3.0.0-beta.11
+  - @shallot-ui/component-switch@3.0.0-beta.11
+  - @shallot-ui/component-tag@3.0.0-beta.11
+
 ## 2.0.0-beta.10
 
 ### Minor Changes
