@@ -1,5 +1,21 @@
 # @shallot-ui/next
 
+## 4.0.0-beta.10
+
+### Patch Changes
+
+- Improvements to color mode in context
+- Updated dependencies
+  - @shallot-ui/core-utils@2.0.0-beta.9
+  - @shallot-ui/component-button@3.0.0-beta.9
+  - @shallot-ui/component-checkbox@3.0.0-beta.9
+  - @shallot-ui/component-input@3.0.0-beta.9
+  - @shallot-ui/component-modal@2.0.0-beta.9
+  - @shallot-ui/component-switch@3.0.0-beta.9
+  - @shallot-ui/component-tag@3.0.0-beta.9
+  - @shallot-ui/platform-react@2.0.0-beta.9
+  - @shallot-ui/platform-nextjs@2.0.0-beta.9
+
 ## 4.0.0-beta.9
 
 ### Patch Changes

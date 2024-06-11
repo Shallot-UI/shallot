@@ -1,5 +1,11 @@
 # @shallot-ui/core-utils
 
+## 2.0.0-beta.9
+
+### Patch Changes
+
+- Improvements to color mode in context
+
 ## 2.0.0-beta.8
 
 ### Patch Changes

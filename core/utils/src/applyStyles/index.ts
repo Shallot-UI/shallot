@@ -13,7 +13,7 @@ export const applyStyles = <T extends Record<string, any>>(
   overrides: Partial<T> = {}, // style object to override the base styles
 ) => {
   // Create a shallow copy of the base style object
-  let styles: T = { ...base }
+  const styles: T = { ...base }
 
   // Iterate through the keys of the overrides style object
   Object.keys(overrides).forEach((key) => {
@@ -22,8 +22,8 @@ export const applyStyles = <T extends Record<string, any>>(
       // If the current key is an object, recursively call 'applyStyles' to
       // merge the base and overrides styles
       styles[key as keyof T] = applyStyles(
-        base[key] ?? {},
-        overrides[key] ?? {},
+        { ...base[key] } ?? {},
+        { ...overrides[key] } ?? {},
       )
     } else {
       // If the current key is not an object, update the corresponding value in

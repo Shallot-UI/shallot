@@ -1,5 +1,18 @@
 # @shallot-ui/native
 
+## 3.0.0-beta.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core-utils@2.0.0-beta.9
+  - @shallot-ui/component-button@3.0.0-beta.9
+  - @shallot-ui/component-checkbox@3.0.0-beta.9
+  - @shallot-ui/component-input@3.0.0-beta.9
+  - @shallot-ui/component-switch@3.0.0-beta.9
+  - @shallot-ui/component-tag@3.0.0-beta.9
+  - @shallot-ui/platform-react-native@2.0.0-beta.9
+
 ## 3.0.0-beta.8
 
 ### Patch Changes

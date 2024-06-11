@@ -2,6 +2,7 @@ import {
   FunctionComponent,
   ReactNode,
   createContext,
+  useCallback,
   useContext,
   useMemo,
   useState,
@@ -47,14 +48,13 @@ type ShallotProviderProps = {
 }
 
 const extendVariants = (variants: ThemeVariants, extended?: ThemeVariants) => {
-  const newVariants = { ...variants }
+  const newVariants: ThemeVariants = {}
   Object.keys(variants).forEach((component) => {
-    if (!extended?.[component]) return
-    Object.keys(extended[component]).forEach((name) => {
-      if (!extended[component][name]) return
+    newVariants[component] = {}
+    Object.keys(variants[component]).forEach((name) => {
       newVariants[component][name] = applyStyles(
         variants[component][name],
-        extended[component][name],
+        extended?.[component]?.[name],
       )
     })
   })
@@ -69,36 +69,29 @@ export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   globals = reactThemeGlobals,
   includeGlobalStyle = true,
 }: ShallotProviderProps) => {
-  const [themeMode, setThemeMode] = useState('default')
+  const [mode, setMode] = useState('default')
 
-  const baseTheme = useMemo(
-    () => makeTheme(tokens, variants, modes, globals),
-    [tokens, variants, modes, globals],
-  )
-
-  const theme = useMemo(
-    () =>
-      ({
-        ...baseTheme,
-        mode: themeMode,
-        tokens: {
-          ...baseTheme.tokens,
-          ...(themeMode && baseTheme?.modes?.[themeMode]?.tokens),
-        },
-        variants: extendVariants(
-          baseTheme.variants,
-          themeMode ? baseTheme?.modes?.[themeMode]?.variants : {},
-        ),
-        globals: {
-          ...baseTheme.globals,
-          ...(themeMode && baseTheme?.modes?.[themeMode]?.globals),
-        },
-      }) as DefaultTheme,
-    [baseTheme, themeMode],
-  )
+  const baseTheme = makeTheme(tokens, variants, modes, globals)
+  const theme = {
+    mode,
+    tokens: {
+      ...baseTheme.tokens,
+      ...(mode && baseTheme?.modes?.[mode]?.tokens),
+    },
+    variants: extendVariants(
+      { ...baseTheme.variants },
+      mode ? baseTheme?.modes?.[mode]?.variants : {},
+    ),
+    globals: {
+      ...baseTheme.globals,
+      ...(mode && baseTheme?.modes?.[mode]?.globals),
+    },
+  } as DefaultTheme
 
   return (
-    <ShallotContext.Provider value={{ theme, themeMode, setThemeMode }}>
+    <ShallotContext.Provider
+      value={{ theme, themeMode: mode, setThemeMode: setMode }}
+    >
       <ThemeProvider theme={theme}>
         {includeGlobalStyle && <GlobalStyle theme={theme} />}
         {children}
