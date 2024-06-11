@@ -1,5 +1,11 @@
 # @shallot-ui/platform-react-native
 
+## 2.0.0-beta.14
+
+### Patch Changes
+
+- Includes shallot provider in native
+
 ## 2.0.0-beta.13
 
 ### Patch Changes
