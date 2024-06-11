@@ -20,6 +20,9 @@ import {
   nativeThemeGlobals,
 } from '@/theme'
 
+import mergeGlobals from './utils/mergeGlobals'
+import mergeVariants from './utils/mergeVariants'
+
 type ShallotContextValue = {
   theme: DefaultTheme
   setThemeMode: (mode: string) => void
@@ -51,8 +54,8 @@ export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
     () => ({
       ...makeTheme(
         tokens,
-        { ...nativeThemeVariants, ...variants },
-        { ...nativeThemeGlobals, ...globals },
+        mergeVariants(nativeThemeVariants, variants),
+        mergeGlobals(nativeThemeGlobals, globals),
       ),
       mode,
     }),

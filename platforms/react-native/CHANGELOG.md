@@ -1,5 +1,11 @@
 # @shallot-ui/platform-react-native
 
+## 2.0.0-beta.13
+
+### Patch Changes
+
+- Improved merging of theme globals and variants
+
 ## 2.0.0-beta.12
 
 ### Patch Changes

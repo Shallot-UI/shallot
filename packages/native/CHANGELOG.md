@@ -1,5 +1,12 @@
 # @shallot-ui/native
 
+## 3.0.0-beta.13
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/platform-react-native@2.0.0-beta.13
+
 ## 3.0.0-beta.12
 
 ### Patch Changes

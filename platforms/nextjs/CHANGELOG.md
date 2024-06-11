@@ -1,5 +1,12 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.0-beta.14
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.0-beta.14
+
 ## 2.0.0-beta.13
 
 ### Patch Changes

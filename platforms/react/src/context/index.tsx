@@ -21,6 +21,9 @@ import {
   reactThemeGlobals,
 } from '@/theme'
 
+import mergeGlobals from './utils/mergeGlobals'
+import mergeVariants from './utils/mergeVariants'
+
 type ShallotContextValue = {
   theme: DefaultTheme
   setThemeMode: (mode: string) => void
@@ -54,8 +57,8 @@ export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
     () => ({
       ...makeTheme(
         tokens,
-        { ...reactThemeVariants, ...variants },
-        { ...reactThemeGlobals, ...globals },
+        mergeVariants(reactThemeVariants, variants),
+        mergeGlobals(reactThemeGlobals, globals),
       ),
       mode,
     }),
