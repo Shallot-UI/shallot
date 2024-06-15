@@ -1,10 +1,30 @@
-import { makeTheme } from '@shallot-ui/core-theme'
-import reactThemeVariants from './variants'
-import reactThemeGlobals from './globals'
+import {
+  ThemeGlobals,
+  ThemeTokens,
+  ThemeVariants,
+} from '@shallot-ui/core-theme'
 
-export { reactThemeVariants, reactThemeGlobals }
-export const DEFAULT_REACT_THEME = makeTheme(
-  {},
-  reactThemeVariants,
-  reactThemeGlobals,
-)
+import { makeReactThemeTokens } from './tokens'
+import { makeReactThemeGlobals } from './globals'
+import { makeReactThemeVariants } from './variants'
+
+export * from './globals'
+export * from './tokens'
+export * from './variants'
+
+export const makeReactTheme = ({
+  tokens = {},
+  variants = {},
+  globals = {},
+}: {
+  tokens?: ThemeTokens
+  variants?: ThemeVariants
+  globals?: ThemeGlobals
+} = {}) => ({
+  mode: 'default',
+  tokens: makeReactThemeTokens(tokens),
+  globals: makeReactThemeGlobals(globals),
+  variants: makeReactThemeVariants(variants),
+})
+
+export const DEFAULT_REACT_THEME = makeReactTheme()

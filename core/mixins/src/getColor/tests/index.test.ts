@@ -5,8 +5,10 @@ import { DefaultTheme } from 'styled-components'
 describe('getColor', () => {
   it('should return color if color name and shade are valid', () => {
     const theme: DefaultTheme = makeTheme({
-      colors: {
-        Primary: { 100: '#ffffff', 200: '#000000' },
+      tokens: {
+        colors: {
+          Primary: { 100: '#ffffff', 200: '#000000' },
+        },
       },
     })
 
@@ -17,8 +19,10 @@ describe('getColor', () => {
 
   it('should return undefined and log warning if color name is invalid', () => {
     const theme: DefaultTheme = makeTheme({
-      colors: {
-        Primary: { 100: '#ffffff', 200: '#000000' },
+      tokens: {
+        colors: {
+          Primary: { 100: '#ffffff', 200: '#000000' },
+        },
       },
     })
 
@@ -34,8 +38,10 @@ describe('getColor', () => {
 
   it('should return undefined and log warning if color shade is invalid', () => {
     const theme: DefaultTheme = makeTheme({
-      colors: {
-        Primary: { 100: '#ffffff', 200: '#000000' },
+      tokens: {
+        colors: {
+          Primary: { 100: '#ffffff', 200: '#000000' },
+        },
       },
     })
 

@@ -58,3 +58,5 @@ export type Variant<T extends Theme = DefaultTheme> = keyof T['variants']
 export type ColorName<T extends Theme = DefaultTheme> =
   keyof T['tokens']['colors']
 export type ColorShade = `${string}.${number}`
+
+export type Merge<T, U> = { [K in keyof T]: T[K] } & { [K in keyof U]: U[K] }

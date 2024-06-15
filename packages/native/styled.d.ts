@@ -1,13 +1,21 @@
-import { DEFAULT_NATIVE_THEME } from '@shallot-ui/platform-react-native'
 import 'styled-components'
 import 'styled-components/native'
-
-type Theme = typeof DEFAULT_NATIVE_THEME
-
-declare module 'styled-components/native' {
-  export interface DefaultTheme extends Theme {}
-}
+import { DEFAULT_REACT_NATIVE_THEME } from '@shallot-ui/platform-react-native'
 
 declare module 'styled-components' {
-  export interface DefaultTheme extends Theme {}
+  export interface DefaultTheme {
+    mode?: string
+    tokens: (typeof DEFAULT_REACT_NATIVE_THEME)['tokens']
+    variants: (typeof DEFAULT_REACT_NATIVE_THEME)['variants']
+    globals: (typeof DEFAULT_REACT_NATIVE_THEME)['globals']
+  }
+}
+
+declare module 'styled-components/native' {
+  export interface DefaultTheme {
+    mode?: string
+    tokens: (typeof DEFAULT_REACT_NATIVE_THEME)['tokens']
+    variants: (typeof DEFAULT_REACT_NATIVE_THEME)['variants']
+    globals: (typeof DEFAULT_REACT_NATIVE_THEME)['globals']
+  }
 }

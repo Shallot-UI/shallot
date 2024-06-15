@@ -5,12 +5,14 @@ import { DefaultTheme } from 'styled-components'
 describe('getFontSize', () => {
   it('should return font size if font size key is valid', () => {
     const theme: DefaultTheme = makeTheme({
-      fontSizes: {
-        xs: 12,
-        sm: 14,
-        md: 16,
-        lg: 18,
-        xl: 20,
+      tokens: {
+        fontSizes: {
+          xs: 12,
+          sm: 14,
+          md: 16,
+          lg: 18,
+          xl: 20,
+        },
       },
     })
 
@@ -21,12 +23,14 @@ describe('getFontSize', () => {
 
   it('should return undefined and log warning if font size key is invalid', () => {
     const theme: DefaultTheme = makeTheme({
-      fontSizes: {
-        xs: 12,
-        sm: 14,
-        md: 16,
-        lg: 18,
-        xl: 20,
+      tokens: {
+        fontSizes: {
+          xs: 12,
+          sm: 14,
+          md: 16,
+          lg: 18,
+          xl: 20,
+        },
       },
     })
 

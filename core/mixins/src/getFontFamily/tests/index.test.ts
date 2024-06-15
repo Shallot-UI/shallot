@@ -5,10 +5,12 @@ import { DefaultTheme } from 'styled-components'
 describe('getFontFamily', () => {
   it('should return font family if font family name is valid', () => {
     const theme: DefaultTheme = makeTheme({
-      fontFamilies: {
-        System: 'Arial',
-        Body: 'Verdana',
-        Monospace: 'Courier New',
+      tokens: {
+        fontFamilies: {
+          System: 'Arial',
+          Body: 'Verdana',
+          Monospace: 'Courier New',
+        },
       },
     })
 
@@ -19,10 +21,12 @@ describe('getFontFamily', () => {
 
   it('should return undefined and log warning if font family name is invalid', () => {
     const theme: DefaultTheme = makeTheme({
-      fontFamilies: {
-        System: 'Arial',
-        Body: 'Verdana',
-        Monospace: 'Courier New',
+      tokens: {
+        fontFamilies: {
+          System: 'Arial',
+          Body: 'Verdana',
+          Monospace: 'Courier New',
+        },
       },
     })
 

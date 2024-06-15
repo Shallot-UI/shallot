@@ -5,10 +5,12 @@ import { makeTheme } from '@shallot-ui/core-theme'
 describe('getLetterSpacing', () => {
   it('should return letter spacing if letter spacing key is valid', () => {
     const theme: DefaultTheme = makeTheme({
-      letterSpacings: {
-        sm: 0.5,
-        md: 1,
-        lg: 1.5,
+      tokens: {
+        letterSpacings: {
+          sm: 0.5,
+          md: 1,
+          lg: 1.5,
+        },
       },
     })
 
@@ -19,10 +21,12 @@ describe('getLetterSpacing', () => {
 
   it('should return undefined and log warning if letter spacing key is invalid', () => {
     const theme: DefaultTheme = makeTheme({
-      letterSpacings: {
-        sm: 0.5,
-        md: 1,
-        lg: 1.5,
+      tokens: {
+        letterSpacings: {
+          sm: 0.5,
+          md: 1,
+          lg: 1.5,
+        },
       },
     })
 

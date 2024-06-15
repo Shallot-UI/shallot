@@ -4,21 +4,23 @@ import { DefaultTheme } from 'styled-components'
 
 describe('getColorShade', () => {
   it('should return undefined if address is undefined', () => {
-    const color = getColorShade(undefined)({ theme: makeTheme({}) })
+    const color = getColorShade(undefined)({ theme: makeTheme() })
 
     expect(color).toBeUndefined()
   })
 
   it('should return "transparent" if address is "transparent"', () => {
-    const color = getColorShade('transparent')({ theme: makeTheme({}) })
+    const color = getColorShade('transparent')({ theme: makeTheme() })
 
     expect(color).toBe('transparent')
   })
 
   it('should return color if address is valid', () => {
     const theme: DefaultTheme = makeTheme({
-      colors: {
-        Primary: { 100: '#ffffff', 200: '#000000' },
+      tokens: {
+        colors: {
+          Primary: { 100: '#ffffff', 200: '#000000' },
+        },
       },
     })
 
@@ -29,10 +31,12 @@ describe('getColorShade', () => {
 
   it('should return undefined and log warning if address is invalid', () => {
     const theme: DefaultTheme = makeTheme({
-      colors: {
-        Primary: {
-          100: '#ffffff',
-          200: '#000000',
+      tokens: {
+        colors: {
+          Primary: {
+            100: '#ffffff',
+            200: '#000000',
+          },
         },
       },
     })

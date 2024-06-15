@@ -5,12 +5,14 @@ import { DefaultTheme } from 'styled-components'
 describe('getRadius', () => {
   it('should return radius if radius key is valid', () => {
     const theme: DefaultTheme = makeTheme({
-      radii: {
-        sm: 2,
-        md: 4,
-        lg: 8,
-        xl: 16,
-        pill: 999999,
+      tokens: {
+        radii: {
+          sm: 2,
+          md: 4,
+          lg: 8,
+          xl: 16,
+          pill: 999999,
+        },
       },
     })
 
@@ -21,12 +23,14 @@ describe('getRadius', () => {
 
   it('should return undefined and log warning if radius key is invalid', () => {
     const theme: DefaultTheme = makeTheme({
-      radii: {
-        sm: 2,
-        md: 4,
-        lg: 8,
-        xl: 16,
-        pill: 999999,
+      tokens: {
+        radii: {
+          sm: 2,
+          md: 4,
+          lg: 8,
+          xl: 16,
+          pill: 999999,
+        },
       },
     })
 

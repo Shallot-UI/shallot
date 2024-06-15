@@ -1,7 +1,13 @@
-import { ThemeVariants } from '@shallot-ui/core-theme'
+import {
+  ThemeVariants,
+  makeThemeVariants,
+  mergeThemeVariants,
+} from '@shallot-ui/core-theme'
 
 import Text from './Text'
 
-const nativeThemeVariants: ThemeVariants = { Text }
+export const REACT_NATIVE_THEME_VARIANTS = makeThemeVariants({ Text })
 
-export default nativeThemeVariants
+export const makeNativeThemeVariants = <T extends Readonly<ThemeVariants>>(
+  variants?: T,
+) => mergeThemeVariants(REACT_NATIVE_THEME_VARIANTS, variants)

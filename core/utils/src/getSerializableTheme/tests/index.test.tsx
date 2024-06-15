@@ -5,8 +5,8 @@ import { getSerializableTheme } from '../'
 import { getStyle } from '../../getStyle'
 
 describe('Test the `getSerializableTheme` function', () => {
-  const theme = makeTheme(
-    {
+  const theme = makeTheme({
+    tokens: {
       colors: {
         Primary: {
           500: '#000',
@@ -18,7 +18,7 @@ describe('Test the `getSerializableTheme` function', () => {
         sm: 10,
       },
     },
-    {
+    variants: {
       Box: {
         boxVariant: {
           color: getColor('Primary', 500),
@@ -33,7 +33,7 @@ describe('Test the `getSerializableTheme` function', () => {
         },
       },
     },
-  )
+  })
 
   it('should return an object', () => {
     const result = getStyle({

@@ -11,18 +11,10 @@ import {
   ThemeGlobals,
   ThemeTokens,
   ThemeVariants,
-  makeTheme,
 } from '@shallot-ui/core-theme'
 
 import { GlobalStyle } from '@/styles'
-import {
-  DEFAULT_REACT_THEME,
-  reactThemeVariants,
-  reactThemeGlobals,
-} from '@/theme'
-
-import mergeGlobals from './utils/mergeGlobals'
-import mergeVariants from './utils/mergeVariants'
+import { DEFAULT_REACT_THEME, makeReactTheme } from '@/theme'
 
 type ShallotContextValue = {
   theme: DefaultTheme
@@ -54,14 +46,7 @@ export const ShallotProvider: FunctionComponent<ShallotProviderProps> = ({
   const [mode, setMode] = useState('default')
 
   const theme: DefaultTheme = useMemo(
-    () => ({
-      ...makeTheme(
-        tokens,
-        mergeVariants(reactThemeVariants, variants),
-        mergeGlobals(reactThemeGlobals, globals),
-      ),
-      mode,
-    }),
+    () => ({ ...makeReactTheme({ tokens, variants, globals }), mode }),
     [tokens, variants, globals, mode],
   )
 

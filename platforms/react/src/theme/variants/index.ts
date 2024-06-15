@@ -1,7 +1,13 @@
-import { ThemeVariants } from '@shallot-ui/core-theme'
+import {
+  ThemeVariants,
+  makeThemeVariants,
+  mergeThemeVariants,
+} from '@shallot-ui/core-theme'
 
 import Text from './Text'
 
-const reactThemeVariants: ThemeVariants = { Text }
+export const REACT_THEME_VARIANTS = makeThemeVariants({ Text })
 
-export default reactThemeVariants
+export const makeReactThemeVariants = <T extends Readonly<ThemeVariants>>(
+  variants?: T,
+) => mergeThemeVariants(REACT_THEME_VARIANTS, variants)

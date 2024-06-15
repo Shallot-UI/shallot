@@ -5,8 +5,10 @@ import { DefaultTheme } from 'styled-components'
 describe('getMediaQueries', () => {
   it('should return empty string if no breakpoints are defined', () => {
     const theme: DefaultTheme = makeTheme({
-      fontSizes: { md: 16 },
-      breakpoints: undefined,
+      tokens: {
+        fontSizes: { md: 16 },
+        breakpoints: undefined,
+      },
     })
     const getStyle = jest.fn()
 
@@ -18,10 +20,12 @@ describe('getMediaQueries', () => {
 
   it('should return media queries if breakpoints are defined', () => {
     const theme: DefaultTheme = makeTheme({
-      fontSizes: { md: 16 },
-      breakpoints: {
-        600: { fontSizes: { md: 18 } },
-        900: { fontSizes: { md: 24 } },
+      tokens: {
+        fontSizes: { md: 16 },
+        breakpoints: {
+          600: { fontSizes: { md: 18 } },
+          900: { fontSizes: { md: 24 } },
+        },
       },
     })
     const getStyle = jest

@@ -1,76 +1,27 @@
 import { ThemeGlobals, ThemeTokens, ThemeVariants } from '../types'
 
-// Defaults
-import { DEFAULT_COLORS } from './colors'
-import { DEFAULT_FONT_FAMILIES } from './fontFamilies'
-import { DEFAULT_FONT_SIZES } from './fontSizes'
-import { DEFAULT_LETTER_SPACINGS } from './letterSpacings'
-import { DEFAULT_LINE_HEIGHTS } from './lineHeights'
-import { DEFAULT_RADII } from './radii'
-import { DEFAULT_SHADOWS } from './shadows'
+import { makeThemeTokens } from './tokens'
+import { makeThemeVariants } from './variants'
+import { makeThemeGlobals } from './globals'
 
-export const makeTheme = <T extends ThemeTokens>(
-  tokens?: T,
-  variants?: ThemeVariants,
-  globals?: ThemeGlobals,
-) => {
-  const breakpoints = {
-    ...tokens?.breakpoints,
-  } as ThemeTokens['breakpoints'] & T['breakpoints']
+export * from './globals'
+export * from './tokens'
+export * from './variants'
 
-  const colors = {
-    ...DEFAULT_COLORS,
-    ...tokens?.colors,
-  } as typeof DEFAULT_COLORS & T['colors']
-
-  const fontFamilies = {
-    ...DEFAULT_FONT_FAMILIES,
-    ...tokens?.fontFamilies,
-  } as typeof DEFAULT_FONT_FAMILIES & T['fontFamilies']
-
-  const fontSizes = {
-    ...DEFAULT_FONT_SIZES,
-    ...tokens?.fontSizes,
-  } as typeof DEFAULT_FONT_SIZES & T['fontSizes']
-
-  const gridUnit = tokens?.gridUnit ?? 12
-
-  const letterSpacings = {
-    ...DEFAULT_LETTER_SPACINGS,
-    ...tokens?.letterSpacings,
-  } as typeof DEFAULT_LETTER_SPACINGS & T['letterSpacings']
-
-  const lineHeights = {
-    ...DEFAULT_LINE_HEIGHTS,
-    ...tokens?.lineHeights,
-  } as typeof DEFAULT_LINE_HEIGHTS & T['lineHeights']
-
-  const radii = {
-    ...DEFAULT_RADII,
-    ...tokens?.radii,
-  } as typeof DEFAULT_RADII & T['radii']
-
-  const shadows = {
-    ...DEFAULT_SHADOWS,
-    ...tokens?.shadows,
-  } as typeof DEFAULT_SHADOWS & T['shadows']
-
-  return {
+export const makeTheme = ({
+  tokens = {},
+  variants = {},
+  globals = {},
+}: {
+  tokens?: ThemeTokens
+  variants?: ThemeVariants
+  globals?: ThemeGlobals
+} = {}) =>
+  ({
     mode: 'default',
-    tokens: {
-      breakpoints,
-      colors,
-      fontFamilies,
-      fontSizes,
-      gridUnit,
-      letterSpacings,
-      lineHeights,
-      radii,
-      shadows,
-    },
-    variants: { ...variants } as ThemeVariants,
-    globals: { ...globals } as ThemeGlobals,
-  }
-}
+    tokens: makeThemeTokens(tokens),
+    variants: makeThemeVariants(variants),
+    globals: makeThemeGlobals(globals),
+  }) as const
 
 export const DEFAULT_THEME = makeTheme()

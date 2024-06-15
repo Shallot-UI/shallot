@@ -4,27 +4,29 @@ import { getColor, getFontSize, getShadow } from '../../../../mixins/src'
 
 describe.only('Test the `getStyle` function', () => {
   const theme = makeTheme({
-    colors: {
-      Primary: {
-        500: 'blue',
-        600: 'red',
-        700: 'yellow',
+    tokens: {
+      colors: {
+        Primary: {
+          500: 'blue',
+          600: 'red',
+          700: 'yellow',
+        },
+        Success: {
+          500: 'green',
+          600: 'purple',
+          700: 'orange',
+        },
       },
-      Success: {
-        500: 'green',
-        600: 'purple',
-        700: 'orange',
+      fontSizes: {
+        sm: 12,
+        md: 16,
+        lg: 20,
       },
-    },
-    fontSizes: {
-      sm: 12,
-      md: 16,
-      lg: 20,
-    },
-    shadows: {
-      500: '2px 2px 4px gray',
-      600: '4px 4px 8px gray',
-      700: '8px 8px 16px gray',
+      shadows: {
+        500: '2px 2px 4px gray',
+        600: '4px 4px 8px gray',
+        700: '8px 8px 16px gray',
+      },
     },
   })
 
