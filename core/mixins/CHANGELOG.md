@@ -1,5 +1,16 @@
 # @shallot-ui/core-mixins
 
+## 2.0.0-beta.11
+
+### Minor Changes
+
+- Improves theme typing and creation
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core-theme@2.0.0-beta.11
+
 ## 2.0.0-beta.10
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.0.0-beta.11
+
+### Minor Changes
+
+- Improves theme typing and creation
+
 ## 2.0.0-beta.10
 
 ### Patch Changes

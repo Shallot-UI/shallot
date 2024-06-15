@@ -1,5 +1,18 @@
 # @shallot-ui/component-checkbox
 
+## 3.0.0-beta.13
+
+### Minor Changes
+
+- Improves theme typing and creation
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.0-beta.11
+  - @shallot-ui/core-theme@2.0.0-beta.11
+  - @shallot-ui/core-utils@2.0.0-beta.12
+
 ## 3.0.0-beta.12
 
 ### Patch Changes

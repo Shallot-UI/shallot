@@ -1,5 +1,18 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.0-beta.15
+
+### Minor Changes
+
+- Improves theme typing and creation
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.0-beta.15
+  - @shallot-ui/core-props@2.0.0-beta.11
+  - @shallot-ui/core-theme@2.0.0-beta.11
+
 ## 2.0.0-beta.14
 
 ### Patch Changes
