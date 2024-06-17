@@ -13,23 +13,23 @@ export const mergeThemeTokens = <
 ) =>
   ({
     gridUnit: updates?.gridUnit ?? tokens.gridUnit ?? 12,
-    colors: { ...updates?.colors, ...tokens.colors } as Merge<
+    colors: { ...tokens.colors, ...updates?.colors } as Merge<
       T['colors'],
       U['colors']
     >,
-    fontFamilies: { ...updates?.fontFamilies, ...tokens.fontFamilies } as Merge<
+    fontFamilies: { ...tokens.fontFamilies, ...updates?.fontFamilies } as Merge<
       T['fontFamilies'],
       U['fontFamilies']
     >,
-    fontSizes: { ...updates?.fontSizes, ...tokens.fontSizes } as Merge<
+    fontSizes: { ...tokens.fontSizes, ...updates?.fontSizes } as Merge<
       T['fontSizes'],
       U['fontSizes']
     >,
     letterSpacings: {
-      ...updates?.letterSpacings,
       ...tokens.letterSpacings,
+      ...updates?.letterSpacings,
     } as Merge<T['letterSpacings'], U['letterSpacings']>,
-    lineHeights: { ...updates?.lineHeights, ...tokens.lineHeights } as Merge<
+    lineHeights: { ...tokens.lineHeights, ...updates?.lineHeights } as Merge<
       T['lineHeights'],
       U['lineHeights']
     >,
@@ -37,11 +37,11 @@ export const mergeThemeTokens = <
       T['radii'],
       U['radii']
     >,
-    shadows: { ...updates?.shadows, ...tokens.shadows } as Merge<
+    shadows: { ...tokens.shadows, ...updates?.shadows } as Merge<
       T['shadows'],
       U['shadows']
     >,
-    breakpoints: { ...updates?.breakpoints, ...tokens.breakpoints } as Merge<
+    breakpoints: { ...tokens.breakpoints, ...updates?.breakpoints } as Merge<
       T['breakpoints'],
       U['breakpoints']
     >,
