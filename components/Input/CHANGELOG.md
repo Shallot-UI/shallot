@@ -1,5 +1,14 @@
 # @shallot-ui/component-input
 
+## 3.0.0-beta.13
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core-theme@2.0.0-beta.12
+  - @shallot-ui/core-mixins@2.0.0-beta.12
+  - @shallot-ui/core-utils@2.0.0-beta.13
+
 ## 3.0.0-beta.12
 
 ### Minor Changes
