@@ -10,6 +10,6 @@ export const getUnits =
   ({ theme }): string | number | undefined => {
     if (typeof theme?.tokens?.gridUnit !== 'number') return undefined
     return suffix
-      ? [theme.tokens.gridUnit * value, suffix].join()
+      ? [theme.tokens.gridUnit * value, suffix].join('')
       : theme.tokens.gridUnit * value
   }
