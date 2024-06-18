@@ -1,5 +1,17 @@
 # @shallot-ui/core-mixins
 
+## 2.0.0-beta.15
+
+### Patch Changes
+
+- Fixes by running build
+
+## 2.0.0-beta.14
+
+### Patch Changes
+
+- Fixes how suffixes are applied
+
 ## 2.0.0-beta.13
 
 ### Patch Changes

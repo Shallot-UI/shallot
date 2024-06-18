@@ -1,5 +1,19 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.0-beta.22
+
+### Patch Changes
+
+- @shallot-ui/core-props@2.0.0-beta.15
+- @shallot-ui/platform-react@2.0.0-beta.22
+
+## 2.0.0-beta.21
+
+### Patch Changes
+
+- @shallot-ui/core-props@2.0.0-beta.14
+- @shallot-ui/platform-react@2.0.0-beta.21
+
 ## 2.0.0-beta.20
 
 ### Patch Changes

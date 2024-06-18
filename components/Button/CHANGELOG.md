@@ -1,5 +1,21 @@
 # @shallot-ui/component-button
 
+## 3.0.0-beta.17
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.0-beta.15
+  - @shallot-ui/core-utils@2.0.0-beta.16
+
+## 3.0.0-beta.16
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.0-beta.14
+  - @shallot-ui/core-utils@2.0.0-beta.15
+
 ## 3.0.0-beta.15
 
 ### Patch Changes

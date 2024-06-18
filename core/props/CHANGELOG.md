@@ -1,5 +1,19 @@
 # @shallot-ui/core-props
 
+## 2.0.0-beta.15
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.0-beta.15
+
+## 2.0.0-beta.14
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.0-beta.14
+
 ## 2.0.0-beta.13
 
 ### Patch Changes
