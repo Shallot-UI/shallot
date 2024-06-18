@@ -14,8 +14,8 @@
   "scripts": {
     "check-types": "yarn tsc --noEmit",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup ./index.ts --format cjs --minify --dts --clean",
-    "dev": "tsup ./index.ts --format cjs --dts --clean --watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
