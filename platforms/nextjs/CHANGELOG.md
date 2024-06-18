@@ -1,5 +1,13 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.0-beta.19
+
+### Patch Changes
+
+- Prepends use client with postbuild
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.0-beta.19
+
 ## 2.0.0-beta.18
 
 ### Patch Changes

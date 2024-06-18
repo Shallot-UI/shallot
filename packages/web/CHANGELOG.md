@@ -1,5 +1,12 @@
 # @shallot-ui/web
 
+## 4.0.0-beta.19
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.0-beta.19
+
 ## 4.0.0-beta.18
 
 ### Patch Changes
