@@ -1,8 +1,8 @@
 {
   "name": "@shallot-ui/next",
   "version": "4.0.0-beta.20",
-  "main": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
@@ -14,8 +14,9 @@
   "scripts": {
     "check-types": "yarn tsc --noEmit",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "build": "tsup ./index.ts",
-    "dev": "tsup ./index.ts --watch",
+    "build": "tsup ./index.ts --format cjs --minify --dts --clean",
+    "dev": "tsup ./index.ts --format cjs --dts --clean --watch",
+    "postbuild": "node postbuild.js",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
