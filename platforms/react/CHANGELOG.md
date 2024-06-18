@@ -1,5 +1,11 @@
 # @shallot-ui/platform-react
 
+## 2.0.0-beta.18
+
+### Patch Changes
+
+- respects use client in built files
+
 ## 2.0.0-beta.17
 
 ### Patch Changes

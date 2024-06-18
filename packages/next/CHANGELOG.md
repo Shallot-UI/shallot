@@ -1,5 +1,14 @@
 # @shallot-ui/next
 
+## 4.0.0-beta.20
+
+### Patch Changes
+
+- respects use client in built files
+- Updated dependencies
+  - @shallot-ui/platform-nextjs@2.0.0-beta.18
+  - @shallot-ui/platform-react@2.0.0-beta.18
+
 ## 4.0.0-beta.19
 
 ### Patch Changes
