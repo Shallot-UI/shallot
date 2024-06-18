@@ -1,5 +1,14 @@
 # @shallot-ui/component-switch
 
+## 3.0.0-beta.15
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core-theme@2.0.0-beta.13
+  - @shallot-ui/core-mixins@2.0.0-beta.13
+  - @shallot-ui/core-utils@2.0.0-beta.14
+
 ## 3.0.0-beta.14
 
 ### Patch Changes

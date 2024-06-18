@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.0.0-beta.13
+
+### Minor Changes
+
+- fixes how theme tokens are merged
+
 ## 2.0.0-beta.12
 
 ### Minor Changes

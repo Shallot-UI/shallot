@@ -1,5 +1,13 @@
 # @shallot-ui/core-props
 
+## 2.0.0-beta.13
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/core-theme@2.0.0-beta.13
+  - @shallot-ui/core-mixins@2.0.0-beta.13
+
 ## 2.0.0-beta.12
 
 ### Patch Changes

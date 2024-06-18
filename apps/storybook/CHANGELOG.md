@@ -1,5 +1,11 @@
 # stories
 
+## 0.1.1-beta.19
+
+### Patch Changes
+
+- @shallot-ui/next@4.0.0-beta.22
+
 ## 0.1.1-beta.18
 
 ### Patch Changes
