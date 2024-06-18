@@ -1,5 +1,11 @@
 # @shallot-ui/next
 
+## 4.0.0-beta.18
+
+### Patch Changes
+
+- Adds use client directive to next
+
 ## 4.0.0-beta.17
 
 ### Patch Changes
