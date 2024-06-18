@@ -1,5 +1,14 @@
 # @shallot-ui/next
 
+## 4.0.0-beta.19
+
+### Patch Changes
+
+- a27e2e0: Adds use client even on internal packages
+- Updated dependencies [a27e2e0]
+  - @shallot-ui/platform-nextjs@2.0.0-beta.17
+  - @shallot-ui/platform-react@2.0.0-beta.17
+
 ## 4.0.0-beta.18
 
 ### Patch Changes

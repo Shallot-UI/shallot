@@ -23,6 +23,7 @@
     "stories": "0.1.0"
   },
   "changesets": [
+    "afraid-doors-flash",
     "fluffy-nails-brake",
     "friendly-cows-give",
     "fuzzy-eyes-impress",
