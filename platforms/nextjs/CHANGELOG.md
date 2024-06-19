@@ -1,5 +1,63 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.0
+
+### Major Changes
+
+- 5b49169: Overhaul of typing and versioning for latest styled-components
+
+### Minor Changes
+
+- 0656f91: Improvements to dark mode using globals without theme modes object
+- 7dc2eba: Improves theme typing and creation
+- d12b994: Styled components version bump
+- 93da3da: Renames theme options to tokens for clarity
+- d12b994: Updates for styled components latest
+- 95f6c53: Setting up styled components release
+
+### Patch Changes
+
+- a27e2e0: Adds use client even on internal packages
+- 0f1aa67: Adds globals to theme
+- da38bfd: Theme mode variants extend existing varians
+- cbada9b: Prepends use client with postbuild
+- d12b994: Preparing beta release for styled components latest
+- 24adb1d: Fixes global styles
+- 93b9d09: improves use of globals
+- eed497f: respects use client in built files
+- d671f61: Adds theme modees
+- 655e044: Adds mixins to get globals
+- 4e09854: Extend default theme configs
+- d671f61: Bug fixes
+- 2fc715d: Generalizing providers
+- Updated dependencies [a27e2e0]
+- Updated dependencies [dfacff1]
+- Updated dependencies [0656f91]
+- Updated dependencies [7dc2eba]
+- Updated dependencies [0f1aa67]
+- Updated dependencies [da38bfd]
+- Updated dependencies [cbada9b]
+- Updated dependencies [d12b994]
+- Updated dependencies [8a7697a]
+- Updated dependencies [d12b994]
+- Updated dependencies [24adb1d]
+- Updated dependencies [93b9d09]
+- Updated dependencies [e6cc2b6]
+- Updated dependencies [eed497f]
+- Updated dependencies [d671f61]
+- Updated dependencies [5b49169]
+- Updated dependencies [93da3da]
+- Updated dependencies [d12b994]
+- Updated dependencies [9c3c714]
+- Updated dependencies [655e044]
+- Updated dependencies [4e09854]
+- Updated dependencies [d671f61]
+- Updated dependencies [95f6c53]
+- Updated dependencies [2fc715d]
+  - @shallot-ui/platform-react@2.0.0
+  - @shallot-ui/core-theme@2.0.0
+  - @shallot-ui/core-props@2.0.0
+
 ## 2.0.0-beta.22
 
 ### Patch Changes
