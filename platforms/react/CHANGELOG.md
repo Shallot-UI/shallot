@@ -1,5 +1,13 @@
 # @shallot-ui/platform-react
 
+## 2.0.1
+
+### Patch Changes
+
+- Fixes image issues
+- Updated dependencies
+  - @shallot-ui/core-props@2.0.1
+
 ## 2.0.0
 
 ### Major Changes
