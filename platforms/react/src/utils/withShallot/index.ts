@@ -2,11 +2,7 @@ import { ElementType } from 'react'
 import styled from 'styled-components'
 import { ShallotProp, ThemeVariants } from '@shallot-ui/core-theme'
 import { getStyle, getBreakpointsStyle } from '@shallot-ui/core-utils'
-import {
-  LayoutShallot,
-  withBoxLayoutProps,
-  withTextLayoutProps,
-} from '@shallot-ui/core-props'
+import { withBoxLayoutProps, withTextLayoutProps } from '@shallot-ui/core-props'
 
 type ExtendedProps = {
   shallot?: ShallotProp
@@ -51,7 +47,7 @@ export const withShallot = <T extends ElementType>(
 
 export const withBoxShallot = <T extends ElementType>(
   element: T,
-  shallot?: ShallotProp,
+  shallot: ShallotProp = {},
   {
     scope = 'Box',
     variant = 'Default',
@@ -68,12 +64,12 @@ export const withBoxShallot = <T extends ElementType>(
     { flexDirection: 'column' },
     { scope, variant },
   )
-  return withBoxLayoutProps(Base, shallot as LayoutShallot)
+  return withBoxLayoutProps(Base, shallot)
 }
 
 export const withTextShallot = <T extends ElementType>(
   element: T,
-  shallot?: ShallotProp,
+  shallot: ShallotProp = {},
   {
     scope = 'Text',
     variant = 'Default',

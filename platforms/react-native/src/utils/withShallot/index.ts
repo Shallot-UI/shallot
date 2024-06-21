@@ -2,11 +2,7 @@ import styled from 'styled-components/native'
 
 import { ShallotProp } from '@shallot-ui/core-theme'
 import { getStyle, getVariantStyle } from '@shallot-ui/core-utils'
-import {
-  LayoutShallot,
-  withBoxLayoutProps,
-  withTextLayoutProps,
-} from '@shallot-ui/core-props'
+import { withBoxLayoutProps, withTextLayoutProps } from '@shallot-ui/core-props'
 
 type ExtendedProps = {
   shallot?: ShallotProp
@@ -39,10 +35,7 @@ export const withBoxShallot = (
     ${getStyle}
   `
 
-  return withBoxLayoutProps(Component, {
-    flexDirection: 'column',
-    ...shallot,
-  } as LayoutShallot)
+  return withBoxLayoutProps(Component, { flexDirection: 'column', ...shallot })
 }
 
 export const withTextShallot = (
