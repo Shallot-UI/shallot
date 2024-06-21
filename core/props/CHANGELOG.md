@@ -1,5 +1,14 @@
 # @shallot-ui/core-props
 
+## 2.0.2
+
+### Patch Changes
+
+- Fixes issue with nextjs platform build
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.1
+  - @shallot-ui/core-theme@2.0.1
+
 ## 2.0.1
 
 ### Patch Changes

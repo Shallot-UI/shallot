@@ -1,5 +1,15 @@
 # @shallot-ui/component-button
 
+## 3.0.1
+
+### Patch Changes
+
+- Fixes issue with nextjs platform build
+- Updated dependencies
+  - @shallot-ui/core-mixins@2.0.1
+  - @shallot-ui/core-theme@2.0.1
+  - @shallot-ui/core-utils@2.0.1
+
 ## 3.0.0
 
 ### Major Changes

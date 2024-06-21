@@ -1,5 +1,23 @@
 # @shallot-ui/web
 
+## 4.0.2
+
+### Patch Changes
+
+- Fixes issue with nextjs platform build
+- Updated dependencies
+  - @shallot-ui/component-checkbox@3.0.1
+  - @shallot-ui/component-button@3.0.1
+  - @shallot-ui/component-switch@3.0.1
+  - @shallot-ui/component-input@3.0.1
+  - @shallot-ui/component-modal@2.0.1
+  - @shallot-ui/platform-react@2.0.2
+  - @shallot-ui/component-tag@3.0.1
+  - @shallot-ui/core-mixins@2.0.1
+  - @shallot-ui/core-props@2.0.2
+  - @shallot-ui/core-theme@2.0.1
+  - @shallot-ui/core-utils@2.0.1
+
 ## 4.0.1
 
 ### Patch Changes

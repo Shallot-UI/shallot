@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.0.1
+
+### Patch Changes
+
+- Fixes issue with nextjs platform build
+
 ## 2.0.0
 
 ### Major Changes
