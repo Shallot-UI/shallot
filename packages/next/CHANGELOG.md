@@ -1,5 +1,15 @@
 # @shallot-ui/next
 
+## 4.0.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/component-button@3.0.3
+  - @shallot-ui/platform-react@2.0.4
+  - @shallot-ui/core-props@2.0.4
+  - @shallot-ui/platform-nextjs@2.0.4
+
 ## 4.0.3
 
 ### Patch Changes

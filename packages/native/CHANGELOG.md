@@ -1,5 +1,14 @@
 # @shallot-ui/native
 
+## 3.0.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/component-button@3.0.3
+  - @shallot-ui/core-props@2.0.4
+  - @shallot-ui/platform-react-native@2.0.4
+
 ## 3.0.3
 
 ### Patch Changes

@@ -23,7 +23,7 @@ export const withBoxLayoutProps = <T extends {}>(
   layoutShallot?: ShallotProp,
   boxKey?: string,
 ) =>
-  forwardRef((props: T & BoxLayoutProps & ExtendedProps, ref) => {
+  forwardRef<T, T & BoxLayoutProps & ExtendedProps>((props, ref) => {
     const {
       alignTop,
       alignMiddle,

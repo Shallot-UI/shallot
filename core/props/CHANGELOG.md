@@ -1,5 +1,11 @@
 # @shallot-ui/core-props
 
+## 2.0.4
+
+### Patch Changes
+
+- Improves button props
+
 ## 2.0.3
 
 ### Patch Changes

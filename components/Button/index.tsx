@@ -18,7 +18,7 @@ import { ButtonProps, ButtonShallot } from './types'
 export * from './types'
 
 export const withButtonStyleProps = <T,>(ButtonComponent: ComponentType<T>) =>
-  forwardRef((props: ButtonProps<T>, ref) => {
+  forwardRef<T, ButtonProps<T>>((props, ref) => {
     const {
       // General
       color = 'Default',

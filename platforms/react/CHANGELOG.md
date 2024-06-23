@@ -1,5 +1,14 @@
 # @shallot-ui/platform-react
 
+## 2.0.4
+
+### Patch Changes
+
+- Improves button props
+- Updated dependencies
+  - @shallot-ui/component-button@3.0.3
+  - @shallot-ui/core-props@2.0.4
+
 ## 2.0.3
 
 ### Patch Changes
