@@ -1,5 +1,6 @@
-import { ComponentType } from 'react'
-import { DefaultTheme, useTheme } from 'styled-components'
+import { ComponentType, forwardRef } from 'react'
+import { useTheme } from 'styled-components'
+import { applyStyles } from '@shallot-ui/core-utils'
 import {
   getColor,
   getRadius,
@@ -8,21 +9,20 @@ import {
   getUnits,
   getShadow,
   getFontFamily,
-  applyStyles,
   getVariant,
-} from '@shallot-ui/core'
+  getGlobal,
+} from '@shallot-ui/core-mixins'
 
 import { ButtonProps, ButtonShallot } from './types'
 
 export * from './types'
 
-export const withButtonStyleProps =
-  <T,>(ButtonComponent: ComponentType<T>) =>
-  (props: ButtonProps<T>) => {
+export const withButtonStyleProps = <T,>(ButtonComponent: ComponentType<T>) =>
+  forwardRef<T, ButtonProps<T>>((props, ref) => {
     const {
       // General
-      color = 'Shading',
-      radius = 'md',
+      color = 'Default',
+      radius = 'pill',
       outline,
 
       // Typography
@@ -37,8 +37,8 @@ export const withButtonStyleProps =
       // Text Alignment
       textAlign = 'center',
 
-      verticalUnitPadding = 1,
-      horizontalUnitPadding = 2,
+      verticalUnitPadding = 2 / 3,
+      horizontalUnitPadding = 4 / 3,
 
       shallot,
       variant = 'Default',
@@ -46,23 +46,17 @@ export const withButtonStyleProps =
       ...buttonProps
     } = props
 
-    // If the button uses the Shading color, we switch to the shading
-    // foreground color rather than the mid-range color. This is because other
-    // palette colors extend to shades darker and lighter than their foreground.
-    const shades: Record<string, keyof DefaultTheme['colors']['Shading']> =
-      color === 'Shading'
-        ? { default: 900, hovered: 800, pressed: 950, focused: 900 }
-        : { default: 500, hovered: 400, pressed: 600, focused: 500 }
-
     const theme = useTheme()
     const themeVariant = getVariant<ButtonShallot>('Button', variant)({ theme })
 
     let buttonShallot: ButtonShallot = {
       Container: {
-        boxShadow: getShadow(100),
         borderRadius: getRadius(radius),
-        backgroundColor: getColor(color, shades.default),
-        borderColor: getColor(color, shades.default),
+        backgroundColor:
+          color === 'Default'
+            ? getGlobal('foregroundColor')
+            : getColor(color, 500),
+        borderColor: 'transparent',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -84,7 +78,10 @@ export const withButtonStyleProps =
         fontWeight,
         flexGrow: 1,
         fontFamily: getFontFamily(fontFamily),
-        color: getColor('Shading', 50),
+        color:
+          color === 'Default'
+            ? getGlobal('backgroundColor')
+            : getColor('Shading', 50),
         fontSize: getFontSize(fontSize),
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),
@@ -93,7 +90,12 @@ export const withButtonStyleProps =
         letterSpacing: getLetterSpacing(letterSpacing),
 
         ...(uppercase && { textTransform: uppercase ? 'uppercase' : 'none' }),
-        ...(outline && { color: getColor(color, shades.default) }),
+        ...(outline && {
+          color:
+            color === 'Default'
+              ? getGlobal('foregroundColor')
+              : getColor(color, 500),
+        }),
       },
       ':focus': {
         Container: {
@@ -102,32 +104,26 @@ export const withButtonStyleProps =
       },
       ':hover': {
         Container: {
-          boxShadow: getShadow(300),
-          backgroundColor: getColor(color, shades.hovered),
-          borderColor: getColor(color, shades.hovered),
-        },
-      },
-      ':active': {
-        Container: {
-          boxShadow: getShadow(100),
-          backgroundColor: getColor(color, shades.pressed),
-          borderColor: getColor(color, shades.pressed),
+          backgroundColor:
+            color === 'Default'
+              ? getGlobal('foregroundFadeColor')
+              : getColor(color, 400),
         },
       },
       ':disabled': {
-        Container: {
-          boxShadow: 'none',
-          backgroundColor: getColor('Shading', 200),
-          borderColor: getColor('Shading', 100),
-        },
-        Title: {
-          color: getColor('Shading', 500),
-        },
+        Container: { backgroundColor: getColor('Shading', 200) },
+        Title: { color: getColor('Shading', 500) },
       },
     }
 
     buttonShallot = applyStyles(buttonShallot, themeVariant)
     buttonShallot = applyStyles(buttonShallot, shallot)
 
-    return <ButtonComponent {...(buttonProps as T)} shallot={buttonShallot} />
-  }
+    return (
+      <ButtonComponent
+        {...(buttonProps as T)}
+        shallot={buttonShallot}
+        ref={ref}
+      />
+    )
+  })

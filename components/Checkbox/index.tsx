@@ -1,13 +1,14 @@
 import { ComponentType } from 'react'
 import { useTheme } from 'styled-components'
+import { applyStyles } from '@shallot-ui/core-utils'
 import {
   getColor,
   getShadow,
   getRadius,
   getUnits,
-  applyStyles,
   getVariant,
-} from '@shallot-ui/core'
+  getGlobal,
+} from '@shallot-ui/core-mixins'
 
 import { CheckboxProps, CheckboxShallot } from './types'
 
@@ -19,7 +20,7 @@ export const withCheckboxStyleProps =
     const {
       color = 'Primary',
       size = 4 / 3,
-      iconSize = 1,
+      iconSize = 3 / 4,
       radius = 'sm',
 
       shallot,
@@ -36,8 +37,8 @@ export const withCheckboxStyleProps =
 
     let checkboxShallot: CheckboxShallot = {
       Container: {
-        backgroundColor: getColor('Shading', 100),
-        borderColor: getColor('Shading', 300),
+        backgroundColor: getGlobal('backgroundColor'),
+        borderColor: getGlobal('borderColor'),
         borderRadius: getRadius(radius),
         borderWidth: 1,
         borderStyle: 'solid',

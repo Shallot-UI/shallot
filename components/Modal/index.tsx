@@ -1,12 +1,12 @@
 import { ComponentType } from 'react'
 import { useTheme } from 'styled-components'
+import { applyStyles } from '@shallot-ui/core-utils'
 import {
-  applyStyles,
   getRadius,
   getUnits,
   getColorShade,
   getVariant,
-} from '@shallot-ui/core'
+} from '@shallot-ui/core-mixins'
 
 import { ModalProps, ModalShallot } from './types'
 

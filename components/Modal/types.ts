@@ -1,9 +1,9 @@
-import { DefaultTheme } from 'styled-components'
-import { ColorShade, ShallotProp } from '@shallot-ui/theme'
+import type { DefaultTheme } from 'styled-components'
+import type { ColorShade, ShallotProp } from '@shallot-ui/core-theme'
 
 export type ModalStyleProps = {
   backgroundColor?: ColorShade
-  radius?: keyof DefaultTheme['radii']
+  radius?: keyof DefaultTheme['tokens']['radii']
   unitHeight?: number
   unitWidth?: number
   unitsAround?: number

@@ -1,17 +1,17 @@
-import { CSSObject, DefaultTheme } from 'styled-components'
-import { ColorName, ShallotProp } from '@shallot-ui/theme'
+import type { CSSObject, DefaultTheme } from 'styled-components'
+import type { ColorName, ShallotProp } from '@shallot-ui/core-theme'
 
 export type ButtonStyleProps = {
   color?: ColorName
-  radius?: keyof DefaultTheme['radii']
-  letterSpacing?: keyof DefaultTheme['letterSpacings']
-  fontSize?: keyof DefaultTheme['fontSizes']
+  radius?: keyof DefaultTheme['tokens']['radii']
+  letterSpacing?: keyof DefaultTheme['tokens']['letterSpacings']
+  fontSize?: keyof DefaultTheme['tokens']['fontSizes']
   outline?: boolean
   uppercase?: boolean
   verticalUnitPadding?: number
   horizontalUnitPadding?: number
   textAlign?: CSSObject['textAlign']
-  fontFamily?: keyof DefaultTheme['fontFamilies']
+  fontFamily?: keyof DefaultTheme['tokens']['fontFamilies']
   fontWeight?: string
 }
 

@@ -4,10 +4,13 @@
     "**/.gitignore": true,
     "**/.storybook": true,
     "**/.turbo": true,
+    "**/.next": true,
+    "**/next-env.d.ts": true,
     "**/dist": true,
     "**/node_modules": true,
     "**/storybook-static": true,
     "**/styled.d.ts": true,
-    "**/tsconfig.json": true
+    "**/tsconfig.json": true,
+    "**/tsup.config.ts": true
   }
 }
