@@ -1,5 +1,11 @@
 # @shallot-ui/core-props
 
+## 2.0.3
+
+### Patch Changes
+
+- Improves ref forwarding
+
 ## 2.0.2
 
 ### Patch Changes

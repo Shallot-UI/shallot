@@ -1,5 +1,14 @@
 # @shallot-ui/platform-react
 
+## 2.0.3
+
+### Patch Changes
+
+- Improves ref forwarding
+- Updated dependencies
+  - @shallot-ui/component-button@3.0.2
+  - @shallot-ui/core-props@2.0.3
+
 ## 2.0.2
 
 ### Patch Changes

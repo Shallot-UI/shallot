@@ -1,4 +1,4 @@
-import { ComponentType } from 'react'
+import { ComponentType, forwardRef } from 'react'
 import { useTheme } from 'styled-components'
 import { applyStyles } from '@shallot-ui/core-utils'
 import {
@@ -17,9 +17,8 @@ import { ButtonProps, ButtonShallot } from './types'
 
 export * from './types'
 
-export const withButtonStyleProps =
-  <T,>(ButtonComponent: ComponentType<T>) =>
-  (props: ButtonProps<T>) => {
+export const withButtonStyleProps = <T,>(ButtonComponent: ComponentType<T>) =>
+  forwardRef((props: ButtonProps<T>, ref) => {
     const {
       // General
       color = 'Default',
@@ -120,5 +119,11 @@ export const withButtonStyleProps =
     buttonShallot = applyStyles(buttonShallot, themeVariant)
     buttonShallot = applyStyles(buttonShallot, shallot)
 
-    return <ButtonComponent {...(buttonProps as T)} shallot={buttonShallot} />
-  }
+    return (
+      <ButtonComponent
+        {...(buttonProps as T)}
+        shallot={buttonShallot}
+        ref={ref}
+      />
+    )
+  })

@@ -1,4 +1,4 @@
-import { ComponentType } from 'react'
+import { ComponentProps, ComponentType, forwardRef } from 'react'
 import { ShallotProp } from '@shallot-ui/core-theme'
 
 import { TextAlignmentProps, getTextAlignmentShallot } from './textAlignment'
@@ -18,9 +18,11 @@ export type TextLayoutProps = TextAlignmentProps &
   MarginProps &
   SizingProps
 
-export const withTextLayoutProps =
-  <T extends {}>(Component: ComponentType<T>, layoutShallot?: ShallotProp) =>
-  (props: T & ExtendedProps & TextLayoutProps) => {
+export const withTextLayoutProps = <T extends {}>(
+  Component: ComponentType<T>,
+  layoutShallot?: ShallotProp,
+) =>
+  forwardRef((props: T & ExtendedProps & TextLayoutProps, ref) => {
     const {
       alignTextLeft,
       alignTextCenter,
@@ -63,5 +65,5 @@ export const withTextLayoutProps =
       },
     } as T
 
-    return <Component {...nextProps} />
-  }
+    return <Component {...nextProps} ref={ref} />
+  })

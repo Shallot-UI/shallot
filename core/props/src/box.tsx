@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react'
+import { forwardRef, type ComponentType } from 'react'
 import type { ShallotProp } from '@shallot-ui/core-theme'
 
 import { AlignmentProps, getAlignmentShallot } from './alignment'
@@ -18,13 +18,12 @@ export type BoxLayoutProps = AlignmentProps &
   MarginProps &
   SizingProps
 
-export const withBoxLayoutProps =
-  <T extends {}>(
-    Component: ComponentType<T>,
-    layoutShallot?: ShallotProp,
-    boxKey?: string,
-  ) =>
-  (props: T & BoxLayoutProps & ExtendedProps) => {
+export const withBoxLayoutProps = <T extends {}>(
+  Component: ComponentType<T>,
+  layoutShallot?: ShallotProp,
+  boxKey?: string,
+) =>
+  forwardRef((props: T & BoxLayoutProps & ExtendedProps, ref) => {
     const {
       alignTop,
       alignMiddle,
@@ -85,5 +84,11 @@ export const withBoxLayoutProps =
       }
     }
 
-    return <Component {...(nonStyleProps as T)} shallot={extendedShallot} />
-  }
+    return (
+      <Component
+        {...(nonStyleProps as T)}
+        shallot={extendedShallot}
+        ref={ref}
+      />
+    )
+  })

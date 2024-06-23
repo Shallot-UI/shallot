@@ -1,25 +1,28 @@
-import { ComponentProps, ReactNode } from 'react'
+import { ComponentProps, ReactNode, forwardRef } from 'react'
 import { withBoxLayoutProps } from '@shallot-ui/core-props'
 import { ButtonProps, withButtonStyleProps } from '@shallot-ui/component-button'
 
 import S from './styles'
 
-const Base = (
-  props: ButtonProps<ComponentProps<typeof S.Container>> & {
-    before?: ReactNode
-    after?: ReactNode
-  },
-) => {
-  const { title, shallot, before, after, ...rest } = props
+const Base = forwardRef<HTMLButtonElement>(
+  (
+    props: ButtonProps<ComponentProps<typeof S.Container>> & {
+      before?: ReactNode
+      after?: ReactNode
+    },
+    ref,
+  ) => {
+    const { title, shallot, before, after, ...rest } = props
 
-  return (
-    <S.Container shallot={shallot} {...rest}>
-      {before}
-      {title && <S.Title>{title}</S.Title>}
-      {after}
-    </S.Container>
-  )
-}
+    return (
+      <S.Container shallot={shallot} ref={ref} {...rest}>
+        {before}
+        {title && <S.Title>{title}</S.Title>}
+        {after}
+      </S.Container>
+    )
+  },
+)
 
 export const Button = withBoxLayoutProps(
   // The style props are common utilities to extend the button's shallot prop

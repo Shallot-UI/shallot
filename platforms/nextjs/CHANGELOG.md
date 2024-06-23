@@ -1,5 +1,13 @@
 # @shallot-ui/platform-nextjs
 
+## 2.0.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/platform-react@2.0.3
+  - @shallot-ui/core-props@2.0.3
+
 ## 2.0.2
 
 ### Patch Changes
