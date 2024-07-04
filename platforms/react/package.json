@@ -1,6 +1,6 @@
 {
   "name": "@shallot-ui/platform-react",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -45,6 +45,7 @@
     "@types/jest": "^29.5.12"
   },
   "dependencies": {
+    "@shallot-ui/component-textarea": "workspace:*",
     "@shallot-ui/component-button": "workspace:*",
     "@shallot-ui/component-checkbox": "workspace:*",
     "@shallot-ui/core-utils": "workspace:*",

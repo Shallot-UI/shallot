@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.1.0
+
+### Minor Changes
+
+- Adds textarea
+
 ## 2.0.1
 
 ### Patch Changes
