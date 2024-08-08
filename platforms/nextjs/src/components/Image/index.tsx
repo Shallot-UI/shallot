@@ -5,7 +5,9 @@ import { ShallotProp, Theme } from '@shallot-ui/core-theme'
 import { withBoxLayoutProps } from '@shallot-ui/core-props'
 import { withBoxShallot } from '@shallot-ui/platform-react'
 
-type NextImageProps = ComponentProps<typeof NextImage>
+type NextImageProps = ComponentProps<typeof NextImage> & {
+  src?: string
+}
 
 export interface ImageProps extends NextImageProps {
   shallot?: ShallotProp
@@ -17,7 +19,7 @@ const Container = withBoxShallot('div')
 const InnerImage = withBoxShallot(NextImage)
 
 const Base: FunctionComponent<ImageProps> = (props) => {
-  const { ref, shallot, unitWidth, unitHeight, ...rest } = props
+  const { ref, shallot, unitWidth, unitHeight, src, ...rest } = props
   const theme = useTheme() as Theme
 
   const width =
@@ -38,6 +40,7 @@ const Base: FunctionComponent<ImageProps> = (props) => {
       <InnerImage
         width={width as number | undefined}
         height={height as number | undefined}
+        src={src}
         {...rest}
       />
     </Container>
