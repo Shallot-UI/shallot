@@ -1,4 +1,10 @@
-import { forwardRef, type ComponentType } from 'react'
+import {
+  forwardRef,
+  ForwardRefExoticComponent,
+  PropsWithoutRef,
+  RefAttributes,
+  type ComponentType,
+} from 'react'
 import type { ShallotProp } from '@shallot-ui/core-theme'
 
 import { AlignmentProps, getAlignmentShallot } from './alignment'
@@ -22,8 +28,10 @@ export const withBoxLayoutProps = <T extends {}>(
   Component: ComponentType<T>,
   layoutShallot?: ShallotProp,
   boxKey?: string,
-) =>
-  forwardRef<T, T & BoxLayoutProps & ExtendedProps>((props, ref) => {
+): ForwardRefExoticComponent<
+  PropsWithoutRef<T & BoxLayoutProps & ExtendedProps> & RefAttributes<unknown>
+> =>
+  forwardRef<unknown, T & BoxLayoutProps & ExtendedProps>((props, ref) => {
     const {
       alignTop,
       alignMiddle,

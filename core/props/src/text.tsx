@@ -1,4 +1,10 @@
-import { ComponentProps, ComponentType, forwardRef } from 'react'
+import {
+  ComponentType,
+  forwardRef,
+  ForwardRefExoticComponent,
+  PropsWithoutRef,
+  RefAttributes,
+} from 'react'
 import { ShallotProp } from '@shallot-ui/core-theme'
 
 import { TextAlignmentProps, getTextAlignmentShallot } from './textAlignment'
@@ -21,7 +27,9 @@ export type TextLayoutProps = TextAlignmentProps &
 export const withTextLayoutProps = <T extends {}>(
   Component: ComponentType<T>,
   layoutShallot?: ShallotProp,
-) =>
+): ForwardRefExoticComponent<
+  PropsWithoutRef<T & ExtendedProps & TextLayoutProps> & RefAttributes<unknown>
+> =>
   forwardRef((props: T & ExtendedProps & TextLayoutProps, ref) => {
     const {
       alignTextLeft,
