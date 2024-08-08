@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.2.0
+
+### Minor Changes
+
+- Improves typing for withShallot functions
+
 ## 2.1.0
 
 ### Minor Changes

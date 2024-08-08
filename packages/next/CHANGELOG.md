@@ -1,5 +1,27 @@
 # @shallot-ui/next
 
+## 4.2.0
+
+### Minor Changes
+
+- Improves typing for withShallot functions
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/component-checkbox@3.2.0
+  - @shallot-ui/component-button@3.2.0
+  - @shallot-ui/component-switch@3.2.0
+  - @shallot-ui/component-input@3.2.0
+  - @shallot-ui/component-modal@2.2.0
+  - @shallot-ui/platform-nextjs@2.2.0
+  - @shallot-ui/platform-react@2.2.0
+  - @shallot-ui/component-tag@3.2.0
+  - @shallot-ui/core-mixins@2.2.0
+  - @shallot-ui/core-props@2.2.0
+  - @shallot-ui/core-theme@2.2.0
+  - @shallot-ui/core-utils@2.2.0
+
 ## 4.1.0
 
 ### Minor Changes

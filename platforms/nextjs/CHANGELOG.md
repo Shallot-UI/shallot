@@ -1,5 +1,18 @@
 # @shallot-ui/platform-nextjs
 
+## 2.2.0
+
+### Minor Changes
+
+- Improves typing for withShallot functions
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/platform-react@2.2.0
+  - @shallot-ui/core-props@2.2.0
+  - @shallot-ui/core-theme@2.2.0
+
 ## 2.1.0
 
 ### Minor Changes
