@@ -1,0 +1,58 @@
+{
+  "name": "@shallot-ui/web",
+  "version": "4.2.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "check-types": "yarn tsc --noEmit",
+    "lint": "TIMING=1 eslint \"**/*.ts*\"",
+    "build": "tsup ./index.ts --format cjs --minify --dts --clean",
+    "dev": "tsup ./index.ts --format cjs --dts --clean --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "styled-components": "^6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+    "@types/prop-types": "^15.7.12",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "babel-loader": "^9.1.3",
+    "eslint": "^9.4.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "styled-components": "^6",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@shallot-ui/component-button": "workspace:*",
+    "@shallot-ui/component-checkbox": "workspace:*",
+    "@shallot-ui/component-input": "workspace:*",
+    "@shallot-ui/component-switch": "workspace:*",
+    "@shallot-ui/component-tag": "workspace:*",
+    "@shallot-ui/core-mixins": "workspace:*",
+    "@shallot-ui/core-props": "workspace:*",
+    "@shallot-ui/core-theme": "workspace:*",
+    "@shallot-ui/core-utils": "workspace:*",
+    "@shallot-ui/platform-react": "workspace:*",
+    "@shallot-ui/component-modal": "workspace:*",
+    "csstype": "^3.1.3",
+    "prop-types": "^15.8.1"
+  }
+}

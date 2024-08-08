@@ -1,13 +1,14 @@
 import { ComponentType } from 'react'
 import { useTheme } from 'styled-components'
+import { applyStyles } from '@shallot-ui/core-utils'
 import {
   getColor,
   getShadow,
   getRadius,
   getUnits,
-  applyStyles,
   getVariant,
-} from '@shallot-ui/core'
+  getGlobal,
+} from '@shallot-ui/core-mixins'
 
 import { SwitchProps, SwitchShallot } from './types'
 
@@ -18,8 +19,7 @@ export const withSwitchStyleProps =
   (props: SwitchProps<T>) => {
     const {
       color = 'Primary',
-      size = 4 / 3,
-      iconSize = 1,
+      unitSize = 4 / 3,
 
       shallot,
       variant = 'Default',
@@ -32,11 +32,11 @@ export const withSwitchStyleProps =
 
     let switchShallot: SwitchShallot = {
       Container: {
-        width: getUnits(2 * size - 1 / 3),
-        height: getUnits(size),
+        width: getUnits(2 * unitSize - 1 / 3),
+        height: getUnits(unitSize),
         borderRadius: getRadius('pill'),
-        backgroundColor: getColor('Shading', 200),
-        borderColor: getColor('Shading', 200),
+        backgroundColor: getGlobal('backgroundFadeColor'),
+        borderColor: 'transparent',
         position: 'relative',
         cursor: 'pointer',
         borderWidth: 1,
@@ -47,20 +47,17 @@ export const withSwitchStyleProps =
         `,
       },
       Handle: {
-        height: getUnits(size - 1 / 3),
-        width: getUnits(size - 1 / 3),
+        height: getUnits(unitSize - 1 / 3),
+        width: getUnits(unitSize - 1 / 3),
         borderRadius: getRadius('pill'),
         backgroundColor: getColor('Shading', 50),
-        borderColor: getColor('Shading', 200),
+        borderColor: 'transparent',
         borderWidth: 1,
         borderStyle: 'solid',
         position: 'absolute',
         top: 1,
         left: 1,
-        transition: `
-          left 200ms ease-in-out,
-          border-color 500ms ease-in-out
-        `,
+        transition: 'left 200ms ease-in-out',
       },
       ':focus': {
         Container: { boxShadow: getShadow('focused') },
@@ -70,11 +67,7 @@ export const withSwitchStyleProps =
           backgroundColor: getColor(color, 500),
           borderColor: getColor(color, 500),
         },
-        Handle: {
-          backgroundColor: getColor('Shading', 50),
-          borderColor: getColor('Shading', 50),
-          left: size * 12 - 3,
-        },
+        Handle: { left: unitSize * 12 - 3 },
       },
     }
 

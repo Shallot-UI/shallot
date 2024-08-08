@@ -1,6 +1,6 @@
 {
-  "name": "@shallot-ui/input",
-  "version": "2.1.2",
+  "name": "@shallot-ui/component-input",
+  "version": "3.2.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -17,34 +17,28 @@
     "build": "tsup ./index.tsx --format cjs --minify --dts --clean",
     "dev": "tsup ./index.tsx --format cjs --dts --clean --watch"
   },
+  "dependencies": {
+    "@shallot-ui/core-utils": "workspace:*",
+    "@shallot-ui/core-mixins": "workspace:*",
+    "@shallot-ui/core-theme": "workspace:*"
+  },
   "peerDependencies": {
-    "@shallot-ui/box": "^0.18.1",
-    "@shallot-ui/core": "^27.0.2",
-    "@shallot-ui/row": "^0.18.1",
-    "@shallot-ui/text": "^1.0.0",
-    "@shallot-ui/theme": "^3.1.1",
-    "react-dom": ">=18",
-    "react": ">=18",
-    "styled-components": ">=5"
+    "react": "^18",
+    "react-dom": "^18",
+    "styled-components": "^6"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.0",
-    "@shallot-ui/box": "*",
-    "@shallot-ui/core": "*",
-    "@shallot-ui/row": "*",
-    "@shallot-ui/text": "*",
-    "@shallot-ui/theme": "*",
-    "@types/react-dom": "^18.2.4",
-    "@types/react": "^18.0.28",
-    "@types/styled-components": ">=5",
-    "babel-loader": "^8.3.0",
-    "eslint-config-custom": "*",
-    "eslint": "^7.32.0",
-    "react-dom": "*",
-    "react": "*",
-    "styled-components": "*",
-    "tsconfig": "*",
-    "tsup": "^6.7.0",
-    "typescript": "^5.0.4"
+    "@babel/core": "^7.24.7",
+    "@types/react-dom": "^18",
+    "@types/react": "^18",
+    "babel-loader": "^9.1.3",
+    "@repo/eslint-config": "workspace:*",
+    "eslint": "^9.4.0",
+    "react-dom": "^18",
+    "react": "^18",
+    "styled-components": "^6",
+    "@repo/tsconfig": "workspace:*",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5"
   }
 }

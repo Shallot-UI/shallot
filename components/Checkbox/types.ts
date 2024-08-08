@@ -1,11 +1,11 @@
 import { DefaultTheme } from 'styled-components'
-import { ColorName, ShallotProp } from '@shallot-ui/theme'
+import { ColorName, ShallotProp } from '@shallot-ui/core-theme'
 
 export type CheckboxStyleProps = {
   color?: ColorName
   size?: number
   iconSize?: number
-  radius?: keyof DefaultTheme['radii']
+  radius?: keyof DefaultTheme['tokens']['radii']
 }
 
 export type BaseCheckboxShallot = {
