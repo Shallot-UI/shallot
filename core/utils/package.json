@@ -1,0 +1,48 @@
+{
+  "name": "@shallot-ui/core-utils",
+  "version": "2.2.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "check-types": "yarn tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "TIMING=1 eslint \"**/*.ts*\"",
+    "build": "tsup ./index.ts --format cjs --minify --dts --clean",
+    "dev": "tsup ./index.ts --format cjs --dts --clean --watch"
+  },
+  "dependencies": {
+    "@shallot-ui/core-theme": "workspace:*",
+    "@shallot-ui/core-mixins": "workspace:*",
+    "csstype": "^3.1.3"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "styled-components": "^6"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^9.4.0",
+    "jest": "^29.7.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "styled-components": "^6",
+    "ts-jest": "^29.1.4",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5"
+  }
+}

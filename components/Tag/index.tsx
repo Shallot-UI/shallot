@@ -8,7 +8,8 @@ import {
   getFontFamily,
   getUnits,
   getVariant,
-} from '@shallot-ui/core'
+  getGlobal,
+} from '@shallot-ui/core-mixins'
 
 import { TagProps, TagShallot } from './types'
 
@@ -19,7 +20,7 @@ export const withTagStyleProps =
   (props: TagProps<T>) => {
     const {
       // General
-      color = 'Shading',
+      color = 'Default',
       radius = 'md',
       outline,
 
@@ -35,8 +36,8 @@ export const withTagStyleProps =
       // Text Alignment
       textAlign = 'center',
 
-      verticalUnitPadding = 1 / 2,
-      horizontalUnitPadding = 1,
+      verticalUnitPadding = 1 / 3,
+      horizontalUnitPadding = 2 / 3,
 
       shallot,
       variant = 'Default',
@@ -50,23 +51,23 @@ export const withTagStyleProps =
     let tagShallot: TagShallot = {
       Container: {
         borderRadius: getRadius(radius),
-        backgroundColor: getColor(color, 100),
-        borderColor: getColor(color, 100),
+        backgroundColor:
+          color === 'Default'
+            ? getGlobal('backgroundFadeColor')
+            : getColor(color, 100),
+        borderColor: 'transparent',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 2,
         borderStyle: 'solid',
-        transition: `
-          background-color 0.2s ease-in-out,
-          border-color 0.2s ease-in-out,
-          box-shadow 0.2s ease-in-out,
-          transform 0.2s ease-in-out
-        `,
 
         ...(outline && {
           backgroundColor: 'transparent',
-          borderColor: getColor(color, 700),
+          borderColor:
+            color === 'Default'
+              ? getGlobal('foregroundFadeColor')
+              : getColor(color, 700),
         }),
 
         ...themeVariant?.Container,
@@ -78,7 +79,10 @@ export const withTagStyleProps =
         textAlign,
         fontWeight,
         fontFamily: getFontFamily(fontFamily),
-        color: getColor(color, 700),
+        color:
+          color === 'Default'
+            ? getGlobal('foregroundFadeColor')
+            : getColor(color, 700),
         fontSize: getFontSize(fontSize),
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),

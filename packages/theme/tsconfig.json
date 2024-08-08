@@ -1,5 +1,0 @@
-{
-  "extends": "tsconfig/base.json",
-  "include": [".", "styled.d.ts"],
-  "exclude": ["dist", "build", "node_modules"]
-}
