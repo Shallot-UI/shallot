@@ -1,5 +1,22 @@
 # @shallot-ui/next
 
+## 4.4.0
+
+### Minor Changes
+
+- Implements 'use client' directive on images
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/platform-nextjs@2.3.0
+
+## 4.3.0
+
+### Minor Changes
+
+- Uses use client directive on image
+
 ## 4.2.0
 
 ### Minor Changes

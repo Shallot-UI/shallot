@@ -1,5 +1,11 @@
 # @shallot-ui/platform-nextjs
 
+## 2.3.0
+
+### Minor Changes
+
+- Implements 'use client' directive on images
+
 ## 2.2.0
 
 ### Minor Changes
