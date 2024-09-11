@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.3.0
+
+### Minor Changes
+
+- Increments all packages up to date and fixes getRadius and other mixins that rely on DefaultTheme
+
 ## 2.2.0
 
 ### Minor Changes

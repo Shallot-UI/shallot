@@ -1,5 +1,26 @@
 # @shallot-ui/platform-react
 
+## 3.0.0
+
+### Minor Changes
+
+- Increments all packages up to date and fixes getRadius and other mixins that rely on DefaultTheme
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/component-button@4.0.0
+  - @shallot-ui/component-checkbox@4.0.0
+  - @shallot-ui/component-input@4.0.0
+  - @shallot-ui/component-modal@3.0.0
+  - @shallot-ui/component-switch@4.0.0
+  - @shallot-ui/component-tag@4.0.0
+  - @shallot-ui/component-textarea@2.0.0
+  - @shallot-ui/core-mixins@3.0.0
+  - @shallot-ui/core-props@3.0.0
+  - @shallot-ui/core-theme@2.3.0
+  - @shallot-ui/core-utils@3.0.0
+
 ## 2.2.0
 
 ### Minor Changes
