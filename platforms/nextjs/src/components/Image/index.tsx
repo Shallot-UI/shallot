@@ -1,5 +1,3 @@
-'use client'
-
 import { ComponentProps, FunctionComponent } from 'react'
 import { useTheme } from 'styled-components'
 import NextImage from 'next/image'

@@ -1,5 +1,11 @@
 # @shallot-ui/component-modal
 
+## 3.0.1
+
+### Patch Changes
+
+- Appends 'use client' directive to component files
+
 ## 3.0.0
 
 ### Minor Changes

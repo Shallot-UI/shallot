@@ -1,5 +1,16 @@
 # @shallot-ui/platform-react-native
 
+## 3.0.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @shallot-ui/component-checkbox@4.0.1
+  - @shallot-ui/component-button@4.0.1
+  - @shallot-ui/component-switch@4.0.1
+  - @shallot-ui/component-input@4.0.1
+  - @shallot-ui/component-tag@4.0.1
+
 ## 3.0.0
 
 ### Minor Changes

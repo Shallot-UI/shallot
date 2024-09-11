@@ -1,5 +1,11 @@
 # @shallot-ui/component-textarea
 
+## 2.0.1
+
+### Patch Changes
+
+- Appends 'use client' directive to component files
+
 ## 2.0.0
 
 ### Minor Changes

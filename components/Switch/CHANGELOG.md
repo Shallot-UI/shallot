@@ -1,5 +1,11 @@
 # @shallot-ui/component-switch
 
+## 4.0.1
+
+### Patch Changes
+
+- Appends 'use client' directive to component files
+
 ## 4.0.0
 
 ### Minor Changes
