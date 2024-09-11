@@ -1,5 +1,5 @@
 import type { DefaultTheme } from 'styled-components'
-import type { CSS, Theme } from '@shallot-ui/core-theme'
+import type { CSS } from '@shallot-ui/core-theme'
 
 import type { MixinFunction } from '@shallot-ui/core-theme'
 import { valueNotFoundError } from '../utils'
@@ -14,7 +14,7 @@ export const getColor =
   <
     C extends keyof T['tokens']['colors'],
     S extends keyof T['tokens']['colors'][C] extends infer R ? R : never,
-    T extends Theme = DefaultTheme,
+    T extends DefaultTheme = DefaultTheme,
   >(
     value: C | string,
     shade: S | number,
