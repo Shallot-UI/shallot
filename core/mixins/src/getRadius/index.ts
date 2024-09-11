@@ -1,5 +1,4 @@
 import type { DefaultTheme } from 'styled-components'
-import type { Theme } from '@shallot-ui/core-theme'
 import type { MixinFunction } from '@shallot-ui/core-theme'
 
 import { valueNotFoundError } from '../utils'
@@ -10,7 +9,7 @@ import { valueNotFoundError } from '../utils'
  * @returns A valid CSS radius value.
  */
 export const getRadius =
-  <T extends Theme = DefaultTheme>(
+  <T extends DefaultTheme = DefaultTheme>(
     rawKey: keyof T['tokens']['radii'],
     unitPadding?: number,
   ): MixinFunction<string | number> =>

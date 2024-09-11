@@ -34,20 +34,21 @@
   },
   "peerDependencies": {
     "@types/react-native": "^0.70",
-    "react": "^18",
     "react-native": "^0.70",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
     "styled-components": "^6"
   },
   "devDependencies": {
-    "@types/react": "^18",
-    "@types/react-native": "^0.70",
-    "eslint": "^9.4.0",
     "@repo/eslint-config": "workspace:*",
-    "react": "^18",
-    "react-native": "^0.70",
-    "styled-components": "^6",
     "@repo/tsconfig": "workspace:*",
-    "tsup": "^8.1.0",
-    "typescript": "^5.4.5"
+    "@types/react-native": "^0.70",
+    "@types/react": "^18",
+    "eslint": "^9.10.0",
+    "react-native": "^0.70",
+    "react": "18.1.0",
+    "styled-components": "^6",
+    "tsup": "^8.2.4",
+    "typescript": "^5.6.2"
   }
 }

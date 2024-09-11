@@ -1,5 +1,5 @@
 import type { DefaultTheme } from 'styled-components'
-import type { ShallotProp, Theme } from '@shallot-ui/core-theme'
+import type { ShallotProp } from '@shallot-ui/core-theme'
 import type { MixinFunction } from '@shallot-ui/core-theme'
 
 import { valueNotFoundError } from '../utils'
@@ -10,7 +10,7 @@ import { valueNotFoundError } from '../utils'
  * @returns The variant object.
  */
 export const getVariant =
-  <T extends ShallotProp = ShallotProp, S extends Theme = DefaultTheme>(
+  <T extends ShallotProp = ShallotProp, S extends DefaultTheme = DefaultTheme>(
     component: keyof S['variants'],
     name: string = 'Default',
   ): MixinFunction<T> =>
