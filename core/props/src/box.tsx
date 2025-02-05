@@ -94,7 +94,7 @@ export const withBoxLayoutProps = <T extends {}>(
 
     return (
       <Component
-        {...(nonStyleProps as T)}
+        {...(nonStyleProps as unknown as T)}
         shallot={extendedShallot}
         ref={ref}
       />

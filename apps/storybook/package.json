@@ -16,14 +16,14 @@
     "styled-components": "^6"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.5.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
-    "@chromatic-com/storybook": "^1.5.0",
     "@storybook/addon-essentials": "^8.1.6",
     "@storybook/addon-interactions": "^8.1.6",
     "@storybook/addon-links": "^8.1.6",
     "@storybook/addon-onboarding": "^8.1.6",
-    "@storybook/blocks": "^8.1.6",
+    "@storybook/blocks": "^8.3.0",
     "@storybook/nextjs": "^8.1.6",
     "@storybook/react": "^8.1.6",
     "@storybook/test": "^8.1.6",

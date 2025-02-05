@@ -30,7 +30,7 @@ export const withTextLayoutProps = <T extends {}>(
 ): ForwardRefExoticComponent<
   PropsWithoutRef<T & ExtendedProps & TextLayoutProps> & RefAttributes<unknown>
 > =>
-  forwardRef((props: T & ExtendedProps & TextLayoutProps, ref) => {
+  forwardRef<unknown, T & TextLayoutProps & ExtendedProps>((props, ref) => {
     const {
       alignTextLeft,
       alignTextCenter,
@@ -59,19 +59,22 @@ export const withTextLayoutProps = <T extends {}>(
       ...nonStyleProps
     } = props
 
-    const nextProps = {
-      ...nonStyleProps,
-      shallot: {
-        display: 'flex',
-        ...layoutShallot,
-        ...getTextAlignmentShallot(props),
-        ...getBorderShallot(props),
-        ...getFlexShallot(props),
-        ...getMarginShallot(props),
-        ...getSizingShallot(props),
-        ...shallot,
-      },
-    } as T
+    const extendedShallot = {
+      display: 'flex',
+      ...layoutShallot,
+      ...getTextAlignmentShallot(props),
+      ...getBorderShallot(props),
+      ...getFlexShallot(props),
+      ...getMarginShallot(props),
+      ...getSizingShallot(props),
+      ...(shallot as ShallotProp | undefined),
+    }
 
-    return <Component {...nextProps} ref={ref} />
+    return (
+      <Component
+        {...(nonStyleProps as unknown as T)}
+        shallot={extendedShallot}
+        ref={ref}
+      />
+    )
   })
