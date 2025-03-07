@@ -12,7 +12,7 @@
     "dist"
   ],
   "scripts": {
-    "check-types": "yarn tsc --noEmit",
+    "check-types": "pnpm tsc --noEmit",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
     "build": "tsup ./index.tsx --format cjs --minify --dts --clean",
     "postbuild": "node postbuild.js",

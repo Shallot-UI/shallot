@@ -12,7 +12,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "check-types": "yarn tsc --noEmit",
+    "check-types": "pnpm tsc --noEmit",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
     "build": "tsup ./index.ts --format cjs --minify --dts --clean",
     "dev": "tsup ./index.ts --format cjs --dts --clean --watch",
