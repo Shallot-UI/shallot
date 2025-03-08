@@ -1,6 +1,6 @@
 import { makeTheme } from '@shallot-ui/core-theme'
-import { getFontFamily } from '../index'
 import { DefaultTheme } from 'styled-components'
+import { getFontFamily } from '../index'
 
 describe('getFontFamily', () => {
   it('should return font family if font family name is valid', () => {
