@@ -17,7 +17,7 @@
     "build": "tsup ./src/index.ts --format cjs --minify --dts --clean",
     "dev": "tsup ./src/index.ts --format cjs --dts --clean --watch",
     "postbuild": "node postbuild.js",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },

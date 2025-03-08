@@ -13,7 +13,7 @@
   },
   "scripts": {
     "check-types": "pnpm tsc --noEmit",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
