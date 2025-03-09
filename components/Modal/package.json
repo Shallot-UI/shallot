@@ -12,7 +12,7 @@
     "dist"
   ],
   "scripts": {
-    "check-types": "yarn tsc --noEmit",
+    "check-types": "pnpm tsc --noEmit",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
     "build": "tsup ./index.tsx --format cjs --minify --dts --clean",
     "postbuild": "node postbuild.js",
@@ -36,7 +36,7 @@
     "@types/react-dom": "^18",
     "@types/react": "^18",
     "babel-loader": "^9.1.3",
-    "eslint": "^9.10.0",
+    "eslint": "^8",
     "react-dom": "^18",
     "react": "^18",
     "styled-components": "^6",

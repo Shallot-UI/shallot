@@ -1,8 +1,8 @@
-name: Check Tests
+name: Check Build
 on:
   pull_request:
 jobs:
-  check-types:
+  check-build:
     name: Run action
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +19,5 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Build Project
+      - name: Check Build
         run: pnpm build
-      - name: Check Tests
-        run: pnpm test

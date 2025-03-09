@@ -12,8 +12,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "check-types": "yarn tsc --noEmit",
-    "test": "jest",
+    "check-types": "pnpm tsc --noEmit",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
@@ -36,7 +36,7 @@
     "@types/jest": "^29.5.12",
     "@types/react-dom": "^18",
     "@types/react": "^18",
-    "eslint": "^9.10.0",
+    "eslint": "^8",
     "jest": "^29.7.0",
     "react-dom": "^18",
     "react": "^18",

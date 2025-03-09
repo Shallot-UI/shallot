@@ -16,22 +16,31 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
-      # 👇 Version 2 of the action
+      # Version 4 of the action
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 👈 Required to retrieve git history
+          fetch-depth: 0 # Required to retrieve git history
       - name: Install pnpm
-        run: npm install -g pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'pnpm'
       - name: Install dependencies
-        # 👇 Install dependencies with the same package manager used in the project (replace it as needed), e.g. yarn, npm, pnpm
+        # Install dependencies with the same package manager used in the project (replace it as needed), e.g. yarn, npm, pnpm
         run: pnpm install
-        # 👇 Adds Chromatic as a step in the workflow
+      - name: Build Project
+        run: pnpm build
+        # Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         # Options required to the GitHub Chromatic Action
         with:
-          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
+          # Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: 'apps/storybook'
-          onlyChanged: true # 👈 Required option to enable TurboSnap
+          onlyChanged: true # Required option to enable TurboSnap
