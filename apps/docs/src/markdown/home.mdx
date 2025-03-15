@@ -1,0 +1,80 @@
+import { Callout } from '@/components'
+
+# 🧅 Shallot UI
+
+Shallot is a design and theme system for [Styled Components](https://styled-components.com/), it was crafted to provide a powerful and flexible developer experience for styling on complex projects.
+
+- **Great Developer Experience:** Styles are derived from a standard theme object using elegant mixins with [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) support.
+- **Cross-Platform Support:** Share a single set of theme tokens and variants between `react`, `react-native`, and `react-email` features of a platform.
+- **Completely Flexible:** Add custom tokens, build your own mixins, use mixins directly in Styled Components' syntax, and more!
+
+## Example
+
+Here's a page rendered using default Shallot components. You can see how our style props can be used to easily define a layout that will be legible for developers and themeable for designers.
+
+```tsx
+import { Column, Fold, H1, P } from '@shallot-ui/next'
+
+const Page = () => (
+  <Fold alignCenter alignMiddle>
+    <Column unitsAround={2} unitGap={2}>
+      <H1>Hello World</H1>
+      <P>Welcome to Shallot.</P>
+    </Column>
+  </Fold>
+)
+
+export default Page
+```
+
+### Theme variants
+
+Components like `H1` and `P` in this example are the default `Text` component with variants applied. Here's the default variant definition for H1:
+
+```ts
+import { getFontFamily, getFontSize, getGlobal } from '@shallot-ui/next'
+
+const headingOne: ShallotProp = {
+  fontFamily: getFontFamily('Body'),
+  fontSize: getFontSize('xl'),
+  color: getGlobal('foregroundFadeColor'),
+  fontWeight: 600,
+}
+```
+
+Here's the actual definition of the `H1` component:
+
+```ts
+import { withTextShallot } from '@shallot-ui/next'
+
+export const H1 = withTextShallot('h1', {}, { variant: 'H1' })
+```
+
+### Cross-Platform Support
+
+Shallot provides cross-platform versions of many of its standard components. For example, this entire page could be adapted to React Native with a single line change:
+
+```diff
+- import {(Column, Fold, H1, P)} from '@shallot-ui/next'
++ import {(Column, Fold, H1, P)} from '@shallot-ui/native'
+```
+
+## Libraries
+
+Shallot is provided in the following libraries:
+
+- `@shallot-ui/react` &mdash; React Web Components
+  - Get it from [npm](https://www.npmjs.com/package/@shallot-ui/react) with `yarn add @shallot-ui/react` or `npm install @shallot-ui/react`
+  - Check out the source on [Github](https://github.com/Shallot-UI/shallot/tree/main/packages/web)
+- `@shallot-ui/next` &mdash; Components for Next.js
+  - Get it from [npm](https://www.npmjs.com/package/@shallot-ui/next) with `yarn add @shallot-ui/next` or `npm install @shallot-ui/next`
+  - Check out the source on [Github](https://github.com/Shallot-UI/shallot/tree/main/packages/next)
+- `@shallot-ui/native` &mdash; React Native Components
+  - Get it from [npm](https://www.npmjs.com/package/@shallot-ui/native) with `yarn add @shallot-ui/native` or `npm install @shallot-ui/native`
+  - Check out the source on [Github](https://github.com/Shallot-UI/shallot/tree/main/packages/native)
+- `@shallot-ui/email` &mdash; Email Components for use with`react-email`
+  - Get it from [npm](https://www.npmjs.com/package/@shallot-ui/email) with `yarn add @shallot-ui/email` or `npm install @shallot-ui/email`
+
+```
+
+```

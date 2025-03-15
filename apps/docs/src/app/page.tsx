@@ -1,13 +1,14 @@
 'use client'
 
-import { Column, Fold, Text } from '@shallot-ui/next'
+import { Column, Fold } from '@shallot-ui/next'
+import Content from '@/markdown/home.mdx'
 
-export default function Home() {
-  return (
-    <Fold>
-      <Column>
-        <Text>test</Text>
-      </Column>
-    </Fold>
-  )
-}
+const Page = () => (
+  <Fold alignCenter>
+    <Column maxUnitWidth={60} unitsAround={2}>
+      <Content />
+    </Column>
+  </Fold>
+)
+
+export default Page
