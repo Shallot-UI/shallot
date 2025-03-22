@@ -1,0 +1,33 @@
+## Installation
+
+Since Shallot is built on Styled Components, installation is quite simple. Once you've installed `styled-components`, you can install the shallot package for your project and replace your `<ThemeProvider />` with a `<ShallotProvider />`.
+
+<br />
+
+Choose the **package that matches your platform:**
+
+```shell
+pnpm i @shallot-ui/react # Default package for React
+pnpm i @shallot-ui/next # Optimized for Next JS
+pnpm i @shallot-ui/email # Stripped down for react-email
+pnpm i @shallot-ui/react-native # Default package for React Native
+```
+
+Now you can wrap your project in a `<ShallotProvider />` instead of a `<ThemeProvider />` and you will have a valid Shallot theme ready to use.
+
+```tsx
+import { FC, ReactNode } from 'react'
+import { ShallotProvider } from '@shallot-ui/next'
+
+const Layout: FC<{ children: ReactNode }> = ({ children }) => (
+  <ShallotProvider>{children}</ShallotProvider>
+)
+```
+
+Using any Shallot component will now use the theme you've provided. All of the fonts, colors, and spacing from the default theme will be applied.
+
+```tsx
+import { H1 } from '@shallot-ui/next'
+
+const Page = () => <H1>Hello World</H1>
+```

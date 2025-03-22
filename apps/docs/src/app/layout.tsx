@@ -3,11 +3,9 @@ import type { Metadata } from 'next'
 // import { Analytics } from '@vercel/analytics/react'
 
 import StyledComponentsRegistry from '@/lib/registry'
-import { ThemeProvider } from '@/theme'
+import { DynamicThemeProvider } from '@/theme'
 
-// import '@/theme/typefaces/clash-display/styles.css'
-// import '@/theme/typefaces/general-sans/styles.css'
-// import '@/theme/typefaces/roboto-mono/styles.css'
+import '@/theme/typefaces.css'
 
 export const metadata: Metadata = {
   title: 'Shallot',
@@ -25,7 +23,7 @@ const RootLayout: FC<Readonly<{ children: ReactNode }>> = ({ children }) => (
   <html lang="en">
     <body>
       <StyledComponentsRegistry>
-        <ThemeProvider>{children}</ThemeProvider>
+        <DynamicThemeProvider>{children}</DynamicThemeProvider>
       </StyledComponentsRegistry>
       {/* <Analytics /> */}
     </body>

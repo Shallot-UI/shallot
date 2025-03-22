@@ -1,35 +1,222 @@
-import { Callout } from '@/components'
+import {
+  Callout,
+  Collapsable,
+  NarrativeText,
+  Slides,
+  ThemeSelector,
+} from '@/components'
 
-# 🧅 Shallot UI
+# Shallot UI
 
-Shallot is a design and theme system for [Styled Components](https://styled-components.com/), it was crafted to provide a powerful and flexible developer experience for styling on complex projects.
+> I'm a big fan of [Styled Components](https://styled-components.com/), it's the best way to write styles while still "thinking in react". Over the years, I've gravitated towards a set of tools that have made it enough without the bloat of a UI kit. Things like a standard theme object, mixins, variants, common components, and style props provide a great developer experience without the bloat of a full component library.
 
-- **Great Developer Experience:** Styles are derived from a standard theme object using elegant mixins with [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) support.
-- **Cross-Platform Support:** Share a single set of theme tokens and variants between `react`, `react-native`, and `react-email` features of a platform.
-- **Completely Flexible:** Add custom tokens, build your own mixins, use mixins directly in Styled Components' syntax, and more!
+> Shallot is my attempt to formalize these patterns. It's entirely open-sourced (MIT) and published on `npm`, but it should read more like an essay. I'm not planning to develop or maintain the packages beyond my own uses. Many of these tools have been used in production projects for years. I hope you'll find it useful.
 
-## Example
+-- [Mitchell Butler](https://mitchellbutler.com)
 
-Here's a page rendered using default Shallot components. You can see how our style props can be used to easily define a layout that will be legible for developers and themeable for designers.
+<Callout unitsAbove={2}>
+  Looking for installation instructions? Head over to the
+  [installation](/installation/overview) page.
+</Callout>
+
+## What is a shallot?
+
+Our base unit is an object called a "shallot". If you've ever written an inline style in React, you know how to write a shallot.
+
+```ts
+// Every valid style object is a valid shallot
+const myFirstShallot: ShallotProp = {
+  fontFamily: 'Inter, sans-serif',
+  fontSize: 20,
+  fontWeight: 600,
+}
+```
+
+Writing styles as objects offers **a lot of natural benefits:**
+
+- There's no context switching between languages.
+- JS objects can be computed and extended.
+- Objects can be typed (with TypeScript) and validated.
+- We can easily serialize them for API calls.
+- Style exceptions can be monitored in the same way as any others.
+
+### Mixins
+
+One key difference between shallots and style objects is the support for mixins. Mixins are simple functions that return a calculated value or a theme token. In practice, shallots consist primarily of mixins. You can think of them less as styles and more as a set of instructions for how to calculate a style from the theme.
+
+```ts
+// But they can also be more complex
+import { getFontFamily, getFontSize, getGlobal } from '@shallot-ui/next'
+
+const mySecondShallot: ShallotProp = {
+  fontFamily: getFontFamily('Body'),
+  fontSize: getFontSize('md'),
+  color: getGlobal('foregroundColor'),
+  fontWeight: 600,
+}
+```
+
+We provide many out of the box, but they're also quite simple to create. For example, [here's the `getFontSize` mixin](https://github.com/Shallot-UI/shallot/blob/main/core/mixins/src/getFontSize/index.ts).
+
+<Callout>
+  **Concerned about performance?** Mixins are incredibly light and
+  styled-components [supports server-side
+  optimiziations](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components)
+  in frameworks like Next.
+</Callout>
+
+### Layering
+
+Shallots can have multiple layers (hence the name). Layering allows you to define a single shallot for a more complex component. For example, a button has a container and a title, and different states. This allows shallots to act like component variants in other systems — single tokens that define the entire style for a component.
+
+```ts
+// But they can also be more complex
+import {
+  getFontFamily,
+  getFontSize,
+  getGlobal,
+  getRadius,
+  ButtonShallot,
+} from '@shallot-ui/next'
+
+const primaryButton: ShallotProp = {
+  Container: {
+    backgroundColor: getColor('Primary', 500),
+    borderRadius: getRadius('md'),
+  },
+  Title: {
+    fontFamily: getFontFamily('UI'),
+    fontSize: getFontSize('md'),
+    color: getGlobal('buttonForegroundColor'),
+    fontWeight: 600,
+  },
+  // A state has the same structure as the base shallot.
+  ':hover': {
+    Container: { backgroundColor: getColor('Primary', 600) },
+    Title: { textDecoration: 'underline' },
+  },
+  // States don't have to be valid CSS pseudo-classes.
+  ':loading': {
+    Container: { backgroundColor: getColor('Shading', 400) },
+  },
+}
+
+const MyApp = () => (
+  <Button title="I'm a button" shallot={primaryButton} />
+)
+```
+
+In fact, the base theme includes a `variants` object that can be used to store and reference shallots. You can see here how we could **use our primary button shallot as a variant:**
 
 ```tsx
-import { Column, Fold, H1, P } from '@shallot-ui/next'
+import { ShallotProvider } from '@shallot-ui/next'
 
-const Page = () => (
-  <Fold alignCenter alignMiddle>
-    <Column unitsAround={2} unitGap={2}>
-      <H1>Hello World</H1>
-      <P>Welcome to Shallot.</P>
-    </Column>
-  </Fold>
+const MyApp = () => (
+  <ShallotProvider variants={{ Button: { primary: primaryButton } }}>
+    <Button title="I'm a button" variant="primary" />
+  </ShallotProvider>
 )
-
-export default Page
 ```
+
+<Callout>
+  Theme variants can be useful in some cases where common components should
+  share a set of styles, but in many cases simply using a shallot is sufficient
+  and easier to optimize.
+</Callout>
+
+## Writing legible markup
+
+Defining styles inside a JS object is nothing new, we're used to doing this in react with the style prop.
+
+```tsx
+// 1 - Use it just like a style prop on a Shallot component
+<Text shallot={example}>I'm an example heading</Text>
+
+// 2 - Use it in your theme variants
+// add the variant to your theme
+variants: { Text: { example }}
+// use it in your markup
+<Text variant="example">I'm a heading</Text>
+
+// 3 - Use it in a new shallot component
+// define the component
+const ExampleHeading = withTextShallot('h1', example)
+// use it in your markup
+<ExampleHeading unitsAbove={1}>I'm a heading</ExampleHeading>
+```
+
+<Collapsable title="Serializable Styles">
+
+Easily bake themes into your styles and produce shallot objects that can be shipped over API calls.
+
+</Collapsable>
+
+### Simple to Extend
+
+### Intellisense Typeahead
+
+## Goal #2: Standard Theme Tokens
+
+<ThemeSelector />
+
+### The Shallot Prop
+
+Any component created with `withTextShallot` or `withBoxShallot` also comes with a `shallot` prop. This prop is a style object that will be merged with the component's default style object, and you can use mixins to retrieve theme tokens.
+
+```tsx
+<Heading shallot={{ color: getGlobal('Danger', 800) }}>
+  This is a dangerous heading.
+</Heading>
+```
+
+It's called a "Shallot Prop" because it can have layers (like a shallot). These layers include not just pseudo-classes like `:hover` and `:active`, but also nested components. For example, **here's a shallot for `<Button />`:**
+
+```tsx
+const success: ButtonShallot = {
+  Container: {
+    padding: getUnits(2),
+    backgroundColor: getColor('Success', 500),
+    borderRadius: getRadius('md'),
+  },
+  Title: {
+    color: getColor('Shading', 50),
+    fontSize: getFontSize('md'),
+    fontWeight: 600,
+  },
+  ':hover': {
+    Container: {
+      backgroundColor: getColor('Success', 600),
+    },
+  },
+}
+```
+
+Since every shallot is just an object, you can simply import them and use them as needed.
+
+```tsx
+<Button shallot={success} title="Let's Go!" />
+```
+
+### Variants
+
+Components also have a `variant` prop that allows you to apply a pre-defined variant to the component. Variants are contained in the theme. They act just like the `shallot` prop.
+
+```tsx
+<Heading variant="Danger">This is anoter dangerous heading.</Heading>
+```
+
+In fact, the `H1` and `P` components in the "Hello World" example above are the default `Text` component with variants applied. This is accomplished with a third parameter to the `withTextShallot` function.
+
+```ts
+// This is the entire definition of the H1 component
+const H1 = withTextShallot('h1', {}, { variant: 'H1' })
+```
+
+This will load the default `H1` variant from the theme wherever `<H1 />` is used.
 
 ### Theme variants
 
-Components like `H1` and `P` in this example are the default `Text` component with variants applied. Here's the default variant definition for H1:
+Components like `H1` and `P` in this example are the default `Text` component with variants applied. Here's the default variant definition for `H1`:
 
 ```ts
 import { getFontFamily, getFontSize, getGlobal } from '@shallot-ui/next'
@@ -50,7 +237,145 @@ import { withTextShallot } from '@shallot-ui/next'
 export const H1 = withTextShallot('h1', {}, { variant: 'H1' })
 ```
 
-### Cross-Platform Support
+## Goal #3: Legible Markup
+
+In React, most of what we write is experienced and communicated through the arrangement of components in the DOM. On teams, clear legible markup can save a lot of time and communication. Well written markup is like poetry.
+
+```tsx
+<Fold alignCenter alignMiddle>
+  <Column fullWidth maxUnitWidth={40} unitsAround={2} unitGap={2}>
+    <H1>Hello World</H1>
+    <P>Welcome to Shallot.</P>
+    <Row unitGap={1}>
+      <Button title="Get Started" grow />
+      <Button title="Learn More" variant="Secondary" grow />
+    </Row>
+  </Column>
+</Fold>
+```
+
+Even if you haven't seen this markup before, you can probably reason about how
+the elements are structured on the page. The goal is for the markup to express the framing of the page, not its implementation.
+
+<Slides.Container>
+<Slides.Slide>
+### Standard: CSS Classnames
+With standard `css`/`sass`, the markup is cleaner, but some of the description of the page layout is lost. We don't have a confusing mix of references to global and local styles.
+
+```tsx
+// Example: Standard CSS
+// ---------------------
+<div className="hero">
+  <div className="hero__content">
+    <h1 className="hero__title">Hello World</h1>
+    <p className="hero__text">Welcome to Shallot.</p>
+    <div className="hero__buttons">
+      <button className="button button--primary button--full-width">
+        Get Started
+      </button>
+      <button className="button button--secondary button--full-width">
+        Learn More
+      </button>
+    </div>
+  </div>
+</div>
+```
+
+</Slides.Slide>
+  <Slides.Slide>
+### Utility Classes (e.g., Tailwind)
+For example, [Tailwind CSS](https://tailwindcss.com/) has a lot of great qualities, but legible markup is not one of them. The reliance on utility classes makes markup incredibly verbose and hard to read.
+
+It's great that these classes reference theme tokens, which means that the code can be easily re-used between projects, but if we want to change which token they reference, we have to change the `classNames`. This is why many Tailwind UI kits rely primarily on copy/paste.
+
+```tsx
+// Example: Tailwind CSS
+// ---------------------
+<div className="flex items-center justify-center min-h-screen">
+  <div className="flex flex-col items-center space-y-8 px-8 py-8">
+    <h1 className="text-4xl font-bold">Hello World</h1>
+    <p className="text-lg">Welcome to Shallot.</p>
+    <div className="flex flex-row space-x-4 w-full">
+      <button className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded">
+        Get Started
+      </button>
+      <button className="flex-1 bg-white hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 border border-gray-300 rounded">
+        Learn More
+      </button>
+    </div>
+  </div>
+</div>
+```
+
+</Slides.Slide>
+<Slides.Slide>
+### Layout Components & Props (Shallot)
+In Shallot, we combine standard components with layout props and theme variants to produce markup that describes enough of the page to be understood without looking at the styles, while staying simple and concise. You haven't seen this syntax before, but I'd bet you could read through this component and have a fairly good idea of how it's structured.
+
+```tsx
+// Example: Shallot UI
+// -------------------
+<Fold alignCenter alignMiddle>
+  <Column unitsAround={2} unitGap={2}>
+    <H1>Hello World</H1>
+    <P>Welcome to Shallot.</P>
+    <Row unitGap={1}>
+      <Button title="Get Started" grow />
+      <Button title="Learn More" variant="Secondary" grow />
+    </Row>
+  </Column>
+</Fold>
+```
+
+</Slides.Slide>
+</Slides.Container>
+
+<Collapsable title="Layout Components (e.g., `<Row />`, `<H1 />`, `<Button />`">
+
+At its root, each Shallot component is generally one of two types: `Box` or `Text`. Boxes position themselves and other objects on the page, while text components contain text. Both share many common layout props.
+
+The definition of these components is quite simple. Here's an example of **how you might create a `<Heading />` component:**
+
+```tsx
+import {
+  withTextShallot,
+  getFontFamily,
+  getFontSize,
+  getGlobal,
+} from '@shallot-ui/next'
+
+const Heading = withTextShallot('h1', {
+  fontFamily: getFontFamily('Display'),
+  fontSize: getFontSize('xl'),
+  fontWeight: 600,
+  color: getGlobal('Shading', 800),
+})
+
+// Now you can render the component
+const Page = () => <Heading>I'm a heading</Heading>
+```
+
+The first argument of the `withTextShallot` function (and its siblings `withBoxShallot` and `withShallot`) is the HTML tag that should be used for the component.
+
+The second argument is an object that maps theme tokens to the component's styling. This object is called a "shallot" and is at the core of the library. The functions that retrieve the tokens are called "mixins".
+
+</Collapsable>
+
+<Collapsable title="Layout Props">
+
+Shallot seperates styles that impact a components _appearance_ from ones that describe how it is laid out relative to _other_ components. To improve legibility and component reuse, most layout styles can also be applied as props.
+
+```tsx
+<Heading fullWidth alignTextCenter unitsAround={1}>
+  Give me some space
+</Heading>
+```
+
+In the example above, you'll notice some like `unitsAround`, `unitGap`, `alignCenter`, and `alignMiddle`. These are called "layout props" and they help to describe how components are aligned and positioned relative to each other on the page. Layout props are generally based on Flexbox and a "grid paper" style of spacing where all styles are relative to a unit value (`12px` by default).
+
+</Collapsable>
+
+<Collapsable title="Cross-platform">
 
 Shallot provides cross-platform versions of many of its standard components. For example, this entire page could be adapted to React Native with a single line change:
 
@@ -59,22 +384,4 @@ Shallot provides cross-platform versions of many of its standard components. For
 + import {(Column, Fold, H1, P)} from '@shallot-ui/native'
 ```
 
-## Libraries
-
-Shallot is provided in the following libraries:
-
-- `@shallot-ui/react` &mdash; React Web Components
-  - Get it from [npm](https://www.npmjs.com/package/@shallot-ui/react) with `yarn add @shallot-ui/react` or `npm install @shallot-ui/react`
-  - Check out the source on [Github](https://github.com/Shallot-UI/shallot/tree/main/packages/web)
-- `@shallot-ui/next` &mdash; Components for Next.js
-  - Get it from [npm](https://www.npmjs.com/package/@shallot-ui/next) with `yarn add @shallot-ui/next` or `npm install @shallot-ui/next`
-  - Check out the source on [Github](https://github.com/Shallot-UI/shallot/tree/main/packages/next)
-- `@shallot-ui/native` &mdash; React Native Components
-  - Get it from [npm](https://www.npmjs.com/package/@shallot-ui/native) with `yarn add @shallot-ui/native` or `npm install @shallot-ui/native`
-  - Check out the source on [Github](https://github.com/Shallot-UI/shallot/tree/main/packages/native)
-- `@shallot-ui/email` &mdash; Email Components for use with`react-email`
-  - Get it from [npm](https://www.npmjs.com/package/@shallot-ui/email) with `yarn add @shallot-ui/email` or `npm install @shallot-ui/email`
-
-```
-
-```
+</Collapsable>

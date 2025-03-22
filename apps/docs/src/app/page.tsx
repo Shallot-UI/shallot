@@ -1,13 +1,18 @@
 'use client'
 
-import { Column, Fold } from '@shallot-ui/next'
+import { Fold, getFontFamily, withBoxShallot } from '@shallot-ui/next'
 import Content from '@/markdown/home.mdx'
+
+const Wrapper = withBoxShallot('div', {
+  fontFamily: getFontFamily('Body'),
+  lineHeight: 1.5,
+})
 
 const Page = () => (
   <Fold alignCenter>
-    <Column maxUnitWidth={60} unitsAround={2}>
+    <Wrapper fullWidth maxUnitWidth={60} unitsAround={2}>
       <Content />
-    </Column>
+    </Wrapper>
   </Fold>
 )
 
