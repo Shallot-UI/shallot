@@ -2,9 +2,12 @@
 
 import { createContext, FC, ReactNode, useContext } from 'react'
 import {
+  getColor,
   getFontFamily,
   getFontSize,
   getGlobal,
+  getRadius,
+  getUnits,
   makeNextThemeVariants,
   ShallotProvider,
 } from '@shallot-ui/next'
@@ -18,6 +21,42 @@ const variants = makeNextThemeVariants({
       fontSize: getFontSize('xl'),
       color: getGlobal('foregroundFadeColor'),
       fontWeight: 600,
+    },
+  },
+  Box: {
+    card: {
+      backgroundColor: getColor('Shading', 100),
+      padding: getUnits(2),
+      borderRadius: getRadius('lg'),
+    },
+  },
+  Button: {
+    Default: {
+      Container: {
+        borderRadius: getRadius('md'),
+      },
+    },
+    Secondary: {
+      Container: {
+        borderRadius: getRadius('md'),
+        backgroundColor: 'transparent',
+        borderColor: getColor('Shading', 700),
+      },
+      Title: {
+        color: getColor('Shading', 700),
+      },
+      ':hover': {
+        Container: {
+          backgroundColor: 'transparent',
+          borderColor: getColor('Shading', 600),
+        },
+      },
+      ':active': {
+        Container: {
+          backgroundColor: 'transparent',
+          borderColor: getColor('Shading', 600),
+        },
+      },
     },
   },
 })
