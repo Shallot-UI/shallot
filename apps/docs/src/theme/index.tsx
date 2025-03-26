@@ -1,78 +1,34 @@
 'use client'
 
 import { createContext, FC, ReactNode, useContext } from 'react'
-import {
-  getColor,
-  getFontFamily,
-  getFontSize,
-  getGlobal,
-  getRadius,
-  getUnits,
-  makeNextThemeVariants,
-  ShallotProvider,
-} from '@shallot-ui/next'
+import { getColor, makeThemeGlobals, ShallotProvider } from '@shallot-ui/next'
 import useDynamicTokens from './hooks/useDynamicTokens'
 import { DynamicColors } from './hooks/useDynamicColors'
-
-const variants = makeNextThemeVariants({
-  Text: {
-    H1: {
-      fontFamily: getFontFamily('Display'),
-      fontSize: getFontSize('xl'),
-      color: getGlobal('foregroundFadeColor'),
-      fontWeight: 600,
-    },
-  },
-  Box: {
-    card: {
-      backgroundColor: getColor('Shading', 100),
-      padding: getUnits(2),
-      borderRadius: getRadius('lg'),
-    },
-  },
-  Button: {
-    Default: {
-      Container: {
-        borderRadius: getRadius('md'),
-      },
-    },
-    Secondary: {
-      Container: {
-        borderRadius: getRadius('md'),
-        backgroundColor: 'transparent',
-        borderColor: getColor('Shading', 700),
-      },
-      Title: {
-        color: getColor('Shading', 700),
-      },
-      ':hover': {
-        Container: {
-          backgroundColor: 'transparent',
-          borderColor: getColor('Shading', 600),
-        },
-      },
-      ':active': {
-        Container: {
-          backgroundColor: 'transparent',
-          borderColor: getColor('Shading', 600),
-        },
-      },
-    },
-  },
-})
+import useDynamicVariants, { DynamicVariants } from './hooks/useDynamicVariants'
 
 const DynamicThemeContext = createContext<{
   dynamicColors: DynamicColors
+  dynamicVariants: DynamicVariants
 } | null>(null)
 
 export const DynamicThemeProvider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const { tokens, dynamicColors } = useDynamicTokens()
+  const { variants, dynamicVariants } = useDynamicVariants()
+
+  const globals = makeThemeGlobals({
+    backgroundColor: getColor('Shading', 100),
+    headingColor: getColor('Shading', 950),
+    'mode:dark': {
+      backgroundColor: getColor('Shading', 950),
+      headingColor: getColor('Shading', 50),
+    },
+  })
 
   return (
-    <DynamicThemeContext.Provider value={{ dynamicColors }}>
-      <ShallotProvider tokens={tokens} variants={variants}>
+    <DynamicThemeContext.Provider value={{ dynamicColors, dynamicVariants }}>
+      <ShallotProvider tokens={tokens} variants={variants} globals={globals}>
         {children}
       </ShallotProvider>
     </DynamicThemeContext.Provider>

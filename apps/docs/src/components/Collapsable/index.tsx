@@ -1,3 +1,5 @@
+'use client'
+
 import { H3 } from '@shallot-ui/next'
 import { FC, ReactNode, useState } from 'react'
 

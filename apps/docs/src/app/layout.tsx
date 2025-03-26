@@ -1,10 +1,10 @@
 import { FC, ReactNode } from 'react'
 import type { Metadata } from 'next'
-// import { Analytics } from '@vercel/analytics/react'
 
 import StyledComponentsRegistry from '@/lib/registry'
 import { DynamicThemeProvider } from '@/theme'
 
+import MainLayout from '@/layouts/Main'
 import '@/theme/typefaces.css'
 
 export const metadata: Metadata = {
@@ -23,9 +23,10 @@ const RootLayout: FC<Readonly<{ children: ReactNode }>> = ({ children }) => (
   <html lang="en">
     <body>
       <StyledComponentsRegistry>
-        <DynamicThemeProvider>{children}</DynamicThemeProvider>
+        <DynamicThemeProvider>
+          <MainLayout>{children}</MainLayout>
+        </DynamicThemeProvider>
       </StyledComponentsRegistry>
-      {/* <Analytics /> */}
     </body>
   </html>
 )
