@@ -1,4 +1,4 @@
-const DEFAULT_PRIMARY_COLORS = {
+const Blue = {
   50: '#eff6ff',
   100: '#dbeafe',
   200: '#bfdbfe',
@@ -12,7 +12,7 @@ const DEFAULT_PRIMARY_COLORS = {
   950: '#172554',
 } as const
 
-const DEFAULT_SUCCESS_COLORS = {
+const Green = {
   50: '#f0fdf4',
   100: '#dcfce7',
   200: '#bbf7d0',
@@ -26,7 +26,7 @@ const DEFAULT_SUCCESS_COLORS = {
   950: '#052e16',
 } as const
 
-const DEFAULT_WARNING_COLORS = {
+const Yellow = {
   50: '#fffbeb',
   100: '#fef3c7',
   200: '#fde68a',
@@ -40,7 +40,7 @@ const DEFAULT_WARNING_COLORS = {
   950: '#451a03',
 } as const
 
-const DEFAULT_DANGER_COLORS = {
+const Red = {
   50: '#fef2f2',
   100: '#fee2e2',
   200: '#fecaca',
@@ -54,7 +54,7 @@ const DEFAULT_DANGER_COLORS = {
   950: '#450a0a',
 } as const
 
-const DEFAULT_SHADING_COLORS = {
+const Gray = {
   50: '#ffffff',
   100: '#f1f5f9',
   200: '#e2e8f0',
@@ -69,9 +69,14 @@ const DEFAULT_SHADING_COLORS = {
 } as const
 
 export const DEFAULT_COLORS = {
-  Primary: DEFAULT_PRIMARY_COLORS,
-  Success: DEFAULT_SUCCESS_COLORS,
-  Warning: DEFAULT_WARNING_COLORS,
-  Danger: DEFAULT_DANGER_COLORS,
-  Shading: DEFAULT_SHADING_COLORS,
+  Primary: Blue,
+  Success: Green,
+  Warning: Yellow,
+  Danger: Red,
+  Shading: Gray,
+  Blue,
+  Green,
+  Yellow,
+  Red,
+  Gray,
 } as const
