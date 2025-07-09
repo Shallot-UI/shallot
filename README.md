@@ -1,74 +1,200 @@
-# 🧅 Shallot
+# 🧅 Shallot UI
 
-Welcome to Shallot, an open-source React UI library for design-minded developers looking for a fast and consistent workflow on web & mobile. Drawing inspiration from industry-leading libraries like `material-ui`, `chakra`, and `tailwind`, Shallot understands the layers of component styling. With the power of `styled-components`, we offer a structured yet adaptable styling approach to fit every unique project's design landscape.
+A React UI library for design-minded developers who need flexibility without the constraints.
 
-* Check out [our Storybook](https://shallotui.com)
+> During years of cross-platform work in React & React Native, I never found a design system whose benefits were worth the limitations. Many systems seem promising until you leave the boundaries of the components they offer. Others have such an imposing groove that everything you build starts to look the same. I wanted something that would let me write concise markup, use a single cross-platform approach to styling, and always use the best component for the job. Shallot is my attempt to formalize these patterns.
+>
+> -- [Mitchell Butler](https://mitchellbutler.com)
+
+## Why Shallot?
+
+Traditional UI libraries often force you into their way of thinking. You either work within their constraints or fight against them with hacky workarounds. Shallot takes a different approach by recognizing that styling has layers (just like a shallot).
+
+Instead of providing a rigid set of pre-styled components, Shallot gives you:
+
+- **Flexible theming** that can be applied wholly or partially
+- **Layered styling** that separates layout, common styles, and component-specific styles
+- **Cross-platform consistency** between web and React Native
+- **Type-safe styling** with full TypeScript support
+- **No lock-in** - use as much or as little as you need
+
+## Core Concepts
+
+### 🎨 Themes
+
+Themes in Shallot have three parts:
+
+- **Tokens**: Shared values like colors and font sizes
+- **Globals**: Symbolic names (like `backgroundColor`) that can change based on mode
+- **Variants**: Pre-composed styles for common components
+
+```tsx
+const tokens = makeThemeTokens({
+  colors: {
+    Primary: { 500: '#0066cc', 600: '#0052a3' },
+  },
+})
+
+const globals = makeThemeGlobals({
+  backgroundColor: '#ffffff',
+  foregroundColor: '#000000',
+  'mode:dark': {
+    backgroundColor: '#000000',
+    foregroundColor: '#ffffff',
+  },
+})
+```
+
+### 🧅 Shallots (Layered Styles)
+
+A "shallot" is a style object that can have layers for different component parts and states:
+
+```tsx
+const buttonShallot = {
+  Container: {
+    backgroundColor: getColor('Primary', 500),
+    padding: getUnits(2)
+  },
+  Title: {
+    color: 'white',
+    fontSize: getFontSize('md')
+  },
+  ':hover': {
+    Container: { backgroundColor: getColor('Primary', 600) }
+  }
+}
+
+// Use it directly on a component
+<Button shallot={buttonShallot} title="Click me" />
+```
+
+### 🔧 Mixins
+
+Mixins connect your styles to the theme:
+
+- `getColor('Primary', 500)` - Get color from palette
+- `getUnits(2)` - Get spacing units
+- `getFontSize('lg')` - Get font size
+- `getGlobal('backgroundColor')` - Get global value
 
 ## Getting Started
 
-#### 1 — Installation
+### Installation
 
 ```bash
-# for React Core:
-yarn add @shallot-ui/web
+# For web projects:
+npm install @shallot-ui/web
 
-# ... or for NextJS:
-yarn add @shallot-ui/next
+# For Next.js:
+npm install @shallot-ui/next
 
-# ... or for React Native:
-yarn add @shallot-ui/native
+# For React Native:
+npm install @shallot-ui/native
 ```
 
-#### 2 — Theme Context
-
-All Shallot UI components should be nested within a `<ShallotProvider />`. Under the hood, this is a `ThemeProvider` from `styled-components`, but it comes with our default theme and can be customized with theme options.
+### Basic Setup
 
 ```tsx
-# For example, on web:
-import { ShallotProvider } from '@shallot-ui/web'
+import { ShallotProvider, Column, Text, Button } from '@shallot-ui/web'
 
 const App = () => (
-  <ShallotProvider
-    theme={{ fontSizes: { sm: 10, md: 12, lg: 14 } }}
-  >
-     {/* ... your application */}
+  <ShallotProvider>
+    <Column alignCenter unitGap={2}>
+      <Text variant="H1">Welcome to Shallot</Text>
+      <Text variant="Body">
+        Build beautiful, flexible UIs without the constraints.
+      </Text>
+      <Button variant="Primary" title="Get Started" />
+    </Column>
   </ShallotProvider>
 )
 ```
 
-#### 3 — Components
+### Custom Theme
 
 ```tsx
-# For example, on web:
-import { ShallotProvider, Fold, Text, Button } from '@shallot-ui/web'
+import {
+  ShallotProvider,
+  makeTheme,
+  makeThemeTokens,
+  makeThemeVariants
+} from '@shallot-ui/web'
 
-const App = () => (
-  <ShallotProvider>
-    <Fold alignCenter alignMiddle>
-      <Text variant="H1" unitsBelow={1}>👋 Welcome to Shallot</Text>
-      <Button variant="Primary" title="Let's Go!" />
-    </ShallotProvider>
-)
+const customTheme = makeTheme({
+  tokens: makeThemeTokens({
+    fontFamilies: {
+      Body: 'Inter, sans-serif',
+      Heading: 'Poppins, sans-serif'
+    }
+  }),
+  variants: makeThemeVariants({
+    Text: {
+      H1: {
+        fontFamily: getFontFamily('Heading'),
+        fontSize: getFontSize('xl')
+      }
+    }
+  })
+})
+
+<ShallotProvider theme={customTheme}>
+  {/* Your app */}
+</ShallotProvider>
 ```
 
-## Why Shallot?
+## Component Types
 
-Where most UI libraries focus on styling components with one specific strategy, Shallot recognizes that there are different types of styling. Essentially, we have three types of styling:
+### Layout Components
 
-### 1. Layout Styles
+`Row`, `Column`, `Box` - For structuring your page with props like:
 
-This styling discribes how components should be laid out on the page. It's helpful for this styling to be with the markup since these styles are often required to make sense of the markup. For that reason, we provide shared components that can be used to describe layout. For example, `Row`, `Column`, and `Text` components. Each of these can take any of our `BoxLayoutProps` to control layout (e.g., `fullWidth` or `alignBottom`).
+- `unitGap`, `unitsAround` - Spacing using theme units
+- `alignCenter`, `alignMiddle` - Alignment
+- `fullWidth`, `wrap` - Layout behavior
 
-### 2. Common Styles
+### Text Components
 
-This type of styling is used to describe styles that are shared across components. For example, a `Button` component might have a `Primary` and `Secondary` variant. These variants might share some styles, but have different colors. Variants for various text headings, buttons, checkboxes, switches, etc. are all examples of common styles and can be set in the theme's `variants` object.
+`Text`, `H1`, `H2`, `P` - For typography with automatic theme integration
 
-### 3. Component Styles
-This type of styling is used to describe styles that are unique to a specific component. For example, a project might require a `UserCard` component that has a specific layout and styling. This styling is done with `styled-components`, but we provide mixins like `getFontSize`, `getColor`, and `getUnits` to make it simple to use the theme's values.
+### Form Components
 
-**💡 You can refer to [our docs in Storybook](https://www.shallotui.com/) for more details.**
+`Input`, `Checkbox`, `Switch`, `Button` - Styled form elements that work out of the box
+
+### Creating Custom Components
+
+```tsx
+import { withShallot } from '@shallot-ui/web'
+
+const Card = withShallot('div', {
+  backgroundColor: getGlobal('surfaceColor'),
+  borderRadius: getRadius('md'),
+  padding: getUnits(3),
+  boxShadow: getShadow('sm')
+})
+
+// Use it with overrides
+<Card shallot={{ padding: getUnits(4) }}>
+  Custom content
+</Card>
+```
+
+## Monorepo Setup
+
+In a monorepo, you can share themes across apps:
+
+```tsx
+// packages/theme/index.ts
+export const sharedTheme = makeTheme({ ... })
+
+// apps/web/App.tsx
+import { sharedTheme } from '@repo/theme'
+<ShallotProvider theme={sharedTheme}>
+```
+
+## Contributing
+
+Shallot is open source (MIT licensed) and we welcome contributions! While I primarily maintain it for my own projects, I'm happy to review PRs that align with the library's philosophy of flexibility and simplicity.
 
 ## License
-Shallot UI is proudly open-source, licensed under the MIT License.
 
-Empower your designs with Shallot UI. Together, we will redefine the landscape of intuitive and aesthetic user interfaces.
+MIT © Mitchell Butler
