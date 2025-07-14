@@ -34,7 +34,7 @@ export const withSwitchStyleProps =
       Container: {
         width: getUnits(2 * unitSize - 1 / 3),
         height: getUnits(unitSize),
-        borderRadius: getRadius('pill'),
+        borderRadius: getRadius(String('pill')),
         backgroundColor: getGlobal('backgroundFadeColor'),
         borderColor: 'transparent',
         position: 'relative',
@@ -49,7 +49,7 @@ export const withSwitchStyleProps =
       Handle: {
         height: getUnits(unitSize - 1 / 3),
         width: getUnits(unitSize - 1 / 3),
-        borderRadius: getRadius('pill'),
+        borderRadius: getRadius(String('pill')),
         backgroundColor: getColor('Shading', 50),
         borderColor: 'transparent',
         borderWidth: 1,
@@ -64,8 +64,8 @@ export const withSwitchStyleProps =
       },
       ':checked': {
         Container: {
-          backgroundColor: getColor(color, 500),
-          borderColor: getColor(color, 500),
+          backgroundColor: getColor(String(color), 500),
+          borderColor: getColor(String(color), 500),
         },
         Handle: { left: unitSize * 12 - 3 },
       },

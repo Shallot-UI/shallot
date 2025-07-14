@@ -39,7 +39,7 @@ export const withCheckboxStyleProps =
       Container: {
         backgroundColor: getGlobal('backgroundColor'),
         borderColor: getGlobal('borderColor'),
-        borderRadius: getRadius(radius),
+        borderRadius: getRadius(String(radius)),
         borderWidth: 1,
         borderStyle: 'solid',
         transition: `
@@ -70,15 +70,15 @@ export const withCheckboxStyleProps =
       },
       ':hover': {
         Container: {
-          backgroundColor: getColor(color, 400),
-          borderColor: getColor(color, 400),
+          backgroundColor: getColor(String(color), 400),
+          borderColor: getColor(String(color), 400),
         },
       },
       ':checked': {
         Icon: { display: 'flex' },
         Container: {
-          backgroundColor: getColor(color, 500),
-          borderColor: getColor(color, 500),
+          backgroundColor: getColor(String(color), 500),
+          borderColor: getColor(String(color), 500),
         },
       },
       ':disabled': {},

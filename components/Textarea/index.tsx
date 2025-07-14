@@ -51,13 +51,13 @@ export const withTextareaStyleProps =
 
     let textAreaShallot: TextareaShallot = {
       Container: {
-        borderRadius: getRadius(radius),
+        borderRadius: getRadius(String(radius)),
         backgroundColor:
           color === 'Default'
             ? getGlobal('backgroundColor')
-            : getColor(color, 50),
+            : getColor(String(color), 50),
         borderColor:
-          color === 'Default' ? getGlobal('borderColor') : getColor(color, 700),
+          color === 'Default' ? getGlobal('borderColor') : getColor(String(color), 700),
         display: 'flex',
         borderWidth: 1,
         borderStyle: 'solid',
@@ -71,13 +71,13 @@ export const withTextareaStyleProps =
       Textarea: {
         display: 'flex',
         flexGrow: 1,
-        fontFamily: getFontFamily(fontFamily),
+        fontFamily: getFontFamily(String(fontFamily)),
         color:
           color === 'Default'
             ? getGlobal('foregroundColor')
-            : getColor(color, 900),
-        fontSize: getFontSize(fontSize),
-        letterSpacing: getLetterSpacing(letterSpacing),
+            : getColor(String(color), 900),
+        fontSize: getFontSize(String(fontSize)),
+        letterSpacing: getLetterSpacing(String(letterSpacing)),
 
         ...(uppercase && { textTransform: uppercase ? 'uppercase' : 'none' }),
 
@@ -92,7 +92,7 @@ export const withTextareaStyleProps =
           borderColor:
             color === 'Default'
               ? getGlobal('foregroundColor')
-              : getColor(color, 900),
+              : getColor(String(color), 900),
         },
         Textarea: {
           outline: 'none',

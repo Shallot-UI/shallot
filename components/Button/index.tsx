@@ -51,11 +51,11 @@ export const withButtonStyleProps = <T,>(ButtonComponent: ComponentType<T>) =>
 
     let buttonShallot: ButtonShallot = {
       Container: {
-        borderRadius: getRadius(radius),
+        borderRadius: getRadius(String(radius)),
         backgroundColor:
           color === 'Default'
             ? getGlobal('foregroundColor')
-            : getColor(color, 500),
+            : getColor(String(color), 500),
         borderColor: 'transparent',
         display: 'flex',
         alignItems: 'center',
@@ -77,24 +77,24 @@ export const withButtonStyleProps = <T,>(ButtonComponent: ComponentType<T>) =>
         textAlign,
         fontWeight,
         flexGrow: 1,
-        fontFamily: getFontFamily(fontFamily),
+        fontFamily: getFontFamily(String(fontFamily)),
         color:
           color === 'Default'
             ? getGlobal('backgroundColor')
             : getColor('Shading', 50),
-        fontSize: getFontSize(fontSize),
+        fontSize: getFontSize(String(fontSize)),
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),
         marginTop: getUnits(verticalUnitPadding),
         marginBottom: getUnits(verticalUnitPadding),
-        letterSpacing: getLetterSpacing(letterSpacing),
+        letterSpacing: getLetterSpacing(String(letterSpacing)),
 
         ...(uppercase && { textTransform: uppercase ? 'uppercase' : 'none' }),
         ...(outline && {
           color:
             color === 'Default'
               ? getGlobal('foregroundColor')
-              : getColor(color, 500),
+              : getColor(String(color), 500),
         }),
       },
       ':focus': {
@@ -107,7 +107,7 @@ export const withButtonStyleProps = <T,>(ButtonComponent: ComponentType<T>) =>
           backgroundColor:
             color === 'Default'
               ? getGlobal('foregroundFadeColor')
-              : getColor(color, 400),
+              : getColor(String(color), 400),
         },
       },
       ':disabled': {
