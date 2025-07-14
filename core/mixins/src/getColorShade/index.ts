@@ -11,7 +11,7 @@ export const getColorShade = (
   address: string | undefined,
 ): MixinFunction<string> => {
   // if the color is falsy, return an empty string.
-  if (!address) return () => undefined
+  if (!address) return () => ''
 
   // If the color is transparent, return the transparent keyword.
   if (address === 'transparent') return () => 'transparent'

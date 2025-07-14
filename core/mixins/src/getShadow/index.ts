@@ -17,5 +17,5 @@ export const getShadow =
     const key = rawKey as keyof (typeof theme)['tokens']['shadows']
     const value = theme?.tokens?.shadows?.[key]
     if (!value) console.warn(valueNotFoundError('shadows', String(key)))
-    return value
+    return value || ''
   }

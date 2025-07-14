@@ -12,5 +12,5 @@ export const getGlobalColor: MixinFunction<string> = ({
     console.warn(valueNotFoundError('colors', 'globals.color'))
   }
 
-  return typeof color === 'function' ? color({ theme }) : color
+  return typeof color === 'function' ? color({ theme }) : color || ''
 }

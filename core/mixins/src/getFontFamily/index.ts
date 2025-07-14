@@ -16,5 +16,5 @@ export const getFontFamily =
     const key = rawKey as keyof (typeof theme)['tokens']['fontFamilies']
     const value = theme?.tokens?.fontFamilies?.[key]
     if (!value) console.warn(valueNotFoundError('fontFamilies', String(key)))
-    return value
+    return value || ''
   }

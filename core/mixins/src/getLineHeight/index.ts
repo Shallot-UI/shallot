@@ -19,5 +19,5 @@ export const getLineHeight =
     if (value === undefined) {
       console.warn(valueNotFoundError('lineHeights', String(key)))
     }
-    return value
+    return value ?? 1
   }

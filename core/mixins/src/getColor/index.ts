@@ -28,5 +28,5 @@ export const getColor =
       )
     }
 
-    return color
+    return color || ''
   }

@@ -12,11 +12,11 @@ export const getLetterSpacing =
   <T extends DefaultTheme = DefaultTheme>(
     rawKey: keyof T['tokens']['letterSpacings'],
   ): MixinFunction<string | number> =>
-  ({ theme }): string | number | undefined => {
+  ({ theme }): string | number => {
     const key = rawKey as keyof (typeof theme)['tokens']['letterSpacings']
     const value = theme?.tokens?.letterSpacings?.[key]
     if (value === undefined) {
       console.warn(valueNotFoundError('letterSpacings', String(key)))
     }
-    return value
+    return value ?? 0
   }
