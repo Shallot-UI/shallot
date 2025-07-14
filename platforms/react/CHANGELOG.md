@@ -1,5 +1,11 @@
 # @shallot-ui/platform-react
 
+## 3.0.2
+
+### Patch Changes
+
+- 14afbcc: feat: explicitly export csstype
+
 ## 3.0.1
 
 ### Patch Changes

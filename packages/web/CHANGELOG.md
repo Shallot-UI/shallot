@@ -1,5 +1,13 @@
 # @shallot-ui/web
 
+## 4.3.2
+
+### Patch Changes
+
+- Updated dependencies [14afbcc]
+  - @shallot-ui/platform-nextjs@3.0.2
+  - @shallot-ui/platform-react@3.0.2
+
 ## 4.3.1
 
 ### Patch Changes
