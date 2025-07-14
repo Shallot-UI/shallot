@@ -1,5 +1,13 @@
 # @shallot-ui/platform-nextjs
 
+## 3.0.2
+
+### Patch Changes
+
+- 14afbcc: feat: explicitly export csstype
+- Updated dependencies [14afbcc]
+  - @shallot-ui/platform-react@3.0.2
+
 ## 3.0.1
 
 ### Patch Changes
