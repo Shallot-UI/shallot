@@ -1,5 +1,3 @@
-import type {} from 'csstype'
-
 import type { Theme } from '@shallot-ui/core-theme'
 import type { RuleSet, StyleFunction, StyledObject } from 'styled-components'
 

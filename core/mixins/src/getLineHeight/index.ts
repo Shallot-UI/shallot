@@ -13,7 +13,7 @@ export const getLineHeight =
   <T extends DefaultTheme = DefaultTheme>(
     rawKey: keyof T['tokens']['lineHeights'],
   ): MixinFunction<string | number> =>
-  ({ theme }): CSS.Properties['lineHeight'] => {
+  ({ theme }): string | number => {
     const key = rawKey as keyof (typeof theme)['tokens']['lineHeights']
     const value = theme?.tokens?.lineHeights?.[key]
     if (value === undefined) {
