@@ -1,4 +1,3 @@
-import type { CSS } from '@shallot-ui/core-theme'
 
 export type AlignmentProps = {
   alignTop?: boolean
@@ -10,7 +9,7 @@ export type AlignmentProps = {
 }
 
 export const getAlignmentShallot = (
-  flexDirection: CSS.Properties['flexDirection'],
+  flexDirection: string,
   {
     alignTop,
     alignMiddle,

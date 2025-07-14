@@ -1,5 +1,5 @@
 import type { DefaultTheme } from 'styled-components'
-import type { CSS, ColorName, ShallotProp } from '@shallot-ui/core-theme'
+import type { ColorName, ShallotProp } from '@shallot-ui/core-theme'
 
 type TagStyleProps = {
   color?: ColorName
@@ -10,7 +10,7 @@ type TagStyleProps = {
   uppercase?: boolean
   verticalUnitPadding?: number
   horizontalUnitPadding?: number
-  textAlign?: CSS.Properties['textAlign']
+  textAlign?: string
   fontFamily?: keyof DefaultTheme['tokens']['fontFamilies']
   fontWeight?: string
 }

@@ -1,8 +1,7 @@
-import { CSS } from '@shallot-ui/core-theme'
 
 const getWrapValue = (
-  wrap: boolean | CSS.Properties['flexWrap'],
-): CSS.Properties['flexWrap'] => {
+  wrap: boolean | string,
+): string => {
   if (typeof wrap === 'string') return wrap
   if (typeof wrap === 'boolean') return wrap ? 'wrap' : 'nowrap'
 }

@@ -5,7 +5,7 @@ import { valueNotFoundError } from '../utils'
 
 export const getGlobalBackgroundColor: MixinFunction<string> = ({
   theme,
-}): CSS.Properties['color'] => {
+}): string => {
   const color = theme?.globals?.backgroundColor
 
   if (!color) {

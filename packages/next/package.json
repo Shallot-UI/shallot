@@ -34,8 +34,7 @@
     "@shallot-ui/core-theme": "workspace:*",
     "@shallot-ui/core-utils": "workspace:*",
     "@shallot-ui/platform-nextjs": "workspace:*",
-    "@shallot-ui/platform-react": "workspace:*",
-    "csstype": "3.1.3"
+    "@shallot-ui/platform-react": "workspace:*"
   },
   "peerDependencies": {
     "next": "^14",

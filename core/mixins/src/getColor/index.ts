@@ -19,7 +19,7 @@ export const getColor =
     value: C | string,
     shade: S | number,
   ): MixinFunction<string> =>
-  ({ theme }: any): CSS.Properties['color'] => {
+  ({ theme }: any): string => {
     const color = theme?.tokens?.colors?.[value]?.[shade]
 
     if (!color) {

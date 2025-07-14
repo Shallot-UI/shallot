@@ -1,4 +1,4 @@
-import type { CSS, ShallotProp } from '@shallot-ui/core-theme'
+import type { ShallotProp } from '@shallot-ui/core-theme'
 
 import { getNumericValue, getUnits } from '@shallot-ui/core-mixins'
 import getWrapValue from './utils/getWrapValue'
@@ -7,7 +7,7 @@ export type FlexProps = {
   grow?: boolean | number
   shrink?: boolean | number
   flex?: boolean | number
-  wrap?: boolean | CSS.Properties['flexWrap']
+  wrap?: boolean | string
   unitGap?: number
   unitFlexBasis?: number
 }

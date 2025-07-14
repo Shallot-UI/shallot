@@ -1,6 +1,5 @@
-import type * as CSS from 'csstype'
-
 import type { DefaultTheme } from 'styled-components'
+import type { CSS } from './css'
 
 export type { CSS }
 
@@ -18,13 +17,13 @@ export type ShallotProp<O = any> = Omit<CSS.Properties, keyof O> &
 // colors, font sizes, radii, and other properties that are used in components.
 export type ThemeTokens = {
   gridUnit?: number
-  colors?: Record<string, Record<number, CSS.Properties['color']>>
-  fontFamilies?: { [name: string]: CSS.Properties['fontFamily'] }
+  colors?: Record<string, Record<number, string>>
+  fontFamilies?: { [name: string]: string }
   fontSizes?: { [name: string]: number }
   letterSpacings?: { [name: string]: number }
   lineHeights?: { [name: string]: number }
   radii?: { [name: string]: number }
-  shadows?: { [name: string]: CSS.Properties['boxShadow'] }
+  shadows?: { [name: string]: string }
   breakpoints?: {
     [width: number]: {
       fontSizes?: { [name: string]: number }
