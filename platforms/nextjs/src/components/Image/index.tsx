@@ -47,4 +47,4 @@ const Base: FunctionComponent<ImageProps> = (props) => {
   )
 }
 
-export const Image = withBoxLayoutProps(Base, { flexDirection: 'column' })
+export const Image: any = withBoxLayoutProps(Base as any, { flexDirection: 'column' })
