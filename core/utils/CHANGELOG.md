@@ -1,5 +1,12 @@
 # @shallot-ui/core-utils
 
+## 4.0.0
+
+### Patch Changes
+
+- Updated dependencies [7b000ab]
+  - @shallot-ui/core-mixins@3.1.0
+
 ## 3.0.0
 
 ### Minor Changes

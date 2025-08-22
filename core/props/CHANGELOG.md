@@ -1,5 +1,16 @@
 # @shallot-ui/core-props
 
+## 4.0.0
+
+### Minor Changes
+
+- 7b000ab: feat: removes references to csstype
+
+### Patch Changes
+
+- Updated dependencies [7b000ab]
+  - @shallot-ui/core-mixins@3.1.0
+
 ## 3.0.0
 
 ### Minor Changes
