@@ -11,10 +11,10 @@ import { valueNotFoundError } from '../utils'
 export const getFontFamily =
   <T extends DefaultTheme = DefaultTheme>(
     rawKey: keyof T['tokens']['fontFamilies'],
-  ): MixinFunction<string> =>
-  ({ theme }): string => {
+  ): MixinFunction<string | undefined> =>
+  ({ theme }): string | undefined => {
     const key = rawKey as keyof (typeof theme)['tokens']['fontFamilies']
     const value = theme?.tokens?.fontFamilies?.[key]
     if (!value) console.warn(valueNotFoundError('fontFamilies', String(key)))
-    return value || ''
+    return value
   }

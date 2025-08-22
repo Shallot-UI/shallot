@@ -18,8 +18,8 @@ export const getColor =
   >(
     value: C | string,
     shade: S | number,
-  ): MixinFunction<string> =>
-  ({ theme }: any): string => {
+  ): MixinFunction<string | undefined> =>
+  ({ theme }: any): string | undefined => {
     const color = theme?.tokens?.colors?.[value]?.[shade]
 
     if (!color) {
@@ -28,5 +28,5 @@ export const getColor =
       )
     }
 
-    return color || ''
+    return color
   }

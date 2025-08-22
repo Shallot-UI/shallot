@@ -12,12 +12,12 @@ import { valueNotFoundError } from '../utils'
 export const getLineHeight =
   <T extends DefaultTheme = DefaultTheme>(
     rawKey: keyof T['tokens']['lineHeights'],
-  ): MixinFunction<string | number> =>
-  ({ theme }): string | number => {
+  ): MixinFunction<string | number | undefined> =>
+  ({ theme }): string | number | undefined => {
     const key = rawKey as keyof (typeof theme)['tokens']['lineHeights']
     const value = theme?.tokens?.lineHeights?.[key]
     if (value === undefined) {
       console.warn(valueNotFoundError('lineHeights', String(key)))
     }
-    return value ?? 1
+    return value
   }

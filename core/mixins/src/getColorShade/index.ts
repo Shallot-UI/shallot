@@ -9,9 +9,9 @@ import { valueNotFoundError } from '../utils'
  */
 export const getColorShade = (
   address: string | undefined,
-): MixinFunction<string> => {
-  // if the color is falsy, return an empty string.
-  if (!address) return () => ''
+): MixinFunction<string | undefined> => {
+  // if the color is falsy, return undefined.
+  if (!address) return () => undefined
 
   // If the color is transparent, return the transparent keyword.
   if (address === 'transparent') return () => 'transparent'
