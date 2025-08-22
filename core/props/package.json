@@ -20,9 +20,7 @@
     "build": "tsup ./index.ts --format cjs --minify --dts --clean",
     "dev": "tsup ./index.ts --format cjs --dts --clean --watch"
   },
-  "dependencies": {
-    "csstype": "^3.1.3"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "@shallot-ui/core-mixins": "workspace:*",
     "@shallot-ui/core-theme": "workspace:*",
@@ -44,7 +42,7 @@
     "react": "^19.0.0",
     "styled-components": "^6",
     "ts-jest": "^29.2.5",
-    "tsup": "^8.2.4",
-    "typescript": "^5.6.2"
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
   }
 }

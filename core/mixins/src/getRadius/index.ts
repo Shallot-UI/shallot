@@ -12,8 +12,8 @@ export const getRadius =
   <T extends DefaultTheme = DefaultTheme>(
     rawKey: keyof T['tokens']['radii'],
     unitPadding?: number,
-  ): MixinFunction<string | number> =>
-  ({ theme }): number | undefined => {
+  ): MixinFunction<string | number | undefined> =>
+  ({ theme }): number | string | undefined => {
     const key = rawKey as keyof (typeof theme)['tokens']['radii']
     const value = theme?.tokens?.radii?.[key]
 

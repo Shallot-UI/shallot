@@ -3,10 +3,14 @@
   "include": [".", "styled.d.ts"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
-    "lib": ["ES6", "DOM"],
+    "lib": ["ES2016", "DOM"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "declaration": true,
+    "declarationMap": false,
+    "preserveSymlinks": true,
+    "skipLibCheck": true
   }
 }

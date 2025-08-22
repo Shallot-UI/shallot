@@ -1,10 +1,10 @@
-import {
+import React, {
   FunctionComponent,
   InputHTMLAttributes,
   ReactNode,
   RefObject,
 } from 'react'
-import { withBoxLayoutProps } from '@shallot-ui/core-props'
+import { withBoxLayoutProps, BoxLayoutProps } from '@shallot-ui/core-props'
 import { ShallotProp } from '@shallot-ui/core-theme'
 import { InputShallot, withInputStyleProps } from '@shallot-ui/component-input'
 
@@ -25,10 +25,25 @@ const Base: FunctionComponent<
   </S.Container>
 )
 
-export const Input = withBoxLayoutProps(
+/**
+ * Props interface for Shallot Input component (web)
+ * @public
+ */
+export interface ShallotInputProps extends InputHTMLAttributes<HTMLInputElement>, BoxLayoutProps {
+  shallot?: InputShallot & { label?: ShallotProp }
+  inputRef?: RefObject<HTMLInputElement>
+  before?: ReactNode
+  after?: ReactNode
+  variant?: string
+}
+
+/**
+ * Input component with Shallot styling capabilities and layout props (web)
+ */
+export const Input: React.ComponentType<ShallotInputProps> = withBoxLayoutProps(
   // The style props are common utilities to extend the component's shallot prop
   // in common ways. For example, changing the component's color.
-  withInputStyleProps(Base),
+  withInputStyleProps(Base) as any,
   // These are style overrides sent to the component's container component. They
   // must contain at least a `flexDirection` so that the flex alignment
   // properties will be applied correctly.
@@ -38,4 +53,4 @@ export const Input = withBoxLayoutProps(
   // content and it will be extended with any layout props passed to the
   // component.
   'Container',
-)
+) as any

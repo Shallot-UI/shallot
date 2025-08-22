@@ -38,7 +38,7 @@ const Base: FunctionComponent<
   )
 }
 
-export const Switch = withBoxLayoutProps(
+export const Switch: any = withBoxLayoutProps(
   // The style props are common utilities to extend the component's shallot prop
   // in common ways. For example, changing the component's color.
   withSwitchStyleProps(Base),

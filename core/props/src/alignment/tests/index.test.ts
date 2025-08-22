@@ -1,10 +1,9 @@
-import type { CSS } from '@shallot-ui/core-theme'
 
 import { getAlignmentShallot } from '../index'
 
 describe('getAlignmentShallot', () => {
   it('should return correct alignment for row direction', () => {
-    const flexDirection: CSS.Properties['flexDirection'] = 'row'
+    const flexDirection: string = 'row'
     const alignmentProps = {
       alignTop: true,
       alignMiddle: false,
@@ -23,7 +22,7 @@ describe('getAlignmentShallot', () => {
   })
 
   it('should return correct alignment for column direction', () => {
-    const flexDirection: CSS.Properties['flexDirection'] = 'column'
+    const flexDirection: string = 'column'
     const alignmentProps = {
       alignTop: false,
       alignMiddle: true,
@@ -42,7 +41,7 @@ describe('getAlignmentShallot', () => {
   })
 
   it('should return empty object if no alignment props are provided', () => {
-    const flexDirection: CSS.Properties['flexDirection'] = 'row'
+    const flexDirection: string = 'row'
     const alignmentProps = {
       alignTop: false,
       alignMiddle: false,

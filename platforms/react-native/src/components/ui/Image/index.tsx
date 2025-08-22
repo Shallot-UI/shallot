@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react'
 import styled, { DefaultTheme } from 'styled-components/native'
 import FastImage, { FastImageProps } from 'react-native-fast-image'
-import { getStyle } from '@shallot-ui/core-utils'
 import { getUnits, getRadius } from '@shallot-ui/core-mixins'
 import { ShallotProp } from '@shallot-ui/core-theme'
+import { getStyle, createStyledConfig } from '@/utils/styledHelpers'
 
 export interface ImageProps extends Omit<FastImageProps, 'source'> {
   source: FastImageProps['source'] | undefined
@@ -18,13 +18,13 @@ export interface ImageProps extends Omit<FastImageProps, 'source'> {
   unitsRight?: number
 }
 
-const Container = styled.View.withConfig({
-  shouldForwardProp: (prop) => !['shallot'].includes(prop),
-})<{ shallot?: ShallotProp }>(getStyle)
+const Container = styled.View.withConfig(
+  createStyledConfig()
+)<{ shallot?: ShallotProp }>(getStyle)
 
-const InnerImage = styled(FastImage).withConfig({
-  shouldForwardProp: (prop) => !['shallot'].includes(prop),
-})<{ shallot?: ShallotProp }>(getStyle)
+const InnerImage = styled(FastImage).withConfig(
+  createStyledConfig()
+)<{ shallot?: ShallotProp }>(getStyle)
 
 export const Image: FunctionComponent<ImageProps> = (props) => {
   const {
