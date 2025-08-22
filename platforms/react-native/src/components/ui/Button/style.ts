@@ -1,18 +1,18 @@
 import styled from 'styled-components/native'
-import { getNestedStyle } from '@shallot-ui/core-utils'
 import { ButtonShallot } from '@shallot-ui/component-button'
+import { getNestedStyle, createStyledConfig } from '@/utils/styledHelpers'
 
-const Container = styled.View.withConfig({
-  shouldForwardProp: (prop) => !['shallot'].includes(prop),
-})<{ $active?: boolean; $disabled?: boolean; shallot?: ButtonShallot }>`
+const Container = styled.View.withConfig(
+  createStyledConfig()
+)<{ $active?: boolean; $disabled?: boolean; shallot?: ButtonShallot }>`
   ${getNestedStyle('Container')}
   ${(p) => p.$active && getNestedStyle('Container', ':active')(p)}
   ${(p) => p.$disabled && getNestedStyle('Container', ':disabled')(p)}
 `
 
-const Title = styled.Text.withConfig({
-  shouldForwardProp: (prop) => !['shallot'].includes(prop),
-})<{
+const Title = styled.Text.withConfig(
+  createStyledConfig()
+)<{
   $active?: boolean
   $disabled?: boolean
   shallot?: ButtonShallot

@@ -1,17 +1,17 @@
 import React, { ComponentProps, ReactNode } from 'react'
 import styled from 'styled-components/native'
-import { getStyle } from '@shallot-ui/core-utils'
 import { withBoxLayoutProps, BoxLayoutProps } from '@shallot-ui/core-props'
 import { TagProps, withTagStyleProps } from '@shallot-ui/component-tag'
 import { ShallotProp } from '@shallot-ui/core-theme'
+import { getStyle, createStyledConfig } from '@/utils/styledHelpers'
 
-const Container = styled.View.withConfig({
-  shouldForwardProp: (prop) => !['shallot'].includes(prop),
-})<{ shallot?: ShallotProp }>(getStyle)
+const Container = styled.View.withConfig(
+  createStyledConfig()
+)<{ shallot?: ShallotProp }>(getStyle)
 
-const Title = styled.Text.withConfig({
-  shouldForwardProp: (prop) => !['shallot'].includes(prop),
-})<{ shallot?: ShallotProp }>(getStyle)
+const Title = styled.Text.withConfig(
+  createStyledConfig()
+)<{ shallot?: ShallotProp }>(getStyle)
 
 const Base = (
   props: TagProps<ComponentProps<typeof Container>> & {

@@ -3,18 +3,16 @@ import { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react
 import { ViewProps, TextProps } from 'react-native'
 
 import { ShallotProp } from '@shallot-ui/core-theme'
-import { getStyle, getVariantStyle } from '@shallot-ui/core-utils'
+import { getVariantStyle } from '@shallot-ui/core-utils'
 import { withBoxLayoutProps, withTextLayoutProps, BoxLayoutProps, TextLayoutProps } from '@shallot-ui/core-props'
+import { getStyle, createStyledConfig } from '@/utils/styledHelpers'
 
 type ExtendedProps = {
   shallot?: ShallotProp
   variant?: string
 }
 
-const config = {
-  shouldForwardProp: (prop: string | number | symbol) =>
-    typeof prop === 'string' && !['shallot', 'variant'].includes(prop),
-}
+const config = createStyledConfig(['shallot', 'variant'])
 
 /**
  * Creates a box component with Shallot styling and layout props
