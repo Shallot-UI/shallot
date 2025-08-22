@@ -1,5 +1,17 @@
 # @shallot-ui/component-textarea
 
+## 3.0.0
+
+### Minor Changes
+
+- 7b000ab: feat: removes references to csstype
+
+### Patch Changes
+
+- Updated dependencies [7b000ab]
+  - @shallot-ui/core-mixins@3.1.0
+  - @shallot-ui/core-utils@4.0.0
+
 ## 2.0.1
 
 ### Patch Changes
