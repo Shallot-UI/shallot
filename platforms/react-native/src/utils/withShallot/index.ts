@@ -1,20 +1,23 @@
 import styled from 'styled-components/native'
+import { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
+import { ViewProps, TextProps } from 'react-native'
 
 import { ShallotProp } from '@shallot-ui/core-theme'
-import { getStyle, getVariantStyle } from '@shallot-ui/core-utils'
-import { withBoxLayoutProps, withTextLayoutProps } from '@shallot-ui/core-props'
+import { getVariantStyle } from '@shallot-ui/core-utils'
+import { withBoxLayoutProps, withTextLayoutProps, BoxLayoutProps, TextLayoutProps } from '@shallot-ui/core-props'
+import { getStyle, createStyledConfig } from '@/utils/styledHelpers'
 
 type ExtendedProps = {
   shallot?: ShallotProp
   variant?: string
 }
 
-const config = {
-  shouldForwardProp: (prop: string | number | symbol) =>
-    typeof prop === 'string' && !['shallot', 'variant'].includes(prop),
-}
+const config = createStyledConfig(['shallot', 'variant'])
 
-export const withBoxShallot = (
+/**
+ * Creates a box component with Shallot styling and layout props
+ */
+export const withBoxShallot: any = (
   shallot: ShallotProp,
   {
     scope = 'Box',
@@ -38,7 +41,10 @@ export const withBoxShallot = (
   return withBoxLayoutProps(Component, { flexDirection: 'column', ...shallot })
 }
 
-export const withTextShallot = (
+/**
+ * Creates a text component with Shallot styling and layout props
+ */
+export const withTextShallot: any = (
   shallot?: ShallotProp,
   {
     scope = 'Text',

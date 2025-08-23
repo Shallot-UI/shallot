@@ -45,7 +45,10 @@ export const withShallot = <T extends ElementType>(
   }}
 `
 
-export const withBoxShallot = <T extends ElementType>(
+/**
+ * Creates a box component with Shallot styling and layout props (web)
+ */
+export const withBoxShallot: any = <T extends ElementType>(
   element: T,
   shallot: ShallotProp = {},
   {
@@ -67,7 +70,10 @@ export const withBoxShallot = <T extends ElementType>(
   return withBoxLayoutProps(Base, shallot)
 }
 
-export const withTextShallot = <T extends ElementType>(
+/**
+ * Creates a text component with Shallot styling and layout props (web)
+ */
+export const withTextShallot: any = <T extends ElementType>(
   element: T,
   shallot: ShallotProp = {},
   {

@@ -1,18 +1,18 @@
 import styled from 'styled-components/native'
-import { getNestedStyle } from '@shallot-ui/core-utils'
 import { InputShallot } from '@shallot-ui/component-input'
+import { getNestedStyle, createStyledConfig } from '@/utils/styledHelpers'
 
-const Container = styled.View.withConfig({
-  shouldForwardProp: (prop) => !['shallot'].includes(prop),
-})<{ $focused?: boolean; $error?: boolean; shallot?: InputShallot }>`
+const Container = styled.View.withConfig(
+  createStyledConfig()
+)<{ $focused?: boolean; $error?: boolean; shallot?: InputShallot }>`
   ${getNestedStyle('Container')}
   ${(p) => p.$focused && getNestedStyle('Container', ':focused')(p)}
   ${(p) => p.$error && getNestedStyle('Container', ':error')(p)}
 `
 
-const InnerInput = styled.TextInput.withConfig({
-  shouldForwardProp: (prop) => !['shallot'].includes(prop),
-})<{
+const InnerInput = styled.TextInput.withConfig(
+  createStyledConfig()
+)<{
   $focused?: boolean
   $error?: boolean
   shallot?: InputShallot

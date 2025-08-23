@@ -1,6 +1,6 @@
-import { ComponentProps } from 'react'
+import React, { ComponentProps } from 'react'
 import { ModalShallot, withModalStyleProps } from '@shallot-ui/component-modal'
-import { withBoxLayoutProps } from '@shallot-ui/core-props'
+import { withBoxLayoutProps, BoxLayoutProps } from '@shallot-ui/core-props'
 
 import S from './styles'
 
@@ -22,10 +22,23 @@ const Base = (
   )
 }
 
-export const Modal = withBoxLayoutProps(
+/**
+ * Props interface for Shallot Modal component (web)
+ * @public
+ */
+export interface ShallotModalProps extends ComponentProps<typeof S.Container>, BoxLayoutProps {
+  shallot?: ModalShallot
+  onClose?: () => void
+  variant?: string
+}
+
+/**
+ * Modal component with Shallot styling capabilities and layout props (web)
+ */
+export const Modal: React.ComponentType<ShallotModalProps> = withBoxLayoutProps(
   // The style props are common utilities to extend the component's shallot prop
   // in common ways. For example, changing the component's color.
-  withModalStyleProps(Base),
+  withModalStyleProps(Base) as any,
   // These are style overrides sent to the component's container component. They
   // must contain at least a `flexDirection` so that the flex alignment
   // properties will be applied correctly.

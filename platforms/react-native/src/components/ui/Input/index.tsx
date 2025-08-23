@@ -1,7 +1,8 @@
-import { ComponentProps, FC, ReactNode, RefObject, useState } from 'react'
-import { withBoxLayoutProps } from '@shallot-ui/core-props'
+import React, { ComponentProps, FC, ReactNode, RefObject, useState } from 'react'
+import { withBoxLayoutProps, BoxLayoutProps } from '@shallot-ui/core-props'
 import { InputProps, withInputStyleProps } from '@shallot-ui/component-input'
 import { TextInput } from 'react-native'
+import { ShallotProp } from '@shallot-ui/core-theme'
 
 import S from './style'
 
@@ -32,7 +33,23 @@ const Base: FC<
   )
 }
 
-export const Input = withBoxLayoutProps(
+/**
+ * Props interface for Shallot Input component
+ * @public
+ */
+export interface ShallotInputProps extends InputProps<ComponentProps<typeof S.InnerInput>>, BoxLayoutProps {
+  before?: ReactNode
+  after?: ReactNode
+  inputRef?: RefObject<TextInput>
+  hasError?: boolean
+  shallot?: ShallotProp
+  variant?: string
+}
+
+/**
+ * Input component with Shallot styling capabilities and layout props
+ */
+export const Input: React.ComponentType<ShallotInputProps> = withBoxLayoutProps(
   // The style props are common utilities to extend the tag's shallot prop
   // in common ways. For example, changing the tag's color.
   withInputStyleProps(Base),

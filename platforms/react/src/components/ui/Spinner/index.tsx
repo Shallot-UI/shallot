@@ -24,7 +24,7 @@ const sizes = {
 
 type SizeName = keyof typeof sizes
 
-const SpinnerRing = styled.div<SpinnerProps>`
+const SpinnerRing: any = styled.div<SpinnerProps>`
   display: inline-block;
   position: relative;
   width: ${({ size = 'md' }) => sizes[size]}px;
@@ -37,12 +37,12 @@ const SpinnerRing = styled.div<SpinnerProps>`
     height: ${({ size = 'md' }) => Math.floor(sizes[size] * 0.8)}px;
     margin: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px;
     border: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px solid
-      ${({ color, shade }) =>
-        getColor(color ?? 'Shading', shade ?? (200 as any))};
+      ${({ color, shade }: any) =>
+        getColor(color ?? 'Shading', shade ?? 200)};
     border-radius: 50%;
     animation: ${spinAnimation} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: ${({ color, shade }) =>
-        getColor(color ?? 'Shading', shade ?? (200 as any))}
+    border-color: ${({ color, shade }: any) =>
+        getColor(color ?? 'Shading', shade ?? 200)}
       transparent transparent transparent;
   }
   & div:nth-child(1) {
@@ -56,11 +56,11 @@ const SpinnerRing = styled.div<SpinnerProps>`
   }
 `
 
-export const Spinner: FunctionComponent<SpinnerProps> = ({
+export const Spinner: any = ({
   color,
   shade,
   size,
-}) => (
+}: SpinnerProps) => (
   <SpinnerRing color={color} shade={shade} size={size}>
     <div></div>
     <div></div>

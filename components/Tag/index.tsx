@@ -50,11 +50,11 @@ export const withTagStyleProps =
 
     let tagShallot: TagShallot = {
       Container: {
-        borderRadius: getRadius(radius),
+        borderRadius: getRadius(String(radius)),
         backgroundColor:
           color === 'Default'
             ? getGlobal('backgroundFadeColor')
-            : getColor(color, 100),
+            : getColor(String(color), 100),
         borderColor: 'transparent',
         display: 'flex',
         alignItems: 'center',
@@ -67,7 +67,7 @@ export const withTagStyleProps =
           borderColor:
             color === 'Default'
               ? getGlobal('foregroundFadeColor')
-              : getColor(color, 700),
+              : getColor(String(color), 700),
         }),
 
         ...themeVariant?.Container,
@@ -78,17 +78,17 @@ export const withTagStyleProps =
         flexGrow: 0,
         textAlign,
         fontWeight,
-        fontFamily: getFontFamily(fontFamily),
+        fontFamily: getFontFamily(String(fontFamily)),
         color:
           color === 'Default'
             ? getGlobal('foregroundFadeColor')
-            : getColor(color, 700),
-        fontSize: getFontSize(fontSize),
+            : getColor(String(color), 700),
+        fontSize: getFontSize(String(fontSize)),
         marginLeft: getUnits(horizontalUnitPadding),
         marginRight: getUnits(horizontalUnitPadding),
         marginTop: getUnits(verticalUnitPadding),
         marginBottom: getUnits(verticalUnitPadding),
-        letterSpacing: getLetterSpacing(letterSpacing),
+        letterSpacing: getLetterSpacing(String(letterSpacing)),
 
         ...(uppercase && { textTransform: uppercase ? 'uppercase' : 'none' }),
 

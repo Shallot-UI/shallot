@@ -1,17 +1,17 @@
-import { ComponentProps, ReactNode } from 'react'
+import React, { ComponentProps, ReactNode } from 'react'
 import styled from 'styled-components/native'
-import { getStyle } from '@shallot-ui/core-utils'
-import { withBoxLayoutProps } from '@shallot-ui/core-props'
+import { withBoxLayoutProps, BoxLayoutProps } from '@shallot-ui/core-props'
 import { TagProps, withTagStyleProps } from '@shallot-ui/component-tag'
 import { ShallotProp } from '@shallot-ui/core-theme'
+import { getStyle, createStyledConfig } from '@/utils/styledHelpers'
 
-const Container = styled.View.withConfig({
-  shouldForwardProp: (prop) => !['shallot'].includes(prop),
-})<{ shallot?: ShallotProp }>(getStyle)
+const Container = styled.View.withConfig(
+  createStyledConfig()
+)<{ shallot?: ShallotProp }>(getStyle)
 
-const Title = styled.Text.withConfig({
-  shouldForwardProp: (prop) => !['shallot'].includes(prop),
-})<{ shallot?: ShallotProp }>(getStyle)
+const Title = styled.Text.withConfig(
+  createStyledConfig()
+)<{ shallot?: ShallotProp }>(getStyle)
 
 const Base = (
   props: TagProps<ComponentProps<typeof Container>> & {
@@ -31,7 +31,22 @@ const Base = (
   )
 }
 
-export const Tag = withBoxLayoutProps(
+/**
+ * Props interface for Shallot Tag component
+ * @public
+ */
+export interface ShallotTagProps extends TagProps<ComponentProps<typeof Container>>, BoxLayoutProps {
+  title?: string
+  before?: ReactNode
+  after?: ReactNode
+  shallot?: ShallotProp
+  variant?: string
+}
+
+/**
+ * Tag component with Shallot styling capabilities and layout props
+ */
+export const Tag: React.ComponentType<ShallotTagProps> = withBoxLayoutProps(
   // The style props are common utilities to extend the tag's shallot prop
   // in common ways. For example, changing the tag's color.
   withTagStyleProps(Base),

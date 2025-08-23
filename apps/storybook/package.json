@@ -1,6 +1,6 @@
 {
   "name": "stories",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "private": true,
   "scripts": {
     "storybook": "storybook dev -p 6006",
@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@shallot-ui/next": "workspace:*",
-    "next": "^14.2.30",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^15.3.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "styled-components": "^6"
   },
   "devDependencies": {
@@ -27,15 +27,15 @@
     "@storybook/nextjs": "^8.1.6",
     "@storybook/react": "^8.1.6",
     "@storybook/test": "^8.1.6",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/node": "^24.0.13",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3",
+    "eslint-config-next": "15.3.5",
     "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8",
     "storybook": "^8.1.6",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5.8.3"
   }
 }
