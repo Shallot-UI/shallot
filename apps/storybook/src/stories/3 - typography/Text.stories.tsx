@@ -12,7 +12,7 @@ import {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: '📐 Layout / Text',
+  title: '📝 Typography / Text',
   component: Text,
   parameters: {
     layout: 'centered',
