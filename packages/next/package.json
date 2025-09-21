@@ -37,7 +37,7 @@
     "@shallot-ui/platform-react": "workspace:*"
   },
   "peerDependencies": {
-    "next": "^14",
+    "next": "^14 || ^15",
     "react-dom": "^19.1.0",
     "react": "^19.1.0",
     "styled-components": "^6"
