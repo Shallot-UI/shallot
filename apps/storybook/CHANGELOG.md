@@ -1,5 +1,12 @@
 # stories
 
+## 0.1.14
+
+### Patch Changes
+
+- Updated dependencies [1e6aca5]
+  - @shallot-ui/next@4.5.4
+
 ## 0.1.13
 
 ### Patch Changes
@@ -303,7 +310,6 @@
 - 7f8fe21: config: introduce changesets
 - Updated dependencies [7f8fe21]
 - Updated dependencies [9bdfdad]
-
   - @shallot-ui/web@0.54.0
 
 ## 0.17.0
