@@ -1,5 +1,11 @@
 # @shallot-ui/next
 
+## 4.5.4
+
+### Patch Changes
+
+- 1e6aca5: fix: update next peer dep
+
 ## 4.5.3
 
 ### Patch Changes
