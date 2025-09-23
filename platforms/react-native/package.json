@@ -35,7 +35,7 @@
     "@shallot-ui/core-utils": "workspace:*",
     "@types/react-native": "^0.73.0",
     "react-native": "^0.70",
-    "react": "19.0.0",
+    "react": "^19.1.0",
     "styled-components": "^6"
   },
   "devDependencies": {

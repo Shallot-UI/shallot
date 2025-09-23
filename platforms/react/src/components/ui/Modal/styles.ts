@@ -1,8 +1,8 @@
 import { withBoxShallot } from '@/utils'
 
-const Wrapper: any = withBoxShallot('div')
-const Curtain: any = withBoxShallot('div')
-const Container: any = withBoxShallot('div')
+const Wrapper = withBoxShallot('div')
+const Curtain = withBoxShallot('div')
+const Container = withBoxShallot('div')
 
 const styles = {
   Wrapper,

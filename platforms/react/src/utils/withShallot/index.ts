@@ -1,4 +1,10 @@
-import { ElementType } from 'react'
+import {
+  ComponentPropsWithRef,
+  ComponentType,
+  ElementType,
+  JSX,
+  ReactNode,
+} from 'react'
 import styled from 'styled-components'
 import { ShallotProp, ThemeVariants } from '@shallot-ui/core-theme'
 import { getStyle, getBreakpointsStyle } from '@shallot-ui/core-utils'
@@ -14,7 +20,18 @@ const config = {
     typeof prop === 'string' && !['shallot', 'variant'].includes(prop),
 }
 
-export const withShallot = <T extends ElementType>(
+// Helper type to determine the props for either a component or intrinsic element
+type ElementProps<T> = T extends keyof JSX.IntrinsicElements
+  ? JSX.IntrinsicElements[T] // If T is a string tagname, get its intrinsic props
+  : T extends ComponentType<infer P>
+    ? P // If T is a component, extract its props
+    : T extends ElementType
+      ? ComponentPropsWithRef<T> // Fallback for other element types
+      : {}
+
+export const withShallot = <
+  T extends ElementType | keyof JSX.IntrinsicElements,
+>(
   element: T,
   baseShallot?: ShallotProp,
   {
@@ -24,31 +41,32 @@ export const withShallot = <T extends ElementType>(
     scope?: string
     variant?: string
   } = {},
-) => styled(element).withConfig(config)<ExtendedProps>`
-  ${({ shallot: shallotProp, variant: variantProp, theme }) => {
-    // Get any shallot extensions from the theme for the current variant.
-    const themeVariants = theme?.variants as ThemeVariants
-    const variants = scope ? themeVariants?.[scope] : undefined
-    const variantShallot = variants?.[variantProp ?? variant] ?? {}
+) =>
+  styled(element).withConfig(config)<ExtendedProps>`
+    ${({ shallot: shallotProp, variant: variantProp, theme }) => {
+      // Get any shallot extensions from the theme for the current variant.
+      const themeVariants = theme?.variants as ThemeVariants
+      const variants = scope ? themeVariants?.[scope] : undefined
+      const variantShallot = variants?.[variantProp ?? variant] ?? {}
 
-    // Merge the shallot props and overrides together.
-    const shallot = { ...baseShallot, ...variantShallot, ...shallotProp }
+      // Merge the shallot props and overrides together.
+      const shallot = { ...baseShallot, ...variantShallot, ...shallotProp }
 
-    // Get the variant styles.
-    const baseStyles = getStyle({ shallot })({ theme })
+      // Get the variant styles.
+      const baseStyles = getStyle({ shallot })({ theme })
 
-    // Collect the breakpoint styles.
-    const breakpointsStyles = getBreakpointsStyle({ shallot })({ theme })
+      // Collect the breakpoint styles.
+      const breakpointsStyles = getBreakpointsStyle({ shallot })({ theme })
 
-    // Merge and return all of the rendered styles.
-    return { ...baseStyles, ...breakpointsStyles }
-  }}
-`
+      // Merge and return all of the rendered styles.
+      return { ...baseStyles, ...breakpointsStyles }
+    }}
+  ` as ComponentType<ElementProps<T> & { children?: ReactNode }>
 
 /**
  * Creates a box component with Shallot styling and layout props (web)
  */
-export const withBoxShallot: any = <T extends ElementType>(
+export const withBoxShallot = <T extends ElementType>(
   element: T,
   shallot: ShallotProp = {},
   {
@@ -62,7 +80,7 @@ export const withBoxShallot: any = <T extends ElementType>(
     variant: 'Default',
   },
 ) => {
-  const Base = withShallot(
+  const Base = withShallot<T>(
     element,
     { display: 'flex', flexDirection: 'column' },
     { scope, variant },
@@ -73,7 +91,7 @@ export const withBoxShallot: any = <T extends ElementType>(
 /**
  * Creates a text component with Shallot styling and layout props (web)
  */
-export const withTextShallot: any = <T extends ElementType>(
+export const withTextShallot = <T extends ElementType>(
   element: T,
   shallot: ShallotProp = {},
   {
@@ -87,6 +105,6 @@ export const withTextShallot: any = <T extends ElementType>(
     variant: 'Default',
   },
 ) => {
-  const Base = withShallot(element, {}, { scope, variant })
+  const Base = withShallot<T>(element, {}, { scope, variant })
   return withTextLayoutProps(Base, shallot)
 }

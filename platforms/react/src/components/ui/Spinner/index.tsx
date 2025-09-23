@@ -37,8 +37,7 @@ const SpinnerRing: any = styled.div<SpinnerProps>`
     height: ${({ size = 'md' }) => Math.floor(sizes[size] * 0.8)}px;
     margin: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px;
     border: ${({ size = 'md' }) => Math.ceil(sizes[size] * 0.1)}px solid
-      ${({ color, shade }: any) =>
-        getColor(color ?? 'Shading', shade ?? 200)};
+      ${({ color, shade }: any) => getColor(color ?? 'Shading', shade ?? 200)};
     border-radius: 50%;
     animation: ${spinAnimation} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: ${({ color, shade }: any) =>
@@ -56,11 +55,7 @@ const SpinnerRing: any = styled.div<SpinnerProps>`
   }
 `
 
-export const Spinner: any = ({
-  color,
-  shade,
-  size,
-}: SpinnerProps) => (
+export const Spinner = ({ color, shade, size }: SpinnerProps) => (
   <SpinnerRing color={color} shade={shade} size={size}>
     <div></div>
     <div></div>
