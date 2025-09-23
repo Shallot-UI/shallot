@@ -10,13 +10,17 @@ import { ShallotProp } from '@shallot-ui/core-theme'
 import { TextAlignmentProps, getTextAlignmentShallot } from './textAlignment'
 import { BorderProps, getBorderShallot } from './border'
 import { MarginProps, getMarginShallot } from './margin'
+import { SizingProps, getSizingShallot } from './sizing'
 
 type ExtendedProps = {
   shallot?: ShallotProp
   variant?: string
 }
 
-export type TextLayoutProps = TextAlignmentProps & BorderProps & MarginProps
+export type TextLayoutProps = TextAlignmentProps &
+  BorderProps &
+  MarginProps &
+  SizingProps
 
 export const withTextLayoutProps = <T extends {}>(
   Component: ComponentType<T>,
@@ -36,6 +40,14 @@ export const withTextLayoutProps = <T extends {}>(
       unitsBelow,
       unitsLeft,
       unitsRight,
+      unitHeight,
+      unitWidth,
+      maxUnitHeight,
+      maxUnitWidth,
+      minUnitHeight,
+      minUnitWidth,
+      fullWidth,
+      fullHeight,
       shallot,
       ...nonStyleProps
     } = props
@@ -45,6 +57,7 @@ export const withTextLayoutProps = <T extends {}>(
       ...getTextAlignmentShallot(props),
       ...getBorderShallot(props),
       ...getMarginShallot(props),
+      ...getSizingShallot(props),
       ...(shallot as ShallotProp | undefined),
     }
 
