@@ -21,7 +21,7 @@ const Base = (
   )
 }
 
-export const Tag: any = withBoxLayoutProps(
+export const Tag = withBoxLayoutProps(
   // The style props are common utilities to extend the button's shallot prop
   // in common ways. For example, changing the button's color.
   withTagStyleProps(Base),

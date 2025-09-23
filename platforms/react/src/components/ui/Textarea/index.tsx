@@ -28,7 +28,7 @@ const Base: FunctionComponent<
   </S.Container>
 )
 
-export const Textarea: any = withBoxLayoutProps(
+export const Textarea = withBoxLayoutProps(
   // The style props are common utilities to extend the component's shallot prop
   // in common ways. For example, changing the component's color.
   withTextareaStyleProps(Base),

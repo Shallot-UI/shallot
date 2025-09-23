@@ -1,4 +1,4 @@
-import { ElementType } from 'react'
+import { ComponentType, ElementType } from 'react'
 import styled from 'styled-components'
 import { ShallotProp, ThemeVariants } from '@shallot-ui/core-theme'
 import { getStyle, getBreakpointsStyle } from '@shallot-ui/core-utils'
@@ -24,31 +24,32 @@ export const withShallot = <T extends ElementType>(
     scope?: string
     variant?: string
   } = {},
-) => styled(element).withConfig(config)<ExtendedProps>`
-  ${({ shallot: shallotProp, variant: variantProp, theme }) => {
-    // Get any shallot extensions from the theme for the current variant.
-    const themeVariants = theme?.variants as ThemeVariants
-    const variants = scope ? themeVariants?.[scope] : undefined
-    const variantShallot = variants?.[variantProp ?? variant] ?? {}
+) =>
+  styled(element).withConfig(config)<ExtendedProps>`
+    ${({ shallot: shallotProp, variant: variantProp, theme }) => {
+      // Get any shallot extensions from the theme for the current variant.
+      const themeVariants = theme?.variants as ThemeVariants
+      const variants = scope ? themeVariants?.[scope] : undefined
+      const variantShallot = variants?.[variantProp ?? variant] ?? {}
 
-    // Merge the shallot props and overrides together.
-    const shallot = { ...baseShallot, ...variantShallot, ...shallotProp }
+      // Merge the shallot props and overrides together.
+      const shallot = { ...baseShallot, ...variantShallot, ...shallotProp }
 
-    // Get the variant styles.
-    const baseStyles = getStyle({ shallot })({ theme })
+      // Get the variant styles.
+      const baseStyles = getStyle({ shallot })({ theme })
 
-    // Collect the breakpoint styles.
-    const breakpointsStyles = getBreakpointsStyle({ shallot })({ theme })
+      // Collect the breakpoint styles.
+      const breakpointsStyles = getBreakpointsStyle({ shallot })({ theme })
 
-    // Merge and return all of the rendered styles.
-    return { ...baseStyles, ...breakpointsStyles }
-  }}
-`
+      // Merge and return all of the rendered styles.
+      return { ...baseStyles, ...breakpointsStyles }
+    }}
+  ` as ComponentType<T>
 
 /**
  * Creates a box component with Shallot styling and layout props (web)
  */
-export const withBoxShallot: any = <T extends ElementType>(
+export const withBoxShallot = <T extends ElementType>(
   element: T,
   shallot: ShallotProp = {},
   {
@@ -62,18 +63,18 @@ export const withBoxShallot: any = <T extends ElementType>(
     variant: 'Default',
   },
 ) => {
-  const Base = withShallot(
+  const Base = withShallot<T>(
     element,
     { display: 'flex', flexDirection: 'column' },
     { scope, variant },
   )
-  return withBoxLayoutProps(Base, shallot)
+  return withBoxLayoutProps<T & ExtendedProps>(Base, shallot)
 }
 
 /**
  * Creates a text component with Shallot styling and layout props (web)
  */
-export const withTextShallot: any = <T extends ElementType>(
+export const withTextShallot = <T extends ElementType>(
   element: T,
   shallot: ShallotProp = {},
   {
@@ -87,6 +88,6 @@ export const withTextShallot: any = <T extends ElementType>(
     variant: 'Default',
   },
 ) => {
-  const Base = withShallot(element, {}, { scope, variant })
+  const Base = withShallot<T>(element, {}, { scope, variant })
   return withTextLayoutProps(Base, shallot)
 }
