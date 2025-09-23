@@ -1,5 +1,22 @@
 # @shallot-ui/platform-react
 
+## 4.0.1
+
+### Patch Changes
+
+- 7ff7ffe: fix: removing any types
+- Updated dependencies [7ff7ffe]
+  - @shallot-ui/core-mixins@3.1.1
+  - @shallot-ui/core-props@4.0.1
+  - @shallot-ui/core-utils@4.0.1
+  - @shallot-ui/component-button@5.0.1
+  - @shallot-ui/component-checkbox@5.0.1
+  - @shallot-ui/component-input@5.0.1
+  - @shallot-ui/component-modal@4.0.1
+  - @shallot-ui/component-switch@5.0.1
+  - @shallot-ui/component-tag@5.0.1
+  - @shallot-ui/component-textarea@3.0.1
+
 ## 4.0.0
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @shallot-ui/core-mixins
 
+## 3.1.1
+
+### Patch Changes
+
+- 7ff7ffe: fix: removing any types
+
 ## 3.1.0
 
 ### Minor Changes
