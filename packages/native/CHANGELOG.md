@@ -1,5 +1,13 @@
 # @shallot-ui/native
 
+## 3.3.4
+
+### Patch Changes
+
+- Updated dependencies [3fd5a75]
+  - @shallot-ui/core-props@4.1.0
+  - @shallot-ui/platform-react-native@5.0.0
+
 ## 3.3.3
 
 ### Patch Changes
