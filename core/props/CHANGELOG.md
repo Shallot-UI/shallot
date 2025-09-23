@@ -1,5 +1,11 @@
 # @shallot-ui/core-props
 
+## 4.1.0
+
+### Minor Changes
+
+- 3fd5a75: feat: adds text sizing props
+
 ## 4.0.1
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @shallot-ui/next
 
+## 4.5.6
+
+### Patch Changes
+
+- Updated dependencies [3fd5a75]
+  - @shallot-ui/core-props@4.1.0
+  - @shallot-ui/platform-nextjs@5.0.0
+  - @shallot-ui/platform-react@5.0.0
+
 ## 4.5.5
 
 ### Patch Changes

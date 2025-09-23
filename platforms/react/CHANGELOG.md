@@ -1,5 +1,16 @@
 # @shallot-ui/platform-react
 
+## 5.0.0
+
+### Minor Changes
+
+- 3fd5a75: feat: adds text sizing props
+
+### Patch Changes
+
+- Updated dependencies [3fd5a75]
+  - @shallot-ui/core-props@4.1.0
+
 ## 4.0.1
 
 ### Patch Changes
