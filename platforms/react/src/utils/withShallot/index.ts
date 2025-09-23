@@ -1,4 +1,10 @@
-import { ComponentType, ElementType } from 'react'
+import {
+  ComponentPropsWithRef,
+  ComponentType,
+  ElementType,
+  JSX,
+  ReactNode,
+} from 'react'
 import styled from 'styled-components'
 import { ShallotProp, ThemeVariants } from '@shallot-ui/core-theme'
 import { getStyle, getBreakpointsStyle } from '@shallot-ui/core-utils'
@@ -14,7 +20,18 @@ const config = {
     typeof prop === 'string' && !['shallot', 'variant'].includes(prop),
 }
 
-export const withShallot = <T extends ElementType>(
+// Helper type to determine the props for either a component or intrinsic element
+type ElementProps<T> = T extends keyof JSX.IntrinsicElements
+  ? JSX.IntrinsicElements[T] // If T is a string tagname, get its intrinsic props
+  : T extends ComponentType<infer P>
+    ? P // If T is a component, extract its props
+    : T extends ElementType
+      ? ComponentPropsWithRef<T> // Fallback for other element types
+      : {}
+
+export const withShallot = <
+  T extends ElementType | keyof JSX.IntrinsicElements,
+>(
   element: T,
   baseShallot?: ShallotProp,
   {
@@ -44,7 +61,7 @@ export const withShallot = <T extends ElementType>(
       // Merge and return all of the rendered styles.
       return { ...baseStyles, ...breakpointsStyles }
     }}
-  ` as ComponentType<T>
+  ` as ComponentType<ElementProps<T> & { children?: ReactNode }>
 
 /**
  * Creates a box component with Shallot styling and layout props (web)
@@ -68,7 +85,7 @@ export const withBoxShallot = <T extends ElementType>(
     { display: 'flex', flexDirection: 'column' },
     { scope, variant },
   )
-  return withBoxLayoutProps<T & ExtendedProps>(Base, shallot)
+  return withBoxLayoutProps(Base, shallot)
 }
 
 /**
