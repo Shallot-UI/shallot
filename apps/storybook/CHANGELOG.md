@@ -1,5 +1,13 @@
 # stories
 
+## 0.1.15
+
+### Patch Changes
+
+- 7ff7ffe: fix: removing any types
+- Updated dependencies [7ff7ffe]
+  - @shallot-ui/next@4.5.5
+
 ## 0.1.14
 
 ### Patch Changes

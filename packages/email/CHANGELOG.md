@@ -1,5 +1,16 @@
 # @shallot-ui/email
 
+## 4.3.4
+
+### Patch Changes
+
+- 7ff7ffe: fix: removing any types
+- Updated dependencies [7ff7ffe]
+  - @shallot-ui/core-mixins@3.1.1
+  - @shallot-ui/core-props@4.0.1
+  - @shallot-ui/core-utils@4.0.1
+  - @shallot-ui/platform-react-email@4.0.1
+
 ## 4.3.3
 
 ### Patch Changes

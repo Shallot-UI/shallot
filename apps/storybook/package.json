@@ -1,6 +1,6 @@
 {
   "name": "stories",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "private": true,
   "scripts": {
     "storybook": "storybook dev -p 6006",
