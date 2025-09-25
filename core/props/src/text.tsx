@@ -11,6 +11,7 @@ import { TextAlignmentProps, getTextAlignmentShallot } from './textAlignment'
 import { BorderProps, getBorderShallot } from './border'
 import { MarginProps, getMarginShallot } from './margin'
 import { SizingProps, getSizingShallot } from './sizing'
+import { FlexProps, getFlexShallot } from './flex'
 
 type ExtendedProps = {
   shallot?: ShallotProp
@@ -20,7 +21,8 @@ type ExtendedProps = {
 export type TextLayoutProps = TextAlignmentProps &
   BorderProps &
   MarginProps &
-  SizingProps
+  SizingProps &
+  FlexProps
 
 export const withTextLayoutProps = <T extends {}>(
   Component: ComponentType<T>,
@@ -58,6 +60,7 @@ export const withTextLayoutProps = <T extends {}>(
       ...getBorderShallot(props),
       ...getMarginShallot(props),
       ...getSizingShallot(props),
+      ...getFlexShallot(props),
       ...(shallot as ShallotProp | undefined),
     }
 
