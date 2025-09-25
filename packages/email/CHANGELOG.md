@@ -1,5 +1,13 @@
 # @shallot-ui/email
 
+## 4.3.6
+
+### Patch Changes
+
+- Updated dependencies [fedc440]
+  - @shallot-ui/core-props@4.1.1
+  - @shallot-ui/platform-react-email@5.0.1
+
 ## 4.3.5
 
 ### Patch Changes

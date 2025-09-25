@@ -1,5 +1,11 @@
 # @shallot-ui/core-props
 
+## 4.1.1
+
+### Patch Changes
+
+- fedc440: feat: adding `getFlexShallot`
+
 ## 4.1.0
 
 ### Minor Changes
