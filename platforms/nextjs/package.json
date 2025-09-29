@@ -35,7 +35,7 @@
     "@shallot-ui/core-theme": "workspace:*",
     "@shallot-ui/core-utils": "workspace:*",
     "@shallot-ui/platform-react": "workspace:*",
-    "next": "^14",
+    "next": "^14 || ^15",
     "styled-components": "^6"
   },
   "devDependencies": {
