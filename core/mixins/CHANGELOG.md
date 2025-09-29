@@ -1,5 +1,13 @@
 # @shallot-ui/core-mixins
 
+## 3.1.2
+
+### Patch Changes
+
+- bumping all versions
+- Updated dependencies
+  - @shallot-ui/core-theme@2.3.1
+
 ## 3.1.1
 
 ### Patch Changes

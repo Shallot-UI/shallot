@@ -1,5 +1,11 @@
 # @shallot-ui/core-theme
 
+## 2.3.1
+
+### Patch Changes
+
+- bumping all versions
+
 ## 2.3.0
 
 ### Minor Changes

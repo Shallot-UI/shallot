@@ -1,5 +1,16 @@
 # @shallot-ui/platform-react-email
 
+## 5.0.2
+
+### Patch Changes
+
+- bumping all versions
+- Updated dependencies
+  - @shallot-ui/core-mixins@3.1.2
+  - @shallot-ui/core-props@4.1.2
+  - @shallot-ui/core-theme@2.3.1
+  - @shallot-ui/core-utils@4.0.2
+
 ## 5.0.1
 
 ### Patch Changes

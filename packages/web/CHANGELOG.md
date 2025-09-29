@@ -1,5 +1,25 @@
 # @shallot-ui/web
 
+## 4.3.8
+
+### Patch Changes
+
+- bumping all versions
+- Updated dependencies
+  - @shallot-ui/component-button@5.0.2
+  - @shallot-ui/component-checkbox@5.0.2
+  - @shallot-ui/component-input@5.0.2
+  - @shallot-ui/component-modal@4.0.2
+  - @shallot-ui/component-switch@5.0.2
+  - @shallot-ui/component-tag@5.0.2
+  - @shallot-ui/component-textarea@3.0.2
+  - @shallot-ui/core-mixins@3.1.2
+  - @shallot-ui/core-props@4.1.2
+  - @shallot-ui/core-theme@2.3.1
+  - @shallot-ui/core-utils@4.0.2
+  - @shallot-ui/platform-nextjs@5.0.2
+  - @shallot-ui/platform-react@5.0.2
+
 ## 4.3.7
 
 ### Patch Changes

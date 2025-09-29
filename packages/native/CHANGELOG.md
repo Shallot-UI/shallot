@@ -1,5 +1,22 @@
 # @shallot-ui/native
 
+## 3.3.6
+
+### Patch Changes
+
+- bumping all versions
+- Updated dependencies
+  - @shallot-ui/component-button@5.0.2
+  - @shallot-ui/component-checkbox@5.0.2
+  - @shallot-ui/component-input@5.0.2
+  - @shallot-ui/component-switch@5.0.2
+  - @shallot-ui/component-tag@5.0.2
+  - @shallot-ui/core-mixins@3.1.2
+  - @shallot-ui/core-props@4.1.2
+  - @shallot-ui/core-theme@2.3.1
+  - @shallot-ui/core-utils@4.0.2
+  - @shallot-ui/platform-react-native@5.0.2
+
 ## 3.3.5
 
 ### Patch Changes
