@@ -1,5 +1,11 @@
 # @shallot-ui/platform-nextjs
 
+## 5.0.3
+
+### Patch Changes
+
+- d3850e9: feat: support next 15
+
 ## 5.0.2
 
 ### Patch Changes
