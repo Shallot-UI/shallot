@@ -1,5 +1,12 @@
 # @shallot-ui/web
 
+## 4.3.9
+
+### Patch Changes
+
+- Updated dependencies [d3850e9]
+  - @shallot-ui/platform-nextjs@5.0.3
+
 ## 4.3.8
 
 ### Patch Changes
