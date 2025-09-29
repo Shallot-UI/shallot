@@ -1,5 +1,11 @@
 # @shallot-ui/web
 
+## 4.3.7
+
+### Patch Changes
+
+- Trigger new version for web
+
 ## 4.3.6
 
 ### Patch Changes
