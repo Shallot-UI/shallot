@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@shallot-ui/next": "workspace:*",
-    "next": "^14.2.32",
+    "next": "^15.5.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "styled-components": "^6"
@@ -34,7 +34,7 @@
     "eslint-config-next": "15.3.5",
     "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8",
-    "storybook": "^8.1.6",
+    "storybook": "^8.6.15",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.8.3"
   }
